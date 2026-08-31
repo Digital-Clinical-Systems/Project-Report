@@ -1081,6 +1081,140 @@ Estos tres puntos delimitan el alcance funcional de ClinicalSync y anticipan los
 
 ### 2.5. Ubiquitous Language
 
+El Ubiquitous Language establece el vocabulario común entre el equipo de desarrollo, los usuarios del dominio clínico y los artefactos del proyecto. Su función es evitar que un mismo concepto reciba nombres distintos según quién lo mencione, y que un mismo nombre designe cosas distintas según el contexto, ambos problemas frecuentes cuando un equipo técnico modela un dominio especializado del que no proviene.
+
+Los términos recogidos aquí pertenecen al dominio del negocio, no a la implementación. Se priorizó el vocabulario efectivamente utilizado por el personal de enfermería y por los médicos especialistas durante las entrevistas, así como los conceptos que aparecieron en el Big Picture Event Storming. Cada término se presenta con su equivalente en inglés, que será el nombre empleado en el código y en la documentación técnica, de acuerdo con las convenciones establecidas para el proyecto.
+
+#### Criterios de selección
+
+- Relación directa con el dominio clínico cardiovascular y con el alcance definido para ClinicalSync.
+- Uso recurrente en entrevistas, User Personas, User Task Matrix o Event Storming.
+- Necesidad de precisión: se incluyen los términos cuya ambigüedad podría generar errores de modelado.
+- Utilidad para la definición de bounded contexts, entidades y User Stories en los capítulos siguientes.
+- Se excluyen conceptos técnicos de implementación y términos clínicos que no intervienen en el flujo modelado.
+
+#### Glosario del dominio
+
+##### Paciente y unidad asistencial
+
+| Término (EN) | Equivalente (ES) | Definición |
+|---|---|---|
+| **Cardiovascular Patient** | Paciente cardiovascular | Persona con una condición del sistema cardiovascular que requiere vigilancia, registro y seguimiento clínico continuo. |
+| **Cardiovascular Care Unit** | Unidad de cuidado cardiovascular | Área hospitalaria especializada en la atención y el monitoreo de pacientes con condiciones cardiovasculares. |
+| **Assigned Patient** | Paciente asignado | Paciente que queda bajo la responsabilidad de un profesional durante un turno determinado. |
+| **Patient Status** | Estado del paciente | Condición clínica actual del paciente, considerando signos vitales, evolución, eventos recientes y respuesta al tratamiento. |
+| **Patient Priority** | Prioridad del paciente | Nivel de atención que requiere un paciente respecto de los demás, según su riesgo clínico. |
+
+##### Turno y traspaso
+
+| Término (EN) | Equivalente (ES) | Definición |
+|---|---|---|
+| **Clinical Shift** | Turno clínico | Periodo de trabajo durante el cual un profesional asume la responsabilidad asistencial sobre un conjunto de pacientes. |
+| **Outgoing Shift** | Turno saliente | Equipo que finaliza su periodo de atención y entrega la información clínica al equipo siguiente. |
+| **Incoming Shift** | Turno entrante | Equipo que inicia su periodo de atención y recibe la información del turno anterior. |
+| **Shift Handover** | Traspaso de turno | Proceso mediante el cual el turno saliente transfiere al entrante la información clínica relevante de cada paciente. |
+| **SBAR Report** | Reporte SBAR | Formato estructurado de comunicación clínica compuesto por situación, antecedentes, evaluación y recomendación. |
+| **Situation** | Situación | Componente del SBAR que describe el motivo o el problema actual del paciente. |
+| **Background** | Antecedentes | Componente del SBAR que resume la información previa relevante del caso. |
+| **Assessment** | Evaluación | Componente del SBAR que expresa la valoración actual del profesional sobre el estado del paciente. |
+| **Recommendation** | Recomendación | Componente del SBAR que indica la acción sugerida o el siguiente paso clínico. |
+| **Handover Summary** | Resumen de traspaso | Información consolidada que se entrega al turno entrante para asegurar la continuidad de la atención. |
+| **Continuity of Care** | Continuidad de atención | Mantenimiento coherente y seguro del cuidado del paciente entre turnos, profesionales y etapas clínicas. |
+
+##### Registro clínico
+
+| Término (EN) | Equivalente (ES) | Definición |
+|---|---|---|
+| **Clinical Record** | Registro clínico | Documentación formal de la información relevante del paciente generada durante la atención. |
+| **Nursing Record** | Registro de enfermería | Registro elaborado por el personal de enfermería sobre cuidados, signos vitales, medicación, eventos y observaciones. |
+| **Vital Signs** | Signos vitales | Parámetros fisiológicos básicos del paciente, tales como frecuencia cardíaca, presión arterial, frecuencia respiratoria, temperatura y saturación de oxígeno. |
+| **Vital Signs Entry** | Toma de signos vitales | Registro puntual de los parámetros fisiológicos del paciente en un momento determinado. |
+| **Medication Administration** | Administración de medicamento | Acción de suministrar un medicamento al paciente conforme a la indicación médica correspondiente. |
+| **Clinical Note** | Nota clínica | Observación redactada por un profesional para dejar constancia de un hecho relevante no cubierto por los registros estructurados. |
+| **Pending Documentation** | Documentación pendiente | Información clínica que ocurrió durante el turno pero que aún no ha sido registrada formalmente. |
+| **Delayed Record** | Registro tardío | Registro efectuado con posterioridad al momento en que ocurrió la acción o el evento que documenta. |
+| **Duplicate Record** | Registro duplicado | Información consignada en más de un soporte, lo que genera doble trabajo y riesgo de inconsistencia. |
+| **Physical Record** | Registro físico | Anotación en papel utilizada como soporte temporal o complementario del registro digital. |
+
+##### Vigilancia y eventos clínicos
+
+| Término (EN) | Equivalente (ES) | Definición |
+|---|---|---|
+| **Patient Monitoring** | Monitoreo del paciente | Observación sistemática del estado del paciente con el fin de detectar cambios o riesgos clínicos. |
+| **Clinical Evolution** | Evolución clínica | Secuencia de cambios observados en el estado del paciente durante un periodo determinado. |
+| **Recent Evolution** | Evolución reciente | Conjunto de cambios clínicos ocurridos en el periodo inmediatamente anterior a la consulta o evaluación. |
+| **Clinical Event** | Evento clínico | Situación relevante ocurrida durante la atención que debe registrarse, comunicarse o evaluarse. |
+| **Critical Change** | Cambio crítico | Variación significativa del estado del paciente que puede requerir atención inmediata o decisión médica urgente. |
+| **Clinical Deterioration** | Deterioro clínico | Empeoramiento del estado del paciente evidenciado por sus signos vitales, síntomas o respuesta al tratamiento. |
+| **Clinical Alert** | Alerta clínica | Aviso generado ante un cambio, un riesgo o un evento relevante en el estado del paciente. |
+| **Clinical Risk** | Riesgo clínico | Posibilidad de que una omisión, un retraso o un error de información afecte la seguridad del paciente. |
+
+##### Indicaciones médicas
+
+| Término (EN) | Equivalente (ES) | Definición |
+|---|---|---|
+| **Medical Indication** | Indicación médica | Orden emitida por el médico para ejecutar una acción clínica, administrar un medicamento o modificar un tratamiento. |
+| **Updated Indication** | Indicación actualizada | Indicación modificada o añadida tras una nueva evaluación del paciente. |
+| **Pending Indication** | Indicación pendiente | Indicación emitida cuya ejecución aún no ha sido realizada o confirmada. |
+| **Indication Compliance** | Cumplimiento de indicación | Confirmación de que una indicación médica fue ejecutada, con constancia de responsable y momento. |
+| **Clinical Decision** | Decisión clínica | Determinación adoptada por un profesional respecto del diagnóstico, tratamiento o seguimiento del paciente. |
+| **Clinical Follow-up** | Seguimiento clínico | Evaluación posterior a una indicación, un evento o una intervención, para verificar su resultado. |
+
+##### Trazabilidad y responsabilidad
+
+| Término (EN) | Equivalente (ES) | Definición |
+|---|---|---|
+| **Clinical Traceability** | Trazabilidad clínica | Capacidad de determinar qué ocurrió, cuándo ocurrió, quién lo registró y qué modificaciones se realizaron. |
+| **Responsible Staff** | Responsable clínico | Profesional de salud que ejecuta, registra o valida una acción clínica determinada. |
+| **Audit Trail** | Bitácora de auditoría | Historial cronológico e inalterable de las operaciones realizadas sobre la información clínica. |
+| **Timestamp** | Marca temporal | Fecha y hora exactas en que se produjo una acción o se registró un dato. |
+| **Clinical Validation** | Validación clínica | Confirmación por parte de un profesional de que la información registrada es correcta y utilizable para decidir. |
+| **Omission** | Omisión | Información o acción clínica que no fue registrada, comunicada o ejecutada oportunamente. |
+
+##### Sistemas, soportes y carga de trabajo
+
+| Término (EN) | Equivalente (ES) | Definición |
+|---|---|---|
+| **Hospital Information System** | Sistema de información hospitalaria | Plataforma institucional utilizada para registrar, consultar y administrar la información clínica y administrativa. |
+| **Biomedical Monitor** | Monitor biomédico | Equipo que mide y despliega variables fisiológicas del paciente y emite alarmas ante valores fuera de rango. |
+| **Clinical Dashboard** | Panel clínico | Vista organizada de la información clínica relevante, orientada a la interpretación rápida del estado del paciente. |
+| **Information Fragmentation** | Fragmentación de información | Situación en la que la información clínica se distribuye entre múltiples fuentes, dificultando su consulta completa. |
+| **Structured Communication** | Comunicación estructurada | Intercambio de información organizado bajo un formato definido, con el fin de reducir ambigüedad y omisiones. |
+| **Operational Burden** | Carga operativa | Esfuerzo adicional generado por procesos manuales, duplicidad de registros o sistemas con exceso de pasos. |
+
+#### Términos prioritarios del dominio
+
+Aunque el glosario cubre el vocabulario completo del dominio modelado, los siguientes términos concentran el núcleo de la propuesta de valor de ClinicalSync y deben mantenerse estables a lo largo de todo el proyecto.
+
+| Término | Razón de la priorización |
+|---|---|
+| **Shift Handover** | Es el momento del proceso donde se concentra el mayor riesgo de pérdida de información. |
+| **SBAR Report** | Es la estructura sobre la que se construye la propuesta de traspaso del producto. |
+| **Clinical Traceability** | Es el mecanismo que responde simultáneamente a las necesidades de ambos arquetipos. |
+| **Vital Signs Entry** | Es la operación más frecuente del turno y la principal fuente de datos del sistema. |
+| **Clinical Event** | Determina qué situaciones deben registrarse y comunicarse de forma prioritaria. |
+| **Indication Compliance** | Cierra el ciclo entre la decisión médica y su ejecución operativa. |
+| **Recent Evolution** | Es la unidad de información sobre la que se construye la vista consolidada del especialista. |
+| **Information Fragmentation** | Nombra el problema central identificado en el Capítulo I y confirmado en el trabajo de campo. |
+
+#### Relación con los demás artefactos del proyecto
+
+| Artefacto | Relación con el Ubiquitous Language |
+|---|---|
+| **Entrevistas** | Aportan el vocabulario real de los usuarios y revelan las ambigüedades a resolver. |
+| **User Personas** | Vinculan cada término con las necesidades del segmento que lo utiliza. |
+| **User Task Matrix** | Relaciona los términos con las tareas concretas que los usuarios ejecutan. |
+| **User Journey Mapping** | Sitúa los términos dentro del recorrido temporal del usuario. |
+| **Big Picture Event Storming** | Emplea los términos para nombrar eventos, actores, problemas y oportunidades. |
+| **User Stories (Capítulo III)** | Traduce los términos del dominio en necesidades funcionales verificables. |
+| **Arquitectura de software (Capítulo IV)** | Utiliza los términos para delimitar bounded contexts, entidades y responsabilidades. |
+
+#### Conclusión del Ubiquitous Language
+
+El vocabulario definido en esta sección permite que el equipo discuta el producto en los mismos términos que emplean los profesionales del dominio, lo que reduce el margen de interpretación en la especificación de requisitos y en el modelado del software. Su adopción es una condición para que los artefactos de los capítulos siguientes sean consistentes entre sí.
+
+Este glosario no es definitivo: se ampliará y precisará conforme avance el proyecto, en particular tras el Design-Level Event Storming del Capítulo IV, donde los términos aquí definidos se traducirán en agregados, entidades y comandos concretos del modelo de dominio.
+
 ---
 
 ## Capítulo III: Requirements Specification
