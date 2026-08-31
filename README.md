@@ -679,10 +679,312 @@ Los porcentajes se calculan sobre el total de entrevistas efectivamente registra
 Los hallazgos de esta sección constituyen la base directa de los artefactos de Needfinding que se desarrollan a continuación, y deben mantenerse trazables hacia las User Stories del Capítulo III.
 
 ### 2.3. Needfinding
+
+El Needfinding traduce la evidencia obtenida en las entrevistas y en el análisis competitivo en artefactos que el equipo puede utilizar para tomar decisiones de producto. Su propósito no es describir la solución, sino comprender con precisión cómo trabajan hoy los usuarios, qué obstáculos enfrentan y qué necesidades deben quedar cubiertas antes de definir requisitos.
+
+Los cuatro artefactos desarrollados en esta sección se construyen de forma encadenada: los User Personas sintetizan los patrones observados en cada segmento, la User Task Matrix ordena las tareas reales que esos arquetipos ejecutan, el User Journey Mapping sitúa esas tareas en un recorrido temporal con sus puntos de fricción, y el Empathy Mapping profundiza en el contexto emocional y cognitivo que explica ese comportamiento.
+
+| Artefacto | Propósito | Insumo principal |
+|---|---|---|
+| **User Personas** | Representar arquetipos de usuario a partir de los segmentos objetivo y de los hallazgos de entrevistas. | Segmentos objetivo y análisis de entrevistas. |
+| **User Task Matrix** | Identificar las tareas reales de cada arquetipo, con su frecuencia e importancia relativas. | User Personas y entrevistas. |
+| **User Journey Mapping** | Representar el recorrido actual (As-Is) del usuario, con sus emociones y puntos de dolor. | User Personas y User Task Matrix. |
+| **Empathy Mapping** | Comprender qué piensa, siente, ve, escucha, dice, hace, necesita y espera cada arquetipo. | Todos los anteriores. |
+
+Los artefactos visuales fueron elaborados en UXPressia y se incorporan como imágenes en la carpeta assets/chapter-2/.
+
 #### 2.3.1. User Personas
+
+Los User Personas de ClinicalSync se construyeron a partir de los dos segmentos objetivo definidos en la sección 1.3 y de los patrones identificados en las entrevistas. No representan a ningún entrevistado en particular: son perfiles sintéticos que concentran comportamientos, objetivos y frustraciones recurrentes, con el fin de que las decisiones de diseño puedan discutirse en términos de una persona concreta y no de una categoría abstracta.
+
+Cada persona reúne información demográfica, contexto laboral, nivel de familiaridad con la tecnología, objetivos, frustraciones, motivaciones y canales que utiliza. Estos elementos serán la referencia para priorizar funcionalidades, definir la arquitectura de información y evaluar la usabilidad del producto en los capítulos siguientes.
+
+| User Persona | Segmento objetivo | Rol en el dominio |
+|---|---|---|
+| **Daniela Ríos** | Personal de enfermería cardiovascular | Genera la información clínica del turno: registra signos vitales, administra medicamentos, reporta eventos y entrega el relevo. |
+| **Dr. Alejandro Torres** | Médico especialista cardiovascular | Consume y valida la información clínica: revisa la evolución, confirma indicaciones y toma decisiones sobre el paciente. |
+
+##### User Persona 1: Daniela Ríos
+
+Daniela Ríos representa al personal de enfermería que trabaja en unidades cardiovasculares de alta exigencia, bajo turnos rotativos y con varios pacientes críticos a cargo simultáneamente. Su jornada combina atención directa al paciente con obligaciones de documentación que compiten por el mismo tiempo, lo que la lleva a postergar el registro formal y a apoyarse en anotaciones propias durante el turno.
+
+Su objetivo es completar el turno sin omitir información relevante y entregar un relevo del que el equipo entrante pueda partir con seguridad. Sus frustraciones se concentran en los sistemas que exigen demasiados pasos para una tarea breve, en la duplicidad entre el papel y el sistema digital, y en la sensación de que la información importante depende de que alguien la recuerde y la mencione a tiempo.
+
+<p align="center">
+  <img src="assets/chapter-2/user-persona-daniela-rios.png" alt="User Persona - Daniela Ríos" width="90%">
+</p>
+
+##### User Persona 2: Dr. Alejandro Torres
+
+El Dr. Alejandro Torres representa al médico especialista cardiovascular responsable de evaluar la evolución del paciente y decidir sobre su tratamiento. Su relación con la información es de consulta e interpretación: necesita reconstruir con rapidez qué ocurrió desde su última evaluación, con qué respaldo y bajo la responsabilidad de quién.
+
+Su objetivo es decidir con información completa y verificable, en el menor tiempo posible. Sus frustraciones aparecen cuando debe reunir datos de fuentes distintas para formarse una idea del caso, cuando no puede confirmar si una indicación fue ejecutada, y cuando una herramienta le exige tiempo administrativo que preferiría dedicar a la evaluación clínica.
+
+<p align="center">
+  <img src="assets/chapter-2/user-persona-alejandro-torres.png" alt="User Persona - Dr. Alejandro Torres" width="90%">
+</p>
+
+##### Conclusión de los User Personas
+
+Ambos arquetipos comparten el mismo problema de fondo, la información dispersa y poco trazable, pero lo enfrentan desde extremos opuestos del flujo. Daniela necesita que registrar sea rápido; Alejandro necesita que consultar sea completo. Esta tensión es la que ClinicalSync debe resolver: si la captura se simplifica a costa de la información, el médico pierde contexto; si se exige demasiado detalle, el personal de enfermería no registrará durante el turno.
+
+De esta lectura se desprende una decisión de producto que atraviesa todo el proyecto: la estructura del formulario SBAR y del registro de signos vitales debe diseñarse desde la restricción de tiempo de Daniela, y la vista consolidada debe diseñarse desde la necesidad de síntesis de Alejandro, sobre el mismo conjunto de datos.
+
 #### 2.3.2. User Task Matrix
+
+La User Task Matrix organiza las tareas que los User Personas realizan hoy en su entorno de trabajo, evaluadas según dos criterios: la frecuencia con que las ejecutan durante la jornada y la importancia que tienen para la continuidad asistencial y la seguridad del paciente.
+
+Es importante precisar que estas tareas no corresponden a pantallas ni a funcionalidades de ClinicalSync. Describen actividades que los usuarios ya realizan, con o sin herramienta digital, y que el producto deberá soportar o simplificar. Su valor está en revelar dónde debe concentrarse el esfuerzo de diseño: las tareas de frecuencia muy alta e importancia crítica son las que determinarán si el producto se adopta o se abandona.
+
+| Criterio | Descripción | Escala utilizada |
+|---|---|---|
+| **Frecuencia** | Cuántas veces ejecuta el User Persona la tarea durante su jornada laboral. | Muy alta, Alta, Media, Baja |
+| **Importancia** | Impacto de la tarea sobre la continuidad asistencial, la seguridad del paciente y el cumplimiento profesional. | Crítica, Alta, Media, Baja |
+
+##### User Task Matrix de ClinicalSync
+
+| Tarea | Daniela Ríos — Frecuencia | Daniela Ríos — Importancia | Dr. Alejandro Torres — Frecuencia | Dr. Alejandro Torres — Importancia |
+|---|---|---|---|---|
+| Recibir la información del turno saliente | Muy alta | Crítica | Media | Alta |
+| Revisar el estado actual de los pacientes asignados | Muy alta | Crítica | Muy alta | Crítica |
+| Registrar signos vitales del paciente | Muy alta | Crítica | Baja | Media |
+| Administrar medicamentos y dejar constancia | Muy alta | Crítica | Baja | Alta |
+| Registrar eventos clínicos ocurridos durante el turno | Alta | Crítica | Baja | Alta |
+| Consultar la evolución clínica reciente del paciente | Alta | Alta | Muy alta | Crítica |
+| Revisar e interpretar indicaciones médicas vigentes | Alta | Crítica | Muy alta | Crítica |
+| Confirmar el cumplimiento de una indicación | Alta | Crítica | Alta | Crítica |
+| Identificar cambios críticos en el estado del paciente | Alta | Crítica | Muy alta | Crítica |
+| Priorizar pacientes según su nivel de riesgo | Alta | Crítica | Alta | Crítica |
+| Reunir información clínica desde distintas fuentes | Alta | Alta | Muy alta | Crítica |
+| Verificar quién registró un dato y en qué momento | Media | Alta | Alta | Crítica |
+| Comunicar información relevante al turno entrante | Muy alta | Crítica | Media | Alta |
+| Coordinar acciones con otros profesionales del equipo | Alta | Alta | Alta | Crítica |
+| Preparar información para la ronda o visita médica | Media | Alta | Alta | Crítica |
+| Actualizar el registro clínico después de una intervención | Alta | Crítica | Media | Alta |
+| Completar documentación pendiente al cierre del turno | Alta | Alta | Baja | Media |
+| Consultar anotaciones propias o registros complementarios | Alta | Media | Media | Media |
+| Emitir o modificar una indicación médica | Baja | Media | Muy alta | Crítica |
+| Revisar el balance y la evolución global del paciente | Media | Alta | Alta | Crítica |
+
+##### Tareas con mayor frecuencia e importancia combinadas
+
+Las siguientes tareas concentran simultáneamente frecuencia muy alta e importancia crítica para al menos uno de los dos arquetipos, y constituyen el núcleo funcional que ClinicalSync debe resolver antes que cualquier otra cosa.
+
+| Tarea crítica | Justificación |
+|---|---|
+| Revisar el estado actual de los pacientes asignados | Es la primera acción de ambos arquetipos y condiciona todas las decisiones posteriores del turno. |
+| Registrar signos vitales del paciente | Es la tarea más repetida del turno de enfermería y la principal fuente de datos del sistema. |
+| Comunicar información relevante al turno entrante | Es el momento de mayor riesgo de pérdida de información identificado en el Capítulo I. |
+| Consultar la evolución clínica reciente del paciente | Determina la calidad y la oportunidad de la decisión médica. |
+| Revisar e interpretar indicaciones médicas vigentes | Conecta la decisión médica con la ejecución operativa de enfermería. |
+| Identificar cambios críticos en el estado del paciente | De su oportunidad depende la respuesta ante un deterioro clínico. |
+| Confirmar el cumplimiento de una indicación | Cierra el ciclo entre indicación y ejecución, y es la base de la trazabilidad. |
+
+##### Tareas prioritarias de Daniela Ríos
+
+| Tarea | Frecuencia | Importancia |
+|---|---|---|
+| Registrar signos vitales del paciente | Muy alta | Crítica |
+| Administrar medicamentos y dejar constancia | Muy alta | Crítica |
+| Comunicar información relevante al turno entrante | Muy alta | Crítica |
+| Recibir la información del turno saliente | Muy alta | Crítica |
+| Registrar eventos clínicos ocurridos durante el turno | Alta | Crítica |
+| Actualizar el registro clínico después de una intervención | Alta | Crítica |
+| Completar documentación pendiente al cierre del turno | Alta | Alta |
+
+El perfil de Daniela se define por la repetición: sus tareas más importantes son también las más frecuentes. Esto implica que cualquier paso innecesario en el registro se multiplica decenas de veces por turno, y que el criterio de diseño dominante para su experiencia debe ser la economía de interacción.
+
+##### Tareas prioritarias del Dr. Alejandro Torres
+
+| Tarea | Frecuencia | Importancia |
+|---|---|---|
+| Consultar la evolución clínica reciente del paciente | Muy alta | Crítica |
+| Revisar e interpretar indicaciones médicas vigentes | Muy alta | Crítica |
+| Identificar cambios críticos en el estado del paciente | Muy alta | Crítica |
+| Reunir información clínica desde distintas fuentes | Muy alta | Crítica |
+| Emitir o modificar una indicación médica | Muy alta | Crítica |
+| Verificar quién registró un dato y en qué momento | Alta | Crítica |
+| Revisar el balance y la evolución global del paciente | Alta | Crítica |
+
+El perfil de Alejandro se define por la consolidación: su tarea más costosa no es ejecutar una acción sino reunir información dispersa para poder decidir. El criterio de diseño dominante para su experiencia es la síntesis, es decir, mostrar en una sola vista lo que hoy exige consultar varias fuentes.
+
+##### Coincidencias y divergencias entre arquetipos
+
+| Aspecto | Daniela Ríos | Dr. Alejandro Torres | Implicancia para ClinicalSync |
+|---|---|---|---|
+| Naturaleza de la tarea dominante | Producción de información | Consumo e interpretación de información | Dos vistas construidas sobre el mismo modelo de datos. |
+| Tarea compartida más crítica | Comunicar y recibir el relevo del turno | Confirmar el cumplimiento de indicaciones | El traspaso estructurado es el punto donde ambos flujos se encuentran. |
+| Restricción principal | Tiempo disponible durante la atención | Cantidad de fuentes que debe consolidar | Optimizar pasos para uno y agregación para el otro. |
+| Consecuencia de un fallo | Omisión o registro tardío | Decisión con información incompleta | La trazabilidad es el mecanismo que mitiga ambos riesgos. |
+
 #### 2.3.3. User Journey Mapping
+
+Los User Journey Maps representan el recorrido actual (As-Is) de cada arquetipo dentro del entorno cardiovascular hospitalario, antes de la incorporación de ClinicalSync. Su propósito es ubicar temporalmente las tareas identificadas en la matriz anterior, hacer visibles las emociones asociadas a cada fase y localizar con precisión los puntos de dolor sobre los que el producto puede actuar.
+
+Cada mapa cubre un recorrido completo de principio a fin, delimitado por un hito clínico reconocible. Se desarrollaron dos recorridos, uno por arquetipo:
+
+| User Persona | Segmento objetivo | Recorrido As-Is representado |
+|---|---|---|
+| Daniela Ríos | Personal de enfermería cardiovascular | Desde la recepción del turno hasta la entrega de la información al equipo entrante. |
+| Dr. Alejandro Torres | Médico especialista cardiovascular | Desde la identificación de un paciente en riesgo hasta el seguimiento de la decisión clínica adoptada. |
+
+##### User Journey Map 1: Daniela Ríos
+
+| Campo | Información |
+|---|---|
+| **User Persona** | Daniela Ríos |
+| **Segmento objetivo** | Personal de enfermería cardiovascular |
+| **Rol** | Enfermera de unidad cardiovascular |
+| **Área** | UCI cardiovascular |
+| **Recorrido As-Is** | Desde la recepción del turno hasta la entrega de la información al equipo entrante. |
+
+**Escenario actual:**
+Daniela inicia su turno recibiendo verbalmente la información del equipo saliente, con apoyo de anotaciones que no siempre están completas. A continuación revisa el estado de los pacientes a su cargo, consulta los monitores, controla signos vitales, administra los medicamentos indicados y atiende las eventualidades que se presenten. El registro formal en el sistema institucional suele quedar postergado, y durante el turno recurre a anotaciones propias para no perder datos. Al cierre debe regularizar la documentación pendiente y, en paralelo, preparar la entrega al equipo entrante, con frecuencia bajo presión de tiempo.
+
+**Objetivo del recorrido:**
+Identificar en qué fases del turno se concentran la carga operativa, la duplicidad de registro y el riesgo de omisión, para determinar dónde una intervención de producto genera mayor beneficio.
+
+<p align="center">
+  <img src="assets/chapter-2/user-journey-daniela-rios.png" alt="User Journey Map As-Is - Daniela Ríos" width="95%">
+</p>
+
+**Lectura del recorrido:**
+El mapa muestra que la curva emocional de Daniela desciende en dos momentos específicos. El primero es la atención de un evento clínico imprevisto, cuando la urgencia obliga a posponer el registro y se genera la deuda documental que arrastrará el resto del turno. El segundo es el cierre, cuando debe regularizar todo lo pendiente y simultáneamente preparar el relevo, con la carga añadida de reconstruir de memoria lo ocurrido horas antes.
+
+Las anotaciones personales aparecen como una respuesta racional a la lentitud del sistema, no como una mala práctica: son el mecanismo con el que el personal preserva información que no puede registrar en el momento. El costo es la duplicidad, el riesgo de transcripción y la pérdida de trazabilidad, ya que ese registro intermedio no queda asociado a ningún responsable ni a ninguna marca temporal verificable.
+
+##### User Journey Map 2: Dr. Alejandro Torres
+
+| Campo | Información |
+|---|---|
+| **User Persona** | Dr. Alejandro Torres |
+| **Segmento objetivo** | Médico especialista cardiovascular |
+| **Rol** | Cardiólogo intensivista |
+| **Área** | UCI cardiovascular |
+| **Recorrido As-Is** | Desde la identificación de un paciente en riesgo hasta el seguimiento de la decisión clínica adoptada. |
+
+**Escenario actual:**
+Alejandro inicia su evaluación identificando qué pacientes requieren atención prioritaria. Para cada caso debe reconstruir qué ocurrió desde su última revisión, lo que implica consultar el sistema institucional, revisar los monitores, leer reportes de enfermería y, con frecuencia, preguntar directamente al personal del turno. Una vez formada su valoración, emite o ajusta la indicación médica y la comunica al equipo. El seguimiento posterior, es decir, confirmar que la indicación fue ejecutada y con qué resultado, depende de una nueva consulta o de una comunicación verbal.
+
+**Objetivo del recorrido:**
+Determinar cuánto del tiempo del especialista se destina a reunir información en lugar de interpretarla, y en qué punto la falta de trazabilidad introduce incertidumbre en la decisión clínica.
+
+<p align="center">
+  <img src="assets/chapter-2/user-journey-alejandro-torres.png" alt="User Journey Map As-Is - Dr. Alejandro Torres" width="95%">
+</p>
+
+**Lectura del recorrido:**
+El mapa evidencia que la fase más costosa del recorrido de Alejandro no es la decisión sino la preparación para decidir. La consolidación de información desde fuentes heterogéneas concentra el mayor consumo de tiempo y la mayor caída emocional del recorrido, porque el esfuerzo invertido no aporta valor clínico por sí mismo.
+
+El segundo punto crítico es el cierre del ciclo. Emitida la indicación, el especialista carece de una confirmación explícita de su ejecución y debe recurrir a una consulta adicional o a la comunicación verbal. Esta ausencia de retroalimentación es la que convierte la trazabilidad en un requisito funcional y no en una característica deseable.
+
+##### Comparación entre recorridos
+
+| Aspecto | Daniela Ríos | Dr. Alejandro Torres | Implicancia para ClinicalSync |
+|---|---|---|---|
+| Fase de mayor fricción | Evento clínico imprevisto y cierre del turno | Consolidación de información previa a la decisión | Intervenir en la captura para uno y en la agregación para el otro. |
+| Origen de la frustración | Exceso de pasos y duplicidad de registro | Dispersión de fuentes y ausencia de confirmación | Reducir interacción y centralizar la información relevante. |
+| Riesgo dominante | Omisión o registro tardío de información | Decisión adoptada con datos incompletos | La trazabilidad mitiga ambos riesgos con un mismo mecanismo. |
+| Necesidad principal | Registrar rápido y entregar el relevo sin omisiones | Comprender el estado del paciente sin reconstruirlo manualmente | Un modelo de datos común con dos experiencias diferenciadas. |
+| Punto de encuentro | Entrega del relevo | Confirmación del cumplimiento de la indicación | El traspaso estructurado conecta ambos recorridos. |
+
+##### Conclusión del User Journey Mapping
+
+Los recorridos As-Is confirman que el problema no se distribuye de manera uniforme a lo largo del turno, sino que se concentra en momentos identificables: la atención de eventos imprevistos, el cierre del turno, la consolidación previa a la decisión médica y la confirmación del cumplimiento de indicaciones. Esta concentración es una buena noticia desde la perspectiva del producto, porque permite priorizar con precisión.
+
+De ello se derivan cuatro prioridades funcionales para ClinicalSync: un registro suficientemente rápido para ejecutarse durante la atención y no después, un traspaso estructurado que no dependa de la memoria del profesional, una vista consolidada que evite reconstruir el caso desde varias fuentes, y una trazabilidad que cierre el ciclo entre la indicación emitida y su ejecución confirmada.
+
 #### 2.3.4. Empathy Mapping
+
+El Empathy Mapping complementa los artefactos anteriores incorporando la dimensión que la matriz de tareas y el recorrido temporal no capturan: el contexto emocional y cognitivo desde el que cada arquetipo toma sus decisiones. Comprender qué escucha, qué observa, qué le preocupa y qué le motiva a cada usuario permite explicar comportamientos que de otro modo parecerían irracionales, como sostener un registro paralelo en papel a pesar de contar con un sistema digital.
+
+Cada mapa se construyó situando al User Persona en el centro y organizando la evidencia de las entrevistas, la matriz de tareas y el recorrido As-Is alrededor de las preguntas del artefacto. Los mapas fueron elaborados en UXPressia.
+
+| User Persona | Segmento objetivo | Foco del Empathy Map |
+|---|---|---|
+| Daniela Ríos | Personal de enfermería cardiovascular | El contexto del registro clínico, la vigilancia del paciente y la entrega del turno. |
+| Dr. Alejandro Torres | Médico especialista cardiovascular | El contexto de la consulta, la validación de información y la decisión clínica. |
+
+##### Empathy Map 1: Daniela Ríos
+
+###### ¿Con quién estamos empatizando?
+
+| Campo | Información |
+|---|---|
+| **User Persona** | Daniela Ríos |
+| **Segmento objetivo** | Personal de enfermería cardiovascular |
+| **Rol** | Enfermera de unidad cardiovascular |
+| **Área** | UCI cardiovascular |
+| **Nivel tecnológico** | Intermedio |
+| **Contexto principal** | Turno rotativo con varios pacientes críticos a cargo, atención directa simultánea a la documentación clínica. |
+
+Daniela trabaja en un entorno donde la atención al paciente y la obligación de documentar compiten por el mismo tiempo. Su prioridad inmediata siempre es el paciente, de modo que el registro se acomoda a los intervalos que la atención deja libres. Esta jerarquía, que es correcta desde el punto de vista clínico, es la que explica la deuda documental que arrastra hacia el final del turno.
+
+###### ¿Qué necesita hacer?
+
+- Registrar signos vitales y medicación en el momento en que ocurren, sin interrumpir la atención.
+- Mantener presente el estado de varios pacientes críticos de forma simultánea.
+- Dejar constancia de los eventos clínicos que ocurren durante su turno.
+- Entregar el relevo sin omitir información que el equipo entrante necesitará.
+- Reducir la transcripción entre sus anotaciones personales y el sistema institucional.
+- Poder demostrar qué hizo, cuándo y bajo qué indicación.
+
+###### ¿Qué la convencería de que ClinicalSync es la alternativa correcta?
+
+- Que registrar un dato le tome menos pasos que anotarlo en su cuaderno.
+- Que el relevo se genere a partir de lo ya registrado y no exija redactarlo de nuevo.
+- Que funcione desde un dispositivo que pueda llevar consigo y no solo desde una computadora fija.
+- Que no le agregue tareas administrativas nuevas al final del turno.
+- Que le permita ver de un vistazo qué quedó pendiente antes de entregar el turno.
+- Que su nombre y la hora queden registrados automáticamente, sin que deba consignarlos manualmente.
+
+<p align="center">
+  <img src="assets/chapter-2/empathy-map-daniela-rios.png" alt="Empathy Map - Daniela Ríos" width="95%">
+</p>
+
+##### Empathy Map 2: Dr. Alejandro Torres
+
+###### ¿Con quién estamos empatizando?
+
+| Campo | Información |
+|---|---|
+| **User Persona** | Dr. Alejandro Torres |
+| **Segmento objetivo** | Médico especialista cardiovascular |
+| **Rol** | Cardiólogo intensivista |
+| **Área** | UCI cardiovascular |
+| **Nivel tecnológico** | Alto |
+| **Contexto principal** | Evaluación y seguimiento de pacientes de alto riesgo, con responsabilidad directa sobre decisiones terapéuticas. |
+
+Alejandro opera bajo una asimetría incómoda: es responsable de decisiones de alto impacto, pero depende de información que él no produce y cuya integridad no puede verificar por sí mismo. Su cautela ante los datos y su insistencia en confirmar verbalmente lo que ya está registrado responden a esa asimetría, y no a desconfianza hacia el equipo.
+
+###### ¿Qué necesita hacer?
+
+- Reconstruir con rapidez qué ocurrió con el paciente desde su última evaluación.
+- Contrastar signos vitales, medicación administrada y eventos clínicos del periodo.
+- Detectar oportunamente un deterioro en el estado del paciente.
+- Emitir indicaciones y verificar que fueron ejecutadas.
+- Conocer el origen, el momento y el responsable de cada dato que sustenta su decisión.
+- Decidir sin dedicar a la búsqueda de información el tiempo que necesita para interpretarla.
+
+###### ¿Qué lo convencería de que ClinicalSync es la alternativa correcta?
+
+- Que una sola vista le muestre la evolución reciente del paciente sin navegar entre módulos.
+- Que cada dato indique con claridad quién lo registró y en qué momento.
+- Que pueda confirmar el cumplimiento de una indicación sin preguntar al personal.
+- Que las alertas señalen cambios relevantes sin generar ruido innecesario.
+- Que no le exija a él tareas de registro ni pasos administrativos adicionales.
+- Que la información sea consistente con la que ve el personal de enfermería.
+
+<p align="center">
+  <img src="assets/chapter-2/empathy-map-alejandro-torres.png" alt="Empathy Map - Dr. Alejandro Torres" width="95%">
+</p>
+
+##### Conclusión del Empathy Mapping
+
+Los mapas revelan que la resistencia a adoptar nuevas herramientas no proviene de un rechazo a la tecnología, sino de una evaluación práctica: ambos arquetipos han aprendido que un sistema nuevo suele significar más pasos, no menos. Daniela sostiene su cuaderno porque es más rápido que el sistema disponible, y Alejandro confirma verbalmente porque el sistema no le garantiza que lo registrado esté completo.
+
+La consecuencia para ClinicalSync es directa. El producto no compite por funcionalidad sino por confianza operativa, y esa confianza se gana en dos frentes concretos: que registrar sea efectivamente más rápido que la alternativa manual, y que lo registrado sea verificable sin necesidad de confirmación verbal. Ambos criterios deben incorporarse como condiciones de aceptación en la especificación de requisitos del Capítulo III.
+
 ### 2.4. Big Picture Event Storming
 ### 2.5. Ubiquitous Language
 
