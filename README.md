@@ -240,9 +240,444 @@ A partir del análisis anterior, Digital Clinical System define un conjunto de e
 En conclusión, la estrategia de ClinicalSync se sostiene en cuatro pilares: especialización en el flujo cardiovascular, simplicidad medible frente al papel, trazabilidad visible y complementariedad explícita con los sistemas ya instalados. La oportunidad no está en sustituir a los competidores analizados, sino en cubrir con claridad el espacio operativo que hoy queda repartido entre la historia clínica electrónica, el monitor de cabecera, la mensajería del equipo y el cuaderno de enfermería.
 
 ### 2.2. Entrevistas
+
+Esta sección documenta el trabajo de campo realizado con representantes de los segmentos objetivo de ClinicalSync. El propósito de las entrevistas es contrastar la problemática planteada en el Capítulo I con la experiencia real de quienes trabajan a diario en unidades cardiovasculares, e identificar necesidades, frustraciones, hábitos tecnológicos y expectativas que no serían visibles desde el análisis documental.
+
+La evidencia recolectada sustenta directamente los artefactos de Needfinding de la sección 2.3, el modelado del dominio de la sección 2.4 y la especificación de requisitos del Capítulo III. Por ello, el diseño de las preguntas se orientó a obtener descripciones de situaciones concretas y no valoraciones generales sobre la conveniencia de digitalizar procesos clínicos.
+
+Se definieron dos segmentos de entrevista, correspondientes a los segmentos objetivo establecidos en la sección 1.3, con tres entrevistas por segmento.
+
+| Segmento | Perfil de los entrevistados | Entrevistas previstas |
+|---|---|---|
+| Segmento 1: Personal de enfermería cardiovascular | Enfermeros y enfermeras de UCI cardiovascular, hospitalización cardiológica y emergencia, con responsabilidad sobre monitoreo, registro y relevo de turno. | 3 |
+| Segmento 2: Médicos especialistas cardiovasculares | Cardiólogos, intensivistas y cirujanos cardiovasculares responsables de consultar, validar e interpretar información clínica para tomar decisiones. | 3 |
+| **Total** | — | **6** |
+
 #### 2.2.1. Diseño de entrevistas
+
+El diseño de las entrevistas se elaboró con enfoque exploratorio y cualitativo. Se emplearon preguntas abiertas, redactadas en lenguaje no técnico, orientadas a que el entrevistado describiera su práctica actual antes de opinar sobre cualquier solución propuesta. Las preguntas se organizaron en principales, que abordan el núcleo del problema y se formulan a todos los entrevistados del segmento, y complementarias, que profundizan en hábitos tecnológicos y en información necesaria para construir los arquetipos de usuario.
+
+##### Segmento objetivo 1: Personal de enfermería cardiovascular
+
+###### Descripción del segmento
+
+Este segmento agrupa a profesionales de enfermería que trabajan en unidades de cuidados intensivos cardiovasculares, hospitalización cardiológica, emergencia y áreas de telemetría. Sus responsabilidades incluyen el monitoreo continuo del paciente, el control y registro de signos vitales, la administración de medicamentos según indicación médica, el reporte de eventos clínicos y la entrega de información al equipo entrante al finalizar el turno.
+
+Es el segmento que genera la mayor parte de la información clínica operativa y, al mismo tiempo, el que trabaja bajo mayor presión de tiempo. Cualquier herramienta dirigida a este perfil compite directamente con la rapidez del papel, por lo que interesa conocer con precisión cuántos pasos y cuánto tiempo demanda hoy cada tarea de registro.
+
+###### Información principal a recolectar
+
+- Forma actual de registrar información clínica durante el turno.
+- Herramientas y soportes utilizados, tanto digitales como físicos.
+- Momento y frecuencia con que se realiza el registro respecto de la atención.
+- Dificultades concretas con los sistemas disponibles.
+- Mecánica real del cambio de turno y qué información se transmite.
+- Situaciones en que se perdió u omitió información clínica.
+- Tiempo estimado dedicado a documentación durante la jornada.
+- Motivos por los que se recurre a registros físicos complementarios.
+- Percepción sobre la trazabilidad de las acciones realizadas.
+- Condiciones bajo las cuales adoptaría una nueva herramienta digital.
+
+###### Información complementaria para construir arquetipos
+
+| Característica | Información a recolectar |
+|---|---|
+| Rango de edad | Rango etario del entrevistado. |
+| Distrito o zona | Lugar de residencia o referencia geográfica. |
+| Ocupación | Rol y especialidad dentro del servicio. |
+| Experiencia laboral | Años de ejercicio profesional en el sector salud. |
+| Área de trabajo | UCI cardiovascular, hospitalización, emergencia, telemetría u otra. |
+| Tipo de establecimiento | Hospital público, clínica privada, instituto especializado. |
+| Modalidad de turno | Diurno, nocturno, rotativo, guardias. |
+| Nivel tecnológico | Básico, intermedio o avanzado. |
+| Dispositivos utilizados | Computadora fija, laptop, tablet, teléfono. |
+| Objetivos | Qué busca lograr durante su turno. |
+| Frustraciones | Qué le hace perder tiempo o le genera riesgo. |
+| Canales digitales | Sistemas institucionales, hojas de cálculo, mensajería, aplicaciones. |
+
+###### Preguntas principales
+
+1. ¿Podría describirme cómo transcurre un turno suyo desde que llega hasta que se retira?
+2. ¿En qué momento del turno registra la información clínica del paciente y en qué soporte lo hace?
+3. ¿Qué sistema o herramienta usa su institución para el registro clínico y qué opinión tiene de él?
+4. ¿Utiliza además algún registro en papel o personal? ¿Por qué motivo?
+5. ¿Cómo se realiza el cambio de turno en su servicio y qué información se transmite?
+6. ¿Ha ocurrido que un dato importante no llegue al turno siguiente? ¿Podría contarme qué pasó?
+7. ¿Cuánto tiempo de su turno calcula que dedica a documentar?
+8. ¿Qué parte del registro clínico le resulta más lenta o más engorrosa?
+9. Si necesita saber qué pasó con un paciente en las últimas horas, ¿dónde lo consulta y cuánto le toma?
+10. ¿Qué debería tener una herramienta digital para que usted la usara durante el turno y no después?
+
+###### Preguntas complementarias
+
+1. ¿Qué situaciones del turno le generan mayor estrés o mayor riesgo de error?
+2. ¿Utiliza el teléfono o alguna tablet durante su jornada? ¿Para qué?
+3. ¿Qué tan cómodo se siente aprendiendo a usar sistemas nuevos?
+4. ¿Prefiere registrar desde una computadora fija o desde un dispositivo que pueda llevar consigo?
+5. ¿Qué información considera imprescindible comunicar en un relevo, aunque falte tiempo?
+6. ¿Le ha ocurrido que le pregunten quién registró o quién administró algo y no haya forma de saberlo?
+7. ¿Considera que la digitalización del registro mejora o entorpece la atención al paciente?
+
+##### Segmento objetivo 2: Médicos especialistas cardiovasculares
+
+###### Descripción del segmento
+
+Este segmento agrupa a cardiólogos, médicos intensivistas y cirujanos cardiovasculares responsables del diagnóstico, la prescripción y el seguimiento de pacientes de alto riesgo. A diferencia del segmento anterior, su relación con la información clínica es predominantemente de consulta, validación e interpretación, más que de registro.
+
+Su necesidad central es acceder con rapidez a una visión consolidada y confiable de la evolución reciente del paciente, con certeza sobre el origen, el momento y el responsable de cada dato. Cualquier herramienta dirigida a este perfil es rechazada si incrementa su carga administrativa.
+
+###### Información principal a recolectar
+
+- Forma actual de acceder a la información clínica del paciente.
+- Fuentes que debe consultar para formarse una idea completa del caso.
+- Tiempo y esfuerzo que demanda consolidar esa información.
+- Dificultades relacionadas con información incompleta, tardía o dispersa.
+- Situaciones en que la falta de información retrasó o condicionó una decisión.
+- Mecánica de comunicación con el personal de enfermería.
+- Importancia atribuida a la trazabilidad de responsables y horarios.
+- Limitaciones percibidas en los sistemas hospitalarios actuales.
+- Expectativas respecto de una herramienta digital especializada.
+
+###### Información complementaria para construir arquetipos
+
+| Característica | Información a recolectar |
+|---|---|
+| Rango de edad | Rango etario del entrevistado. |
+| Distrito o zona | Lugar de residencia o referencia geográfica. |
+| Ocupación | Especialidad médica y subespecialidad. |
+| Experiencia laboral | Años de ejercicio profesional. |
+| Área de trabajo | UCI cardiovascular, cirugía, hospitalización, emergencia, consulta externa. |
+| Tipo de establecimiento | Hospital público, clínica privada, instituto especializado. |
+| Nivel tecnológico | Básico, intermedio o avanzado. |
+| Dispositivos utilizados | Computadora institucional, laptop, tablet, teléfono. |
+| Objetivos | Qué necesita resolver al evaluar a un paciente. |
+| Frustraciones | Qué le impide decidir con rapidez y seguridad. |
+| Canales digitales | Sistemas hospitalarios, monitores, reportes impresos, mensajería. |
+
+###### Preguntas principales
+
+1. Cuando evalúa a un paciente cardiovascular, ¿qué información necesita revisar antes de decidir?
+2. ¿De dónde obtiene esa información hoy y cuántas fuentes distintas debe consultar?
+3. ¿Cuánto tiempo le toma formarse una idea completa del estado actual de un paciente?
+4. ¿Ha tenido que tomar una decisión con información incompleta? ¿Podría describir la situación?
+5. ¿Cómo se entera de que ocurrió un evento clínico relevante durante un turno en el que usted no estuvo?
+6. ¿Cómo es la comunicación con el personal de enfermería respecto de indicaciones y su cumplimiento?
+7. ¿Le resulta posible saber quién registró un dato, en qué momento y si una indicación fue ejecutada?
+8. ¿Qué limitaciones concretas identifica en el sistema que usa su institución?
+9. ¿Qué información querría ver reunida en una sola pantalla al abrir el caso de un paciente?
+10. ¿Bajo qué condiciones incorporaría una herramienta adicional a su práctica diaria?
+
+###### Preguntas complementarias
+
+1. ¿Con qué frecuencia consulta información clínica fuera del establecimiento o desde un dispositivo móvil?
+2. ¿Qué tipo de reporte o resumen consulta con mayor frecuencia?
+3. ¿Qué tan crítica es la velocidad de acceso a la información en una urgencia cardiovascular?
+4. ¿Qué situaciones considera de mayor riesgo por ausencia o retraso de información?
+5. ¿Qué opinión le merecen las alertas automáticas en sistemas clínicos?
+6. ¿Qué condiciones debería cumplir una herramienta digital para que el equipo la acepte?
+
+##### Buenas prácticas aplicadas en el diseño
+
+- Se formularon preguntas abiertas orientadas a la descripción de situaciones concretas y no a respuestas cerradas.
+- Se evitó mencionar ClinicalSync en las primeras preguntas para no inducir respuestas favorables.
+- Se priorizó el relato de experiencias vividas por encima de opiniones generales sobre tecnología.
+- Se separaron preguntas principales y complementarias para conducir la conversación sin rigidez.
+- Se recolectó información objetiva y subjetiva, necesaria para la construcción de arquetipos.
+- Se solicitó consentimiento para grabar y se explicó el uso académico de la información.
+- Se mantuvo la trazabilidad entre cada hallazgo y su origen, de modo que los artefactos posteriores puedan sustentarse en evidencia.
+
 #### 2.2.2. Registro de entrevistas
+
+Las entrevistas fueron grabadas en video previo consentimiento de los participantes y se organizaron por segmento objetivo. Cada registro incluye los datos generales del entrevistado, la captura del video, el enlace de acceso, el timing dentro de la grabación consolidada, la duración y un resumen descriptivo de las respuestas obtenidas.
+
+> Nota para el equipo: las celdas marcadas entre corchetes deben completarse con los datos reales de cada entrevista. Las capturas se colocan en assets/chapter-2/ respetando los nombres de archivo indicados en cada etiqueta de imagen.
+
+##### Segmento objetivo 1: Personal de enfermería cardiovascular
+
+###### Entrevista 1
+
+<table border="1">
+  <tr>
+    <td width="40%">
+      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
+      <b>Edad:</b> [Edad] años<br>
+      <b>Distrito:</b> [Distrito]<br>
+      <b>Ocupación:</b> [Rol y especialidad]<br>
+      <b>Área de trabajo:</b> [Área]<br>
+      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
+      <b>Duración:</b> [mm:ss]<br>
+      <b>Entrevistador:</b> [Integrante del equipo]
+    </td>
+    <td align="center">
+      <img src="assets/chapter-2/entrevista-enfermeria-1.png" alt="Entrevista 1 - Enfermería cardiovascular" width="85%">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <br><br>
+      <b>Resumen:</b> [Descripción de cómo el entrevistado realiza hoy el registro clínico durante el turno, qué herramientas utiliza y qué dificultades encuentra.]
+      <br><br>
+      [Descripción de la mecánica del cambio de turno en su servicio, situaciones de pérdida u omisión de información y motivos por los que recurre a registros complementarios.]
+      <br><br>
+      [Condiciones bajo las que adoptaría una herramienta digital y funcionalidades que considera indispensables.]
+    </td>
+  </tr>
+</table>
+
+###### Entrevista 2
+
+<table border="1">
+  <tr>
+    <td width="40%">
+      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
+      <b>Edad:</b> [Edad] años<br>
+      <b>Distrito:</b> [Distrito]<br>
+      <b>Ocupación:</b> [Rol y especialidad]<br>
+      <b>Área de trabajo:</b> [Área]<br>
+      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
+      <b>Duración:</b> [mm:ss]<br>
+      <b>Entrevistador:</b> [Integrante del equipo]
+    </td>
+    <td align="center">
+      <img src="assets/chapter-2/entrevista-enfermeria-2.png" alt="Entrevista 2 - Enfermería cardiovascular" width="85%">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <br><br>
+      <b>Resumen:</b> [Descripción de cómo el entrevistado realiza hoy el registro clínico durante el turno, qué herramientas utiliza y qué dificultades encuentra.]
+      <br><br>
+      [Descripción de la mecánica del cambio de turno en su servicio, situaciones de pérdida u omisión de información y motivos por los que recurre a registros complementarios.]
+      <br><br>
+      [Condiciones bajo las que adoptaría una herramienta digital y funcionalidades que considera indispensables.]
+    </td>
+  </tr>
+</table>
+
+###### Entrevista 3
+
+<table border="1">
+  <tr>
+    <td width="40%">
+      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
+      <b>Edad:</b> [Edad] años<br>
+      <b>Distrito:</b> [Distrito]<br>
+      <b>Ocupación:</b> [Rol y especialidad]<br>
+      <b>Área de trabajo:</b> [Área]<br>
+      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
+      <b>Duración:</b> [mm:ss]<br>
+      <b>Entrevistador:</b> [Integrante del equipo]
+    </td>
+    <td align="center">
+      <img src="assets/chapter-2/entrevista-enfermeria-3.png" alt="Entrevista 3 - Enfermería cardiovascular" width="85%">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <br><br>
+      <b>Resumen:</b> [Descripción de cómo el entrevistado realiza hoy el registro clínico durante el turno, qué herramientas utiliza y qué dificultades encuentra.]
+      <br><br>
+      [Descripción de la mecánica del cambio de turno en su servicio, situaciones de pérdida u omisión de información y motivos por los que recurre a registros complementarios.]
+      <br><br>
+      [Condiciones bajo las que adoptaría una herramienta digital y funcionalidades que considera indispensables.]
+    </td>
+  </tr>
+</table>
+
+##### Segmento objetivo 2: Médicos especialistas cardiovasculares
+
+###### Entrevista 1
+
+<table border="1">
+  <tr>
+    <td width="40%">
+      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
+      <b>Edad:</b> [Edad] años<br>
+      <b>Distrito:</b> [Distrito]<br>
+      <b>Ocupación:</b> [Especialidad médica]<br>
+      <b>Área de trabajo:</b> [Área]<br>
+      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
+      <b>Duración:</b> [mm:ss]<br>
+      <b>Entrevistador:</b> [Integrante del equipo]
+    </td>
+    <td align="center">
+      <img src="assets/chapter-2/entrevista-medico-1.png" alt="Entrevista 1 - Médico especialista cardiovascular" width="85%">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <br><br>
+      <b>Resumen:</b> [Descripción de cómo accede hoy a la información clínica, cuántas fuentes debe consultar y cuánto tiempo le demanda.]
+      <br><br>
+      [Situaciones en que la información incompleta o tardía condicionó una decisión, y cómo se comunica con el personal de enfermería.]
+      <br><br>
+      [Expectativas sobre trazabilidad, visualización consolidada y condiciones para incorporar una herramienta adicional.]
+    </td>
+  </tr>
+</table>
+
+###### Entrevista 2
+
+<table border="1">
+  <tr>
+    <td width="40%">
+      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
+      <b>Edad:</b> [Edad] años<br>
+      <b>Distrito:</b> [Distrito]<br>
+      <b>Ocupación:</b> [Especialidad médica]<br>
+      <b>Área de trabajo:</b> [Área]<br>
+      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
+      <b>Duración:</b> [mm:ss]<br>
+      <b>Entrevistador:</b> [Integrante del equipo]
+    </td>
+    <td align="center">
+      <img src="assets/chapter-2/entrevista-medico-2.png" alt="Entrevista 2 - Médico especialista cardiovascular" width="85%">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <br><br>
+      <b>Resumen:</b> [Descripción de cómo accede hoy a la información clínica, cuántas fuentes debe consultar y cuánto tiempo le demanda.]
+      <br><br>
+      [Situaciones en que la información incompleta o tardía condicionó una decisión, y cómo se comunica con el personal de enfermería.]
+      <br><br>
+      [Expectativas sobre trazabilidad, visualización consolidada y condiciones para incorporar una herramienta adicional.]
+    </td>
+  </tr>
+</table>
+
+###### Entrevista 3
+
+<table border="1">
+  <tr>
+    <td width="40%">
+      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
+      <b>Edad:</b> [Edad] años<br>
+      <b>Distrito:</b> [Distrito]<br>
+      <b>Ocupación:</b> [Especialidad médica]<br>
+      <b>Área de trabajo:</b> [Área]<br>
+      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
+      <b>Duración:</b> [mm:ss]<br>
+      <b>Entrevistador:</b> [Integrante del equipo]
+    </td>
+    <td align="center">
+      <img src="assets/chapter-2/entrevista-medico-3.png" alt="Entrevista 3 - Médico especialista cardiovascular" width="85%">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <br><br>
+      <b>Resumen:</b> [Descripción de cómo accede hoy a la información clínica, cuántas fuentes debe consultar y cuánto tiempo le demanda.]
+      <br><br>
+      [Situaciones en que la información incompleta o tardía condicionó una decisión, y cómo se comunica con el personal de enfermería.]
+      <br><br>
+      [Expectativas sobre trazabilidad, visualización consolidada y condiciones para incorporar una herramienta adicional.]
+    </td>
+  </tr>
+</table>
+
 #### 2.2.3. Análisis de entrevistas
+
+El análisis de entrevistas organiza los hallazgos en tres niveles. En primer lugar, las características objetivas, que corresponden a hechos verificables sobre el contexto de trabajo del entrevistado. En segundo lugar, las características subjetivas, que recogen percepciones, prioridades y frustraciones. Finalmente, la interpretación del segmento, que sintetiza los patrones recurrentes y su implicancia para el diseño de ClinicalSync.
+
+Los porcentajes se calculan sobre el total de entrevistas efectivamente registradas en la sección anterior. Se reporta la evidencia tal como fue expresada por los participantes, sin extrapolar hallazgos a partir de un único testimonio.
+
+> Nota para el equipo: las columnas de evidencia y porcentaje deben completarse una vez transcritas las seis entrevistas. El criterio es contar en cuántas entrevistas del segmento aparece explícitamente la característica.
+
+##### Resumen de entrevistas analizadas
+
+| Segmento | Entrevistados | Cantidad |
+|---|---|---|
+| Personal de enfermería cardiovascular | [Nombres de los tres entrevistados] | 3 |
+| Médicos especialistas cardiovasculares | [Nombres de los tres entrevistados] | 3 |
+| **Total** | — | **6** |
+
+##### Segmento objetivo 1: Personal de enfermería cardiovascular
+
+###### Análisis de características objetivas
+
+| Característica objetiva | Evidencia identificada | Porcentaje |
+|---|---|---|
+| Ejerce en unidad cardiovascular, UCI, hospitalización cardiológica o emergencia | [Presente en N de 3 entrevistas] | [%] |
+| Trabaja bajo modalidad de turnos rotativos o guardias | [Presente en N de 3 entrevistas] | [%] |
+| Utiliza un sistema digital institucional para el registro clínico | [Presente en N de 3 entrevistas] | [%] |
+| Recurre además a registros físicos o anotaciones personales | [Presente en N de 3 entrevistas] | [%] |
+| Participa directamente en el proceso de cambio de turno | [Presente en N de 3 entrevistas] | [%] |
+| Registra signos vitales de forma periódica durante el turno | [Presente en N de 3 entrevistas] | [%] |
+| Administra medicamentos y deja constancia de la administración | [Presente en N de 3 entrevistas] | [%] |
+| Utiliza dispositivos móviles o tablets durante la jornada | [Presente en N de 3 entrevistas] | [%] |
+| Ha experimentado pérdida u omisión de información en un relevo | [Presente en N de 3 entrevistas] | [%] |
+
+###### Análisis de características subjetivas
+
+| Característica subjetiva | Evidencia identificada | Porcentaje |
+|---|---|---|
+| Considera lentos o poco prácticos los sistemas actuales | [Presente en N de 3 entrevistas] | [%] |
+| Prioriza la rapidez del registro por encima de la cantidad de funciones | [Presente en N de 3 entrevistas] | [%] |
+| Manifiesta preocupación por omitir información en el cambio de turno | [Presente en N de 3 entrevistas] | [%] |
+| Percibe la documentación como una carga que compite con la atención directa | [Presente en N de 3 entrevistas] | [%] |
+| Valora positivamente un formato estructurado para el relevo | [Presente en N de 3 entrevistas] | [%] |
+| Considera útil registrar desde un dispositivo portátil y no solo desde una computadora fija | [Presente en N de 3 entrevistas] | [%] |
+| Muestra apertura a una herramienta nueva si reduce trabajo en lugar de sumarlo | [Presente en N de 3 entrevistas] | [%] |
+
+###### Interpretación del segmento
+
+[Redactar a partir de la evidencia recolectada. Se espera desarrollar: cómo se organiza realmente el registro durante el turno; qué papel cumple el registro físico complementario y por qué persiste; en qué momentos del turno se concentra la fricción; qué tan estructurado es hoy el cambio de guardia; y qué condiciones mínimas debería cumplir ClinicalSync para que el personal lo use durante el turno y no al final de él.]
+
+##### Segmento objetivo 2: Médicos especialistas cardiovasculares
+
+###### Análisis de características objetivas
+
+| Característica objetiva | Evidencia identificada | Porcentaje |
+|---|---|---|
+| Ejerce una especialidad cardiovascular o de cuidados intensivos | [Presente en N de 3 entrevistas] | [%] |
+| Consulta información clínica generada por el personal de enfermería | [Presente en N de 3 entrevistas] | [%] |
+| Debe recurrir a más de una fuente para reconstruir el estado del paciente | [Presente en N de 3 entrevistas] | [%] |
+| Utiliza el sistema hospitalario institucional para la consulta clínica | [Presente en N de 3 entrevistas] | [%] |
+| Consulta monitores biomédicos o reportes impresos como fuente complementaria | [Presente en N de 3 entrevistas] | [%] |
+| Emite indicaciones médicas que ejecuta el personal de enfermería | [Presente en N de 3 entrevistas] | [%] |
+| Ha enfrentado dificultades para identificar responsables u horarios de un registro | [Presente en N de 3 entrevistas] | [%] |
+| Requiere acceder a información clínica en situaciones de urgencia | [Presente en N de 3 entrevistas] | [%] |
+
+###### Análisis de características subjetivas
+
+| Característica subjetiva | Evidencia identificada | Porcentaje |
+|---|---|---|
+| Identifica la fragmentación de la información como principal obstáculo | [Presente en N de 3 entrevistas] | [%] |
+| Considera crítica la velocidad de acceso a la información | [Presente en N de 3 entrevistas] | [%] |
+| Atribuye alta importancia a la trazabilidad de acciones y responsables | [Presente en N de 3 entrevistas] | [%] |
+| Rechaza herramientas que incrementen su carga administrativa | [Presente en N de 3 entrevistas] | [%] |
+| Valora una vista consolidada de la evolución reciente del paciente | [Presente en N de 3 entrevistas] | [%] |
+| Considera necesaria una comunicación más estructurada con enfermería | [Presente en N de 3 entrevistas] | [%] |
+| Manifiesta interés en alertas sobre cambios críticos del paciente | [Presente en N de 3 entrevistas] | [%] |
+
+###### Interpretación del segmento
+
+[Redactar a partir de la evidencia recolectada. Se espera desarrollar: cuántas fuentes debe consolidar el especialista y cuánto tiempo le demanda; qué consecuencias concretas tuvo en su práctica la información incompleta o tardía; qué peso real le asigna a la trazabilidad frente a otras necesidades; y qué debería mostrarse en una vista consolidada para que resulte útil en el momento de decidir.]
+
+##### Comparación entre segmentos
+
+| Hallazgo | Personal de enfermería cardiovascular | Médicos especialistas cardiovasculares | Implicancia para ClinicalSync |
+|---|---|---|---|
+| Relación con la información clínica | Predominantemente de producción: registra durante la atención. | Predominantemente de consumo: consulta, valida e interpreta. | El producto necesita flujos diferenciados por rol, con una vista de captura rápida y una vista de lectura consolidada. |
+| Momento de mayor fricción | El registro durante la atención y la entrega del turno. | La reconstrucción del estado del paciente antes de decidir. | Las decisiones de diseño deben optimizar la captura para un perfil y la síntesis para el otro. |
+| Efecto de la información dispersa | Genera duplicidad de trabajo y uso de registros físicos. | Genera demora en la decisión y riesgo de decidir con datos incompletos. | Centralizar la información relevante del paciente cardiovascular es un requisito compartido. |
+| Necesidad de trazabilidad | Identificar responsables y eventos ocurridos en el turno. | Validar el origen, el momento y el cumplimiento de una indicación. | Registrar responsable, fecha, hora y tipo de acción en cada operación relevante. |
+| Percepción de los sistemas actuales | Lentos frente al ritmo del turno. | Dispersos y con exceso de pasos para una consulta puntual. | La simplicidad y el número de pasos son criterios de aceptación, no aspectos secundarios. |
+| Disposición a adoptar la herramienta | Condicionada a que reduzca trabajo, no que lo agregue. | Condicionada a que no incremente la carga administrativa. | El MVP debe demostrar ahorro de tiempo antes de incorporar funcionalidades adicionales. |
+
+##### Conclusiones generales del análisis
+
+[Redactar una vez completadas las seis entrevistas. Las conclusiones deben señalar los patrones comunes a ambos segmentos, las diferencias relevantes entre ellos, qué supuestos del Lean UX Canvas del Capítulo I quedaron confirmados y cuáles fueron matizados o refutados por la evidencia, y qué prioridades funcionales se derivan para el producto.]
+
+Los hallazgos de esta sección constituyen la base directa de los artefactos de Needfinding que se desarrollan a continuación, y deben mantenerse trazables hacia las User Stories del Capítulo III.
+
 ### 2.3. Needfinding
 #### 2.3.1. User Personas
 #### 2.3.2. User Task Matrix
