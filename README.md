@@ -986,6 +986,99 @@ Los mapas revelan que la resistencia a adoptar nuevas herramientas no proviene d
 La consecuencia para ClinicalSync es directa. El producto no compite por funcionalidad sino por confianza operativa, y esa confianza se gana en dos frentes concretos: que registrar sea efectivamente más rápido que la alternativa manual, y que lo registrado sea verificable sin necesidad de confirmación verbal. Ambos criterios deben incorporarse como condiciones de aceptación en la especificación de requisitos del Capítulo III.
 
 ### 2.4. Big Picture Event Storming
+
+El Big Picture Event Storming permite modelar el dominio clínico cardiovascular en su conjunto, antes de tomar cualquier decisión sobre pantallas, módulos o arquitectura. Su valor está en obligar al equipo a describir el proceso tal como ocurre en la realidad, con sus actores, sus sistemas externos y sus puntos de quiebre, y no tal como resultaría conveniente para el software que se pretende construir.
+
+La sesión se desarrolló siguiendo las cuatro etapas del método: recolección de eventos de dominio, ordenamiento cronológico, incorporación de actores y sistemas externos, e identificación de problemas y oportunidades. El resultado alimenta directamente el Ubiquitous Language de la sección 2.5, la definición de bounded contexts del Capítulo IV y la elaboración de User Stories del Capítulo III. Los tableros fueron elaborados en Miro.
+
+| Elemento | Color utilizado | Ejemplo en este dominio |
+|---|---|---|
+| Evento de dominio | Naranja | Signos vitales registrados |
+| Actor | Amarillo | Enfermera de unidad cardiovascular |
+| Sistema externo | Rosado | Sistema de información hospitalaria |
+| Problema o punto de dolor | Rojo | Registro duplicado entre papel y sistema |
+| Oportunidad | Verde | Estandarizar el relevo mediante SBAR |
+
+#### Step 1: Collect Domain Events
+
+En la primera etapa se recolectaron, sin orden previo, los hechos relevantes que ocurren en el flujo clínico cardiovascular. Los eventos se redactaron en pasado, ya que representan sucesos consumados y no acciones pendientes ni funcionalidades del sistema.
+
+La recolección abarcó el ciclo completo de un turno asistencial: la recepción del relevo, la revisión de pacientes asignados, la vigilancia de parámetros fisiológicos, la administración de medicamentos, la aparición de eventos clínicos, la emisión y ejecución de indicaciones médicas, la evaluación del especialista y la entrega de información al turno entrante.
+
+Entre los eventos identificados se encuentran los siguientes: turno recibido, pacientes asignados revisados, signos vitales registrados, deterioro clínico detectado, alerta generada, medicamento administrado, evento clínico reportado, indicación médica emitida, indicación ejecutada, cumplimiento confirmado, evolución clínica consultada, decisión clínica tomada, información pendiente regularizada, traspaso SBAR elaborado y turno entregado.
+
+<p align="center">
+  <img src="assets/chapter-2/event-storming-step-1.png" alt="Step 1 - Collect Domain Events" width="95%">
+</p>
+
+#### Step 2: Sort Domain Events
+
+En la segunda etapa los eventos se ordenaron cronológicamente, lo que permitió reconstruir la secuencia real del proceso y detectar los puntos donde el flujo se interrumpe o se bifurca.
+
+La secuencia principal inicia con la recepción del turno y la revisión de los pacientes asignados, continúa con el ciclo de vigilancia y registro que se repite a lo largo de la jornada, incorpora las ramas que se activan ante un evento clínico o una nueva indicación médica, y culmina con la regularización de la documentación pendiente y la entrega del relevo al equipo entrante.
+
+El ordenamiento hizo visible que el proceso no es lineal sino cíclico, con un bucle de vigilancia y registro que se ejecuta muchas veces por turno, y con dos ramas de excepción que compiten por el mismo tiempo del profesional: la atención de un evento imprevisto y la ejecución de una indicación recién emitida. Esa competencia por el tiempo es el origen de buena parte de los problemas identificados en la etapa siguiente.
+
+<p align="center">
+  <img src="assets/chapter-2/event-storming-step-2.png" alt="Step 2 - Sort Domain Events" width="95%">
+</p>
+
+#### Step 3: Add Actors and External Systems
+
+En la tercera etapa se incorporaron los actores que ejecutan o consumen cada evento, y los sistemas externos con los que el dominio interactúa. Este paso permite identificar quién es responsable de cada acción y dónde reside actualmente la información que el flujo necesita.
+
+| Elemento | Tipo | Responsabilidad en el dominio |
+|---|---|---|
+| **Enfermera de unidad cardiovascular** | Actor | Recibe y entrega el turno, vigila al paciente, registra signos vitales, administra medicamentos, reporta eventos clínicos y ejecuta indicaciones. |
+| **Médico especialista cardiovascular** | Actor | Consulta la evolución del paciente, valida información registrada, emite y ajusta indicaciones médicas y toma decisiones clínicas. |
+| **Coordinador o jefe de servicio** | Actor | Supervisa la continuidad asistencial, revisa la trazabilidad de eventos relevantes y responde por la calidad del proceso. |
+| **Personal administrativo o de auditoría clínica** | Actor | Revisa registros con fines de control de calidad, auditoría y cumplimiento normativo. |
+| **Sistema de información hospitalaria (HIS/EHR)** | Sistema externo | Almacena la información clínica oficial del paciente; no está optimizado para el ritmo operativo del turno cardiovascular. |
+| **Monitor biomédico de cabecera** | Sistema externo | Mide y despliega parámetros fisiológicos del paciente y emite alarmas ante valores fuera de rango. |
+| **Registros físicos y hojas de cálculo** | Sistema externo | Funcionan como soporte paralelo cuando el sistema digital no responde al ritmo del trabajo clínico. |
+| **Canales de mensajería informal** | Sistema externo | Se utilizan para coordinar entre profesionales, sin dejar registro clínico formal ni trazabilidad. |
+
+<p align="center">
+  <img src="assets/chapter-2/event-storming-step-3.png" alt="Step 3 - Add Actors and External Systems" width="95%">
+</p>
+
+#### Step 4: Add Problems and Opportunities
+
+En la cuarta etapa se marcaron sobre el flujo los puntos de dolor observados y las oportunidades de mejora asociadas. Situar los problemas sobre el evento donde efectivamente ocurren, y no en una lista aparte, permite verificar que cada oportunidad responde a una fricción real y localizada del proceso.
+
+**Problemas identificados:**
+
+- La información clínica se encuentra repartida entre el sistema institucional, los monitores, las anotaciones en papel y la comunicación verbal.
+- El registro formal se posterga durante la atención y se regulariza al cierre del turno, cuando el detalle ya se ha perdido parcialmente.
+- La misma información se consigna dos veces, primero en el soporte personal y luego en el sistema.
+- El relevo depende de la memoria y del criterio de quien entrega el turno, sin un formato que garantice la cobertura mínima.
+- No es posible determinar con certeza quién registró un dato, en qué momento ni bajo qué indicación.
+- El especialista debe consultar varias fuentes para reconstruir el estado actual del paciente.
+- No existe confirmación explícita del cumplimiento de una indicación médica.
+- Las alertas del monitor no dejan registro asociado al evento clínico ni a la acción tomada.
+- Los sistemas generales exigen demasiados pasos para tareas breves y frecuentes.
+
+**Oportunidades identificadas:**
+
+- Estandarizar el traspaso de turno mediante un formulario SBAR que garantice la cobertura mínima de información.
+- Permitir el registro de signos vitales y eventos en el momento de la atención, con pocos pasos.
+- Generar el resumen de relevo a partir de lo ya registrado durante el turno, evitando la redacción duplicada.
+- Consignar automáticamente responsable, fecha y hora en cada operación relevante.
+- Ofrecer una vista consolidada de la evolución reciente que evite consultar varias fuentes.
+- Cerrar el ciclo entre indicación emitida, ejecución y confirmación de cumplimiento.
+- Señalar de forma visible los cambios críticos y las tareas pendientes del turno.
+- Diseñar los flujos frecuentes bajo un objetivo explícito de número de pasos.
+
+<p align="center">
+  <img src="assets/chapter-2/event-storming-step-4.png" alt="Step 4 - Add Problems and Opportunities" width="95%">
+</p>
+
+#### Conclusión del Big Picture Event Storming
+
+El modelado del dominio confirma que el proceso clínico cardiovascular no falla por ausencia de información, sino por su dispersión y por la falta de un momento estructurado en el que esa información se consolide. Los problemas se concentran en tres puntos del flujo: la captura durante la atención, el traspaso entre turnos y el cierre del ciclo de indicación y cumplimiento.
+
+Estos tres puntos delimitan el alcance funcional de ClinicalSync y anticipan los contextos delimitados que se formalizarán en el Capítulo IV: la gestión del paciente y su información clínica, el registro de signos vitales y eventos, el traspaso estructurado de turno, la gestión de indicaciones médicas y la trazabilidad transversal de todas las operaciones.
+
 ### 2.5. Ubiquitous Language
 
 ---
