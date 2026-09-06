@@ -465,14 +465,14 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
 <table border="1">
   <tr>
     <td width="40%">
-      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
-      <b>Edad:</b> [Edad] años<br>
-      <b>Distrito:</b> [Distrito]<br>
-      <b>Ocupación:</b> [Rol y especialidad]<br>
-      <b>Área de trabajo:</b> [Área]<br>
-      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
-      <b>Duración:</b> [mm:ss]<br>
-      <b>Entrevistador:</b> [Integrante del equipo]
+      <b>Nombres y apellidos:</b> Nathalia Dávila<br>
+      <b>Edad:</b> 25 años<br>
+      <b>Distrito:</b> San Miguel, Lima <br>
+      <b>Ocupación:</b> Interna de enfermería <br>
+      <b>Área de trabajo:</b> UCI Cardiovascular<br>
+      <b>Timing:</b> 00:00 - 11:51<br>
+      <b>Duración:</b> 11:51<br>
+      <b>Entrevistador:</b> Angel Andres Valdez Melo
     </td>
     <td align="center">
       <img src="assets/chapter-2/entrevista-enfermeria-3.png" alt="Entrevista 3 - Enfermería cardiovascular" width="85%">
@@ -480,13 +480,13 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
   <tr>
     <td colspan="2">
-      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20261d993_upc_edu_pe/IQBNmG-SCCk7R66msW6rNFoQAYij_ld9x94YIjyedfDnM0g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HyATGR">[URL del video en Microsoft Stream]</a>
       <br><br>
-      <b>Resumen:</b> [Descripción de cómo el entrevistado realiza hoy el registro clínico durante el turno, qué herramientas utiliza y qué dificultades encuentra.]
+      <b>Resumen:</b> Actualmente, el personal de enfermería realiza el registro clínico iniciando con la toma de notas en libretas o fichas físicas de manera manual, para posteriormente transcribir todos esos datos al sistema informático genérico del hospital. Este uso obligado de registros manuales redundantes y sistemas no especializados genera una alta carga operativa para los profesionales de la salud. Las principales dificultades de este flujo radican en la duplicidad del trabajo, lo cual resulta confuso, prolonga el tiempo necesario para completar una historia clínica y mantiene la información vital del paciente dispersa en diferentes medios
       <br><br>
-      [Descripción de la mecánica del cambio de turno en su servicio, situaciones de pérdida u omisión de información y motivos por los que recurre a registros complementarios.]
+      La mecánica del cambio de turno se basa en la lectura de carpetas físicas y una comunicación verbal que a menudo carece de estructura, lo que genera una frecuente pérdida parcial de información. Esta falta de estandarización ha provocado situaciones de riesgo, como la omisión de comunicar al siguiente turno que una paciente cardíaca interrumpió voluntariamente su tratamiento. Para mitigar estos errores de memoria y compensar las deficiencias de los sistemas actuales, el personal recurre constantemente al uso de apuntes físicos complementarios (cuadernos de bolsillo) donde anotan detalles rápidos o eventos referidos por el paciente durante el monitoreo continuo
       <br><br>
-      [Condiciones bajo las que adoptaría una herramienta digital y funcionalidades que considera indispensables.]
+      Para que el personal clínico adopte una herramienta digital, esta debe ser didáctica, de fácil acceso para usuarios de distintas edades, extremadamente rápida y diseñada para dispositivos móviles (tablets) que puedan llevarse directamente a la cama del paciente. Las funcionalidades indispensables incluyen un flujo especializado que facilite el registro inmediato de signos vitales, estandarice la comunicación de los traspasos de turno mediante formatos claros (como el modelo SBAR) para informar sobre medicación pendiente y crisis recientes, y garantice una trazabilidad absoluta que permita identificar de inmediato quién y cuándo registró cada acción médica
     </td>
   </tr>
 </table>
