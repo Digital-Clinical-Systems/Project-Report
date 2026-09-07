@@ -294,7 +294,7 @@ Visión: Consolidarnos como una plataforma de referencia en el ámbito de la sal
 ### 1.2. Solution Profile
 
 #### 1.2.1 Antecedentes y problemática
-Digital Clinical System es una plataforma web diseñada para optimizar el manejo de datos clínicos en las áreas de cardiología. Este proyecto nace como respuesta a un obstáculo recurrente en los centros de salud: la fragmentación de los datos del paciente, los cuales suelen estar divididos entre anotaciones en papel, documentos de Excel, softwares hospitalarios genéricos y reportes verbales entre el personal.
+ClinicalSync es una plataforma web diseñada para optimizar el manejo de datos clínicos en las áreas de cardiología. Este proyecto nace como respuesta a un obstáculo recurrente en los centros de salud: la fragmentación de los datos del paciente, los cuales suelen estar divididos entre anotaciones en papel, documentos de Excel, softwares hospitalarios genéricos y reportes verbales entre el personal.
 
 En las unidades cardiovasculares, la velocidad y precisión con la que médicos y enfermeros acceden, registran y comparten los datos es vital. Elementos como el control de signos vitales, la administración de terapias, la evolución médica y las transiciones de turno necesitan un registro transparente y auditable. La desorganización de este flujo de información propicia errores por omisión, duplicación del trabajo y barreras para tener un historial claro de la atención brindada al paciente.
 
@@ -318,7 +318,7 @@ Hoy en día, los datos críticos de los pacientes se encuentran esparcidos en m�
 - Aumento de la fatiga laboral y la carga administrativa para los trabajadores de la salud.
 - Obstáculos para visualizar de manera clara y cronológica la recuperación o deterioro del paciente.
 
-Para hacer frente a este panorama, Digital Clinical System se presenta como una plataforma web que unifica toda la información clínica esencial. Nuestro sistema permite estandarizar las transferencias de turno mediante el protocolo SBAR, agiliza la captura de constantes vitales y eventualidades médicas, y garantiza una trazabilidad absoluta de las intervenciones, los responsables y los horarios exactos en los que se actuó.
+Para hacer frente a este panorama, ClinicalSync se presenta como una plataforma web que unifica toda la información clínica esencial. Nuestro sistema permite estandarizar las transferencias de turno mediante el protocolo SBAR, agiliza la captura de constantes vitales y eventualidades médicas, y garantiza una trazabilidad absoluta de las intervenciones, los responsables y los horarios exactos en los que se actuó.
 
 ##### C. Cuándo ocurre el problema (When)
 
@@ -334,7 +334,7 @@ Estos escenarios críticos incluyen:
 - Emergencias que demandan acceso instantáneo a un historial clínico totalmente actualizado.
 - La evaluación retrospectiva de casos para fines de auditoría o control de calidad asistencial.
 
-Durante estos instantes decisivos, cualquier retraso en el acceso a la información o la pérdida de un dato clave puede comprometer gravemente la seguridad y la continuidad del tratamiento. Es precisamente en estas ventanas de tiempo donde la agilidad y centralización que ofrece Digital Clinical System resultan indispensables para evitar negligencias.
+Durante estos instantes decisivos, cualquier retraso en el acceso a la información o la pérdida de un dato clave puede comprometer gravemente la seguridad y la continuidad del tratamiento. Es precisamente en estas ventanas de tiempo donde la agilidad y centralización que ofrece ClinicalSync resultan indispensables para evitar negligencias.
 
 ##### D. Dónde ocurre el problema (Where)
 
@@ -354,7 +354,7 @@ Este desorden informativo trae consigo diversas consecuencias negativas:
 - Falta de garantías y altos niveles de duda para los cardiólogos al momento de prescribir tratamientos.
 - Carencia de herramientas para realizar auditorías efectivas y auditar el historial de intervenciones médicas.
 
-Ante este panorama, implementar Digital Clinical System representa una ventaja estratégica e indispensable. Nuestra solución elimina estos cuellos de botella operativos, reduciendo drásticamente la fricción administrativa y garantizando que el flujo de la información clínica sea ágil, estructurado y completamente seguro.
+Ante este panorama, implementar ClinicalSync representa una ventaja estratégica e indispensable. Nuestra solución elimina estos cuellos de botella operativos, reduciendo drásticamente la fricción administrativa y garantizando que el flujo de la información clínica sea ágil, estructurado y completamente seguro.
 
 ##### F. Cómo se gestiona actualmente el problema (How)
 
@@ -366,11 +366,11 @@ Actualmente, las instituciones sobreviven utilizando un ecosistema mixto y defic
 
 - Costo Operativo: El personal de enfermería pierde horas-hombre en tareas de doble registro, mientras que los cardiólogos retrasan sus diagnósticos al consolidar historiales dispersos.
 
-- Riesgo Institucional: Sin Digital Clinical System, los centros de salud pierden la capacidad de auditar eventos clínicos al carecer de una trazabilidad exacta sobre responsables, fechas y acciones médicas.
+- Riesgo Institucional: Sin ClinicalSync, los centros de salud pierden la capacidad de auditar eventos clínicos al carecer de una trazabilidad exacta sobre responsables, fechas y acciones médicas.
 
 ##### Puntos principales que debe resolver la solución
 
-Digital Clinical System está diseñado para garantizar:
+ClinicalSync está diseñado para garantizar:
 
 - Centralización y agilidad: Unificar el historial cardiovascular, signos vitales y evolución del paciente en una plataforma de consulta rápida, eliminando la dependencia del papel.
 - Comunicación estandarizada: Estructurar los traspasos de turno utilizando el modelo SBAR para evitar pérdida de datos.
@@ -380,7 +380,7 @@ Digital Clinical System está diseñado para garantizar:
 ##### Objetivos de la solución
 
 **Objetivo general:**
-Desarrollar Digital Clinical System como una plataforma web distribuida que optimice la comunicación, garantice la trazabilidad y asegure la continuidad de la atención médica en áreas cardiovasculares.
+Desarrollar ClinicalSync como una plataforma web distribuida que optimice la comunicación, garantice la trazabilidad y asegure la continuidad de la atención médica en áreas cardiovasculares.
 
 **Objetivos específicos:**
 
@@ -391,15 +391,17 @@ Desarrollar Digital Clinical System como una plataforma web distribuida que opti
 
 ##### Restricciones y alcance del proyecto
 
-El desarrollo de Digital Clinical System está delimitado por los siguientes lineamientos técnicos y académicos:
+El desarrollo de ClinicalSync está delimitado por los siguientes lineamientos técnicos y académicos:
 
 - Desarrollo y Arquitectura: Creación de una Landing Page (estática/open-source) y una Web Application (adaptable), integradas a un RESTful API propio documentado con OpenAPI/Swagger.
 - Estándares de Calidad (UX): Aplicación obligatoria de directrices de accesibilidad (a11y) e internacionalización (i18n) en la experiencia web.
 - Gestión de Código: Uso estricto de buenas prácticas en el control de versiones (GitFlow, Conventional Commits y Semantic Versioning).
 - Límite Funcional: Es una solución complementaria enfocada en la comunicación y trazabilidad cardiovascular; no pretende sustituir el sistema informático principal (HIS) de la institución.
 - Validación Académica: Las pruebas del producto se limitarán a evaluaciones heurísticas, navegación y entrevistas con usuarios representativos del sector salud.
+
 #### 1.2.2 Lean UX Process
-El proceso Lean UX de Digital Clinical System se fundamenta en un ciclo de aprendizaje continuo enfocado en resultados (outcomes) en lugar de simples entregables. Basado en los principios de "Lean UX, 3rd Edition" de Jeff Gothelf y Josh Seiden, este enfoque transforma la problemática inicial en suposiciones (assumptions) e hipótesis medibles que se validan empíricamente durante el ciclo de vida del software.  
+
+El proceso Lean UX de ClinicalSync se fundamenta en un ciclo de aprendizaje continuo enfocado en resultados (outcomes) en lugar de simples entregables. Basado en los principios de "Lean UX, 3rd Edition" de Jeff Gothelf y Josh Seiden, este enfoque transforma la problemática inicial en suposiciones (assumptions) e hipótesis medibles que se validan empíricamente durante el ciclo de vida del software.  
 
 El diseño y la validación del producto se centran en dos perfiles de usuarios directos: el personal de enfermería y los médicos especialistas cardiovasculares. Simultáneamente, el modelo contempla como clientes institucionales a los hospitales y clínicas privadas que adoptarán esta plataforma para optimizar sus flujos operativos.
 
@@ -409,7 +411,7 @@ El diseño y la validación del producto se centran en dos perfiles de usuarios 
 
 - Eficiencia operativa: Reducción significativa del tiempo invertido por el personal médico en la captura y recuperación de los datos cardiovasculares.
 - Reducción de redundancia: Disminución drástica de la duplicidad de tareas al eliminar la necesidad de trasladar apuntes físicos a sistemas digitales.
-- Adopción del sistema: Alta tasa de uso activo de Digital Clinical System como herramienta complementaria principal en la rutina diaria de las unidades de cardiología.
+- Adopción del sistema: Alta tasa de uso activo de ClinicalSync como herramienta complementaria principal en la rutina diaria de las unidades de cardiología.
 - Auditoría y control médico: Incremento en la precisión de la trazabilidad clínica, asegurando un historial auditable de las acciones, los responsables y los horarios exactos.
 - Conversión comercial (Leads): Aumento medible en la tasa de conversión a través de la Landing Page, reflejado en el número de instituciones de salud que solicitan demostraciones del producto.
 
@@ -420,12 +422,14 @@ El diseño y la validación del producto se centran en dos perfiles de usuarios 
 - Consulta médica eficiente: Los médicos especialistas reducen significativamente el tiempo invertido en buscar y analizar la evolución clínica reciente de sus pacientes.
 - Visibilidad de riesgos: El equipo clínico identifica de manera rápida y sin confusiones los eventos críticos, las alertas del sistema y el historial de acciones previamente registradas.
 - Comprensión del producto: Los visitantes de la Landing Page asimilan de inmediato la propuesta de valor de Digital Clinical System y tienen claro el flujo para acceder a la solución.
+
 ### 1.2.2.1. Lean UX Problem Statements
+
 El estado actual de la gestión de información clínica en áreas cardiovasculares se ha enfocado principalmente en el uso de sistemas hospitalarios genéricos, registros manuales redundantes y comunicación verbal no estructurada, generando una alta carga operativa para el personal de enfermería y los médicos especialistas.
 
 Lo que los productos y servicios existentes no logran abordar es la necesidad de un flujo digital especializado, ágil y trazable que evite la pérdida o duplicidad de información clínica crítica durante los cambios de turno y la atención continua.
 
-Nuestro producto, Digital Clinical System, abordará esta brecha mediante una plataforma web centralizada que facilite el registro inmediato de signos vitales, estandarice la comunicación clínica mediante el modelo SBAR y garantice la trazabilidad de responsables y acciones.
+Nuestro producto, ClinicalSync, abordará esta brecha mediante una plataforma web centralizada que facilite el registro inmediato de signos vitales, estandarice la comunicación clínica mediante el modelo SBAR y garantice la trazabilidad de responsables y acciones.
 
 Nuestro enfoque inicial será el personal de enfermería y los médicos especialistas cardiovasculares que laboran en unidades de cuidados intensivos, hospitalización y emergencias.
 
@@ -476,7 +480,9 @@ Las hipótesis se clasifican evaluando dos variables críticas: riesgo e incerti
 | La Landing Page comunica con claridad la propuesta de valor. | Medio | Medio | Media |
 | Las instituciones aceptarían una herramienta complementaria. | Alto | Alto | Alta |
 | Una interfaz simple mejora la disposición de uso. | Medio | Medio | Media |
+
 ##### 1.2.2.3. Lean UX Hypothesis Statements
+
 Las hipótesis de diseño se estructuran como premisas verificables. Cada una de ellas vincula una solución funcional, un perfil de usuario, un impacto proyectado y una métrica de éxito. 
 
 **Estructura aplicada:**
@@ -534,7 +540,9 @@ Cada premisa debe someterse a una prueba concisa, práctica y enfocada en la rec
 | **Viabilidad en Clínicas** | Sesión de entrevistas con líderes de área. | Aceptación del software como sistema de respaldo útil. | Sondear la disposición genuina y posibles barreras de entrada institucionales. |
 
 Estas pruebas se llevan a cabo mediante iteraciones ágiles, utilizando los descubrimientos para guiar el desarrollo de la interfaz. Cuando una premisa es validada, el rumbo del proyecto se consolida; en caso de refutarse, se iteran las funcionalidades o se replantea el enfoque antes de invertir más recursos.
+
 ### 1.2.2.4. Lean UX Canvas
+
 | Sección | Descripción |
 | :--- | :--- |
 | **1. Business Problem** | En los departamentos de cardiología, los expedientes médicos suelen estar fragmentados en documentos de papel, plataformas internas, archivos sueltos y conversaciones informales. Esta situación provoca vacíos de información, redundancia en las tareas, falta de auditoría y demoras en el servicio. ClinicalSync tiene como propósito optimizar el seguimiento asistencial a través de un sistema web que consolide los datos médicos clave y organice los flujos de trabajo más sensibles. |
@@ -547,8 +555,10 @@ Estas pruebas se llevan a cabo mediante iteraciones ágiles, utilizando los desc
 | **8. Assumptions** | El personal de salud prioriza interfaces ágiles, intuitivas y sistemas de soporte que aligeren su jornada laboral en lugar de complejizarla. |
 | **9. Experiments** | Rondas de entrevistas cualitativas, simulaciones de usabilidad, testeos de comprensión del sitio comercial, análisis experto de la interfaz y recorridos cognitivos por los procesos centrales. |
 | **10. Learning** | Toda prueba ejecutada generará mejoras iterativas en el diseño interactivo del producto y reordenará estratégicamente las prioridades de desarrollo en el backlog. |
+
 ### 1.3. Segmentos objetivo
-Digital Clinical System atiende a dos perfiles de usuarios directos que operan la plataforma en su día a día clínico, y a un cliente institucional responsable de la adopción y financiamiento del software.
+
+ClinicalSync atiende a dos perfiles de usuarios directos que operan la plataforma en su día a día clínico, y a un cliente institucional responsable de la adopción y financiamiento del software.
 
 #### Segmento objetivo #1: Personal de enfermería cardiovascular
 
@@ -572,7 +582,7 @@ La elección de este mercado se fundamenta en un desafío crítico de salud púb
 
 Este alto volumen de pacientes de riesgo justifica la necesidad de integrar a las dos partes vitales del ecosistema: el personal de enfermería (responsable del flujo de registro y monitoreo constante) y los médicos especialistas (responsables del flujo de validación y decisión). Abordar a ambos garantiza una trazabilidad total del paciente y resuelve la problemática operativa de las instituciones de salud.
 
-Digital Clinical System atiende a dos perfiles de usuarios directos que operan la plataforma en su día a día clínico, y a un cliente institucional responsable de la adopción y financiamiento del software.
+ClinicalSync atiende a dos perfiles de usuarios directos que operan la plataforma en su día a día clínico, y a un cliente institucional responsable de la adopción y financiamiento del software.
 
 #### Segmento objetivo #1: Personal de enfermería cardiovascular
 
