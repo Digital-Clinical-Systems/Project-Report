@@ -276,17 +276,17 @@ Visión: Consolidarnos como una plataforma de referencia en el ámbito de la sal
 <table>
   <tr>
     <td rowspan="4" align="center" width="200">
-      <!-- Pendiente: subir la foto del quinto integrante en assets/chapter-1/FotoEstudiante/ y reemplazar este comentario por su etiqueta img con width="180" -->
+      <img src="assets/chapter-1/FotoEstudiante/Johan.png" width="300px">
     </td>
-    <td><b>Nombre:</b> Nombre Estudiante</td>
+    <td><b>Nombre:</b> Johan Giovani Huamán Cuba</td>
   </tr>
   <tr>
-    <td><b>Código:</b> Codigo Estudiante</td>
+    <td><b>Código:</b> u202417448 </td>
   </tr>
   <tr>
     <td>
       <b>Descripción:</b><br/>
-      Descripcion
+      Soy Johan, soy un estudiante de Ingeniería de Software. Pero más que eso soy alguien que le encanta acumular conocimientos de diferentes campos, pues soy alguien curioso. Me gusta la tecnología, pero me gusta más lo que podamos hacer con ella. Miro al pasado con cautela y, gracias a esta habilidad, desvarío con la fantasía de construir el mejor futuro.
     </td>
   </tr>
 </table>
