@@ -196,18 +196,31 @@ El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cu
 ## Capítulo IV: Product Design
 ### 4.1. Style Guidelines
 #### 4.1.1. General Style Guidelines
-El diseño de estilo de ClinicalSync se fundamenta en transmitir seguridad, eficiencia y profesionalismo, valores indispensables para una solución digital orientada al sector salud. Este busca dar una identidad grafica moderna, ordenada y amigable para el usuario con el proposito de mejorar la comunicacion clinica y la comodidad de los pacientes.
 
-* **Colores:** La paleta de colores emplea un azul noche (#172554) para transmitir autoridad clinica, un verde esmeralda (#10B981) siendo este un color con acento tecnologico para destacar acciones exitosas y confirmaciones de traspasos SBAR, un gris palido (#64748B) para los textos secundarios y elementos inactivos, con esto estableciendo una jerarquia visual clara para el usuario.Por ultimo, se emplea un blanco puro (#FFFFFF) para generar un mayor contraste y evitar la fatiga visual.
-  
-* **Tipografia:** Se utilizan fuentes de letras Sans-Seriff debido a su simpleza, alta legibilidad, claridad y una apariencia profesional.
-  
-* **Distribución y espaciado:** La interfaz adopta una arquitectura de bloques bien definidos, con un espaciado consistente y una jerarquía visual estricta. La información se presenta de manera progresiva, permitiendo que el usuario identifique fácilmente el propósito de cada módulo.
-  
-* **Lenguaje y tono:**
+El diseño de estilo de ClinicalSync se fundamenta en transmitir seguridad, eficiencia y profesionalismo, valores indispensables para una solución digital orientada al sector salud. Este busca dar una identidad gráfica moderna, ordenada y amigable para el usuario con el propósito de mejorar la comunicación clínica y la comodidad de los pacientes.
 
-* **Iconografía:** Se utilizan iconos minimalistas y universalmente reconocibles en el ámbito médico y de comunicación asistencial. Esto reduce la complejidad de interpretación y acelera el reconocimiento visual de los flujos de trabajo cardiovasculares.
+* Colores: La paleta de colores emplea un azul noche (#172554) para transmitir autoridad clínica, un verde esmeralda (#10B981), siendo este un color con acento tecnológico para destacar acciones exitosas y confirmaciones de traspasos SBAR, un gris pálido (#64748B) para los textos secundarios y elementos inactivos, con esto estableciendo una jerarquía visual clara para el usuario. Por último, se emplea un blanco puro (#FFFFFF) para generar un mayor contraste y evitar la fatiga visual.
+
+* Tipografia: Se utilizan fuentes de letras sans-serif debido a su simpleza, alta legibilidad, claridad y una apariencia profesional.
+
+* Distribución y espaciado: La interfaz adopta una arquitectura de bloques bien definidos, con un espaciado consistente y una jerarquía visual estricta. La información se presenta de manera progresiva, permitiendo que el usuario identifique fácilmente el propósito de cada módulo.
+
+* Iconografía: Se utilizan iconos minimalistas y universalmente reconocibles en el ámbito médico y de comunicación asistencial. Esto reduce la complejidad de interpretación y acelera el reconocimiento visual de los flujos de trabajo cardiovasculares.
+  
 #### 4.1.2. Web Style Guidelines
+
+El diseño web de ClinicalSync se implementa como una solución digital orientada al sector salud, buscando que tanto la Landing Page como la Web App mantengan una experiencia uniforme, clara, responsiva y accesible. El objetivo es asegurar una interfaz confiable que facilite la interacción de visitantes, personal de enfermería cardiovascular y médicos especialistas.
+
+* **Diseño adaptable:** La interfaz se ajusta a distintos dispositivos (Escritorio, Laptop o móvil), manteniendo consistencia visual entre la landing page y la web application. Esto permite que los usuarios puedan registrar información clínica y consultar traspasos SBAR desde cualquier entorno de trabajo hospitalario.
+  
+* **Componentes de interfaz:** Los botones principales utilizan los colores como verde esmeralda (#10B981) o azul noche (#172554) para resaltar acciones críticas como guardar un registro, mientras que los elementos secundarios mantienen un estilo neutral en gris pálido. Esto establece una jerarquía visual que permite identificar con rapidez las acciones prioritarias.
+  
+* **Notificaciones y estados:** Los mensajes del sistema utilizan convenciones visuales claras para comunicar el estado de una acción o proceso. Los estados positivos se muestran en verde para indicar un guardado exitoso, las advertencias en amarillo para señalar pendientes y los errores o alertas en rojo.
+  
+* **Tablas y dashboards:** Se prioriza una presentación clara y ordenada de la información dentro de tablas y paneles de control, facilitando la consulta rápida del historial clínico. La organización visual de los registros y signos vitales permite que el médico interprete la evolución del paciente de manera más eficiente y rápida.
+  
+* **Accesibilidad:** Se consideran contrastes adecuados entre la tipografía y los fondos, además de una disposición clara del contenido. Se busca mantener una navegación sencilla y legible que reduzca la fatiga visual del personal durante las guardias, fortaleciendo la usabilidad general de la web app.
+  
 ### 4.2. Information Architecture
 #### 4.2.1. Organization Systems
 #### 4.2.2. Labeling Systems
