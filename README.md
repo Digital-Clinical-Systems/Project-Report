@@ -498,14 +498,14 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
 <table border="1">
   <tr>
     <td width="40%">
-      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
-      <b>Edad:</b> [Edad] años<br>
-      <b>Distrito:</b> [Distrito]<br>
-      <b>Ocupación:</b> [Especialidad médica]<br>
-      <b>Área de trabajo:</b> [Área]<br>
-      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
-      <b>Duración:</b> [mm:ss]<br>
-      <b>Entrevistador:</b> [Integrante del equipo]
+      <b>Nombres y apellidos:</b> Mark Alex Esquivel Cabrera<br>
+      <b>Edad:</b> 28 años<br>
+      <b>Distrito:</b> Ate <br>
+      <b>Ocupación:</b> Médico cirujano <br>
+      <b>Área de trabajo:</b> Cardiología <br>
+      <b>Timing:</b> 00:00 - 13:30 <br>
+      <b>Duración:</b> 13:51 <br>
+      <b>Entrevistador:</b> Johan Giovani Huamán Cuba
     </td>
     <td align="center">
       <img src="assets/chapter-2/entrevista-medico-1.png" alt="Entrevista 1 - Médico especialista cardiovascular" width="85%">
@@ -513,13 +513,13 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
   <tr>
     <td colspan="2">
-      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202417448_upc_edu_pe/IQCz-S_sX1VtRpa46phr7i2dAcsVgntggm8La7JXS1Vt4QQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=uiada9">[URL del video en Microsoft Stream]</a>
       <br><br>
-      <b>Resumen:</b> [Descripción de cómo accede hoy a la información clínica, cuántas fuentes debe consultar y cuánto tiempo le demanda.]
+      <b>Resumen:</b> Mark Alex Esquivel Cabrera labora en un centro de salud rural con un sistema de registro doble. El personal primero anota datos generales, síntomas y códigos de enfermedades en hojas de papel. Luego, esa información se traslada a una hoja de cálculo básica para mantener un archivo de pacientes.
       <br><br>
-      [Situaciones en que la información incompleta o tardía condicionó una decisión, y cómo se comunica con el personal de enfermería.]
+      Este método genera pérdida de trazabilidad, dificultad para interpretar registros físicos y riesgo de información incompleta. El entrevistado mencionó que la letra de los doctores puede resultar ilegible, que algunos detalles pueden omitirse y que ciertos espacios quedan incompletos en las hojas, lo que complica el seguimiento médico del paciente.
       <br><br>
-      [Expectativas sobre trazabilidad, visualización consolidada y condiciones para incorporar una herramienta adicional.]
+      Mark muestra disposición para probar una solución tecnológica nueva, siempre que sea segura y fácil de usar. También resaltó que una herramienta compleja podría generar rechazo en profesionales con menor familiaridad tecnológica, especialmente médicos de mayor edad, quienes podrían preferir mantener el uso de registros en papel u hojas de cálculo por costumbre.
     </td>
   </tr>
 </table>
