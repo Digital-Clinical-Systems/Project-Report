@@ -623,17 +623,17 @@ preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamie
 <table>
   <tr> <th colspan="5">Sprint #</th> <th colspan="9">Sprint 1</th> </tr> 
   <tr> <td colspan="13">Sprint Planning Background</td> </tr> 
-  <tr> <td colspan="5">Date</td> <td colspan="8">[Fecha del Sprint Planning]</td> </tr> 
-  <tr> <td colspan="5">Time</td> <td colspan="8">[Hora]</td> </tr> 
-  <tr> <td colspan="5">Location</td> <td colspan="8">Reunión remota / Presencial</td> </tr> 
+  <tr> <td colspan="5">Date</td> <td colspan="8">15-04-2026</td> </tr> 
+  <tr> <td colspan="5">Time</td> <td colspan="8">09:30 AM</td> </tr> 
+  <tr> <td colspan="5">Location</td> <td colspan="8">Reunión remota (Discord)</td> </tr> 
   <tr> <td colspan="5">Prepared By</td> <td colspan="8">Sosa Soto, Oskar Rodrigo</td> </tr> 
   <tr> <td colspan="5">Attendees (to planning meeting)</td> <td colspan="8">Sosa Soto, Oskar Rodrigo / Acuache Lucas, Mathias Joaquin / Valdez Melo, Angel Andres / Huamán Cuba, Johan Giovani / Ojanama Abanto, Johnny Alexander</td> </tr> 
   <tr> <td colspan="5">Sprint n-1 Review Summary</td> <td colspan="8">No aplica - Este es el primer Sprint del proyecto</td> </tr> 
   <tr> <td colspan="5">Sprint n-1 Retrospective Summary</td> <td colspan="8">No aplica - Este es el primer Sprint del proyecto</td> </tr> 
   <tr> <td colspan="13">Sprint Goal & User Stories</td> </tr> 
-  <tr> <td colspan="5">Sprint 1 Goal</td> <td colspan="8"> <strong>"Our focus is on delivering a fully functional and user-friendly Landing Page for ClinicalSync, accompanied by complete and well-structured documentation. We believe this will provide an engaging first impression and clearly communicate the value proposition of our solution for enhancing clinical processes in cardiovascular nursing. This will be validated when the Landing Page is successfully deployed and accessible online, with all core sections (hero, how it works, features, benefits, FAQs, and contact) working correctly, and all corresponding documentation completed."</strong> </td> </tr> 
-  <tr> <td colspan="5">Sprint 1 Velocity</td> <td colspan="8">[TBD] Story Points</td> </tr> 
-  <tr> <td colspan="5">Sum of Story Points</td> <td colspan="8">[TBD] Story Points</td> </tr> 
+  <tr> <td colspan="5">Sprint 1 Goal</td> <td colspan="8"> <strong>"Our focus is on delivering a fully functional and user-friendly Landing Page for ClinicalSync, accompanied by complete and well-structured documentation. We believe this will provide an engaging first impression and clearly communicate the value proposition of our solution for enhancing clinical processes in cardiovascular nursing. This will be validated when the Landing Page is successfully deployed and accessible online, with all core sections working correctly, and all corresponding documentation completed."</strong> </td> </tr> 
+  <tr> <td colspan="5">Sprint 1 Velocity</td> <td colspan="8">28 Story Points</td> </tr> 
+  <tr> <td colspan="5">Sum of Story Points</td> <td colspan="8">28 Story Points</td> </tr> 
 </table>
 
 
