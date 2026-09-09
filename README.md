@@ -655,52 +655,48 @@ preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamie
       <tr>
         <td style="border: 1px solid #dddddd; padding: 8px;">Sosa Soto, Oskar Rodrigo</td>
         <td style="border: 1px solid #dddddd; padding: 8px;">YakuzaMeen</td>
-        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
+        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">L</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
+        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">L</td>
       </tr>
       <tr>
         <td style="border: 1px solid #dddddd; padding: 8px;">Acuache Lucas, Mathias Joaquin</td>
         <td style="border: 1px solid #dddddd; padding: 8px;">MathiasA25</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
+        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">L</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
       </tr>
       <tr>
         <td style="border: 1px solid #dddddd; padding: 8px;">Valdez Melo, Angel Andres</td>
         <td style="border: 1px solid #dddddd; padding: 8px;">AngelValdezM</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
+        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">L</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">L</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
       </tr>
       <tr>
         <td style="border: 1px solid #dddddd; padding: 8px;">Huamán Cuba, Johan Giovani</td>
         <td style="border: 1px solid #dddddd; padding: 8px;">Johancuba</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
+        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">L</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
       </tr>
       <tr>
         <td style="border: 1px solid #dddddd; padding: 8px;">Ojanama Abanto, Johnny Alexander</td>
         <td style="border: 1px solid #dddddd; padding: 8px;">JohnnyGZ41</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
-        <td style="border: 1px solid #dddddd; padding: 8px;">[L/C]</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
+        <td style="border: 1px solid #dddddd; padding: 8px; font-weight: bold;">L</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">C</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-
 ##### 5.2.1.3. Sprint Backlog 1
-
-
-*(Nota: Esta sección se completará una vez se definan el Product Backlog y las User Stories correspondientes a este ciclo).*
 
 <table>
   <thead>
@@ -725,11 +721,107 @@ preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamie
   </thead>
   <tbody>
     <tr>
-      <td colspan="8" align="center"><em>[Pendiente de definir tareas y asignaciones para el Sprint 1]</em></td>
+      <td>US-01</td>
+      <td>Visualizar la landing page</td>
+      <td rowspan="3">T-01.1</td>
+      <td rowspan="3">Estructura Base y Hero Section</td>
+      <td rowspan="3">Maquetar la estructura HTML/CSS base, implementar la propuesta de valor y explicar el problema.</td>
+      <td rowspan="3">6</td>
+      <td rowspan="3">Sosa Soto, Oskar Rodrigo</td>
+      <td rowspan="3">Done</td>
+    </tr>
+    <tr>
+      <td>US-02</td>
+      <td>Conocer la propuesta de valor</td>
+    </tr>
+    <tr>
+      <td>US-03</td>
+      <td>Comprender el problema que resuelve la solución</td>
+    </tr>
+    <tr>
+      <td>US-04</td>
+      <td>Revisar cómo funciona la plataforma</td>
+      <td rowspan="3">T-02.1</td>
+      <td rowspan="3">Componentes Funcionales</td>
+      <td rowspan="3">Desarrollar componentes gráficos para explicar el funcionamiento, características clave y beneficios.</td>
+      <td rowspan="3">8</td>
+      <td rowspan="3">Valdez Melo, Angel Andres</td>
+      <td rowspan="3">Done</td>
+    </tr>
+    <tr>
+      <td>US-05</td>
+      <td>Visualizar las características clave</td>
+    </tr>
+    <tr>
+      <td>US-06</td>
+      <td>Revisar los beneficios según el perfil</td>
+    </tr>
+    <tr>
+      <td>US-07</td>
+      <td>Consultar los planes y el modelo de servicio</td>
+      <td rowspan="2">T-03.1</td>
+      <td rowspan="2">Planes y FAQs</td>
+      <td rowspan="2">Implementar tarjetas de precios y sección de preguntas frecuentes tipo acordeón.</td>
+      <td rowspan="2">5</td>
+      <td rowspan="2">Acuache Lucas, Mathias Joaquin</td>
+      <td rowspan="2">Done</td>
+    </tr>
+    <tr>
+      <td>US-08</td>
+      <td>Consultar las preguntas frecuentes</td>
+    </tr>
+    <tr>
+      <td>US-09</td>
+      <td>Conocer al equipo</td>
+      <td rowspan="2">T-04.1</td>
+      <td rowspan="2">Equipo y Contacto</td>
+      <td rowspan="2">Diseñar tarjetas del equipo y formulario de contacto con validaciones básicas.</td>
+      <td rowspan="2">6</td>
+      <td rowspan="2">Huamán Cuba, Johan Giovani</td>
+      <td rowspan="2">Done</td>
+    </tr>
+    <tr>
+      <td>US-10</td>
+      <td>Solicitar información o una demostración</td>
+    </tr>
+    <tr>
+      <td>US-11</td>
+      <td>Cambiar el idioma del sitio</td>
+      <td>T-05.1</td>
+      <td>Sistema de Internacionalización (i18n)</td>
+      <td>Configurar sistema para cambio de idioma entre ES y EN en todos los textos de la página.</td>
+      <td>5</td>
+      <td>Ojanama Abanto, Johnny Alexander</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-12</td>
+      <td>Acceder desde dispositivos móviles</td>
+      <td>T-06.1</td>
+      <td>Ajustes Responsivos</td>
+      <td>Refinar Media Queries para asegurar la correcta visualización en móviles y tablets.</td>
+      <td>4</td>
+      <td>Acuache Lucas, Mathias Joaquin</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>TS-09</td>
+      <td>Despliegue de la landing page y la web app</td>
+      <td>T-07.1</td>
+      <td>GitFlow & Despliegue en GitHub Pages</td>
+      <td>Configuración inicial del repositorio, ramas y automatización del despliegue en GitHub Pages.</td>
+      <td>4</td>
+      <td>Sosa Soto, Oskar Rodrigo</td>
+      <td>Done</td>
     </tr>
   </tbody>
 </table>
 
+### Estados de las tareas
+- **To-do**: Pendiente
+- **InProcess**: En desarrollo
+- **ToReview**: En revisión
+- **Done**: Finalizado
 
 
 ##### 5.2.1.4. Development Evidence for Sprint Review
