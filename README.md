@@ -601,14 +601,14 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
 <table border="1">
   <tr>
     <td width="40%">
-      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
-      <b>Edad:</b> [Edad] años<br>
-      <b>Distrito:</b> [Distrito]<br>
+      <b>Nombres y apellidos:</b> Brenda Estefania Rios Caballero<br>
+      <b>Edad:</b> 24 años<br>
+      <b>Distrito:</b> Callao<br>
       <b>Ocupación:</b> [Especialidad médica]<br>
-      <b>Área de trabajo:</b> [Área]<br>
-      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
-      <b>Duración:</b> [mm:ss]<br>
-      <b>Entrevistador:</b> [Integrante del equipo]
+      <b>Área de trabajo:</b> Ccardiologia<br>
+      <b>Timing:</b> 00:00 - 05:35<br>
+      <b>Duración:</b> 05:35<br>
+      <b>Entrevistador:</b> Johnny Alexander Ojanama Abanto
     </td>
     <td align="center">
       <img src="assets/chapter-2/entrevista-medico-2.png" alt="Entrevista 2 - Médico especialista cardiovascular" width="85%">
@@ -616,7 +616,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
   <tr>
     <td colspan="2">
-      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231f412_upc_edu_pe/IQAn-Y01eCNLS5orrIkmlM-8AfXogfgb8uXdgScpTyujMLw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=uBMjbw">[URL del video en Microsoft Stream]</a>
       <br><br>
       <b>Resumen:</b> [Descripción de cómo accede hoy a la información clínica, cuántas fuentes debe consultar y cuánto tiempo le demanda.]
       <br><br>
