@@ -602,7 +602,7 @@ Este diagrama muestra una vista de alto nivel de ClinicalSync. Aquí identificam
   <img src="assets/chapter-4/context-diagram.png" alt="Diagrama de Contexto ClinicalSync" width="800">
 </p>
 
-*Diagrama elaborado en Structurizr. Muestra la interacción directa de los roles clínicos con la plataforma.*
+*Muestra la interacción directa de los roles clínicos con la plataforma.*
 
 
 #### 4.6.3. Software Architecture Container Diagrams
@@ -612,9 +612,18 @@ Haciendo un poco de zoom, en este diagrama separamos las unidades de despliegue.
   <img src="assets/chapter-4/container-diagram.png" alt="Diagrama de Contenedores ClinicalSync" width="800">
 </p>
 
-*Diagrama elaborado en Structurizr. Detalla la comunicación JSON/HTTPS entre la Web App y el API, y la persistencia hacia MySQL 8.x.*
+*Detalla la comunicación JSON/HTTPS entre la Web App y el API, y la persistencia hacia MySQL 8.x.*
 
 #### 4.6.4. Software Architecture Components Diagrams
+
+Aquí mostramos cómo está estructurado el Backend API por dentro. Separamos la lógica en componentes basados en nuestros Bounded Contexts, cada uno con sus propios servicios y controladores REST.
+
+<p align="center">
+  <img src="assets/chapter-4/components-diagram.png" alt="Diagrama de Componentes ClinicalSync" width="800">
+</p>
+
+*Muestra las interacciones internas (mediante interfaces de Java y Domain Events) entre los componentes del sistema.*
+
 ### 4.7. Software Object-Oriented Design
 #### 4.7.1. Class Diagrams
 ### 4.8. Database Design
