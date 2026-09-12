@@ -640,6 +640,20 @@ El modelo de traspasos SBAR mantiene la trazabilidad exigiendo el ID del enferme
 
 ### 4.8. Database Design
 #### 4.8.1. Database Diagrams
+Para la persistencia relacional usamos MySQL con Spring Data JPA. El esquema refleja nuestros contextos y mantiene una integridad referencial estricta:
+
+*   **patients:** Tabla central con los datos y ubicación del paciente.
+*   **vital_sign_records:** Guarda el monitoreo continuo de biomarcadores y calcula el nivel de riesgo.
+*   **alerts:** Maneja el ciclo de vida de los eventos críticos y los responsables de su atención.
+*   **handovers:** Guarda la estructura del SBAR entre los profesionales.
+*   **audit_logs:** Implementamos esta tabla como *append-only* (solo inserciones) para guardar la metadata en JSON y cumplir con las normativas de trazabilidad hospitalaria.
+*   **physicians y patient_treatments:** Soportan el historial de atenciones y prescripciones médicas.
+
+<p align="center">
+  <img src="assets/chapter-4/database-diagram.png" alt="Database Diagram - ClinicalSync" width="100%">
+</p>
+
+*Muestra las tablas físicas, tipos de datos y relaciones de llave foránea de la base de datos.*
 
 ---
 
