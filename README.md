@@ -627,36 +627,6 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
 </table>
 
-###### Entrevista 3
-
-<table border="1">
-  <tr>
-    <td width="40%">
-      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
-      <b>Edad:</b> [Edad] años<br>
-      <b>Distrito:</b> [Distrito]<br>
-      <b>Ocupación:</b> [Especialidad médica]<br>
-      <b>Área de trabajo:</b> [Área]<br>
-      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
-      <b>Duración:</b> [mm:ss]<br>
-      <b>Entrevistador:</b> [Integrante del equipo]
-    </td>
-    <td align="center">
-      <img src="assets/chapter-2/entrevista-medico-3.png" alt="Entrevista 3 - Médico especialista cardiovascular" width="85%">
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
-      <br><br>
-      <b>Resumen:</b> [Descripción de cómo accede hoy a la información clínica, cuántas fuentes debe consultar y cuánto tiempo le demanda.]
-      <br><br>
-      [Situaciones en que la información incompleta o tardía condicionó una decisión, y cómo se comunica con el personal de enfermería.]
-      <br><br>
-      [Expectativas sobre trazabilidad, visualización consolidada y condiciones para incorporar una herramienta adicional.]
-    </td>
-  </tr>
-</table>
 
 #### 2.2.3. Análisis de entrevistas
 
