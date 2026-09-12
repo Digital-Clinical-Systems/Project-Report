@@ -47,94 +47,166 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
 
 ## Contenido
 
-* [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
-* [Project Report Collaboration Insights](#project-report-collaboration-insights)
-* [Student Outcome](#student-outcome)
-* [Capítulo I: Introducción](#capítulo-i-introducción)
-  * [1.1. Startup Profile](#11-startup-profile)
-    * [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
-    * [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
-  * [1.2. Solution Profile](#12-solution-profile)
-    * [1.2.1 Antecedentes y problemática](#121-antecedentes-y-problemática)
-    * [1.2.2 Lean UX Process](#122-lean-ux-process)
-      * [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
-      * [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
-      * [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
-      * [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
-  * [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-* [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
-  * [2.1. Competidores](#21-competidores)
-    * [2.1.1. Análisis competitivo](#211-análisis-competitivo)
-    * [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
-  * [2.2. Entrevistas](#22-entrevistas)
-    * [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
-    * [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-    * [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
-  * [2.3. Needfinding](#23-needfinding)
-    * [2.3.1. User Personas](#231-user-personas)
-    * [2.3.2. User Task Matrix](#232-user-task-matrix)
-    * [2.3.3. User Journey Mapping](#233-user-journey-mapping)
-    * [2.3.4. Empathy Mapping](#234-empathy-mapping)
-  * [2.4. Big Picture Event Storming](#24-big-picture-event-storming)
-  * [2.5. Ubiquitous Language](#25-ubiquitous-language)
-* [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
-  * [3.1. User Stories](#31-user-stories)
-  * [3.2. Impact Mapping](#32-impact-mapping)
-  * [3.3. Product Backlog](#33-product-backlog)
-* [Capítulo IV: Product Design](#capítulo-iv-product-design)
-  * [4.1. Style Guidelines](#41-style-guidelines)
-    * [4.1.1. General Style Guidelines](#411-general-style-guidelines)
-    * [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
-  * [4.2. Information Architecture](#42-information-architecture)
-    * [4.2.1. Organization Systems](#421-organization-systems)
-    * [4.2.2. Labeling Systems](#422-labeling-systems)
-    * [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
-    * [4.2.4. Searching Systems](#424-searching-systems)
-    * [4.2.5. Navigation Systems](#425-navigation-systems)
-  * [4.3. Landing Page UI Design](#43-landing-page-ui-design)
-    * [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
-    * [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
-  * [4.4. Web Applications UX/UI Design](#44-web-applications-uxui-design)
-    * [4.4.1. Web Applications Wireframes](#441-web-applications-wireframes)
-    * [4.4.2. Web Applications Wireflow Diagrams](#442-web-applications-wireflow-diagrams)
-    * [4.4.3. Web Applications Mock-ups](#443-web-applications-mock-ups)
-    * [4.4.4. Web Applications User Flow Diagrams](#444-web-applications-user-flow-diagrams)
-  * [4.5. Web Applications Prototyping](#45-web-applications-prototyping)
-  * [4.6. Domain-Driven Software Architecture](#46-domain-driven-software-architecture)
-    * [4.6.1. Design-Level Event Storming](#461-design-level-event-storming)
-    * [4.6.2. Software Architecture Context Diagram](#462-software-architecture-context-diagram)
-    * [4.6.3. Software Architecture Container Diagrams](#463-software-architecture-container-diagrams)
-    * [4.6.4. Software Architecture Components Diagrams](#464-software-architecture-components-diagrams)
-  * [4.7. Software Object-Oriented Design](#47-software-object-oriented-design)
-    * [4.7.1. Class Diagrams](#471-class-diagrams)
-  * [4.8. Database Design](#48-database-design)
-    * [4.8.1. Database Diagrams](#481-database-diagrams)
-* [Capítulo V: Product Implementation, Validation & Deployment](#capítulo-v-product-implementation-validation--deployment)
-  * [5.1. Software Configuration Management](#51-software-configuration-management)
-    * [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
-    * [5.1.2. Source Code Management](#512-source-code-management)
-    * [5.1.3. Source Code Style Guide & Conventions](#513-source-code-style-guide--conventions)
-    * [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
-  * [5.2. Landing Page, Services & Applications Implementation](#52-landing-page-services--applications-implementation)
-    * [5.2.1. Sprint 1](#521-sprint-1)
-      * [5.2.1.1. Sprint Planning 1](#5211-sprint-planning-1)
-      * [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
-      * [5.2.1.3. Sprint Backlog 1](#5213-sprint-backlog-1)
-      * [5.2.1.4. Development Evidence for Sprint Review](#5214-development-evidence-for-sprint-review)
-      * [5.2.1.5. Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
-      * [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
-      * [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
-      * [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
-  * [5.3. Validation Interviews](#53-validation-interviews)
-    * [5.3.1. Diseño de Entrevistas](#531-diseño-de-entrevistas)
-    * [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas)
-    * [5.3.3. Evaluaciones según heurísticas](#533-evaluaciones-según-heurísticas)
-  * [5.4. Video About-the-Product](#54-video-about-the-product)
-* [Conclusiones](#conclusiones)
-  * [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-  * [Video About-the-Team](#video-about-the-team)
-* [Bibliografía](#bibliografía)
-* [Anexos](#anexos)
+- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
+- [Contenido](#contenido)
+- [Student Outcome](#student-outcome)
+- [Capítulo I: Introducción](#capítulo-i-introducción)
+  - [1.1. Startup Profile](#11-startup-profile)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+  - [1.2. Solution Profile](#12-solution-profile)
+    - [1.2.1 Antecedentes y problemática](#121-antecedentes-y-problemática)
+    - [1.2.2 Lean UX Process](#122-lean-ux-process)
+      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
+  - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+- [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation--analysis)
+  - [2.1. Competidores](#21-competidores)
+    - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
+    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+  - [2.2. Entrevistas](#22-entrevistas)
+    - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+      - [Segmento objetivo 1: Personal de enfermería cardiovascular](#segmento-objetivo-1-personal-de-enfermería-cardiovascular)
+        - [Descripción del segmento](#descripción-del-segmento)
+        - [Información principal a recolectar](#información-principal-a-recolectar)
+        - [Información complementaria para construir arquetipos](#información-complementaria-para-construir-arquetipos)
+        - [Preguntas principales](#preguntas-principales)
+        - [Preguntas complementarias](#preguntas-complementarias)
+      - [Segmento objetivo 2: Médicos especialistas cardiovasculares](#segmento-objetivo-2-médicos-especialistas-cardiovasculares)
+        - [Descripción del segmento](#descripción-del-segmento-1)
+        - [Información principal a recolectar](#información-principal-a-recolectar-1)
+        - [Información complementaria para construir arquetipos](#información-complementaria-para-construir-arquetipos-1)
+        - [Preguntas principales](#preguntas-principales-1)
+        - [Preguntas complementarias](#preguntas-complementarias-1)
+      - [Buenas prácticas aplicadas en el diseño](#buenas-prácticas-aplicadas-en-el-diseño)
+    - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+      - [Segmento objetivo 1: Personal de enfermería cardiovascular](#segmento-objetivo-1-personal-de-enfermería-cardiovascular-1)
+        - [Entrevista 1 — Samuel Akerman](#entrevista-1--samuel-akerman)
+        - [Entrevista 2](#entrevista-2)
+        - [Entrevista 3](#entrevista-3)
+      - [Segmento objetivo 2: Médicos especialistas cardiovasculares](#segmento-objetivo-2-médicos-especialistas-cardiovasculares-1)
+        - [Entrevista 1](#entrevista-1)
+        - [Entrevista 2](#entrevista-2-1)
+        - [Entrevista 3](#entrevista-3-1)
+    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+      - [Resumen de entrevistas analizadas](#resumen-de-entrevistas-analizadas)
+      - [Segmento objetivo 1: Personal de enfermería cardiovascular](#segmento-objetivo-1-personal-de-enfermería-cardiovascular-2)
+        - [Análisis de características objetivas](#análisis-de-características-objetivas)
+        - [Análisis de características subjetivas](#análisis-de-características-subjetivas)
+        - [Interpretación del segmento](#interpretación-del-segmento)
+      - [Segmento objetivo 2: Médicos especialistas cardiovasculares](#segmento-objetivo-2-médicos-especialistas-cardiovasculares-2)
+        - [Análisis de características objetivas](#análisis-de-características-objetivas-1)
+        - [Análisis de características subjetivas](#análisis-de-características-subjetivas-1)
+        - [Interpretación del segmento](#interpretación-del-segmento-1)
+      - [Comparación entre segmentos](#comparación-entre-segmentos)
+      - [Conclusiones generales del análisis](#conclusiones-generales-del-análisis)
+  - [2.3. Needfinding](#23-needfinding)
+    - [2.3.1. User Personas](#231-user-personas)
+      - [User Persona 1: Daniela Ríos](#user-persona-1-daniela-ríos)
+      - [User Persona 2: Dr. Alejandro Torres](#user-persona-2-dr-alejandro-torres)
+      - [Conclusión de los User Personas](#conclusión-de-los-user-personas)
+    - [2.3.2. User Task Matrix](#232-user-task-matrix)
+      - [User Task Matrix de ClinicalSync](#user-task-matrix-de-clinicalsync)
+      - [Tareas con mayor frecuencia e importancia combinadas](#tareas-con-mayor-frecuencia-e-importancia-combinadas)
+      - [Tareas prioritarias de Daniela Ríos](#tareas-prioritarias-de-daniela-ríos)
+      - [Tareas prioritarias del Dr. Alejandro Torres](#tareas-prioritarias-del-dr-alejandro-torres)
+      - [Coincidencias y divergencias entre arquetipos](#coincidencias-y-divergencias-entre-arquetipos)
+    - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+      - [User Journey Map 1: Daniela Ríos](#user-journey-map-1-daniela-ríos)
+      - [User Journey Map 2: Dr. Alejandro Torres](#user-journey-map-2-dr-alejandro-torres)
+      - [Comparación entre recorridos](#comparación-entre-recorridos)
+      - [Conclusión del User Journey Mapping](#conclusión-del-user-journey-mapping)
+    - [2.3.4. Empathy Mapping](#234-empathy-mapping)
+      - [Empathy Map 1: Daniela Ríos](#empathy-map-1-daniela-ríos)
+        - [¿Con quién estamos empatizando?](#con-quién-estamos-empatizando)
+        - [¿Qué necesita hacer?](#qué-necesita-hacer)
+        - [¿Qué la convencería de que ClinicalSync es la alternativa correcta?](#qué-la-convencería-de-que-clinicalsync-es-la-alternativa-correcta)
+      - [Empathy Map 2: Dr. Alejandro Torres](#empathy-map-2-dr-alejandro-torres)
+        - [¿Con quién estamos empatizando?](#con-quién-estamos-empatizando-1)
+        - [¿Qué necesita hacer?](#qué-necesita-hacer-1)
+        - [¿Qué lo convencería de que ClinicalSync es la alternativa correcta?](#qué-lo-convencería-de-que-clinicalsync-es-la-alternativa-correcta)
+      - [Conclusión del Empathy Mapping](#conclusión-del-empathy-mapping)
+  - [2.4. Big Picture Event Storming](#24-big-picture-event-storming)
+    - [Step 1: Collect Domain Events](#step-1-collect-domain-events)
+    - [Step 2: Sort Domain Events](#step-2-sort-domain-events)
+    - [Step 3: Add Actors and External Systems](#step-3-add-actors-and-external-systems)
+    - [Step 4: Add Problems and Opportunities](#step-4-add-problems-and-opportunities)
+    - [Conclusión del Big Picture Event Storming](#conclusión-del-big-picture-event-storming)
+  - [2.5. Ubiquitous Language](#25-ubiquitous-language)
+    - [Criterios de selección](#criterios-de-selección)
+    - [Glosario del dominio](#glosario-del-dominio)
+      - [Paciente y unidad asistencial](#paciente-y-unidad-asistencial)
+      - [Turno y traspaso](#turno-y-traspaso)
+      - [Registro clínico](#registro-clínico)
+      - [Vigilancia y eventos clínicos](#vigilancia-y-eventos-clínicos)
+      - [Indicaciones médicas](#indicaciones-médicas)
+      - [Trazabilidad y responsabilidad](#trazabilidad-y-responsabilidad)
+      - [Sistemas, soportes y carga de trabajo](#sistemas-soportes-y-carga-de-trabajo)
+    - [Términos prioritarios del dominio](#términos-prioritarios-del-dominio)
+    - [Relación con los demás artefactos del proyecto](#relación-con-los-demás-artefactos-del-proyecto)
+    - [Conclusión del Ubiquitous Language](#conclusión-del-ubiquitous-language)
+- [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
+  - [3.1. User Stories](#31-user-stories)
+  - [3.2. Impact Mapping](#32-impact-mapping)
+  - [3.3. Product Backlog](#33-product-backlog)
+- [Capítulo IV: Product Design](#capítulo-iv-product-design)
+  - [4.1. Style Guidelines](#41-style-guidelines)
+    - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
+    - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
+  - [4.2. Information Architecture](#42-information-architecture)
+    - [4.2.1. Organization Systems](#421-organization-systems)
+    - [4.2.2. Labeling Systems](#422-labeling-systems)
+    - [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
+    - [4.2.4. Searching Systems](#424-searching-systems)
+    - [4.2.5. Navigation Systems](#425-navigation-systems)
+  - [4.3. Landing Page UI Design](#43-landing-page-ui-design)
+    - [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
+    - [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
+  - [4.4. Web Applications UX/UI Design](#44-web-applications-uxui-design)
+    - [4.4.1. Web Applications Wireframes](#441-web-applications-wireframes)
+    - [4.4.2. Web Applications Wireflow Diagrams](#442-web-applications-wireflow-diagrams)
+    - [4.4.3. Web Applications Mock-ups](#443-web-applications-mock-ups)
+    - [4.4.4. Web Applications User Flow Diagrams](#444-web-applications-user-flow-diagrams)
+  - [4.5. Web Applications Prototyping](#45-web-applications-prototyping)
+  - [4.6. Domain-Driven Software Architecture](#46-domain-driven-software-architecture)
+    - [4.6.1. Design-Level Event Storming](#461-design-level-event-storming)
+    - [4.6.2. Software Architecture Context Diagram](#462-software-architecture-context-diagram)
+    - [4.6.3. Software Architecture Container Diagrams](#463-software-architecture-container-diagrams)
+    - [4.6.4. Software Architecture Components Diagrams](#464-software-architecture-components-diagrams)
+  - [4.7. Software Object-Oriented Design](#47-software-object-oriented-design)
+    - [4.7.1. Class Diagrams](#471-class-diagrams)
+  - [4.8. Database Design](#48-database-design)
+    - [4.8.1. Database Diagrams](#481-database-diagrams)
+- [Capítulo V: Product Implementation, Validation \& Deployment](#capítulo-v-product-implementation-validation--deployment)
+  - [5.1. Software Configuration Management](#51-software-configuration-management)
+    - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
+    - [5.1.2. Source Code Management](#512-source-code-management)
+    - [5.1.3. Source Code Style Guide \& Conventions](#513-source-code-style-guide--conventions)
+    - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
+  - [5.2. Landing Page, Services \& Applications Implementation](#52-landing-page-services--applications-implementation)
+    - [5.2.1. Sprint 1](#521-sprint-1)
+      - [5.2.1.1. Sprint Planning 1](#5211-sprint-planning-1)
+      - [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
+      - [5.2.1.3. Sprint Backlog 1](#5213-sprint-backlog-1)
+      - [5.2.1.4. Development Evidence for Sprint Review](#5214-development-evidence-for-sprint-review)
+      - [5.2.1.5. Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
+      - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
+      - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
+      - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+  - [5.3. Validation Interviews](#53-validation-interviews)
+    - [5.3.1. Diseño de Entrevistas](#531-diseño-de-entrevistas)
+    - [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas)
+    - [5.3.3. Evaluaciones según heurísticas](#533-evaluaciones-según-heurísticas)
+  - [5.4. Video About-the-Product](#54-video-about-the-product)
+- [Conclusiones](#conclusiones)
+  - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+  - [Video About-the-Team](#video-about-the-team)
+- [Bibliografía](#bibliografía)
+- [Anexos](#anexos)
+  - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
 
 ---
 
@@ -465,14 +537,14 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
 <table border="1">
   <tr>
     <td width="40%">
-      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
-      <b>Edad:</b> [Edad] años<br>
-      <b>Distrito:</b> [Distrito]<br>
-      <b>Ocupación:</b> [Rol y especialidad]<br>
-      <b>Área de trabajo:</b> [Área]<br>
-      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
-      <b>Duración:</b> [mm:ss]<br>
-      <b>Entrevistador:</b> [Integrante del equipo]
+      <b>Nombres y apellidos:</b> Nathalia Dávila<br>
+      <b>Edad:</b> 25 años<br>
+      <b>Distrito:</b> San Miguel, Lima <br>
+      <b>Ocupación:</b> Interna de enfermería <br>
+      <b>Área de trabajo:</b> UCI Cardiovascular<br>
+      <b>Timing:</b> 00:00 - 11:51<br>
+      <b>Duración:</b> 11:51<br>
+      <b>Entrevistador:</b> Angel Andres Valdez Melo
     </td>
     <td align="center">
       <img src="assets/chapter-2/entrevista-enfermeria-3.png" alt="Entrevista 3 - Enfermería cardiovascular" width="85%">
@@ -480,13 +552,13 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
   <tr>
     <td colspan="2">
-      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20261d993_upc_edu_pe/IQBNmG-SCCk7R66msW6rNFoQAYij_ld9x94YIjyedfDnM0g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HyATGR">[URL del video en Microsoft Stream]</a>
       <br><br>
-      <b>Resumen:</b> [Descripción de cómo el entrevistado realiza hoy el registro clínico durante el turno, qué herramientas utiliza y qué dificultades encuentra.]
+      <b>Resumen:</b> Actualmente, el personal de enfermería realiza el registro clínico iniciando con la toma de notas en libretas o fichas físicas de manera manual, para posteriormente transcribir todos esos datos al sistema informático genérico del hospital. Este uso obligado de registros manuales redundantes y sistemas no especializados genera una alta carga operativa para los profesionales de la salud. Las principales dificultades de este flujo radican en la duplicidad del trabajo, lo cual resulta confuso, prolonga el tiempo necesario para completar una historia clínica y mantiene la información vital del paciente dispersa en diferentes medios
       <br><br>
-      [Descripción de la mecánica del cambio de turno en su servicio, situaciones de pérdida u omisión de información y motivos por los que recurre a registros complementarios.]
+      La mecánica del cambio de turno se basa en la lectura de carpetas físicas y una comunicación verbal que a menudo carece de estructura, lo que genera una frecuente pérdida parcial de información. Esta falta de estandarización ha provocado situaciones de riesgo, como la omisión de comunicar al siguiente turno que una paciente cardíaca interrumpió voluntariamente su tratamiento. Para mitigar estos errores de memoria y compensar las deficiencias de los sistemas actuales, el personal recurre constantemente al uso de apuntes físicos complementarios (cuadernos de bolsillo) donde anotan detalles rápidos o eventos referidos por el paciente durante el monitoreo continuo
       <br><br>
-      [Condiciones bajo las que adoptaría una herramienta digital y funcionalidades que considera indispensables.]
+      Para que el personal clínico adopte una herramienta digital, esta debe ser didáctica, de fácil acceso para usuarios de distintas edades, extremadamente rápida y diseñada para dispositivos móviles (tablets) que puedan llevarse directamente a la cama del paciente. Las funcionalidades indispensables incluyen un flujo especializado que facilite el registro inmediato de signos vitales, estandarice la comunicación de los traspasos de turno mediante formatos claros (como el modelo SBAR) para informar sobre medicación pendiente y crisis recientes, y garantice una trazabilidad absoluta que permita identificar de inmediato quién y cuándo registró cada acción médica
     </td>
   </tr>
 </table>
@@ -498,14 +570,14 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
 <table border="1">
   <tr>
     <td width="40%">
-      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
-      <b>Edad:</b> [Edad] años<br>
-      <b>Distrito:</b> [Distrito]<br>
-      <b>Ocupación:</b> [Especialidad médica]<br>
-      <b>Área de trabajo:</b> [Área]<br>
-      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
-      <b>Duración:</b> [mm:ss]<br>
-      <b>Entrevistador:</b> [Integrante del equipo]
+      <b>Nombres y apellidos:</b> Mark Alex Esquivel Cabrera<br>
+      <b>Edad:</b> 28 años<br>
+      <b>Distrito:</b> Ate <br>
+      <b>Ocupación:</b> Médico cirujano <br>
+      <b>Área de trabajo:</b> Cardiología <br>
+      <b>Timing:</b> 00:00 - 13:30 <br>
+      <b>Duración:</b> 13:51 <br>
+      <b>Entrevistador:</b> Johan Giovani Huamán Cuba
     </td>
     <td align="center">
       <img src="assets/chapter-2/entrevista-medico-1.png" alt="Entrevista 1 - Médico especialista cardiovascular" width="85%">
@@ -513,13 +585,13 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
   <tr>
     <td colspan="2">
-      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202417448_upc_edu_pe/IQCz-S_sX1VtRpa46phr7i2dAcsVgntggm8La7JXS1Vt4QQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=uiada9">Ver entrevista en Microsoft Stream</a>
       <br><br>
-      <b>Resumen:</b> [Descripción de cómo accede hoy a la información clínica, cuántas fuentes debe consultar y cuánto tiempo le demanda.]
+      <b>Resumen:</b> Mark Alex Esquivel Cabrera labora en un centro de salud rural con un sistema de registro doble. El personal primero anota datos generales, síntomas y códigos de enfermedades en hojas de papel. Luego, esa información se traslada a una hoja de cálculo básica para mantener un archivo de pacientes.
       <br><br>
-      [Situaciones en que la información incompleta o tardía condicionó una decisión, y cómo se comunica con el personal de enfermería.]
+      Este método genera pérdida de trazabilidad, dificultad para interpretar registros físicos y riesgo de información incompleta. El entrevistado mencionó que la letra de los doctores puede resultar ilegible, que algunos detalles pueden omitirse y que ciertos espacios quedan incompletos en las hojas, lo que complica el seguimiento médico del paciente.
       <br><br>
-      [Expectativas sobre trazabilidad, visualización consolidada y condiciones para incorporar una herramienta adicional.]
+      Mark muestra disposición para probar una solución tecnológica nueva, siempre que sea segura y fácil de usar. También resaltó que una herramienta compleja podría generar rechazo en profesionales con menor familiaridad tecnológica, especialmente médicos de mayor edad, quienes podrían preferir mantener el uso de registros en papel u hojas de cálculo por costumbre.
     </td>
   </tr>
 </table>
@@ -529,14 +601,14 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
 <table border="1">
   <tr>
     <td width="40%">
-      <b>Nombres y apellidos:</b> [Nombres y apellidos]<br>
-      <b>Edad:</b> [Edad] años<br>
-      <b>Distrito:</b> [Distrito]<br>
+      <b>Nombres y apellidos:</b> Brenda Estefania Rios Caballero<br>
+      <b>Edad:</b> 24 años<br>
+      <b>Distrito:</b> Callao<br>
       <b>Ocupación:</b> [Especialidad médica]<br>
-      <b>Área de trabajo:</b> [Área]<br>
-      <b>Timing:</b> [hh:mm:ss - hh:mm:ss]<br>
-      <b>Duración:</b> [mm:ss]<br>
-      <b>Entrevistador:</b> [Integrante del equipo]
+      <b>Área de trabajo:</b> Ccardiologia<br>
+      <b>Timing:</b> 00:00 - 05:35<br>
+      <b>Duración:</b> 05:35<br>
+      <b>Entrevistador:</b> Johnny Alexander Ojanama Abanto
     </td>
     <td align="center">
       <img src="assets/chapter-2/entrevista-medico-2.png" alt="Entrevista 2 - Médico especialista cardiovascular" width="85%">
@@ -544,7 +616,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
   <tr>
     <td colspan="2">
-      <b>Enlace:</b> <a href="[URL del video en Microsoft Stream]">[URL del video en Microsoft Stream]</a>
+      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231f412_upc_edu_pe/IQAn-Y01eCNLS5orrIkmlM-8AfXogfgb8uXdgScpTyujMLw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=uBMjbw">[URL del video en Microsoft Stream]</a>
       <br><br>
       <b>Resumen:</b> [Descripción de cómo accede hoy a la información clínica, cuántas fuentes debe consultar y cuánto tiempo le demanda.]
       <br><br>
