@@ -523,6 +523,7 @@ En coherencia con lo comprometido en la sección 4.1.2, la navegación es operab
 #### 4.4.4. Web Applications User Flow Diagrams
 ### 4.5. Web Applications Prototyping
 ### 4.6. Domain-Driven Software Architecture
+A partir de lo que trabajamos en el Big Picture Event Storming, en esta sección detallamos el diseño de nuestra arquitectura usando Domain-Driven Design (DDD). Aquí definimos los Bounded Contexts, los agregados, eventos y comandos, y finalmente mostramos la estructura del sistema aplicando el Modelo C4.
 #### 4.6.1. Design-Level Event Storming
 #### 4.6.2. Software Architecture Context Diagram
 #### 4.6.3. Software Architecture Container Diagrams
