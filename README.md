@@ -515,7 +515,48 @@ En coherencia con lo comprometido en la sección 4.1.2, la navegación es operab
 
 ### 4.3. Landing Page UI Design
 #### 4.3.1. Landing Page Wireframe
+
+<p align="center">
+  <img src="assets/chapter-4/Wireframe1.png" alt="WireFrame1" width="800">
+</p>
+
+
+<p align="center">
+  <img src="assets/chapter-4/Wireframe 2.png" alt="Wireframe2" width="800">
+</p>
+
+
+<p align="center">
+  <img src="assets/chapter-4/Wireframe 3.png" alt="Wireframe3" width="800">
+</p>
+
+
+<p align="center">
+  <img src="assets/chapter-4/Wireframe 4.png" alt="Wireframe4" width="800">
+</p>
+
+
 #### 4.3.2. Landing Page Mock-up
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-up 1.png" alt="MockUp1" width="800">
+</p>
+
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-up 2.png" alt="MockUp2" width="800">
+</p>
+
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-up 3.png" alt="MockUp3" width="800">
+</p>
+
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-up 4.png" alt="MockUp4" width="800">
+</p>
+
 ### 4.4. Web Applications UX/UI Design
 #### 4.4.1. Web Applications Wireframes
 #### 4.4.2. Web Applications Wireflow Diagrams
