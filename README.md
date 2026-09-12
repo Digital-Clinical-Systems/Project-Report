@@ -525,6 +525,76 @@ En coherencia con lo comprometido en la sección 4.1.2, la navegación es operab
 ### 4.6. Domain-Driven Software Architecture
 A partir de lo que trabajamos en el Big Picture Event Storming, en esta sección detallamos el diseño de nuestra arquitectura usando Domain-Driven Design (DDD). Aquí definimos los Bounded Contexts, los agregados, eventos y comandos, y finalmente mostramos la estructura del sistema aplicando el Modelo C4.
 #### 4.6.1. Design-Level Event Storming
+Para bajar al detalle técnico, armamos una sesión de Design-Level Event Storming. Esto nos sirvió para pasar del flujo general del negocio a los componentes reales de software, identificando qué comandos disparan qué eventos y en qué contextos viven.
+
+**Objetivo de la sesión**
+Nos enfocamos en desglosar el flujo clínico de la UCI Cardiovascular en eventos concretos, agrupar las responsabilidades en Bounded Contexts y definir las reglas (políticas) que el sistema ClinicalSync debe respetar de manera interna.
+
+**Paso 1: Recolección de Domain Events**
+Primero identificamos los eventos de dominio clave para el negocio, redactándolos siempre en pasado. Los eventos detectados para ClinicalSync fueron:
+
+- Información clínica entregada al nuevo turno
+- Turno anterior finalizado
+- Pacientes asignados revisados
+- Estado inicial del paciente verificado
+- Signos vitales registrados
+- Signos vitales monitoreados
+- Medicamento administrado
+- Indicación médica revisada
+- Evolución reciente del paciente revisada
+- Evolución posterior monitoreada
+- Evento clínico relevante detectado
+- Cambio crítico identificado
+- Médico informado sobre cambio clínico
+- Cumplimiento de indicación registrado
+- Medicación e indicaciones validadas
+- Información clínica consultada por el médico
+- Nueva indicación médica registrada
+- Indicación ejecutada por enfermería
+
+**Paso 2: Identificación de Bounded Contexts**
+Luego agrupamos estos eventos para separar correctamente las responsabilidades de la plataforma:
+
+*   **BC-01: Security & Shared Kernel (IAM) Context — Subdominio Genérico**
+    Se encarga de la seguridad y de que solo el personal autorizado acceda al sistema.
+    *Domain Events clave:* Usuario autenticado, Rol asignado, Sesión iniciada.
+
+*   **BC-02: Patients Context — Subdominio de Soporte**
+    Maneja los datos básicos y la admisión de los pacientes. Actúa como el directorio maestro.
+    *Domain Events clave:* Paciente admitido, Datos demográficos registrados, Estado actualizado.
+
+*   **BC-03: Vital Signs Context — Core Domain**
+    Es el núcleo de ClinicalSync. Aquí se registran y evalúan los signos vitales en tiempo real.
+    *Domain Events clave:* Signos vitales registrados, Nivel de riesgo clínico evaluado.
+
+*   **BC-04: Critical Events & Alerts Context — Core Domain**
+    Controla el ciclo de vida de las alertas médicas cuando hay anomalías.
+    *Domain Events clave:* Alerta crítica generada, Alerta atendida, Alerta resuelta.
+
+*   **BC-05: Handover (SBAR) Context — Trazabilidad Clínica**
+    Se encarga de estructurar y guardar los traspasos de turno usando el modelo SBAR.
+    *Domain Events clave:* Entrega SBAR registrada, Turno finalizado, Acuse de recibo confirmado.
+
+*   **BC-06: Audit Logs Context — Subdominio de Soporte**
+    Guarda un registro inmutable de todo lo que hacen los usuarios para mantener la trazabilidad.
+    *Domain Events clave:* Log de auditoría creado, Operación clínica registrada.
+
+*   **BC-07: Physicians & Treatments Context — Subdominio de Soporte**
+    Administra el catálogo de médicos y el historial cronológico de los tratamientos.
+    *Domain Events clave:* Médico asignado, Tratamiento prescrito, Historial actualizado.
+
+**Paso 3: Identificación de Comandos y Políticas**
+- **Comandos identificados:** Registrar signos vitales, Iniciar entrega de turno SBAR, Reportar evento clínico crítico, Prescribir tratamiento.
+- **Políticas de dominio:** 
+  - Cuando un signo vital supera un umbral de riesgo → generar alerta crítica de inmediato.
+  - Cuando se inicia el cambio de turno → generar un resumen estructurado del SBAR.
+
+**Paso 4: Modelos de Lectura**
+Para que los usuarios puedan interactuar con esta data, identificamos estas vistas:
+- Dashboard de monitoreo de constantes vitales.
+- Vista de entrega de turno (SBAR).
+- Historial de eventos y auditoría.
+
 #### 4.6.2. Software Architecture Context Diagram
 #### 4.6.3. Software Architecture Container Diagrams
 #### 4.6.4. Software Architecture Components Diagrams
