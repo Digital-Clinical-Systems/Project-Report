@@ -596,6 +596,15 @@ Para que los usuarios puedan interactuar con esta data, identificamos estas vist
 - Historial de eventos y auditoría.
 
 #### 4.6.2. Software Architecture Context Diagram
+Este diagrama muestra una vista de alto nivel de ClinicalSync. Aquí identificamos a los actores principales (enfermeros, médicos y auditores) y cómo interactúan con el sistema sin entrar en detalles técnicos.
+
+<p align="center">
+  <img src="assets/chapter-4/context-diagram.png" alt="Diagrama de Contexto ClinicalSync" width="800">
+</p>
+
+*Diagrama elaborado en Structurizr. Muestra la interacción directa de los roles clínicos con la plataforma.*
+
+
 #### 4.6.3. Software Architecture Container Diagrams
 #### 4.6.4. Software Architecture Components Diagrams
 ### 4.7. Software Object-Oriented Design
