@@ -626,6 +626,18 @@ Aquí mostramos cómo está estructurado el Backend API por dentro. Separamos la
 
 ### 4.7. Software Object-Oriented Design
 #### 4.7.1. Class Diagrams
+Basándonos en los Bounded Contexts, armamos el diagrama de clases del dominio. El objetivo es mantener una alta cohesión y aislar la lógica de negocio clínica de la infraestructura.
+
+Para implementar DDD correctamente, utilizamos herencia desde un `AbstractDomainAggregateRoot` del *Shared Kernel* para poder lanzar eventos de dominio. También definimos Value Objects (como `BloodPressure` para encapsular la presión sistólica y diastólica) y las enumeraciones para estandarizar estados (`RiskLevel`, `HandoverStatus`, etc.). 
+
+El modelo de traspasos SBAR mantiene la trazabilidad exigiendo el ID del enfermero que recibe el turno (`incomingNurseId`), y el sistema de auditoría es robusto mediante el uso de la clase inmutable `AuditLog`.
+
+<p align="center">
+  <img src="assets/chapter-4/class-diagram.png" alt="UML Class Diagram - ClinicalSync" width="100%">
+</p>
+
+*Detalla los paquetes de dominio de cada contexto y las relaciones estructurales entre las entidades.*
+
 ### 4.8. Database Design
 #### 4.8.1. Database Diagrams
 
