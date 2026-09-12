@@ -222,11 +222,297 @@ El diseño web de ClinicalSync se implementa como una solución digital orientad
 * **Accesibilidad:** Se consideran contrastes adecuados entre la tipografía y los fondos, además de una disposición clara del contenido. Se busca mantener una navegación sencilla y legible que reduzca la fatiga visual del personal durante las guardias, fortaleciendo la usabilidad general de la web app.
   
 ### 4.2. Information Architecture
+
+La arquitectura de información define cómo se organiza, se nombra, se busca y se recorre el contenido de ClinicalSync. Su propósito es que cada usuario encuentre lo que necesita en el menor número de pasos posible, criterio que no es estético sino operativo: en el Capítulo II quedó establecido que el personal de enfermería registra durante la atención y que el médico especialista pierde tiempo reconstruyendo el estado del paciente desde varias fuentes.
+
+La solución comprende dos productos con audiencias y objetivos distintos, por lo que su arquitectura se define por separado.
+
+| Producto | Audiencia | Objetivo de la arquitectura |
+|---|---|---|
+| **Landing Page** | Visitantes y decisores institucionales que aún no conocen el producto. | Conducir al visitante desde el problema hasta la solicitud de una demostración, en una lectura lineal y sin autenticación. |
+| **Web Application** | Personal de enfermería cardiovascular y médicos especialistas, autenticados y con un rol asignado. | Minimizar los pasos de las tareas frecuentes del turno y permitir localizar información clínica en segundos. |
+
+Las decisiones de esta sección se apoyan en tres insumos previos: el vocabulario fijado en el Ubiquitous Language (sección 2.5), que determina cómo se nombran los elementos de la interfaz; la User Task Matrix (sección 2.3.2), que indica qué tareas son más frecuentes y por lo tanto deben estar más accesibles; y las User Stories del Capítulo III, que delimitan qué contenido existe realmente en cada producto.
+
 #### 4.2.1. Organization Systems
+
+Los sistemas de organización determinan cómo se agrupa el contenido y bajo qué lógica se relaciona. ClinicalSync combina tres esquemas, cada uno aplicado donde resulta más natural para el usuario.
+
+| Esquema de organización | Dónde se aplica | Justificación |
+|---|---|---|
+| **Secuencial (por pasos)** | Landing Page y formulario de traspaso SBAR. | El visitante necesita recorrer un argumento en orden: problema, solución, funcionamiento, beneficios y contacto. El traspaso SBAR es secuencial por definición del formato: situación, antecedentes, evaluación y recomendación. |
+| **Jerárquico (de lo general a lo particular)** | Web Application. | El profesional parte de sus pacientes asignados, entra a un paciente y desde ahí accede a sus registros. Cada nivel acota el anterior. |
+| **Cronológico** | Evolución clínica, eventos, bitácora de trazabilidad e historial de indicaciones. | En el dominio clínico el orden temporal es la relación más significativa entre registros: lo que importa es qué ocurrió antes y qué después. |
+| **Matricial (por múltiples atributos)** | Listados filtrables de pacientes, eventos y bitácora. | Un mismo conjunto de registros debe poder recorrerse por paciente, por tipo de acción, por responsable o por rango de fechas, según lo que el profesional esté buscando. |
+
+##### Organización de la Landing Page
+
+El contenido se dispone en una sola página de desplazamiento vertical, con secciones autónomas y un orden argumental que va del problema a la acción:
+
+1. Presentación y propuesta de valor.
+2. El problema de la información clínica dispersa en unidades cardiovasculares.
+3. Cómo funciona ClinicalSync, en pasos.
+4. Características principales.
+5. Beneficios, diferenciados por perfil.
+6. Planes y modelo de servicio.
+7. Preguntas frecuentes.
+8. Equipo de desarrollo.
+9. Formulario de contacto y solicitud de demostración.
+
+La estructura es deliberadamente plana: no existen subpáginas, de modo que el visitante puede recorrer todo el argumento sin abandonar la página ni perder el contexto.
+
+##### Organización de la Web Application
+
+El contenido se organiza en cuatro niveles de profundidad. La restricción de diseño es que ninguna tarea de frecuencia muy alta según la User Task Matrix supere el segundo nivel.
+
+| Nivel | Contenido | Ejemplo |
+|---|---|---|
+| **1. Turno** | Panel inicial con los pacientes asignados al profesional durante su turno. | Lista de pacientes con su estado y alertas activas. |
+| **2. Paciente** | Ficha del paciente con su resumen clínico y accesos a cada tipo de registro. | Últimos signos vitales, indicaciones vigentes, eventos recientes. |
+| **3. Tipo de registro** | Colección de un tipo específico dentro del paciente. | Historial de signos vitales, traspasos, medicación administrada. |
+| **4. Registro individual** | Detalle de una entrada, con su responsable, su marca temporal y su historial de cambios. | Una toma de signos vitales puntual, un traspaso SBAR determinado. |
+
+El agrupamiento responde al rol del usuario. El personal de enfermería accede a una organización centrada en la captura, donde las acciones de registro están disponibles desde el nivel del paciente sin navegación adicional. El médico especialista accede a una organización centrada en la consulta, donde el resumen clínico consolidado ocupa el nivel del paciente y los registros individuales quedan como profundización opcional.
+
 #### 4.2.2. Labeling Systems
+
+El sistema de etiquetado define cómo se nombran las secciones, las acciones y los datos en la interfaz. En ClinicalSync la regla de fondo es que **la interfaz usa el vocabulario del Ubiquitous Language definido en la sección 2.5**, no una traducción libre ni terminología técnica. Si el personal de enfermería dice "traspaso de turno", la aplicación no debe decir "transferencia de guardia" ni "handover".
+
+##### Convenciones de etiquetado
+
+| Convención | Regla | Ejemplo correcto | Ejemplo a evitar |
+|---|---|---|---|
+| **Idioma** | Toda la interfaz visible se rotula en español; el inglés queda reservado para el código y la documentación técnica. | Signos vitales | Vital Signs |
+| **Consistencia con el dominio** | Cada etiqueta corresponde a un término del Ubiquitous Language. | Traspaso SBAR | Reporte de cambio |
+| **Acciones en infinitivo** | Los botones nombran la acción que ejecutan. | Registrar signos vitales | Signos vitales |
+| **Brevedad** | Las etiquetas de navegación no superan las tres palabras. | Mis pacientes | Listado de pacientes asignados al turno |
+| **Sin abreviaturas ambiguas** | Solo se abrevia lo que es estándar del dominio clínico. | UCI, SBAR, FC | Trasp., Med. |
+| **Estados explícitos** | Los estados se nombran con una palabra que el usuario pueda interpretar sin leyenda. | Pendiente, Confirmado, Vencido | Estado 1, Estado 2 |
+
+##### Correspondencia entre el dominio y la interfaz
+
+| Término del dominio (2.5) | Etiqueta en la interfaz | Dónde aparece |
+|---|---|---|
+| Assigned Patient | Mis pacientes | Navegación principal de la Web App |
+| Patient Status | Estado del paciente | Ficha del paciente y listado del turno |
+| Vital Signs | Signos vitales | Sección de registro y de historial |
+| Clinical Event | Eventos clínicos | Sección de registro y de historial |
+| Medication Administration | Medicación administrada | Sección de registro |
+| Shift Handover | Traspaso de turno | Navegación principal |
+| SBAR Report | Traspaso SBAR | Formulario y listado de traspasos |
+| Situation / Background / Assessment / Recommendation | Situación / Antecedentes / Evaluación / Recomendación | Secciones del formulario SBAR |
+| Medical Indication | Indicaciones médicas | Ficha del paciente |
+| Indication Compliance | Cumplimiento | Acción y estado dentro de una indicación |
+| Clinical Alert | Alertas | Distintivo en el listado del turno y en la ficha |
+| Clinical Evolution | Evolución clínica | Vista de consulta del médico especialista |
+| Audit Trail | Bitácora | Sección de auditoría del paciente |
+| Responsible Staff | Registrado por | Pie de cada registro individual |
+| Timestamp | Fecha y hora | Pie de cada registro individual |
+
+##### Etiquetado de estados
+
+Los estados se rotulan con una sola palabra y se refuerzan con el color definido por Johnny en las Web Style Guidelines (sección 4.1.2), nunca solo con color, para no depender de la percepción cromática del usuario.
+
+| Estado | Etiqueta | Refuerzo visual | Dónde se usa |
+|---|---|---|---|
+| Registro guardado correctamente | Guardado | Verde esmeralda | Confirmación de cualquier registro |
+| Traspaso emitido y aún no recibido | Pendiente | Amarillo | Listado de traspasos |
+| Traspaso recibido por el turno entrante | Confirmado | Verde esmeralda | Listado de traspasos |
+| Indicación emitida y no ejecutada | Pendiente | Amarillo | Indicaciones del paciente |
+| Indicación fuera de su plazo previsto | Vencida | Rojo | Indicaciones del paciente |
+| Paciente con alerta activa | Requiere atención | Rojo | Listado del turno |
+| Documentación incompleta al cierre | Incompleto | Amarillo | Resumen de cierre de turno |
+
+##### Etiquetado de la Landing Page
+
+Las secciones del sitio promocional se rotulan con lenguaje orientado al visitante, que no conoce el producto ni su vocabulario interno. Se emplean los rótulos Inicio, El problema, Cómo funciona, Características, Beneficios, Planes, Preguntas frecuentes, Equipo y Contacto. Se evita nombrar módulos internos del sistema en esta capa, ya que para el visitante son conceptos sin referente.
+
 #### 4.2.3. SEO Tags and Meta Tags
+
+La estrategia de posicionamiento aplica únicamente a la Landing Page. La Web Application opera detrás de autenticación y maneja información clínica, por lo que **debe quedar explícitamente excluida de la indexación**: no existe beneficio en que un buscador alcance sus rutas y sí un riesgo de exposición.
+
+##### Landing Page
+
+| Etiqueta | Contenido propuesto |
+|---|---|
+| `<title>` | ClinicalSync — Traspaso de turno y trazabilidad clínica cardiovascular |
+| `<meta name="description">` | Plataforma web que estandariza el traspaso de turno con SBAR, agiliza el registro de signos vitales y garantiza la trazabilidad de cada acción clínica en unidades cardiovasculares. |
+| `<meta name="keywords">` | traspaso de turno, SBAR, registro clínico, signos vitales, trazabilidad clínica, unidad cardiovascular, UCI cardiovascular, software clínico |
+| `<meta name="author">` | Digital Clinical System |
+| `<meta name="robots">` | index, follow |
+| `<meta http-equiv="Content-Language">` | es-PE |
+| `<link rel="canonical">` | URL pública de la landing page |
+| `<html lang>` | es, alternando a en cuando el visitante cambia el idioma |
+
+##### Etiquetas Open Graph y Twitter Card
+
+Se incorporan para que el enlace se previsualice correctamente cuando se comparta por mensajería o correo, que es la vía habitual por la que un contacto institucional recibe la referencia.
+
+| Etiqueta | Contenido propuesto |
+|---|---|
+| `og:title` | ClinicalSync — Continuidad clínica en unidades cardiovasculares |
+| `og:description` | Estandariza el traspaso SBAR, registra signos vitales en segundos y deja constancia de quién hizo qué y cuándo. |
+| `og:type` | website |
+| `og:url` | URL pública de la landing page |
+| `og:image` | Imagen de previsualización de 1200 × 630 px |
+| `og:locale` | es_PE, con `og:locale:alternate` en en_US |
+| `twitter:card` | summary_large_image |
+
+##### Reglas aplicadas
+
+- El `title` se mantiene por debajo de 60 caracteres y la `description` entre 140 y 160, para que no se trunquen en los resultados de búsqueda.
+- Cada sección de la landing usa un único `<h1>` y jerarquiza el resto con `<h2>` y `<h3>`, sin saltar niveles.
+- Toda imagen lleva `alt` descriptivo, lo que sirve simultáneamente al posicionamiento y a la accesibilidad comprometida en la sección 4.1.2.
+- Las dos versiones de idioma se declaran con `hreflang`, en coherencia con la historia US-11 del backlog.
+- Se publica un `sitemap.xml` con las secciones de la landing y un `robots.txt` que permite el rastreo del sitio promocional.
+
+##### Exclusión de la Web Application
+
+```
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /api/
+Sitemap: https://<dominio>/sitemap.xml
+```
+
+Adicionalmente, las vistas de la aplicación incluyen `<meta name="robots" content="noindex, nofollow">`, de modo que la exclusión no dependa únicamente del `robots.txt`, que es una convención que los rastreadores pueden ignorar.
+
 #### 4.2.4. Searching Systems
+
+Las necesidades de búsqueda son distintas en cada producto y deben resolverse con mecanismos proporcionales a su complejidad real.
+
+##### Landing Page
+
+No incorpora un buscador. El contenido cabe en una sola página y un motor de búsqueda añadiría un elemento que el visitante no espera. La localización de contenido se resuelve con la navegación ancla descrita en 4.2.5 y con la sección de preguntas frecuentes, que agrupa las dudas más habituales.
+
+##### Web Application
+
+La búsqueda es una necesidad operativa concreta: durante el turno el profesional necesita llegar a un paciente o a un registro sin recorrer listados. Los mecanismos previstos son tres, en orden de inmediatez.
+
+| Mecanismo | Qué resuelve | Dónde opera | Historia relacionada |
+|---|---|---|---|
+| **Búsqueda por paciente** | Localizar a un paciente por nombre o número de historia clínica. | Barra superior, disponible desde cualquier vista. | US-17 |
+| **Filtros sobre listados** | Acotar un conjunto de registros por uno o más atributos. | Listado del turno, traspasos, indicaciones, eventos y bitácora. | US-14, US-23, US-27, US-30 |
+| **Ordenamiento** | Reorganizar un listado ya acotado. | Todos los listados. | US-29 |
+
+##### Criterios de filtrado por vista
+
+| Vista | Filtros disponibles |
+|---|---|
+| Pacientes del turno | Estado del paciente, presencia de alertas activas, indicaciones pendientes |
+| Traspasos de turno | Paciente, turno, estado (pendiente o confirmado), rango de fechas |
+| Signos vitales | Paciente, rango de fechas, parámetro |
+| Eventos clínicos | Paciente, criticidad, responsable, rango de fechas |
+| Indicaciones médicas | Paciente, estado (vigente, pendiente, cumplida, vencida), médico emisor |
+| Bitácora de auditoría | Paciente, tipo de acción, responsable, rango de fechas |
+
+##### Comportamiento de la búsqueda
+
+- Los resultados se muestran mientras el usuario escribe, a partir del tercer carácter, para reducir el número de interacciones.
+- La búsqueda ignora mayúsculas y tildes, de modo que "Muñoz" y "munoz" devuelvan el mismo resultado.
+- El alcance respeta el rol y el turno: un profesional no obtiene resultados de pacientes que no tiene asignados.
+- Cuando no hay coincidencias, el sistema indica el criterio aplicado y ofrece limpiar los filtros, en lugar de mostrar un listado vacío sin explicación.
+- Los filtros activos permanecen visibles, para que el usuario no interprete un listado filtrado como el conjunto completo. Esta regla es deliberada: en un contexto clínico, creer que se está viendo la totalidad de los registros cuando en realidad hay un filtro aplicado constituye un riesgo, no solo una molestia.
+
 #### 4.2.5. Navigation Systems
+
+El sistema de navegación define cómo el usuario se desplaza entre los contenidos organizados en 4.2.1. ClinicalSync emplea navegación global, local y contextual, y su diseño responde a una restricción tomada de la User Task Matrix: **las tareas de frecuencia muy alta deben alcanzarse en un máximo de dos interacciones desde el punto de entrada.**
+
+##### Navegación de la Landing Page
+
+Al tratarse de una página única, la navegación es de tipo ancla: cada elemento del menú desplaza a la sección correspondiente sin recargar.
+
+```
+Landing Page
+├── Barra superior (fija al desplazar)
+│   ├── Inicio
+│   ├── El problema
+│   ├── Cómo funciona
+│   ├── Características
+│   ├── Beneficios
+│   ├── Planes
+│   ├── Preguntas frecuentes
+│   ├── Selector de idioma (ES / EN)
+│   └── [Solicitar demostración]  ← acción principal, destacada
+└── Pie de página
+    ├── Equipo
+    ├── Contacto
+    ├── Repositorio del proyecto
+    └── Aviso de privacidad
+```
+
+La barra permanece fija durante el desplazamiento para que la acción principal esté siempre disponible, sin obligar al visitante a volver al inicio. En pantallas reducidas el menú colapsa en un icono desplegable, conforme a la historia US-12.
+
+##### Navegación de la Web Application
+
+La navegación global se presenta en una barra lateral persistente cuyo contenido **depende del rol del usuario**. Esto responde directamente a la conclusión de la sección 2.3.1: el personal de enfermería produce información y el médico especialista la consume, de modo que una navegación idéntica para ambos obligaría a uno de los dos perfiles a atravesar opciones que no utiliza.
+
+```
+Web Application
+├── Barra superior (persistente)
+│   ├── Buscar paciente
+│   ├── Alertas activas
+│   └── Perfil y cierre de sesión
+│
+├── Barra lateral — perfil Enfermería
+│   ├── Mis pacientes          ← vista de inicio
+│   ├── Traspaso de turno
+│   │   ├── Recibir traspaso
+│   │   └── Entregar traspaso
+│   ├── Indicaciones pendientes
+│   └── Cierre de turno
+│
+├── Barra lateral — perfil Médico especialista
+│   ├── Mis pacientes          ← vista de inicio
+│   ├── Evolución clínica
+│   ├── Indicaciones
+│   └── Bitácora
+│
+└── Dentro de un paciente (navegación local por pestañas)
+    ├── Resumen
+    ├── Signos vitales
+    ├── Medicación
+    ├── Eventos clínicos
+    ├── Indicaciones
+    ├── Traspasos
+    └── Bitácora
+```
+
+##### Tipos de navegación empleados
+
+| Tipo | Implementación | Función |
+|---|---|---|
+| **Global** | Barra lateral persistente, adaptada al rol. | Acceso a las áreas principales desde cualquier punto. |
+| **Local** | Pestañas dentro de la ficha del paciente. | Desplazamiento entre los tipos de registro sin abandonar el paciente. |
+| **Contextual** | Acciones de registro ubicadas dentro de la vista donde el dato se consulta. | Permite registrar en el momento y en el lugar donde surge la necesidad, sin navegar a otro módulo. |
+| **Suplementaria** | Ruta de migas y botón de retorno. | Indica dónde está el usuario dentro de la jerarquía y cómo volver. |
+
+##### Ruta de migas
+
+Presente en todas las vistas de la Web Application a partir del segundo nivel, refleja la jerarquía definida en 4.2.1:
+
+```
+Mis pacientes  ›  Rosa Medina (Cama 4)  ›  Signos vitales  ›  Registro del 12/09 14:30
+```
+
+##### Verificación de la restricción de dos interacciones
+
+| Tarea (frecuencia muy alta según 2.3.2) | Recorrido | Interacciones |
+|---|---|---|
+| Consultar los pacientes asignados | Es la vista de inicio tras iniciar sesión | 0 |
+| Registrar signos vitales | Paciente → Registrar signos vitales | 2 |
+| Registrar administración de medicamento | Paciente → Registrar medicación | 2 |
+| Consultar el traspaso del turno anterior | Traspaso de turno → Recibir traspaso | 2 |
+| Consultar el resumen clínico del paciente | Paciente → Resumen (pestaña activa por defecto) | 1 |
+| Revisar indicaciones vigentes | Paciente → Indicaciones | 2 |
+
+Ninguna de las tareas críticas supera las dos interacciones, lo que cumple el criterio establecido al inicio de esta sección y responde a la exigencia recogida en las entrevistas: que la herramienta sea al menos tan rápida como la anotación en papel a la que busca reemplazar.
+
+##### Consideraciones de accesibilidad en la navegación
+
+En coherencia con lo comprometido en la sección 4.1.2, la navegación es operable por teclado en su totalidad, con un orden de tabulación que sigue el orden visual. El elemento activo se identifica con un indicador de foco visible y no únicamente por color. Se incluye un enlace para saltar al contenido principal, de modo que quien navegue con lector de pantalla no deba recorrer la barra lateral en cada vista.
+
 ### 4.3. Landing Page UI Design
 #### 4.3.1. Landing Page Wireframe
 #### 4.3.2. Landing Page Mock-up
