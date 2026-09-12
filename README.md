@@ -606,6 +606,14 @@ Este diagrama muestra una vista de alto nivel de ClinicalSync. Aquí identificam
 
 
 #### 4.6.3. Software Architecture Container Diagrams
+Haciendo un poco de zoom, en este diagrama separamos las unidades de despliegue. Tenemos nuestra Single Page Application (SPA) para el frontend, el backend que expone el RESTful API y nuestra base de datos relacional.
+
+<p align="center">
+  <img src="assets/chapter-4/container-diagram.png" alt="Diagrama de Contenedores ClinicalSync" width="800">
+</p>
+
+*Diagrama elaborado en Structurizr. Detalla la comunicación JSON/HTTPS entre la Web App y el API, y la persistencia hacia MySQL 8.x.*
+
 #### 4.6.4. Software Architecture Components Diagrams
 ### 4.7. Software Object-Oriented Design
 #### 4.7.1. Class Diagrams
