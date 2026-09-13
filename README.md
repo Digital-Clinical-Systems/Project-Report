@@ -88,10 +88,30 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
     - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
   - [4.2. Information Architecture](#42-information-architecture)
     - [4.2.1. Organization Systems](#421-organization-systems)
+      - [Organización de la Landing Page](#organización-de-la-landing-page)
+      - [Organización de la Web Application](#organización-de-la-web-application)
     - [4.2.2. Labeling Systems](#422-labeling-systems)
+      - [Convenciones de etiquetado](#convenciones-de-etiquetado)
+      - [Correspondencia entre el dominio y la interfaz](#correspondencia-entre-el-dominio-y-la-interfaz)
+      - [Etiquetado de estados](#etiquetado-de-estados)
+      - [Etiquetado de la Landing Page](#etiquetado-de-la-landing-page)
     - [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
+      - [Landing Page](#landing-page)
+      - [Etiquetas Open Graph y Twitter Card](#etiquetas-open-graph-y-twitter-card)
+      - [Reglas aplicadas](#reglas-aplicadas)
+      - [Exclusión de la Web Application](#exclusión-de-la-web-application)
     - [4.2.4. Searching Systems](#424-searching-systems)
+      - [Landing Page](#landing-page-1)
+      - [Web Application](#web-application)
+      - [Criterios de filtrado por vista](#criterios-de-filtrado-por-vista)
+      - [Comportamiento de la búsqueda](#comportamiento-de-la-búsqueda)
     - [4.2.5. Navigation Systems](#425-navigation-systems)
+      - [Navegación de la Landing Page](#navegación-de-la-landing-page)
+      - [Navegación de la Web Application](#navegación-de-la-web-application)
+      - [Tipos de navegación empleados](#tipos-de-navegación-empleados)
+      - [Ruta de migas](#ruta-de-migas)
+      - [Verificación de la restricción de dos interacciones](#verificación-de-la-restricción-de-dos-interacciones)
+      - [Consideraciones de accesibilidad en la navegación](#consideraciones-de-accesibilidad-en-la-navegación)
   - [4.3. Landing Page UI Design](#43-landing-page-ui-design)
     - [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
     - [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
@@ -559,8 +579,97 @@ En coherencia con lo comprometido en la sección 4.1.2, la navegación es operab
 
 ### 4.4. Web Applications UX/UI Design
 #### 4.4.1. Web Applications Wireframes
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb1.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb2.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb3.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb4.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb5.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb6.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb7.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb8.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb9.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb10.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb11.jpg" alt="WireframeWeb1" width="800">
+</p>
+
 #### 4.4.2. Web Applications Wireflow Diagrams
 #### 4.4.3. Web Applications Mock-ups
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb1.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb2.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb3.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb4.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb5.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb6.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb7.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb8.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb9.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb10.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb11.jpg" alt="WireframeWeb1" width="800">
+</p>
+
 #### 4.4.4. Web Applications User Flow Diagrams
 ### 4.5. Web Applications Prototyping
 ### 4.6. Domain-Driven Software Architecture
