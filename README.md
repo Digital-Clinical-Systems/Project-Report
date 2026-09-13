@@ -181,8 +181,10 @@ El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cu
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---------------------|---------------------|--------------|
-| Comunica oralmente con efectividad a diferentes rangos de audiencia. | **[Apellidos, Nombres 1]**<br>AV1: [Acción 1]<br>AV2: [Acción 2] | *(Conclusión grupal sobre la mejora en comunicación oral y medios audiovisuales)* |
-| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **[Apellidos, Nombres 1]**<br>AV1: [Acción 1]<br>AV2: [Acción 2] | *(Conclusión grupal sobre redacción técnica, calidad de entregables e idioma)* |
+| Comunica oralmente con efectividad a diferentes rangos de audiencia. | Huamán Cuba, Johan Giovani
+AV1: Explicó oralmente elementos técnicos del diseño de la solución, incluyendo arquitectura inicial, organización de componentes y relación entre los artefactos de diseño de software.<br><br> <br>| *(Conclusión grupal sobre la mejora en comunicación oral y medios audiovisuales)* |
+| Comunica por escrito con efectividad a diferentes rangos de audiencia. | Huamán Cuba, Johan Giovani
+AV1: Contribuyó en la documentación escrita de arquitectura, diseño de software, base de datos, organización técnica de la solución y configuración inicial del entorno de desarrollo.<br><br>| *(Conclusión grupal sobre redacción técnica, calidad de entregables e idioma)* |
 
 ---
 
