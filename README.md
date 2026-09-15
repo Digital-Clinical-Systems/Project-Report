@@ -215,6 +215,11 @@ El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cu
 
 ## Capítulo IV: Product Design
 ### 4.1. Style Guidelines
+
+Las style guidelines fijan las decisiones visuales y de comunicación que ClinicalSync aplica de manera uniforme en todas sus interfaces. Su función no es decorativa: en un entorno clínico, una jerarquía visual clara y un uso consistente del color reducen el tiempo de interpretación y disminuyen el riesgo de que un profesional pase por alto un dato relevante durante una guardia.
+
+Esta sección se organiza en dos niveles. Las directrices generales establecen la identidad de la solución, es decir, la paleta, la tipografía, el espaciado y la iconografía que la distinguen. Las directrices web traducen esa identidad a las particularidades del medio: comportamiento adaptable, componentes de interfaz, estados del sistema y criterios de accesibilidad. Ambos niveles rigen tanto para la landing page como para la aplicación web, de modo que el usuario perciba un mismo producto al pasar del sitio promocional a la herramienta clínica.
+
 #### 4.1.1. General Style Guidelines
 
 El diseño de estilo de ClinicalSync se fundamenta en transmitir seguridad, eficiencia y profesionalismo, valores indispensables para una solución digital orientada al sector salud. Este busca dar una identidad gráfica moderna, ordenada y amigable para el usuario con el propósito de mejorar la comunicación clínica y la comodidad de los pacientes.
@@ -534,6 +539,11 @@ Ninguna de las tareas críticas supera las dos interacciones, lo que cumple el c
 En coherencia con lo comprometido en la sección 4.1.2, la navegación es operable por teclado en su totalidad, con un orden de tabulación que sigue el orden visual. El elemento activo se identifica con un indicador de foco visible y no únicamente por color. Se incluye un enlace para saltar al contenido principal, de modo que quien navegue con lector de pantalla no deba recorrer la barra lateral en cada vista.
 
 ### 4.3. Landing Page UI Design
+
+El diseño de la landing page traduce la arquitectura de información definida en la sección 4.2 y las directrices visuales de la sección 4.1 en una propuesta concreta de interfaz. El objetivo del sitio es que un visitante del sector salud comprenda en una sola lectura qué problema resuelve ClinicalSync y encuentre sin esfuerzo la manera de solicitar una demostración.
+
+El diseño se desarrolla en dos etapas sucesivas. Los wireframes definen la estructura y la jerarquía de cada sección sin comprometer decisiones visuales, lo que permite validar el orden del argumento antes de invertir en el acabado. Los mock-ups incorporan la paleta, la tipografía y los componentes definidos en las style guidelines, y representan el resultado visual esperado de la landing una vez implementada.
+
 #### 4.3.1. Landing Page Wireframe
 
 <p align="center">
@@ -870,6 +880,11 @@ Aquí mostramos cómo está estructurado el Backend API por dentro. Separamos la
 *Muestra las interacciones internas (mediante interfaces de Java y Domain Events) entre los componentes del sistema.*
 
 ### 4.7. Software Object-Oriented Design
+
+El diseño orientado a objetos traduce los bounded contexts identificados en la sección 4.6 a una estructura de clases implementable. Es el punto donde el modelo del dominio deja de ser un mapa conceptual y pasa a definir entidades, agregados, objetos de valor y relaciones concretas que el equipo escribirá en código durante el Capítulo V.
+
+El criterio que guía este diseño es mantener la lógica de negocio clínica aislada de la infraestructura, de modo que reglas como la validación de un traspaso SBAR o el cálculo del nivel de riesgo de un paciente residan en el dominio y no queden dispersas en la capa de presentación o de persistencia. El vocabulario de las clases conserva los términos fijados en el Ubiquitous Language de la sección 2.5, con el fin de que el código sea legible para cualquier integrante del equipo sin necesidad de un diccionario intermedio.
+
 #### 4.7.1. Class Diagrams
 Basándonos en los Bounded Contexts, armamos el diagrama de clases del dominio. El objetivo es mantener una alta cohesión y aislar la lógica de negocio clínica de la infraestructura.
 
@@ -884,6 +899,11 @@ El modelo de traspasos SBAR mantiene la trazabilidad exigiendo el ID del enferme
 *Detalla los paquetes de dominio de cada contexto y las relaciones estructurales entre las entidades.*
 
 ### 4.8. Database Design
+
+El diseño de base de datos define cómo persiste la información del modelo de dominio descrito en la sección 4.7. Las decisiones de esta sección responden a dos exigencias que el Capítulo II identificó como críticas: la trazabilidad completa de cada acción clínica, con su responsable y su marca temporal, y la posibilidad de reconstruir la evolución de un paciente en orden cronológico.
+
+El esquema se organiza siguiendo los bounded contexts del dominio, manteniendo integridad referencial estricta entre las entidades relacionadas. La tabla de auditoría recibe un tratamiento particular: se diseña como append-only, es decir, admite únicamente inserciones y no permite modificar ni eliminar registros existentes. Esta restricción es deliberada, ya que una bitácora que puede alterarse no constituye evidencia válida para efectos de auditoría clínica.
+
 #### 4.8.1. Database Diagrams
 Para la persistencia relacional usamos MySQL con Spring Data JPA. El esquema refleja nuestros contextos y mantiene una integridad referencial estricta:
 
