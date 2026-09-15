@@ -759,6 +759,13 @@ Flujo de checkout donde el usuario ingresa su método y datos de pago (tarjeta o
 </p>
 
 #### 4.4.4. Web Applications User Flow Diagrams
+
+En esta sección se presenta el diagrama de flujo de usuario general de ClinicalSync, que detalla la lógica de navegación desde el acceso al sistema hasta las principales ramas de uso según el tipo de usuario: Personal Clínico (enfermería/médicos) y Director/Gestor. El diagrama comienza con el punto de decisión de acceso (usuario nuevo vs. usuario existente) y se ramifica en dos flujos diferenciados: uno clínico, centrado en el Dashboard de guardia, la atención de alertas, el registro de signos vitales, la selección de cama del paciente, el monitoreo completo y el traspaso de turno (SBAR); y otro administrativo, centrado en el Panel de Administración, la gestión del plan institucional y la auditoría de trazabilidad. Cada rama incluye rutas de retorno ("Volver") que permiten al usuario regresar a su pantalla base sin perder el contexto, reflejando así la navegación real dentro del sistema y su consistencia con los wireflows detallados previamente para cada proceso.
+
+<p align="center">
+  <img src="assets/chapter-4/UserFlow-Diagram.png" alt="UserFlow-Diagram" width="800">
+</p>
+
 ### 4.5. Web Applications Prototyping
 ### 4.6. Domain-Driven Software Architecture
 A partir de lo que trabajamos en el Big Picture Event Storming, en esta sección detallamos el diseño de nuestra arquitectura usando Domain-Driven Design (DDD). Aquí definimos los Bounded Contexts, los agregados, eventos y comandos, y finalmente mostramos la estructura del sistema aplicando el Modelo C4.
