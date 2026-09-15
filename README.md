@@ -601,9 +601,9 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   <tr>
     <td width="40%">
       <b>Nombres y apellidos:</b> Brenda Estefania Rios Caballero<br>
-      <b>Edad:</b> 24 años<br>
+      <b>Edad:</b> 26 años<br>
       <b>Distrito:</b> Callao<br>
-      <b>Ocupación:</b> Interna de enfermería<br>
+      <b>Ocupación:</b> Médico especialista <br>
       <b>Área de trabajo:</b> Cardiología <br>
       <b>Timing:</b> 00:00 - 05:35<br>
       <b>Duración:</b> 05:35<br>
