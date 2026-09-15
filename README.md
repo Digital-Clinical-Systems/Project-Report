@@ -578,6 +578,11 @@ En coherencia con lo comprometido en la sección 4.1.2, la navegación es operab
 </p>
 
 ### 4.4. Web Applications UX/UI Design
+
+La Web Application de ClinicalSync fue diseñada para centralizar y apoyar los flujos clínicos relacionados con el registro, consulta y trazabilidad de la información en áreas cardiovasculares. La experiencia de usuario prioriza la claridad visual, la reducción de la carga operativa y el acceso ágil a las acciones principales, respondiendo a la necesidad del personal de enfermería y de los médicos especialistas de interactuar en entornos de alta presión donde el tiempo y la precisión son críticos.
+
+Los wireframes, wireflows, mock-ups y diagramas de flujo de usuario se organizan alrededor de los módulos principales de la plataforma, adaptados a los distintos roles: el dashboard clínico (Mis pacientes), el monitoreo de signos vitales, los traspasos de turno estructurados mediante la metodología SBAR, el registro de eventos clínicos, la bitácora y la elección de planes de suscripción. Estos artefactos permiten evidenciar la relación entre las User Stories, los flujos de interacción y la implementación final de la Web Application.
+
 #### 4.4.1. Web Applications Wireframes
 <p align="center">
   <img src="assets/chapter-4/WireframeWeb1.jpg" alt="WireframeWeb1" width="800">
