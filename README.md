@@ -629,6 +629,65 @@ Los wireframes, wireflows, mock-ups y diagramas de flujo de usuario se organizan
 </p>
 
 #### 4.4.2. Web Applications Wireflow Diagrams
+
+### User Goal 1
+
+El usuario (nuevo profesional de enfermería) busca crear su cuenta ingresando sus datos personales y credenciales para acceder al sistema con su identidad verificada ante el CGE.
+
+* **Happy path:** los datos están completos, el correo es válido y la colegiatura se verifica ante el CGE → el sistema crea la cuenta, envía código de verificación y redirige al siguiente paso.
+
+* **Unhappy path:** hay campos incompletos, formato de correo/contraseña inválido, colegiatura no verificada o correo ya registrado → el sistema detiene el registro y solicita corregir el campo indicado.
+
+<p align="center">
+  <img src="assets/chapter-4/Wireflow-Diagrams1.png" alt="WireflowDiagram1" width="800">
+</p>
+
+### User Goal 2
+
+El usuario (institución o profesional interesado) busca seleccionar un plan, ingresar sus datos de pago y completar la transacción de forma segura para activar su suscripción.
+
+* **Happy path:** la tarjeta es válida, hay fondos disponibles y la transacción es autorizada → el sistema aprueba el pago, genera número de transacción/factura y activa la suscripción.
+
+* **Unhappy path:** los datos están incompletos o con formato inválido, o la pasarela rechaza la transacción (fondos insuficientes/tarjeta bloqueada) → el sistema detiene el flujo, muestra el error y solicita otro método o corrección.
+
+<p align="center">
+  <img src="assets/chapter-4/Wireflow-Diagrams2.png" alt="WireflowDiagram2" width="800">
+</p>
+
+### User Goal 3
+
+El usuario (enfermería/médicos) busca registrar rápidamente los signos vitales y datos básicos de un paciente desde el dashboard para mantener su estado clínico actualizado.
+
+* **Happy path:** los valores están completos y dentro de rangos clínicos permitidos → el sistema guarda el registro, actualiza la tarjeta/gráficos y confirma.
+
+* **Unhappy path:** falta un campo obligatorio o hay valores fuera de rango → el sistema detiene el flujo, muestra el error específico y solicita corrección.
+
+<p align="center">
+  <img src="assets/chapter-4/Wireflow-Diagrams3.png" alt="WireflowDiagram3" width="800">
+</p>
+
+### User Goal 4
+
+El usuario (enfermera responsable) busca acceder a los módulos clave de la pantalla de monitoreo de un paciente para hacer seguimiento continuo de su evolución y documentar la atención.
+
+* Este wireflow no tiene happy/unhappy path explícito, ya que no es un flujo de validación secuencial: es un mapa de navegación con 4 accesos independientes (ingreso rápido, tendencias, historial validado y reportes) que el usuario puede usar en cualquier orden desde la misma pantalla.
+
+<p align="center">
+  <img src="assets/chapter-4/Wireflow-Diagrams4.png" alt="WireflowDiagram4" width="800">
+</p>
+
+### User Goal 5
+
+El usuario (enfermera de guardia) busca completar y enviar el reporte SBAR de un paciente para transferir la responsabilidad clínica a la siguiente guardia de forma clara y trazable.
+
+* **Happy path:** completa los 4 campos SBAR y la prioridad → el sistema registra el traspaso, notifica a la guardia entrante y actualiza la auditoría.
+
+* **Unhappy path:** faltan campos del SBAR o no se selecciona prioridad/método → el sistema detiene el envío y pide completar el formulario (también existe la ruta alterna de guardar como borrador sin validar todo).
+
+<p align="center">
+  <img src="assets/chapter-4/Wireflow-Diagrams5.png" alt="WireflowDiagram5" width="800">
+</p>
+
 #### 4.4.3. Web Applications Mock-ups
 
 <p align="center">
