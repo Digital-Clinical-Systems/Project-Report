@@ -90,7 +90,6 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
       - [Segmento objetivo 2: Médicos especialistas cardiovasculares](#segmento-objetivo-2-médicos-especialistas-cardiovasculares-1)
         - [Entrevista 1](#entrevista-1)
         - [Entrevista 2](#entrevista-2-1)
-        - [Entrevista 3](#entrevista-3-1)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
       - [Resumen de entrevistas analizadas](#resumen-de-entrevistas-analizadas)
       - [Segmento objetivo 1: Personal de enfermería cardiovascular](#segmento-objetivo-1-personal-de-enfermería-cardiovascular-2)
@@ -604,8 +603,8 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
       <b>Nombres y apellidos:</b> Brenda Estefania Rios Caballero<br>
       <b>Edad:</b> 24 años<br>
       <b>Distrito:</b> Callao<br>
-      <b>Ocupación:</b> [Especialidad médica]<br>
-      <b>Área de trabajo:</b> Ccardiologia<br>
+      <b>Ocupación:</b> Interna de enfermería<br>
+      <b>Área de trabajo:</b> Cardiología <br>
       <b>Timing:</b> 00:00 - 05:35<br>
       <b>Duración:</b> 05:35<br>
       <b>Entrevistador:</b> Johnny Alexander Ojanama Abanto
@@ -618,11 +617,11 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
     <td colspan="2">
       <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231f412_upc_edu_pe/IQAn-Y01eCNLS5orrIkmlM-8AfXogfgb8uXdgScpTyujMLw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=uBMjbw">[URL del video en Microsoft Stream]</a>
       <br><br>
-      <b>Resumen:</b> [Descripción de cómo accede hoy a la información clínica, cuántas fuentes debe consultar y cuánto tiempo le demanda.]
+      <b>Resumen:</b> Brenda Estefanía Ríos Caballero, médico que atiende pacientes cardiovasculares, describió que la revisión del estado clínico de un paciente le exige consultar entre tres y cuatro fuentes distintas. Debe ingresar al sistema principal del hospital para ver la historia, abrir otras pestañas o programas para los resultados de laboratorio (especialmente enzimas) e imágenes, y revisar las hojas de enfermería para verificar la medicación. Este proceso de consolidación de datos le toma entre 10 y 15 minutos por paciente de manera habitual, tiempo que se incrementa si el historial es extenso, si debe buscar quién anotó qué cosa o si el sistema presenta lentitud.
       <br><br>
-      [Situaciones en que la información incompleta o tardía condicionó una decisión, y cómo se comunica con el personal de enfermería.]
+      Señaló que frecuentemente, sobre todo durante las guardias de madrugada, debe tomar decisiones críticas con información incompleta. Relató que, ante pacientes que llegan con dolor de pecho, la falla del sistema para cargar los electrocardiogramas antiguos la obliga a asumir el peor escenario e iniciar el tratamiento sin poder comparar la evolución. Asimismo, indicó que la comunicación con enfermería suele estar "desconectada"; deja indicaciones en la computadora sin obtener feedback inmediato de su cumplimiento, lo que a veces la obliga a ir físicamente a preguntar a la enfermera. Para enterarse de eventos relevantes en turnos anteriores depende casi exclusivamente del reporte verbal en el cambio de turno, ya que no tiene el tiempo necesario para leer todas las notas de evolución.
       <br><br>
-      [Expectativas sobre trazabilidad, visualización consolidada y condiciones para incorporar una herramienta adicional.]
+      Respecto a las limitaciones tecnológicas, criticó que los sistemas actuales no están integrados, son pesados, exigen contraseñas constantemente y tienen una interfaz poco intuitiva que requiere demasiados clics para encontrar trazabilidad básica (como quién y a qué hora ejecutó una orden). Expresó que su solución ideal sería un perfil que muestre en una sola pantalla una curva de los signos vitales del día cruzada con la medicación recién administrada y los últimos laboratorios importantes. Finalmente, enfatizó que solo adoptaría una nueva herramienta si esta le ahorra trabajo real: no debe exigir doble digitación, tiene que extraer la información automáticamente de otros sistemas, y debe ser accesible desde una tablet o celular mientras pasa visita.
     </td>
   </tr>
 </table>
