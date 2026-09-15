@@ -690,6 +690,10 @@ El usuario (enfermera de guardia) busca completar y enviar el reporte SBAR de un
 
 #### 4.4.3. Web Applications Mock-ups
 
+* **Traspaso de Turno (SBAR)**
+
+Pantalla donde la enfermera/médico saliente documenta el estado del paciente usando el formato SBAR (Situación, Antecedentes, Evaluación, Recomendación) para transferir la responsabilidad clínica a la guardia entrante de forma estructurada y con trazabilidad.
+
 <p align="center">
   <img src="assets/chapter-4/Mock-upWeb1.jpg" alt="WireframeWeb1" width="800">
 </p>
@@ -697,6 +701,10 @@ El usuario (enfermera de guardia) busca completar y enviar el reporte SBAR de un
 <p align="center">
   <img src="assets/chapter-4/Mock-upWeb2.jpg" alt="WireframeWeb1" width="800">
 </p>
+
+* **Pantalla de Monitoreo del Paciente**
+
+Vista individual y detallada de un paciente específico, que agrupa el registro de constantes, las tendencias multivariables, el historial horario validado y la exportación de reportes clínicos.
 
 <p align="center">
   <img src="assets/chapter-4/Mock-upWeb3.jpg" alt="WireframeWeb1" width="800">
@@ -706,6 +714,10 @@ El usuario (enfermera de guardia) busca completar y enviar el reporte SBAR de un
   <img src="assets/chapter-4/Mock-upWeb4.jpg" alt="WireframeWeb1" width="800">
 </p>
 
+* **Dashboard UCI Cardiovascular (pantalla principal)**
+
+Vista general de la guardia de enfermería en la UCI Cardio: muestra el estado de todos los pacientes ocupando camas (críticos, en vigilancia, estables), alertas prioritarias del turno y accesos rápidos para registrar signos vitales, eventos o generar reportes.
+
 <p align="center">
   <img src="assets/chapter-4/Mock-upWeb5.jpg" alt="WireframeWeb1" width="800">
 </p>
@@ -713,6 +725,10 @@ El usuario (enfermera de guardia) busca completar y enviar el reporte SBAR de un
 <p align="center">
   <img src="assets/chapter-4/Mock-upWeb6.jpg" alt="WireframeWeb1" width="800">
 </p>
+
+* **Selección de Suscripción**
+
+Pantalla donde el usuario compara los planes disponibles (Enfermería Pro, UCI Cardiovascular, Institucional) con sus precios y características, y elige el que mejor se ajusta a su práctica clínica para continuar con la compra.
 
 <p align="center">
   <img src="assets/chapter-4/Mock-upWeb7.jpg" alt="WireframeWeb1" width="800">
@@ -722,9 +738,17 @@ El usuario (enfermera de guardia) busca completar y enviar el reporte SBAR de un
   <img src="assets/chapter-4/Mock-upWeb8.jpg" alt="WireframeWeb1" width="800">
 </p>
 
+* **Alta de Profesional de Enfermería**
+
+Formulario de registro donde un nuevo profesional crea su cuenta en el sistema, ingresando sus datos personales y credenciales profesionales (colegiatura, correo institucional) para validar su identidad ante el CGE.
+
 <p align="center">
   <img src="assets/chapter-4/Mock-upWeb9.jpg" alt="WireframeWeb1" width="800">
 </p>
+
+* **Proceso de Pago**
+
+Flujo de checkout donde el usuario ingresa su método y datos de pago (tarjeta o billetera digital), y el sistema valida y confirma la transacción para activar la suscripción elegida.
 
 <p align="center">
   <img src="assets/chapter-4/Mock-upWeb10.jpg" alt="WireframeWeb1" width="800">
