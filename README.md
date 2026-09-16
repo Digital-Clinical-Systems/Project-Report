@@ -22,7 +22,7 @@
     <li>u202212214 - Oskar Rodrigo Sosa Soto</li>
     <li>u202314898 - Mathias Joaquin Acuache Lucas</li>
     <li>u20261D993 - Angel Andres Valdez Melo</li>
-    <li>[Código 5] - [Nombres 5]</li>
+    <li>U20231F412 - Johnny Alexander Ojanama Abanto</li>
   </ul>
   <br>
   <h4>Setiembre, 2026</h4>
@@ -240,7 +240,7 @@ Visión: Consolidarnos como una plataforma de referencia en el ámbito de la sal
 <table>
   <tr>
     <td rowspan="4" align="center" width="200">
-      <!-- Pendiente: subir la foto como assets/chapter-1/FotoEstudiante/johnny.png y reemplazar este comentario por: <img src="assets/chapter-1/FotoEstudiante/johnny.png" alt="Foto de Johnny Ojanama" width="180"/> -->
+      <img src="assets/chapter-1/FotoEstudiante/johnny.png" alt="Foto de Johnny Ojanama" width="180"/>
     </td>
     <td><b>Nombre:</b> Johnny Alexander Ojanama Abanto </td>
   </tr>
