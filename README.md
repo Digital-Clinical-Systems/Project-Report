@@ -639,8 +639,8 @@ Los porcentajes se calculan sobre el total de entrevistas efectivamente registra
 
 | Segmento | Entrevistados | Cantidad |
 |---|---|---|
-| Personal de enfermería cardiovascular | Samuel Akerman, [pendiente], [pendiente] | 3 |
-| Médicos especialistas cardiovasculares | [Nombres de los tres entrevistados] | 3 |
+| Personal de enfermería cardiovascular | Samuel Akerman, Nathalia Dávila, Bruno Elescano | 3 |
+| Médicos especialistas cardiovasculares | Mark Esquivel, Brenda Rios | 3 |
 | **Total** | — | **6** |
 
 ##### Segmento objetivo 1: Personal de enfermería cardiovascular
