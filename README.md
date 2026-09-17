@@ -589,23 +589,18 @@ El diseño se desarrolla en dos etapas sucesivas. Los wireframes definen la estr
 
 #### 4.3.2. Landing Page Mock-up
 
+Los mock-ups que se presentan a continuación corresponden al diseño vigente de la landing page, el mismo que fue implementado y desplegado durante el Sprint 1. Sustituyen a las versiones preliminares elaboradas al inicio de la etapa de diseño, que representaban un alcance de producto distinto al definido en el Capítulo II. El diseño mostrado aplica la paleta, la tipografía y los componentes documentados en la sección 4.1 sobre la estructura de contenido establecida en la sección 4.2.
+
+**Versión de escritorio, 1440 px.** Recorrido completo del sitio en el orden definido por la arquitectura de información: presentación, problema, cómo funciona, características, beneficios, planes, preguntas frecuentes, equipo y contacto.
+
 <p align="center">
-  <img src="assets/chapter-4/Mock-up 1.png" alt="MockUp1" width="800">
+  <img src="assets/chapter-4/mockup-landing-desktop.png" alt="Mock-up de la Landing Page de ClinicalSync en escritorio" width="800">
 </p>
 
+**Versión móvil, 390 px.** Comportamiento adaptable del mismo diseño. De izquierda a derecha: pantalla de presentación, menú de navegación desplegado, sección de características y formulario de solicitud de demostración.
 
 <p align="center">
-  <img src="assets/chapter-4/Mock-up 2.png" alt="MockUp2" width="800">
-</p>
-
-
-<p align="center">
-  <img src="assets/chapter-4/Mock-up 3.png" alt="MockUp3" width="800">
-</p>
-
-
-<p align="center">
-  <img src="assets/chapter-4/Mock-up 4.png" alt="MockUp4" width="800">
+  <img src="assets/chapter-4/mockup-landing-mobile.png" alt="Mock-up de la Landing Page de ClinicalSync en móvil" width="900">
 </p>
 
 ### 4.4. Web Applications UX/UI Design
