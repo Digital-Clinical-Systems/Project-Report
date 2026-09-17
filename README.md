@@ -319,6 +319,10 @@ Los objetivos se formulan bajo criterios SMART, es decir, específicos, medibles
   <img src="assets/chapter-3/impact-mapping.png" alt="Impact Mapping de ClinicalSync" width="95%">
 </p>
 
+<p align="center">
+  <em>Elaborado en Miro. Tablero del artefacto: <a href="https://miro.com/app/board/uXjVHl_mGsg=/">Impact Mapping ClinicalSync</a>.</em>
+</p>
+
 #### Conclusión del Impact Mapping
 
 El mapa evidencia que los objetivos de ClinicalSync dependen de dos cambios de comportamiento distintos y secuenciales. El primero corresponde al personal de enfermería, que debe pasar del registro en papel al registro en la plataforma durante la atención; sin ese cambio, el sistema no contiene información y ningún otro objetivo es alcanzable. El segundo corresponde al médico especialista, que debe pasar de reconstruir el estado del paciente a consultarlo consolidado.
