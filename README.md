@@ -92,10 +92,6 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
     - [Segmento objetivo #2: Médicos especialistas cardiovasculares](#segmento-objetivo-2-médicos-especialistas-cardiovasculares)
     - [Cliente Institucional](#cliente-institucional)
     - [Sustento Estadístico y Justificación de Segmentos](#sustento-estadístico-y-justificación-de-segmentos)
-    - [Segmento objetivo #1: Personal de enfermería cardiovascular](#segmento-objetivo-1-personal-de-enfermería-cardiovascular-1)
-    - [Segmento objetivo #2: Médicos especialistas cardiovasculares](#segmento-objetivo-2-médicos-especialistas-cardiovasculares-1)
-    - [Cliente Institucional](#cliente-institucional-1)
-    - [Sustento Estadístico y Justificación de Segmentos](#sustento-estadístico-y-justificación-de-segmentos-1)
 - [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation--analysis)
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
@@ -442,7 +438,7 @@ Nuestro enfoque inicial será el personal de enfermería y los médicos especial
 Sabremos que tenemos éxito cuando veamos una reducción medible en el tiempo invertido en los traspasos de turno, la eliminación de registros físicos duplicados y la adopción diaria y constante de la plataforma por parte del equipo de salud.
 
 ##### 1.2.2.2. Lean UX Assumptions
-### Supuestos sobre los usuarios
+###### Supuestos sobre los usuarios
 
 * El personal de enfermería cardiovascular requiere capturar datos clínicos de manera ágil durante sus guardias.
 * Los especialistas en cardiología precisan acceder a historiales consolidados previamente a la toma de decisiones terapéuticas.
@@ -450,7 +446,7 @@ Sabremos que tenemos éxito cuando veamos una reducción medible en el tiempo in
 * Los profesionales del sector aceptarían la incorporación de un nuevo sistema siempre que disminuya la burocracia manual y evite sobrecargas operativas.
 * El seguimiento riguroso de autores, marcas temporales e incidencias resulta indispensable para respaldar la veracidad de los datos.
 
-### Supuestos sobre las necesidades
+###### Supuestos sobre las necesidades
 
 * La transferencia de pacientes entre guardias constituye una etapa crítica y propensa a fallas dentro de la rutina asistencial.
 * La coexistencia de expedientes en papel y digitales incrementa innecesariamente el esfuerzo administrativo.
@@ -458,7 +454,7 @@ Sabremos que tenemos éxito cuando veamos una reducción medible en el tiempo in
 * Los sucesos médicos significativos exigen un registro transparente, estructurado y auditable.
 * Las pantallas ejecutivas con resúmenes gráficos facilitan el criterio médico oportuno.
 
-### Supuestos sobre la solución
+###### Supuestos sobre la solución
 
 * Un formato digital estructurado mediante la metodología SBAR optimiza la calidad del traspaso de guardia.
 * La digitalización de constantes vitales disminuye la dependencia de notas manuscritas.
@@ -466,14 +462,14 @@ Sabremos que tenemos éxito cuando veamos una reducción medible en el tiempo in
 * Un registro de auditoría interno fortalece la trazabilidad de los procedimientos asistenciales.
 * Una página de presentación comercial de alto impacto transmite con eficacia la propuesta de valor y capta interés operativo.
 
-### Supuestos sobre el negocio
+###### Supuestos sobre el negocio
 
 * Las organizaciones de salud y clínicas especializadas reconocen el valor de herramientas orientadas a la trazabilidad y la comunicación asistencial.
 * Un esquema comercial bajo demanda (SaaS) minimiza las fricciones de despliegue y los costos de infraestructura.
 * La consolidación del software se sustenta en su utilidad percibida, simplicidad y sincronía con el flujo de trabajo real.
 * La experimentación y validación temprana con usuarios del dominio médico permiten refinar el producto antes de su expansión.
 
-### Lean UX Assumption Prioritization
+###### Lean UX Assumption Prioritization
 
 Las hipótesis se clasifican evaluando dos variables críticas: riesgo e incertidumbre, focalizando los esfuerzos iniciales en aquellos factores que, de invalidarse, comprometerían severamente la propuesta de valor.
 
@@ -494,44 +490,44 @@ Las hipótesis de diseño se estructuran como premisas verificables. Cada una de
 **Estructura aplicada:**
 *Tenemos la convicción de que implementar [funcionalidad o experiencia] dirigida a [perfil de usuario] facilitará [impacto proyectado].*
 *Comprobaremos su validez al evidenciar [indicador cualitativo o cuantitativo].*
-#### Hipótesis 1 — Transferencia estructurada (SBAR)
+###### Hipótesis 1 — Transferencia estructurada (SBAR)
 
 Tenemos la convicción de que implementar una plantilla digital fundamentada en el modelo SBAR para los enfermeros de cardiología facilitará una transmisión de datos médicos mucho más nítida entre guardias. 
 Comprobaremos su validez al evidenciar que, en pruebas de usabilidad, el profesional logra documentar el cambio de guardia (situación, historial, análisis y sugerencias) de forma autónoma, manifestando además que este formato optimiza la estructuración de su reporte.
 
-#### Hipótesis 2 — Captura de parámetros vitales
+###### Hipótesis 2 — Captura de parámetros vitales
 
 Tenemos la convicción de que implementar una interfaz digital para la toma de constantes vitales dirigida a enfermeros cardiovasculares facilitará la disminución del uso de papel y libretas auxiliares. 
 Comprobaremos su validez al evidenciar que, durante un escenario simulado, el operador ingresa las mediciones, reconoce intuitivamente los campos obligatorios y finaliza el proceso sin dejar de lado métricas fundamentales.
 
-#### Hipótesis 3 — Revisión del progreso médico
+###### Hipótesis 3 — Revisión del progreso médico
 
 Tenemos la convicción de que implementar un panel consolidado de la evolución del paciente para cardiólogos facilitará una lectura acelerada de la condición actual del interno. 
 Comprobaremos su validez al evidenciar que el especialista encuentra los datos clave sin navegar por demasiadas pantallas y es capaz de diagnosticar la situación general basándose únicamente en el resumen visualizado.
 
-#### Hipótesis 4 — Auditoría y seguimiento clínico
+###### Hipótesis 4 — Auditoría y seguimiento clínico
 
 Tenemos la convicción de que incorporar el registro visible de marcas de tiempo y autores en las intervenciones médicas facilitará el incremento de la credibilidad de los expedientes. 
 Comprobaremos su validez al evidenciar que el operador reconoce de inmediato al responsable de una actualización, su momento exacto, y valora esta transparencia para la continuidad del cuidado.
 
-#### Hipótesis 5 — Notificaciones de riesgo y sucesos clave
+###### Hipótesis 5 — Notificaciones de riesgo y sucesos clave
 
 Tenemos la convicción de que integrar un sistema visual de alertas médicas dirigido al personal asistencial facilitará la detección inmediata de cuadros que exigen intervención. 
 Comprobaremos su validez al evidenciar que el profesional detecta una advertencia de riesgo sin esfuerzo durante su navegación y es capaz de articular la medida correctiva que aplicaría al verla.
 
-#### Hipótesis 6 — Página de presentación comercial (Landing Page)
+###### Hipótesis 6 — Página de presentación comercial (Landing Page)
 
 Tenemos la convicción de que publicar un sitio web promocional detallando ventajas, módulos, casos de éxito y botones de conversión para prospectos del sector sanitario facilitará el entendimiento integral de ClinicalSync. 
 Comprobaremos su validez al evidenciar que el prospecto logra resumir el propósito de la plataforma con su propio vocabulario y localiza sin dificultad el botón para agendar una demostración o pedir información.
 
-#### Hipótesis 7 — Integración en centros de salud
+###### Hipótesis 7 — Integración en centros de salud
 
 Tenemos la convicción de que posicionar a ClinicalSync como un software de apoyo para la gestión comunicacional y seguimiento de pacientes dirigido a entidades especializadas facilitará una adopción tecnológica con menor fricción. 
 Comprobaremos su validez al evidenciar que un coordinador médico o experto en gestión hospitalaria apruebe la pertinencia del sistema para documentar transiciones de guardia y auditar historiales.
 
 ---
 
-#### Experimentos Lean UX y Adquisición de Conocimiento
+###### Experimentos Lean UX y Adquisición de Conocimiento
 
 Cada premisa debe someterse a una prueba concisa, práctica y enfocada en la recolección de datos.
 
