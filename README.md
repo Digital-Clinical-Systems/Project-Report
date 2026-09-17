@@ -167,20 +167,9 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
       - [5.2.1.1. Sprint Planning 1](#5211-sprint-planning-1)
       - [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
       - [5.2.1.3. Sprint Backlog 1](#5213-sprint-backlog-1)
-  - [Estados de las tareas](#estados-de-las-tareas)
+        - [Estados de las tareas](#estados-de-las-tareas)
       - [5.2.1.4. Development Evidence for Sprint Review](#5214-development-evidence-for-sprint-review)
       - [5.2.1.5. Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
-- [1. Resumen de Logros del Sprint](#1-resumen-de-logros-del-sprint)
-- [2. Screenshots de las Principales Vistas](#2-screenshots-de-las-principales-vistas)
-  - [A. Plataforma (Portada y Propuesta de Valor)](#a-plataforma-portada-y-propuesta-de-valor)
-  - [B. El Problema](#b-el-problema)
-  - [C. ¿Cómo Funciona?](#c-cómo-funciona)
-  - [D. Características](#d-características)
-  - [E. Beneficios](#e-beneficios)
-  - [F. Planes](#f-planes)
-  - [G. Nosotros (Equipo)](#g-nosotros-equipo)
-  - [H. Preguntas Frecuentes](#h-preguntas-frecuentes)
-  - [J. Contacto con Digital Clinical Systems](#j-contacto-con-digital-clinical-systems)
       - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
       - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
       - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
@@ -920,7 +909,9 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
 
 ##### 5.2.1.4. Development Evidence for Sprint Review
 
-*(Nota: El historial de commits se completará a medida que se inicie el desarrollo y se integren las ramas `feature/` en el repositorio).*
+**Repositorio del Informe**
+
+La siguiente tabla registra los commits realizados sobre el repositorio `Digital-Clinical-Systems/Informe` durante el Sprint 1. El trabajo se organiza en una rama `feature/report-chapter-N` por cada capítulo del informe, y cada commit corresponde, por regla general, a una sección o título completado, siguiendo la convención de Conventional Commits descrita en la sección 5.1.3. El historial conserva también los commits iniciales, anteriores a la adopción de esa convención, y los generados automáticamente por la interfaz web de GitHub al subir archivos o integrar ramas, que no se reescribieron para mantener la trazabilidad real del trabajo.
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -929,7 +920,7 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 6d0e1cf | Antecedentes y problemática completed | - | 2026-08-28 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 1ec8a66 | docs(readme): add Lean UX Process/Problem Statements and Target Segments | - | 2026-08-30 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 45d85db | docs: add description and solution startup, student profile and 1.2.2.2 until 1.2.2.4 | - | 2026-08-30 |
-| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | d4dc8b5 | docs(readme): add Background and problems | - | 2026-08-30 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | d4dc8b5 | docs(readme): add Background and problems | - | 2026-08-28 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 9b1afe5 | docs(readme): add Lean UX Process/Problem Statements and Target Segments | - | 2026-08-30 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | ce43085 | add(readme): add Startup Description, student profile and Lean UX Assumptions/Hypothesis/Canvas | - | 2026-08-30 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | f6327d3 | docs(readme):startup profile and Lean UX Assupmtions, Hypothesis Statements and Lean UX Canvas | - | 2026-08-30 |
@@ -937,18 +928,21 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 602dc47 | docs(readme): add Oskar Profile | - | 2026-09-01 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 864f330 | docs(readme): add Mathias profile | - | 2026-09-01 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 562da42 | docs(readme): add Angel profile | - | 2026-09-01 |
-| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 6e471d5 | docs(repo): add gitattributes to normalize line endings |  | 2026-09-02 |
-| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 3e34913 | docs(assets): rename Assets to assets and group photos under chapter-1 |  | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 6e471d5 | docs(repo): add gitattributes to normalize line endings | Evita que un guardado desde Windows convierta el README a CRLF y genere diffs de archivo completo sin cambios reales de texto. Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> Claude-Session: https://claude.ai/code/session_01MxkF92yAvH9PuSppDQj2i9 | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 3e34913 | docs(assets): rename Assets to assets and group photos under chapter-1 | Unifica la capitalizacion con feature/report-chapter-2, que ya usa assets/chapter-2. GitHub distingue mayusculas de minusculas, por lo que mantener Assets y assets en ramas distintas habria producido dos carpetas separadas al mergear y roto los enlaces de una de ellas. Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> Claude-Session: https://claude.ai/code/session_01MxkF92yAvH9PuSppDQj2i9 | 2026-09-02 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 375f371 | docs(readme): add Johnny profile | - | 2026-09-03 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 9f6388a | docs(readme): fix team member photo rendering in profiles table | - | 2026-09-04 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | c98f26f | docs(readme):add Mathias profile in members | - | 2026-09-04 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 2dcb5ae | docs(readme): add Angel profile in members | - | 2026-09-05 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 7d642d4 | docs(readme): fix product name in chapter 1 | - | 2026-09-06 |
-| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 8e6ba16 | docs(readme): update student iSnformation and profile picture of Johan | - | 2026-09-07 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 8e6ba16 | docs(readme): update student information and profile picture of Johan | - | 2026-09-07 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | f55e640 | Add files via upload | - | 2026-09-07 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 14038d1 | docs(readme): add my student outcome | - | 2026-09-13 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | c1e110b | docs(readme): fix student outcome table error | - | 2026-09-13 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-1 | fbe0ac4 | docs(readme): add jhonny profile | - | 2026-09-16 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 0129861 | docs(readme): add section introductions and fix structural issues in chapter 1 | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | dabcde7 | docs(assets): add UPC logo referenced in the report header | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | a4415d7 | docs(readme): fix duplicated table of contents entries and heading levels in chapter 1 | - | 2026-09-17 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 7ec61f6 | docs(readme): add competitive analysis and strategies against competitors | - | 2026-08-31 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | efe10dd | docs(readme): add competitive analysis and strategies against competitors | - | 2026-08-31 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 34e55f3 | docs(readme): add interview design, records and analysis | - | 2026-08-31 |
@@ -972,8 +966,8 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 11351d9 | Add files via upload | - | 2026-09-01 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 0835c98 | docs(readme): add images for nurses and doctors in Step 3 - Event Storming | - | 2026-09-01 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | a11042f | Merge pull request #1 from Digital-Clinical-Systems/main | assets | 2026-09-01 |
-| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | cba550a | docs(readme): add interview record of Samuel Akerman for nursing segment |  | 2026-09-02 |
-| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 0f610d9 | docs(readme): add timing, duration and screenshot for Samuel Akerman interview |  | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | cba550a | docs(readme): add interview record of Samuel Akerman for nursing segment | Primera entrevista del segmento de enfermeria cardiovascular: datos del entrevistado, enlace al video y resumen de respuestas. Pendientes el timing, la duracion y la captura del video. Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> Claude-Session: https://claude.ai/code/session_01MxkF92yAvH9PuSppDQj2i9 | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 0f610d9 | docs(readme): add timing, duration and screenshot for Samuel Akerman interview | Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> Claude-Session: https://claude.ai/code/session_01MxkF92yAvH9PuSppDQj2i9 | 2026-09-02 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 92d1ba4 | docs(readme): add interview record of Bruno Elescano for nursing segment 1 | - | 2026-09-05 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | e8aa9da | docs(readme): add interview record of Nathalia Davila for nursing segment 1 | - | 2026-09-06 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 02e5fa5 | dosc(readme): add screenshot for Nathalia Davila interview | - | 2026-09-06 |
@@ -993,11 +987,13 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | ca418a7 | docs(readme): revise Big Picture Event Storming details and insights | - | 2026-09-16 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | d23133b | Redocs(assets): rename big-picture-event-storming.png to event-storming-step-4.png | - | 2026-09-16 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-2 | e5dae3b | docs(readme): add interview 2 image | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 7c3e816 | docs(readme): complete interview analysis with findings from registered interviews | - | 2026-09-17 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-3 | dca7203 | docs(readme): Add Epic 01 and Epic 02 with their respective User Stories and Technical Stories | - | 2026-09-02 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-3 | 6cd7155 | docs(readme): add User Stories | - | 2026-09-02 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-3 | 1be8d6a | docs(readme): add Impact Mapping | - | 2026-09-02 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-3 | 227e0d7 | docs(readme): add Product Backlog | - | 2026-09-02 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-3 | ecd9072 | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-3 | 3b8ff6c | docs(readme): add impact mapping diagram | - | 2026-09-17 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 8c8406b | docs(readme): Add General Style Guidelines | - | 2026-09-08 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 27b48ed | docs(readme): Add web style guidelines & fix 4.1.1 and 4.1.2. grammar | - | 2026-09-08 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 9b17ead | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
@@ -1018,18 +1014,23 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
 | Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 0b52458 | docs(readme): add information Web Applications Mock-ups | - | 2026-09-14 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-4 | d976bbd | docs(readme): add 4.4.4. Web Applications User Flow Diagrams | - | 2026-09-14 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 2304caa | docs(readme): add section introductions for chapter 4 | - | 2026-09-15 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | e201536 | docs(readme): enhance chapter 4 with detailed navigation structure and label distinctions | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 790c7d8 | docs(readme): add web applications prototyping evidence for sprint 1 | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 8982b51 | docs(readme): add web applications prototyping evidence for sprint 1 | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 038bc6e | docs(readme): update landing page mock-up with implemented design | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 9d535a1 | docs(readme): fix heading levels in web applications wireflow diagrams | - | 2026-09-17 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 0b85bdc | docs(readme): add description of 5.1 and 5.1.1 | - | 2026-09-01 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 819f0a1 | docs(readme): add 5.1.2. Source Code Management | - | 2026-09-01 |
-| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 0495ef9 | docs(readme): add 5.1.3. Source Code Style Guide & Conventions | - | 2026-09-01 |
-| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 22c9078 | docs(readme): add 5.1.4. Software Deployment Configuration | Added detailed deployment configuration for ClinicalSync solution, including steps for deploying Landing Page, Frontend Web Application, and Web Services. | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 0495ef9 | docs(readme):  add 5.1.3. Source Code Style Guide & Conventions | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 22c9078 | docs(readme):  add  5.1.4. Software Deployment Configuration | Added detailed deployment configuration for ClinicalSync solution, including steps for deploying Landing Page, Frontend Web Application, and Web Services. | 2026-09-01 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 9fdf3fe | docs(readme): add 5.2. Landing Page, Services & Applications Implementation. | - | 2026-09-01 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 2f6899d | doc(readme): revise sprint 1 planning information | - | 2026-09-09 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 5c882d2 | docs(readme): revise Sprint 1- 5.2.1.3. user stories and task statuses | - | 2026-09-09 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 9d6e426 | docs(readme): delete sections on interviews and video | - | 2026-09-09 |
 | Digital-Clinical-Systems/Informe | feature/report-chapter-5 | c4439bc | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
-| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | [Current] | docs(readme): add development evidence tables for sprint review | - | 2026-09-17 |
-
-
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | f1c82dd | docs(readme): add development evidence tables for sprint review | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 5aa100b | docs(assets): add landing page screenshots for sprint 1 | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 839721f | Implement code changes to enhance functionality and improve performance | - | 2026-09-17 |
 
 **Repositorio de la Landing Page**
 
