@@ -35,7 +35,7 @@
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
 | 1.0 | 2026-08-27 | Huamán Cuba, Johan Giovani | Versión inicial del documento. Se crea la estructura base del informe con el índice de los cinco capítulos. |
-| TB1 | 2026-09-17 | Huamán Cuba, Johan Giovani<br>Sosa Soto, Oskar Rodrigo<br>Acuache Lucas, Mathias Joaquin<br>Valdez Melo, Angel Andres<br>Ojanama Abanto, Johnny Alexander | Entrega TB1. Capítulo I: perfil de la startup, perfil de la solución, proceso Lean UX y segmentos objetivo. Capítulo II: análisis competitivo, entrevistas y su análisis, needfinding, Big Picture Event Storming y Ubiquitous Language. Capítulo III: User Stories, Impact Mapping y Product Backlog. Capítulo IV: style guidelines, arquitectura de información, diseño de la landing page y de la aplicación web, prototipado, arquitectura DDD, diseño orientado a objetos y diseño de base de datos. Capítulo V: configuración del entorno, gestión del código fuente, despliegue y evidencias del Sprint 1, con la Landing Page publicada en producción. |
+| AV1 | 2026-09-17 | <ul><li>Huamán Cuba, Johan Giovani</li><li>Sosa Soto, Oskar Rodrigo</li><li>Acuache Lucas, Mathias Joaquin</li><li>Valdez Melo, Angel Andres</li><li>Ojanama Abanto, Johnny Alexander</li></ul> | Entrega AV1. Capítulo I: perfil de la startup, perfil de la solución, proceso Lean UX y segmentos objetivo. Capítulo II: análisis competitivo, entrevistas y su análisis, needfinding, Big Picture Event Storming y Ubiquitous Language. Capítulo III: User Stories, Impact Mapping y Product Backlog. Capítulo IV: style guidelines, arquitectura de información, diseño de la landing page y de la aplicación web, prototipado, arquitectura DDD, diseño orientado a objetos y diseño de base de datos. Capítulo V: configuración del entorno, gestión del código fuente, despliegue y evidencias del Sprint 1, con la Landing Page publicada en producción. |
 
 ---
 
@@ -167,10 +167,16 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
         - [¿Qué lo convencería de que ClinicalSync es la alternativa correcta?](#qué-lo-convencería-de-que-clinicalsync-es-la-alternativa-correcta)
       - [Conclusión del Empathy Mapping](#conclusión-del-empathy-mapping)
   - [2.4. Big Picture Event Storming](#24-big-picture-event-storming)
-    - [Step 1: Collect Domain Events](#step-1-collect-domain-events)
-    - [Step 2: Sort Domain Events](#step-2-sort-domain-events)
-    - [Step 3: Add Actors and External Systems](#step-3-add-actors-and-external-systems)
-    - [Step 4: Add Problems and Opportunities](#step-4-add-problems-and-opportunities)
+    - [Paso 1: Unstructured Exploration](#paso-1-unstructured-exploration)
+    - [Paso 2: Timelines](#paso-2-timelines)
+    - [Paso 3: Pain Points](#paso-3-pain-points)
+    - [Paso 4: Pivotal Points](#paso-4-pivotal-points)
+    - [Paso 5: Commands](#paso-5-commands)
+    - [Paso 6: Policies](#paso-6-policies)
+    - [Paso 7: Read Models](#paso-7-read-models)
+    - [Paso 8: External Systems](#paso-8-external-systems)
+    - [Paso 9: Aggregates](#paso-9-aggregates)
+    - [Paso 10: Bounded Contexts](#paso-10-bounded-contexts)
     - [Conclusión del Big Picture Event Storming](#conclusión-del-big-picture-event-storming)
   - [2.5. Ubiquitous Language](#25-ubiquitous-language)
     - [Criterios de selección](#criterios-de-selección)
@@ -319,8 +325,8 @@ El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cu
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
-| Comunica oralmente con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>TB1: Condujo la Entrevista 1 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), formulando el guion ante un profesional externo al equipo y repreguntando sobre el flujo de evaluación del paciente.<br><br>**Sosa Soto, Oskar Rodrigo**<br>TB1: Condujo la Entrevista 1 del segmento de personal de enfermería cardiovascular (sección 2.2.2) y expuso en video el prototipo del Sprint 1 (sección 4.5), recorriendo la Landing Page publicada en producción y el prototipo de la aplicación web.<br><br>**Acuache Lucas, Mathias Joaquin**<br>TB1: Condujo la Entrevista 2 del segmento de personal de enfermería cardiovascular (sección 2.2.2), adaptando el lenguaje del guion técnico al vocabulario asistencial del entrevistado.<br><br>**Valdez Melo, Angel Andres**<br>TB1: Condujo la Entrevista 3 del segmento de personal de enfermería cardiovascular (sección 2.2.2), indagando sobre el registro en papel durante la atención y el traspaso al cierre del turno.<br><br>**Ojanama Abanto, Johnny Alexander**<br>TB1: Condujo la Entrevista 2 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), recogiendo la perspectiva del especialista sobre la consulta del estado del paciente. | El equipo concluye que exponer el dominio clínico ante profesionales de salud obligó a abandonar el vocabulario técnico de software y a hablar en los términos del turno asistencial. Las entrevistas, conducidas por los cinco integrantes, fueron la fuente directa de los hallazgos de la sección 2.2.3 y del Ubiquitous Language de la sección 2.5. El registro en video del prototipo mostró además que demostrar un producto funcionando comunica el alcance con más precisión que describirlo. |
-| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>TB1: Redactó el Big Picture Event Storming (sección 2.4), la arquitectura orientada al dominio (secciones 4.6.1 a 4.6.4), los diagramas de clases (4.7.1) y de base de datos (4.8.1), y la configuración del entorno de desarrollo y la gestión del código fuente (5.1.1 a 5.1.4).<br><br>**Sosa Soto, Oskar Rodrigo**<br>TB1: Redactó el análisis de entrevistas (2.2.3), el Capítulo III completo (User Stories, Impact Mapping y Product Backlog), la arquitectura de información (4.2), el prototipado del Sprint 1 (4.5) y las evidencias de ejecución y despliegue del Capítulo V.<br><br>**Acuache Lucas, Mathias Joaquin**<br>TB1: Redactó el perfil de la startup (1.1), los Lean UX Assumptions, Hypothesis Statements y Lean UX Canvas (1.2.2.2 a 1.2.2.4), y documentó los wireframes y mock-ups de la Landing Page.<br><br>**Valdez Melo, Angel Andres**<br>TB1: Redactó los antecedentes y la problemática (1.2.1), los Lean UX Problem Statements y los segmentos objetivo (1.3), y el diseño UX/UI de la aplicación web (4.4.2 wireflow diagrams, 4.4.3 mock-ups y 4.4.4 user flow diagrams).<br><br>**Ojanama Abanto, Johnny Alexander**<br>TB1: Redactó las style guidelines generales y web (4.1.1 y 4.1.2), las Epics 01 y 02 con sus User Stories y Technical Stories, los wireframes y mock-ups de la aplicación web, y las tablas de development evidence del Sprint 1 (5.2.1.4). | El equipo concluye que documentar en un repositorio compartido impone una disciplina que un documento aislado no exige: cada sección debe ser legible para los demás integrantes y trazable hasta el commit que la originó. Trabajar con una rama por capítulo y con Conventional Commits permitió avanzar en paralelo y, al integrar, detectar y corregir incoherencias entre lo redactado y lo efectivamente construido. |
+| Comunica oralmente con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Condujo la Entrevista 1 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), formulando el guion ante un profesional externo al equipo y repreguntando sobre el flujo de evaluación del paciente.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Condujo la Entrevista 1 del segmento de personal de enfermería cardiovascular (sección 2.2.2) y expuso en video el prototipo del Sprint 1 (sección 4.5), recorriendo la Landing Page publicada en producción y el prototipo de la aplicación web.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Condujo la Entrevista 2 del segmento de personal de enfermería cardiovascular (sección 2.2.2), adaptando el lenguaje del guion técnico al vocabulario asistencial del entrevistado.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Condujo la Entrevista 3 del segmento de personal de enfermería cardiovascular (sección 2.2.2), indagando sobre el registro en papel durante la atención y el traspaso al cierre del turno.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Condujo la Entrevista 2 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), recogiendo la perspectiva del especialista sobre la consulta del estado del paciente. | El equipo concluye que exponer el dominio clínico ante profesionales de salud obligó a abandonar el vocabulario técnico de software y a hablar en los términos del turno asistencial. Las entrevistas, conducidas por los cinco integrantes, fueron la fuente directa de los hallazgos de la sección 2.2.3 y del Ubiquitous Language de la sección 2.5. El registro en video del prototipo mostró además que demostrar un producto funcionando comunica el alcance con más precisión que describirlo. |
+| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Redactó el Big Picture Event Storming (sección 2.4), la arquitectura orientada al dominio (secciones 4.6.1 a 4.6.4), los diagramas de clases (4.7.1) y de base de datos (4.8.1), y la configuración del entorno de desarrollo y la gestión del código fuente (5.1.1 a 5.1.4).<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Redactó el análisis de entrevistas (2.2.3), el Capítulo III completo (User Stories, Impact Mapping y Product Backlog), la arquitectura de información (4.2), el prototipado del Sprint 1 (4.5) y las evidencias de ejecución y despliegue del Capítulo V.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Redactó el perfil de la startup (1.1), los Lean UX Assumptions, Hypothesis Statements y Lean UX Canvas (1.2.2.2 a 1.2.2.4), y documentó los wireframes y mock-ups de la Landing Page.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Redactó los antecedentes y la problemática (1.2.1), los Lean UX Problem Statements y los segmentos objetivo (1.3), y el diseño UX/UI de la aplicación web (4.4.2 wireflow diagrams, 4.4.3 mock-ups y 4.4.4 user flow diagrams).<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Redactó las style guidelines generales y web (4.1.1 y 4.1.2), las Epics 01 y 02 con sus User Stories y Technical Stories, los wireframes y mock-ups de la aplicación web, y las tablas de development evidence del Sprint 1 (5.2.1.4). | El equipo concluye que documentar en un repositorio compartido impone una disciplina que un documento aislado no exige: cada sección debe ser legible para los demás integrantes y trazable hasta el commit que la originó. Trabajar con una rama por capítulo y con Conventional Commits permitió avanzar en paralelo y, al integrar, detectar y corregir incoherencias entre lo redactado y lo efectivamente construido. |
 
 ---
 
@@ -1549,196 +1555,105 @@ La consecuencia para ClinicalSync es directa. El producto no compite por funcion
 
 El Big Picture Event Storming permite modelar el dominio clínico cardiovascular en su conjunto, antes de tomar cualquier decisión sobre pantallas, módulos o arquitectura. Su valor está en obligar al equipo a describir el proceso tal como ocurre en la realidad, con sus actores, sus sistemas externos y sus puntos de quiebre, y no tal como resultaría conveniente para el software que se pretende construir.
 
+La sesión se desarrolló sobre un tablero de Miro siguiendo los diez pasos de la guía de referencia del curso. El tablero es acumulativo: cada paso conserva lo construido en el anterior y agrega una capa, de modo que el último frame contiene la vista completa del Big Picture. El material de partida fueron las cinco entrevistas registradas en la sección 2.2.2 y su análisis en la sección 2.2.3, de manera que los eventos, los puntos de dolor y los sistemas externos provienen de lo que los propios profesionales describieron y no de supuestos del equipo. El resultado alimenta el Ubiquitous Language de la sección 2.5, la definición de bounded contexts del Capítulo IV y la elaboración de User Stories del Capítulo III.
 
+**Tablero completo:** [Big Picture Event Storming de ClinicalSync en Miro](https://miro.com/app/board/uXjVHl99QLc=/)
 
-La sesión se desarrolló siguiendo las cuatro etapas del método: recolección de eventos de dominio, ordenamiento cronológico, incorporación de actores y sistemas externos, e identificación de problemas y oportunidades. El resultado alimenta directamente el Ubiquitous Language de la sección 2.5, la definición de bounded contexts del Capítulo IV y la elaboración de User Stories del Capítulo III. Los tableros fueron elaborados en Miro.
-
-
-
-| Elemento | Color utilizado | Ejemplo en este dominio |
-
+| Elemento | Color | Ejemplo en este dominio |
 |---|---|---|
+| Evento de dominio | Amarillo | Signos vitales registrados |
+| Comando | Azul, a la izquierda del evento | Registrar signos vitales |
+| Punto de dolor | Rombo magenta | Por qué se anota en papel y se transcribe al cierre |
+| Política | Violeta | Ante un valor fuera de umbral se genera alerta |
+| Read model | Cian | Últimos signos vitales del paciente |
+| Sistema externo | Verde | Monitores biomédicos |
+| Agregado | Ámbar, sobre el evento | Traspaso SBAR |
 
-| Evento de dominio | Naranja | Signos vitales registrados |
+#### Paso 1: Unstructured Exploration
 
-| Actor | Amarillo | Enfermera de unidad cardiovascular |
-
-| Sistema externo | Rosado | Sistema de información hospitalaria |
-
-| Problema o punto de dolor | Rojo | Registro duplicado entre papel y sistema |
-
-| Oportunidad | Verde | Estandarizar el relevo mediante SBAR |
-
-
-
-#### Step 1: Collect Domain Events
-
-
-
-En la primera etapa se recolectaron, sin orden previo, los hechos relevantes que ocurren en el flujo clínico cardiovascular. Los eventos se redactaron en pasado, ya que representan sucesos consumados y no acciones pendientes ni funcionalidades del sistema.
-
-
-
-La recolección abarcó el ciclo completo de un turno asistencial: la recepción del relevo, la revisión de pacientes asignados, la vigilancia de parámetros fisiológicos, la administración de medicamentos, la aparición de eventos clínicos, la emisión y ejecución de indicaciones médicas, la evaluación del especialista y la entrega de información al turno entrante.
-
-
-
-Entre los eventos identificados se encuentran los siguientes: turno recibido, pacientes asignados revisados, signos vitales registrados, deterioro clínico detectado, alerta generada, medicamento administrado, evento clínico reportado, indicación médica emitida, indicación ejecutada, cumplimiento confirmado, evolución clínica consultada, decisión clínica tomada, información pendiente regularizada, traspaso SBAR elaborado y turno entregado.
-
-
+El equipo recolectó sin orden previo los hechos relevantes del flujo clínico cardiovascular. Los eventos se redactaron en pasado, porque representan sucesos consumados y no funcionalidades del sistema ni tareas pendientes. La recolección abarcó el ciclo completo de un turno asistencial, desde el acceso del profesional al sistema hasta la entrega del turno, y produjo quince eventos de dominio.
 
 <p align="center">
-
-  <img src="assets/chapter-2/event-storming-step-1.png" alt="Step 1 - Collect Domain Events" width="95%">
-
+  <img src="assets/chapter-2/event-storming-step-01.png" alt="Paso 1 - Unstructured Exploration" width="95%">
 </p>
 
+#### Paso 2: Timelines
 
-
-#### Step 2: Sort Domain Events
-
-
-
-En la segunda etapa los eventos se ordenaron cronológicamente, lo que permitió reconstruir la secuencia real del proceso y detectar los puntos donde el flujo se interrumpe o se bifurca.
-
-
-
-La secuencia principal inicia con la recepción del turno y la revisión de los pacientes asignados, continúa con el ciclo de vigilancia y registro que se repite a lo largo de la jornada, incorpora las ramas que se activan ante un evento clínico o una nueva indicación médica, y culmina con la regularización de la documentación pendiente y la entrega del relevo al equipo entrante.
-
-
-
-El ordenamiento hizo visible que el proceso no es lineal sino cíclico, con un bucle de vigilancia y registro que se ejecuta muchas veces por turno, y con dos ramas de excepción que compiten por el mismo tiempo del profesional: la atención de un evento imprevisto y la ejecución de una indicación recién emitida. Esa competencia por el tiempo es el origen de buena parte de los problemas identificados en la etapa siguiente.
-
-
+Los eventos se ordenaron y se agruparon en cinco conjuntos según el momento del trabajo al que pertenecen: el acceso al sistema, el turno y su traspaso, el registro clínico durante la atención, las indicaciones médicas y la trazabilidad de lo registrado. Estas agrupaciones se mantienen durante el resto de la sesión y son las que en el paso diez se consolidan como bounded contexts.
 
 <p align="center">
-
-  <img src="assets/chapter-2/event-storming-step-2.png" alt="Step 2 - Sort Domain Events" width="95%">
-
+  <img src="assets/chapter-2/event-storming-step-02.png" alt="Paso 2 - Timelines" width="95%">
 </p>
 
+#### Paso 3: Pain Points
 
-
-#### Step 3: Add Actors and External Systems
-
-
-
-En la tercera etapa se incorporaron los actores que ejecutan o consumen cada evento, y los sistemas externos con los que el dominio interactúa. Este paso permite identificar quién es responsable de cada acción y dónde reside actualmente la información que el flujo necesita.
-
-
-
-| Elemento | Tipo | Responsabilidad en el dominio |
-
-|---|---|---|
-
-| **Enfermera de unidad cardiovascular** | Actor | Recibe y entrega el turno, vigila al paciente, registra signos vitales, administra medicamentos, reporta eventos clínicos y ejecuta indicaciones. |
-
-| **Médico especialista cardiovascular** | Actor | Consulta la evolución del paciente, valida información registrada, emite y ajusta indicaciones médicas y toma decisiones clínicas. |
-
-| **Coordinador o jefe de servicio** | Actor | Supervisa la continuidad asistencial, revisa la trazabilidad de eventos relevantes y responde por la calidad del proceso. |
-
-| **Personal administrativo o de auditoría clínica** | Actor | Revisa registros con fines de control de calidad, auditoría y cumplimiento normativo. |
-
-| **Sistema de información hospitalaria (HIS/EHR)** | Sistema externo | Almacena la información clínica oficial del paciente; no está optimizado para el ritmo operativo del turno cardiovascular. |
-
-| **Monitor biomédico de cabecera** | Sistema externo | Mide y despliega parámetros fisiológicos del paciente y emite alarmas ante valores fuera de rango. |
-
-| **Registros físicos y hojas de cálculo** | Sistema externo | Funcionan como soporte paralelo cuando el sistema digital no responde al ritmo del trabajo clínico. |
-
-| **Canales de mensajería informal** | Sistema externo | Se utilizan para coordinar entre profesionales, sin dejar registro clínico formal ni trazabilidad. |
-
-
+Sobre cada agrupación se marcaron, como rombos magenta, las preguntas que el proceso actual no resuelve. Corresponden uno a uno con hallazgos de las entrevistas: quién debería poder ver qué paciente, qué se pierde cuando el relevo es solo verbal, por qué se anota en papel y se transcribe al cierre, cómo confirma el médico que su indicación se ejecutó y quién registró un dato y en qué momento.
 
 <p align="center">
-
-  <img src="assets/chapter-2/event-storming-step-3-nurse.png" alt="Step 3 - Add Actors and External Systems - Enfermeros" width="95%">
-
+  <img src="assets/chapter-2/event-storming-step-03.png" alt="Paso 3 - Pain Points" width="95%">
 </p>
 
+#### Paso 4: Pivotal Points
 
+Dentro de cada agrupación se señaló el momento que cambia la naturaleza del trabajo. En el turno, ese momento es el paso de recibir información a producirla; en el registro clínico, el paso de la rutina a la respuesta ante un evento; en las indicaciones, el paso de decidir a ejecutar. Estas divisiones anticipan la separación de responsabilidades que el paso diez formaliza.
 
 <p align="center">
-
-  <img src="assets/chapter-2/event-storming-step-3-doctor.png" alt="Step 3 - Add Actors and External Systems - Medicos" width="95%">
-
+  <img src="assets/chapter-2/event-storming-step-04.png" alt="Paso 4 - Pivotal Points" width="95%">
 </p>
 
+#### Paso 5: Commands
 
-
-#### Step 4: Add Problems and Opportunities
-
-
-
-En la cuarta etapa se marcaron sobre el flujo los puntos de dolor observados y las oportunidades de mejora asociadas. Situar los problemas sobre el evento donde efectivamente ocurren, y no en una lista aparte, permite verificar que cada oportunidad responde a una fricción real y localizada del proceso.
-
-
-
-**Problemas identificados:**
-
-
-
-- La información clínica se encuentra repartida entre el sistema institucional, los monitores, las anotaciones en papel y la comunicación verbal.
-
-- El registro formal se posterga durante la atención y se regulariza al cierre del turno, cuando el detalle ya se ha perdido parcialmente.
-
-- La misma información se consigna dos veces, primero en el soporte personal y luego en el sistema.
-
-- El relevo depende de la memoria y del criterio de quien entrega el turno, sin un formato que garantice la cobertura mínima.
-
-- No es posible determinar con certeza quién registró un dato, en qué momento ni bajo qué indicación.
-
-- El especialista debe consultar varias fuentes para reconstruir el estado actual del paciente.
-
-- No existe confirmación explícita del cumplimiento de una indicación médica.
-
-- Las alertas del monitor no dejan registro asociado al evento clínico ni a la acción tomada.
-
-- Los sistemas generales exigen demasiados pasos para tareas breves y frecuentes.
-
-
-
-**Oportunidades identificadas:**
-
-
-
-- Estandarizar el traspaso de turno mediante un formulario SBAR que garantice la cobertura mínima de información.
-
-- Permitir el registro de signos vitales y eventos en el momento de la atención, con pocos pasos.
-
-- Generar el resumen de relevo a partir de lo ya registrado durante el turno, evitando la redacción duplicada.
-
-- Consignar automáticamente responsable, fecha y hora en cada operación relevante.
-
-- Ofrecer una vista consolidada de la evolución reciente que evite consultar varias fuentes.
-
-- Cerrar el ciclo entre indicación emitida, ejecución y confirmación de cumplimiento.
-
-- Señalar de forma visible los cambios críticos y las tareas pendientes del turno.
-
-- Diseñar los flujos frecuentes bajo un objetivo explícito de número de pasos.
-
-
+A la izquierda de cada evento se colocó la acción deliberada que lo provoca. El ejercicio dejó en claro que la mayor parte de los comandos recae sobre el personal de enfermería, mientras que el médico especialista interviene en un punto concreto, la emisión de la indicación. Esa asimetría explica el orden de priorización del Product Backlog del Capítulo III.
 
 <p align="center">
-
-  <img src="assets/chapter-2/event-storming-step-4.png" alt="Step 4 - Add Problems and Opportunities" width="95%">
-
+  <img src="assets/chapter-2/event-storming-step-05.png" alt="Paso 5 - Commands" width="95%">
 </p>
 
+#### Paso 6: Policies
 
+Se formularon las reglas del dominio que se disparan solas cuando ocurre un evento, sin que nadie las ordene. Entre ellas, que el acceso se limite a los pacientes del turno asignado, que un valor fuera de umbral genere alerta, que la ejecución de una indicación se notifique al médico que la emitió y que toda acción guarde responsable, fecha y hora sin que el profesional deba hacer nada adicional. Esta última sostiene el objetivo de trazabilidad declarado en BG-05.
+
+<p align="center">
+  <img src="assets/chapter-2/event-storming-step-06.png" alt="Paso 6 - Policies" width="95%">
+</p>
+
+#### Paso 7: Read Models
+
+Se identificó qué información necesita leer cada actor para decidir su siguiente acción. El ejercicio mostró que las vistas que requiere el médico especialista, el resumen clínico consolidado y el estado de las indicaciones vigentes, se construyen enteramente a partir de datos que produce el personal de enfermería. Sin ese registro previo, las vistas existen pero están vacías.
+
+<p align="center">
+  <img src="assets/chapter-2/event-storming-step-07.png" alt="Paso 7 - Read Models" width="95%">
+</p>
+
+#### Paso 8: External Systems
+
+Se incorporaron los sistemas y soportes ajenos a la plataforma que hoy intervienen en cada agrupación: el directorio de personal de la institución, la comunicación verbal en el relevo, los monitores biomédicos, la hoja de control en papel, el sistema de información hospitalaria, el registro de farmacia y los registros físicos del servicio. Su presencia confirma una decisión de alcance tomada en el Capítulo I: ClinicalSync no reemplaza el sistema hospitalario, convive con él.
+
+<p align="center">
+  <img src="assets/chapter-2/event-storming-step-08.png" alt="Paso 8 - External Systems" width="95%">
+</p>
+
+#### Paso 9: Aggregates
+
+Sobre cada evento se marcó la entidad que protege la consistencia de su información. Resultaron ocho agregados: Usuario y Rol en el acceso; Turno y Traspaso SBAR en la gestión del relevo; Paciente y Registro Clínico en la atención; Indicación Médica en el ciclo de órdenes; y Bitácora de Auditoría en la trazabilidad. La Bitácora se modeló como agregado propio y no como atributo de los demás, porque su regla, que ninguna acción registrada pueda alterarse después, es distinta de la de cualquier otro agregado.
+
+<p align="center">
+  <img src="assets/chapter-2/event-storming-step-09.png" alt="Paso 9 - Aggregates" width="95%">
+</p>
+
+#### Paso 10: Bounded Contexts
+
+Cada agrupación se consolidó como un contexto con vocabulario propio y se marcaron sus relaciones: Accounts and Access, Shift Management, Clinical Recording, Medical Orders y Traceability and Audit. Este frame constituye la vista final del Big Picture y es la entrada directa de la arquitectura orientada al dominio que se desarrolla en la sección 4.6.
+
+<p align="center">
+  <img src="assets/chapter-2/event-storming-step-10.png" alt="Paso 10 - Bounded Contexts" width="95%">
+</p>
 
 #### Conclusión del Big Picture Event Storming
 
+El recorrido por los diez pasos deja una conclusión que condiciona el resto del proyecto: el dominio tiene una dependencia de sentido único. El personal de enfermería ejecuta la mayor parte de los comandos y produce los datos; el médico especialista los consume a través de read models que no existen si ese registro no ocurrió antes. Por eso los entregables dirigidos al personal de enfermería, el traspaso SBAR y el registro clínico, deben construirse antes que el resumen clínico y las alertas dirigidas al especialista.
 
-
-El modelado del dominio confirma que el proceso clínico cardiovascular no falla por ausencia de información, sino por su dispersión y por la falta de un momento estructurado en el que esa información se consolide. Los problemas se concentran en tres puntos del flujo: la captura durante la atención, el traspaso entre turnos y el cierre del ciclo de indicación y cumplimiento.
-
-
-
-Estos tres puntos delimitan el alcance funcional de ClinicalSync y anticipan los contextos delimitados que se formalizarán en el Capítulo IV: la gestión del paciente y su información clínica, el registro de signos vitales y eventos, el traspaso estructurado de turno, la gestión de indicaciones médicas y la trazabilidad transversal de todas las operaciones. 
-
-
-
+La segunda conclusión es sobre el alcance. Los sistemas externos identificados en el paso ocho siguen presentes después de introducir la plataforma. ClinicalSync no los sustituye: se inserta entre ellos para que la información del turno deje de depender de la memoria y de la transcripción manual. Esa lectura es coherente con la delimitación del producto declarada en el Capítulo I y con la respuesta que la landing page ofrece en su sección de preguntas frecuentes.
 
 ### 2.5. Ubiquitous Language
 
@@ -3814,6 +3729,17 @@ La herramienta de Insights de GitHub demuestra que todos los miembros del equipo
 
 ## Conclusiones
 ### Conclusiones y recomendaciones
+
+**Sobre el Problem Statement.** El diagnóstico formulado en la sección 1.2.2.1 se sostuvo con evidencia propia: las cinco entrevistas registradas en la sección 2.2.2 y analizadas en la 2.2.3 confirmaron los tres problemas que motivaron el proyecto. El registro duplicado entre papel y sistema, la transmisión verbal del relevo sin un formato común y la imposibilidad de determinar quién registró un dato y en qué momento aparecieron de forma espontánea en el discurso de los entrevistados, sin que el guion los indujera. Lo que todavía no puede afirmarse es el criterio de éxito enunciado en ese mismo Problem Statement. La reducción medible del tiempo de traspaso, la eliminación de los registros físicos duplicados y la adopción diaria de la plataforma exigen el producto en operación dentro de una unidad clínica, condición que esta entrega no alcanza porque su alcance comprometido fue la Landing Page.
+
+**Sobre los assumptions.** Los supuestos declarados en la sección 1.2.2.2 se contrastaron parcialmente. Los relativos a la agilidad del registro durante la atención y a la necesidad del especialista de consultar información consolidada encontraron respaldo directo en las entrevistas. En cambio, el supuesto de que el personal aceptaría incorporar un sistema nuevo siempre que reduzca la carga manual quedó sin verificar: los entrevistados describieron su situación actual, no su disposición a cambiar de herramienta. El equipo asume esta limitación de forma explícita y la traslada como criterio de diseño, no como hallazgo. En la misma línea, el análisis de la sección 2.2.3 dejó constancia de que un porcentaje de mención inferior al 100% indica que una característica no fue mencionada, no que haya sido rechazada, y esa distinción se mantuvo al interpretar los resultados.
+
+**Sobre los Hypothesis Statements.** De las siete hipótesis formuladas en la sección 1.2.2.3, solo la sexta cuenta con un producto construido y publicado: la Landing Page está desplegada en producción y es verificable en su URL. Aun así, su criterio de éxito, que un prospecto resuma el propósito de la plataforma con su propio vocabulario y localice el llamado a la acción sin ayuda, no ha sido probado con usuarios reales, porque esa comprobación corresponde a las Validation Interviews de la sección 5.3, previstas para una entrega posterior. Las hipótesis 1 a 5 dependen de la aplicación web, que a la fecha existe como prototipo de interfaz y no como software ejecutable, de modo que ninguna puede darse por validada ni por refutada. La séptima requiere contrastar la propuesta con un coordinador o jefe de servicio, perfil que el equipo identificó como actor en el Impact Mapping pero que no ha sido entrevistado.
+
+**Sobre el proceso de trabajo.** El equipo concluye que organizar el informe con una rama por capítulo permitió avanzar en paralelo, pero trasladó al momento de la integración el costo de mantener la coherencia entre secciones. Durante esa integración se detectaron y corrigieron incoherencias que ninguna rama podía ver por sí sola: artefactos de diseño que describían un producto de alcance distinto al definido en el Capítulo II y evidencias de despliegue que no correspondían a la plataforma efectivamente utilizada. La lección que el equipo extrae es que el documento y el producto deben revisarse juntos y no por separado, porque un informe internamente consistente puede seguir describiendo algo que no se construyó.
+
+**Recomendaciones y roadmap.** El siguiente incremento debe construir los módulos de los que depende todo lo demás. El Impact Mapping de la sección 3.2 muestra que el personal de enfermería produce la información que el médico especialista consume, por lo que el traspaso SBAR y el registro de signos vitales deben implementarse antes que el resumen clínico y las alertas: sin datos capturados, las vistas dirigidas al especialista carecen de contenido. El orden recomendado para los siguientes sprints es la aplicación web de frontend, los servicios web que la respalden y, por último, la autenticación y el control de acceso por rol. En paralelo, se recomienda aprovechar que la Landing Page ya está publicada para ejecutar las entrevistas de validación de la hipótesis 6 antes de invertir más esfuerzo en la captación, y actualizar el prototipo de Figma para que refleje lo efectivamente implementado, de modo que el diseño deje de ir por detrás del código.
+
 ### Video About-the-Team
 
 ---
