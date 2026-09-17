@@ -186,10 +186,30 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
     - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
   - [4.2. Information Architecture](#42-information-architecture)
     - [4.2.1. Organization Systems](#421-organization-systems)
+      - [Organización de la Landing Page](#organización-de-la-landing-page)
+      - [Organización de la Web Application](#organización-de-la-web-application)
     - [4.2.2. Labeling Systems](#422-labeling-systems)
+      - [Convenciones de etiquetado](#convenciones-de-etiquetado)
+      - [Correspondencia entre el dominio y la interfaz](#correspondencia-entre-el-dominio-y-la-interfaz)
+      - [Etiquetado de estados](#etiquetado-de-estados)
+      - [Etiquetado de la Landing Page](#etiquetado-de-la-landing-page)
     - [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
+      - [Landing Page](#landing-page)
+      - [Etiquetas Open Graph y Twitter Card](#etiquetas-open-graph-y-twitter-card)
+      - [Reglas aplicadas](#reglas-aplicadas)
+      - [Exclusión de la Web Application](#exclusión-de-la-web-application)
     - [4.2.4. Searching Systems](#424-searching-systems)
+      - [Landing Page](#landing-page-1)
+      - [Web Application](#web-application)
+      - [Criterios de filtrado por vista](#criterios-de-filtrado-por-vista)
+      - [Comportamiento de la búsqueda](#comportamiento-de-la-búsqueda)
     - [4.2.5. Navigation Systems](#425-navigation-systems)
+      - [Navegación de la Landing Page](#navegación-de-la-landing-page)
+      - [Navegación de la Web Application](#navegación-de-la-web-application)
+      - [Tipos de navegación empleados](#tipos-de-navegación-empleados)
+      - [Ruta de migas](#ruta-de-migas)
+      - [Verificación de la restricción de dos interacciones](#verificación-de-la-restricción-de-dos-interacciones)
+      - [Consideraciones de accesibilidad en la navegación](#consideraciones-de-accesibilidad-en-la-navegación)
   - [4.3. Landing Page UI Design](#43-landing-page-ui-design)
     - [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
     - [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
@@ -2039,32 +2059,766 @@ Este orden constituye la referencia directa para la conformación de los Sprint 
 
 ## Capítulo IV: Product Design
 ### 4.1. Style Guidelines
+
+Las style guidelines fijan las decisiones visuales y de comunicación que ClinicalSync aplica de manera uniforme en todas sus interfaces. Su función no es decorativa: en un entorno clínico, una jerarquía visual clara y un uso consistente del color reducen el tiempo de interpretación y disminuyen el riesgo de que un profesional pase por alto un dato relevante durante una guardia.
+
+Esta sección se organiza en dos niveles. Las directrices generales establecen la identidad de la solución, es decir, la paleta, la tipografía, el espaciado y la iconografía que la distinguen. Las directrices web traducen esa identidad a las particularidades del medio: comportamiento adaptable, componentes de interfaz, estados del sistema y criterios de accesibilidad. Ambos niveles rigen tanto para la landing page como para la aplicación web, de modo que el usuario perciba un mismo producto al pasar del sitio promocional a la herramienta clínica.
+
 #### 4.1.1. General Style Guidelines
+
+El diseño de estilo de ClinicalSync se fundamenta en transmitir seguridad, eficiencia y profesionalismo, valores indispensables para una solución digital orientada al sector salud. Este busca dar una identidad gráfica moderna, ordenada y amigable para el usuario con el propósito de mejorar la comunicación clínica y la comodidad de los pacientes.
+
+* Colores: La paleta de colores emplea un azul noche (#172554) para transmitir autoridad clínica, un verde esmeralda (#10B981), siendo este un color con acento tecnológico para destacar acciones exitosas y confirmaciones de traspasos SBAR, un gris pálido (#64748B) para los textos secundarios y elementos inactivos, con esto estableciendo una jerarquía visual clara para el usuario. Por último, se emplea un blanco puro (#FFFFFF) para generar un mayor contraste y evitar la fatiga visual.
+
+* Tipografia: Se utilizan fuentes de letras sans-serif debido a su simpleza, alta legibilidad, claridad y una apariencia profesional.
+
+* Distribución y espaciado: La interfaz adopta una arquitectura de bloques bien definidos, con un espaciado consistente y una jerarquía visual estricta. La información se presenta de manera progresiva, permitiendo que el usuario identifique fácilmente el propósito de cada módulo.
+
+* Iconografía: Se utilizan iconos minimalistas y universalmente reconocibles en el ámbito médico y de comunicación asistencial. Esto reduce la complejidad de interpretación y acelera el reconocimiento visual de los flujos de trabajo cardiovasculares.
+  
 #### 4.1.2. Web Style Guidelines
+
+El diseño web de ClinicalSync se implementa como una solución digital orientada al sector salud, buscando que tanto la Landing Page como la Web App mantengan una experiencia uniforme, clara, responsiva y accesible. El objetivo es asegurar una interfaz confiable que facilite la interacción de visitantes, personal de enfermería cardiovascular y médicos especialistas.
+
+* **Diseño adaptable:** La interfaz se ajusta a distintos dispositivos (Escritorio, Laptop o móvil), manteniendo consistencia visual entre la landing page y la web application. Esto permite que los usuarios puedan registrar información clínica y consultar traspasos SBAR desde cualquier entorno de trabajo hospitalario.
+  
+* **Componentes de interfaz:** Los botones principales utilizan los colores como verde esmeralda (#10B981) o azul noche (#172554) para resaltar acciones críticas como guardar un registro, mientras que los elementos secundarios mantienen un estilo neutral en gris pálido. Esto establece una jerarquía visual que permite identificar con rapidez las acciones prioritarias.
+  
+* **Notificaciones y estados:** Los mensajes del sistema utilizan convenciones visuales claras para comunicar el estado de una acción o proceso. Los estados positivos se muestran en verde para indicar un guardado exitoso, las advertencias en amarillo para señalar pendientes y los errores o alertas en rojo.
+  
+* **Tablas y dashboards:** Se prioriza una presentación clara y ordenada de la información dentro de tablas y paneles de control, facilitando la consulta rápida del historial clínico. La organización visual de los registros y signos vitales permite que el médico interprete la evolución del paciente de manera más eficiente y rápida.
+  
+* **Accesibilidad:** Se consideran contrastes adecuados entre la tipografía y los fondos, además de una disposición clara del contenido. Se busca mantener una navegación sencilla y legible que reduzca la fatiga visual del personal durante las guardias, fortaleciendo la usabilidad general de la web app.
+  
 ### 4.2. Information Architecture
+
+La arquitectura de información define cómo se organiza, se nombra, se busca y se recorre el contenido de ClinicalSync. Su propósito es que cada usuario encuentre lo que necesita en el menor número de pasos posible, criterio que no es estético sino operativo: en el Capítulo II quedó establecido que el personal de enfermería registra durante la atención y que el médico especialista pierde tiempo reconstruyendo el estado del paciente desde varias fuentes.
+
+La solución comprende dos productos con audiencias y objetivos distintos, por lo que su arquitectura se define por separado.
+
+| Producto | Audiencia | Objetivo de la arquitectura |
+|---|---|---|
+| **Landing Page** | Visitantes y decisores institucionales que aún no conocen el producto. | Conducir al visitante desde el problema hasta la solicitud de una demostración, en una lectura lineal y sin autenticación. |
+| **Web Application** | Personal de enfermería cardiovascular y médicos especialistas, autenticados y con un rol asignado. | Minimizar los pasos de las tareas frecuentes del turno y permitir localizar información clínica en segundos. |
+
+Las decisiones de esta sección se apoyan en tres insumos previos: el vocabulario fijado en el Ubiquitous Language (sección 2.5), que determina cómo se nombran los elementos de la interfaz; la User Task Matrix (sección 2.3.2), que indica qué tareas son más frecuentes y por lo tanto deben estar más accesibles; y las User Stories del Capítulo III, que delimitan qué contenido existe realmente en cada producto.
+
 #### 4.2.1. Organization Systems
+
+Los sistemas de organización determinan cómo se agrupa el contenido y bajo qué lógica se relaciona. ClinicalSync combina tres esquemas, cada uno aplicado donde resulta más natural para el usuario.
+
+| Esquema de organización | Dónde se aplica | Justificación |
+|---|---|---|
+| **Secuencial (por pasos)** | Landing Page y formulario de traspaso SBAR. | El visitante necesita recorrer un argumento en orden: problema, solución, funcionamiento, beneficios y contacto. El traspaso SBAR es secuencial por definición del formato: situación, antecedentes, evaluación y recomendación. |
+| **Jerárquico (de lo general a lo particular)** | Web Application. | El profesional parte de sus pacientes asignados, entra a un paciente y desde ahí accede a sus registros. Cada nivel acota el anterior. |
+| **Cronológico** | Evolución clínica, eventos, bitácora de trazabilidad e historial de indicaciones. | En el dominio clínico el orden temporal es la relación más significativa entre registros: lo que importa es qué ocurrió antes y qué después. |
+| **Matricial (por múltiples atributos)** | Listados filtrables de pacientes, eventos y bitácora. | Un mismo conjunto de registros debe poder recorrerse por paciente, por tipo de acción, por responsable o por rango de fechas, según lo que el profesional esté buscando. |
+
+##### Organización de la Landing Page
+
+El contenido se dispone en una sola página de desplazamiento vertical, con secciones autónomas y un orden argumental que va del problema a la acción:
+
+1. Presentación y propuesta de valor.
+2. El problema de la información clínica dispersa en unidades cardiovasculares.
+3. Cómo funciona ClinicalSync, en pasos.
+4. Características principales.
+5. Beneficios, diferenciados por perfil.
+6. Planes y modelo de servicio.
+7. Preguntas frecuentes.
+8. Equipo de desarrollo.
+9. Formulario de contacto y solicitud de demostración.
+
+La estructura es deliberadamente plana: no existen subpáginas, de modo que el visitante puede recorrer todo el argumento sin abandonar la página ni perder el contexto.
+
+##### Organización de la Web Application
+
+El contenido se organiza en cuatro niveles de profundidad. La restricción de diseño es que ninguna tarea de frecuencia muy alta según la User Task Matrix supere el segundo nivel.
+
+| Nivel | Contenido | Ejemplo |
+|---|---|---|
+| **1. Turno** | Panel inicial con los pacientes asignados al profesional durante su turno. | Lista de pacientes con su estado y alertas activas. |
+| **2. Paciente** | Ficha del paciente con su resumen clínico y accesos a cada tipo de registro. | Últimos signos vitales, indicaciones vigentes, eventos recientes. |
+| **3. Tipo de registro** | Colección de un tipo específico dentro del paciente. | Historial de signos vitales, traspasos, medicación administrada. |
+| **4. Registro individual** | Detalle de una entrada, con su responsable, su marca temporal y su historial de cambios. | Una toma de signos vitales puntual, un traspaso SBAR determinado. |
+
+El agrupamiento responde al rol del usuario. El personal de enfermería accede a una organización centrada en la captura, donde las acciones de registro están disponibles desde el nivel del paciente sin navegación adicional. El médico especialista accede a una organización centrada en la consulta, donde el resumen clínico consolidado ocupa el nivel del paciente y los registros individuales quedan como profundización opcional.
+
 #### 4.2.2. Labeling Systems
+
+El sistema de etiquetado define cómo se nombran las secciones, las acciones y los datos en la interfaz. En ClinicalSync la regla de fondo es que **la interfaz usa el vocabulario del Ubiquitous Language definido en la sección 2.5**, no una traducción libre ni terminología técnica. Si el personal de enfermería dice "traspaso de turno", la aplicación no debe decir "transferencia de guardia" ni "handover".
+
+##### Convenciones de etiquetado
+
+| Convención | Regla | Ejemplo correcto | Ejemplo a evitar |
+|---|---|---|---|
+| **Idioma** | Toda la interfaz visible se rotula en español; el inglés queda reservado para el código y la documentación técnica. | Signos vitales | Vital Signs |
+| **Consistencia con el dominio** | Cada etiqueta corresponde a un término del Ubiquitous Language. | Traspaso SBAR | Reporte de cambio |
+| **Acciones en infinitivo** | Los botones nombran la acción que ejecutan. | Registrar signos vitales | Signos vitales |
+| **Brevedad** | Las etiquetas de navegación no superan las tres palabras. | Mis pacientes | Listado de pacientes asignados al turno |
+| **Sin abreviaturas ambiguas** | Solo se abrevia lo que es estándar del dominio clínico. | UCI, SBAR, FC | Trasp., Med. |
+| **Estados explícitos** | Los estados se nombran con una palabra que el usuario pueda interpretar sin leyenda. | Pendiente, Confirmado, Vencido | Estado 1, Estado 2 |
+
+##### Correspondencia entre el dominio y la interfaz
+
+| Término del dominio (2.5) | Etiqueta en la interfaz | Dónde aparece |
+|---|---|---|
+| Assigned Patient | Mis pacientes | Navegación principal de la Web App |
+| Patient Status | Estado del paciente | Ficha del paciente y listado del turno |
+| Vital Signs | Signos vitales | Sección de registro y de historial |
+| Clinical Event | Eventos clínicos | Sección de registro y de historial |
+| Medication Administration | Medicación administrada | Sección de registro |
+| Shift Handover | Traspaso de turno | Navegación principal |
+| SBAR Report | Traspaso SBAR | Formulario y listado de traspasos |
+| Situation / Background / Assessment / Recommendation | Situación / Antecedentes / Evaluación / Recomendación | Secciones del formulario SBAR |
+| Medical Indication | Indicaciones médicas | Ficha del paciente |
+| Indication Compliance | Cumplimiento | Acción y estado dentro de una indicación |
+| Clinical Alert | Alertas | Distintivo en el listado del turno y en la ficha |
+| Clinical Evolution | Evolución clínica | Vista de consulta del médico especialista |
+| Audit Trail | Bitácora | Sección de auditoría del paciente |
+| Responsible Staff | Registrado por | Pie de cada registro individual |
+| Timestamp | Fecha y hora | Pie de cada registro individual |
+
+##### Etiquetado de estados
+
+Los estados se rotulan con una sola palabra y se refuerzan con el color definido por Johnny en las Web Style Guidelines (sección 4.1.2), nunca solo con color, para no depender de la percepción cromática del usuario.
+
+| Estado | Etiqueta | Refuerzo visual | Dónde se usa |
+|---|---|---|---|
+| Registro guardado correctamente | Guardado | Verde esmeralda | Confirmación de cualquier registro |
+| Traspaso emitido y aún no recibido | Pendiente | Amarillo | Listado de traspasos |
+| Traspaso recibido por el turno entrante | Confirmado | Verde esmeralda | Listado de traspasos |
+| Indicación emitida y no ejecutada | Pendiente | Amarillo | Indicaciones del paciente |
+| Indicación fuera de su plazo previsto | Vencida | Rojo | Indicaciones del paciente |
+| Paciente con alerta activa | Requiere atención | Rojo | Listado del turno |
+| Documentación incompleta al cierre | Incompleto | Amarillo | Resumen de cierre de turno |
+
+##### Etiquetado de la Landing Page
+
+Las secciones del sitio promocional se rotulan con lenguaje orientado al visitante, que no conoce el producto ni su vocabulario interno. Se emplean los rótulos Inicio, El problema, Cómo funciona, Características, Beneficios, Planes, Preguntas frecuentes, Equipo y Contacto. Se evita nombrar módulos internos del sistema en esta capa, ya que para el visitante son conceptos sin referente.
+
+Estos nueve rótulos no reciben el mismo tratamiento en la interfaz. Se distinguen dos niveles según su función dentro del recorrido del visitante:
+
+| Nivel | Rótulos | Dónde aparecen | Criterio |
+|---|---|---|---|
+| **Primario** | El problema, Cómo funciona, Características, Planes, Contacto | Barra superior en escritorio, y menú desplegable en pantallas reducidas. | Corresponden a la secuencia del argumento: reconocer el problema, entender la solución, evaluarla y actuar. |
+| **Secundario** | Inicio, Beneficios, Preguntas frecuentes, Equipo | Pie de página en escritorio, y menú desplegable en pantallas reducidas. | Amplían o cierran el argumento, pero no son necesarios para recorrerlo. "Inicio" además es redundante, ya que el logotipo cumple esa función. |
+
+La distinción responde a una restricción de espacio verificada sobre la implementación: con los nueve rótulos en la barra superior, los enlaces ocupaban 812 de los 1200 píxeles del contenedor, sin margen suficiente para el logotipo, el selector de idioma y la acción principal. Reducida a cinco, la barra ocupa 376 píxeles. En pantallas reducidas la restricción no aplica, ya que el menú desplegable dispone de espacio vertical; por ello conserva los nueve rótulos.
+
 #### 4.2.3. SEO Tags and Meta Tags
+
+La estrategia de posicionamiento aplica únicamente a la Landing Page. La Web Application opera detrás de autenticación y maneja información clínica, por lo que **debe quedar explícitamente excluida de la indexación**: no existe beneficio en que un buscador alcance sus rutas y sí un riesgo de exposición.
+
+##### Landing Page
+
+| Etiqueta | Contenido propuesto |
+|---|---|
+| `<title>` | ClinicalSync — Traspaso de turno y trazabilidad clínica cardiovascular |
+| `<meta name="description">` | Plataforma web que estandariza el traspaso de turno con SBAR, agiliza el registro de signos vitales y garantiza la trazabilidad de cada acción clínica en unidades cardiovasculares. |
+| `<meta name="keywords">` | traspaso de turno, SBAR, registro clínico, signos vitales, trazabilidad clínica, unidad cardiovascular, UCI cardiovascular, software clínico |
+| `<meta name="author">` | Digital Clinical System |
+| `<meta name="robots">` | index, follow |
+| `<meta http-equiv="Content-Language">` | es-PE |
+| `<link rel="canonical">` | URL pública de la landing page |
+| `<html lang>` | es, alternando a en cuando el visitante cambia el idioma |
+
+##### Etiquetas Open Graph y Twitter Card
+
+Se incorporan para que el enlace se previsualice correctamente cuando se comparta por mensajería o correo, que es la vía habitual por la que un contacto institucional recibe la referencia.
+
+| Etiqueta | Contenido propuesto |
+|---|---|
+| `og:title` | ClinicalSync — Continuidad clínica en unidades cardiovasculares |
+| `og:description` | Estandariza el traspaso SBAR, registra signos vitales en segundos y deja constancia de quién hizo qué y cuándo. |
+| `og:type` | website |
+| `og:url` | URL pública de la landing page |
+| `og:image` | Imagen de previsualización de 1200 × 630 px |
+| `og:locale` | es_PE, con `og:locale:alternate` en en_US |
+| `twitter:card` | summary_large_image |
+
+##### Reglas aplicadas
+
+- El `title` se mantiene por debajo de 60 caracteres y la `description` entre 140 y 160, para que no se trunquen en los resultados de búsqueda.
+- Cada sección de la landing usa un único `<h1>` y jerarquiza el resto con `<h2>` y `<h3>`, sin saltar niveles.
+- Toda imagen lleva `alt` descriptivo, lo que sirve simultáneamente al posicionamiento y a la accesibilidad comprometida en la sección 4.1.2.
+- Las dos versiones de idioma se declaran con `hreflang`, en coherencia con la historia US-11 del backlog.
+- Se publica un `sitemap.xml` con las secciones de la landing y un `robots.txt` que permite el rastreo del sitio promocional.
+
+##### Exclusión de la Web Application
+
+```
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /api/
+Sitemap: https://<dominio>/sitemap.xml
+```
+
+Adicionalmente, las vistas de la aplicación incluyen `<meta name="robots" content="noindex, nofollow">`, de modo que la exclusión no dependa únicamente del `robots.txt`, que es una convención que los rastreadores pueden ignorar.
+
 #### 4.2.4. Searching Systems
+
+Las necesidades de búsqueda son distintas en cada producto y deben resolverse con mecanismos proporcionales a su complejidad real.
+
+##### Landing Page
+
+No incorpora un buscador. El contenido cabe en una sola página y un motor de búsqueda añadiría un elemento que el visitante no espera. La localización de contenido se resuelve con la navegación ancla descrita en 4.2.5 y con la sección de preguntas frecuentes, que agrupa las dudas más habituales.
+
+##### Web Application
+
+La búsqueda es una necesidad operativa concreta: durante el turno el profesional necesita llegar a un paciente o a un registro sin recorrer listados. Los mecanismos previstos son tres, en orden de inmediatez.
+
+| Mecanismo | Qué resuelve | Dónde opera | Historia relacionada |
+|---|---|---|---|
+| **Búsqueda por paciente** | Localizar a un paciente por nombre o número de historia clínica. | Barra superior, disponible desde cualquier vista. | US-17 |
+| **Filtros sobre listados** | Acotar un conjunto de registros por uno o más atributos. | Listado del turno, traspasos, indicaciones, eventos y bitácora. | US-14, US-23, US-27, US-30 |
+| **Ordenamiento** | Reorganizar un listado ya acotado. | Todos los listados. | US-29 |
+
+##### Criterios de filtrado por vista
+
+| Vista | Filtros disponibles |
+|---|---|
+| Pacientes del turno | Estado del paciente, presencia de alertas activas, indicaciones pendientes |
+| Traspasos de turno | Paciente, turno, estado (pendiente o confirmado), rango de fechas |
+| Signos vitales | Paciente, rango de fechas, parámetro |
+| Eventos clínicos | Paciente, criticidad, responsable, rango de fechas |
+| Indicaciones médicas | Paciente, estado (vigente, pendiente, cumplida, vencida), médico emisor |
+| Bitácora de auditoría | Paciente, tipo de acción, responsable, rango de fechas |
+
+##### Comportamiento de la búsqueda
+
+- Los resultados se muestran mientras el usuario escribe, a partir del tercer carácter, para reducir el número de interacciones.
+- La búsqueda ignora mayúsculas y tildes, de modo que "Muñoz" y "munoz" devuelvan el mismo resultado.
+- El alcance respeta el rol y el turno: un profesional no obtiene resultados de pacientes que no tiene asignados.
+- Cuando no hay coincidencias, el sistema indica el criterio aplicado y ofrece limpiar los filtros, en lugar de mostrar un listado vacío sin explicación.
+- Los filtros activos permanecen visibles, para que el usuario no interprete un listado filtrado como el conjunto completo. Esta regla es deliberada: en un contexto clínico, creer que se está viendo la totalidad de los registros cuando en realidad hay un filtro aplicado constituye un riesgo, no solo una molestia.
+
 #### 4.2.5. Navigation Systems
+
+El sistema de navegación define cómo el usuario se desplaza entre los contenidos organizados en 4.2.1. ClinicalSync emplea navegación global, local y contextual, y su diseño responde a una restricción tomada de la User Task Matrix: **las tareas de frecuencia muy alta deben alcanzarse en un máximo de dos interacciones desde el punto de entrada.**
+
+##### Navegación de la Landing Page
+
+Al tratarse de una página única, la navegación es de tipo ancla: cada elemento del menú desplaza a la sección correspondiente sin recargar.
+
+```
+Landing Page
+├── Barra superior (fija al desplazar) — navegación primaria
+│   ├── El problema
+│   ├── Cómo funciona
+│   ├── Características
+│   ├── Planes
+│   ├── Contacto
+│   ├── Selector de idioma (ES / EN)
+│   └── [Solicitar demostración]  ← acción principal, destacada
+│
+├── Menú desplegable (pantallas reducidas) — los nueve destinos
+│   ├── Inicio
+│   ├── El problema
+│   ├── Cómo funciona
+│   ├── Características
+│   ├── Beneficios
+│   ├── Planes
+│   ├── Preguntas frecuentes
+│   ├── Equipo
+│   └── Contacto
+│
+└── Pie de página — navegación secundaria
+    ├── Secciones: los nueve destinos
+    ├── Equipo
+    ├── Repositorio del proyecto
+    └── Informe del proyecto
+```
+
+La barra permanece fija durante el desplazamiento para que la acción principal esté siempre disponible, sin obligar al visitante a volver al inicio. En pantallas reducidas el menú colapsa en un icono desplegable, conforme a la historia US-12.
+
+La barra superior presenta únicamente los cinco destinos primarios definidos en la sección 4.2.2. Los cuatro restantes permanecen en el documento y se ocultan mediante hoja de estilos a partir del punto de quiebre de escritorio, de modo que el menú desplegable de pantallas reducidas conserve los nueve destinos sin duplicar el marcado. Esta decisión evita que el visitante en móvil pierda accesos que sí existen en el sitio.
+
+##### Navegación de la Web Application
+
+La navegación global se presenta en una barra lateral persistente cuyo contenido **depende del rol del usuario**. Esto responde directamente a la conclusión de la sección 2.3.1: el personal de enfermería produce información y el médico especialista la consume, de modo que una navegación idéntica para ambos obligaría a uno de los dos perfiles a atravesar opciones que no utiliza.
+
+```
+Web Application
+├── Barra superior (persistente)
+│   ├── Buscar paciente
+│   ├── Alertas activas
+│   └── Perfil y cierre de sesión
+│
+├── Barra lateral — perfil Enfermería
+│   ├── Mis pacientes          ← vista de inicio
+│   ├── Traspaso de turno
+│   │   ├── Recibir traspaso
+│   │   └── Entregar traspaso
+│   ├── Indicaciones pendientes
+│   └── Cierre de turno
+│
+├── Barra lateral — perfil Médico especialista
+│   ├── Mis pacientes          ← vista de inicio
+│   ├── Evolución clínica
+│   ├── Indicaciones
+│   └── Bitácora
+│
+└── Dentro de un paciente (navegación local por pestañas)
+    ├── Resumen
+    ├── Signos vitales
+    ├── Medicación
+    ├── Eventos clínicos
+    ├── Indicaciones
+    ├── Traspasos
+    └── Bitácora
+```
+
+##### Tipos de navegación empleados
+
+| Tipo | Implementación | Función |
+|---|---|---|
+| **Global** | Barra lateral persistente, adaptada al rol. | Acceso a las áreas principales desde cualquier punto. |
+| **Local** | Pestañas dentro de la ficha del paciente. | Desplazamiento entre los tipos de registro sin abandonar el paciente. |
+| **Contextual** | Acciones de registro ubicadas dentro de la vista donde el dato se consulta. | Permite registrar en el momento y en el lugar donde surge la necesidad, sin navegar a otro módulo. |
+| **Suplementaria** | Ruta de migas y botón de retorno. | Indica dónde está el usuario dentro de la jerarquía y cómo volver. |
+
+##### Ruta de migas
+
+Presente en todas las vistas de la Web Application a partir del segundo nivel, refleja la jerarquía definida en 4.2.1:
+
+```
+Mis pacientes  ›  Rosa Medina (Cama 4)  ›  Signos vitales  ›  Registro del 12/09 14:30
+```
+
+##### Verificación de la restricción de dos interacciones
+
+| Tarea (frecuencia muy alta según 2.3.2) | Recorrido | Interacciones |
+|---|---|---|
+| Consultar los pacientes asignados | Es la vista de inicio tras iniciar sesión | 0 |
+| Registrar signos vitales | Paciente → Registrar signos vitales | 2 |
+| Registrar administración de medicamento | Paciente → Registrar medicación | 2 |
+| Consultar el traspaso del turno anterior | Traspaso de turno → Recibir traspaso | 2 |
+| Consultar el resumen clínico del paciente | Paciente → Resumen (pestaña activa por defecto) | 1 |
+| Revisar indicaciones vigentes | Paciente → Indicaciones | 2 |
+
+Ninguna de las tareas críticas supera las dos interacciones, lo que cumple el criterio establecido al inicio de esta sección y responde a la exigencia recogida en las entrevistas: que la herramienta sea al menos tan rápida como la anotación en papel a la que busca reemplazar.
+
+##### Consideraciones de accesibilidad en la navegación
+
+En coherencia con lo comprometido en la sección 4.1.2, la navegación es operable por teclado en su totalidad, con un orden de tabulación que sigue el orden visual. El elemento activo se identifica con un indicador de foco visible y no únicamente por color. Se incluye un enlace para saltar al contenido principal, de modo que quien navegue con lector de pantalla no deba recorrer la barra lateral en cada vista.
+
 ### 4.3. Landing Page UI Design
+
+El diseño de la landing page traduce la arquitectura de información definida en la sección 4.2 y las directrices visuales de la sección 4.1 en una propuesta concreta de interfaz. El objetivo del sitio es que un visitante del sector salud comprenda en una sola lectura qué problema resuelve ClinicalSync y encuentre sin esfuerzo la manera de solicitar una demostración.
+
+El diseño se desarrolla en dos etapas sucesivas. Los wireframes definen la estructura y la jerarquía de cada sección sin comprometer decisiones visuales, lo que permite validar el orden del argumento antes de invertir en el acabado. Los mock-ups incorporan la paleta, la tipografía y los componentes definidos en las style guidelines, y representan el resultado visual esperado de la landing una vez implementada.
+
 #### 4.3.1. Landing Page Wireframe
+
+<p align="center">
+  <img src="assets/chapter-4/Wireframe1.png" alt="WireFrame1" width="800">
+</p>
+
+
+<p align="center">
+  <img src="assets/chapter-4/Wireframe 2.png" alt="Wireframe2" width="800">
+</p>
+
+
+<p align="center">
+  <img src="assets/chapter-4/Wireframe 3.png" alt="Wireframe3" width="800">
+</p>
+
+
+<p align="center">
+  <img src="assets/chapter-4/Wireframe 4.png" alt="Wireframe4" width="800">
+</p>
+
+
 #### 4.3.2. Landing Page Mock-up
+
+Los mock-ups que se presentan a continuación corresponden al diseño vigente de la landing page, el mismo que fue implementado y desplegado durante el Sprint 1. Sustituyen a las versiones preliminares elaboradas al inicio de la etapa de diseño, que representaban un alcance de producto distinto al definido en el Capítulo II. El diseño mostrado aplica la paleta, la tipografía y los componentes documentados en la sección 4.1 sobre la estructura de contenido establecida en la sección 4.2.
+
+**Versión de escritorio, 1440 px.** Recorrido completo del sitio en el orden definido por la arquitectura de información: presentación, problema, cómo funciona, características, beneficios, planes, preguntas frecuentes, equipo y contacto.
+
+<p align="center">
+  <img src="assets/chapter-4/mockup-landing-desktop.png" alt="Mock-up de la Landing Page de ClinicalSync en escritorio" width="800">
+</p>
+
+**Versión móvil, 390 px.** Comportamiento adaptable del mismo diseño. De izquierda a derecha: pantalla de presentación, menú de navegación desplegado, sección de características y formulario de solicitud de demostración.
+
+<p align="center">
+  <img src="assets/chapter-4/mockup-landing-mobile.png" alt="Mock-up de la Landing Page de ClinicalSync en móvil" width="900">
+</p>
+
 ### 4.4. Web Applications UX/UI Design
+
+La Web Application de ClinicalSync fue diseñada para centralizar y apoyar los flujos clínicos relacionados con el registro, consulta y trazabilidad de la información en áreas cardiovasculares. La experiencia de usuario prioriza la claridad visual, la reducción de la carga operativa y el acceso ágil a las acciones principales, respondiendo a la necesidad del personal de enfermería y de los médicos especialistas de interactuar en entornos de alta presión donde el tiempo y la precisión son críticos.
+
+Los wireframes, wireflows, mock-ups y diagramas de flujo de usuario se organizan alrededor de los módulos principales de la plataforma, adaptados a los distintos roles: el dashboard clínico (Mis pacientes), el monitoreo de signos vitales, los traspasos de turno estructurados mediante la metodología SBAR, el registro de eventos clínicos, la bitácora y la elección de planes de suscripción. Estos artefactos permiten evidenciar la relación entre las User Stories, los flujos de interacción y la implementación final de la Web Application.
+
 #### 4.4.1. Web Applications Wireframes
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb1.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb2.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb3.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb4.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb5.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb6.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb7.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb8.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb9.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb10.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/WireframeWeb11.jpg" alt="WireframeWeb1" width="800">
+</p>
+
 #### 4.4.2. Web Applications Wireflow Diagrams
+
+##### User Goal 1
+
+El usuario (nuevo profesional de enfermería) busca crear su cuenta ingresando sus datos personales y credenciales para acceder al sistema con su identidad verificada ante el CGE.
+
+* **Happy path:** los datos están completos, el correo es válido y la colegiatura se verifica ante el CGE → el sistema crea la cuenta, envía código de verificación y redirige al siguiente paso.
+
+* **Unhappy path:** hay campos incompletos, formato de correo/contraseña inválido, colegiatura no verificada o correo ya registrado → el sistema detiene el registro y solicita corregir el campo indicado.
+
+<p align="center">
+  <img src="assets/chapter-4/Wireflow-Diagrams1.png" alt="WireflowDiagram1" width="800">
+</p>
+
+##### User Goal 2
+
+El usuario (institución o profesional interesado) busca seleccionar un plan, ingresar sus datos de pago y completar la transacción de forma segura para activar su suscripción.
+
+* **Happy path:** la tarjeta es válida, hay fondos disponibles y la transacción es autorizada → el sistema aprueba el pago, genera número de transacción/factura y activa la suscripción.
+
+* **Unhappy path:** los datos están incompletos o con formato inválido, o la pasarela rechaza la transacción (fondos insuficientes/tarjeta bloqueada) → el sistema detiene el flujo, muestra el error y solicita otro método o corrección.
+
+<p align="center">
+  <img src="assets/chapter-4/Wireflow-Diagrams2.png" alt="WireflowDiagram2" width="800">
+</p>
+
+##### User Goal 3
+
+El usuario (enfermería/médicos) busca registrar rápidamente los signos vitales y datos básicos de un paciente desde el dashboard para mantener su estado clínico actualizado.
+
+* **Happy path:** los valores están completos y dentro de rangos clínicos permitidos → el sistema guarda el registro, actualiza la tarjeta/gráficos y confirma.
+
+* **Unhappy path:** falta un campo obligatorio o hay valores fuera de rango → el sistema detiene el flujo, muestra el error específico y solicita corrección.
+
+<p align="center">
+  <img src="assets/chapter-4/Wireflow-Diagrams3.png" alt="WireflowDiagram3" width="800">
+</p>
+
+##### User Goal 4
+
+El usuario (enfermera responsable) busca acceder a los módulos clave de la pantalla de monitoreo de un paciente para hacer seguimiento continuo de su evolución y documentar la atención.
+
+* Este wireflow no tiene happy/unhappy path explícito, ya que no es un flujo de validación secuencial: es un mapa de navegación con 4 accesos independientes (ingreso rápido, tendencias, historial validado y reportes) que el usuario puede usar en cualquier orden desde la misma pantalla.
+
+<p align="center">
+  <img src="assets/chapter-4/Wireflow-Diagrams4.png" alt="WireflowDiagram4" width="800">
+</p>
+
+##### User Goal 5
+
+El usuario (enfermera de guardia) busca completar y enviar el reporte SBAR de un paciente para transferir la responsabilidad clínica a la siguiente guardia de forma clara y trazable.
+
+* **Happy path:** completa los 4 campos SBAR y la prioridad → el sistema registra el traspaso, notifica a la guardia entrante y actualiza la auditoría.
+
+* **Unhappy path:** faltan campos del SBAR o no se selecciona prioridad/método → el sistema detiene el envío y pide completar el formulario (también existe la ruta alterna de guardar como borrador sin validar todo).
+
+<p align="center">
+  <img src="assets/chapter-4/Wireflow-Diagrams5.png" alt="WireflowDiagram5" width="800">
+</p>
+
 #### 4.4.3. Web Applications Mock-ups
+
+* **Traspaso de Turno (SBAR)**
+
+Pantalla donde la enfermera/médico saliente documenta el estado del paciente usando el formato SBAR (Situación, Antecedentes, Evaluación, Recomendación) para transferir la responsabilidad clínica a la guardia entrante de forma estructurada y con trazabilidad.
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb1.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb2.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+* **Pantalla de Monitoreo del Paciente**
+
+Vista individual y detallada de un paciente específico, que agrupa el registro de constantes, las tendencias multivariables, el historial horario validado y la exportación de reportes clínicos.
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb3.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb4.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+* **Dashboard UCI Cardiovascular (pantalla principal)**
+
+Vista general de la guardia de enfermería en la UCI Cardio: muestra el estado de todos los pacientes ocupando camas (críticos, en vigilancia, estables), alertas prioritarias del turno y accesos rápidos para registrar signos vitales, eventos o generar reportes.
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb5.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb6.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+* **Selección de Suscripción**
+
+Pantalla donde el usuario compara los planes disponibles (Enfermería Pro, UCI Cardiovascular, Institucional) con sus precios y características, y elige el que mejor se ajusta a su práctica clínica para continuar con la compra.
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb7.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb8.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+* **Alta de Profesional de Enfermería**
+
+Formulario de registro donde un nuevo profesional crea su cuenta en el sistema, ingresando sus datos personales y credenciales profesionales (colegiatura, correo institucional) para validar su identidad ante el CGE.
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb9.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+* **Proceso de Pago**
+
+Flujo de checkout donde el usuario ingresa su método y datos de pago (tarjeta o billetera digital), y el sistema valida y confirma la transacción para activar la suscripción elegida.
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb10.jpg" alt="WireframeWeb1" width="800">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-4/Mock-upWeb11.jpg" alt="WireframeWeb1" width="800">
+</p>
+
 #### 4.4.4. Web Applications User Flow Diagrams
+
+En esta sección se presenta el diagrama de flujo de usuario general de ClinicalSync, que detalla la lógica de navegación desde el acceso al sistema hasta las principales ramas de uso según el tipo de usuario: Personal Clínico (enfermería/médicos) y Director/Gestor. El diagrama comienza con el punto de decisión de acceso (usuario nuevo vs. usuario existente) y se ramifica en dos flujos diferenciados: uno clínico, centrado en el Dashboard de guardia, la atención de alertas, el registro de signos vitales, la selección de cama del paciente, el monitoreo completo y el traspaso de turno (SBAR); y otro administrativo, centrado en el Panel de Administración, la gestión del plan institucional y la auditoría de trazabilidad. Cada rama incluye rutas de retorno ("Volver") que permiten al usuario regresar a su pantalla base sin perder el contexto, reflejando así la navegación real dentro del sistema y su consistencia con los wireflows detallados previamente para cada proceso.
+
+<p align="center">
+  <img src="assets/chapter-4/UserFlow-Diagram.png" alt="UserFlow-Diagram" width="800">
+</p>
+
 ### 4.5. Web Applications Prototyping
+
+Esta sección presenta la evidencia del prototipo de ClinicalSync correspondiente al **Sprint 1**, que constituye la primera entrega del proyecto. El alcance comprometido para este sprint fue la Landing Page desarrollada y publicada en un entorno de producción, junto con el prototipo navegable de la Web Application en Figma.
+
+La evidencia se presenta en formato de video, donde se recorren ambos productos mostrando su contenido y su comportamiento. Esta decisión responde a la naturaleza de lo prototipado: la Landing Page es un producto funcional y desplegado, por lo que su demostración requiere navegarlo en vivo, mientras que la Web Application se encuentra en etapa de prototipo de interfaz y se recorre sobre Figma.
+
+| Producto | Estado en el Sprint 1 | Soporte de la demostración |
+|---|---|---|
+| **Landing Page** | Desarrollada, desplegada y accesible públicamente. | Navegación sobre el sitio publicado, en escritorio y en móvil. |
+| **Web Application** | Prototipo de interfaz navegable. | Recorrido sobre el prototipo de Figma, en escritorio y en móvil. |
+
+#### Video de demostración del prototipo
+
+**Enlace al video:** [prototipo_landingPage_&AppWeb.mp4](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202212214_upc_edu_pe/IQAmN4M8YXNQRK6D-wRvo-fTAe7cW2snJ1KUCGJQwgQPtHs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=XswRDv)
+
+**Contenido del video:**
+
+En la primera parte se recorre la **Landing Page desplegada** en `https://clinicalsync-landing.vercel.app/`, mostrando sus nueve secciones en el orden en que el visitante las encuentra: la portada con la propuesta de valor, la exposición del problema de la información clínica dispersa, el funcionamiento de la plataforma en cuatro pasos, las características, los beneficios diferenciados por perfil, los planes, las preguntas frecuentes, el equipo y el formulario de contacto. Se demuestra además el cambio de idioma entre español e inglés y el comportamiento adaptable del sitio, alternando entre la vista de escritorio y la de dispositivo móvil.
+
+<p align="center">
+  <img src="assets/chapter-4/prototipo-landing-responsive.png" alt="Verificación del comportamiento adaptable de la Landing Page durante la demostración" width="900">
+</p>
+
+*Fotograma del video: comprobación del comportamiento adaptable de la Landing Page sobre el sitio publicado, emulando un dispositivo móvil de 390 px de ancho desde las herramientas de desarrollo del navegador.*
+
+En la segunda parte se recorre el **prototipo de la Web Application en Figma**, mostrando las pantallas diseñadas para los flujos clínicos definidos en el Capítulo III: la vista de pacientes asignados al turno, el registro de signos vitales y eventos clínicos, el formulario de traspaso SBAR, la gestión de indicaciones médicas y el resumen clínico dirigido al médico especialista. El recorrido se realiza tanto en la versión de escritorio como en la de móvil, en coherencia con el requisito de diseño adaptable establecido para ambos productos.
+
+#### Enlaces a los productos prototipados
+
+| Recurso | Enlace |
+|---|---|
+| Landing Page desplegada | [https://clinicalsync-landing.vercel.app/](https://clinicalsync-landing.vercel.app/) |
+| Repositorio de la Landing Page | [https://github.com/Digital-Clinical-Systems/Landing-Page](https://github.com/Digital-Clinical-Systems/Landing-Page) |
+| Video de la demostración | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202212214_upc_edu_pe/IQAmN4M8YXNQRK6D-wRvo-fTAe7cW2snJ1KUCGJQwgQPtHs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=XswRDv) |
+
+#### Relación con el Product Backlog
+
+El alcance demostrado en este video corresponde a la **Entrega 1** del Product Backlog definido en la sección 3.3, que agrupa las doce historias de usuario de la Landing Page más el despliegue del sitio. Con la publicación en producción quedan cubiertas las historias US-01 a US-12 y la historia técnica TS-09, incluidas las relativas a internacionalización y acceso desde dispositivos móviles.
+
+El prototipo de la Web Application anticipa las entregas siguientes, correspondientes al frontend de la aplicación y a los servicios que lo sostienen, cuyo detalle se desarrolla en el Capítulo V.
+
 ### 4.6. Domain-Driven Software Architecture
+A partir de lo que trabajamos en el Big Picture Event Storming, en esta sección detallamos el diseño de nuestra arquitectura usando Domain-Driven Design (DDD). Aquí definimos los Bounded Contexts, los agregados, eventos y comandos, y finalmente mostramos la estructura del sistema aplicando el Modelo C4.
 #### 4.6.1. Design-Level Event Storming
+Para bajar al detalle técnico, armamos una sesión de Design-Level Event Storming. Esto nos sirvió para pasar del flujo general del negocio a los componentes reales de software, identificando qué comandos disparan qué eventos y en qué contextos viven.
+
+**Objetivo de la sesión**
+Nos enfocamos en desglosar el flujo clínico de la UCI Cardiovascular en eventos concretos, agrupar las responsabilidades en Bounded Contexts y definir las reglas (políticas) que el sistema ClinicalSync debe respetar de manera interna.
+
+**Paso 1: Recolección de Domain Events**
+Primero identificamos los eventos de dominio clave para el negocio, redactándolos siempre en pasado. Los eventos detectados para ClinicalSync fueron:
+
+- Información clínica entregada al nuevo turno
+- Turno anterior finalizado
+- Pacientes asignados revisados
+- Estado inicial del paciente verificado
+- Signos vitales registrados
+- Signos vitales monitoreados
+- Medicamento administrado
+- Indicación médica revisada
+- Evolución reciente del paciente revisada
+- Evolución posterior monitoreada
+- Evento clínico relevante detectado
+- Cambio crítico identificado
+- Médico informado sobre cambio clínico
+- Cumplimiento de indicación registrado
+- Medicación e indicaciones validadas
+- Información clínica consultada por el médico
+- Nueva indicación médica registrada
+- Indicación ejecutada por enfermería
+
+**Paso 2: Identificación de Bounded Contexts**
+Luego agrupamos estos eventos para separar correctamente las responsabilidades de la plataforma:
+
+*   **BC-01: Security & Shared Kernel (IAM) Context — Subdominio Genérico**
+    Se encarga de la seguridad y de que solo el personal autorizado acceda al sistema.
+    *Domain Events clave:* Usuario autenticado, Rol asignado, Sesión iniciada.
+
+*   **BC-02: Patients Context — Subdominio de Soporte**
+    Maneja los datos básicos y la admisión de los pacientes. Actúa como el directorio maestro.
+    *Domain Events clave:* Paciente admitido, Datos demográficos registrados, Estado actualizado.
+
+*   **BC-03: Vital Signs Context — Core Domain**
+    Es el núcleo de ClinicalSync. Aquí se registran y evalúan los signos vitales en tiempo real.
+    *Domain Events clave:* Signos vitales registrados, Nivel de riesgo clínico evaluado.
+
+*   **BC-04: Critical Events & Alerts Context — Core Domain**
+    Controla el ciclo de vida de las alertas médicas cuando hay anomalías.
+    *Domain Events clave:* Alerta crítica generada, Alerta atendida, Alerta resuelta.
+
+*   **BC-05: Handover (SBAR) Context — Trazabilidad Clínica**
+    Se encarga de estructurar y guardar los traspasos de turno usando el modelo SBAR.
+    *Domain Events clave:* Entrega SBAR registrada, Turno finalizado, Acuse de recibo confirmado.
+
+*   **BC-06: Audit Logs Context — Subdominio de Soporte**
+    Guarda un registro inmutable de todo lo que hacen los usuarios para mantener la trazabilidad.
+    *Domain Events clave:* Log de auditoría creado, Operación clínica registrada.
+
+*   **BC-07: Physicians & Treatments Context — Subdominio de Soporte**
+    Administra el catálogo de médicos y el historial cronológico de los tratamientos.
+    *Domain Events clave:* Médico asignado, Tratamiento prescrito, Historial actualizado.
+
+**Paso 3: Identificación de Comandos y Políticas**
+- **Comandos identificados:** Registrar signos vitales, Iniciar entrega de turno SBAR, Reportar evento clínico crítico, Prescribir tratamiento.
+- **Políticas de dominio:** 
+  - Cuando un signo vital supera un umbral de riesgo → generar alerta crítica de inmediato.
+  - Cuando se inicia el cambio de turno → generar un resumen estructurado del SBAR.
+
+**Paso 4: Modelos de Lectura**
+Para que los usuarios puedan interactuar con esta data, identificamos estas vistas:
+- Dashboard de monitoreo de constantes vitales.
+- Vista de entrega de turno (SBAR).
+- Historial de eventos y auditoría.
+
 #### 4.6.2. Software Architecture Context Diagram
+Este diagrama muestra una vista de alto nivel de ClinicalSync. Aquí identificamos a los actores principales (enfermeros, médicos y auditores) y cómo interactúan con el sistema sin entrar en detalles técnicos.
+
+<p align="center">
+  <img src="assets/chapter-4/context-diagram.png" alt="Diagrama de Contexto ClinicalSync" width="800">
+</p>
+
+*Muestra la interacción directa de los roles clínicos con la plataforma.*
+
+
 #### 4.6.3. Software Architecture Container Diagrams
+Haciendo un poco de zoom, en este diagrama separamos las unidades de despliegue. Tenemos nuestra Single Page Application (SPA) para el frontend, el backend que expone el RESTful API y nuestra base de datos relacional.
+
+<p align="center">
+  <img src="assets/chapter-4/container-diagram.png" alt="Diagrama de Contenedores ClinicalSync" width="800">
+</p>
+
+*Detalla la comunicación JSON/HTTPS entre la Web App y el API, y la persistencia hacia MySQL 8.x.*
+
 #### 4.6.4. Software Architecture Components Diagrams
+
+Aquí mostramos cómo está estructurado el Backend API por dentro. Separamos la lógica en componentes basados en nuestros Bounded Contexts, cada uno con sus propios servicios y controladores REST.
+
+<p align="center">
+  <img src="assets/chapter-4/components-diagram.png" alt="Diagrama de Componentes ClinicalSync" width="800">
+</p>
+
+*Muestra las interacciones internas (mediante interfaces de Java y Domain Events) entre los componentes del sistema.*
+
 ### 4.7. Software Object-Oriented Design
+
+El diseño orientado a objetos traduce los bounded contexts identificados en la sección 4.6 a una estructura de clases implementable. Es el punto donde el modelo del dominio deja de ser un mapa conceptual y pasa a definir entidades, agregados, objetos de valor y relaciones concretas que el equipo escribirá en código durante el Capítulo V.
+
+El criterio que guía este diseño es mantener la lógica de negocio clínica aislada de la infraestructura, de modo que reglas como la validación de un traspaso SBAR o el cálculo del nivel de riesgo de un paciente residan en el dominio y no queden dispersas en la capa de presentación o de persistencia. El vocabulario de las clases conserva los términos fijados en el Ubiquitous Language de la sección 2.5, con el fin de que el código sea legible para cualquier integrante del equipo sin necesidad de un diccionario intermedio.
+
 #### 4.7.1. Class Diagrams
+Basándonos en los Bounded Contexts, armamos el diagrama de clases del dominio. El objetivo es mantener una alta cohesión y aislar la lógica de negocio clínica de la infraestructura.
+
+Para implementar DDD correctamente, utilizamos herencia desde un `AbstractDomainAggregateRoot` del *Shared Kernel* para poder lanzar eventos de dominio. También definimos Value Objects (como `BloodPressure` para encapsular la presión sistólica y diastólica) y las enumeraciones para estandarizar estados (`RiskLevel`, `HandoverStatus`, etc.). 
+
+El modelo de traspasos SBAR mantiene la trazabilidad exigiendo el ID del enfermero que recibe el turno (`incomingNurseId`), y el sistema de auditoría es robusto mediante el uso de la clase inmutable `AuditLog`.
+
+<p align="center">
+  <img src="assets/chapter-4/class-diagram.png" alt="UML Class Diagram - ClinicalSync" width="100%">
+</p>
+
+*Detalla los paquetes de dominio de cada contexto y las relaciones estructurales entre las entidades.*
+
 ### 4.8. Database Design
+
+El diseño de base de datos define cómo persiste la información del modelo de dominio descrito en la sección 4.7. Las decisiones de esta sección responden a dos exigencias que el Capítulo II identificó como críticas: la trazabilidad completa de cada acción clínica, con su responsable y su marca temporal, y la posibilidad de reconstruir la evolución de un paciente en orden cronológico.
+
+El esquema se organiza siguiendo los bounded contexts del dominio, manteniendo integridad referencial estricta entre las entidades relacionadas. La tabla de auditoría recibe un tratamiento particular: se diseña como append-only, es decir, admite únicamente inserciones y no permite modificar ni eliminar registros existentes. Esta restricción es deliberada, ya que una bitácora que puede alterarse no constituye evidencia válida para efectos de auditoría clínica.
+
 #### 4.8.1. Database Diagrams
+Para la persistencia relacional usamos MySQL con Spring Data JPA. El esquema refleja nuestros contextos y mantiene una integridad referencial estricta:
+
+*   **patients:** Tabla central con los datos y ubicación del paciente.
+*   **vital_sign_records:** Guarda el monitoreo continuo de biomarcadores y calcula el nivel de riesgo.
+*   **alerts:** Maneja el ciclo de vida de los eventos críticos y los responsables de su atención.
+*   **handovers:** Guarda la estructura del SBAR entre los profesionales.
+*   **audit_logs:** Implementamos esta tabla como *append-only* (solo inserciones) para guardar la metadata en JSON y cumplir con las normativas de trazabilidad hospitalaria.
+*   **physicians y patient_treatments:** Soportan el historial de atenciones y prescripciones médicas.
+
+<p align="center">
+  <img src="assets/chapter-4/database-diagram.png" alt="Database Diagram - ClinicalSync" width="100%">
+</p>
+
+*Muestra las tablas físicas, tipos de datos y relaciones de llave foránea de la base de datos.*
 
 ---
 
