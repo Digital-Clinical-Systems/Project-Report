@@ -47,94 +47,152 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
 
 ## Contenido
 
-* [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
-* [Project Report Collaboration Insights](#project-report-collaboration-insights)
-* [Student Outcome](#student-outcome)
-* [Capítulo I: Introducción](#capítulo-i-introducción)
-  * [1.1. Startup Profile](#11-startup-profile)
-    * [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
-    * [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
-  * [1.2. Solution Profile](#12-solution-profile)
-    * [1.2.1 Antecedentes y problemática](#121-antecedentes-y-problemática)
-    * [1.2.2 Lean UX Process](#122-lean-ux-process)
-      * [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
-      * [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
-      * [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
-      * [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
-  * [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-* [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
-  * [2.1. Competidores](#21-competidores)
-    * [2.1.1. Análisis competitivo](#211-análisis-competitivo)
-    * [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
-  * [2.2. Entrevistas](#22-entrevistas)
-    * [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
-    * [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-    * [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
-  * [2.3. Needfinding](#23-needfinding)
-    * [2.3.1. User Personas](#231-user-personas)
-    * [2.3.2. User Task Matrix](#232-user-task-matrix)
-    * [2.3.3. User Journey Mapping](#233-user-journey-mapping)
-    * [2.3.4. Empathy Mapping](#234-empathy-mapping)
-  * [2.4. Big Picture Event Storming](#24-big-picture-event-storming)
-  * [2.5. Ubiquitous Language](#25-ubiquitous-language)
-* [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
-  * [3.1. User Stories](#31-user-stories)
-  * [3.2. Impact Mapping](#32-impact-mapping)
-  * [3.3. Product Backlog](#33-product-backlog)
-* [Capítulo IV: Product Design](#capítulo-iv-product-design)
-  * [4.1. Style Guidelines](#41-style-guidelines)
-    * [4.1.1. General Style Guidelines](#411-general-style-guidelines)
-    * [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
-  * [4.2. Information Architecture](#42-information-architecture)
-    * [4.2.1. Organization Systems](#421-organization-systems)
-    * [4.2.2. Labeling Systems](#422-labeling-systems)
-    * [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
-    * [4.2.4. Searching Systems](#424-searching-systems)
-    * [4.2.5. Navigation Systems](#425-navigation-systems)
-  * [4.3. Landing Page UI Design](#43-landing-page-ui-design)
-    * [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
-    * [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
-  * [4.4. Web Applications UX/UI Design](#44-web-applications-uxui-design)
-    * [4.4.1. Web Applications Wireframes](#441-web-applications-wireframes)
-    * [4.4.2. Web Applications Wireflow Diagrams](#442-web-applications-wireflow-diagrams)
-    * [4.4.3. Web Applications Mock-ups](#443-web-applications-mock-ups)
-    * [4.4.4. Web Applications User Flow Diagrams](#444-web-applications-user-flow-diagrams)
-  * [4.5. Web Applications Prototyping](#45-web-applications-prototyping)
-  * [4.6. Domain-Driven Software Architecture](#46-domain-driven-software-architecture)
-    * [4.6.1. Design-Level Event Storming](#461-design-level-event-storming)
-    * [4.6.2. Software Architecture Context Diagram](#462-software-architecture-context-diagram)
-    * [4.6.3. Software Architecture Container Diagrams](#463-software-architecture-container-diagrams)
-    * [4.6.4. Software Architecture Components Diagrams](#464-software-architecture-components-diagrams)
-  * [4.7. Software Object-Oriented Design](#47-software-object-oriented-design)
-    * [4.7.1. Class Diagrams](#471-class-diagrams)
-  * [4.8. Database Design](#48-database-design)
-    * [4.8.1. Database Diagrams](#481-database-diagrams)
-* [Capítulo V: Product Implementation, Validation & Deployment](#capítulo-v-product-implementation-validation--deployment)
-  * [5.1. Software Configuration Management](#51-software-configuration-management)
-    * [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
-    * [5.1.2. Source Code Management](#512-source-code-management)
-    * [5.1.3. Source Code Style Guide & Conventions](#513-source-code-style-guide--conventions)
-    * [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
-  * [5.2. Landing Page, Services & Applications Implementation](#52-landing-page-services--applications-implementation)
-    * [5.2.1. Sprint 1](#521-sprint-1)
-      * [5.2.1.1. Sprint Planning 1](#5211-sprint-planning-1)
-      * [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
-      * [5.2.1.3. Sprint Backlog 1](#5213-sprint-backlog-1)
-      * [5.2.1.4. Development Evidence for Sprint Review](#5214-development-evidence-for-sprint-review)
-      * [5.2.1.5. Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
-      * [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
-      * [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
-      * [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
-  * [5.3. Validation Interviews](#53-validation-interviews)
-    * [5.3.1. Diseño de Entrevistas](#531-diseño-de-entrevistas)
-    * [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas)
-    * [5.3.3. Evaluaciones según heurísticas](#533-evaluaciones-según-heurísticas)
-  * [5.4. Video About-the-Product](#54-video-about-the-product)
-* [Conclusiones](#conclusiones)
-  * [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-  * [Video About-the-Team](#video-about-the-team)
-* [Bibliografía](#bibliografía)
-* [Anexos](#anexos)
+- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
+- [Contenido](#contenido)
+- [Student Outcome](#student-outcome)
+- [Capítulo I: Introducción](#capítulo-i-introducción)
+  - [1.1. Startup Profile](#11-startup-profile)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+  - [1.2. Solution Profile](#12-solution-profile)
+    - [1.2.1 Antecedentes y problemática](#121-antecedentes-y-problemática)
+    - [1.2.2 Lean UX Process](#122-lean-ux-process)
+      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
+  - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+- [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation--analysis)
+  - [2.1. Competidores](#21-competidores)
+    - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
+    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+  - [2.2. Entrevistas](#22-entrevistas)
+    - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+    - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+  - [2.3. Needfinding](#23-needfinding)
+    - [2.3.1. User Personas](#231-user-personas)
+    - [2.3.2. User Task Matrix](#232-user-task-matrix)
+    - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+    - [2.3.4. Empathy Mapping](#234-empathy-mapping)
+  - [2.4. Big Picture Event Storming](#24-big-picture-event-storming)
+  - [2.5. Ubiquitous Language](#25-ubiquitous-language)
+- [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
+  - [3.1. User Stories](#31-user-stories)
+  - [3.2. Impact Mapping](#32-impact-mapping)
+  - [3.3. Product Backlog](#33-product-backlog)
+- [Capítulo IV: Product Design](#capítulo-iv-product-design)
+  - [4.1. Style Guidelines](#41-style-guidelines)
+    - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
+    - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
+  - [4.2. Information Architecture](#42-information-architecture)
+    - [4.2.1. Organization Systems](#421-organization-systems)
+    - [4.2.2. Labeling Systems](#422-labeling-systems)
+    - [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
+    - [4.2.4. Searching Systems](#424-searching-systems)
+    - [4.2.5. Navigation Systems](#425-navigation-systems)
+  - [4.3. Landing Page UI Design](#43-landing-page-ui-design)
+    - [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
+    - [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
+  - [4.4. Web Applications UX/UI Design](#44-web-applications-uxui-design)
+    - [4.4.1. Web Applications Wireframes](#441-web-applications-wireframes)
+    - [4.4.2. Web Applications Wireflow Diagrams](#442-web-applications-wireflow-diagrams)
+    - [4.4.3. Web Applications Mock-ups](#443-web-applications-mock-ups)
+    - [4.4.4. Web Applications User Flow Diagrams](#444-web-applications-user-flow-diagrams)
+  - [4.5. Web Applications Prototyping](#45-web-applications-prototyping)
+  - [4.6. Domain-Driven Software Architecture](#46-domain-driven-software-architecture)
+    - [4.6.1. Design-Level Event Storming](#461-design-level-event-storming)
+    - [4.6.2. Software Architecture Context Diagram](#462-software-architecture-context-diagram)
+    - [4.6.3. Software Architecture Container Diagrams](#463-software-architecture-container-diagrams)
+    - [4.6.4. Software Architecture Components Diagrams](#464-software-architecture-components-diagrams)
+  - [4.7. Software Object-Oriented Design](#47-software-object-oriented-design)
+    - [4.7.1. Class Diagrams](#471-class-diagrams)
+  - [4.8. Database Design](#48-database-design)
+    - [4.8.1. Database Diagrams](#481-database-diagrams)
+- [Capítulo V: Product Implementation, Validation \& Deployment](#capítulo-v-product-implementation-validation--deployment)
+  - [5.1. Software Configuration Management](#51-software-configuration-management)
+    - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
+  - [Project Management y Requirements Management](#project-management-y-requirements-management)
+  - [Product UX/UI Design](#product-uxui-design)
+  - [Software Development](#software-development)
+  - [Software Deployment](#software-deployment)
+    - [5.1.2. Source Code Management](#512-source-code-management)
+  - [GitFlow Workflow implementado](#gitflow-workflow-implementado)
+  - [Feature Branches utilizados en el proyecto](#feature-branches-utilizados-en-el-proyecto)
+  - [Convención de ramas](#convención-de-ramas)
+  - [Semantic Versioning](#semantic-versioning)
+  - [Conventional Commits](#conventional-commits)
+      - [Tipos de commits utilizados:](#tipos-de-commits-utilizados)
+    - [5.1.3. Source Code Style Guide \& Conventions](#513-source-code-style-guide--conventions)
+  - [HTML / CSS (Landing Page y vistas estáticas)](#html--css-landing-page-y-vistas-estáticas)
+  - [HTML](#html)
+  - [CSS](#css)
+  - [AngularJS (Frontend Web Application)](#angularjs-frontend-web-application)
+  - [Nomenclatura](#nomenclatura)
+  - [Buenas prácticas](#buenas-prácticas)
+  - [Estilo de código](#estilo-de-código)
+  - [Java / Spring Boot (RESTful API Backend)](#java--spring-boot-restful-api-backend)
+  - [Nomenclatura](#nomenclatura-1)
+  - [Buenas prácticas](#buenas-prácticas-1)
+  - [Estilo de código](#estilo-de-código-1)
+  - [Convenciones generales del proyecto ClinicalSync](#convenciones-generales-del-proyecto-clinicalsync)
+  - [Gherkin (Especificaciones)](#gherkin-especificaciones)
+  - [Ejemplos:](#ejemplos)
+    - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
+  - [Componentes de Despliegue](#componentes-de-despliegue)
+  - [1. Control de Versiones](#1-control-de-versiones)
+  - [Estrategia de ramas](#estrategia-de-ramas)
+  - [2. Despliegue de Landing Page (GitHub Pages)](#2-despliegue-de-landing-page-github-pages)
+  - [Pasos de despliegue](#pasos-de-despliegue)
+    - [1. Inicializar y preparar el repositorio](#1-inicializar-y-preparar-el-repositorio)
+    - [2. Conectar el repositorio con GitHub](#2-conectar-el-repositorio-con-github)
+    - [3. Configurar GitHub Pages](#3-configurar-github-pages)
+    - [Resultado:](#resultado)
+  - [3. Despliegue del Frontend Web Application (Angular en Firebase Hosting)](#3-despliegue-del-frontend-web-application-angular-en-firebase-hosting)
+  - [Pasos de despliegue](#pasos-de-despliegue-1)
+    - [1. Subir el proyecto al repositorio](#1-subir-el-proyecto-al-repositorio)
+    - [2. Configurar en Firebase](#2-configurar-en-firebase)
+    - [3. Configurar variables de entorno](#3-configurar-variables-de-entorno)
+    - [4. Configurar el build](#4-configurar-el-build)
+    - [5. Ejecutar Despliegue](#5-ejecutar-despliegue)
+  - [4. Despliegue de los Web Services RESTful API (Cloud Provider)](#4-despliegue-de-los-web-services-restful-api-cloud-provider)
+  - [Pasos de despliegue](#pasos-de-despliegue-2)
+    - [1. Configurar credenciales y entorno](#1-configurar-credenciales-y-entorno)
+    - [2. Construcción del artefacto](#2-construcción-del-artefacto)
+    - [3. Publicación en el servicio Cloud](#3-publicación-en-el-servicio-cloud)
+    - [4. Documentación desplegada](#4-documentación-desplegada)
+  - [5. Integración de Componentes](#5-integración-de-componentes)
+  - [6. Consideraciones de Despliegue](#6-consideraciones-de-despliegue)
+  - [5.2. Landing Page, Services \& Applications Implementation](#52-landing-page-services--applications-implementation)
+    - [5.2.1. Sprint 1](#521-sprint-1)
+      - [5.2.1.1. Sprint Planning 1](#5211-sprint-planning-1)
+      - [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
+      - [5.2.1.3. Sprint Backlog 1](#5213-sprint-backlog-1)
+  - [Estados de las tareas](#estados-de-las-tareas)
+      - [5.2.1.4. Development Evidence for Sprint Review](#5214-development-evidence-for-sprint-review)
+      - [5.2.1.5. Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
+- [1. Resumen de Logros del Sprint](#1-resumen-de-logros-del-sprint)
+- [2. Screenshots de las Principales Vistas](#2-screenshots-de-las-principales-vistas)
+  - [A. Plataforma (Portada y Propuesta de Valor)](#a-plataforma-portada-y-propuesta-de-valor)
+  - [B. El Problema](#b-el-problema)
+  - [C. ¿Cómo Funciona?](#c-cómo-funciona)
+  - [D. Características](#d-características)
+  - [E. Beneficios](#e-beneficios)
+  - [F. Planes](#f-planes)
+  - [G. Nosotros (Equipo)](#g-nosotros-equipo)
+  - [H. Preguntas Frecuentes](#h-preguntas-frecuentes)
+  - [I. Testimonios](#i-testimonios)
+  - [J. Contacto con Digital Clinical Systems](#j-contacto-con-digital-clinical-systems)
+      - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
+      - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
+      - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+- [Conclusiones](#conclusiones)
+  - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+  - [Video About-the-Team](#video-about-the-team)
+- [Bibliografía](#bibliografía)
+- [Anexos](#anexos)
+  - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
 
 ---
 
@@ -830,7 +888,110 @@ preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamie
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Digital-Clinical-Systems/Landing-Page | develop | [TBD] | [TBD] | [TBD] | [TBD] |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 90d6431 | Initial commit | - | 2026-08-27 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | e3932a3 | docs(readme): add initial report skeleton | - | 2026-08-28 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 6d0e1cf | Antecedentes y problemática completed | - | 2026-08-28 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 1ec8a66 | docs(readme): add Lean UX Process/Problem Statements and Target Segments | - | 2026-08-30 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 45d85db | docs: add description and solution startup, student profile and 1.2.2.2 until 1.2.2.4 | - | 2026-08-30 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | d4dc8b5 | docs(readme): add Background and problems | - | 2026-08-30 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 9b1afe5 | docs(readme): add Lean UX Process/Problem Statements and Target Segments | - | 2026-08-30 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | ce43085 | add(readme): add Startup Description, student profile and Lean UX Assumptions/Hypothesis/Canvas | - | 2026-08-30 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | f6327d3 | docs(readme):startup profile and Lean UX Assupmtions, Hypothesis Statements and Lean UX Canvas | - | 2026-08-30 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | dd9a671 | docs(report): update team member | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 602dc47 | docs(readme): add Oskar Profile | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 864f330 | docs(readme): add Mathias profile | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 562da42 | docs(readme): add Angel profile | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 6e471d5 | docs(repo): add gitattributes to normalize line endings |  | 2026-09-02 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 3e34913 | docs(assets): rename Assets to assets and group photos under chapter-1 |  | 2026-09-02 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 375f371 | docs(readme): add Johnny profile | - | 2026-09-03 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 9f6388a | docs(readme): fix team member photo rendering in profiles table | - | 2026-09-04 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | c98f26f | docs(readme):add Mathias profile in members | - | 2026-09-04 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 2dcb5ae | docs(readme): add Angel profile in members | - | 2026-09-05 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 7d642d4 | docs(readme): fix product name in chapter 1 | - | 2026-09-06 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 8e6ba16 | docs(readme): update student iSnformation and profile picture of Johan | - | 2026-09-07 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | f55e640 | Add files via upload | - | 2026-09-07 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 14038d1 | docs(readme): add my student outcome | - | 2026-09-13 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | c1e110b | docs(readme): fix student outcome table error | - | 2026-09-13 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | fbe0ac4 | docs(readme): add jhonny profile | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 7ec61f6 | docs(readme): add competitive analysis and strategies against competitors | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | efe10dd | docs(readme): add competitive analysis and strategies against competitors | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 34e55f3 | docs(readme): add interview design, records and analysis | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | d6d6770 | docs(readme): add interview design, records and analysis | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | d4d30b8 | docs(readme): add needfinding artifacts: user personas, task matrix, journey and empathy maps | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | d4969de | docs(readme): add needfinding artifacts: user personas, task matrix, journey and empathy maps | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | a3280f2 | docs(readme): add big picture event storming | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 2a12869 | docs(readme): add big picture event storming | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | e60886c | docs(readme): add ubiquitous language | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 98554cf | docs(readme): add ubiquitous language | - | 2026-08-31 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | ba4cc7d | docs(readme): Remove image from competitive analysis | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | b7ea11b | docs(assets): Create chapter-2 | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 9dee1c0 | docs(assets): Create chapter-1 | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 0375d6d | Delete assets/chapter-2 | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | b55a2d7 | Delete assets/chapter-1 | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | dc88f33 | docs(assets): Create chapter-1 readme | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | a81c226 | docs(assets): Create chapter-2 readme | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 25ee5f5 | Add files via upload | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | dcb1ba5 | Add files via upload | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | a2b655f | Add files via upload | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 11351d9 | Add files via upload | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 0835c98 | docs(readme): add images for nurses and doctors in Step 3 - Event Storming | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | a11042f | Merge pull request #1 from Digital-Clinical-Systems/main | assets | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | cba550a | docs(readme): add interview record of Samuel Akerman for nursing segment |  | 2026-09-02 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 0f610d9 | docs(readme): add timing, duration and screenshot for Samuel Akerman interview |  | 2026-09-02 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 92d1ba4 | docs(readme): add interview record of Bruno Elescano for nursing segment 1 | - | 2026-09-05 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | e8aa9da | docs(readme): add interview record of Nathalia Davila for nursing segment 1 | - | 2026-09-06 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 02e5fa5 | dosc(readme): add screenshot for Nathalia Davila interview | - | 2026-09-06 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | d052f80 | docs(readme): add enterview 1 of objective segment 2 | - | 2026-09-08 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | aa8f1bf | docs(readme): add name of link in enterview 1 of objetive segment 2 | - | 2026-09-08 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 11345eb | Add files via upload | - | 2026-09-08 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | ad97490 | Merge branch 'feature/report-chapter-2' of https://github.com/Digital-Clinical-Systems/Informe into feature/report-chapter-2 | - | 2026-09-10 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | c75b6f0 | docs(readme): add interview 2 of segment 2 | - | 2026-09-10 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | f3f4d53 | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 8c9392b | Merge branch 'feature/report-chapter-2' of https://github.com/Digital-Clinical-Systems/Informe into feature/report-chapter-2 | - | 2026-09-11 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 726a0d6 | docs(readme): remove details of Interview 3 from Chapter II | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 9ecfb37 | docs(readme): Add segment 2 interview 2 info | - | 2026-09-15 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 9f27adf | docs(readme): fix Brenda Rios Information | - | 2026-09-15 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 2728e25 | docs(readme): Add image to interview 2 | - | 2026-09-15 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 22ceaac | docs(readme): update Big Picture Event Storming section for clarity | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 8d04600 | Redocs(assets): rename event-storming-step-4.png to big-picture-event-storming.png | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | ca418a7 | docs(readme): revise Big Picture Event Storming details and insights | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | d23133b | Redocs(assets): rename big-picture-event-storming.png to event-storming-step-4.png | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | e5dae3b | docs(readme): add interview 2 image | - | 2026-09-17 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-3 | dca7203 | docs(readme): Add Epic 01 and Epic 02 with their respective User Stories and Technical Stories | - | 2026-09-02 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-3 | 6cd7155 | docs(readme): add User Stories | - | 2026-09-02 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-3 | 1be8d6a | docs(readme): add Impact Mapping | - | 2026-09-02 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-3 | 227e0d7 | docs(readme): add Product Backlog | - | 2026-09-02 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-3 | ecd9072 | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 8c8406b | docs(readme): Add General Style Guidelines | - | 2026-09-08 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 27b48ed | docs(readme): Add web style guidelines & fix 4.1.1 and 4.1.2. grammar | - | 2026-09-08 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 9b17ead | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 2006b98 | docs(readme): add Information Architecture | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 88e4d03 | docs(readme): add introduction of 4.6. domain-driven software | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 957369d | docs(readme): add 4.6.1. Design-Level Event Storming section | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 8b91196 | docs(readme): add 4.6.2. Software Architecture Context Diagram section | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 0ea7e58 | docs(readme): add 4.6.3. Software Architecture Container Diagramssection | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 7093d96 | docs(readme): add 4.6.4. Software Architecture Components Diagrams section | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | de10870 | docs(readme): add 4.7.1. Class Diagrams section | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 0045ae9 | docs(readme): add 4.8.1. Database Diagrams section | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 6a4b6d8 | docs(assets): add README file for chapter 4 directory | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 8661593 | docs(add): Landing page wireframes and mockups | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | c03c44a | Add files via upload | - | 2026-09-12 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 44cdd94 | docs(readme): Add Web Application Wireframes and Mock-Ups | - | 2026-09-13 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 5ebf226 | docs(readme) : add 4.4 web applications ux ui design section | - | 2026-09-14 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 258e6e4 | docs(readme) : add 4.4.2. Web Applications Wireflow Diagrams | - | 2026-09-14 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 0b52458 | docs(readme): add information Web Applications Mock-ups | - | 2026-09-14 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | d976bbd | docs(readme): add 4.4.4. Web Applications User Flow Diagrams | - | 2026-09-14 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 2304caa | docs(readme): add section introductions for chapter 4 | - | 2026-09-15 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 0b85bdc | docs(readme): add description of 5.1 and 5.1.1 | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 819f0a1 | docs(readme): add 5.1.2. Source Code Management | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 0495ef9 | docs(readme): add 5.1.3. Source Code Style Guide & Conventions | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 22c9078 | docs(readme): add 5.1.4. Software Deployment Configuration | Added detailed deployment configuration for ClinicalSync solution, including steps for deploying Landing Page, Frontend Web Application, and Web Services. | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 9fdf3fe | docs(readme): add 5.2. Landing Page, Services & Applications Implementation. | - | 2026-09-01 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 2f6899d | doc(readme): revise sprint 1 planning information | - | 2026-09-09 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 5c882d2 | docs(readme): revise Sprint 1- 5.2.1.3. user stories and task statuses | - | 2026-09-09 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 9d6e426 | docs(readme): delete sections on interviews and video | - | 2026-09-09 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | c4439bc | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
+| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | [Current] | docs(readme): add development evidence tables for sprint review | - | 2026-09-17 |
 
 
 ##### 5.2.1.5. Execution Evidence for Sprint Review
