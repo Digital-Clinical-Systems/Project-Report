@@ -631,17 +631,17 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
 
 El análisis de entrevistas organiza los hallazgos en tres niveles. En primer lugar, las características objetivas, que corresponden a hechos verificables sobre el contexto de trabajo del entrevistado. En segundo lugar, las características subjetivas, que recogen percepciones, prioridades y frustraciones. Finalmente, la interpretación del segmento, que sintetiza los patrones recurrentes y su implicancia para el diseño de ClinicalSync.
 
-Los porcentajes se calculan sobre el total de entrevistas efectivamente registradas en la sección anterior. Se reporta la evidencia tal como fue expresada por los participantes, sin extrapolar hallazgos a partir de un único testimonio.
-
-> Nota para el equipo: las columnas de evidencia y porcentaje deben completarse una vez transcritas las seis entrevistas. El criterio es contar en cuántas entrevistas del segmento aparece explícitamente la característica.
+Los porcentajes se calculan sobre el total de entrevistas efectivamente registradas en la sección anterior, y una característica se contabiliza únicamente cuando aparece de forma explícita en el testimonio. No se infieren respuestas a partir de lo que el entrevistado no dijo, aunque resulte plausible: un porcentaje menor al 100% indica que la característica no fue mencionada, no que haya sido negada.
 
 ##### Resumen de entrevistas analizadas
 
 | Segmento | Entrevistados | Cantidad |
 |---|---|---|
-| Personal de enfermería cardiovascular | Samuel Akerman, Nathalia Dávila, Bruno Elescano | 3 |
-| Médicos especialistas cardiovasculares | Mark Esquivel, Brenda Rios | 3 |
-| **Total** | — | **6** |
+| Personal de enfermería cardiovascular | Samuel Akerman, Bruno Elescano, Nathalia Dávila | 3 |
+| Médicos especialistas cardiovasculares | Mark Alex Esquivel Cabrera, Brenda Estefanía Ríos Caballero | 2 |
+| **Total** | — | **5** |
+
+> El segmento de médicos especialistas cuenta a la fecha con dos de las tres entrevistas previstas. Los porcentajes de ese segmento se calculan sobre las dos registradas y deberán recalcularse al incorporar la tercera.
 
 ##### Segmento objetivo 1: Personal de enfermería cardiovascular
 
@@ -649,31 +649,38 @@ Los porcentajes se calculan sobre el total de entrevistas efectivamente registra
 
 | Característica objetiva | Evidencia identificada | Porcentaje |
 |---|---|---|
-| Ejerce en unidad cardiovascular, UCI, hospitalización cardiológica o emergencia | [Presente en N de 3 entrevistas] | [%] |
-| Trabaja bajo modalidad de turnos rotativos o guardias | [Presente en N de 3 entrevistas] | [%] |
-| Utiliza un sistema digital institucional para el registro clínico | [Presente en N de 3 entrevistas] | [%] |
-| Recurre además a registros físicos o anotaciones personales | [Presente en N de 3 entrevistas] | [%] |
-| Participa directamente en el proceso de cambio de turno | [Presente en N de 3 entrevistas] | [%] |
-| Registra signos vitales de forma periódica durante el turno | [Presente en N de 3 entrevistas] | [%] |
-| Administra medicamentos y deja constancia de la administración | [Presente en N de 3 entrevistas] | [%] |
-| Utiliza dispositivos móviles o tablets durante la jornada | [Presente en N de 3 entrevistas] | [%] |
-| Ha experimentado pérdida u omisión de información en un relevo | [Presente en N de 3 entrevistas] | [%] |
+| Ejerce en una unidad de cuidados intensivos cardiovascular | Presente en las 3 entrevistas | 100% |
+| Utiliza un sistema digital institucional para el registro clínico | Presente en las 3 entrevistas | 100% |
+| Posterga el registro formal hacia el tramo final del turno | Presente en las 3 entrevistas | 100% |
+| Participa directamente en el proceso de cambio de turno | Presente en las 3 entrevistas | 100% |
+| Ha experimentado pérdida u omisión de información durante un relevo | Presente en las 3 entrevistas | 100% |
+| Recurre a anotaciones en papel como soporte complementario | Presente en 2 de 3 entrevistas | 67% |
+| Señala la computadora fija de la estación como limitación operativa | Presente en 2 de 3 entrevistas | 67% |
+| Describe el relevo como recorrido presencial cama por cama | Presente en 2 de 3 entrevistas | 67% |
+| Cuantifica el tiempo dedicado a documentación | Presente en 1 de 3 entrevistas | 33% |
 
 ###### Análisis de características subjetivas
 
 | Característica subjetiva | Evidencia identificada | Porcentaje |
 |---|---|---|
-| Considera lentos o poco prácticos los sistemas actuales | [Presente en N de 3 entrevistas] | [%] |
-| Prioriza la rapidez del registro por encima de la cantidad de funciones | [Presente en N de 3 entrevistas] | [%] |
-| Manifiesta preocupación por omitir información en el cambio de turno | [Presente en N de 3 entrevistas] | [%] |
-| Percibe la documentación como una carga que compite con la atención directa | [Presente en N de 3 entrevistas] | [%] |
-| Valora positivamente un formato estructurado para el relevo | [Presente en N de 3 entrevistas] | [%] |
-| Considera útil registrar desde un dispositivo portátil y no solo desde una computadora fija | [Presente en N de 3 entrevistas] | [%] |
-| Muestra apertura a una herramienta nueva si reduce trabajo en lugar de sumarlo | [Presente en N de 3 entrevistas] | [%] |
+| Considera los sistemas actuales lentos o poco intuitivos | Presente en las 3 entrevistas | 100% |
+| Identifica la comunicación verbal no estructurada como punto de falla | Presente en las 3 entrevistas | 100% |
+| Exige acceso desde un dispositivo portátil junto a la cama del paciente | Presente en las 3 entrevistas | 100% |
+| Condiciona la adopción a la rapidez y a la economía de pasos | Presente en las 3 entrevistas | 100% |
+| Señala la duplicidad de registro como carga operativa | Presente en 2 de 3 entrevistas | 67% |
+| Solicita trazabilidad del responsable y del momento de cada acción | Presente en 2 de 3 entrevistas | 67% |
+| Menciona explícitamente el formato SBAR como solución al relevo | Presente en 1 de 3 entrevistas | 33% |
+| Solicita una vista de resumen visual del estado del paciente | Presente en 1 de 3 entrevistas | 33% |
 
 ###### Interpretación del segmento
 
-[Redactar a partir de la evidencia recolectada. Se espera desarrollar: cómo se organiza realmente el registro durante el turno; qué papel cumple el registro físico complementario y por qué persiste; en qué momentos del turno se concentra la fricción; qué tan estructurado es hoy el cambio de guardia; y qué condiciones mínimas debería cumplir ClinicalSync para que el personal lo use durante el turno y no al final de él.]
+Las tres entrevistas coinciden en un mismo patrón de trabajo: el registro clínico no ocurre en el momento de la atención sino que se acumula y se resuelve al final del turno. Samuel Akerman lo describe como un proceso de dos tiempos, con anotación "en caliente" junto a la cama y transcripción posterior al sistema; Bruno Elescano señala que el balance hídrico y las notas extensas se concentran en el tramo final de la jornada; y Nathalia Dávila describe la misma secuencia de libreta física seguida de transcripción al sistema hospitalario.
+
+Lo relevante es que ninguno lo presenta como una preferencia personal, sino como consecuencia de una restricción física concreta: la computadora está fija en la estación de enfermería y el profesional no puede abandonar a un paciente crítico para ir a digitar. La frase de Samuel Akerman resume la lógica del papel como soporte de emergencia: "no se cuelga ni me pide contraseña". Esto reordena la prioridad de diseño: el problema no es que el personal prefiera el papel, sino que el sistema no está donde ocurre la atención. Por eso los tres entrevistados exigen acceso desde un dispositivo portátil, y por eso esa exigencia aparece en el 100% de los testimonios.
+
+El segundo patrón es la fragilidad del relevo. Los tres relataron incidentes concretos de pérdida de información: un cambio en la dosis de nitroglicerina que el turno entrante mantuvo durante dos horas, pases de guardia interrumpidos por urgencias donde los acuerdos quedaron solo en lo verbal, y la omisión de comunicar que una paciente cardíaca había interrumpido voluntariamente su tratamiento. En los tres casos la causa señalada es la misma: la transmisión verbal sin un formato que garantice la cobertura mínima. Este hallazgo sustenta directamente la prioridad asignada al traspaso SBAR dentro del backlog.
+
+El tercer patrón se refiere a las condiciones de adopción. Los tres coinciden en que la herramienta debe ser rápida y exigir pocos pasos, y dos de ellos añaden la necesidad de trazabilidad explícita del responsable y el momento de cada acción. Samuel Akerman identificó dos fallas concretas en este punto: firmas ilegibles o sin sello en el papel, y registros atribuidos a otro usuario cuando alguien deja la sesión abierta en el sistema, lo que calificó como un problema de responsabilidad legal. La trazabilidad, por tanto, no es percibida como una función administrativa sino como una protección para el propio profesional.
 
 ##### Segmento objetivo 2: Médicos especialistas cardiovasculares
 
@@ -681,47 +688,64 @@ Los porcentajes se calculan sobre el total de entrevistas efectivamente registra
 
 | Característica objetiva | Evidencia identificada | Porcentaje |
 |---|---|---|
-| Ejerce una especialidad cardiovascular o de cuidados intensivos | [Presente en N de 3 entrevistas] | [%] |
-| Consulta información clínica generada por el personal de enfermería | [Presente en N de 3 entrevistas] | [%] |
-| Debe recurrir a más de una fuente para reconstruir el estado del paciente | [Presente en N de 3 entrevistas] | [%] |
-| Utiliza el sistema hospitalario institucional para la consulta clínica | [Presente en N de 3 entrevistas] | [%] |
-| Consulta monitores biomédicos o reportes impresos como fuente complementaria | [Presente en N de 3 entrevistas] | [%] |
-| Emite indicaciones médicas que ejecuta el personal de enfermería | [Presente en N de 3 entrevistas] | [%] |
-| Ha enfrentado dificultades para identificar responsables u horarios de un registro | [Presente en N de 3 entrevistas] | [%] |
-| Requiere acceder a información clínica en situaciones de urgencia | [Presente en N de 3 entrevistas] | [%] |
+| Ejerce en el ámbito cardiológico | Presente en las 2 entrevistas | 100% |
+| Debe consultar más de una fuente para reconstruir el estado del paciente | Presente en las 2 entrevistas | 100% |
+| Convive con registros en papel dentro de su flujo de trabajo | Presente en las 2 entrevistas | 100% |
+| Identifica problemas de trazabilidad en los registros disponibles | Presente en las 2 entrevistas | 100% |
+| Ha enfrentado situaciones de información incompleta o ilegible | Presente en las 2 entrevistas | 100% |
+| Consulta información generada por el personal de enfermería | Presente en 1 de 2 entrevistas | 50% |
+| Cuantifica el tiempo de consolidación previo a la decisión | Presente en 1 de 2 entrevistas | 50% |
 
 ###### Análisis de características subjetivas
 
 | Característica subjetiva | Evidencia identificada | Porcentaje |
 |---|---|---|
-| Identifica la fragmentación de la información como principal obstáculo | [Presente en N de 3 entrevistas] | [%] |
-| Considera crítica la velocidad de acceso a la información | [Presente en N de 3 entrevistas] | [%] |
-| Atribuye alta importancia a la trazabilidad de acciones y responsables | [Presente en N de 3 entrevistas] | [%] |
-| Rechaza herramientas que incrementen su carga administrativa | [Presente en N de 3 entrevistas] | [%] |
-| Valora una vista consolidada de la evolución reciente del paciente | [Presente en N de 3 entrevistas] | [%] |
-| Considera necesaria una comunicación más estructurada con enfermería | [Presente en N de 3 entrevistas] | [%] |
-| Manifiesta interés en alertas sobre cambios críticos del paciente | [Presente en N de 3 entrevistas] | [%] |
+| Identifica la fragmentación de la información como obstáculo principal | Presente en las 2 entrevistas | 100% |
+| Rechaza herramientas complejas o con exceso de pasos | Presente en las 2 entrevistas | 100% |
+| Condiciona la adopción a que la herramienta sea segura y sencilla | Presente en las 2 entrevistas | 100% |
+| Atribuye importancia a la trazabilidad de acciones y responsables | Presente en las 2 entrevistas | 100% |
+| Solicita una vista consolidada en una sola pantalla | Presente en 1 de 2 entrevistas | 50% |
+| Requiere acceso desde tablet o teléfono durante la visita | Presente en 1 de 2 entrevistas | 50% |
+| Describe la comunicación con enfermería como desconectada | Presente en 1 de 2 entrevistas | 50% |
+| Señala la ilegibilidad de los registros manuscritos | Presente en 1 de 2 entrevistas | 50% |
 
 ###### Interpretación del segmento
 
-[Redactar a partir de la evidencia recolectada. Se espera desarrollar: cuántas fuentes debe consolidar el especialista y cuánto tiempo le demanda; qué consecuencias concretas tuvo en su práctica la información incompleta o tardía; qué peso real le asigna a la trazabilidad frente a otras necesidades; y qué debería mostrarse en una vista consolidada para que resulte útil en el momento de decidir.]
+Ambos entrevistados coinciden en que el obstáculo principal no es la ausencia de información sino su dispersión. Brenda Ríos Caballero cuantificó el costo: consultar entre tres y cuatro fuentes distintas —sistema hospitalario, resultados de laboratorio, imágenes y hojas de enfermería— le toma entre 10 y 15 minutos por paciente, tiempo que aumenta cuando el historial es extenso o cuando debe averiguar quién anotó determinado dato. Mark Esquivel Cabrera describe el mismo problema en un contexto distinto, un centro de salud rural con registro doble en papel y hoja de cálculo, donde la pérdida de trazabilidad y la ilegibilidad de la letra manuscrita complican el seguimiento del paciente.
+
+El testimonio de Brenda Ríos aporta el hallazgo más significativo del segmento: la consecuencia clínica de decidir sin información completa. Relató que durante las guardias de madrugada, ante pacientes con dolor torácico, la imposibilidad de cargar electrocardiogramas antiguos la obliga a asumir el peor escenario e iniciar tratamiento sin poder comparar la evolución. Esto demuestra que el costo de la fragmentación no se limita al tiempo perdido, sino que altera la decisión terapéutica.
+
+También señaló que la comunicación con enfermería está "desconectada": deja indicaciones en el sistema sin recibir confirmación de su cumplimiento, lo que en ocasiones la obliga a acudir físicamente a preguntar. Esta observación es simétrica a la del segmento de enfermería y confirma que el ciclo entre la indicación emitida y su ejecución confirmada está roto en ambos extremos.
+
+Respecto de la adopción, ambos coinciden en que la herramienta debe ser simple. Brenda Ríos fue explícita en la condición: solo adoptaría un sistema que le ahorre trabajo real, sin doble digitación y accesible desde una tablet durante la visita. Mark Esquivel añadió una advertencia sobre el perfil del usuario, al señalar que una herramienta compleja generaría rechazo entre profesionales con menor familiaridad tecnológica, particularmente médicos de mayor edad.
 
 ##### Comparación entre segmentos
 
 | Hallazgo | Personal de enfermería cardiovascular | Médicos especialistas cardiovasculares | Implicancia para ClinicalSync |
 |---|---|---|---|
-| Relación con la información clínica | Predominantemente de producción: registra durante la atención. | Predominantemente de consumo: consulta, valida e interpreta. | El producto necesita flujos diferenciados por rol, con una vista de captura rápida y una vista de lectura consolidada. |
-| Momento de mayor fricción | El registro durante la atención y la entrega del turno. | La reconstrucción del estado del paciente antes de decidir. | Las decisiones de diseño deben optimizar la captura para un perfil y la síntesis para el otro. |
-| Efecto de la información dispersa | Genera duplicidad de trabajo y uso de registros físicos. | Genera demora en la decisión y riesgo de decidir con datos incompletos. | Centralizar la información relevante del paciente cardiovascular es un requisito compartido. |
-| Necesidad de trazabilidad | Identificar responsables y eventos ocurridos en el turno. | Validar el origen, el momento y el cumplimiento de una indicación. | Registrar responsable, fecha, hora y tipo de acción en cada operación relevante. |
-| Percepción de los sistemas actuales | Lentos frente al ritmo del turno. | Dispersos y con exceso de pasos para una consulta puntual. | La simplicidad y el número de pasos son criterios de aceptación, no aspectos secundarios. |
-| Disposición a adoptar la herramienta | Condicionada a que reduzca trabajo, no que lo agregue. | Condicionada a que no incremente la carga administrativa. | El MVP debe demostrar ahorro de tiempo antes de incorporar funcionalidades adicionales. |
+| Relación con la información clínica | Producción: registra durante o después de la atención. | Consumo: consulta, contrasta e interpreta antes de decidir. | Dos experiencias sobre un mismo modelo de datos: captura rápida para uno, síntesis para el otro. |
+| Origen de la fricción | La computadora fija está lejos del paciente. | La información está repartida entre tres o cuatro fuentes. | Movilidad para el registro y consolidación para la consulta. |
+| Momento de mayor riesgo | El relevo de turno transmitido verbalmente. | La decisión adoptada sin historial disponible. | El traspaso estructurado y la vista consolidada atacan riesgos distintos y ambos son prioritarios. |
+| Trazabilidad | Protección frente a la responsabilidad por acciones ajenas. | Verificación del origen del dato antes de decidir. | Registrar responsable, fecha y hora en toda operación satisface ambas necesidades. |
+| Comunicación entre roles | Los acuerdos verbales no quedan registrados. | Las indicaciones emitidas no reciben confirmación de cumplimiento. | El ciclo indicación-ejecución-confirmación debe cerrarse dentro del sistema. |
+| Condición de adopción | Que sea más rápido que el cuaderno. | Que no exija doble digitación. | En ambos casos, la herramienta debe restar trabajo antes de agregar funciones. |
 
 ##### Conclusiones generales del análisis
 
-[Redactar una vez completadas las seis entrevistas. Las conclusiones deben señalar los patrones comunes a ambos segmentos, las diferencias relevantes entre ellos, qué supuestos del Lean UX Canvas del Capítulo I quedaron confirmados y cuáles fueron matizados o refutados por la evidencia, y qué prioridades funcionales se derivan para el producto.]
+Las cinco entrevistas registradas confirman la problemática planteada en el Capítulo I y, sobre todo, precisan su origen. La dispersión de la información clínica no se debe a una resistencia del personal frente a la tecnología: los cinco entrevistados manifestaron disposición a adoptar una herramienta digital. Se debe a que los sistemas disponibles no acompañan el ritmo ni la ubicación del trabajo clínico. El personal de enfermería no puede registrar junto al paciente porque el equipo está fijo en la estación, y el médico no puede reconstruir el caso sin recorrer varias fuentes.
 
-Los hallazgos de esta sección constituyen la base directa de los artefactos de Needfinding que se desarrollan a continuación, y deben mantenerse trazables hacia las User Stories del Capítulo III.
+De ello se desprende un criterio que atraviesa el diseño del producto: ClinicalSync compite contra el cuaderno y la hoja de cálculo antes que contra cualquier sistema hospitalario. Si registrar en la plataforma no resulta más rápido que anotar en papel, el personal continuará usando papel, y sin datos registrados ninguna de las funciones dirigidas al médico especialista aporta valor.
+
+Los hallazgos sustentan las siguientes prioridades funcionales:
+
+- Registro accesible desde dispositivo portátil, junto a la cama del paciente.
+- Traspaso de turno estructurado que no dependa de la transmisión verbal.
+- Trazabilidad visible de responsable, fecha y hora en cada operación.
+- Vista consolidada de la evolución reciente para la decisión médica.
+- Cierre del ciclo entre la indicación emitida y su cumplimiento confirmado.
+- Economía de pasos en las tareas más frecuentes del turno.
+
+Estos resultados constituyen la base directa de los User Personas, la User Task Matrix, los User Journey Maps y los Empathy Maps que se desarrollan en la sección siguiente, y se traducen en los epics y las historias de usuario del Capítulo III.
 
 ### 2.3. Needfinding
 
