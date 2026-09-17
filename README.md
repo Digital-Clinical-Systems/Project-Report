@@ -8,13 +8,13 @@
   <h4>Ciclo 2026-20</h4>
   <br>
   <h4>1ASI0729 - Desarrollo de Aplicaciones Open Source</h4>
-  <h4>NRC: [Ingresar NRC]</h4>
-  <h4>Profesor: [Ingresar Nombre del Profesor]</h4>
+  <h4>NRC: 7747</h4>
+  <h4>Profesor: Ivan Robles Fernández</h4>
   <br>
   <h2>Informe de Trabajo Final</h2>
   <br>
-  <h3>Startup: [Nuevo Nombre de la Startup]</h3>
-  <h3>Producto: [Nuevo Nombre del Producto]</h3>
+  <h3>Startup: Digital Clinical System</h3>
+  <h3>Producto: ClinicalSync</h3>
   <br>
   <h4>Integrantes:</h4>
   <ul style="list-style-type: none; padding: 0;">
@@ -33,16 +33,25 @@
 ## Registro de Versiones del Informe
 
 | Versión | Fecha | Autor | Descripción de modificación |
-|---------|-------|-------|-----------------------------|
-| 1.0     | [Fecha] | [Autor] | Versión inicial del documento (Estructura base) |
+|---|---|---|---|
+| 1.0 | 2026-08-27 | Huamán Cuba, Johan Giovani | Versión inicial del documento. Se crea la estructura base del informe con el índice de los cinco capítulos. |
+| TB1 | 2026-09-17 | Huamán Cuba, Johan Giovani<br>Sosa Soto, Oskar Rodrigo<br>Acuache Lucas, Mathias Joaquin<br>Valdez Melo, Angel Andres<br>Ojanama Abanto, Johnny Alexander | Entrega TB1. Capítulo I: perfil de la startup, perfil de la solución, proceso Lean UX y segmentos objetivo. Capítulo II: análisis competitivo, entrevistas y su análisis, needfinding, Big Picture Event Storming y Ubiquitous Language. Capítulo III: User Stories, Impact Mapping y Product Backlog. Capítulo IV: style guidelines, arquitectura de información, diseño de la landing page y de la aplicación web, prototipado, arquitectura DDD, diseño orientado a objetos y diseño de base de datos. Capítulo V: configuración del entorno, gestión del código fuente, despliegue y evidencias del Sprint 1, con la Landing Page publicada en producción. |
 
 ---
 
 ## Project Report Collaboration Insights
 
-URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
+**URL del repositorio del informe:** [https://github.com/Digital-Clinical-Systems/Informe](https://github.com/Digital-Clinical-Systems/Informe)
 
-*(En esta sección se explicará cómo se han desarrollado las actividades de elaboración del informe y se presentarán capturas de los analíticos de colaboración y commits en GitHub).*
+**URL del repositorio de la Landing Page:** [https://github.com/Digital-Clinical-Systems/Landing-Page](https://github.com/Digital-Clinical-Systems/Landing-Page)
+
+La elaboración del informe se organizó con una rama `feature/report-chapter-N` por cada capítulo, de modo que cada integrante pudiera avanzar sobre su sección sin bloquear a los demás. Cada commit corresponde, por regla general, a una sección o título completado y sigue la convención de Conventional Commits descrita en la sección 5.1.3. Al cierre de la entrega, las cinco ramas se integraron a `develop` en orden, resolviendo en el `README.md` los conflictos propios de un documento compartido.
+
+La siguiente captura corresponde al panel de Insights del repositorio y refleja la contribución de cada integrante durante el Sprint 1.
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-1/team-commits.png" alt="Panel de Insights del repositorio del informe" width="1000">
+</p>
 
 ---
 
@@ -301,15 +310,17 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
 ---
 
 ## Student Outcome
+
 **ABET - EAC - Student Outcome 3**
+
 **Criterio:** Capacidad de comunicarse efectivamente con un rango de audiencias.
 
-El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro.
+El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cuadro se describen las acciones realizadas por cada integrante y los enunciados de conclusiones del grupo, que permiten sustentar el haber alcanzado el logro.
 
 | Criterio específico | Acciones realizadas | Conclusiones |
-|---------------------|---------------------|--------------|
-| Comunica oralmente con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Explicó oralmente elementos técnicos del diseño de la solución, incluyendo arquitectura inicial, organización de componentes y relación entre los artefactos de diseño de software. | *(Conclusión grupal sobre la mejora en comunicación oral y medios audiovisuales)* |
-| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Contribuyó en la documentación escrita de arquitectura, diseño de software, base de datos, organización técnica de la solución y configuración inicial del entorno de desarrollo. | *(Conclusión grupal sobre redacción técnica, calidad de entregables e idioma)* |
+|---|---|---|
+| Comunica oralmente con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>TB1: Condujo la Entrevista 1 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), formulando el guion ante un profesional externo al equipo y repreguntando sobre el flujo de evaluación del paciente.<br><br>**Sosa Soto, Oskar Rodrigo**<br>TB1: Condujo la Entrevista 1 del segmento de personal de enfermería cardiovascular (sección 2.2.2) y expuso en video el prototipo del Sprint 1 (sección 4.5), recorriendo la Landing Page publicada en producción y el prototipo de la aplicación web.<br><br>**Acuache Lucas, Mathias Joaquin**<br>TB1: Condujo la Entrevista 2 del segmento de personal de enfermería cardiovascular (sección 2.2.2), adaptando el lenguaje del guion técnico al vocabulario asistencial del entrevistado.<br><br>**Valdez Melo, Angel Andres**<br>TB1: Condujo la Entrevista 3 del segmento de personal de enfermería cardiovascular (sección 2.2.2), indagando sobre el registro en papel durante la atención y el traspaso al cierre del turno.<br><br>**Ojanama Abanto, Johnny Alexander**<br>TB1: Condujo la Entrevista 2 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), recogiendo la perspectiva del especialista sobre la consulta del estado del paciente. | El equipo concluye que exponer el dominio clínico ante profesionales de salud obligó a abandonar el vocabulario técnico de software y a hablar en los términos del turno asistencial. Las entrevistas, conducidas por los cinco integrantes, fueron la fuente directa de los hallazgos de la sección 2.2.3 y del Ubiquitous Language de la sección 2.5. El registro en video del prototipo mostró además que demostrar un producto funcionando comunica el alcance con más precisión que describirlo. |
+| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>TB1: Redactó el Big Picture Event Storming (sección 2.4), la arquitectura orientada al dominio (secciones 4.6.1 a 4.6.4), los diagramas de clases (4.7.1) y de base de datos (4.8.1), y la configuración del entorno de desarrollo y la gestión del código fuente (5.1.1 a 5.1.4).<br><br>**Sosa Soto, Oskar Rodrigo**<br>TB1: Redactó el análisis de entrevistas (2.2.3), el Capítulo III completo (User Stories, Impact Mapping y Product Backlog), la arquitectura de información (4.2), el prototipado del Sprint 1 (4.5) y las evidencias de ejecución y despliegue del Capítulo V.<br><br>**Acuache Lucas, Mathias Joaquin**<br>TB1: Redactó el perfil de la startup (1.1), los Lean UX Assumptions, Hypothesis Statements y Lean UX Canvas (1.2.2.2 a 1.2.2.4), y documentó los wireframes y mock-ups de la Landing Page.<br><br>**Valdez Melo, Angel Andres**<br>TB1: Redactó los antecedentes y la problemática (1.2.1), los Lean UX Problem Statements y los segmentos objetivo (1.3), y el diseño UX/UI de la aplicación web (4.4.2 wireflow diagrams, 4.4.3 mock-ups y 4.4.4 user flow diagrams).<br><br>**Ojanama Abanto, Johnny Alexander**<br>TB1: Redactó las style guidelines generales y web (4.1.1 y 4.1.2), las Epics 01 y 02 con sus User Stories y Technical Stories, los wireframes y mock-ups de la aplicación web, y las tablas de development evidence del Sprint 1 (5.2.1.4). | El equipo concluye que documentar en un repositorio compartido impone una disciplina que un documento aislado no exige: cada sección debe ser legible para los demás integrantes y trazable hasta el commit que la originó. Trabajar con una rama por capítulo y con Conventional Commits permitió avanzar en paralelo y, al integrar, detectar y corregir incoherencias entre lo redactado y lo efectivamente construido. |
 
 ---
 
@@ -1000,7 +1011,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
   <tr>
     <td colspan="2">
-      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202314898_upc_edu_pe/IQB1lYPPM22mTJ94R6JmnyPkAXLcARq12Viyy43AoueqhiA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=7jOopw">[URL del video en Microsoft Stream]</a>
+      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202314898_upc_edu_pe/IQB1lYPPM22mTJ94R6JmnyPkAXLcARq12Viyy43AoueqhiA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=7jOopw">Ver grabación de la entrevista</a>
       <br><br>
       <b>Resumen:</b> Durante el turno, el personal de enfermería cardiovascular realiza la documencación clínica de manera fraccionada, concentrando el grueso del balance hídrico y las notas extensas en el tramo final de la jornada. Institucionalmente, se utiliza la historia clínica electrónica a través de computadoras fijas en la estación de enfermería. Si bien esto centraliza los datos y evita problemas de legibilidad, el sistema presenta importantes barreras operativas en los cuales se evidencia interfaces poco intuitivas, lentitud y bloqueos frencuentes.
       <br><br>
@@ -1031,7 +1042,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
   <tr>
     <td colspan="2">
-      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20261d993_upc_edu_pe/IQBNmG-SCCk7R66msW6rNFoQAYij_ld9x94YIjyedfDnM0g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HyATGR">[URL del video en Microsoft Stream]</a>
+      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20261d993_upc_edu_pe/IQBNmG-SCCk7R66msW6rNFoQAYij_ld9x94YIjyedfDnM0g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HyATGR">Ver grabación de la entrevista</a>
       <br><br>
       <b>Resumen:</b> Actualmente, el personal de enfermería realiza el registro clínico iniciando con la toma de notas en libretas o fichas físicas de manera manual, para posteriormente transcribir todos esos datos al sistema informático genérico del hospital. Este uso obligado de registros manuales redundantes y sistemas no especializados genera una alta carga operativa para los profesionales de la salud. Las principales dificultades de este flujo radican en la duplicidad del trabajo, lo cual resulta confuso, prolonga el tiempo necesario para completar una historia clínica y mantiene la información vital del paciente dispersa en diferentes medios
       <br><br>
@@ -1095,7 +1106,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
   <tr>
     <td colspan="2">
-      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231f412_upc_edu_pe/IQAn-Y01eCNLS5orrIkmlM-8AfXogfgb8uXdgScpTyujMLw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=uBMjbw">[URL del video en Microsoft Stream]</a>
+      <b>Enlace:</b> <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231f412_upc_edu_pe/IQAn-Y01eCNLS5orrIkmlM-8AfXogfgb8uXdgScpTyujMLw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=uBMjbw">Ver grabación de la entrevista</a>
       <br><br>
       <b>Resumen:</b> Brenda Estefanía Ríos Caballero, médico que atiende pacientes cardiovasculares, describió que la revisión del estado clínico de un paciente le exige consultar entre tres y cuatro fuentes distintas. Debe ingresar al sistema principal del hospital para ver la historia, abrir otras pestañas o programas para los resultados de laboratorio (especialmente enzimas) e imágenes, y revisar las hojas de enfermería para verificar la medicación. Este proceso de consolidación de datos le toma entre 10 y 15 minutos por paciente de manera habitual, tiempo que se incrementa si el historial es extenso, si debe buscar quién anotó qué cosa o si el sistema presenta lentitud.
       <br><br>
