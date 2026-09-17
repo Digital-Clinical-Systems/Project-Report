@@ -143,12 +143,10 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
   - [Componentes de Despliegue](#componentes-de-despliegue)
   - [1. Control de Versiones](#1-control-de-versiones)
   - [Estrategia de ramas](#estrategia-de-ramas)
-  - [2. Despliegue de Landing Page (GitHub Pages)](#2-despliegue-de-landing-page-github-pages)
-  - [Pasos de despliegue](#pasos-de-despliegue)
-    - [1. Inicializar y preparar el repositorio](#1-inicializar-y-preparar-el-repositorio)
-    - [2. Conectar el repositorio con GitHub](#2-conectar-el-repositorio-con-github)
-    - [3. Configurar GitHub Pages](#3-configurar-github-pages)
-    - [Resultado:](#resultado)
+  - [2. Despliegue de Landing Page (Vercel)](#2-despliegue-de-landing-page-vercel)
+    - [Pasos de despliegue](#pasos-de-despliegue)
+    - [Despliegue alternativo mediante la CLI](#despliegue-alternativo-mediante-la-cli)
+    - [Resultado](#resultado)
   - [3. Despliegue del Frontend Web Application (Angular en Firebase Hosting)](#3-despliegue-del-frontend-web-application-angular-en-firebase-hosting)
   - [Pasos de despliegue](#pasos-de-despliegue-1)
     - [1. Subir el proyecto al repositorio](#1-subir-el-proyecto-al-repositorio)
@@ -182,7 +180,6 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
   - [F. Planes](#f-planes)
   - [G. Nosotros (Equipo)](#g-nosotros-equipo)
   - [H. Preguntas Frecuentes](#h-preguntas-frecuentes)
-  - [I. Testimonios](#i-testimonios)
   - [J. Contacto con Digital Clinical Systems](#j-contacto-con-digital-clinical-systems)
       - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
       - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
@@ -325,9 +322,9 @@ Las herramientas se organizan según las principales actividades del ciclo de vi
 
 ### Software Deployment
 
-- [**GitHub Pages**](https://pages.github.com/):  Es el servicio utilizado para desplegar la Landing Page de ClinicalSync. Permite publicar el sitio web directamente desde el repositorio de GitHub, haciendo que esté disponible de forma pública y accesible desde internet.
+- [**Vercel**](https://vercel.com/): Es el servicio utilizado para desplegar la Landing Page de ClinicalSync. Se conectó mediante la GitHub App de Vercel al repositorio `Digital-Clinical-Systems/Landing-Page`, de modo que cada integración a la rama `main` genera automáticamente un nuevo despliegue en producción bajo un subdominio HTTPS gestionado por la plataforma.
 
-- [**Firebase Hosting**](https://firebase.google.com/):  Es una plataforma en la nube utilizada para el despliegue de aplicaciones web. En futuras etapas del proyecto, se utilizará para publicar tanto el frontend como el backend del sistema, permitiendo su acceso desde cualquier dispositivo conectado a internet.
+- [**Firebase Hosting**](https://firebase.google.com/):  Es una plataforma en la nube prevista para el despliegue de la Frontend Web Application en etapas posteriores del proyecto. A la fecha de esta entrega aún no se ha utilizado, ya que el alcance comprometido corresponde únicamente a la Landing Page.
 
 - [**Swagger / OpenAPI**](https://swagger.io/): Herramienta utilizada para la documentación interactiva y estandarizada del RESTful API.
 
@@ -542,7 +539,7 @@ independiente utilizando plataformas especializadas en la nube, lo que permite m
 
 ### Componentes de Despliegue
 
-- **Landing Page**: desplegada en GitHub Pages.
+- **Landing Page**: desplegada en Vercel, con integración continua desde GitHub.
 - **Frontend Web Application (Angular)**: desplegada en Firebase Hosting.
 - **Web Services RESTful API (Backend)**: desplegado en un Cloud Provider (Render / Heroku).
 
@@ -557,32 +554,71 @@ El proyecto utiliza **Git** como sistema de control de versiones y **GitHub** co
 - `feature/*`: ramas destinadas al desarrollo de nuevas funcionalidades.
 
 
-### 2. Despliegue de Landing Page (GitHub Pages)
+### 2. Despliegue de Landing Page (Vercel)
 
-La Landing Page es un sitio web responsivo construido con HTML5, CSS3 y JS.
+La Landing Page es un sitio estático responsivo construido con HTML5, CSS3 y JavaScript, sin framework ni proceso de compilación. Por esa razón se despliega directamente como contenido estático, sin comando de build ni directorio de salida.
 
-### Pasos de despliegue
+Se seleccionó **Vercel** por tres razones: publica sitios estáticos sin configuración adicional, permite integración continua desde GitHub sin intervención manual, y conserva el historial de despliegues, de modo que es posible revertir a una versión anterior si una publicación introduce un error.
 
-#### 1. Inicializar y preparar el repositorio
-- `git init`
+#### Pasos de despliegue
+
+**1. Preparar el repositorio**
+
+El código fuente reside en el repositorio `Digital-Clinical-Systems/Landing-Page`, con el archivo `index.html` en la raíz.
+
 - `git add .`
-- `git commit -m "deploy landing page"`
+- `git commit -m "feat: add landing page sections"`
+- `git push origin main`
 
-#### 2. Conectar el repositorio con GitHub
-- `git branch -M main`
-- `git remote add origin <repo-url>`
-- `git push -u origin main`
+**2. Instalar la GitHub App de Vercel en la organización**
 
-#### 3. Configurar GitHub Pages
-- Ir a **Settings** del repositorio.
-- Acceder a la sección **Pages**.
-- Seleccionar:
-    - **Source**: Deploy from branch
-    - **Branch**: main
-    - **Folder**: / (root)
+- Acceder a `https://github.com/apps/vercel` y seleccionar **Configure**.
+- Elegir la organización **Digital-Clinical-Systems**.
+- En permisos de repositorio, marcar **Only select repositories** y autorizar únicamente `Landing-Page`.
 
-#### Resultado: 
-Publicación automática bajo un subdominio HTTPS gestionado por GitHub.
+Este paso requiere rol de *owner* en la organización. En caso contrario, GitHub genera una solicitud que un owner debe aprobar.
+
+**3. Crear el proyecto en Vercel**
+
+- Acceder a `https://vercel.com` e iniciar sesión con la cuenta de GitHub.
+- Seleccionar **Add New → Project** e importar el repositorio `Landing-Page`.
+- Configuración del proyecto:
+    - **Framework Preset**: Other
+    - **Root Directory**: `./`
+    - **Build Command**: vacío
+    - **Output Directory**: vacío
+
+**4. Configurar la caché de recursos estáticos**
+
+Se incluye un archivo `vercel.json` en la raíz del repositorio que define las cabeceras de caché para los recursos estáticos:
+
+```json
+{
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
+```
+
+**5. Verificar la publicación**
+
+El sitio queda disponible en `https://clinicalsync-landing.vercel.app/`. A partir de ese momento, cada integración a la rama `main` dispara un despliegue automático sin intervención manual.
+
+#### Despliegue alternativo mediante la CLI
+
+Cuando no es posible instalar la GitHub App, Vercel admite el despliegue directo desde la línea de comandos. Este método no habilita la integración continua, por lo que cada actualización requiere ejecutar nuevamente el comando de producción:
+
+- `npx vercel` para crear y vincular el proyecto.
+- `npx vercel --prod` para publicar en producción.
+
+#### Resultado
+
+Publicación automática bajo un subdominio HTTPS gestionado por Vercel, con historial de despliegues y posibilidad de revertir a una versión anterior desde el panel de la plataforma.
 
 
 ### 3. Despliegue del Frontend Web Application (Angular en Firebase Hosting)
@@ -673,7 +709,7 @@ El Sprint 1 se enfocó en el desarrollo e implementación de la Landing Page de 
 Este sprint tuvo como objetivo establecer una presencia digital sólida que comunique de manera clara la propuesta de valor del producto.
 
 Durante este sprint, se desarrollaron e integraron las secciones principales de la Landing Page, incluyendo presentación del producto, funcionalidades clave, llamadas a la acción, equipo desarrollador, sectores beneficiados, 
-preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamientos de diseño y los wireframes definidos previamente en el Capítulo IV. Asimismo, se priorizó la usabilidad, accesibilidad y coherencia visual, con el fin de ofrecer una experiencia atractiva y profesional.
+preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura de información definida en la sección 4.2 y las directrices visuales de la sección 4.1. Asimismo, se priorizó la usabilidad, accesibilidad y coherencia visual, con el fin de ofrecer una experiencia atractiva y profesional.
 
 
 ##### 5.2.1.1. Sprint Planning 1
@@ -866,8 +902,8 @@ preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamie
       <td>TS-09</td>
       <td>Despliegue de la landing page y la web app</td>
       <td>T-07.1</td>
-      <td>GitFlow & Despliegue en GitHub Pages</td>
-      <td>Configuración inicial del repositorio, ramas y automatización del despliegue en GitHub Pages.</td>
+      <td>GitFlow y despliegue en Vercel</td>
+      <td>Configuración inicial del repositorio, ramas y automatización del despliegue continuo en Vercel.</td>
       <td>4</td>
       <td>Sosa Soto, Oskar Rodrigo</td>
       <td>Done</td>
@@ -888,181 +924,227 @@ preguntas frecuentes, sección de contacto y testimonios, siguiendo los lineamie
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 90d6431 | Initial commit | - | 2026-08-27 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | e3932a3 | docs(readme): add initial report skeleton | - | 2026-08-28 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 6d0e1cf | Antecedentes y problemática completed | - | 2026-08-28 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 1ec8a66 | docs(readme): add Lean UX Process/Problem Statements and Target Segments | - | 2026-08-30 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 45d85db | docs: add description and solution startup, student profile and 1.2.2.2 until 1.2.2.4 | - | 2026-08-30 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | d4dc8b5 | docs(readme): add Background and problems | - | 2026-08-30 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 9b1afe5 | docs(readme): add Lean UX Process/Problem Statements and Target Segments | - | 2026-08-30 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | ce43085 | add(readme): add Startup Description, student profile and Lean UX Assumptions/Hypothesis/Canvas | - | 2026-08-30 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | f6327d3 | docs(readme):startup profile and Lean UX Assupmtions, Hypothesis Statements and Lean UX Canvas | - | 2026-08-30 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | dd9a671 | docs(report): update team member | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 602dc47 | docs(readme): add Oskar Profile | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 864f330 | docs(readme): add Mathias profile | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 562da42 | docs(readme): add Angel profile | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 6e471d5 | docs(repo): add gitattributes to normalize line endings |  | 2026-09-02 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 3e34913 | docs(assets): rename Assets to assets and group photos under chapter-1 |  | 2026-09-02 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 375f371 | docs(readme): add Johnny profile | - | 2026-09-03 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 9f6388a | docs(readme): fix team member photo rendering in profiles table | - | 2026-09-04 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | c98f26f | docs(readme):add Mathias profile in members | - | 2026-09-04 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 2dcb5ae | docs(readme): add Angel profile in members | - | 2026-09-05 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 7d642d4 | docs(readme): fix product name in chapter 1 | - | 2026-09-06 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 8e6ba16 | docs(readme): update student iSnformation and profile picture of Johan | - | 2026-09-07 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | f55e640 | Add files via upload | - | 2026-09-07 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | 14038d1 | docs(readme): add my student outcome | - | 2026-09-13 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | c1e110b | docs(readme): fix student outcome table error | - | 2026-09-13 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-1 | fbe0ac4 | docs(readme): add jhonny profile | - | 2026-09-16 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 7ec61f6 | docs(readme): add competitive analysis and strategies against competitors | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | efe10dd | docs(readme): add competitive analysis and strategies against competitors | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 34e55f3 | docs(readme): add interview design, records and analysis | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | d6d6770 | docs(readme): add interview design, records and analysis | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | d4d30b8 | docs(readme): add needfinding artifacts: user personas, task matrix, journey and empathy maps | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | d4969de | docs(readme): add needfinding artifacts: user personas, task matrix, journey and empathy maps | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | a3280f2 | docs(readme): add big picture event storming | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 2a12869 | docs(readme): add big picture event storming | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | e60886c | docs(readme): add ubiquitous language | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 98554cf | docs(readme): add ubiquitous language | - | 2026-08-31 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | ba4cc7d | docs(readme): Remove image from competitive analysis | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | b7ea11b | docs(assets): Create chapter-2 | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 9dee1c0 | docs(assets): Create chapter-1 | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 0375d6d | Delete assets/chapter-2 | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | b55a2d7 | Delete assets/chapter-1 | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | dc88f33 | docs(assets): Create chapter-1 readme | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | a81c226 | docs(assets): Create chapter-2 readme | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 25ee5f5 | Add files via upload | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | dcb1ba5 | Add files via upload | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | a2b655f | Add files via upload | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 11351d9 | Add files via upload | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 0835c98 | docs(readme): add images for nurses and doctors in Step 3 - Event Storming | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | a11042f | Merge pull request #1 from Digital-Clinical-Systems/main | assets | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | cba550a | docs(readme): add interview record of Samuel Akerman for nursing segment |  | 2026-09-02 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 0f610d9 | docs(readme): add timing, duration and screenshot for Samuel Akerman interview |  | 2026-09-02 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 92d1ba4 | docs(readme): add interview record of Bruno Elescano for nursing segment 1 | - | 2026-09-05 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | e8aa9da | docs(readme): add interview record of Nathalia Davila for nursing segment 1 | - | 2026-09-06 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 02e5fa5 | dosc(readme): add screenshot for Nathalia Davila interview | - | 2026-09-06 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | d052f80 | docs(readme): add enterview 1 of objective segment 2 | - | 2026-09-08 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | aa8f1bf | docs(readme): add name of link in enterview 1 of objetive segment 2 | - | 2026-09-08 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 11345eb | Add files via upload | - | 2026-09-08 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | ad97490 | Merge branch 'feature/report-chapter-2' of https://github.com/Digital-Clinical-Systems/Informe into feature/report-chapter-2 | - | 2026-09-10 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | c75b6f0 | docs(readme): add interview 2 of segment 2 | - | 2026-09-10 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | f3f4d53 | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 8c9392b | Merge branch 'feature/report-chapter-2' of https://github.com/Digital-Clinical-Systems/Informe into feature/report-chapter-2 | - | 2026-09-11 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 726a0d6 | docs(readme): remove details of Interview 3 from Chapter II | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 9ecfb37 | docs(readme): Add segment 2 interview 2 info | - | 2026-09-15 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 9f27adf | docs(readme): fix Brenda Rios Information | - | 2026-09-15 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 2728e25 | docs(readme): Add image to interview 2 | - | 2026-09-15 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 22ceaac | docs(readme): update Big Picture Event Storming section for clarity | - | 2026-09-16 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | 8d04600 | Redocs(assets): rename event-storming-step-4.png to big-picture-event-storming.png | - | 2026-09-16 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | ca418a7 | docs(readme): revise Big Picture Event Storming details and insights | - | 2026-09-16 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | d23133b | Redocs(assets): rename big-picture-event-storming.png to event-storming-step-4.png | - | 2026-09-16 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-2 | e5dae3b | docs(readme): add interview 2 image | - | 2026-09-17 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-3 | dca7203 | docs(readme): Add Epic 01 and Epic 02 with their respective User Stories and Technical Stories | - | 2026-09-02 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-3 | 6cd7155 | docs(readme): add User Stories | - | 2026-09-02 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-3 | 1be8d6a | docs(readme): add Impact Mapping | - | 2026-09-02 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-3 | 227e0d7 | docs(readme): add Product Backlog | - | 2026-09-02 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-3 | ecd9072 | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 8c8406b | docs(readme): Add General Style Guidelines | - | 2026-09-08 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 27b48ed | docs(readme): Add web style guidelines & fix 4.1.1 and 4.1.2. grammar | - | 2026-09-08 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 9b17ead | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 2006b98 | docs(readme): add Information Architecture | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 88e4d03 | docs(readme): add introduction of 4.6. domain-driven software | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 957369d | docs(readme): add 4.6.1. Design-Level Event Storming section | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 8b91196 | docs(readme): add 4.6.2. Software Architecture Context Diagram section | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 0ea7e58 | docs(readme): add 4.6.3. Software Architecture Container Diagramssection | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 7093d96 | docs(readme): add 4.6.4. Software Architecture Components Diagrams section | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | de10870 | docs(readme): add 4.7.1. Class Diagrams section | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 0045ae9 | docs(readme): add 4.8.1. Database Diagrams section | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 6a4b6d8 | docs(assets): add README file for chapter 4 directory | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 8661593 | docs(add): Landing page wireframes and mockups | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | c03c44a | Add files via upload | - | 2026-09-12 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 44cdd94 | docs(readme): Add Web Application Wireframes and Mock-Ups | - | 2026-09-13 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 5ebf226 | docs(readme) : add 4.4 web applications ux ui design section | - | 2026-09-14 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 258e6e4 | docs(readme) : add 4.4.2. Web Applications Wireflow Diagrams | - | 2026-09-14 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 0b52458 | docs(readme): add information Web Applications Mock-ups | - | 2026-09-14 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | d976bbd | docs(readme): add 4.4.4. Web Applications User Flow Diagrams | - | 2026-09-14 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-4 | 2304caa | docs(readme): add section introductions for chapter 4 | - | 2026-09-15 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 0b85bdc | docs(readme): add description of 5.1 and 5.1.1 | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 819f0a1 | docs(readme): add 5.1.2. Source Code Management | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 0495ef9 | docs(readme): add 5.1.3. Source Code Style Guide & Conventions | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 22c9078 | docs(readme): add 5.1.4. Software Deployment Configuration | Added detailed deployment configuration for ClinicalSync solution, including steps for deploying Landing Page, Frontend Web Application, and Web Services. | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 9fdf3fe | docs(readme): add 5.2. Landing Page, Services & Applications Implementation. | - | 2026-09-01 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 2f6899d | doc(readme): revise sprint 1 planning information | - | 2026-09-09 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 5c882d2 | docs(readme): revise Sprint 1- 5.2.1.3. user stories and task statuses | - | 2026-09-09 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | 9d6e426 | docs(readme): delete sections on interviews and video | - | 2026-09-09 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | c4439bc | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
-| Digital-Clinical-Systems/Landing-Page | feature/report-chapter-5 | [Current] | docs(readme): add development evidence tables for sprint review | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 90d6431 | Initial commit | - | 2026-08-27 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | e3932a3 | docs(readme): add initial report skeleton | - | 2026-08-28 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 6d0e1cf | Antecedentes y problemática completed | - | 2026-08-28 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 1ec8a66 | docs(readme): add Lean UX Process/Problem Statements and Target Segments | - | 2026-08-30 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 45d85db | docs: add description and solution startup, student profile and 1.2.2.2 until 1.2.2.4 | - | 2026-08-30 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | d4dc8b5 | docs(readme): add Background and problems | - | 2026-08-30 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 9b1afe5 | docs(readme): add Lean UX Process/Problem Statements and Target Segments | - | 2026-08-30 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | ce43085 | add(readme): add Startup Description, student profile and Lean UX Assumptions/Hypothesis/Canvas | - | 2026-08-30 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | f6327d3 | docs(readme):startup profile and Lean UX Assupmtions, Hypothesis Statements and Lean UX Canvas | - | 2026-08-30 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | dd9a671 | docs(report): update team member | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 602dc47 | docs(readme): add Oskar Profile | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 864f330 | docs(readme): add Mathias profile | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 562da42 | docs(readme): add Angel profile | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 6e471d5 | docs(repo): add gitattributes to normalize line endings |  | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 3e34913 | docs(assets): rename Assets to assets and group photos under chapter-1 |  | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 375f371 | docs(readme): add Johnny profile | - | 2026-09-03 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 9f6388a | docs(readme): fix team member photo rendering in profiles table | - | 2026-09-04 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | c98f26f | docs(readme):add Mathias profile in members | - | 2026-09-04 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 2dcb5ae | docs(readme): add Angel profile in members | - | 2026-09-05 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 7d642d4 | docs(readme): fix product name in chapter 1 | - | 2026-09-06 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 8e6ba16 | docs(readme): update student iSnformation and profile picture of Johan | - | 2026-09-07 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | f55e640 | Add files via upload | - | 2026-09-07 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | 14038d1 | docs(readme): add my student outcome | - | 2026-09-13 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | c1e110b | docs(readme): fix student outcome table error | - | 2026-09-13 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-1 | fbe0ac4 | docs(readme): add jhonny profile | - | 2026-09-16 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 7ec61f6 | docs(readme): add competitive analysis and strategies against competitors | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | efe10dd | docs(readme): add competitive analysis and strategies against competitors | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 34e55f3 | docs(readme): add interview design, records and analysis | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | d6d6770 | docs(readme): add interview design, records and analysis | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | d4d30b8 | docs(readme): add needfinding artifacts: user personas, task matrix, journey and empathy maps | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | d4969de | docs(readme): add needfinding artifacts: user personas, task matrix, journey and empathy maps | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | a3280f2 | docs(readme): add big picture event storming | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 2a12869 | docs(readme): add big picture event storming | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | e60886c | docs(readme): add ubiquitous language | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 98554cf | docs(readme): add ubiquitous language | - | 2026-08-31 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | ba4cc7d | docs(readme): Remove image from competitive analysis | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | b7ea11b | docs(assets): Create chapter-2 | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 9dee1c0 | docs(assets): Create chapter-1 | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 0375d6d | Delete assets/chapter-2 | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | b55a2d7 | Delete assets/chapter-1 | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | dc88f33 | docs(assets): Create chapter-1 readme | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | a81c226 | docs(assets): Create chapter-2 readme | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 25ee5f5 | Add files via upload | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | dcb1ba5 | Add files via upload | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | a2b655f | Add files via upload | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 11351d9 | Add files via upload | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 0835c98 | docs(readme): add images for nurses and doctors in Step 3 - Event Storming | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | a11042f | Merge pull request #1 from Digital-Clinical-Systems/main | assets | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | cba550a | docs(readme): add interview record of Samuel Akerman for nursing segment |  | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 0f610d9 | docs(readme): add timing, duration and screenshot for Samuel Akerman interview |  | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 92d1ba4 | docs(readme): add interview record of Bruno Elescano for nursing segment 1 | - | 2026-09-05 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | e8aa9da | docs(readme): add interview record of Nathalia Davila for nursing segment 1 | - | 2026-09-06 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 02e5fa5 | dosc(readme): add screenshot for Nathalia Davila interview | - | 2026-09-06 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | d052f80 | docs(readme): add enterview 1 of objective segment 2 | - | 2026-09-08 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | aa8f1bf | docs(readme): add name of link in enterview 1 of objetive segment 2 | - | 2026-09-08 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 11345eb | Add files via upload | - | 2026-09-08 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | ad97490 | Merge branch 'feature/report-chapter-2' of https://github.com/Digital-Clinical-Systems/Informe into feature/report-chapter-2 | - | 2026-09-10 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | c75b6f0 | docs(readme): add interview 2 of segment 2 | - | 2026-09-10 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | f3f4d53 | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 8c9392b | Merge branch 'feature/report-chapter-2' of https://github.com/Digital-Clinical-Systems/Informe into feature/report-chapter-2 | - | 2026-09-11 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 726a0d6 | docs(readme): remove details of Interview 3 from Chapter II | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 9ecfb37 | docs(readme): Add segment 2 interview 2 info | - | 2026-09-15 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 9f27adf | docs(readme): fix Brenda Rios Information | - | 2026-09-15 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 2728e25 | docs(readme): Add image to interview 2 | - | 2026-09-15 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 22ceaac | docs(readme): update Big Picture Event Storming section for clarity | - | 2026-09-16 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | 8d04600 | Redocs(assets): rename event-storming-step-4.png to big-picture-event-storming.png | - | 2026-09-16 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | ca418a7 | docs(readme): revise Big Picture Event Storming details and insights | - | 2026-09-16 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | d23133b | Redocs(assets): rename big-picture-event-storming.png to event-storming-step-4.png | - | 2026-09-16 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-2 | e5dae3b | docs(readme): add interview 2 image | - | 2026-09-17 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-3 | dca7203 | docs(readme): Add Epic 01 and Epic 02 with their respective User Stories and Technical Stories | - | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-3 | 6cd7155 | docs(readme): add User Stories | - | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-3 | 1be8d6a | docs(readme): add Impact Mapping | - | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-3 | 227e0d7 | docs(readme): add Product Backlog | - | 2026-09-02 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-3 | ecd9072 | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 8c8406b | docs(readme): Add General Style Guidelines | - | 2026-09-08 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 27b48ed | docs(readme): Add web style guidelines & fix 4.1.1 and 4.1.2. grammar | - | 2026-09-08 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 9b17ead | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 2006b98 | docs(readme): add Information Architecture | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 88e4d03 | docs(readme): add introduction of 4.6. domain-driven software | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 957369d | docs(readme): add 4.6.1. Design-Level Event Storming section | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 8b91196 | docs(readme): add 4.6.2. Software Architecture Context Diagram section | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 0ea7e58 | docs(readme): add 4.6.3. Software Architecture Container Diagramssection | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 7093d96 | docs(readme): add 4.6.4. Software Architecture Components Diagrams section | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | de10870 | docs(readme): add 4.7.1. Class Diagrams section | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 0045ae9 | docs(readme): add 4.8.1. Database Diagrams section | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 6a4b6d8 | docs(assets): add README file for chapter 4 directory | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 8661593 | docs(add): Landing page wireframes and mockups | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | c03c44a | Add files via upload | - | 2026-09-12 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 44cdd94 | docs(readme): Add Web Application Wireframes and Mock-Ups | - | 2026-09-13 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 5ebf226 | docs(readme) : add 4.4 web applications ux ui design section | - | 2026-09-14 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 258e6e4 | docs(readme) : add 4.4.2. Web Applications Wireflow Diagrams | - | 2026-09-14 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 0b52458 | docs(readme): add information Web Applications Mock-ups | - | 2026-09-14 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | d976bbd | docs(readme): add 4.4.4. Web Applications User Flow Diagrams | - | 2026-09-14 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-4 | 2304caa | docs(readme): add section introductions for chapter 4 | - | 2026-09-15 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 0b85bdc | docs(readme): add description of 5.1 and 5.1.1 | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 819f0a1 | docs(readme): add 5.1.2. Source Code Management | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 0495ef9 | docs(readme): add 5.1.3. Source Code Style Guide & Conventions | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 22c9078 | docs(readme): add 5.1.4. Software Deployment Configuration | Added detailed deployment configuration for ClinicalSync solution, including steps for deploying Landing Page, Frontend Web Application, and Web Services. | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 9fdf3fe | docs(readme): add 5.2. Landing Page, Services & Applications Implementation. | - | 2026-09-01 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 2f6899d | doc(readme): revise sprint 1 planning information | - | 2026-09-09 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 5c882d2 | docs(readme): revise Sprint 1- 5.2.1.3. user stories and task statuses | - | 2026-09-09 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | 9d6e426 | docs(readme): delete sections on interviews and video | - | 2026-09-09 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | c4439bc | docs(repo): add gitattributes to normalize line endings | - | 2026-09-11 |
+| Digital-Clinical-Systems/Informe | feature/report-chapter-5 | [Current] | docs(readme): add development evidence tables for sprint review | - | 2026-09-17 |
 
+
+
+**Repositorio de la Landing Page**
+
+La siguiente tabla registra los commits correspondientes al desarrollo de la Landing Page, realizados sobre la rama `main` del repositorio `Digital-Clinical-Systems/Landing-Page`. Cada commit corresponde a una sección o funcionalidad completada, conforme a la convención de Conventional Commits descrita en la sección 5.1.3.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Digital-Clinical-Systems/Landing-Page | main | 9631bd4 | docs: add project context and content specification | - | 2026-09-15 |
+| Digital-Clinical-Systems/Landing-Page | main | 4ed5a0c | docs: add project context, content spec and i18n dictionaries | - | 2026-09-15 |
+| Digital-Clinical-Systems/Landing-Page | main | 6f72e6b | feat: add folder structure, CSS variables and nav bar with mobile menu | - | 2026-09-15 |
+| Digital-Clinical-Systems/Landing-Page | main | aa328ff | feat: enhance hero section with patient and vital signs display | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | 11c4a5e | feat: add problem section with cards and data callouts | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | c19ff11 | feat: add numbered steps section with cards for user guidance (How it works) | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | 3b8405c | feat: add features section with detailed cards for platform capabilities | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | 30f0205 | feat: add benefits section with role-specific cards for users | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | de6caaf | feat: implement pricing toggle functionality and add pricing section with plans | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | 5714333 | feat: add FAQ section with accordion functionality for common questions | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | 98bc354 | feat: add team section with member profiles and images | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | f1dd44a | feat: add contact form section with validation and success message | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | 235d7cf | feat: add footer section with branding, navigation links, and academic information | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | ccf46a2 | feat: add alt text for team member photos and update localization files | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | c2d8b28 | feat: enhance accessibility by adding role attributes to error messages in contact form | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | 052a06d | feat: add Open Graph meta tags and keywords for improved SEO and social sharing | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | ce5b9d0 | feat: add robots.txt and sitemap.xml for SEO optimization | - | 2026-09-16 |
+| Digital-Clinical-Systems/Landing-Page | main | ed27b89 | feat: add scroll reveal animation for sections and update navigation visibility | - | 2026-09-17 |
 
 ##### 5.2.1.5. Execution Evidence for Sprint Review
 
-## 1. Resumen de Logros del Sprint
-En este Sprint, el equipo se ha enfocado en el diseño, maquetación y despliegue de la interfaz principal de **ClinicalSync**. 
-Se ha logrado consolidar la identidad visual de la marca y la arquitectura de información necesaria para comunicar una solución técnica compleja de manera sencilla y efectiva.
+**Resumen de logros del Sprint**
 
-**Hitos alcanzados:**
-* **Desarrollo de Interfaz:** Implementación completa de la Landing Page utilizando estándares modernos de diseño UI/UX.
-* **Optimización de Activos:** Organización y renombrado semántico de recursos visuales para mejorar la mantenibilidad del proyecto.
-* **Propuesta de Valor:** Estructuración de las secciones de monetización (Planes) y validación social (Testimonios).
-* **Navegación:** Configuración de una experiencia de usuario fluida y orientada a la conversión (CTAs).
+Durante este Sprint el equipo desarrolló, validó y publicó la Landing Page de ClinicalSync. El trabajo comprendió la traducción de la arquitectura de información definida en la sección 4.2 y de las directrices visuales de la sección 4.1 a una implementación funcional en HTML5, CSS3 y JavaScript, sin framework ni proceso de compilación, conforme a lo establecido para este entregable.
 
-## 2. Screenshots de las Principales Vistas
+Los hitos alcanzados fueron los siguientes:
 
-A continuación, se presentan las capturas de pantalla que sirven como evidencia de la implementación funcional del sitio. Las vistas se organizan según las secciones de navegación del Landing Page (Plataforma, El problema, ¿Cómo funciona?, Características, Beneficios, Planes, Nosotros y Preguntas frecuentes), indicando el propósito de cada una y el perfil de visitante al que atiende (racional, emocional o recurrente).
+- Implementación de las nueve secciones de contenido definidas en la arquitectura de información.
+- Internacionalización completa entre español e inglés, con la preferencia del visitante almacenada localmente, cubriendo la historia US-11.
+- Diseño adaptable verificado desde 320 px hasta anchos de escritorio, sin desplazamiento horizontal en ningún punto, cubriendo la historia US-12.
+- Incorporación de los meta tags, el archivo `robots.txt` y el `sitemap.xml` especificados en la sección 4.2.3.
+- Publicación en producción con integración continua desde la rama `main`.
 
-### A. Plataforma (Portada y Propuesta de Valor)
+**Capturas de las vistas implementadas**
 
-![Hero Section](assets/chapter-5/sprint-1/hero-section.png)
-*Sección de portada que presenta la propuesta de valor central de la plataforma: una solución digital diseñada específicamente para mejorar los procesos de enfermería cardiovascular mediante la centralización de información clínica, la facilitación de la comunicación entre turnos y la garantía de trazabilidad en eventos críticos. Incluye los Call-To-Action principales que dirigen al visitante recurrente hacia la aplicación desplegada, así como el selector de idioma (ES/EN) y el acceso a "Iniciar sesión".*
+Las siguientes capturas corresponden al sitio publicado en `https://clinicalsync-landing.vercel.app/`, tomadas a 1440 px de ancho en su versión en español. Cada una se acompaña de su propósito dentro del recorrido del visitante y de la historia de usuario que satisface.
 
-### B. El Problema
+**A. Portada y propuesta de valor**
 
-![The Problem](assets/chapter-5/sprint-1/problem-section.png)
-*Explica la problemática que da origen a ClinicalSync: la información clínica dispersa y el registro manual dificultan la continuidad asistencial y la trazabilidad de eventos críticos en enfermería cardiovascular. Esta sección atiende al perfil de visitante racional, ayudándole a reconocer la necesidad que resuelve la plataforma.*
+<p align="center">
+  <img src="assets/chapter-5/sprint-1/hero-section.png" alt="Portada de la Landing Page" width="900">
+</p>
 
-![Proposal & Sectors Benefiting](assets/chapter-5/sprint-1/proposal-sectors.png)
-*Complementa la sección del problema mostrando cómo ClinicalSync impacta directamente en instituciones de salud como hospitales, clínicas privadas y centros especializados en cardiología, proporcionando soluciones concretas para optimizar la gestión de procesos críticos.*
+*Presenta la propuesta de valor de ClinicalSync y sitúa de inmediato el problema que resuelve: la dependencia de la memoria del profesional para transmitir la información del turno. Incluye las dos acciones principales, solicitar una demostración y conocer el funcionamiento, junto con el selector de idioma. El panel lateral anticipa la interfaz de la aplicación mostrando pacientes asignados, últimos signos vitales y un traspaso SBAR pendiente de confirmación. Corresponde a las historias US-01 y US-02.*
 
-### C. ¿Cómo Funciona?
+**B. El problema**
 
-![How it works](assets/chapter-5/sprint-1/how-it-works.png)
-*Describe el flujo integral de la plataforma, mostrando cómo el personal de enfermería cardiovascular puede registrar signos vitales, documentar traspasos SBAR (Situación, Antecedentes, Evaluación y Recomendaciones), consultar historiales clínicos y mantener trazabilidad de eventos para mejorar la comunicación entre turnos.*
+<p align="center">
+  <img src="assets/chapter-5/sprint-1/problem-section.png" alt="Sección del problema" width="900">
+</p>
 
-### D. Características
+*Desarrolla la problemática identificada en el Capítulo I: la dispersión de la información clínica entre el sistema hospitalario, los monitores, las anotaciones en papel y la comunicación verbal. Se organiza en tres puntos —registro duplicado, pérdida en el relevo y ausencia de trazabilidad— y cierra con el contexto epidemiológico citando al MINSA y la ENDES 2024. Atiende al visitante que aún no ha reconocido la necesidad. Corresponde a la historia US-03.*
 
-![Features](assets/chapter-5/sprint-1/main-features.png)
-*Detalla las funcionalidades clave como registro de pacientes y citas, monitoreo de signos vitales, gestión de traspasos SBAR, seguimiento de tratamientos, registro de eventos críticos, alertas automáticas ante fluctuaciones cardiovasculares anormales y sistema de auditoría inalterable.*
+**C. Cómo funciona**
 
-### E. Beneficios
+<p align="center">
+  <img src="assets/chapter-5/sprint-1/how-it-works.png" alt="Sección de funcionamiento" width="900">
+</p>
 
-![Benefits](assets/chapter-5/sprint-1/main-benefits.png)
-*Ilustra cómo ClinicalSync reduce errores en documentación clínica, optimiza el tiempo del personal de salud en tareas de registro, mejora la continuidad del cuidado del paciente y fortalece la eficiencia operativa mediante la digitalización y trazabilidad de procesos críticos.*
+*Describe el uso de la plataforma en cuatro pasos ordenados dentro del turno: recibir el traspaso, registrar durante la atención, ejecutar y confirmar indicaciones, y entregar el turno a partir de lo ya registrado. Permite al visitante comprender el flujo sin necesidad de una demostración. Corresponde a la historia US-04.*
 
-### F. Planes
+**D. Características**
 
-![Plans](assets/chapter-5/sprint-1/plans-section.png)
-*Presenta los planes y precios disponibles de ClinicalSync para las instituciones de salud, detallando las características incluidas en cada nivel de servicio. Esta sección atiende al perfil de visitante racional, ya que le entrega la información necesaria para comparar opciones y facilitar la decisión de contratación de la plataforma.*
+<p align="center">
+  <img src="assets/chapter-5/sprint-1/main-features.png" alt="Sección de características" width="900">
+</p>
 
-### G. Nosotros (Equipo)
+*Enumera las seis capacidades del producto: traspaso SBAR estructurado, registro de signos vitales, eventos clínicos, indicaciones y cumplimiento, resumen clínico y bitácora de auditoría. Cada una corresponde a un epic del Capítulo III. Atiende al visitante que evalúa si la solución cubre sus necesidades operativas. Corresponde a la historia US-05.*
 
-![Team](assets/chapter-5/sprint-1/dev-team.png)
-*Presenta a los integrantes del equipo responsable del diseño, desarrollo e implementación de ClinicalSync, incluyendo sus perfiles y motivaciones. Esta sección atiende al perfil de visitante emocional, generando confianza al mostrar quiénes están detrás de la solución.*
+**E. Beneficios**
 
-### H. Preguntas Frecuentes
+<p align="center">
+  <img src="assets/chapter-5/sprint-1/main-benefits.png" alt="Sección de beneficios" width="900">
+</p>
 
-![FAQ](assets/chapter-5/sprint-1/faq-section.png)
-*Aborda las consultas comunes del personal de enfermería cardiovascular y administradores de instituciones de salud sobre seguridad de datos, facilidad de acceso, integración con sistemas existentes, escalabilidad de la plataforma y soporte técnico disponible.*
+*Diferencia el valor aportado según el perfil del visitante: personal de enfermería, médicos especialistas e instituciones de salud. Esta separación responde a la conclusión de la sección 2.3.1, según la cual ambos perfiles se relacionan con la información de manera opuesta. Corresponde a la historia US-06.*
 
-### I. Testimonios
+**F. Planes**
 
-![Testimonials](assets/chapter-5/sprint-1/testimonials-section.png)
-*Presenta experiencias y perspectivas del personal de salud e instituciones que han validado ClinicalSync, destacando mejoras en eficiencia operativa, reducción de errores, mejor comunicación entre turnos y fortalecimiento de la continuidad clínica. Esta sección atiende al perfil de visitante emocional, generando confianza a través de la experiencia de terceros y permitiendo conocer los beneficios del producto sin haberlo usado.*
+<p align="center">
+  <img src="assets/chapter-5/sprint-1/plans-section.png" alt="Sección de planes" width="900">
+</p>
 
-### J. Contacto con Digital Clinical Systems
+*Presenta el modelo de servicio en tres niveles, según el tamaño del establecimiento, con alternancia entre facturación mensual y anual. Se indica expresamente que los precios son referenciales por tratarse de un proyecto académico en desarrollo. Atiende al visitante con capacidad de decisión sobre la contratación. Corresponde a la historia US-07.*
 
-![Contact](assets/chapter-5/sprint-1/contact-section.png)
-*Proporciona los canales de comunicación disponibles para hospitales, clínicas, centros especializados y profesionales de salud interesados en conocer más sobre ClinicalSync, solicitar demostraciones, consultar precios o gestionar suscripciones a la plataforma.*
+**G. Preguntas frecuentes**
 
+<p align="center">
+  <img src="assets/chapter-5/sprint-1/faq-section.png" alt="Sección de preguntas frecuentes" width="900">
+</p>
+
+*Resuelve las cuatro dudas más frecuentes del visitante institucional: si la solución reemplaza el sistema existente, qué medidas de seguridad contempla el diseño, qué se requiere para utilizarla y en qué se diferencia de una historia clínica electrónica. Las respuestas describen decisiones de diseño y no afirman certificaciones que el proyecto no posee. Corresponde a la historia US-08.*
+
+**H. Equipo**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-1/dev-team.png" alt="Sección del equipo" width="900">
+</p>
+
+*Presenta a los cinco integrantes del equipo con su rol dentro del proyecto, identificando a los responsables del desarrollo de la solución. Corresponde a la historia US-09.*
+
+**I. Contacto**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-1/contact-section.png" alt="Sección de contacto" width="900">
+</p>
+
+*Cierra el recorrido con el formulario de solicitud de demostración, que valida los campos obligatorios y el formato del correo antes de permitir el envío, y confirma la recepción en pantalla. Corresponde a la historia US-10.*
 
 ##### 5.2.1.6. Services Documentation Evidence for Sprint Review
 
@@ -1077,32 +1159,36 @@ a su consumo.
 
 ##### 5.2.1.7. Software Deployment Evidence for Sprint Review
 
-En esta sección se describe el proceso de implementación de la plataforma en un entorno de producción. Además, se presentarán los hitos más importantes que marcarán el despliegue del proyecto y garantizarán su disponibilidad para los usuarios finales.
+En esta sección se describe el proceso de publicación de la Landing Page en un entorno de producción y se presentan las evidencias que acreditan su disponibilidad para los usuarios finales.
 
-URL de despliegue del Landing Page: [https://github.com/Digital-Clinical-Systems/Landing-Page](https://github.com/Digital-Clinical-Systems/Landing-Page)
+**URL pública de la Landing Page:** [https://clinicalsync-landing.vercel.app/](https://clinicalsync-landing.vercel.app/)
 
-1. Para la Landing Page, nuestro equipo creó una rama denominada `develop` dentro del repositorio, en la cual se organizaron y almacenaron todos los archivos correspondientes al desarrollo.
+**Repositorio del código fuente:** [https://github.com/Digital-Clinical-Systems/Landing-Page](https://github.com/Digital-Clinical-Systems/Landing-Page)
+
+El procedimiento seguido fue el siguiente:
+
+1. El desarrollo se realizó sobre el repositorio `Digital-Clinical-Systems/Landing-Page`, integrando cada sección completada a la rama `main` mediante commits independientes, conforme a la convención descrita en la sección 5.1.3.
+
+2. Se instaló la GitHub App de Vercel en la organización, autorizando el acceso únicamente al repositorio de la Landing Page.
+
+3. Se importó el repositorio como proyecto en Vercel bajo el nombre `clinicalsync-landing`. Al tratarse de un sitio estático sin proceso de compilación, no se configuró comando de build ni directorio de salida.
+
+4. Vercel generó el despliegue en producción y quedó establecida la integración continua: cada integración posterior a `main` publica automáticamente una nueva versión, conservando el historial de despliegues anteriores.
+
+**Verificación del despliegue.** Se comprobó sobre el sitio publicado que la navegación responde correctamente, que el cambio de idioma opera entre español e inglés, que el diseño se adapta sin desplazamiento horizontal en anchos de escritorio y de móvil, y que las cabeceras de caché definidas en `vercel.json` se aplican efectivamente en producción.
+
 <p align="center">
-  <img src="assets/chapter-5/sprint-1/deployment-step-1.png" alt="deployment branch setup" width="1000">
+  <img src="assets/chapter-5/sprint-1/landing-desktop-full.png" alt="Landing Page desplegada, vista completa en escritorio" width="900">
 </p>
 
-2. Posteriormente, nos dirigimos a configuración y empleamos GitHub Pages, el servicio de alojamiento para sitios estáticos de GitHub, para publicar y poner en línea nuestra Landing Page.
+*Vista completa de la Landing Page publicada, capturada a 1440 px de ancho.*
+
 <p align="center">
-  <img src="assets/chapter-5/sprint-1/deployment-step-2.png" alt="deployment github pages config" width="1000">
+  <img src="assets/chapter-5/sprint-1/landing-mobile-hero.png" alt="Landing Page en móvil" width="300">
+  <img src="assets/chapter-5/sprint-1/landing-mobile-menu.png" alt="Menú desplegable en móvil" width="300">
 </p>
 
-3. Se seleccionó la rama previamente configurada y se procedió con el despliegue de la página.
-<p align="center">
-  <img src="assets/chapter-5/sprint-1/deployment-step-3.png" alt="deployment branch selection" width="1000">
-</p>
-
-
-4. Finalmente, obtuvimos el enlace de publicación, que nos permite acceder y visualizar la Landing Page en línea.
-<p align="center">
-  <img src="assets/chapter-5/sprint-1/deployment-step-4.png" alt="deployment successful url" width="1000">
-</p>
-
-
+*Comportamiento adaptable a 390 px de ancho. A la izquierda, la portada; a la derecha, el menú desplegable, que conserva los nueve destinos de navegación conforme a lo definido en la sección 4.2.5.*
 
 ##### 5.2.1.8. Team Collaboration Insights during Sprint
 
