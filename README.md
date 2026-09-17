@@ -656,7 +656,7 @@ Los wireframes, wireflows, mock-ups y diagramas de flujo de usuario se organizan
 
 #### 4.4.2. Web Applications Wireflow Diagrams
 
-### User Goal 1
+##### User Goal 1
 
 El usuario (nuevo profesional de enfermería) busca crear su cuenta ingresando sus datos personales y credenciales para acceder al sistema con su identidad verificada ante el CGE.
 
@@ -668,7 +668,7 @@ El usuario (nuevo profesional de enfermería) busca crear su cuenta ingresando s
   <img src="assets/chapter-4/Wireflow-Diagrams1.png" alt="WireflowDiagram1" width="800">
 </p>
 
-### User Goal 2
+##### User Goal 2
 
 El usuario (institución o profesional interesado) busca seleccionar un plan, ingresar sus datos de pago y completar la transacción de forma segura para activar su suscripción.
 
@@ -680,7 +680,7 @@ El usuario (institución o profesional interesado) busca seleccionar un plan, in
   <img src="assets/chapter-4/Wireflow-Diagrams2.png" alt="WireflowDiagram2" width="800">
 </p>
 
-### User Goal 3
+##### User Goal 3
 
 El usuario (enfermería/médicos) busca registrar rápidamente los signos vitales y datos básicos de un paciente desde el dashboard para mantener su estado clínico actualizado.
 
@@ -692,7 +692,7 @@ El usuario (enfermería/médicos) busca registrar rápidamente los signos vitale
   <img src="assets/chapter-4/Wireflow-Diagrams3.png" alt="WireflowDiagram3" width="800">
 </p>
 
-### User Goal 4
+##### User Goal 4
 
 El usuario (enfermera responsable) busca acceder a los módulos clave de la pantalla de monitoreo de un paciente para hacer seguimiento continuo de su evolución y documentar la atención.
 
@@ -702,7 +702,7 @@ El usuario (enfermera responsable) busca acceder a los módulos clave de la pant
   <img src="assets/chapter-4/Wireflow-Diagrams4.png" alt="WireflowDiagram4" width="800">
 </p>
 
-### User Goal 5
+##### User Goal 5
 
 El usuario (enfermera de guardia) busca completar y enviar el reporte SBAR de un paciente para transferir la responsabilidad clínica a la siguiente guardia de forma clara y trazable.
 
