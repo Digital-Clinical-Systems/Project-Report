@@ -352,6 +352,15 @@ Los estados se rotulan con una sola palabra y se refuerzan con el color definido
 
 Las secciones del sitio promocional se rotulan con lenguaje orientado al visitante, que no conoce el producto ni su vocabulario interno. Se emplean los rótulos Inicio, El problema, Cómo funciona, Características, Beneficios, Planes, Preguntas frecuentes, Equipo y Contacto. Se evita nombrar módulos internos del sistema en esta capa, ya que para el visitante son conceptos sin referente.
 
+Estos nueve rótulos no reciben el mismo tratamiento en la interfaz. Se distinguen dos niveles según su función dentro del recorrido del visitante:
+
+| Nivel | Rótulos | Dónde aparecen | Criterio |
+|---|---|---|---|
+| **Primario** | El problema, Cómo funciona, Características, Planes, Contacto | Barra superior en escritorio, y menú desplegable en pantallas reducidas. | Corresponden a la secuencia del argumento: reconocer el problema, entender la solución, evaluarla y actuar. |
+| **Secundario** | Inicio, Beneficios, Preguntas frecuentes, Equipo | Pie de página en escritorio, y menú desplegable en pantallas reducidas. | Amplían o cierran el argumento, pero no son necesarios para recorrerlo. "Inicio" además es redundante, ya que el logotipo cumple esa función. |
+
+La distinción responde a una restricción de espacio verificada sobre la implementación: con los nueve rótulos en la barra superior, los enlaces ocupaban 812 de los 1200 píxeles del contenedor, sin margen suficiente para el logotipo, el selector de idioma y la acción principal. Reducida a cinco, la barra ocupa 376 píxeles. En pantallas reducidas la restricción no aplica, ya que el menú desplegable dispone de espacio vertical; por ello conserva los nueve rótulos.
+
 #### 4.2.3. SEO Tags and Meta Tags
 
 La estrategia de posicionamiento aplica únicamente a la Landing Page. La Web Application opera detrás de autenticación y maneja información clínica, por lo que **debe quedar explícitamente excluida de la indexación**: no existe beneficio en que un buscador alcance sus rutas y sí un riesgo de exposición.
@@ -450,7 +459,16 @@ Al tratarse de una página única, la navegación es de tipo ancla: cada element
 
 ```
 Landing Page
-├── Barra superior (fija al desplazar)
+├── Barra superior (fija al desplazar) — navegación primaria
+│   ├── El problema
+│   ├── Cómo funciona
+│   ├── Características
+│   ├── Planes
+│   ├── Contacto
+│   ├── Selector de idioma (ES / EN)
+│   └── [Solicitar demostración]  ← acción principal, destacada
+│
+├── Menú desplegable (pantallas reducidas) — los nueve destinos
 │   ├── Inicio
 │   ├── El problema
 │   ├── Cómo funciona
@@ -458,16 +476,19 @@ Landing Page
 │   ├── Beneficios
 │   ├── Planes
 │   ├── Preguntas frecuentes
-│   ├── Selector de idioma (ES / EN)
-│   └── [Solicitar demostración]  ← acción principal, destacada
-└── Pie de página
+│   ├── Equipo
+│   └── Contacto
+│
+└── Pie de página — navegación secundaria
+    ├── Secciones: los nueve destinos
     ├── Equipo
-    ├── Contacto
     ├── Repositorio del proyecto
-    └── Aviso de privacidad
+    └── Informe del proyecto
 ```
 
 La barra permanece fija durante el desplazamiento para que la acción principal esté siempre disponible, sin obligar al visitante a volver al inicio. En pantallas reducidas el menú colapsa en un icono desplegable, conforme a la historia US-12.
+
+La barra superior presenta únicamente los cinco destinos primarios definidos en la sección 4.2.2. Los cuatro restantes permanecen en el documento y se ocultan mediante hoja de estilos a partir del punto de quiebre de escritorio, de modo que el menú desplegable de pantallas reducidas conserve los nueve destinos sin duplicar el marcado. Esta decisión evita que el visitante en móvil pierda accesos que sí existen en el sitio.
 
 ##### Navegación de la Web Application
 
