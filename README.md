@@ -816,6 +816,12 @@ La evidencia se presenta en formato de video, donde se recorren ambos productos 
 
 En la primera parte se recorre la **Landing Page desplegada** en `https://clinicalsync-landing.vercel.app/`, mostrando sus nueve secciones en el orden en que el visitante las encuentra: la portada con la propuesta de valor, la exposición del problema de la información clínica dispersa, el funcionamiento de la plataforma en cuatro pasos, las características, los beneficios diferenciados por perfil, los planes, las preguntas frecuentes, el equipo y el formulario de contacto. Se demuestra además el cambio de idioma entre español e inglés y el comportamiento adaptable del sitio, alternando entre la vista de escritorio y la de dispositivo móvil.
 
+<p align="center">
+  <img src="assets/chapter-4/prototipo-landing-responsive.png" alt="Verificación del comportamiento adaptable de la Landing Page durante la demostración" width="900">
+</p>
+
+*Fotograma del video: comprobación del comportamiento adaptable de la Landing Page sobre el sitio publicado, emulando un dispositivo móvil de 390 px de ancho desde las herramientas de desarrollo del navegador.*
+
 En la segunda parte se recorre el **prototipo de la Web Application en Figma**, mostrando las pantallas diseñadas para los flujos clínicos definidos en el Capítulo III: la vista de pacientes asignados al turno, el registro de signos vitales y eventos clínicos, el formulario de traspaso SBAR, la gestión de indicaciones médicas y el resumen clínico dirigido al médico especialista. El recorrido se realiza tanto en la versión de escritorio como en la de móvil, en coherencia con el requisito de diseño adaptable establecido para ambos productos.
 
 #### Enlaces a los productos prototipados
