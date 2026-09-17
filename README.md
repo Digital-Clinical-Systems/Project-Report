@@ -798,6 +798,40 @@ En esta sección se presenta el diagrama de flujo de usuario general de Clinical
 </p>
 
 ### 4.5. Web Applications Prototyping
+
+Esta sección presenta la evidencia del prototipo de ClinicalSync correspondiente al **Sprint 1**, que constituye la primera entrega del proyecto. El alcance comprometido para este sprint fue la Landing Page desarrollada y publicada en un entorno de producción, junto con el prototipo navegable de la Web Application en Figma.
+
+La evidencia se presenta en formato de video, donde se recorren ambos productos mostrando su contenido y su comportamiento. Esta decisión responde a la naturaleza de lo prototipado: la Landing Page es un producto funcional y desplegado, por lo que su demostración requiere navegarlo en vivo, mientras que la Web Application se encuentra en etapa de prototipo de interfaz y se recorre sobre Figma.
+
+| Producto | Estado en el Sprint 1 | Soporte de la demostración |
+|---|---|---|
+| **Landing Page** | Desarrollada, desplegada y accesible públicamente. | Navegación sobre el sitio publicado, en escritorio y en móvil. |
+| **Web Application** | Prototipo de interfaz navegable. | Recorrido sobre el prototipo de Figma, en escritorio y en móvil. |
+
+#### Video de demostración del prototipo
+
+**Enlace al video:** [prototipo_landingPage_&AppWeb.mp4](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202212214_upc_edu_pe/IQAmN4M8YXNQRK6D-wRvo-fTAe7cW2snJ1KUCGJQwgQPtHs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=XswRDv)
+
+**Contenido del video:**
+
+En la primera parte se recorre la **Landing Page desplegada** en `https://clinicalsync-landing.vercel.app/`, mostrando sus nueve secciones en el orden en que el visitante las encuentra: la portada con la propuesta de valor, la exposición del problema de la información clínica dispersa, el funcionamiento de la plataforma en cuatro pasos, las características, los beneficios diferenciados por perfil, los planes, las preguntas frecuentes, el equipo y el formulario de contacto. Se demuestra además el cambio de idioma entre español e inglés y el comportamiento adaptable del sitio, alternando entre la vista de escritorio y la de dispositivo móvil.
+
+En la segunda parte se recorre el **prototipo de la Web Application en Figma**, mostrando las pantallas diseñadas para los flujos clínicos definidos en el Capítulo III: la vista de pacientes asignados al turno, el registro de signos vitales y eventos clínicos, el formulario de traspaso SBAR, la gestión de indicaciones médicas y el resumen clínico dirigido al médico especialista. El recorrido se realiza tanto en la versión de escritorio como en la de móvil, en coherencia con el requisito de diseño adaptable establecido para ambos productos.
+
+#### Enlaces a los productos prototipados
+
+| Recurso | Enlace |
+|---|---|
+| Landing Page desplegada | [https://clinicalsync-landing.vercel.app/](https://clinicalsync-landing.vercel.app/) |
+| Repositorio de la Landing Page | [https://github.com/Digital-Clinical-Systems/Landing-Page](https://github.com/Digital-Clinical-Systems/Landing-Page) |
+| Video de la demostración | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202212214_upc_edu_pe/IQAmN4M8YXNQRK6D-wRvo-fTAe7cW2snJ1KUCGJQwgQPtHs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=XswRDv) |
+
+#### Relación con el Product Backlog
+
+El alcance demostrado en este video corresponde a la **Entrega 1** del Product Backlog definido en la sección 3.3, que agrupa las doce historias de usuario de la Landing Page más el despliegue del sitio. Con la publicación en producción quedan cubiertas las historias US-01 a US-12 y la historia técnica TS-09, incluidas las relativas a internacionalización y acceso desde dispositivos móviles.
+
+El prototipo de la Web Application anticipa las entregas siguientes, correspondientes al frontend de la aplicación y a los servicios que lo sostienen, cuyo detalle se desarrolla en el Capítulo V.
+
 ### 4.6. Domain-Driven Software Architecture
 A partir de lo que trabajamos en el Big Picture Event Storming, en esta sección detallamos el diseño de nuestra arquitectura usando Domain-Driven Design (DDD). Aquí definimos los Bounded Contexts, los agregados, eventos y comandos, y finalmente mostramos la estructura del sistema aplicando el Modelo C4.
 #### 4.6.1. Design-Level Event Storming
