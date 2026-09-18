@@ -3228,7 +3228,7 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
 ##### 5.2.1.1. Sprint Planning 1
 
 <table>
-  <tr> <th colspan="5">Sprint #</th> <th colspan="9">Sprint 1</th> </tr> 
+  <tr> <th colspan="5">Sprint #</th> <th colspan="8">Sprint 1</th> </tr> 
   <tr> <td colspan="13">Sprint Planning Background</td> </tr> 
   <tr> <td colspan="5">Date</td> <td colspan="8">15-04-2026</td> </tr> 
   <tr> <td colspan="5">Time</td> <td colspan="8">09:30 AM</td> </tr> 
