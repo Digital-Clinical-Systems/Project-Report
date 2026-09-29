@@ -61,6 +61,7 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
+- [Alcance de las afirmaciones en esta entrega](#alcance-de-las-afirmaciones-en-esta-entrega)
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
@@ -251,8 +252,8 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
   - [Software Development](#software-development)
   - [Software Deployment](#software-deployment)
     - [5.1.2. Source Code Management](#512-source-code-management)
-  - [GitFlow Workflow implementado](#gitflow-workflow-implementado)
-  - [Feature Branches utilizados en el proyecto](#feature-branches-utilizados-en-el-proyecto)
+  - [GitFlow Workflow adoptado](#gitflow-workflow-adoptado)
+  - [Aplicación real del workflow por repositorio](#aplicación-real-del-workflow-por-repositorio)
   - [Convención de ramas](#convención-de-ramas)
   - [Semantic Versioning](#semantic-versioning)
   - [Conventional Commits](#conventional-commits)
@@ -261,7 +262,7 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
   - [HTML / CSS (Landing Page y vistas estáticas)](#html--css-landing-page-y-vistas-estáticas)
   - [HTML](#html)
   - [CSS](#css)
-  - [AngularJS (Frontend Web Application)](#angularjs-frontend-web-application)
+  - [Angular (Frontend Web Application)](#angular-frontend-web-application)
   - [Nomenclatura](#nomenclatura)
   - [Buenas prácticas](#buenas-prácticas)
   - [Estilo de código](#estilo-de-código)
@@ -327,6 +328,16 @@ El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cu
 |---|---|---|
 | Comunica oralmente con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Condujo la Entrevista 1 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), formulando el guion ante un profesional externo al equipo y repreguntando sobre el flujo de evaluación del paciente.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Condujo la Entrevista 1 del segmento de personal de enfermería cardiovascular (sección 2.2.2) y expuso en video el prototipo del Sprint 1 (sección 4.5), recorriendo la Landing Page publicada en producción y el prototipo de la aplicación web.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Condujo la Entrevista 2 del segmento de personal de enfermería cardiovascular (sección 2.2.2), adaptando el lenguaje del guion técnico al vocabulario asistencial del entrevistado.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Condujo la Entrevista 3 del segmento de personal de enfermería cardiovascular (sección 2.2.2), indagando sobre el registro en papel durante la atención y el traspaso al cierre del turno.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Condujo la Entrevista 2 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), recogiendo la perspectiva del especialista sobre la consulta del estado del paciente. | El equipo concluye que exponer el dominio clínico ante profesionales de salud obligó a abandonar el vocabulario técnico de software y a hablar en los términos del turno asistencial. Las entrevistas, conducidas por los cinco integrantes, fueron la fuente directa de los hallazgos de la sección 2.2.3 y del Ubiquitous Language de la sección 2.5. El registro en video del prototipo mostró además que demostrar un producto funcionando comunica el alcance con más precisión que describirlo. |
 | Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Redactó el Big Picture Event Storming (sección 2.4), la arquitectura orientada al dominio (secciones 4.6.1 a 4.6.4), los diagramas de clases (4.7.1) y de base de datos (4.8.1), y la configuración del entorno de desarrollo y la gestión del código fuente (5.1.1 a 5.1.4).<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Redactó el análisis de entrevistas (2.2.3), el Capítulo III completo (User Stories, Impact Mapping y Product Backlog), la arquitectura de información (4.2), el prototipado del Sprint 1 (4.5) y las evidencias de ejecución y despliegue del Capítulo V.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Redactó el perfil de la startup (1.1), los Lean UX Assumptions, Hypothesis Statements y Lean UX Canvas (1.2.2.2 a 1.2.2.4), y documentó los wireframes y mock-ups de la Landing Page.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Redactó los antecedentes y la problemática (1.2.1), los Lean UX Problem Statements y los segmentos objetivo (1.3), y el diseño UX/UI de la aplicación web (4.4.2 wireflow diagrams, 4.4.3 mock-ups y 4.4.4 user flow diagrams).<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Redactó las style guidelines generales y web (4.1.1 y 4.1.2), las Epics 01 y 02 con sus User Stories y Technical Stories, los wireframes y mock-ups de la aplicación web, y las tablas de development evidence del Sprint 1 (5.2.1.4). | El equipo concluye que documentar en un repositorio compartido impone una disciplina que un documento aislado no exige: cada sección debe ser legible para los demás integrantes y trazable hasta el commit que la originó. Trabajar con una rama por capítulo y con Conventional Commits permitió avanzar en paralelo y, al integrar, detectar y corregir incoherencias entre lo redactado y lo efectivamente construido. |
+
+---
+
+## Alcance de las afirmaciones en esta entrega
+
+Esta entrega acredita investigación, diseño y un incremento desplegado: la Landing Page publicada en producción. La aplicación web y los servicios REST existen como diseño y prototipo de interfaz, no como software ejecutable.
+
+En consecuencia, cuando el documento describe beneficios clínicos de ClinicalSync — reducción del tiempo de consolidación de información, disminución de errores u omisiones en el cambio de turno, mejora de la trazabilidad o apoyo a la decisión médica — esos enunciados deben leerse como **hipótesis derivadas de las entrevistas de la sección 2.2, no como resultados alcanzados**. Su verificación requiere que el producto opere en una unidad cardiovascular real y se contraste contra la práctica actual (cuaderno, hojas de cálculo y traspaso verbal), lo que corresponde a las Validation Interviews de la sección 5.3, previstas para entregas posteriores.
+
+Los objetivos de negocio formulados como métricas SMART en el Impact Mapping de la sección 3.2 (BG-01 a BG-05) son, por la misma razón, objetivos por alcanzar y no mediciones obtenidas. Las conclusiones del documento detallan cuáles de las siete hipótesis siguen sin validar y por qué.
 
 ---
 
@@ -1829,7 +1840,7 @@ Los criterios de aceptación se redactan en formato Gherkin, con la estructura G
 | **US-07** | Consultar los planes y el modelo de servicio | Como visitante con responsabilidad de decisión, quiero conocer los planes disponibles para estimar la viabilidad económica de la solución. | **Given** que el visitante accede a la sección de planes, **When** la revisa, **Then** el sistema muestra los planes disponibles con las funcionalidades incluidas en cada uno. <br><br> **Given** que el visitante selecciona un plan, **When** solicita más información, **Then** el sistema lo dirige al formulario de contacto con el plan preseleccionado. | EP-01 |
 | **US-08** | Consultar las preguntas frecuentes | Como visitante, quiero revisar las preguntas frecuentes para resolver dudas sobre el alcance y el uso de la solución. | **Given** que el visitante accede a la sección de preguntas frecuentes, **When** selecciona una pregunta, **Then** el sistema despliega su respuesta. <br><br> **Given** que una respuesta está desplegada, **When** el visitante selecciona otra pregunta, **Then** el sistema mantiene la navegación sin recargar la página. | EP-01 |
 | **US-09** | Conocer al equipo | Como visitante, quiero conocer al equipo detrás de ClinicalSync para identificar quiénes desarrollan la solución. | **Given** que el visitante accede a la sección del equipo, **When** la revisa, **Then** el sistema muestra a los integrantes con su rol dentro del proyecto. <br><br> **Given** que el visitante desea ampliar la información, **When** selecciona a un integrante, **Then** el sistema muestra su descripción profesional. | EP-01 |
-| **US-10** | Solicitar información o una demostración | Como visitante interesado, quiero enviar mis datos mediante un formulario para solicitar información o una demostración de la plataforma. | **Given** que el visitante completa los campos obligatorios, **When** envía el formulario, **Then** el sistema confirma la recepción de la solicitud. <br><br> **Given** que uno o más campos obligatorios están vacíos o mal formados, **When** el visitante intenta enviar, **Then** el sistema señala los campos a corregir y no envía la solicitud. | EP-01 |
+| **US-10** | Solicitar información o una demostración | Como visitante interesado, quiero enviar mis datos mediante un formulario para solicitar información o una demostración de la plataforma. | **Given** que el visitante completa los campos obligatorios, **When** envía el formulario, **Then** la interfaz muestra un mensaje de confirmación en pantalla. <br><br> **Given** que uno o más campos obligatorios están vacíos o mal formados, **When** el visitante intenta enviar, **Then** el sistema señala los campos a corregir y no procesa el envío. <br><br> *Alcance AV1: la validación y la confirmación ocurren en el cliente. La persistencia de la solicitud y su envío al equipo comercial dependen del servicio web correspondiente, aún no implementado, por lo que este incremento no acredita captación real de leads.* | EP-01 |
 | **US-11** | Cambiar el idioma del sitio | Como visitante, quiero alternar el idioma del sitio entre español e inglés para revisar la información en el idioma de mi preferencia. | **Given** que el visitante se encuentra en cualquier sección, **When** selecciona otro idioma, **Then** el sistema traduce el contenido manteniendo la sección actual. <br><br> **Given** que el visitante ya seleccionó un idioma, **When** vuelve a ingresar al sitio, **Then** el sistema conserva esa preferencia. | EP-01 |
 | **US-12** | Acceder desde dispositivos móviles | Como visitante, quiero acceder al sitio desde un dispositivo móvil para revisar la información desde cualquier lugar. | **Given** que el visitante ingresa desde una pantalla reducida, **When** la página carga, **Then** el sistema adapta la disposición del contenido sin desbordamiento horizontal. <br><br> **Given** que el visitante navega desde un dispositivo táctil, **When** utiliza los elementos interactivos, **Then** el sistema responde correctamente a la interacción táctil. | EP-01 |
 | **EP-02** | **Gestión de traspaso clínico SBAR** | Como personal clínico, quiero estructurar la información del cambio de turno para reducir omisiones y asegurar la continuidad de la atención. | — | — |
@@ -2419,7 +2430,9 @@ Los mock-ups que se presentan a continuación corresponden al diseño vigente de
 
 La Web Application de ClinicalSync fue diseñada para centralizar y apoyar los flujos clínicos relacionados con el registro, consulta y trazabilidad de la información en áreas cardiovasculares. La experiencia de usuario prioriza la claridad visual, la reducción de la carga operativa y el acceso ágil a las acciones principales, respondiendo a la necesidad del personal de enfermería y de los médicos especialistas de interactuar en entornos de alta presión donde el tiempo y la precisión son críticos.
 
-Los wireframes, wireflows, mock-ups y diagramas de flujo de usuario se organizan alrededor de los módulos principales de la plataforma, adaptados a los distintos roles: el dashboard clínico (Mis pacientes), el monitoreo de signos vitales, los traspasos de turno estructurados mediante la metodología SBAR, el registro de eventos clínicos, la bitácora y la elección de planes de suscripción. Estos artefactos permiten evidenciar la relación entre las User Stories, los flujos de interacción y la implementación final de la Web Application.
+Los wireframes, wireflows, mock-ups y diagramas de flujo de usuario se organizan alrededor de los módulos principales de la plataforma, adaptados a los distintos roles: el dashboard clínico (Mis pacientes), el monitoreo de signos vitales, los traspasos de turno estructurados mediante la metodología SBAR, el registro de eventos clínicos, la bitácora y la elección de planes de suscripción. Estos artefactos permiten evidenciar la relación entre las User Stories y los flujos de interacción previstos.
+
+> **Alcance de esta sección.** Todo el contenido de 4.4 es **diseño y prototipo de interfaz correspondiente a entregas posteriores**. Ninguna de estas pantallas está implementada: el incremento ejecutable de AV1 es únicamente la Landing Page de la sección 4.3, desplegada en producción. Los wireframes, wireflows, mock-ups y user flows aquí presentados definen la solución objetivo y serán contrastados con los usuarios y con la implementación real en los sprints siguientes.
 
 #### 4.4.1. Web Applications Wireframes
 <p align="center">
@@ -2858,32 +2871,38 @@ El repositorio principal del proyecto es el siguiente:
 - **Frontend Web App Repository**: [https://github.com/Digital-Clinical-Systems/FrontClinicalSync](https://github.com/Digital-Clinical-Systems/FrontClinicalSync)
 - **Backend (Web Services) Repository**: [https://github.com/Digital-Clinical-Systems/BackClinicalSync](https://github.com/Digital-Clinical-Systems/BackClinicalSync)
 
-### GitFlow Workflow implementado
+### GitFlow Workflow adoptado
 
-El equipo ha adoptado la metodología GitFlow como modelo de control de versiones, lo cual permite separar el desarrollo de nuevas funcionalidades, la integración de cambios y la preparación de versiones estables.
+El equipo adopta **GitFlow** como modelo de control de versiones del proyecto, con el fin de separar el desarrollo de nuevas funcionalidades, la integración de cambios y la preparación de versiones estables.
 
-Las ramas principales utilizadas son:
+Las ramas contempladas por el modelo son:
 
 - **main**: rama principal que contiene la versión estable del proyecto.
-- **develop**: rama de integración donde se consolidan todas las funcionalidades completadas antes de ser llevadas a producción.
-- **feature/**: ramas utilizadas para el desarrollo de funcionalidades específicas del sistema.
-- **release/** : Ramas utilizadas para preparar versiones finales para despliegue y corregir errores críticos en producción, respectivamente.
+- **develop**: rama de integración donde se consolidan las funcionalidades completadas antes de llevarlas a producción.
+- **feature/**: ramas para el desarrollo de funcionalidades específicas, creadas desde `develop` e integradas de vuelta a `develop`.
+- **release/**: ramas para preparar versiones finales de despliegue y corregir errores críticos detectados en producción.
 
-### Feature Branches utilizados en el proyecto
+### Aplicación real del workflow por repositorio
 
-El desarrollo de la Landing Page de ClinicalSync se ha organizado mediante ramas feature específicas por componente funcional:
+El grado de aplicación de GitFlow no fue uniforme en los dos repositorios de esta entrega. El equipo documenta a continuación el flujo efectivamente utilizado en cada uno, de modo que la descripción del proceso corresponda a la evidencia verificable en GitHub.
 
-- feature/hero → sección principal de presentación
-- feature/benefits → sección de beneficios del sistema
-- feature/call-to-action → botones y acciones de conversión
-- feature/characteristic → características del producto
-- feature/footer → pie de página del sistema
-- feature/how-it-works → explicación del funcionamiento de ClinicalSync
-- feature/pricing → sección de planes o precios
-- feature/team → sección de equipo desarrollador
+**Repositorio del informe (`Informe`).** Se aplicó el modelo de ramas de forma completa. Se trabajó con una rama `feature/report-chapter-N` por cada capítulo del informe, lo que permitió que los cinco integrantes avanzaran en paralelo sin conflictos sobre un mismo archivo. Las cinco ramas se integraron en `develop` mediante merges explícitos antes de la entrega. Las ramas y su historial son verificables en el repositorio:
 
-Esta organización permite un desarrollo modular, donde cada funcionalidad se implementa de forma independiente antes de integrarse a la rama develop.
+| Rama | Contenido |
+| :--- | :--- |
+| `main` | Versión estable del informe. |
+| `develop` | Integración de los cinco capítulos. |
+| `feature/report-chapter-1` | Capítulo I: startup, perfil de la solución y Lean UX. |
+| `feature/report-chapter-2` | Capítulo II: análisis competitivo, entrevistas y needfinding. |
+| `feature/report-chapter-3` | Capítulo III: User Stories, Impact Mapping y Product Backlog. |
+| `feature/report-chapter-4` | Capítulo IV: diseño de producto, DDD y base de datos. |
+| `feature/report-chapter-5` | Capítulo V: configuración, SCM, despliegue y evidencias del Sprint 1. |
 
+**Repositorio de la Landing Page (`Landing-Page`).** El desarrollo del incremento se realizó con un flujo *trunk-based*: los 18 commits del Sprint 1 se integraron directamente sobre `main`, sin ramas `feature/` ni Pull Requests. El equipo trabajó con commits pequeños e incrementales, uno por sección funcional del sitio (barra de navegación, hero, problema, pasos, características, beneficios, planes, preguntas frecuentes, equipo, contacto, pie de página, accesibilidad, SEO y animaciones), lo que conserva la trazabilidad de la evolución del incremento pero no constituye GitFlow.
+
+La razón fue operativa: la Landing Page se construyó en tres días (15 al 17 de septiembre de 2026) sobre un único conjunto de archivos estáticos, con secciones que compartían la misma hoja de estilos y el mismo diccionario de internacionalización, de modo que el trabajo por ramas habría generado conflictos sin aportar aislamiento real.
+
+**Compromiso para las siguientes entregas.** A partir de la aplicación web (repositorios `FrontClinicalSync` y `BackClinicalSync`), donde el trabajo sí se reparte entre módulos independientes y varios integrantes en paralelo, el equipo aplicará el modelo completo: una rama `feature/` por historia de usuario, integración a `develop` mediante Pull Request con revisión de al menos un integrante distinto del autor, y promoción a `main` únicamente desde `release/`. La evidencia de ese flujo (ramas, Pull Requests y merges) se incorporará en el Sprint Review correspondiente.
 
 ### Convención de ramas
 
@@ -2952,7 +2971,9 @@ Como regla principal, **todas las variables, funciones, clases, componentes y ar
 - Se organiza el CSS de forma modular por componentes o secciones.
 
 
-### AngularJS (Frontend Web Application)
+### Angular (Frontend Web Application)
+
+La aplicación web se desarrollará con **Angular** en su versión moderna (componentes *standalone*, *signals* e `inject()`), no con AngularJS 1.x, que se encuentra sin soporte desde 2022. Las convenciones de esta sección corresponden a esa versión.
 
 **Guías adoptadas:** *Angular Coding Style Guide* y *Google TypeScript Style Guide*.
 
@@ -3230,7 +3251,7 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
 <table>
   <tr> <th colspan="5">Sprint #</th> <th colspan="8">Sprint 1</th> </tr> 
   <tr> <td colspan="13">Sprint Planning Background</td> </tr> 
-  <tr> <td colspan="5">Date</td> <td colspan="8">15-04-2026</td> </tr> 
+  <tr> <td colspan="5">Date</td> <td colspan="8">14-09-2026</td> </tr> 
   <tr> <td colspan="5">Time</td> <td colspan="8">09:30 AM</td> </tr> 
   <tr> <td colspan="5">Location</td> <td colspan="8">Reunión remota (Discord)</td> </tr> 
   <tr> <td colspan="5">Prepared By</td> <td colspan="8">Sosa Soto, Oskar Rodrigo</td> </tr> 
@@ -3239,8 +3260,9 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
   <tr> <td colspan="5">Sprint n-1 Retrospective Summary</td> <td colspan="8">No aplica - Este es el primer Sprint del proyecto</td> </tr> 
   <tr> <td colspan="13">Sprint Goal & User Stories</td> </tr> 
   <tr> <td colspan="5">Sprint 1 Goal</td> <td colspan="8"> <strong>"Our focus is on delivering a fully functional and user-friendly Landing Page for ClinicalSync, accompanied by complete and well-structured documentation. We believe this will provide an engaging first impression and clearly communicate the value proposition of our solution for enhancing clinical processes in cardiovascular nursing. This will be validated when the Landing Page is successfully deployed and accessible online, with all core sections working correctly, and all corresponding documentation completed."</strong> </td> </tr> 
-  <tr> <td colspan="5">Sprint 1 Velocity</td> <td colspan="8">28 Story Points</td> </tr> 
-  <tr> <td colspan="5">Sum of Story Points</td> <td colspan="8">28 Story Points</td> </tr> 
+  <tr> <td colspan="5">Story Points comprometidos (Committed SP)</td> <td colspan="8">28 Story Points</td> </tr> 
+  <tr> <td colspan="5">Story Points completados (Completed SP)</td> <td colspan="8">28 Story Points</td> </tr> 
+  <tr> <td colspan="5">Velocity</td> <td colspan="8">No aplica. Al ser el primer Sprint del proyecto no existe velocity histórica: los 28 SP corresponden a la capacidad comprometida en el planning, no a un promedio de sprints anteriores. La velocity se calculará a partir del Sprint 2, sobre los puntos efectivamente completados en sprints cerrados.</td> </tr> 
 </table>
 
 
@@ -3669,7 +3691,7 @@ Las siguientes capturas corresponden al sitio publicado en `https://clinicalsync
   <img src="assets/chapter-5/sprint-1/contact-section.png" alt="Sección de contacto" width="900">
 </p>
 
-*Cierra el recorrido con el formulario de solicitud de demostración, que valida los campos obligatorios y el formato del correo antes de permitir el envío, y confirma la recepción en pantalla. Corresponde a la historia US-10.*
+*Cierra el recorrido con el formulario de solicitud de demostración, que valida los campos obligatorios y el formato del correo antes de permitir el envío y muestra una confirmación en pantalla. Esta confirmación es de interfaz: en el alcance de AV1 la solicitud no se persiste ni se envía a un servicio de destino, porque los servicios web del producto no forman parte de este incremento. Corresponde a la historia US-10.*
 
 ##### 5.2.1.6. Services Documentation Evidence for Sprint Review
 
