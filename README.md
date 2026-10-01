@@ -3734,6 +3734,62 @@ Las siguientes capturas corresponden al sitio publicado en `https://clinicalsync
 
 *Cierra el recorrido con el formulario de solicitud de demostración, que valida los campos obligatorios y el formato del correo antes de permitir el envío y muestra una confirmación en pantalla. Esta confirmación es de interfaz: en el alcance de AV1 la solicitud no se persiste ni se envía a un servicio de destino, porque los servicios web del producto no forman parte de este incremento. Corresponde a la historia US-10.*
 
+**Verificación de diseño adaptable y accesibilidad**
+
+Las afirmaciones de responsive y accesibilidad de esta sección no se sostienen en la apreciación visual del equipo, sino en comprobaciones ejecutadas sobre la Landing Page **publicada en producción** (`https://clinicalsync-landing.vercel.app/`) y sobre el código fuente del repositorio `Landing-Page`. Se detallan a continuación los criterios aplicados y su resultado, de modo que cualquier revisor pueda repetir la comprobación.
+
+**1. Puntos de quiebre probados.** La hoja de estilos declara tres puntos de quiebre (`768px`, `1024px` y `1100px`) más un ajuste para pantallas muy angostas (`máx. 399px`). Se cargó la página desplegada en seis anchos de ventana y se midió el ancho de desplazamiento del documento frente al ancho visible:
+
+| Ancho de ventana | `scrollWidth` | `clientWidth` | Desplazamiento horizontal | Elementos que desbordan |
+| ---: | ---: | ---: | :---: | :---: |
+| 320 px | 320 | 320 | No | 0 |
+| 360 px | 360 | 360 | No | 0 |
+| 390 px | 390 | 390 | No | 0 |
+| 768 px | 768 | 768 | No | 0 |
+| 1024 px | 1024 | 1024 | No | 0 |
+| 1440 px | 1440 | 1440 | No | 0 |
+
+**2. Contraste de color.** Las combinaciones definidas en `css/variables.css` se evaluaron con la fórmula de luminancia relativa de la WCAG 2.1. El umbral exigido para texto normal es 4.5:1 (nivel AA) y 7:1 (nivel AAA):
+
+| Combinación | Valores | Razón | Nivel |
+| :--- | :--- | ---: | :--- |
+| Texto principal sobre fondo | `#172554` sobre `#ffffff` | 14.69:1 | AAA |
+| Texto principal sobre superficie | `#172554` sobre `#f8fafc` | 14.04:1 | AAA |
+| Texto secundario sobre fondo | `#64748b` sobre `#ffffff` | 4.76:1 | AA |
+| Texto del botón primario | `#ffffff` sobre `#047857` | 5.48:1 | AA |
+| Texto claro sobre el pie navy | `#a9b4c7` sobre `#172554` | 7.03:1 | AAA |
+| Anillo de foco sobre fondo | `#047857` sobre `#ffffff` | 5.48:1 | AA |
+
+El verde corporativo puro (`#10b981`) alcanza únicamente 2.54:1 sobre blanco y **no se emplea para texto ni para bordes informativos**; para esos usos la hoja de estilos define la variante `--color-emerald-dark` (`#047857`), que es la evaluada en la tabla. Esta decisión está documentada como comentario en el propio archivo de variables.
+
+**3. Navegación por teclado.** Se recorrió la página desplegada pulsando «Tab» desde el inicio del documento hasta completar el ciclo:
+
+| Criterio | Resultado |
+| :--- | :--- |
+| Elementos alcanzables por teclado | 39 |
+| Primer elemento del orden de tabulación | Enlace «Saltar al contenido principal» |
+| Elementos sin indicador de foco visible | 0 |
+| Trampas de foco | Ninguna: el recorrido completa el ciclo y devuelve el foco al navegador |
+
+El indicador de foco se define con `:focus-visible` en `css/base.css` y `css/components.css`, de modo que el anillo aparece en la navegación por teclado y no en el clic con ratón.
+
+**4. Etiquetas, texto alternativo y semántica.**
+
+| Criterio | Resultado |
+| :--- | :--- |
+| Controles de formulario | 5 campos, los 5 con `<label for>` asociado |
+| Mensajes de error | 5 contenedores con `role="alert"` y `aria-describedby` que los vincula a su campo |
+| Confirmación de envío | 1 contenedor con `role="status"` |
+| Imágenes | 5 imágenes, las 5 con `alt` descriptivo, traducido mediante `data-i18n-attr` al cambiar de idioma |
+| Iconografía decorativa | 7 elementos marcados con `aria-hidden="true"` para que no se anuncien |
+| Controles sin texto visible | 7 con `aria-label`; el menú móvil declara `aria-expanded` y `aria-controls`, y los conmutadores de idioma y de planes, `aria-pressed` |
+| Regiones de referencia | `<header>`, `<nav>`, `<main>`, `<footer>` y 9 `<section>` |
+| Jerarquía de encabezados | Un único `<h1>`, 10 `<h2>` y 24 `<h3>`, sin saltos de nivel |
+| Idioma del documento | `<html lang="es">`, actualizado al conmutar a inglés |
+| Movimiento reducido | Las animaciones se desactivan bajo `@media (prefers-reduced-motion: reduce)` |
+
+**Limitación declarada.** Estas comprobaciones son automáticas y estáticas: acreditan que la página cumple los criterios técnicos verificables, pero no sustituyen una prueba con usuarios ni con lectores de pantalla reales. La validación con personas corresponde a las entrevistas de validación de la sección 5.3.
+
 ##### 5.2.1.6. Services Documentation Evidence for Sprint Review
 
 En esta sección se presenta la documentación relacionada con los servicios que serán ofrecidos a través de la plataforma web de ClinicalSync. 
