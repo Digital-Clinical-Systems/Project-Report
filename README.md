@@ -124,13 +124,14 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
       - [Segmento objetivo 1: Personal de enfermería cardiovascular](#segmento-objetivo-1-personal-de-enfermería-cardiovascular-1)
         - [Entrevista 1 — Samuel Akerman](#entrevista-1--samuel-akerman)
-        - [Entrevista 2](#entrevista-2)
-        - [Entrevista 3](#entrevista-3)
+        - [Entrevista 2 — Bruno Elescano](#entrevista-2--bruno-elescano)
+        - [Entrevista 3 — Nathalia Dávila](#entrevista-3--nathalia-dávila)
       - [Segmento objetivo 2: Médicos especialistas cardiovasculares](#segmento-objetivo-2-médicos-especialistas-cardiovasculares-1)
-        - [Entrevista 1](#entrevista-1)
-        - [Entrevista 2](#entrevista-2-1)
+        - [Entrevista 1 — Mark Alex Esquivel Cabrera](#entrevista-1--mark-alex-esquivel-cabrera)
+        - [Entrevista 2 — Brenda Estefanía Ríos Caballero](#entrevista-2--brenda-estefanía-ríos-caballero)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
       - [Resumen de entrevistas analizadas](#resumen-de-entrevistas-analizadas)
+      - [Matriz de evidencia de hallazgos](#matriz-de-evidencia-de-hallazgos)
       - [Segmento objetivo 1: Personal de enfermería cardiovascular](#segmento-objetivo-1-personal-de-enfermería-cardiovascular-2)
         - [Análisis de características objetivas](#análisis-de-características-objetivas)
         - [Análisis de características subjetivas](#análisis-de-características-subjetivas)
@@ -570,11 +571,17 @@ El diseño y la validación del producto se centran en dos perfiles de usuarios 
 
 **Business Outcomes**
 
-- Eficiencia operativa: Reducción significativa del tiempo invertido por el personal médico en la captura y recuperación de los datos cardiovasculares.
-- Reducción de redundancia: Disminución drástica de la duplicidad de tareas al eliminar la necesidad de trasladar apuntes físicos a sistemas digitales.
-- Adopción del sistema: Alta tasa de uso activo de ClinicalSync como herramienta complementaria principal en la rutina diaria de las unidades de cardiología.
-- Auditoría y control médico: Incremento en la precisión de la trazabilidad clínica, asegurando un historial auditable de las acciones, los responsables y los horarios exactos.
-- Conversión comercial (Leads): Aumento medible en la tasa de conversión a través de la Landing Page, reflejado en el número de instituciones de salud que solicitan demostraciones del producto.
+Cada Business Outcome se expresa con la métrica, el punto de partida, la fórmula de cálculo, la fuente del dato y el plazo con que se comprobará. Estos cinco outcomes son la misma declaración que los Business Goals BG-01 a BG-05 del Impact Mapping (sección 3.2): el Lean UX Canvas y el Impact Mapping comparten una única fuente de verdad, de modo que un cambio de meta se refleja en ambos.
+
+| # | Business Outcome | Métrica | Línea base | Fórmula | Fuente del dato | Meta y horizonte | BG |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | **Conversión comercial.** La landing page genera solicitudes de demostración de instituciones de salud. | Solicitudes de demostración recibidas | 0 (la página se publicó el 17-09-2026 y aún no registra solicitudes) | Conteo de formularios completos y válidos | Registro del formulario de contacto una vez conectado al servicio web | **50 solicitudes** en **4 meses** desde la publicación | **BG-01** |
+| 2 | **Estandarización del traspaso.** Las áreas clínicas validan el traspaso SBAR digital frente a su práctica verbal actual. | Áreas clínicas que completan una sesión de validación | 0 áreas validadas | Conteo de áreas con al menos una sesión de prueba concluida | Acta de cada sesión de validación | **3 áreas** en **6 meses** | **BG-02** |
+| 3 | **Eficiencia en la consulta clínica.** El profesional reúne en menos tiempo la información necesaria para evaluar a un paciente. | Minutos por paciente hasta tener la información completa | **10 a 15 minutos**, según lo declarado por el médico especialista en la Entrevista 1 (sección 2.2.2) | (tiempo base − tiempo con la plataforma) / tiempo base | Cronometraje en escenarios simulados con las mismas tareas | **−30%** en **6 meses** | **BG-03** |
+| 4 | **Adopción sin papel.** El personal registra en la plataforma en lugar de anotar en papel y transcribir al cierre del turno. | Proporción del personal piloto que no recurre al papel | 0% (hoy el registro en papel es la práctica declarada en las cinco entrevistas) | personal sin registro en papel / personal participante en el piloto | Observación del turno y registros del sistema | **80%** del personal durante **3 meses** | **BG-04** |
+| 5 | **Trazabilidad completa.** Cada acción clínica queda registrada con responsable y marca temporal sin esfuerzo adicional. | Proporción de acciones con responsable, fecha, hora y tipo completos | No medible hoy: el registro en papel no permite reconstruir el responsable de cada anotación | acciones completas / acciones totales registradas | Bitácora de auditoría del sistema | **95%** en **6 meses** | **BG-05** |
+
+> Las cinco metas son **objetivos por alcanzar, no mediciones obtenidas**. Ninguna puede evaluarse mientras la aplicación web no opere en una unidad cardiovascular real, según lo indicado en la nota de alcance de esta entrega.
 
 **User Outcomes**
 
@@ -707,7 +714,7 @@ Estas pruebas se llevan a cabo mediante iteraciones ágiles, utilizando los desc
 | Sección | Descripción |
 | :--- | :--- |
 | **1. Business Problem** | En los departamentos de cardiología, los expedientes médicos suelen estar fragmentados en documentos de papel, plataformas internas, archivos sueltos y conversaciones informales. Esta situación provoca vacíos de información, redundancia en las tareas, falta de auditoría y demoras en el servicio. ClinicalSync tiene como propósito optimizar el seguimiento asistencial a través de un sistema web que consolide los datos médicos clave y organice los flujos de trabajo más sensibles. |
-| **2. Business Outcomes** | Minimizar la fricción administrativa, evitar el doble ingreso de datos médicos, asegurar el seguimiento cronológico de acciones e impulsar la integración de esta plataforma de apoyo dentro de las instituciones. |
+| **2. Business Outcomes** | Los cinco outcomes medibles son los declarados en la sección 1.2.2 y equivalen a los Business Goals BG-01 a BG-05 del Impact Mapping (sección 3.2): 50 solicitudes de demostración en 4 meses (BG-01); 3 áreas clínicas que validan el traspaso SBAR en 6 meses (BG-02); 30% menos de tiempo para reunir la información de un paciente en 6 meses (BG-03); 80% del personal piloto registrando sin papel durante 3 meses (BG-04); y 95% de acciones con responsable y marca temporal completos en 6 meses (BG-05). |
 | **3. Users and Customers** | Operadores principales: enfermeros de áreas cardíacas y médicos cardiólogos. Compradores organizacionales: redes hospitalarias, centros médicos privados e institutos especializados en salud cardiovascular. |
 | **4. User Outcomes** | Ingresar constantes fisiológicas, asentar los cambios de guardia bajo el formato SBAR, revisar el progreso del paciente, detectar cuadros críticos, auditar historiales detallados y erradicar el uso de notas manuales o reportes informales. |
 | **5. User Benefits** | Reducción del estrés burocrático, seguimiento asistencial ininterrumpido, disminución de errores por descuido, reportes de guardia estructurados y absoluta certeza sobre los datos consultados. |
@@ -1008,7 +1015,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
 </table>
 
-###### Entrevista 2
+###### Entrevista 2 — Bruno Elescano
 
 <table border="1">
   <tr>
@@ -1039,7 +1046,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
 </table>
 
-###### Entrevista 3
+###### Entrevista 3 — Nathalia Dávila
 
 <table border="1">
   <tr>
@@ -1072,7 +1079,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
 
 ##### Segmento objetivo 2: Médicos especialistas cardiovasculares
 
-###### Entrevista 1
+###### Entrevista 1 — Mark Alex Esquivel Cabrera
 
 <table border="1">
   <tr>
@@ -1103,7 +1110,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
 </table>
 
-###### Entrevista 2
+###### Entrevista 2 — Brenda Estefanía Ríos Caballero
 
 <table border="1">
   <tr>
@@ -1150,6 +1157,36 @@ Los porcentajes se calculan sobre el total de entrevistas efectivamente registra
 | **Total** | — | **5** |
 
 > El segmento de médicos especialistas cuenta a la fecha con dos de las tres entrevistas previstas. Los porcentajes de ese segmento se calculan sobre las dos registradas y deberán recalcularse al incorporar la tercera.
+
+##### Matriz de evidencia de hallazgos
+
+La matriz siguiente hace auditable el paso de la investigación a la necesidad. Cada hallazgo indica quién lo mencionó, en cuántas de las cinco entrevistas aparece, con qué severidad y con qué evidencia concreta del testimonio, de modo que la síntesis de esta sección pueda verificarse contra los registros de la sección 2.2.2 y no dependa de la interpretación narrativa del equipo.
+
+**Codificación de entrevistados.** `E1` Samuel Akerman, `E2` Bruno Elescano y `E3` Nathalia Dávila corresponden al segmento de personal de enfermería cardiovascular; `M1` Mark Alex Esquivel Cabrera y `M2` Brenda Estefanía Ríos Caballero, al segmento de médicos especialistas.
+
+**Escala de severidad.** La severidad no expresa la molestia declarada sino la consecuencia clínica del hallazgo, según lo que el propio entrevistado relató:
+
+| Nivel | Criterio |
+| :--- | :--- |
+| **Crítica** | El entrevistado relató un evento concreto con consecuencia sobre el paciente, o una exposición de responsabilidad legal. |
+| **Alta** | Genera riesgo de daño o fuerza decisiones con información incompleta, sin que se haya relatado un evento consumado. |
+| **Media** | Impacta la carga operativa, el tiempo o la adopción, sin riesgo clínico directo. |
+
+| ID | Hallazgo | Mencionado por | Frecuencia | Severidad | Evidencia en el testimonio | Deriva en |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| **H-A** | Se registra en papel durante la atención y se transcribe al sistema al cierre del turno. | E1, E2, E3, M1 | 4/5 | Alta | E1 mantiene un kardex manual junto a la cama porque la única computadora está fija en la estación y no puede dejar solo a un paciente crítico; del papel dijo que *«no se cuelga ni me pide contraseña»*. M1 anota en hojas y luego traslada a una hoja de cálculo. | BG-04 · US-17, US-18 |
+| **H-B** | Se omite información crítica en el cambio de turno, con consecuencia sobre el paciente. | E1, E2, E3 | 3/5 | **Crítica** | E1 relató un cambio de dosis de nitroglicerina no anotado: el turno entrante mantuvo la dosis anterior durante dos horas. E3 relató la omisión de comunicar que una paciente cardíaca interrumpió voluntariamente su tratamiento. E2 reportó omisiones por pases de guardia interrumpidos por urgencias. | BG-02 · US-13, US-14, US-15, US-16 |
+| **H-C** | El relevo depende de comunicación verbal sin estructura obligatoria. | E1, E2, E3, M2 | 4/5 | Alta | E1 atribuyó el error de dosis a haber confiado en la transmisión verbal durante un relevo apresurado. M2 depende casi exclusivamente del reporte verbal para enterarse de eventos del turno anterior, porque no alcanza a leer las notas de evolución. | BG-02 · US-13, US-16 |
+| **H-D** | No se puede identificar con certeza quién registró cada acción y cuándo. | E1, E3, M1, M2 | 4/5 | **Crítica** | E1 señaló firmas ilegibles o sin sello en el papel y, en el sistema, registros atribuidos a otro usuario cuando alguien deja la sesión abierta, lo que calificó como problema de responsabilidad legal. M2 pierde tiempo buscando quién anotó qué y a qué hora se ejecutó una orden. | BG-05 · US-30, US-31, TS-01, TS-06 |
+| **H-E** | La información del paciente está dispersa en varias fuentes y consolidarla consume tiempo clínico. | E3, M1, M2 | 3/5 | Alta | M2 consulta entre tres y cuatro fuentes distintas y tarda **entre 10 y 15 minutos por paciente**; esta cifra es la línea base de BG-03. E3 describe la información vital dispersa en diferentes medios. | BG-03 · US-26, US-27 |
+| **H-F** | El sistema institucional es lento, poco intuitivo y exige demasiados pasos para tareas simples. | E1, E2, E3, M2 | 4/5 | Media | E1 necesita abrir tres pestañas para registrar una presión arterial o una saturación, y el sistema le pide campos que no aplican a una UCI cardiovascular. E2 reportó lentitud y bloqueos frecuentes. M2 criticó sistemas pesados, no integrados y con solicitud constante de contraseña. | BG-03, BG-04 · US-17, US-19 |
+| **H-G** | La adopción está condicionada al acceso desde un dispositivo portátil junto a la cama. | E1, E2, E3, M2 | 4/5 | Alta | E1 exige acceso desde la cabecera, idealmente en tablet, y guardar con un par de toques. E3 plantea tablets llevadas directamente a la cama. M2 requiere acceso desde tablet o celular mientras pasa visita. | BG-04 · US-11, US-17 |
+| **H-H** | La herramienta solo se adoptará si resta trabajo: sin doble digitación ni formularios extensos. | E1, E3, M1, M2 | 4/5 | Alta | M2 fue explícita en que solo adoptaría una herramienta que le ahorre trabajo real y extraiga la información de otros sistemas. M1 advirtió que una herramienta compleja generaría rechazo en profesionales con menor familiaridad tecnológica. | BG-04 · US-17, TS-07 |
+| **H-I** | Se toman decisiones clínicas con información incompleta. | M2 | 1/5 | **Crítica** | M2 relató que, ante pacientes con dolor de pecho, la falla del sistema para cargar electrocardiogramas antiguos la obliga a asumir el peor escenario e iniciar tratamiento sin poder comparar la evolución, sobre todo en guardias de madrugada. | BG-03 · US-26, US-28 |
+| **H-J** | Las indicaciones médicas se dejan en el sistema sin confirmación de cumplimiento. | M2 | 1/5 | Alta | M2 describió la comunicación con enfermería como *«desconectada»*: deja indicaciones sin recibir retorno y a veces debe ir físicamente a preguntar. | BG-03 · US-22, US-23, US-24, US-25 |
+
+**Lectura de la matriz.** Los dos hallazgos de severidad crítica con mayor frecuencia — la omisión de información en el relevo (H-B) y la imposibilidad de atribuir cada acción a un responsable (H-D) — son los que el producto atiende primero, y explican por qué el traspaso SBAR y el registro automático de trazabilidad encabezan el Product Backlog de la sección 3.3. H-I y H-J son críticos pero aparecen en una sola entrevista: provienen del segmento médico, que a la fecha cuenta con dos de las tres entrevistas previstas, por lo que su frecuencia debe recalcularse al incorporar la tercera antes de usarla como criterio de priorización.
+
 
 ##### Segmento objetivo 1: Personal de enfermería cardiovascular
 
