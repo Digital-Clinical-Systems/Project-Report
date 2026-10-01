@@ -241,6 +241,8 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
     - [4.6.2. Software Architecture Context Diagram](#462-software-architecture-context-diagram)
     - [4.6.3. Software Architecture Container Diagrams](#463-software-architecture-container-diagrams)
     - [4.6.4. Software Architecture Components Diagrams](#464-software-architecture-components-diagrams)
+  - [4.6.5. Bounded Context Canvases](#465-bounded-context-canvases)
+  - [4.6.6. Integración entre Bounded Contexts](#466-integración-entre-bounded-contexts)
   - [4.7. Software Object-Oriented Design](#47-software-object-oriented-design)
     - [4.7.1. Class Diagrams](#471-class-diagrams)
   - [4.8. Database Design](#48-database-design)
@@ -2801,6 +2803,147 @@ Aquí mostramos cómo está estructurado el Backend API por dentro. Separamos la
 
 *Muestra las interacciones internas (mediante interfaces de Java y Domain Events) entre los componentes del sistema.*
 
+#### 4.6.5. Bounded Context Canvases
+
+El paso 2 de la sección anterior identificó siete Bounded Contexts y sus eventos. Esta sección los documenta con el detalle necesario para implementarlos: para cada contexto se declara su Aggregate Root, las entidades que viven dentro de él, sus Value Objects, las **invariantes** que el agregado protege, los repositorios que lo exponen, los eventos que **publica y consume**, y las tablas sobre las que ejerce **ownership** exclusivo.
+
+**Criterio de ownership.** Cada tabla del esquema de la sección 4.8 pertenece a un único contexto: solo ese contexto la escribe. Un contexto que necesita datos de otro los obtiene por el evento que el dueño publica o por una consulta explícita a su repositorio, nunca escribiendo directamente sobre tablas ajenas. ClinicalSync se construye como un monolito modular sobre un único esquema MySQL, de modo que esta separación es **lógica y no física**: se sostiene en la frontera de los repositorios y no en permisos de base de datos. El equipo lo declara explícitamente porque es la diferencia entre un Bounded Context real y un paquete con nombre de contexto.
+
+**Criterio transaccional.** Una transacción modifica un solo agregado. Los efectos que cruzan contextos se resuelven por evento de dominio y son **eventualmente consistentes**: cuando un signo vital fuera de umbral genera una alerta, el registro del signo vital y la creación de la alerta ocurren en transacciones distintas, y el sistema tolera el intervalo entre ambas.
+
+---
+
+**BC-01 · Security & Shared Kernel (IAM)** — *Subdominio genérico*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `User` |
+| **Entidades internas** | `Role`, `Session` |
+| **Value Objects** | `UserId`, `EmailAddress`, `CredentialHash`, `ShiftAssignment` (unidad y rango horario) |
+| **Invariantes** | Un `User` tiene al menos un `Role` asignado. · Un usuario sin `ShiftAssignment` vigente no puede operar sobre pacientes. · Una `Session` no puede renovarse después de expirada. |
+| **Repositorios** | `UserRepository`, `SessionRepository` |
+| **Publica** | `UsuarioAutenticado`, `RolAsignado`, `SesionIniciada`, `SesionFinalizada` |
+| **Consume** | — |
+| **Ownership** | `users`, `roles`, `user_roles`, `sessions` |
+
+**BC-02 · Patients** — *Subdominio de soporte*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `Patient` |
+| **Entidades internas** | `Admission` |
+| **Value Objects** | `PatientId`, `MedicalRecordNumber`, `BedLocation` (unidad y cama), `DemographicData` |
+| **Invariantes** | Un paciente no puede tener dos `Admission` activas simultáneas. · Un paciente admitido tiene siempre una `BedLocation` asignada. · El `MedicalRecordNumber` es único y no se modifica tras la admisión. |
+| **Repositorios** | `PatientRepository` |
+| **Publica** | `PacienteAdmitido`, `DatosDemograficosRegistrados`, `EstadoActualizado`, `PacienteDadoDeAlta` |
+| **Consume** | `UsuarioAutenticado` (para resolver el responsable de la admisión) |
+| **Ownership** | `patients`, `admissions` |
+
+**BC-03 · Vital Signs** — *Core Domain*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `VitalSignRecord` |
+| **Entidades internas** | — (el registro es la unidad de consistencia) |
+| **Value Objects** | `BloodPressure` (sistólica y diastólica), `HeartRate`, `OxygenSaturation`, `Temperature`, `RiskLevel` *(enum)*, `MeasurementTimestamp` |
+| **Invariantes** | En `BloodPressure`, la sistólica es mayor que la diastólica y ambas caen dentro del rango fisiológico admitido. · Todo registro referencia un `PatientId` existente y un `UserId` responsable. · El `RiskLevel` **se deriva** de los valores medidos y nunca se asigna manualmente. · Un registro es **inmutable** una vez creado: una corrección se expresa como un registro nuevo que referencia al anterior, nunca como una modificación. |
+| **Repositorios** | `VitalSignRecordRepository` |
+| **Publica** | `SignosVitalesRegistrados`, `NivelDeRiesgoClinicoEvaluado` |
+| **Consume** | `PacienteAdmitido`, `PacienteDadoDeAlta` (para habilitar o cerrar el registro sobre ese paciente) |
+| **Ownership** | `vital_sign_records` |
+
+**BC-04 · Critical Events & Alerts** — *Core Domain*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `Alert` |
+| **Entidades internas** | `AlertAcknowledgement` |
+| **Value Objects** | `AlertId`, `AlertSeverity` *(enum)*, `TriggerSource` (medición o evento que la originó), `AlertStatus` *(enum)* |
+| **Invariantes** | Toda alerta referencia el `TriggerSource` que la originó; no existen alertas sin origen. · Una alerta no puede pasar a *resuelta* sin haber pasado antes por *atendida*. · El paso a *atendida* exige el `UserId` de quien la atiende. · Una alerta resuelta no vuelve a estados anteriores. |
+| **Repositorios** | `AlertRepository` |
+| **Publica** | `AlertaCriticaGenerada`, `AlertaAtendida`, `AlertaResuelta` |
+| **Consume** | `NivelDeRiesgoClinicoEvaluado`, `EventoClinicoRelevanteDetectado` |
+| **Ownership** | `alerts`, `alert_acknowledgements` |
+
+**BC-05 · Handover (SBAR)** — *Core Domain de trazabilidad clínica*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `Handover` |
+| **Entidades internas** | `SbarSection` (las cuatro secciones del modelo) |
+| **Value Objects** | `HandoverId`, `SbarContent` (*Situation*, *Background*, *Assessment*, *Recommendation*), `HandoverStatus` *(enum)*, `ShiftPeriod` |
+| **Invariantes** | Un traspaso no puede emitirse con alguna de las cuatro secciones SBAR vacía. · El `incomingNurseId` debe ser distinto del `outgoingNurseId`: nadie se entrega el turno a sí mismo. · El acuse de recibo lo registra únicamente el enfermero entrante y **una sola vez**. · Un turno no puede cerrarse con traspasos emitidos y sin acusar. |
+| **Repositorios** | `HandoverRepository` |
+| **Publica** | `EntregaSbarRegistrada`, `AcuseDeReciboConfirmado`, `TurnoFinalizado` |
+| **Consume** | `PacienteAdmitido`, `SignosVitalesRegistrados`, `AlertaCriticaGenerada` (para componer la sección *Situation* del resumen) |
+| **Ownership** | `handovers`, `handover_sections` |
+
+**BC-06 · Audit Logs** — *Subdominio de soporte*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `AuditLog` *(clase inmutable)* |
+| **Entidades internas** | — |
+| **Value Objects** | `ActorId`, `ActionType` *(enum)*, `AffectedResource`, `OccurredAt`, `MetadataPayload` (JSON) |
+| **Invariantes** | La tabla es **append-only**: no admite modificación ni borrado de entradas. · Toda entrada tiene actor, marca temporal, tipo de acción y recurso afectado; ninguno puede ser nulo. · El registro lo genera el sistema al consumir un evento, nunca el usuario. |
+| **Repositorios** | `AuditLogRepository` *(solo lectura y alta)* |
+| **Publica** | `LogDeAuditoriaCreado` |
+| **Consume** | **Todos los eventos de dominio de los demás contextos** |
+| **Ownership** | `audit_logs` |
+
+**BC-07 · Physicians & Treatments** — *Subdominio de soporte*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `MedicalOrder` |
+| **Entidades internas** | `Physician`, `TreatmentHistoryEntry` |
+| **Value Objects** | `OrderId`, `PhysicianId`, `Dosage`, `OrderStatus` *(enum)*, `PrescribedAt`, `ExecutedAt` |
+| **Invariantes** | Toda indicación tiene un `PhysicianId` prescriptor y un `PatientId` destinatario. · Una indicación no puede marcarse como ejecutada sin el `UserId` de la enfermera que la ejecutó. · `ExecutedAt` nunca es anterior a `PrescribedAt`. · Una indicación ejecutada no admite cambio de dosis: se cancela y se emite una nueva. |
+| **Repositorios** | `MedicalOrderRepository`, `PhysicianRepository` |
+| **Publica** | `NuevaIndicacionMedicaRegistrada`, `IndicacionEjecutadaPorEnfermeria`, `CumplimientoDeIndicacionRegistrado` |
+| **Consume** | `PacienteAdmitido`, `UsuarioAutenticado` |
+| **Ownership** | `physicians`, `patient_treatments`, `medical_orders` |
+
+---
+
+**Por qué Vital Signs es el Core Domain.** La decisión no responde al volumen de datos sino a la evidencia de las entrevistas. La matriz de la sección 2.2.3 muestra que el hallazgo H-A — se registra en papel durante la atención y se transcribe al cierre del turno — aparece en 4 de 5 entrevistas, y que la condición de adopción declarada por los cinco entrevistados es que el registro junto a la cama sea más rápido que el cuaderno. Si ese registro no gana frente al papel, el resto del sistema queda sin datos: el Impact Mapping de la sección 3.2 muestra que el personal de enfermería produce la información que el médico especialista consume, de modo que Handover, Alerts y la vista consolidada del médico dependen de que exista captura. Es decir, **Vital Signs es el contexto donde el producto gana o pierde**, y por eso concentra el esfuerzo de diseño.
+
+Handover (BC-05) se clasifica también como Core Domain por una razón distinta: es el contexto que atiende el único hallazgo con severidad crítica y evento consumado (H-B, 3 de 5 entrevistas), y es el diferenciador frente a los competidores analizados en la sección 2.1.1, ninguno de los cuales ofrece un traspaso SBAR estructurado y acusado para unidades cardiovasculares.
+
+Los demás contextos son de soporte o genéricos: IAM (BC-01) resuelve un problema ya resuelto por la industria; Patients (BC-02) actúa como directorio maestro; Audit (BC-06) es transversal y no diferencia al producto por sí mismo, aunque sostiene el objetivo BG-05; y Physicians & Treatments (BC-07) soporta el ciclo de indicación y cumplimiento que el médico especialista reclamó en el hallazgo H-J.
+
+#### 4.6.6. Integración entre Bounded Contexts
+
+Documentar siete contextos no basta para afirmar que existen: un contexto que llama directamente a las clases de otro es un módulo con nombre de contexto. Esta sección declara **cómo se comunican** y qué relación de dependencia mantienen, usando los patrones de integración de DDD.
+
+**Mapa de contextos**
+
+| Origen | Destino | Patrón | Contrato | Por qué |
+| :--- | :--- | :--- | :--- | :--- |
+| BC-01 IAM | Todos | *Shared Kernel* | `UserId`, `Role` y `ShiftAssignment` como tipos compartidos | La identidad y el turno asignado son vocabulario común a todo el sistema; duplicarlos produciría reglas de acceso divergentes. |
+| BC-02 Patients | BC-03, BC-05, BC-07 | *Customer–Supplier* | Evento `PacienteAdmitido` / `PacienteDadoDeAlta`, con `PatientId` y `BedLocation` | Patients es el directorio maestro. Los demás contextos reaccionan a la admisión; ninguno crea pacientes. |
+| BC-03 Vital Signs | BC-04 Alerts | *Published Language* (evento de dominio) | `NivelDeRiesgoClinicoEvaluado { patientId, recordId, riskLevel, measuredAt }` | Vital Signs **no conoce** el concepto de alerta. Publica la evaluación de riesgo; si debe generarse una alerta es una decisión de BC-04. |
+| BC-03 Vital Signs | BC-05 Handover | *Open Host Service* (consulta de solo lectura) | `VitalSignsSummaryQuery(patientId, shiftPeriod)` | El traspaso necesita el estado del turno para componer la sección *Situation*, pero no debe reconstruir el cálculo de riesgo. |
+| BC-04 Alerts | BC-05 Handover | *Published Language* | `AlertaCriticaGenerada { alertId, patientId, severity, triggerSource }` | Las alertas abiertas del turno forman parte obligatoria del SBAR entregado. |
+| BC-07 Treatments | BC-05 Handover | *Published Language* | `NuevaIndicacionMedicaRegistrada`, `IndicacionEjecutadaPorEnfermeria` | Las indicaciones pendientes de ejecución son parte de la sección *Recommendation*. |
+| Todos | BC-06 Audit | *Conformist* | Cualquier evento de dominio, normalizado a `AuditLog` | Audit se adapta al lenguaje de los demás y no les impone forma alguna: escucha y transforma. Esta dirección única es lo que impide que la auditoría se vuelva una dependencia del dominio. |
+| BC-03, BC-04, BC-05 | Sistema hospitalario (HIS) | *Anti-Corruption Layer* | Adaptador de salida, fuera del alcance de AV1 y TB1 | El HIS institucional tiene su propio modelo. Cuando exista integración, se traducirá en una capa dedicada para que su esquema no contamine el dominio de ClinicalSync. |
+
+**Reglas de dependencia.** Tres reglas hacen verificable el aislamiento y deben poder comprobarse leyendo el código:
+
+1. **Ningún contexto importa clases del dominio de otro.** Lo único que cruza la frontera son los eventos de dominio y los identificadores declarados en el *Shared Kernel*.
+2. **Las dependencias no forman ciclos.** Vital Signs publica hacia Alerts, pero Alerts nunca escribe sobre `vital_sign_records`; cuando un contexto necesita información del otro en sentido inverso, lo hace por consulta de solo lectura y no por escritura.
+3. **Audit es sumidero.** Consume eventos de todos y no publica hacia ninguno, salvo su propio `LogDeAuditoriaCreado`. Ningún contexto del dominio depende de Audit para completar su operación.
+
+**Políticas de dominio como integración.** Las dos políticas declaradas en el paso 3 de la sección 4.6.1 son, en realidad, los dos puntos de integración críticos del sistema, y se precisan aquí:
+
+| Política | Evento disparador | Contexto que reacciona | Resultado | Consistencia |
+| :--- | :--- | :--- | :--- | :--- |
+| Un signo vital fuera de umbral genera una alerta | `NivelDeRiesgoClinicoEvaluado` con `riskLevel` crítico | BC-04 Alerts | `AlertaCriticaGenerada` | Eventual: el registro del signo vital se confirma aunque la alerta se cree en una transacción posterior. |
+| El inicio del cambio de turno genera el resumen SBAR | Comando `IniciarEntregaDeTurno` | BC-05 Handover | Borrador de `SbarContent` precargado con los datos del turno | Eventual: el borrador se compone a partir de proyecciones de BC-03, BC-04 y BC-07; si alguna no está al día, la sección se marca como incompleta y el traspaso no puede emitirse, por la invariante de BC-05. |
+
+**Alcance de esta sección.** El modelo descrito aquí es **diseño, no implementación**. A la fecha de esta entrega no existe código de dominio: el incremento ejecutable es la Landing Page. Las reglas de dependencia enunciadas arriba son el criterio con el que el equipo construirá y revisará la aplicación web y los servicios REST en los sprints siguientes, y el Sprint Review correspondiente deberá mostrar la estructura de paquetes que las materializa.
+
 ### 4.7. Software Object-Oriented Design
 
 El diseño orientado a objetos traduce los bounded contexts identificados en la sección 4.6 a una estructura de clases implementable. Es el punto donde el modelo del dominio deja de ser un mapa conceptual y pasa a definir entidades, agregados, objetos de valor y relaciones concretas que el equipo escribirá en código durante el Capítulo V.
@@ -3646,9 +3789,11 @@ La siguiente tabla registra los commits correspondientes al desarrollo de la Lan
 
 **Trazabilidad por historia de usuario**
 
-La tabla siguiente cierra la cadena de trazabilidad del incremento: para cada historia indica la tarea que la implementa, el integrante responsable, los commits del repositorio `Landing-Page` que contienen el trabajo, la captura de la sección 5.2.1.5 que sirve de evidencia visual y el estado final. La asignación de commits no es declarativa: se obtuvo revisando los archivos efectivamente modificados en cada uno.
+La tabla siguiente cierra la cadena de trazabilidad del incremento: para cada historia indica la tarea que la implementa, el integrante al que el Sprint Backlog asignó esa tarea, los commits del repositorio `Landing-Page` que contienen el trabajo, la captura de la sección 5.2.1.5 que sirve de evidencia visual y el estado final. La asignación de commits no es declarativa: se obtuvo revisando los archivos efectivamente modificados en cada uno.
 
-| Historia | Tarea | Responsable | Commits en `Landing-Page` | Evidencia visual | Estado |
+> La columna **Responsable planificado** recoge el reparto acordado en el Sprint Planning, no la autoría del commit. Como se detalla en la sección 5.2.1.8, los 18 commits de la Landing Page fueron realizados por un solo integrante, de modo que el autor registrado en el historial es el mismo en todas las filas.
+
+| Historia | Tarea | Responsable planificado | Commits en `Landing-Page` | Evidencia visual | Estado |
 | :--- | :--- | :--- | :--- | :--- | :---: |
 | **US-01** Visualizar la landing page | T-01.1 Estructura base y hero | Sosa Soto, Oskar Rodrigo | `6f72e6b` estructura de carpetas, variables CSS y barra de navegación<br>`aa328ff` sección hero con paciente y signos vitales | A. Portada y propuesta de valor | Done |
 | **US-02** Conocer la propuesta de valor | T-01.1 | Sosa Soto, Oskar Rodrigo | `aa328ff` | A. Portada y propuesta de valor | Done |
@@ -3666,6 +3811,7 @@ La tabla siguiente cierra la cadena de trazabilidad del incremento: para cada hi
 
 **Observaciones sobre la trazabilidad.** Tres puntos que el equipo deja explícitos para que la tabla no se lea con más precisión de la que tiene:
 
+- **La autoría de los commits no coincide con el reparto planificado.** El historial registra un único autor para las trece filas. La sección 5.2.1.8 documenta esta divergencia y el compromiso adoptado para el Sprint 2.
 - **No existen Pull Requests para este incremento.** Como se documenta en la sección 5.1.2, la Landing Page se desarrolló con un flujo *trunk-based* sobre `main`, de modo que la unidad de evidencia es el commit y no el PR. A partir de la aplicación web la columna registrará también el Pull Request de integración.
 - **US-12 no tiene un commit propio.** La adaptación a móviles se resolvió dentro de cada sección y no como un trabajo separado. El equipo reconoce que esto le resta trazabilidad a esa historia y que lo correcto habría sido aislarla; en el Sprint 2 cada historia tendrá su propia rama.
 - **El commit `235d7cf` (pie de página) no corresponde a ninguna historia del Sprint Backlog.** Es trabajo estructural que el equipo ejecutó sin haberlo registrado como tarea, lo que constituye un desvío respecto del backlog planificado y queda anotado como tal.
@@ -3862,11 +4008,45 @@ El procedimiento seguido fue el siguiente:
 
 ##### 5.2.1.8. Team Collaboration Insights during Sprint
 
-La herramienta de Insights de GitHub demuestra que todos los miembros del equipo (Oskar, Mathias, Angel, Johan y Johnny) han colaborado activamente mediante la subida de commits. Las labores fueron distribuidas de forma equitativa para garantizar que el Layout, la Navegación, el Diseño Responsivo, la Internacionalización y el despliegue de la Landing Page se completaran en los tiempos estimados del Sprint.
+La colaboración del Sprint 1 se midió por separado en los dos repositorios del proyecto, porque el patrón de trabajo fue distinto en cada uno y agregarlos ocultaría esa diferencia. Las cifras provienen del historial de ambos repositorios y son reproducibles con `git shortlog -sn`.
+
+**Repositorio del informe (`Informe`)**
+
+Los cinco integrantes contribuyeron con commits propios sobre la rama de su capítulo. El total al cierre de la entrega AV1 (commit `d1b284e`) es de 125 commits:
+
+| Integrante | Commits | Participación |
+| :--- | ---: | ---: |
+| Sosa Soto, Oskar Rodrigo | 50 | 40.0% |
+| Huamán Cuba, Johan Giovani | 43 | 34.4% |
+| Valdez Melo, Angel Andres | 13 | 10.4% |
+| Ojanama Abanto, Johnny Alexander | 12 | 9.6% |
+| Acuache Lucas, Mathias Joaquin | 7 | 5.6% |
+| **Total** | **125** | **100%** |
+
+*El conteo de Oskar Rodrigo Sosa Soto suma dos identidades de Git del mismo integrante (45 commits bajo su cuenta institucional y 5 bajo una cuenta personal), lo que explica que el panel de Insights muestre seis contribuidores para cinco personas.*
 
 <p align="center">
-  <img src="assets/chapter-5/sprint-1/team-commits.png" alt="team commits insight" width="1000">
+  <img src="assets/chapter-5/sprint-1/team-commits.png" alt="Panel de Insights del repositorio del informe" width="1000">
 </p>
+
+*Panel de Insights correspondiente al repositorio del informe. La captura no refleja el repositorio de la Landing Page.*
+
+**Repositorio de la Landing Page (`Landing-Page`)**
+
+| Integrante | Commits | Participación |
+| :--- | ---: | ---: |
+| Sosa Soto, Oskar Rodrigo | 18 | 100% |
+| **Total** | **18** | **100%** |
+
+**Lectura honesta de estas cifras.** El Sprint Backlog de la sección 5.2.1.3 reparte las siete tareas del incremento entre los cinco integrantes, y la sección 5.2.1.2 asigna un líder por aspecto. Ese reparto corresponde a la **planificación** acordada en el Sprint Planning. La **ejecución** fue distinta: la totalidad de los commits de la Landing Page los realizó un solo integrante, y el historial no registra co-autoría en ninguno de ellos.
+
+El equipo reconoce esta divergencia en lugar de presentarla como un reparto equitativo. El trabajo documental sí estuvo distribuido — los cinco integrantes tienen commits propios en el repositorio del informe —, pero **la evidencia de colaboración en el informe no sustituye la evidencia de colaboración en el producto**, y en el producto esa evidencia no existe para este Sprint.
+
+Las consecuencias para el Sprint 2, registradas como compromiso verificable:
+
+- Cada historia de usuario se desarrollará en su propia rama `feature/`, creada por el integrante responsable según el Sprint Backlog, e integrada mediante Pull Request revisado por otro integrante. El autor del commit y el revisor del PR quedan así registrados por el propio flujo.
+- El trabajo realizado en pareja se declarará con el trailer `Co-authored-by` para que el historial refleje a ambos participantes.
+- Esta sección volverá a medirse con el mismo método al cierre del Sprint 2, de modo que la comparación entre ambos sprints sea directa.
 
 
 
