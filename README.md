@@ -3644,6 +3644,32 @@ La siguiente tabla registra los commits correspondientes al desarrollo de la Lan
 | Digital-Clinical-Systems/Landing-Page | main | ce5b9d0 | feat: add robots.txt and sitemap.xml for SEO optimization | - | 2026-09-16 |
 | Digital-Clinical-Systems/Landing-Page | main | ed27b89 | feat: add scroll reveal animation for sections and update navigation visibility | - | 2026-09-17 |
 
+**Trazabilidad por historia de usuario**
+
+La tabla siguiente cierra la cadena de trazabilidad del incremento: para cada historia indica la tarea que la implementa, el integrante responsable, los commits del repositorio `Landing-Page` que contienen el trabajo, la captura de la sección 5.2.1.5 que sirve de evidencia visual y el estado final. La asignación de commits no es declarativa: se obtuvo revisando los archivos efectivamente modificados en cada uno.
+
+| Historia | Tarea | Responsable | Commits en `Landing-Page` | Evidencia visual | Estado |
+| :--- | :--- | :--- | :--- | :--- | :---: |
+| **US-01** Visualizar la landing page | T-01.1 Estructura base y hero | Sosa Soto, Oskar Rodrigo | `6f72e6b` estructura de carpetas, variables CSS y barra de navegación<br>`aa328ff` sección hero con paciente y signos vitales | A. Portada y propuesta de valor | Done |
+| **US-02** Conocer la propuesta de valor | T-01.1 | Sosa Soto, Oskar Rodrigo | `aa328ff` | A. Portada y propuesta de valor | Done |
+| **US-03** Comprender el problema que resuelve | T-01.1 | Sosa Soto, Oskar Rodrigo | `11c4a5e` sección de problema con tarjetas y datos destacados | B. El problema | Done |
+| **US-04** Revisar cómo funciona la plataforma | T-02.1 Componentes funcionales | Valdez Melo, Angel Andres | `c19ff11` sección de pasos numerados | C. Cómo funciona | Done |
+| **US-05** Visualizar las características clave | T-02.1 | Valdez Melo, Angel Andres | `3b8405c` sección de características | D. Características | Done |
+| **US-06** Revisar los beneficios según el perfil | T-02.1 | Valdez Melo, Angel Andres | `30f0205` sección de beneficios por rol | E. Beneficios | Done |
+| **US-07** Consultar los planes y el modelo de servicio | T-03.1 Planes y FAQs | Acuache Lucas, Mathias Joaquin | `de6caaf` sección de planes con conmutador de periodicidad | F. Planes | Done |
+| **US-08** Resolver dudas frecuentes | T-03.1 | Acuache Lucas, Mathias Joaquin | `5714333` sección de preguntas frecuentes con acordeón | G. Preguntas frecuentes | Done |
+| **US-09** Conocer al equipo | T-04.1 Equipo y contacto | Huamán Cuba, Johan Giovani | `98bc354` sección de equipo con fotografías<br>`ccf46a2` texto alternativo de las fotografías | H. Equipo | Done |
+| **US-10** Solicitar información o una demostración | T-04.1 | Huamán Cuba, Johan Giovani | `f1dd44a` formulario con validación y mensaje de éxito<br>`c2d8b28` atributos `role` en los mensajes de error | I. Contacto | Done |
+| **US-11** Cambiar el idioma del sitio | T-05.1 Internacionalización | Ojanama Abanto, Johnny Alexander | `4ed5a0c` diccionarios ES/EN<br>`6f72e6b` motor `js/i18n.js`<br>`ed27b89` cobertura completa de ambos diccionarios | Demostrado en el video de la sección 4.5 | Done |
+| **US-12** Acceder desde dispositivos móviles | T-06.1 Ajustes responsivos | Acuache Lucas, Mathias Joaquin | Distribuido: cada sección incorporó sus propias reglas de adaptación en el mismo commit que la creó; el menú móvil se introdujo en `6f72e6b` y los ajustes finales de disposición en `ed27b89` | Verificación de diseño adaptable de la sección 5.2.1.5 | Done |
+| **TS-09** Despliegue de la landing page | T-07.1 Despliegue en Vercel | Sosa Soto, Oskar Rodrigo | `ce5b9d0` `robots.txt`, `sitemap.xml` y `vercel.json`<br>`052a06d` meta tags Open Graph | 5.2.1.7 Software Deployment Evidence | Done |
+
+**Observaciones sobre la trazabilidad.** Tres puntos que el equipo deja explícitos para que la tabla no se lea con más precisión de la que tiene:
+
+- **No existen Pull Requests para este incremento.** Como se documenta en la sección 5.1.2, la Landing Page se desarrolló con un flujo *trunk-based* sobre `main`, de modo que la unidad de evidencia es el commit y no el PR. A partir de la aplicación web la columna registrará también el Pull Request de integración.
+- **US-12 no tiene un commit propio.** La adaptación a móviles se resolvió dentro de cada sección y no como un trabajo separado. El equipo reconoce que esto le resta trazabilidad a esa historia y que lo correcto habría sido aislarla; en el Sprint 2 cada historia tendrá su propia rama.
+- **El commit `235d7cf` (pie de página) no corresponde a ninguna historia del Sprint Backlog.** Es trabajo estructural que el equipo ejecutó sin haberlo registrado como tarea, lo que constituye un desvío respecto del backlog planificado y queda anotado como tal.
+
 ##### 5.2.1.5. Execution Evidence for Sprint Review
 
 **Resumen de logros del Sprint**
