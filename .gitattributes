@@ -1,0 +1,11 @@
+# Normaliza los finales de linea: se guardan siempre en LF en el repositorio,
+# para que un guardado desde Windows no genere un diff de todo el archivo.
+* text=auto
+*.md text eol=lf
+
+# Binarios: git no debe tocarlos.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
