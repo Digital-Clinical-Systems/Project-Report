@@ -36,6 +36,7 @@
 |---|---|---|---|
 | 1.0 | 2026-08-27 | Huamán Cuba, Johan Giovani | Versión inicial del documento. Se crea la estructura base del informe con el índice de los cinco capítulos. |
 | AV1 | 2026-09-17 | <ul><li>Huamán Cuba, Johan Giovani</li><li>Sosa Soto, Oskar Rodrigo</li><li>Acuache Lucas, Mathias Joaquin</li><li>Valdez Melo, Angel Andres</li><li>Ojanama Abanto, Johnny Alexander</li></ul> | Entrega AV1. Capítulo I: perfil de la startup, perfil de la solución, proceso Lean UX y segmentos objetivo. Capítulo II: análisis competitivo, entrevistas y su análisis, needfinding, Big Picture Event Storming y Ubiquitous Language. Capítulo III: User Stories, Impact Mapping y Product Backlog. Capítulo IV: style guidelines, arquitectura de información, diseño de la landing page y de la aplicación web, prototipado, arquitectura DDD, diseño orientado a objetos y diseño de base de datos. Capítulo V: configuración del entorno, gestión del código fuente, despliegue y evidencias del Sprint 1, con la Landing Page publicada en producción. |
+| TB1 | 2026-10-06 | <ul><li>Sosa Soto, Oskar Rodrigo</li><li>Huamán Cuba, Johan Giovani</li><li>Valdez Melo, Angel Andres</li><li>Acuache Lucas, Mathias Joaquin</li><li>Ojanama Abanto, Johnny Alexander</li></ul> | Entrega TB1. Se corrigen las quince observaciones de la revisión docente del AV1. Capítulo IV: se incorporan los Bounded Context Canvases (4.6.5) y los contratos de integración entre contextos (4.6.6). Capítulo V: se documenta el Sprint 2 completo (5.2.2.1 a 5.2.2.8) con la aplicación web construida y desplegada, las pruebas exploratorias y los Issues #1 y #2 con su corrección, el flujo de contratación de la Landing Page, y se añade el diseño de las Validation Interviews (5.3). Se actualizan los Insights de colaboración con los repositorios de producto, el Student Outcome y las conclusiones. Se incorporan la bibliografía y los anexos.
 
 ---
 
@@ -47,11 +48,39 @@
 
 La elaboración del informe se organizó con una rama `feature/report-chapter-N` por cada capítulo, de modo que cada integrante pudiera avanzar sobre su sección sin bloquear a los demás. Cada commit corresponde, por regla general, a una sección o título completado y sigue la convención de Conventional Commits descrita en la sección 5.1.3. Al cierre de la entrega, las cinco ramas se integraron a `develop` en orden, resolviendo en el `README.md` los conflictos propios de un documento compartido.
 
-La siguiente captura corresponde al panel de Insights del repositorio y refleja la contribución de cada integrante durante el Sprint 1.
+**URL del repositorio de la aplicación web:** [https://github.com/Digital-Clinical-Systems/FrontClinicalSync](https://github.com/Digital-Clinical-Systems/FrontClinicalSync)
+
+### Insights del Sprint 1 (entrega AV1)
+
+La siguiente captura corresponde al panel de Insights del repositorio del informe y refleja la contribución de cada integrante durante el Sprint 1.
 
 <p align="center">
-  <img src="assets/chapter-5/sprint-1/team-commits.png" alt="Panel de Insights del repositorio del informe" width="1000">
+  <img src="assets/chapter-5/sprint-1/team-commits.png" alt="Panel de Insights del repositorio del informe durante el Sprint 1" width="1000">
 </p>
+
+### Insights del Sprint 2 (entrega TB1)
+
+La observación H-14 de la revisión docente del AV1 señaló que la colaboración evidenciada en el repositorio del informe no sustituye a la del repositorio del producto. Por esa razón esta entrega incorpora los paneles de Insights de los **dos repositorios de producto**, que son los que registran el trabajo de construcción del Sprint 2.
+
+**A. Repositorio de la Landing Page (`Landing-Page`)**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/insights-landing-tb1.png" alt="Panel de Insights del repositorio de la Landing Page al cierre del Sprint 2" width="1000">
+</p>
+
+*El repositorio acumula 20 commits sobre `main` al cierre del Sprint 2, frente a los 18 registrados al cierre del Sprint 1. El incremento corresponde a la pasarela de pago simulada y al enlace de la Landing Page con la aplicación web, descritos en la sección 5.2.2.5. El panel confirma que este repositorio sigue teniendo un solo autor: la Landing Page no recibió trabajo distribuido en este sprint porque el esfuerzo del equipo se trasladó al repositorio de la aplicación web.*
+
+**B. Repositorio de la aplicación web (`FrontClinicalSync`)**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/insights-frontend-tb1.png" alt="Panel de Insights del repositorio de la aplicación web al cierre del Sprint 2" width="1000">
+</p>
+
+*Tres autores distintos registran commits en el repositorio estrenado en este sprint: Sosa Soto (`YakuzaMeen`), Huamán Cuba (`Johancuba`) y Valdez Melo (`AngelValdezM`). Esta es la evidencia directa que la observación H-14 solicitaba, y se encuentra en el repositorio del producto y no en el del informe.*
+
+**Nota sobre la lectura de las cifras.** El panel de Insights de GitHub contabiliza únicamente los commits de la rama `main` y **excluye los commits de fusión**, mientras que la tabla de la sección 5.2.2.8 se obtiene con `git shortlog -sn` sobre el historial completo. Por eso el panel muestra 18 commits de autor en `FrontClinicalSync` (11 + 6 + 1) donde la sección 5.2.2.8 registra 25: la diferencia son los siete commits de integración de los Pull Requests y de las promociones a `main`. Ambas cifras son correctas y miden cosas distintas; el equipo deja constancia de la diferencia para que la comparación no se lea como una inconsistencia.
+
+El panel de Insights del repositorio del informe correspondiente a esta entrega refleja la contribución del Sprint 2 una vez integrada a `main` la rama de trabajo de la TB1.
 
 ---
 
@@ -59,8 +88,11 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
+  - [Insights del Sprint 1 (entrega AV1)](#insights-del-sprint-1-entrega-av1)
+  - [Insights del Sprint 2 (entrega TB1)](#insights-del-sprint-2-entrega-tb1)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
+- [Alcance de las afirmaciones en esta entrega](#alcance-de-las-afirmaciones-en-esta-entrega)
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
@@ -123,13 +155,14 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
       - [Segmento objetivo 1: Personal de enfermería cardiovascular](#segmento-objetivo-1-personal-de-enfermería-cardiovascular-1)
         - [Entrevista 1 — Samuel Akerman](#entrevista-1--samuel-akerman)
-        - [Entrevista 2](#entrevista-2)
-        - [Entrevista 3](#entrevista-3)
+        - [Entrevista 2 — Bruno Elescano](#entrevista-2--bruno-elescano)
+        - [Entrevista 3 — Nathalia Dávila](#entrevista-3--nathalia-dávila)
       - [Segmento objetivo 2: Médicos especialistas cardiovasculares](#segmento-objetivo-2-médicos-especialistas-cardiovasculares-1)
-        - [Entrevista 1](#entrevista-1)
-        - [Entrevista 2](#entrevista-2-1)
+        - [Entrevista 1 — Mark Alex Esquivel Cabrera](#entrevista-1--mark-alex-esquivel-cabrera)
+        - [Entrevista 2 — Brenda Estefanía Ríos Caballero](#entrevista-2--brenda-estefanía-ríos-caballero)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
       - [Resumen de entrevistas analizadas](#resumen-de-entrevistas-analizadas)
+      - [Matriz de evidencia de hallazgos](#matriz-de-evidencia-de-hallazgos)
       - [Segmento objetivo 1: Personal de enfermería cardiovascular](#segmento-objetivo-1-personal-de-enfermería-cardiovascular-2)
         - [Análisis de características objetivas](#análisis-de-características-objetivas)
         - [Análisis de características subjetivas](#análisis-de-características-subjetivas)
@@ -239,6 +272,8 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
     - [4.6.2. Software Architecture Context Diagram](#462-software-architecture-context-diagram)
     - [4.6.3. Software Architecture Container Diagrams](#463-software-architecture-container-diagrams)
     - [4.6.4. Software Architecture Components Diagrams](#464-software-architecture-components-diagrams)
+  - [4.6.5. Bounded Context Canvases](#465-bounded-context-canvases)
+  - [4.6.6. Integración entre Bounded Contexts](#466-integración-entre-bounded-contexts)
   - [4.7. Software Object-Oriented Design](#47-software-object-oriented-design)
     - [4.7.1. Class Diagrams](#471-class-diagrams)
   - [4.8. Database Design](#48-database-design)
@@ -251,8 +286,8 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
   - [Software Development](#software-development)
   - [Software Deployment](#software-deployment)
     - [5.1.2. Source Code Management](#512-source-code-management)
-  - [GitFlow Workflow implementado](#gitflow-workflow-implementado)
-  - [Feature Branches utilizados en el proyecto](#feature-branches-utilizados-en-el-proyecto)
+  - [GitFlow Workflow adoptado](#gitflow-workflow-adoptado)
+  - [Aplicación real del workflow por repositorio](#aplicación-real-del-workflow-por-repositorio)
   - [Convención de ramas](#convención-de-ramas)
   - [Semantic Versioning](#semantic-versioning)
   - [Conventional Commits](#conventional-commits)
@@ -261,7 +296,7 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
   - [HTML / CSS (Landing Page y vistas estáticas)](#html--css-landing-page-y-vistas-estáticas)
   - [HTML](#html)
   - [CSS](#css)
-  - [AngularJS (Frontend Web Application)](#angularjs-frontend-web-application)
+  - [Angular (Frontend Web Application)](#angular-frontend-web-application)
   - [Nomenclatura](#nomenclatura)
   - [Buenas prácticas](#buenas-prácticas)
   - [Estilo de código](#estilo-de-código)
@@ -280,13 +315,13 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
     - [Pasos de despliegue](#pasos-de-despliegue)
     - [Despliegue alternativo mediante la CLI](#despliegue-alternativo-mediante-la-cli)
     - [Resultado](#resultado)
-  - [3. Despliegue del Frontend Web Application (Angular en Firebase Hosting)](#3-despliegue-del-frontend-web-application-angular-en-firebase-hosting)
+  - [3. Despliegue del Frontend Web Application (Angular en Vercel)](#3-despliegue-del-frontend-web-application-angular-en-vercel)
   - [Pasos de despliegue](#pasos-de-despliegue-1)
-    - [1. Subir el proyecto al repositorio](#1-subir-el-proyecto-al-repositorio)
-    - [2. Configurar en Firebase](#2-configurar-en-firebase)
+    - [1. Declarar la configuración en el repositorio](#1-declarar-la-configuración-en-el-repositorio)
+    - [2. Vincular el repositorio](#2-vincular-el-repositorio)
     - [3. Configurar variables de entorno](#3-configurar-variables-de-entorno)
-    - [4. Configurar el build](#4-configurar-el-build)
-    - [5. Ejecutar Despliegue](#5-ejecutar-despliegue)
+    - [4. Ejecutar el despliegue](#4-ejecutar-el-despliegue)
+    - [5. Resultado](#5-resultado)
   - [4. Despliegue de los Web Services RESTful API (Cloud Provider)](#4-despliegue-de-los-web-services-restful-api-cloud-provider)
   - [Pasos de despliegue](#pasos-de-despliegue-2)
     - [1. Configurar credenciales y entorno](#1-configurar-credenciales-y-entorno)
@@ -306,12 +341,29 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
       - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
       - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
       - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+  - [5.2.2. Sprint 2](#522-sprint-2)
+    - [5.2.2.1. Sprint Planning 2](#5221-sprint-planning-2)
+    - [5.2.2.2. Aspect Leaders and Collaborators](#5222-aspect-leaders-and-collaborators)
+    - [5.2.2.3. Sprint Backlog 2](#5223-sprint-backlog-2)
+    - [5.2.2.4. Development Evidence for Sprint Review](#5224-development-evidence-for-sprint-review)
+    - [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review)
+    - [5.2.2.6. Services Documentation Evidence for Sprint Review](#5226-services-documentation-evidence-for-sprint-review)
+    - [5.2.2.7. Software Deployment Evidence for Sprint Review](#5227-software-deployment-evidence-for-sprint-review)
+    - [5.2.2.8. Team Collaboration Insights during Sprint](#5228-team-collaboration-insights-during-sprint)
+  - [5.3. Validation Interviews](#53-validation-interviews)
+    - [5.3.1. Diseño de entrevistas](#531-diseño-de-entrevistas)
+    - [5.3.2. Registro de entrevistas](#532-registro-de-entrevistas)
+    - [5.3.3. Evaluaciones según heurísticas](#533-evaluaciones-según-heurísticas)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
   - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
   - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
+  - [Anexo B. Entrevistas de descubrimiento](#anexo-b-entrevistas-de-descubrimiento)
+  - [Anexo C. Repositorios del proyecto](#anexo-c-repositorios-del-proyecto)
+  - [Anexo D. Artefactos de diseño y productos desplegados](#anexo-d-artefactos-de-diseño-y-productos-desplegados)
+  - [Anexo E. Guía de entrevista](#anexo-e-guía-de-entrevista)
 
 ---
 
@@ -325,8 +377,18 @@ El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cu
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
-| Comunica oralmente con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Condujo la Entrevista 1 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), formulando el guion ante un profesional externo al equipo y repreguntando sobre el flujo de evaluación del paciente.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Condujo la Entrevista 1 del segmento de personal de enfermería cardiovascular (sección 2.2.2) y expuso en video el prototipo del Sprint 1 (sección 4.5), recorriendo la Landing Page publicada en producción y el prototipo de la aplicación web.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Condujo la Entrevista 2 del segmento de personal de enfermería cardiovascular (sección 2.2.2), adaptando el lenguaje del guion técnico al vocabulario asistencial del entrevistado.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Condujo la Entrevista 3 del segmento de personal de enfermería cardiovascular (sección 2.2.2), indagando sobre el registro en papel durante la atención y el traspaso al cierre del turno.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Condujo la Entrevista 2 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), recogiendo la perspectiva del especialista sobre la consulta del estado del paciente. | El equipo concluye que exponer el dominio clínico ante profesionales de salud obligó a abandonar el vocabulario técnico de software y a hablar en los términos del turno asistencial. Las entrevistas, conducidas por los cinco integrantes, fueron la fuente directa de los hallazgos de la sección 2.2.3 y del Ubiquitous Language de la sección 2.5. El registro en video del prototipo mostró además que demostrar un producto funcionando comunica el alcance con más precisión que describirlo. |
-| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Redactó el Big Picture Event Storming (sección 2.4), la arquitectura orientada al dominio (secciones 4.6.1 a 4.6.4), los diagramas de clases (4.7.1) y de base de datos (4.8.1), y la configuración del entorno de desarrollo y la gestión del código fuente (5.1.1 a 5.1.4).<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Redactó el análisis de entrevistas (2.2.3), el Capítulo III completo (User Stories, Impact Mapping y Product Backlog), la arquitectura de información (4.2), el prototipado del Sprint 1 (4.5) y las evidencias de ejecución y despliegue del Capítulo V.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Redactó el perfil de la startup (1.1), los Lean UX Assumptions, Hypothesis Statements y Lean UX Canvas (1.2.2.2 a 1.2.2.4), y documentó los wireframes y mock-ups de la Landing Page.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Redactó los antecedentes y la problemática (1.2.1), los Lean UX Problem Statements y los segmentos objetivo (1.3), y el diseño UX/UI de la aplicación web (4.4.2 wireflow diagrams, 4.4.3 mock-ups y 4.4.4 user flow diagrams).<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Redactó las style guidelines generales y web (4.1.1 y 4.1.2), las Epics 01 y 02 con sus User Stories y Technical Stories, los wireframes y mock-ups de la aplicación web, y las tablas de development evidence del Sprint 1 (5.2.1.4). | El equipo concluye que documentar en un repositorio compartido impone una disciplina que un documento aislado no exige: cada sección debe ser legible para los demás integrantes y trazable hasta el commit que la originó. Trabajar con una rama por capítulo y con Conventional Commits permitió avanzar en paralelo y, al integrar, detectar y corregir incoherencias entre lo redactado y lo efectivamente construido. |
+| Comunica oralmente con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Condujo la Entrevista 1 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), formulando el guion ante un profesional externo al equipo y repreguntando sobre el flujo de evaluación del paciente.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1), donde el equipo acordó el reparto de historias por rama, y sostuvo la coordinación técnica sobre el alcance de las historias US-26 y US-27 que asumió.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Condujo la Entrevista 1 del segmento de personal de enfermería cardiovascular (sección 2.2.2) y expuso en video el prototipo del Sprint 1 (sección 4.5), recorriendo la Landing Page publicada en producción y el prototipo de la aplicación web.<br><br>TB1: Condujo el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1), donde expuso ante el equipo las quince observaciones de la revisión docente del AV1, explicó por qué la concentración de autoría afectaba la calificación y negoció el reparto de historias y la fecha de corte de cada una.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Condujo la Entrevista 2 del segmento de personal de enfermería cardiovascular (sección 2.2.2), adaptando el lenguaje del guion técnico al vocabulario asistencial del entrevistado.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1) y asumió la tarea de pruebas exploratorias, consultando el alcance de la revisión antes de ejecutarla.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Condujo la Entrevista 3 del segmento de personal de enfermería cardiovascular (sección 2.2.2), indagando sobre el registro en papel durante la atención y el traspaso al cierre del turno.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1) y expuso al equipo la decisión de modelar la indicación médica con reemplazo e historial en lugar del ciclo de ejecución previsto, justificando el cambio frente a la invariante declarada en la sección 4.6.5.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Condujo la Entrevista 2 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), recogiendo la perspectiva del especialista sobre la consulta del estado del paciente.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1) y planteó al equipo la duda sobre el selector de rol de la aplicación, cuestionando que un enfermero pudiera emitir indicaciones médicas; la discusión derivó en el reporte del Issue #1. | El equipo concluye que exponer el dominio clínico ante profesionales de salud obligó a abandonar el vocabulario técnico de software y a hablar en los términos del turno asistencial. Las entrevistas, conducidas por los cinco integrantes, fueron la fuente directa de los hallazgos de la sección 2.2.3 y del Ubiquitous Language de la sección 2.5. El registro en video del prototipo mostró además que demostrar un producto funcionando comunica el alcance con más precisión que describirlo.<br><br>TB1: El equipo concluye que la comunicación oral en este sprint cambió de público: ya no se dirigió a usuarios externos sino al propio equipo. El Sprint Planning 2 obligó a exponer las quince observaciones de la revisión docente sin suavizarlas y a negociar un reparto verificable de historias por rama. Las preguntas que los integrantes sin experiencia en QA formularon sobre el alcance de las pruebas mostraron que una tarea solo queda asignada cuando quien la recibe puede explicarla con sus palabras. |
+| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Redactó el Big Picture Event Storming (sección 2.4), la arquitectura orientada al dominio (secciones 4.6.1 a 4.6.4), los diagramas de clases (4.7.1) y de base de datos (4.8.1), y la configuración del entorno de desarrollo y la gestión del código fuente (5.1.1 a 5.1.4).<br><br>TB1: Implementó las historias US-26 y US-27 en la rama `feature/us-26-vista-consolidada` del repositorio `FrontClinicalSync`, con seis commits que incluyen el modelo de lectura de la evolución del paciente, su filtro por rango de tiempo y las pruebas que lo verifican, además de la documentación de esa suite en el README del repositorio.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Redactó el análisis de entrevistas (2.2.3), el Capítulo III completo (User Stories, Impact Mapping y Product Backlog), la arquitectura de información (4.2), el prototipado del Sprint 1 (4.5) y las evidencias de ejecución y despliegue del Capítulo V.<br><br>TB1: Documentó las ocho subsecciones del Sprint 2 (5.2.2.1 a 5.2.2.8), redactó los Bounded Context Canvases y los contratos de integración (4.6.5 y 4.6.6), la sección de Validation Interviews (5.3), la bibliografía y los anexos. Corrigió las quince observaciones de la revisión docente del AV1 e implementó la historia US-29, los criterios de aceptación del sprint y la guía de pruebas exploratorias dirigida a los integrantes sin experiencia en QA.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Redactó el perfil de la startup (1.1), los Lean UX Assumptions, Hypothesis Statements y Lean UX Canvas (1.2.2.2 a 1.2.2.4), y documentó los wireframes y mock-ups de la Landing Page.<br><br>TB1: Ejecutó pruebas exploratorias sobre la aplicación desplegada y reportó el Issue #2 del repositorio `FrontClinicalSync`, documentando los pasos para reproducir la exposición de identificadores internos en la bitácora de auditoría y proponiendo dos alternativas de corrección.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Redactó los antecedentes y la problemática (1.2.1), los Lean UX Problem Statements y los segmentos objetivo (1.3), y el diseño UX/UI de la aplicación web (4.4.2 wireflow diagrams, 4.4.3 mock-ups y 4.4.4 user flow diagrams).<br><br>TB1: Implementó la historia US-22 en la rama `feature/us-22-indicaciones-medicas`, con el agregado `MedicalOrder` del contexto BC-07, sus invariantes y seis pruebas que las verifican. Amplió además el verificador automático de fronteras para someter su propio contexto a las reglas de dependencia declaradas en la sección 4.6.6.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Redactó las style guidelines generales y web (4.1.1 y 4.1.2), las Epics 01 y 02 con sus User Stories y Technical Stories, los wireframes y mock-ups de la aplicación web, y las tablas de development evidence del Sprint 1 (5.2.1.4).<br><br>TB1: Ejecutó pruebas exploratorias sobre la aplicación desplegada y reportó el Issue #1 del repositorio `FrontClinicalSync`, describiendo con pasos reproducibles la aparición de un identificador técnico en la vista de alertas y distinguiendo ese defecto de los atajos de demostración declarados. | El equipo concluye que documentar en un repositorio compartido impone una disciplina que un documento aislado no exige: cada sección debe ser legible para los demás integrantes y trazable hasta el commit que la originó. Trabajar con una rama por capítulo y con Conventional Commits permitió avanzar en paralelo y, al integrar, detectar y corregir incoherencias entre lo redactado y lo efectivamente construido.<br><br>TB1: El equipo concluye que escribir para un lector técnico externo es distinto de escribir para el propio equipo. Documentar los Bounded Context Canvases y los contratos de integración obligó a fijar por escrito invariantes y reglas de dependencia que antes solo existían como acuerdo verbal, y el verificador automático de fronteras convirtió esa documentación en una condición que el repositorio comprueba. Los reportes de issues redactados por dos integrantes demostraron además que un defecto solo es accionable cuando el texto permite reproducirlo. |
+
+---
+
+## Alcance de las afirmaciones en esta entrega
+
+Esta entrega acredita investigación, diseño y un incremento desplegado: la Landing Page publicada en producción. La aplicación web y los servicios REST existen como diseño y prototipo de interfaz, no como software ejecutable.
+
+En consecuencia, cuando el documento describe beneficios clínicos de ClinicalSync — reducción del tiempo de consolidación de información, disminución de errores u omisiones en el cambio de turno, mejora de la trazabilidad o apoyo a la decisión médica — esos enunciados deben leerse como **hipótesis derivadas de las entrevistas de la sección 2.2, no como resultados alcanzados**. Su verificación requiere que el producto opere en una unidad cardiovascular real y se contraste contra la práctica actual (cuaderno, hojas de cálculo y traspaso verbal), lo que corresponde a las Validation Interviews de la sección 5.3, previstas para entregas posteriores.
+
+Los objetivos de negocio formulados como métricas SMART en el Impact Mapping de la sección 3.2 (BG-01 a BG-05) son, por la misma razón, objetivos por alcanzar y no mediciones obtenidas. Las conclusiones del documento detallan cuáles de las siete hipótesis siguen sin validar y por qué.
 
 ---
 
@@ -559,11 +621,17 @@ El diseño y la validación del producto se centran en dos perfiles de usuarios 
 
 **Business Outcomes**
 
-- Eficiencia operativa: Reducción significativa del tiempo invertido por el personal médico en la captura y recuperación de los datos cardiovasculares.
-- Reducción de redundancia: Disminución drástica de la duplicidad de tareas al eliminar la necesidad de trasladar apuntes físicos a sistemas digitales.
-- Adopción del sistema: Alta tasa de uso activo de ClinicalSync como herramienta complementaria principal en la rutina diaria de las unidades de cardiología.
-- Auditoría y control médico: Incremento en la precisión de la trazabilidad clínica, asegurando un historial auditable de las acciones, los responsables y los horarios exactos.
-- Conversión comercial (Leads): Aumento medible en la tasa de conversión a través de la Landing Page, reflejado en el número de instituciones de salud que solicitan demostraciones del producto.
+Cada Business Outcome se expresa con la métrica, el punto de partida, la fórmula de cálculo, la fuente del dato y el plazo con que se comprobará. Estos cinco outcomes son la misma declaración que los Business Goals BG-01 a BG-05 del Impact Mapping (sección 3.2): el Lean UX Canvas y el Impact Mapping comparten una única fuente de verdad, de modo que un cambio de meta se refleja en ambos.
+
+| # | Business Outcome | Métrica | Línea base | Fórmula | Fuente del dato | Meta y horizonte | BG |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | **Conversión comercial.** La landing page genera solicitudes de demostración de instituciones de salud. | Solicitudes de demostración recibidas | 0 (la página se publicó el 17-09-2026 y aún no registra solicitudes) | Conteo de formularios completos y válidos | Registro del formulario de contacto una vez conectado al servicio web | **50 solicitudes** en **4 meses** desde la publicación | **BG-01** |
+| 2 | **Estandarización del traspaso.** Las áreas clínicas validan el traspaso SBAR digital frente a su práctica verbal actual. | Áreas clínicas que completan una sesión de validación | 0 áreas validadas | Conteo de áreas con al menos una sesión de prueba concluida | Acta de cada sesión de validación | **3 áreas** en **6 meses** | **BG-02** |
+| 3 | **Eficiencia en la consulta clínica.** El profesional reúne en menos tiempo la información necesaria para evaluar a un paciente. | Minutos por paciente hasta tener la información completa | **10 a 15 minutos**, según lo declarado por el médico especialista en la Entrevista 1 (sección 2.2.2) | (tiempo base − tiempo con la plataforma) / tiempo base | Cronometraje en escenarios simulados con las mismas tareas | **−30%** en **6 meses** | **BG-03** |
+| 4 | **Adopción sin papel.** El personal registra en la plataforma en lugar de anotar en papel y transcribir al cierre del turno. | Proporción del personal piloto que no recurre al papel | 0% (hoy el registro en papel es la práctica declarada en las cinco entrevistas) | personal sin registro en papel / personal participante en el piloto | Observación del turno y registros del sistema | **80%** del personal durante **3 meses** | **BG-04** |
+| 5 | **Trazabilidad completa.** Cada acción clínica queda registrada con responsable y marca temporal sin esfuerzo adicional. | Proporción de acciones con responsable, fecha, hora y tipo completos | No medible hoy: el registro en papel no permite reconstruir el responsable de cada anotación | acciones completas / acciones totales registradas | Bitácora de auditoría del sistema | **95%** en **6 meses** | **BG-05** |
+
+> Las cinco metas son **objetivos por alcanzar, no mediciones obtenidas**. Ninguna puede evaluarse mientras la aplicación web no opere en una unidad cardiovascular real, según lo indicado en la nota de alcance de esta entrega.
 
 **User Outcomes**
 
@@ -696,7 +764,7 @@ Estas pruebas se llevan a cabo mediante iteraciones ágiles, utilizando los desc
 | Sección | Descripción |
 | :--- | :--- |
 | **1. Business Problem** | En los departamentos de cardiología, los expedientes médicos suelen estar fragmentados en documentos de papel, plataformas internas, archivos sueltos y conversaciones informales. Esta situación provoca vacíos de información, redundancia en las tareas, falta de auditoría y demoras en el servicio. ClinicalSync tiene como propósito optimizar el seguimiento asistencial a través de un sistema web que consolide los datos médicos clave y organice los flujos de trabajo más sensibles. |
-| **2. Business Outcomes** | Minimizar la fricción administrativa, evitar el doble ingreso de datos médicos, asegurar el seguimiento cronológico de acciones e impulsar la integración de esta plataforma de apoyo dentro de las instituciones. |
+| **2. Business Outcomes** | Los cinco outcomes medibles son los declarados en la sección 1.2.2 y equivalen a los Business Goals BG-01 a BG-05 del Impact Mapping (sección 3.2): 50 solicitudes de demostración en 4 meses (BG-01); 3 áreas clínicas que validan el traspaso SBAR en 6 meses (BG-02); 30% menos de tiempo para reunir la información de un paciente en 6 meses (BG-03); 80% del personal piloto registrando sin papel durante 3 meses (BG-04); y 95% de acciones con responsable y marca temporal completos en 6 meses (BG-05). |
 | **3. Users and Customers** | Operadores principales: enfermeros de áreas cardíacas y médicos cardiólogos. Compradores organizacionales: redes hospitalarias, centros médicos privados e institutos especializados en salud cardiovascular. |
 | **4. User Outcomes** | Ingresar constantes fisiológicas, asentar los cambios de guardia bajo el formato SBAR, revisar el progreso del paciente, detectar cuadros críticos, auditar historiales detallados y erradicar el uso de notas manuales o reportes informales. |
 | **5. User Benefits** | Reducción del estrés burocrático, seguimiento asistencial ininterrumpido, disminución de errores por descuido, reportes de guardia estructurados y absoluta certeza sobre los datos consultados. |
@@ -997,7 +1065,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
 </table>
 
-###### Entrevista 2
+###### Entrevista 2 — Bruno Elescano
 
 <table border="1">
   <tr>
@@ -1028,7 +1096,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
 </table>
 
-###### Entrevista 3
+###### Entrevista 3 — Nathalia Dávila
 
 <table border="1">
   <tr>
@@ -1061,7 +1129,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
 
 ##### Segmento objetivo 2: Médicos especialistas cardiovasculares
 
-###### Entrevista 1
+###### Entrevista 1 — Mark Alex Esquivel Cabrera
 
 <table border="1">
   <tr>
@@ -1092,7 +1160,7 @@ Las entrevistas fueron grabadas en video previo consentimiento de los participan
   </tr>
 </table>
 
-###### Entrevista 2
+###### Entrevista 2 — Brenda Estefanía Ríos Caballero
 
 <table border="1">
   <tr>
@@ -1139,6 +1207,36 @@ Los porcentajes se calculan sobre el total de entrevistas efectivamente registra
 | **Total** | — | **5** |
 
 > El segmento de médicos especialistas cuenta a la fecha con dos de las tres entrevistas previstas. Los porcentajes de ese segmento se calculan sobre las dos registradas y deberán recalcularse al incorporar la tercera.
+
+##### Matriz de evidencia de hallazgos
+
+La matriz siguiente hace auditable el paso de la investigación a la necesidad. Cada hallazgo indica quién lo mencionó, en cuántas de las cinco entrevistas aparece, con qué severidad y con qué evidencia concreta del testimonio, de modo que la síntesis de esta sección pueda verificarse contra los registros de la sección 2.2.2 y no dependa de la interpretación narrativa del equipo.
+
+**Codificación de entrevistados.** `E1` Samuel Akerman, `E2` Bruno Elescano y `E3` Nathalia Dávila corresponden al segmento de personal de enfermería cardiovascular; `M1` Mark Alex Esquivel Cabrera y `M2` Brenda Estefanía Ríos Caballero, al segmento de médicos especialistas.
+
+**Escala de severidad.** La severidad no expresa la molestia declarada sino la consecuencia clínica del hallazgo, según lo que el propio entrevistado relató:
+
+| Nivel | Criterio |
+| :--- | :--- |
+| **Crítica** | El entrevistado relató un evento concreto con consecuencia sobre el paciente, o una exposición de responsabilidad legal. |
+| **Alta** | Genera riesgo de daño o fuerza decisiones con información incompleta, sin que se haya relatado un evento consumado. |
+| **Media** | Impacta la carga operativa, el tiempo o la adopción, sin riesgo clínico directo. |
+
+| ID | Hallazgo | Mencionado por | Frecuencia | Severidad | Evidencia en el testimonio | Deriva en |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| **H-A** | Se registra en papel durante la atención y se transcribe al sistema al cierre del turno. | E1, E2, E3, M1 | 4/5 | Alta | E1 mantiene un kardex manual junto a la cama porque la única computadora está fija en la estación y no puede dejar solo a un paciente crítico; del papel dijo que *«no se cuelga ni me pide contraseña»*. M1 anota en hojas y luego traslada a una hoja de cálculo. | BG-04 · US-17, US-18 |
+| **H-B** | Se omite información crítica en el cambio de turno, con consecuencia sobre el paciente. | E1, E2, E3 | 3/5 | **Crítica** | E1 relató un cambio de dosis de nitroglicerina no anotado: el turno entrante mantuvo la dosis anterior durante dos horas. E3 relató la omisión de comunicar que una paciente cardíaca interrumpió voluntariamente su tratamiento. E2 reportó omisiones por pases de guardia interrumpidos por urgencias. | BG-02 · US-13, US-14, US-15, US-16 |
+| **H-C** | El relevo depende de comunicación verbal sin estructura obligatoria. | E1, E2, E3, M2 | 4/5 | Alta | E1 atribuyó el error de dosis a haber confiado en la transmisión verbal durante un relevo apresurado. M2 depende casi exclusivamente del reporte verbal para enterarse de eventos del turno anterior, porque no alcanza a leer las notas de evolución. | BG-02 · US-13, US-16 |
+| **H-D** | No se puede identificar con certeza quién registró cada acción y cuándo. | E1, E3, M1, M2 | 4/5 | **Crítica** | E1 señaló firmas ilegibles o sin sello en el papel y, en el sistema, registros atribuidos a otro usuario cuando alguien deja la sesión abierta, lo que calificó como problema de responsabilidad legal. M2 pierde tiempo buscando quién anotó qué y a qué hora se ejecutó una orden. | BG-05 · US-30, US-31, TS-01, TS-06 |
+| **H-E** | La información del paciente está dispersa en varias fuentes y consolidarla consume tiempo clínico. | E3, M1, M2 | 3/5 | Alta | M2 consulta entre tres y cuatro fuentes distintas y tarda **entre 10 y 15 minutos por paciente**; esta cifra es la línea base de BG-03. E3 describe la información vital dispersa en diferentes medios. | BG-03 · US-26, US-27 |
+| **H-F** | El sistema institucional es lento, poco intuitivo y exige demasiados pasos para tareas simples. | E1, E2, E3, M2 | 4/5 | Media | E1 necesita abrir tres pestañas para registrar una presión arterial o una saturación, y el sistema le pide campos que no aplican a una UCI cardiovascular. E2 reportó lentitud y bloqueos frecuentes. M2 criticó sistemas pesados, no integrados y con solicitud constante de contraseña. | BG-03, BG-04 · US-17, US-19 |
+| **H-G** | La adopción está condicionada al acceso desde un dispositivo portátil junto a la cama. | E1, E2, E3, M2 | 4/5 | Alta | E1 exige acceso desde la cabecera, idealmente en tablet, y guardar con un par de toques. E3 plantea tablets llevadas directamente a la cama. M2 requiere acceso desde tablet o celular mientras pasa visita. | BG-04 · US-11, US-17 |
+| **H-H** | La herramienta solo se adoptará si resta trabajo: sin doble digitación ni formularios extensos. | E1, E3, M1, M2 | 4/5 | Alta | M2 fue explícita en que solo adoptaría una herramienta que le ahorre trabajo real y extraiga la información de otros sistemas. M1 advirtió que una herramienta compleja generaría rechazo en profesionales con menor familiaridad tecnológica. | BG-04 · US-17, TS-07 |
+| **H-I** | Se toman decisiones clínicas con información incompleta. | M2 | 1/5 | **Crítica** | M2 relató que, ante pacientes con dolor de pecho, la falla del sistema para cargar electrocardiogramas antiguos la obliga a asumir el peor escenario e iniciar tratamiento sin poder comparar la evolución, sobre todo en guardias de madrugada. | BG-03 · US-26, US-28 |
+| **H-J** | Las indicaciones médicas se dejan en el sistema sin confirmación de cumplimiento. | M2 | 1/5 | Alta | M2 describió la comunicación con enfermería como *«desconectada»*: deja indicaciones sin recibir retorno y a veces debe ir físicamente a preguntar. | BG-03 · US-22, US-23, US-24, US-25 |
+
+**Lectura de la matriz.** Los dos hallazgos de severidad crítica con mayor frecuencia — la omisión de información en el relevo (H-B) y la imposibilidad de atribuir cada acción a un responsable (H-D) — son los que el producto atiende primero, y explican por qué el traspaso SBAR y el registro automático de trazabilidad encabezan el Product Backlog de la sección 3.3. H-I y H-J son críticos pero aparecen en una sola entrevista: provienen del segmento médico, que a la fecha cuenta con dos de las tres entrevistas previstas, por lo que su frecuencia debe recalcularse al incorporar la tercera antes de usarla como criterio de priorización.
+
 
 ##### Segmento objetivo 1: Personal de enfermería cardiovascular
 
@@ -1817,56 +1915,60 @@ Los criterios de aceptación se redactan en formato Gherkin, con la estructura G
 
 #### Cuadro de Epics, User Stories y Technical Stories
 
-| Epic / Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
-|---|---|---|---|---|
-| **EP-01** | **Landing Page informativa** | Como visitante del sitio web, quiero conocer la propuesta de valor, el funcionamiento, los beneficios, los planes y los canales de contacto de ClinicalSync para evaluar si la solución responde a las necesidades de mi centro de salud. | — | — |
-| **US-01** | Visualizar la landing page | Como visitante, quiero visualizar la landing page de ClinicalSync para conocer con rapidez la solución propuesta. | **Given** que el visitante accede a la dirección del sitio, **When** la página termina de cargar, **Then** el sistema muestra la información general de ClinicalSync. <br><br> **Given** que el visitante utiliza un navegador compatible, **When** ingresa al sitio, **Then** el contenido principal se muestra sin errores de carga. | EP-01 |
-| **US-02** | Conocer la propuesta de valor | Como visitante, quiero conocer la propuesta de valor de ClinicalSync para entender qué problema clínico resuelve. | **Given** que el visitante se encuentra en la sección principal, **When** revisa el contenido destacado, **Then** el sistema comunica el enfoque en continuidad asistencial cardiovascular. <br><br> **Given** que el visitante recorre la sección, **When** llega a su final, **Then** el sistema ofrece una acción para conocer más sobre la solución. | EP-01 |
-| **US-03** | Comprender el problema que resuelve la solución | Como visitante, quiero entender por qué existe ClinicalSync para reconocer el problema actual de información clínica dispersa. | **Given** que el visitante consulta la sección de problema, **When** lee su contenido, **Then** el sistema describe la fragmentación de información y la pérdida de datos entre turnos. <br><br> **Given** que la sección incluye datos de contexto, **When** el visitante los revisa, **Then** el sistema indica la fuente de cada dato presentado. | EP-01 |
-| **US-04** | Revisar cómo funciona la plataforma | Como visitante, quiero conocer el funcionamiento de ClinicalSync en pasos simples para comprender el flujo general de uso. | **Given** que el visitante accede a la sección de funcionamiento, **When** la revisa, **Then** el sistema presenta el flujo en pasos ordenados y numerados. <br><br> **Given** que el visitante finaliza la lectura de los pasos, **When** continúa navegando, **Then** el sistema lo conduce a las características de la solución. | EP-01 |
-| **US-05** | Visualizar las características clave | Como visitante, quiero conocer las características principales de ClinicalSync para evaluar si cubre las necesidades de un área cardiovascular. | **Given** que el visitante consulta la sección de características, **When** lee su contenido, **Then** el sistema presenta el traspaso SBAR, el registro de signos vitales, los eventos clínicos y la trazabilidad. <br><br> **Given** que el visitante selecciona una característica, **When** la despliega, **Then** el sistema muestra su descripción ampliada. | EP-01 |
-| **US-06** | Revisar los beneficios según el perfil | Como visitante, quiero revisar los beneficios de ClinicalSync para comprender el valor que aporta a mi rol dentro del entorno clínico. | **Given** que el visitante consulta la sección de beneficios, **When** la revisa, **Then** el sistema diferencia los beneficios para personal de enfermería, médicos especialistas e institución. <br><br> **Given** que el visitante pertenece a uno de esos perfiles, **When** identifica su sección, **Then** el sistema presenta beneficios expresados en términos operativos. | EP-01 |
-| **US-07** | Consultar los planes y el modelo de servicio | Como visitante con responsabilidad de decisión, quiero conocer los planes disponibles para estimar la viabilidad económica de la solución. | **Given** que el visitante accede a la sección de planes, **When** la revisa, **Then** el sistema muestra los planes disponibles con las funcionalidades incluidas en cada uno. <br><br> **Given** que el visitante selecciona un plan, **When** solicita más información, **Then** el sistema lo dirige al formulario de contacto con el plan preseleccionado. | EP-01 |
-| **US-08** | Consultar las preguntas frecuentes | Como visitante, quiero revisar las preguntas frecuentes para resolver dudas sobre el alcance y el uso de la solución. | **Given** que el visitante accede a la sección de preguntas frecuentes, **When** selecciona una pregunta, **Then** el sistema despliega su respuesta. <br><br> **Given** que una respuesta está desplegada, **When** el visitante selecciona otra pregunta, **Then** el sistema mantiene la navegación sin recargar la página. | EP-01 |
-| **US-09** | Conocer al equipo | Como visitante, quiero conocer al equipo detrás de ClinicalSync para identificar quiénes desarrollan la solución. | **Given** que el visitante accede a la sección del equipo, **When** la revisa, **Then** el sistema muestra a los integrantes con su rol dentro del proyecto. <br><br> **Given** que el visitante desea ampliar la información, **When** selecciona a un integrante, **Then** el sistema muestra su descripción profesional. | EP-01 |
-| **US-10** | Solicitar información o una demostración | Como visitante interesado, quiero enviar mis datos mediante un formulario para solicitar información o una demostración de la plataforma. | **Given** que el visitante completa los campos obligatorios, **When** envía el formulario, **Then** el sistema confirma la recepción de la solicitud. <br><br> **Given** que uno o más campos obligatorios están vacíos o mal formados, **When** el visitante intenta enviar, **Then** el sistema señala los campos a corregir y no envía la solicitud. | EP-01 |
-| **US-11** | Cambiar el idioma del sitio | Como visitante, quiero alternar el idioma del sitio entre español e inglés para revisar la información en el idioma de mi preferencia. | **Given** que el visitante se encuentra en cualquier sección, **When** selecciona otro idioma, **Then** el sistema traduce el contenido manteniendo la sección actual. <br><br> **Given** que el visitante ya seleccionó un idioma, **When** vuelve a ingresar al sitio, **Then** el sistema conserva esa preferencia. | EP-01 |
-| **US-12** | Acceder desde dispositivos móviles | Como visitante, quiero acceder al sitio desde un dispositivo móvil para revisar la información desde cualquier lugar. | **Given** que el visitante ingresa desde una pantalla reducida, **When** la página carga, **Then** el sistema adapta la disposición del contenido sin desbordamiento horizontal. <br><br> **Given** que el visitante navega desde un dispositivo táctil, **When** utiliza los elementos interactivos, **Then** el sistema responde correctamente a la interacción táctil. | EP-01 |
-| **EP-02** | **Gestión de traspaso clínico SBAR** | Como personal clínico, quiero estructurar la información del cambio de turno para reducir omisiones y asegurar la continuidad de la atención. | — | — |
-| **US-13** | Registrar un traspaso SBAR | Como enfermero cardiovascular, quiero registrar el traspaso de un paciente usando la estructura SBAR para comunicar su estado al turno entrante. | **Given** que el enfermero completa las cuatro secciones del formato SBAR, **When** guarda el traspaso, **Then** el sistema lo asocia al paciente y al turno correspondiente. <br><br> **Given** que alguna de las cuatro secciones está vacía, **When** el enfermero intenta guardar, **Then** el sistema indica qué sección falta y no registra el traspaso. | EP-02 |
-| **US-14** | Consultar el traspaso del turno anterior | Como enfermero entrante, quiero consultar el traspaso del turno saliente para continuar la atención sin perder información. | **Given** que existe un traspaso registrado para el paciente, **When** el enfermero accede a su ficha, **Then** el sistema muestra el traspaso más reciente con sus cuatro secciones. <br><br> **Given** que el enfermero tiene varios pacientes asignados, **When** consulta el listado de traspasos, **Then** el sistema muestra únicamente los correspondientes a esos pacientes. | EP-02 |
-| **US-15** | Confirmar la recepción del traspaso | Como enfermero entrante, quiero confirmar que recibí el traspaso para dejar constancia de que asumo la responsabilidad del paciente. | **Given** que el enfermero consultó un traspaso, **When** confirma su recepción, **Then** el sistema registra la confirmación con su identidad y la hora. <br><br> **Given** que un traspaso no ha sido confirmado, **When** se consulta su estado, **Then** el sistema lo presenta como pendiente de recepción. | EP-02 |
-| **US-16** | Generar el traspaso a partir de lo registrado | Como enfermero saliente, quiero que el traspaso se preconstruya con la información ya registrada durante mi turno para no redactarla nuevamente. | **Given** que el enfermero registró signos vitales, medicación y eventos durante el turno, **When** inicia un nuevo traspaso, **Then** el sistema precarga esa información en las secciones correspondientes. <br><br> **Given** que la información precargada requiere ajustes, **When** el enfermero la edita, **Then** el sistema conserva sus modificaciones al guardar. | EP-02 |
-| **EP-03** | **Registro clínico del paciente** | Como personal de enfermería, quiero registrar la información clínica en el momento en que ocurre para evitar la duplicidad con anotaciones en papel y el registro tardío. | — | — |
-| **US-17** | Consultar los pacientes asignados | Como enfermero, quiero ver los pacientes que tengo a cargo en mi turno para organizar mi trabajo desde el inicio de la guardia. | **Given** que el enfermero inicia sesión, **When** accede a su vista principal, **Then** el sistema muestra únicamente los pacientes asignados a su turno. <br><br> **Given** que un paciente presenta un estado crítico, **When** se muestra el listado, **Then** el sistema lo distingue visualmente del resto. | EP-03 |
-| **US-18** | Registrar signos vitales | Como enfermero cardiovascular, quiero registrar los signos vitales del paciente para mantener actualizada su condición sin recurrir a anotaciones en papel. | **Given** que el enfermero completa los parámetros requeridos, **When** guarda el registro, **Then** el sistema lo asocia al paciente con la fecha y hora de la toma. <br><br> **Given** que un valor ingresado está fuera del rango fisiológico admitido, **When** el enfermero intenta guardar, **Then** el sistema solicita su confirmación antes de registrarlo. | EP-03 |
-| **US-19** | Registrar la administración de un medicamento | Como enfermero, quiero dejar constancia del medicamento administrado para que el equipo conozca qué se aplicó, en qué dosis y a qué hora. | **Given** que el enfermero registra una administración, **When** la guarda, **Then** el sistema deja constancia del medicamento, la dosis, la hora y el responsable. <br><br> **Given** que la administración corresponde a una indicación vigente, **When** se registra, **Then** el sistema la vincula a esa indicación. | EP-03 |
-| **US-20** | Registrar un evento clínico relevante | Como enfermero, quiero registrar los eventos clínicos ocurridos durante el turno para que queden documentados y disponibles para el equipo. | **Given** que el enfermero describe un evento clínico, **When** lo guarda, **Then** el sistema lo registra con su hora de ocurrencia y su responsable. <br><br> **Given** que el evento se clasifica como crítico, **When** se guarda, **Then** el sistema lo destaca en la vista del paciente. | EP-03 |
-| **US-21** | Identificar la documentación pendiente | Como enfermero, quiero conocer qué información me falta registrar antes de cerrar mi turno para no entregar la guardia con datos incompletos. | **Given** que existen registros incompletos del turno, **When** el enfermero consulta su resumen de cierre, **Then** el sistema enumera los pendientes por paciente. <br><br> **Given** que no queda documentación pendiente, **When** se consulta el resumen, **Then** el sistema indica que el turno está completo. | EP-03 |
-| **EP-04** | **Indicaciones médicas y cumplimiento** | Como equipo clínico, quiero que las indicaciones médicas y su ejecución queden registradas para cerrar el ciclo entre lo que se ordena y lo que efectivamente se realiza. | — | — |
-| **US-22** | Emitir una indicación médica | Como médico especialista, quiero registrar una indicación para que el personal de enfermería la ejecute con la información necesaria. | **Given** que el médico completa los datos de la indicación, **When** la emite, **Then** el sistema la asocia al paciente y la deja visible para el personal de enfermería. <br><br> **Given** que la indicación reemplaza a una anterior, **When** se emite, **Then** el sistema conserva la anterior en el historial y marca la nueva como vigente. | EP-04 |
-| **US-23** | Consultar las indicaciones vigentes | Como enfermero, quiero consultar las indicaciones activas de un paciente para ejecutar el tratamiento correcto y actualizado. | **Given** que el paciente tiene indicaciones registradas, **When** el enfermero accede a su ficha, **Then** el sistema muestra únicamente las vigentes. <br><br> **Given** que una indicación fue modificada, **When** el enfermero la consulta, **Then** el sistema señala que existe una versión previa. | EP-04 |
-| **US-24** | Registrar el cumplimiento de una indicación | Como enfermero, quiero confirmar que ejecuté una indicación para dejar constancia de su cumplimiento. | **Given** que el enfermero ejecutó una indicación, **When** registra su cumplimiento, **Then** el sistema deja constancia del responsable y la hora de ejecución. <br><br> **Given** que una indicación fue cumplida, **When** se consulta su estado, **Then** el sistema la presenta como ejecutada. | EP-04 |
-| **US-25** | Identificar las indicaciones pendientes | Como médico especialista, quiero saber qué indicaciones aún no se han ejecutado para tomar decisiones sobre información confirmada. | **Given** que existen indicaciones sin cumplimiento registrado, **When** el médico consulta al paciente, **Then** el sistema las presenta como pendientes. <br><br> **Given** que una indicación pendiente supera su plazo previsto, **When** se muestra el listado, **Then** el sistema la destaca sobre las demás. | EP-04 |
-| **EP-05** | **Soporte a la decisión clínica** | Como médico especialista, quiero comprender el estado del paciente sin reconstruirlo manualmente desde varias fuentes para decidir con rapidez y con información completa. | — | — |
-| **US-26** | Consultar el resumen clínico del paciente | Como médico especialista, quiero ver en una sola vista la información relevante del paciente para evaluar su estado sin recorrer varios módulos. | **Given** que el médico accede a un paciente, **When** se abre su ficha, **Then** el sistema muestra en una vista los últimos signos vitales, la medicación reciente, los eventos del periodo y las indicaciones vigentes. <br><br> **Given** que el médico necesita ampliar un dato del resumen, **When** lo selecciona, **Then** el sistema muestra su detalle completo. | EP-05 |
-| **US-27** | Revisar la evolución reciente | Como médico especialista, quiero revisar cómo evolucionó el paciente en las últimas horas para identificar tendencias en su condición. | **Given** que existen registros de signos vitales del periodo, **When** el médico consulta la evolución, **Then** el sistema los presenta ordenados cronológicamente. <br><br> **Given** que el médico define un rango de tiempo, **When** aplica el filtro, **Then** el sistema muestra únicamente los registros de ese rango. | EP-05 |
-| **US-28** | Identificar cambios críticos mediante alertas | Como profesional clínico, quiero que el sistema señale los cambios críticos del paciente para reaccionar oportunamente. | **Given** que un registro supera un umbral definido como crítico, **When** se guarda, **Then** el sistema genera una alerta visible en la vista del paciente. <br><br> **Given** que una alerta fue atendida, **When** el profesional la marca como revisada, **Then** el sistema deja constancia de quién la atendió y cuándo. | EP-05 |
-| **US-29** | Priorizar los pacientes según su riesgo | Como profesional clínico, quiero que los pacientes se ordenen según su nivel de riesgo para atender primero los casos más delicados. | **Given** que existen pacientes con alertas activas, **When** se muestra el listado, **Then** el sistema los ubica antes que los pacientes estables. <br><br> **Given** que el estado de un paciente cambia, **When** se registra la variación, **Then** el sistema actualiza su posición en el listado. | EP-05 |
-| **EP-06** | **Trazabilidad y auditoría clínica** | Como institución de salud, quiero que toda acción clínica quede registrada con su responsable y su momento para poder auditar la atención brindada. | — | — |
-| **US-30** | Consultar la bitácora de acciones del paciente | Como coordinador clínico, quiero revisar el historial de acciones registradas sobre un paciente para verificar la continuidad de su atención. | **Given** que existen acciones registradas, **When** el coordinador consulta la bitácora, **Then** el sistema las presenta en orden cronológico con su tipo, responsable y hora. <br><br> **Given** que el coordinador filtra por tipo de acción o por rango de fechas, **When** aplica el filtro, **Then** el sistema muestra únicamente los registros correspondientes. | EP-06 |
-| **US-31** | Identificar al responsable de un registro | Como profesional clínico, quiero saber quién realizó un registro determinado para confirmar su origen antes de tomar una decisión. | **Given** que el profesional consulta cualquier registro clínico, **When** revisa su detalle, **Then** el sistema muestra el responsable y la fecha y hora de la acción. <br><br> **Given** que un registro fue modificado posteriormente, **When** se consulta, **Then** el sistema indica que existe un historial de cambios. | EP-06 |
-| **US-32** | Consultar el historial de cambios de un registro | Como coordinador clínico, quiero conocer las modificaciones aplicadas a un registro para verificar qué se cambió y quién lo hizo. | **Given** que un registro fue modificado, **When** el coordinador consulta su historial, **Then** el sistema muestra cada versión con su responsable y su momento. <br><br> **Given** que un registro nunca fue modificado, **When** se consulta su historial, **Then** el sistema muestra únicamente su versión original. | EP-06 |
-| **EP-07** | **RESTful API y plataforma** | Como equipo de desarrollo, quiero disponer de un API REST documentada, segura y desplegada para sostener las funcionalidades de la aplicación web y la landing page. | — | — |
-| **TS-01** | Autenticación y autorización por roles | Como desarrollador, quiero implementar autenticación y control de acceso por roles para que cada usuario acceda únicamente a lo que le corresponde. | **Given** que un usuario envía credenciales válidas, **When** el API las procesa, **Then** responde con un token de acceso y estado 200. <br><br> **Given** que un usuario solicita un recurso ajeno a su rol, **When** el API recibe la petición, **Then** responde con estado 403 y no expone el recurso. | EP-07 |
-| **TS-02** | Gestión de pacientes mediante API | Como desarrollador, quiero exponer los recursos de pacientes para que la aplicación web consulte y administre su información. | **Given** que se solicita la lista de pacientes de un turno, **When** el API procesa la petición, **Then** responde con la colección correspondiente y estado 200. <br><br> **Given** que se solicita un paciente inexistente, **When** el API procesa la petición, **Then** responde con estado 404. | EP-07 |
-| **TS-03** | Gestión de registros clínicos mediante API | Como desarrollador, quiero exponer los recursos de signos vitales, medicación y eventos clínicos para permitir su registro y consulta desde la aplicación. | **Given** que se envía un registro clínico válido, **When** el API lo procesa, **Then** lo persiste y responde con estado 201. <br><br> **Given** que el cuerpo de la petición omite un campo obligatorio, **When** el API la recibe, **Then** responde con estado 400 e indica el campo faltante. | EP-07 |
-| **TS-04** | Gestión de traspasos SBAR mediante API | Como desarrollador, quiero exponer los recursos de traspaso de turno para permitir su creación, consulta y confirmación desde la aplicación. | **Given** que se envía un traspaso con sus cuatro secciones completas, **When** el API lo procesa, **Then** lo persiste y responde con estado 201. <br><br> **Given** que se confirma la recepción de un traspaso, **When** el API procesa la petición, **Then** actualiza su estado y responde con estado 200. | EP-07 |
-| **TS-05** | Gestión de indicaciones médicas mediante API | Como desarrollador, quiero exponer los recursos de indicaciones médicas para soportar su emisión, consulta y registro de cumplimiento. | **Given** que se emite una indicación válida, **When** el API la procesa, **Then** la persiste como vigente y responde con estado 201. <br><br> **Given** que se registra el cumplimiento de una indicación, **When** el API lo procesa, **Then** actualiza su estado y conserva la indicación original. | EP-07 |
-| **TS-06** | Registro automático de trazabilidad | Como desarrollador, quiero que el API registre automáticamente el responsable y el momento de cada operación para garantizar la trazabilidad sin depender del usuario. | **Given** que se ejecuta una operación de escritura autenticada, **When** el API la procesa, **Then** almacena el identificador del usuario y la marca temporal junto al registro. <br><br> **Given** que se consulta la bitácora de un recurso, **When** el API procesa la petición, **Then** responde con las entradas ordenadas cronológicamente. | EP-07 |
-| **TS-07** | Manejo consistente de errores del API | Como desarrollador, quiero que el API responda los errores con una estructura uniforme para que el cliente pueda interpretarlos de manera predecible. | **Given** que ocurre un error en cualquier recurso, **When** el API construye la respuesta, **Then** utiliza el mismo formato de mensaje y el código HTTP correspondiente. <br><br> **Given** que se produce un error no controlado, **When** el API responde, **Then** no expone detalles internos de la implementación. | EP-07 |
-| **TS-08** | Documentación del API con OpenAPI | Como desarrollador, quiero documentar el API siguiendo OpenAPI para que el equipo pueda consultar y probar los recursos disponibles. | **Given** que el servicio está en ejecución, **When** se accede a la ruta de documentación, **Then** el sistema muestra la especificación con todos los recursos publicados. <br><br> **Given** que se incorpora un recurso nuevo, **When** se actualiza el servicio, **Then** la documentación refleja ese recurso. | EP-07 |
-| **TS-09** | Despliegue de la landing page y la aplicación web | Como desarrollador, quiero automatizar el despliegue para que la solución esté disponible públicamente y actualizada. | **Given** que se integran cambios en la rama principal, **When** se ejecuta el flujo de despliegue, **Then** el sitio publicado refleja esos cambios. <br><br> **Given** que la aplicación está publicada, **When** se solicitan sus recursos estáticos, **Then** el servidor los entrega sin errores de recurso no encontrado. | EP-07 |
+La última columna, **Business Goal**, indica a qué objetivo de negocio del Impact Mapping (sección 3.2) contribuye cada historia. Su propósito es que el valor de cada historia sea verificable y no dependa únicamente de la redacción del «para»: una historia cuyo enunciado describe un resultado inmediato para el usuario (comprender, revisar, consultar) queda igualmente conectada con el objetivo estratégico al que sirve. La asignación no es una interpretación posterior sino el mismo mapeo declarado en la tabla de deliverables de la sección 3.2, leído en sentido inverso.
+
+Las Technical Stories no aparecen en el Impact Mapping porque no son observables por el usuario; se les asigna el objetivo que **habilitan**: TS-01 sostiene la trazabilidad por responsable de BG-05; TS-02, TS-05 y TS-08 habilitan la consulta consolidada de BG-03; TS-03 y TS-07 hacen viable el registro sin papel de BG-04; TS-04 soporta el traspaso SBAR de BG-02; y TS-09 publica la landing page de la que depende BG-01. Las filas de Epic no llevan objetivo propio, ya que su contribución es la suma de las historias que agrupan.
+
+| Epic / Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) | Business Goal |
+|---|---|---|---|---|---|
+| **EP-01** | **Landing Page informativa** | Como visitante del sitio web, quiero conocer la propuesta de valor, el funcionamiento, los beneficios, los planes y los canales de contacto de ClinicalSync para evaluar si la solución responde a las necesidades de mi centro de salud. | — | — | — |
+| **US-01** | Visualizar la landing page | Como visitante, quiero visualizar la landing page de ClinicalSync para decidir en los primeros segundos si la solución aplica a mi servicio y vale la pena seguir leyendo. | **Given** que el visitante accede a la dirección del sitio, **When** la página termina de cargar, **Then** el sistema muestra la información general de ClinicalSync. <br><br> **Given** que el visitante utiliza un navegador compatible, **When** ingresa al sitio, **Then** el contenido principal se muestra sin errores de carga. | EP-01 | **BG-01** |
+| **US-02** | Conocer la propuesta de valor | Como visitante, quiero conocer la propuesta de valor de ClinicalSync para reconocer mi propio problema en ella y considerar solicitar una demostración. | **Given** que el visitante se encuentra en la sección principal, **When** revisa el contenido destacado, **Then** el sistema comunica el enfoque en continuidad asistencial cardiovascular. <br><br> **Given** que el visitante recorre la sección, **When** llega a su final, **Then** el sistema ofrece una acción para conocer más sobre la solución. | EP-01 | **BG-01** |
+| **US-03** | Comprender el problema que resuelve la solución | Como visitante, quiero entender por qué existe ClinicalSync para reconocer el problema actual de información clínica dispersa. | **Given** que el visitante consulta la sección de problema, **When** lee su contenido, **Then** el sistema describe la fragmentación de información y la pérdida de datos entre turnos. <br><br> **Given** que la sección incluye datos de contexto, **When** el visitante los revisa, **Then** el sistema indica la fuente de cada dato presentado. | EP-01 | **BG-01** |
+| **US-04** | Revisar cómo funciona la plataforma | Como visitante, quiero conocer el funcionamiento de ClinicalSync en pasos simples para estimar el esfuerzo de adopción en mi servicio antes de contactar al equipo. | **Given** que el visitante accede a la sección de funcionamiento, **When** la revisa, **Then** el sistema presenta el flujo en pasos ordenados y numerados. <br><br> **Given** que el visitante finaliza la lectura de los pasos, **When** continúa navegando, **Then** el sistema lo conduce a las características de la solución. | EP-01 | **BG-01** |
+| **US-05** | Visualizar las características clave | Como visitante, quiero conocer las características principales de ClinicalSync para evaluar si cubre las necesidades de un área cardiovascular. | **Given** que el visitante consulta la sección de características, **When** lee su contenido, **Then** el sistema presenta el traspaso SBAR, el registro de signos vitales, los eventos clínicos y la trazabilidad. <br><br> **Given** que el visitante selecciona una característica, **When** la despliega, **Then** el sistema muestra su descripción ampliada. | EP-01 | **BG-01** |
+| **US-06** | Revisar los beneficios según el perfil | Como visitante, quiero revisar los beneficios de ClinicalSync para justificar ante mi institución por qué solicitar una demostración. | **Given** que el visitante consulta la sección de beneficios, **When** la revisa, **Then** el sistema diferencia los beneficios para personal de enfermería, médicos especialistas e institución. <br><br> **Given** que el visitante pertenece a uno de esos perfiles, **When** identifica su sección, **Then** el sistema presenta beneficios expresados en términos operativos. | EP-01 | **BG-01** |
+| **US-07** | Consultar los planes y el modelo de servicio | Como visitante con responsabilidad de decisión, quiero conocer los planes disponibles para estimar la viabilidad económica de la solución. | **Given** que el visitante accede a la sección de planes, **When** la revisa, **Then** el sistema muestra los planes disponibles con las funcionalidades incluidas en cada uno. <br><br> **Given** que el visitante selecciona un plan, **When** solicita más información, **Then** el sistema lo dirige al formulario de contacto con el plan preseleccionado. | EP-01 | **BG-01** |
+| **US-08** | Consultar las preguntas frecuentes | Como visitante, quiero revisar las preguntas frecuentes para resolver dudas sobre el alcance y el uso de la solución. | **Given** que el visitante accede a la sección de preguntas frecuentes, **When** selecciona una pregunta, **Then** el sistema despliega su respuesta. <br><br> **Given** que una respuesta está desplegada, **When** el visitante selecciona otra pregunta, **Then** el sistema mantiene la navegación sin recargar la página. | EP-01 | **BG-01** |
+| **US-09** | Conocer al equipo | Como visitante, quiero conocer al equipo detrás de ClinicalSync para identificar quiénes desarrollan la solución. | **Given** que el visitante accede a la sección del equipo, **When** la revisa, **Then** el sistema muestra a los integrantes con su rol dentro del proyecto. <br><br> **Given** que el visitante desea ampliar la información, **When** selecciona a un integrante, **Then** el sistema muestra su descripción profesional. | EP-01 | **BG-01** |
+| **US-10** | Solicitar información o una demostración | Como visitante interesado, quiero enviar mis datos mediante un formulario para solicitar información o una demostración de la plataforma. | **Given** que el visitante completa los campos obligatorios, **When** envía el formulario, **Then** la interfaz muestra un mensaje de confirmación en pantalla. <br><br> **Given** que uno o más campos obligatorios están vacíos o mal formados, **When** el visitante intenta enviar, **Then** el sistema señala los campos a corregir y no procesa el envío. <br><br> *Alcance AV1: la validación y la confirmación ocurren en el cliente. La persistencia de la solicitud y su envío al equipo comercial dependen del servicio web correspondiente, aún no implementado, por lo que este incremento no acredita captación real de leads.* | EP-01 | **BG-01** |
+| **US-11** | Cambiar el idioma del sitio | Como visitante, quiero alternar el idioma del sitio entre español e inglés para revisar la información en el idioma de mi preferencia. | **Given** que el visitante se encuentra en cualquier sección, **When** selecciona otro idioma, **Then** el sistema traduce el contenido manteniendo la sección actual. <br><br> **Given** que el visitante ya seleccionó un idioma, **When** vuelve a ingresar al sitio, **Then** el sistema conserva esa preferencia. | EP-01 | **BG-01** |
+| **US-12** | Acceder desde dispositivos móviles | Como visitante, quiero acceder al sitio desde un dispositivo móvil para revisar la información desde cualquier lugar. | **Given** que el visitante ingresa desde una pantalla reducida, **When** la página carga, **Then** el sistema adapta la disposición del contenido sin desbordamiento horizontal. <br><br> **Given** que el visitante navega desde un dispositivo táctil, **When** utiliza los elementos interactivos, **Then** el sistema responde correctamente a la interacción táctil. | EP-01 | **BG-01** |
+| **EP-02** | **Gestión de traspaso clínico SBAR** | Como personal clínico, quiero estructurar la información del cambio de turno para reducir omisiones y asegurar la continuidad de la atención. | — | — | — |
+| **US-13** | Registrar un traspaso SBAR | Como enfermero cardiovascular, quiero registrar el traspaso de un paciente usando la estructura SBAR para comunicar su estado al turno entrante. | **Given** que el enfermero completa las cuatro secciones del formato SBAR, **When** guarda el traspaso, **Then** el sistema lo asocia al paciente y al turno correspondiente. <br><br> **Given** que alguna de las cuatro secciones está vacía, **When** el enfermero intenta guardar, **Then** el sistema indica qué sección falta y no registra el traspaso. | EP-02 | **BG-02** |
+| **US-14** | Consultar el traspaso del turno anterior | Como enfermero entrante, quiero consultar el traspaso del turno saliente para continuar la atención sin perder información. | **Given** que existe un traspaso registrado para el paciente, **When** el enfermero accede a su ficha, **Then** el sistema muestra el traspaso más reciente con sus cuatro secciones. <br><br> **Given** que el enfermero tiene varios pacientes asignados, **When** consulta el listado de traspasos, **Then** el sistema muestra únicamente los correspondientes a esos pacientes. | EP-02 | **BG-02** |
+| **US-15** | Confirmar la recepción del traspaso | Como enfermero entrante, quiero confirmar que recibí el traspaso para dejar constancia de que asumo la responsabilidad del paciente. | **Given** que el enfermero consultó un traspaso, **When** confirma su recepción, **Then** el sistema registra la confirmación con su identidad y la hora. <br><br> **Given** que un traspaso no ha sido confirmado, **When** se consulta su estado, **Then** el sistema lo presenta como pendiente de recepción. | EP-02 | **BG-02** |
+| **US-16** | Generar el traspaso a partir de lo registrado | Como enfermero saliente, quiero que el traspaso se preconstruya con la información ya registrada durante mi turno para no redactarla nuevamente. | **Given** que el enfermero registró signos vitales, medicación y eventos durante el turno, **When** inicia un nuevo traspaso, **Then** el sistema precarga esa información en las secciones correspondientes. <br><br> **Given** que la información precargada requiere ajustes, **When** el enfermero la edita, **Then** el sistema conserva sus modificaciones al guardar. | EP-02 | **BG-02** |
+| **EP-03** | **Registro clínico del paciente** | Como personal de enfermería, quiero registrar la información clínica en el momento en que ocurre para evitar la duplicidad con anotaciones en papel y el registro tardío. | — | — | — |
+| **US-17** | Consultar los pacientes asignados | Como enfermero, quiero ver los pacientes que tengo a cargo en mi turno para organizar mi trabajo desde el inicio de la guardia. | **Given** que el enfermero inicia sesión, **When** accede a su vista principal, **Then** el sistema muestra únicamente los pacientes asignados a su turno. <br><br> **Given** que un paciente presenta un estado crítico, **When** se muestra el listado, **Then** el sistema lo distingue visualmente del resto. | EP-03 | **BG-04** |
+| **US-18** | Registrar signos vitales | Como enfermero cardiovascular, quiero registrar los signos vitales del paciente para mantener actualizada su condición sin recurrir a anotaciones en papel. | **Given** que el enfermero completa los parámetros requeridos, **When** guarda el registro, **Then** el sistema lo asocia al paciente con la fecha y hora de la toma. <br><br> **Given** que un valor ingresado está fuera del rango fisiológico admitido, **When** el enfermero intenta guardar, **Then** el sistema solicita su confirmación antes de registrarlo. | EP-03 | **BG-04** |
+| **US-19** | Registrar la administración de un medicamento | Como enfermero, quiero dejar constancia del medicamento administrado para que el equipo conozca qué se aplicó, en qué dosis y a qué hora. | **Given** que el enfermero registra una administración, **When** la guarda, **Then** el sistema deja constancia del medicamento, la dosis, la hora y el responsable. <br><br> **Given** que la administración corresponde a una indicación vigente, **When** se registra, **Then** el sistema la vincula a esa indicación. | EP-03 | **BG-04** |
+| **US-20** | Registrar un evento clínico relevante | Como enfermero, quiero registrar los eventos clínicos ocurridos durante el turno para que queden documentados y disponibles para el equipo. | **Given** que el enfermero describe un evento clínico, **When** lo guarda, **Then** el sistema lo registra con su hora de ocurrencia y su responsable. <br><br> **Given** que el evento se clasifica como crítico, **When** se guarda, **Then** el sistema lo destaca en la vista del paciente. | EP-03 | **BG-04** |
+| **US-21** | Identificar la documentación pendiente | Como enfermero, quiero conocer qué información me falta registrar antes de cerrar mi turno para no entregar la guardia con datos incompletos. | **Given** que existen registros incompletos del turno, **When** el enfermero consulta su resumen de cierre, **Then** el sistema enumera los pendientes por paciente. <br><br> **Given** que no queda documentación pendiente, **When** se consulta el resumen, **Then** el sistema indica que el turno está completo. | EP-03 | **BG-04** |
+| **EP-04** | **Indicaciones médicas y cumplimiento** | Como equipo clínico, quiero que las indicaciones médicas y su ejecución queden registradas para cerrar el ciclo entre lo que se ordena y lo que efectivamente se realiza. | — | — | — |
+| **US-22** | Emitir una indicación médica | Como médico especialista, quiero registrar una indicación para que el personal de enfermería la ejecute con la información necesaria. | **Given** que el médico completa los datos de la indicación, **When** la emite, **Then** el sistema la asocia al paciente y la deja visible para el personal de enfermería. <br><br> **Given** que la indicación reemplaza a una anterior, **When** se emite, **Then** el sistema conserva la anterior en el historial y marca la nueva como vigente. | EP-04 | **BG-03** |
+| **US-23** | Consultar las indicaciones vigentes | Como enfermero, quiero consultar las indicaciones activas de un paciente para ejecutar el tratamiento correcto y actualizado. | **Given** que el paciente tiene indicaciones registradas, **When** el enfermero accede a su ficha, **Then** el sistema muestra únicamente las vigentes. <br><br> **Given** que una indicación fue modificada, **When** el enfermero la consulta, **Then** el sistema señala que existe una versión previa. | EP-04 | **BG-03** |
+| **US-24** | Registrar el cumplimiento de una indicación | Como enfermero, quiero confirmar que ejecuté una indicación para dejar constancia de su cumplimiento. | **Given** que el enfermero ejecutó una indicación, **When** registra su cumplimiento, **Then** el sistema deja constancia del responsable y la hora de ejecución. <br><br> **Given** que una indicación fue cumplida, **When** se consulta su estado, **Then** el sistema la presenta como ejecutada. | EP-04 | **BG-03** |
+| **US-25** | Identificar las indicaciones pendientes | Como médico especialista, quiero saber qué indicaciones aún no se han ejecutado para tomar decisiones sobre información confirmada. | **Given** que existen indicaciones sin cumplimiento registrado, **When** el médico consulta al paciente, **Then** el sistema las presenta como pendientes. <br><br> **Given** que una indicación pendiente supera su plazo previsto, **When** se muestra el listado, **Then** el sistema la destaca sobre las demás. | EP-04 | **BG-03** |
+| **EP-05** | **Soporte a la decisión clínica** | Como médico especialista, quiero comprender el estado del paciente sin reconstruirlo manualmente desde varias fuentes para decidir con rapidez y con información completa. | — | — | — |
+| **US-26** | Consultar el resumen clínico del paciente | Como médico especialista, quiero ver en una sola vista la información relevante del paciente para evaluar su estado sin recorrer varios módulos. | **Given** que el médico accede a un paciente, **When** se abre su ficha, **Then** el sistema muestra en una vista los últimos signos vitales, la medicación reciente, los eventos del periodo y las indicaciones vigentes. <br><br> **Given** que el médico necesita ampliar un dato del resumen, **When** lo selecciona, **Then** el sistema muestra su detalle completo. | EP-05 | **BG-03** |
+| **US-27** | Revisar la evolución reciente | Como médico especialista, quiero revisar cómo evolucionó el paciente en las últimas horas para identificar tendencias en su condición. | **Given** que existen registros de signos vitales del periodo, **When** el médico consulta la evolución, **Then** el sistema los presenta ordenados cronológicamente. <br><br> **Given** que el médico define un rango de tiempo, **When** aplica el filtro, **Then** el sistema muestra únicamente los registros de ese rango. | EP-05 | **BG-03** |
+| **US-28** | Identificar cambios críticos mediante alertas | Como profesional clínico, quiero que el sistema señale los cambios críticos del paciente para reaccionar oportunamente. | **Given** que un registro supera un umbral definido como crítico, **When** se guarda, **Then** el sistema genera una alerta visible en la vista del paciente. <br><br> **Given** que una alerta fue atendida, **When** el profesional la marca como revisada, **Then** el sistema deja constancia de quién la atendió y cuándo. | EP-05 | **BG-03** |
+| **US-29** | Priorizar los pacientes según su riesgo | Como profesional clínico, quiero que los pacientes se ordenen según su nivel de riesgo para atender primero los casos más delicados. | **Given** que existen pacientes con alertas activas, **When** se muestra el listado, **Then** el sistema los ubica antes que los pacientes estables. <br><br> **Given** que el estado de un paciente cambia, **When** se registra la variación, **Then** el sistema actualiza su posición en el listado. | EP-05 | **BG-03** |
+| **EP-06** | **Trazabilidad y auditoría clínica** | Como institución de salud, quiero que toda acción clínica quede registrada con su responsable y su momento para poder auditar la atención brindada. | — | — | — |
+| **US-30** | Consultar la bitácora de acciones del paciente | Como coordinador clínico, quiero revisar el historial de acciones registradas sobre un paciente para verificar la continuidad de su atención. | **Given** que existen acciones registradas, **When** el coordinador consulta la bitácora, **Then** el sistema las presenta en orden cronológico con su tipo, responsable y hora. <br><br> **Given** que el coordinador filtra por tipo de acción o por rango de fechas, **When** aplica el filtro, **Then** el sistema muestra únicamente los registros correspondientes. | EP-06 | **BG-02**, **BG-05** |
+| **US-31** | Identificar al responsable de un registro | Como profesional clínico, quiero saber quién realizó un registro determinado para confirmar su origen antes de tomar una decisión. | **Given** que el profesional consulta cualquier registro clínico, **When** revisa su detalle, **Then** el sistema muestra el responsable y la fecha y hora de la acción. <br><br> **Given** que un registro fue modificado posteriormente, **When** se consulta, **Then** el sistema indica que existe un historial de cambios. | EP-06 | **BG-02**, **BG-05** |
+| **US-32** | Consultar el historial de cambios de un registro | Como coordinador clínico, quiero conocer las modificaciones aplicadas a un registro para verificar qué se cambió y quién lo hizo. | **Given** que un registro fue modificado, **When** el coordinador consulta su historial, **Then** el sistema muestra cada versión con su responsable y su momento. <br><br> **Given** que un registro nunca fue modificado, **When** se consulta su historial, **Then** el sistema muestra únicamente su versión original. | EP-06 | **BG-05** |
+| **EP-07** | **RESTful API y plataforma** | Como equipo de desarrollo, quiero disponer de un API REST documentada, segura y desplegada para sostener las funcionalidades de la aplicación web y la landing page. | — | — | — |
+| **TS-01** | Autenticación y autorización por roles | Como desarrollador, quiero implementar autenticación y control de acceso por roles para que cada usuario acceda únicamente a lo que le corresponde. | **Given** que un usuario envía credenciales válidas, **When** el API las procesa, **Then** responde con un token de acceso y estado 200. <br><br> **Given** que un usuario solicita un recurso ajeno a su rol, **When** el API recibe la petición, **Then** responde con estado 403 y no expone el recurso. | EP-07 | **BG-05** |
+| **TS-02** | Gestión de pacientes mediante API | Como desarrollador, quiero exponer los recursos de pacientes para que la aplicación web consulte y administre su información. | **Given** que se solicita la lista de pacientes de un turno, **When** el API procesa la petición, **Then** responde con la colección correspondiente y estado 200. <br><br> **Given** que se solicita un paciente inexistente, **When** el API procesa la petición, **Then** responde con estado 404. | EP-07 | **BG-03** |
+| **TS-03** | Gestión de registros clínicos mediante API | Como desarrollador, quiero exponer los recursos de signos vitales, medicación y eventos clínicos para permitir su registro y consulta desde la aplicación. | **Given** que se envía un registro clínico válido, **When** el API lo procesa, **Then** lo persiste y responde con estado 201. <br><br> **Given** que el cuerpo de la petición omite un campo obligatorio, **When** el API la recibe, **Then** responde con estado 400 e indica el campo faltante. | EP-07 | **BG-04** |
+| **TS-04** | Gestión de traspasos SBAR mediante API | Como desarrollador, quiero exponer los recursos de traspaso de turno para permitir su creación, consulta y confirmación desde la aplicación. | **Given** que se envía un traspaso con sus cuatro secciones completas, **When** el API lo procesa, **Then** lo persiste y responde con estado 201. <br><br> **Given** que se confirma la recepción de un traspaso, **When** el API procesa la petición, **Then** actualiza su estado y responde con estado 200. | EP-07 | **BG-02** |
+| **TS-05** | Gestión de indicaciones médicas mediante API | Como desarrollador, quiero exponer los recursos de indicaciones médicas para soportar su emisión, consulta y registro de cumplimiento. | **Given** que se emite una indicación válida, **When** el API la procesa, **Then** la persiste como vigente y responde con estado 201. <br><br> **Given** que se registra el cumplimiento de una indicación, **When** el API lo procesa, **Then** actualiza su estado y conserva la indicación original. | EP-07 | **BG-03** |
+| **TS-06** | Registro automático de trazabilidad | Como desarrollador, quiero que el API registre automáticamente el responsable y el momento de cada operación para garantizar la trazabilidad sin depender del usuario. | **Given** que se ejecuta una operación de escritura autenticada, **When** el API la procesa, **Then** almacena el identificador del usuario y la marca temporal junto al registro. <br><br> **Given** que se consulta la bitácora de un recurso, **When** el API procesa la petición, **Then** responde con las entradas ordenadas cronológicamente. | EP-07 | **BG-05** |
+| **TS-07** | Manejo consistente de errores del API | Como desarrollador, quiero que el API responda los errores con una estructura uniforme para que el cliente pueda interpretarlos de manera predecible. | **Given** que ocurre un error en cualquier recurso, **When** el API construye la respuesta, **Then** utiliza el mismo formato de mensaje y el código HTTP correspondiente. <br><br> **Given** que se produce un error no controlado, **When** el API responde, **Then** no expone detalles internos de la implementación. | EP-07 | **BG-04** |
+| **TS-08** | Documentación del API con OpenAPI | Como desarrollador, quiero documentar el API siguiendo OpenAPI para que el equipo pueda consultar y probar los recursos disponibles. | **Given** que el servicio está en ejecución, **When** se accede a la ruta de documentación, **Then** el sistema muestra la especificación con todos los recursos publicados. <br><br> **Given** que se incorpora un recurso nuevo, **When** se actualiza el servicio, **Then** la documentación refleja ese recurso. | EP-07 | **BG-03** |
+| **TS-09** | Despliegue de la landing page y la aplicación web | Como desarrollador, quiero automatizar el despliegue para que la solución esté disponible públicamente y actualizada. | **Given** que se integran cambios en la rama principal, **When** se ejecuta el flujo de despliegue, **Then** el sitio publicado refleja esos cambios. <br><br> **Given** que la aplicación está publicada, **When** se solicitan sus recursos estáticos, **Then** el servidor los entrega sin errores de recurso no encontrado. | EP-07 | **BG-01** |
 
 En total se definieron 7 Epics, 32 User Stories y 9 Technical Stories. La cobertura responde a los hallazgos del capítulo anterior: EP-02 atiende el punto de mayor riesgo identificado en las entrevistas y en el Event Storming, que es la pérdida de información en el cambio de turno; EP-03 responde a la necesidad de registrar durante la atención y no al cierre del turno; EP-04 cierra el ciclo entre la indicación emitida y su ejecución confirmada; EP-05 atiende la fase más costosa del recorrido del médico especialista, que es la consolidación previa a la decisión; y EP-06 convierte la trazabilidad en una capacidad transversal y no en una característica aislada.
 
@@ -1946,8 +2048,8 @@ La estimación se expresa en Story Points siguiendo la sucesión de Fibonacci (1
 
 | Orden | Entrega | Story ID | Título | Descripción | Story Points |
 |---:|---|---|---|---|---:|
-| 1 | Entrega 1 — Landing Page | US-01 | Visualizar la landing page | Como visitante, quiero visualizar la landing page para conocer la solución propuesta. | 2 |
-| 2 | Entrega 1 — Landing Page | US-02 | Conocer la propuesta de valor | Como visitante, quiero conocer la propuesta de valor para entender qué problema resuelve. | 2 |
+| 1 | Entrega 1 — Landing Page | US-01 | Visualizar la landing page | Como visitante, quiero visualizar la landing page para decidir si la solución aplica a mi servicio. | 2 |
+| 2 | Entrega 1 — Landing Page | US-02 | Conocer la propuesta de valor | Como visitante, quiero conocer la propuesta de valor para reconocer mi problema en ella y considerar una demostración. | 2 |
 | 3 | Entrega 1 — Landing Page | US-03 | Comprender el problema que resuelve la solución | Como visitante, quiero entender por qué existe ClinicalSync. | 2 |
 | 4 | Entrega 1 — Landing Page | US-04 | Revisar cómo funciona la plataforma | Como visitante, quiero conocer el funcionamiento en pasos simples. | 2 |
 | 5 | Entrega 1 — Landing Page | US-05 | Visualizar las características clave | Como visitante, quiero conocer las características principales de la solución. | 2 |
@@ -2419,7 +2521,9 @@ Los mock-ups que se presentan a continuación corresponden al diseño vigente de
 
 La Web Application de ClinicalSync fue diseñada para centralizar y apoyar los flujos clínicos relacionados con el registro, consulta y trazabilidad de la información en áreas cardiovasculares. La experiencia de usuario prioriza la claridad visual, la reducción de la carga operativa y el acceso ágil a las acciones principales, respondiendo a la necesidad del personal de enfermería y de los médicos especialistas de interactuar en entornos de alta presión donde el tiempo y la precisión son críticos.
 
-Los wireframes, wireflows, mock-ups y diagramas de flujo de usuario se organizan alrededor de los módulos principales de la plataforma, adaptados a los distintos roles: el dashboard clínico (Mis pacientes), el monitoreo de signos vitales, los traspasos de turno estructurados mediante la metodología SBAR, el registro de eventos clínicos, la bitácora y la elección de planes de suscripción. Estos artefactos permiten evidenciar la relación entre las User Stories, los flujos de interacción y la implementación final de la Web Application.
+Los wireframes, wireflows, mock-ups y diagramas de flujo de usuario se organizan alrededor de los módulos principales de la plataforma, adaptados a los distintos roles: el dashboard clínico (Mis pacientes), el monitoreo de signos vitales, los traspasos de turno estructurados mediante la metodología SBAR, el registro de eventos clínicos, la bitácora y la elección de planes de suscripción. Estos artefactos permiten evidenciar la relación entre las User Stories y los flujos de interacción previstos.
+
+> **Alcance de esta sección.** Todo el contenido de 4.4 es **diseño y prototipo de interfaz correspondiente a entregas posteriores**. Ninguna de estas pantallas está implementada: el incremento ejecutable de AV1 es únicamente la Landing Page de la sección 4.3, desplegada en producción. Los wireframes, wireflows, mock-ups y user flows aquí presentados definen la solución objetivo y serán contrastados con los usuarios y con la implementación real en los sprints siguientes.
 
 #### 4.4.1. Web Applications Wireframes
 <p align="center">
@@ -2747,6 +2851,147 @@ Aquí mostramos cómo está estructurado el Backend API por dentro. Separamos la
 
 *Muestra las interacciones internas (mediante interfaces de Java y Domain Events) entre los componentes del sistema.*
 
+#### 4.6.5. Bounded Context Canvases
+
+El paso 2 de la sección anterior identificó siete Bounded Contexts y sus eventos. Esta sección los documenta con el detalle necesario para implementarlos: para cada contexto se declara su Aggregate Root, las entidades que viven dentro de él, sus Value Objects, las **invariantes** que el agregado protege, los repositorios que lo exponen, los eventos que **publica y consume**, y las tablas sobre las que ejerce **ownership** exclusivo.
+
+**Criterio de ownership.** Cada tabla del esquema de la sección 4.8 pertenece a un único contexto: solo ese contexto la escribe. Un contexto que necesita datos de otro los obtiene por el evento que el dueño publica o por una consulta explícita a su repositorio, nunca escribiendo directamente sobre tablas ajenas. ClinicalSync se construye como un monolito modular sobre un único esquema MySQL, de modo que esta separación es **lógica y no física**: se sostiene en la frontera de los repositorios y no en permisos de base de datos. El equipo lo declara explícitamente porque es la diferencia entre un Bounded Context real y un paquete con nombre de contexto.
+
+**Criterio transaccional.** Una transacción modifica un solo agregado. Los efectos que cruzan contextos se resuelven por evento de dominio y son **eventualmente consistentes**: cuando un signo vital fuera de umbral genera una alerta, el registro del signo vital y la creación de la alerta ocurren en transacciones distintas, y el sistema tolera el intervalo entre ambas.
+
+---
+
+**BC-01 · Security & Shared Kernel (IAM)** — *Subdominio genérico*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `User` |
+| **Entidades internas** | `Role`, `Session` |
+| **Value Objects** | `UserId`, `EmailAddress`, `CredentialHash`, `ShiftAssignment` (unidad y rango horario) |
+| **Invariantes** | Un `User` tiene al menos un `Role` asignado. · Un usuario sin `ShiftAssignment` vigente no puede operar sobre pacientes. · Una `Session` no puede renovarse después de expirada. |
+| **Repositorios** | `UserRepository`, `SessionRepository` |
+| **Publica** | `UsuarioAutenticado`, `RolAsignado`, `SesionIniciada`, `SesionFinalizada` |
+| **Consume** | — |
+| **Ownership** | `users`, `roles`, `user_roles`, `sessions` |
+
+**BC-02 · Patients** — *Subdominio de soporte*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `Patient` |
+| **Entidades internas** | `Admission` |
+| **Value Objects** | `PatientId`, `MedicalRecordNumber`, `BedLocation` (unidad y cama), `DemographicData` |
+| **Invariantes** | Un paciente no puede tener dos `Admission` activas simultáneas. · Un paciente admitido tiene siempre una `BedLocation` asignada. · El `MedicalRecordNumber` es único y no se modifica tras la admisión. |
+| **Repositorios** | `PatientRepository` |
+| **Publica** | `PacienteAdmitido`, `DatosDemograficosRegistrados`, `EstadoActualizado`, `PacienteDadoDeAlta` |
+| **Consume** | `UsuarioAutenticado` (para resolver el responsable de la admisión) |
+| **Ownership** | `patients`, `admissions` |
+
+**BC-03 · Vital Signs** — *Core Domain*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `VitalSignRecord` |
+| **Entidades internas** | — (el registro es la unidad de consistencia) |
+| **Value Objects** | `BloodPressure` (sistólica y diastólica), `HeartRate`, `OxygenSaturation`, `Temperature`, `RiskLevel` *(enum)*, `MeasurementTimestamp` |
+| **Invariantes** | En `BloodPressure`, la sistólica es mayor que la diastólica y ambas caen dentro del rango fisiológico admitido. · Todo registro referencia un `PatientId` existente y un `UserId` responsable. · El `RiskLevel` **se deriva** de los valores medidos y nunca se asigna manualmente. · Un registro es **inmutable** una vez creado: una corrección se expresa como un registro nuevo que referencia al anterior, nunca como una modificación. |
+| **Repositorios** | `VitalSignRecordRepository` |
+| **Publica** | `SignosVitalesRegistrados`, `NivelDeRiesgoClinicoEvaluado` |
+| **Consume** | `PacienteAdmitido`, `PacienteDadoDeAlta` (para habilitar o cerrar el registro sobre ese paciente) |
+| **Ownership** | `vital_sign_records` |
+
+**BC-04 · Critical Events & Alerts** — *Core Domain*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `Alert` |
+| **Entidades internas** | `AlertAcknowledgement` |
+| **Value Objects** | `AlertId`, `AlertSeverity` *(enum)*, `TriggerSource` (medición o evento que la originó), `AlertStatus` *(enum)* |
+| **Invariantes** | Toda alerta referencia el `TriggerSource` que la originó; no existen alertas sin origen. · Una alerta no puede pasar a *resuelta* sin haber pasado antes por *atendida*. · El paso a *atendida* exige el `UserId` de quien la atiende. · Una alerta resuelta no vuelve a estados anteriores. |
+| **Repositorios** | `AlertRepository` |
+| **Publica** | `AlertaCriticaGenerada`, `AlertaAtendida`, `AlertaResuelta` |
+| **Consume** | `NivelDeRiesgoClinicoEvaluado`, `EventoClinicoRelevanteDetectado` |
+| **Ownership** | `alerts`, `alert_acknowledgements` |
+
+**BC-05 · Handover (SBAR)** — *Core Domain de trazabilidad clínica*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `Handover` |
+| **Entidades internas** | `SbarSection` (las cuatro secciones del modelo) |
+| **Value Objects** | `HandoverId`, `SbarContent` (*Situation*, *Background*, *Assessment*, *Recommendation*), `HandoverStatus` *(enum)*, `ShiftPeriod` |
+| **Invariantes** | Un traspaso no puede emitirse con alguna de las cuatro secciones SBAR vacía. · El `incomingNurseId` debe ser distinto del `outgoingNurseId`: nadie se entrega el turno a sí mismo. · El acuse de recibo lo registra únicamente el enfermero entrante y **una sola vez**. · Un turno no puede cerrarse con traspasos emitidos y sin acusar. |
+| **Repositorios** | `HandoverRepository` |
+| **Publica** | `EntregaSbarRegistrada`, `AcuseDeReciboConfirmado`, `TurnoFinalizado` |
+| **Consume** | `PacienteAdmitido`, `SignosVitalesRegistrados`, `AlertaCriticaGenerada` (para componer la sección *Situation* del resumen) |
+| **Ownership** | `handovers`, `handover_sections` |
+
+**BC-06 · Audit Logs** — *Subdominio de soporte*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `AuditLog` *(clase inmutable)* |
+| **Entidades internas** | — |
+| **Value Objects** | `ActorId`, `ActionType` *(enum)*, `AffectedResource`, `OccurredAt`, `MetadataPayload` (JSON) |
+| **Invariantes** | La tabla es **append-only**: no admite modificación ni borrado de entradas. · Toda entrada tiene actor, marca temporal, tipo de acción y recurso afectado; ninguno puede ser nulo. · El registro lo genera el sistema al consumir un evento, nunca el usuario. |
+| **Repositorios** | `AuditLogRepository` *(solo lectura y alta)* |
+| **Publica** | `LogDeAuditoriaCreado` |
+| **Consume** | **Todos los eventos de dominio de los demás contextos** |
+| **Ownership** | `audit_logs` |
+
+**BC-07 · Physicians & Treatments** — *Subdominio de soporte*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `MedicalOrder` |
+| **Entidades internas** | `Physician`, `TreatmentHistoryEntry` |
+| **Value Objects** | `OrderId`, `PhysicianId`, `Dosage`, `OrderStatus` *(enum)*, `PrescribedAt`, `ExecutedAt` |
+| **Invariantes** | Toda indicación tiene un `PhysicianId` prescriptor y un `PatientId` destinatario. · Una indicación no puede marcarse como ejecutada sin el `UserId` de la enfermera que la ejecutó. · `ExecutedAt` nunca es anterior a `PrescribedAt`. · Una indicación ejecutada no admite cambio de dosis: se cancela y se emite una nueva. |
+| **Repositorios** | `MedicalOrderRepository`, `PhysicianRepository` |
+| **Publica** | `NuevaIndicacionMedicaRegistrada`, `IndicacionEjecutadaPorEnfermeria`, `CumplimientoDeIndicacionRegistrado` |
+| **Consume** | `PacienteAdmitido`, `UsuarioAutenticado` |
+| **Ownership** | `physicians`, `patient_treatments`, `medical_orders` |
+
+---
+
+**Por qué Vital Signs es el Core Domain.** La decisión no responde al volumen de datos sino a la evidencia de las entrevistas. La matriz de la sección 2.2.3 muestra que el hallazgo H-A — se registra en papel durante la atención y se transcribe al cierre del turno — aparece en 4 de 5 entrevistas, y que la condición de adopción declarada por los cinco entrevistados es que el registro junto a la cama sea más rápido que el cuaderno. Si ese registro no gana frente al papel, el resto del sistema queda sin datos: el Impact Mapping de la sección 3.2 muestra que el personal de enfermería produce la información que el médico especialista consume, de modo que Handover, Alerts y la vista consolidada del médico dependen de que exista captura. Es decir, **Vital Signs es el contexto donde el producto gana o pierde**, y por eso concentra el esfuerzo de diseño.
+
+Handover (BC-05) se clasifica también como Core Domain por una razón distinta: es el contexto que atiende el único hallazgo con severidad crítica y evento consumado (H-B, 3 de 5 entrevistas), y es el diferenciador frente a los competidores analizados en la sección 2.1.1, ninguno de los cuales ofrece un traspaso SBAR estructurado y acusado para unidades cardiovasculares.
+
+Los demás contextos son de soporte o genéricos: IAM (BC-01) resuelve un problema ya resuelto por la industria; Patients (BC-02) actúa como directorio maestro; Audit (BC-06) es transversal y no diferencia al producto por sí mismo, aunque sostiene el objetivo BG-05; y Physicians & Treatments (BC-07) soporta el ciclo de indicación y cumplimiento que el médico especialista reclamó en el hallazgo H-J.
+
+#### 4.6.6. Integración entre Bounded Contexts
+
+Documentar siete contextos no basta para afirmar que existen: un contexto que llama directamente a las clases de otro es un módulo con nombre de contexto. Esta sección declara **cómo se comunican** y qué relación de dependencia mantienen, usando los patrones de integración de DDD.
+
+**Mapa de contextos**
+
+| Origen | Destino | Patrón | Contrato | Por qué |
+| :--- | :--- | :--- | :--- | :--- |
+| BC-01 IAM | Todos | *Shared Kernel* | `UserId`, `Role` y `ShiftAssignment` como tipos compartidos | La identidad y el turno asignado son vocabulario común a todo el sistema; duplicarlos produciría reglas de acceso divergentes. |
+| BC-02 Patients | BC-03, BC-05, BC-07 | *Customer–Supplier* | Evento `PacienteAdmitido` / `PacienteDadoDeAlta`, con `PatientId` y `BedLocation` | Patients es el directorio maestro. Los demás contextos reaccionan a la admisión; ninguno crea pacientes. |
+| BC-03 Vital Signs | BC-04 Alerts | *Published Language* (evento de dominio) | `NivelDeRiesgoClinicoEvaluado { patientId, recordId, riskLevel, measuredAt }` | Vital Signs **no conoce** el concepto de alerta. Publica la evaluación de riesgo; si debe generarse una alerta es una decisión de BC-04. |
+| BC-03 Vital Signs | BC-05 Handover | *Open Host Service* (consulta de solo lectura) | `VitalSignsSummaryQuery(patientId, shiftPeriod)` | El traspaso necesita el estado del turno para componer la sección *Situation*, pero no debe reconstruir el cálculo de riesgo. |
+| BC-04 Alerts | BC-05 Handover | *Published Language* | `AlertaCriticaGenerada { alertId, patientId, severity, triggerSource }` | Las alertas abiertas del turno forman parte obligatoria del SBAR entregado. |
+| BC-07 Treatments | BC-05 Handover | *Published Language* | `NuevaIndicacionMedicaRegistrada`, `IndicacionEjecutadaPorEnfermeria` | Las indicaciones pendientes de ejecución son parte de la sección *Recommendation*. |
+| Todos | BC-06 Audit | *Conformist* | Cualquier evento de dominio, normalizado a `AuditLog` | Audit se adapta al lenguaje de los demás y no les impone forma alguna: escucha y transforma. Esta dirección única es lo que impide que la auditoría se vuelva una dependencia del dominio. |
+| BC-03, BC-04, BC-05 | Sistema hospitalario (HIS) | *Anti-Corruption Layer* | Adaptador de salida, fuera del alcance de AV1 y TB1 | El HIS institucional tiene su propio modelo. Cuando exista integración, se traducirá en una capa dedicada para que su esquema no contamine el dominio de ClinicalSync. |
+
+**Reglas de dependencia.** Tres reglas hacen verificable el aislamiento y deben poder comprobarse leyendo el código:
+
+1. **Ningún contexto importa clases del dominio de otro.** Lo único que cruza la frontera son los eventos de dominio y los identificadores declarados en el *Shared Kernel*.
+2. **Las dependencias no forman ciclos.** Vital Signs publica hacia Alerts, pero Alerts nunca escribe sobre `vital_sign_records`; cuando un contexto necesita información del otro en sentido inverso, lo hace por consulta de solo lectura y no por escritura.
+3. **Audit es sumidero.** Consume eventos de todos y no publica hacia ninguno, salvo su propio `LogDeAuditoriaCreado`. Ningún contexto del dominio depende de Audit para completar su operación.
+
+**Políticas de dominio como integración.** Las dos políticas declaradas en el paso 3 de la sección 4.6.1 son, en realidad, los dos puntos de integración críticos del sistema, y se precisan aquí:
+
+| Política | Evento disparador | Contexto que reacciona | Resultado | Consistencia |
+| :--- | :--- | :--- | :--- | :--- |
+| Un signo vital fuera de umbral genera una alerta | `NivelDeRiesgoClinicoEvaluado` con `riskLevel` crítico | BC-04 Alerts | `AlertaCriticaGenerada` | Eventual: el registro del signo vital se confirma aunque la alerta se cree en una transacción posterior. |
+| El inicio del cambio de turno genera el resumen SBAR | Comando `IniciarEntregaDeTurno` | BC-05 Handover | Borrador de `SbarContent` precargado con los datos del turno | Eventual: el borrador se compone a partir de proyecciones de BC-03, BC-04 y BC-07; si alguna no está al día, la sección se marca como incompleta y el traspaso no puede emitirse, por la invariante de BC-05. |
+
+**Alcance de esta sección.** El modelo descrito aquí es **diseño, no implementación**. A la fecha de esta entrega no existe código de dominio: el incremento ejecutable es la Landing Page. Las reglas de dependencia enunciadas arriba son el criterio con el que el equipo construirá y revisará la aplicación web y los servicios REST en los sprints siguientes, y el Sprint Review correspondiente deberá mostrar la estructura de paquetes que las materializa.
+
 ### 4.7. Software Object-Oriented Design
 
 El diseño orientado a objetos traduce los bounded contexts identificados en la sección 4.6 a una estructura de clases implementable. Es el punto donde el modelo del dominio deja de ser un mapa conceptual y pasa a definir entidades, agregados, objetos de valor y relaciones concretas que el equipo escribirá en código durante el Capítulo V.
@@ -2837,7 +3082,7 @@ Las herramientas se organizan según las principales actividades del ciclo de vi
 
 - [**Vercel**](https://vercel.com/): Es el servicio utilizado para desplegar la Landing Page de ClinicalSync. Se conectó mediante la GitHub App de Vercel al repositorio `Digital-Clinical-Systems/Landing-Page`, de modo que cada integración a la rama `main` genera automáticamente un nuevo despliegue en producción bajo un subdominio HTTPS gestionado por la plataforma.
 
-- [**Firebase Hosting**](https://firebase.google.com/):  Es una plataforma en la nube prevista para el despliegue de la Frontend Web Application en etapas posteriores del proyecto. A la fecha de esta entrega aún no se ha utilizado, ya que el alcance comprometido corresponde únicamente a la Landing Page.
+- El despliegue de la **Frontend Web Application** se realiza en la misma plataforma Vercel, en el proyecto `clinicalsync-frontend`, conectado al repositorio `Digital-Clinical-Systems/FrontClinicalSync`. El equipo evaluó Firebase Hosting y lo descartó para no introducir un segundo proveedor para un mismo tipo de artefacto estático.
 
 - [**Swagger / OpenAPI**](https://swagger.io/): Herramienta utilizada para la documentación interactiva y estandarizada del RESTful API.
 
@@ -2858,32 +3103,38 @@ El repositorio principal del proyecto es el siguiente:
 - **Frontend Web App Repository**: [https://github.com/Digital-Clinical-Systems/FrontClinicalSync](https://github.com/Digital-Clinical-Systems/FrontClinicalSync)
 - **Backend (Web Services) Repository**: [https://github.com/Digital-Clinical-Systems/BackClinicalSync](https://github.com/Digital-Clinical-Systems/BackClinicalSync)
 
-### GitFlow Workflow implementado
+### GitFlow Workflow adoptado
 
-El equipo ha adoptado la metodología GitFlow como modelo de control de versiones, lo cual permite separar el desarrollo de nuevas funcionalidades, la integración de cambios y la preparación de versiones estables.
+El equipo adopta **GitFlow** como modelo de control de versiones del proyecto, con el fin de separar el desarrollo de nuevas funcionalidades, la integración de cambios y la preparación de versiones estables.
 
-Las ramas principales utilizadas son:
+Las ramas contempladas por el modelo son:
 
 - **main**: rama principal que contiene la versión estable del proyecto.
-- **develop**: rama de integración donde se consolidan todas las funcionalidades completadas antes de ser llevadas a producción.
-- **feature/**: ramas utilizadas para el desarrollo de funcionalidades específicas del sistema.
-- **release/** : Ramas utilizadas para preparar versiones finales para despliegue y corregir errores críticos en producción, respectivamente.
+- **develop**: rama de integración donde se consolidan las funcionalidades completadas antes de llevarlas a producción.
+- **feature/**: ramas para el desarrollo de funcionalidades específicas, creadas desde `develop` e integradas de vuelta a `develop`.
+- **release/**: ramas para preparar versiones finales de despliegue y corregir errores críticos detectados en producción.
 
-### Feature Branches utilizados en el proyecto
+### Aplicación real del workflow por repositorio
 
-El desarrollo de la Landing Page de ClinicalSync se ha organizado mediante ramas feature específicas por componente funcional:
+El grado de aplicación de GitFlow no fue uniforme en los dos repositorios de esta entrega. El equipo documenta a continuación el flujo efectivamente utilizado en cada uno, de modo que la descripción del proceso corresponda a la evidencia verificable en GitHub.
 
-- feature/hero → sección principal de presentación
-- feature/benefits → sección de beneficios del sistema
-- feature/call-to-action → botones y acciones de conversión
-- feature/characteristic → características del producto
-- feature/footer → pie de página del sistema
-- feature/how-it-works → explicación del funcionamiento de ClinicalSync
-- feature/pricing → sección de planes o precios
-- feature/team → sección de equipo desarrollador
+**Repositorio del informe (`Informe`).** Se aplicó el modelo de ramas de forma completa. Se trabajó con una rama `feature/report-chapter-N` por cada capítulo del informe, lo que permitió que los cinco integrantes avanzaran en paralelo sin conflictos sobre un mismo archivo. Las cinco ramas se integraron en `develop` mediante merges explícitos antes de la entrega. Las ramas y su historial son verificables en el repositorio:
 
-Esta organización permite un desarrollo modular, donde cada funcionalidad se implementa de forma independiente antes de integrarse a la rama develop.
+| Rama | Contenido |
+| :--- | :--- |
+| `main` | Versión estable del informe. |
+| `develop` | Integración de los cinco capítulos. |
+| `feature/report-chapter-1` | Capítulo I: startup, perfil de la solución y Lean UX. |
+| `feature/report-chapter-2` | Capítulo II: análisis competitivo, entrevistas y needfinding. |
+| `feature/report-chapter-3` | Capítulo III: User Stories, Impact Mapping y Product Backlog. |
+| `feature/report-chapter-4` | Capítulo IV: diseño de producto, DDD y base de datos. |
+| `feature/report-chapter-5` | Capítulo V: configuración, SCM, despliegue y evidencias del Sprint 1. |
 
+**Repositorio de la Landing Page (`Landing-Page`).** El desarrollo del incremento se realizó con un flujo *trunk-based*: los 18 commits del Sprint 1 se integraron directamente sobre `main`, sin ramas `feature/` ni Pull Requests. El equipo trabajó con commits pequeños e incrementales, uno por sección funcional del sitio (barra de navegación, hero, problema, pasos, características, beneficios, planes, preguntas frecuentes, equipo, contacto, pie de página, accesibilidad, SEO y animaciones), lo que conserva la trazabilidad de la evolución del incremento pero no constituye GitFlow.
+
+La razón fue operativa: la Landing Page se construyó en tres días (15 al 17 de septiembre de 2026) sobre un único conjunto de archivos estáticos, con secciones que compartían la misma hoja de estilos y el mismo diccionario de internacionalización, de modo que el trabajo por ramas habría generado conflictos sin aportar aislamiento real.
+
+**Compromiso para las siguientes entregas.** A partir de la aplicación web (repositorios `FrontClinicalSync` y `BackClinicalSync`), donde el trabajo sí se reparte entre módulos independientes y varios integrantes en paralelo, el equipo aplicará el modelo completo: una rama `feature/` por historia de usuario, integración a `develop` mediante Pull Request con revisión de al menos un integrante distinto del autor, y promoción a `main` únicamente desde `release/`. La evidencia de ese flujo (ramas, Pull Requests y merges) se incorporará en el Sprint Review correspondiente.
 
 ### Convención de ramas
 
@@ -2952,7 +3203,9 @@ Como regla principal, **todas las variables, funciones, clases, componentes y ar
 - Se organiza el CSS de forma modular por componentes o secciones.
 
 
-### AngularJS (Frontend Web Application)
+### Angular (Frontend Web Application)
+
+La aplicación web se desarrollará con **Angular** en su versión moderna (componentes *standalone*, *signals* e `inject()`), no con AngularJS 1.x, que se encuentra sin soporte desde 2022. Las convenciones de esta sección corresponden a esa versión.
 
 **Guías adoptadas:** *Angular Coding Style Guide* y *Google TypeScript Style Guide*.
 
@@ -3053,7 +3306,7 @@ independiente utilizando plataformas especializadas en la nube, lo que permite m
 ### Componentes de Despliegue
 
 - **Landing Page**: desplegada en Vercel, con integración continua desde GitHub.
-- **Frontend Web Application (Angular)**: desplegada en Firebase Hosting.
+- **Frontend Web Application (Angular)**: desplegada en Vercel.
 - **Web Services RESTful API (Backend)**: desplegado en un Cloud Provider (Render / Heroku).
 
 ### 1. Control de Versiones
@@ -3134,44 +3387,53 @@ Cuando no es posible instalar la GitHub App, Vercel admite el despliegue directo
 Publicación automática bajo un subdominio HTTPS gestionado por Vercel, con historial de despliegues y posibilidad de revertir a una versión anterior desde el panel de la plataforma.
 
 
-### 3. Despliegue del Frontend Web Application (Angular en Firebase Hosting)
+### 3. Despliegue del Frontend Web Application (Angular en Vercel)
 
-La aplicación es una *Single Page Application* (SPA) desarrollada en Angular 17+ y se despliega utilizando Firebase Hosting.
+La aplicación es una *Single Page Application* desarrollada en Angular 19 y se despliega en **Vercel**, la misma plataforma que aloja la Landing Page. El equipo evaluó Firebase Hosting y optó por Vercel para no introducir un segundo proveedor para un mismo tipo de artefacto estático y para reutilizar la configuración de integración continua ya en uso.
 
 ### Pasos de despliegue
 
-#### 1. Subir el proyecto al repositorio
-- `git add .`
-- `git commit -m "deploy frontend"`
-- `git push origin main`
+#### 1. Declarar la configuración en el repositorio
 
-#### 2. Configurar en Firebase
-- Acceder a: https://firebase.google.com/
-- Iniciar Sesión y dirigirse a 'Ir a Consola'.
-- Seleccionar **Crear un proyecto de Firebase nuevo → Escribir el nombre del proyecto (`clinicalsync-frontend`) → Crear Proyecto**.
-- Instalar Firebase CLI: `npm install -g firebase-tools`
-- Iniciar sesión en Firebase CLI: `firebase login`
-- Inicializar el proyecto: `firebase init`
-    - Seleccionar **Hosting**.
-    - Seleccionar el proyecto creado en Firebase.
-    - Configurar el directorio público: `dist/browser` (o `dist/`).
-    - Configurar como SPA: Sí.
-    - Por el momento decimos que no se configure GitHub Action para despliegue automático.
+Se versiona un archivo `vercel.json` en la raíz del proyecto, de modo que el despliegue sea reproducible y no dependa de ajustes hechos a mano en el panel del proveedor:
+
+```json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/front-clinical-sync/browser",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+```
+
+La regla de reescritura es indispensable en una *Single Page Application*: sin ella, un acceso directo a una ruta interna como `/resumen-paciente` devolvería un error 404, porque el servidor buscaría un archivo con ese nombre en lugar de entregar `index.html` y dejar que la aplicación resuelva el enrutamiento.
+
+#### 2. Vincular el repositorio
+
+- Crear el proyecto en Vercel a partir del repositorio `Digital-Clinical-Systems/FrontClinicalSync`.
+- Establecer `main` como rama de producción.
+- Vercel detecta Angular y toma el comando de construcción y el directorio de salida del archivo `vercel.json`.
 
 #### 3. Configurar variables de entorno
-- Configurar el archivo `environment.prod.ts` para apuntar a la URL pública del RESTful API:
-  - `apiBaseUrl: 'https://<backend-url>'`
 
-#### 4. Configurar el build
-- **Build command**:
-  - `ng build`
-- **Publish directory**:
-  - `dist/browser`
+Cuando exista el backend, la URL pública del RESTful API se declara como variable de entorno del proyecto en Vercel y se consume desde la configuración de la aplicación. No se versionan URLs de servicios ni credenciales en el repositorio.
 
-#### 5. Ejecutar Despliegue
-- Ejecutamos el comando de compilación: `ng build`
-- Ejecutamos el comando de publicación: `firebase deploy --only hosting`
-- Firebase genera una URL pública accesible.
+#### 4. Ejecutar el despliegue
+
+El despliegue no requiere un comando manual. **Cada integración a `main` dispara automáticamente la construcción y publicación**, y las integraciones a otras ramas generan despliegues de vista previa que permiten revisar un Pull Request antes de aprobarlo.
+
+Antes de integrar a `main`, el equipo ejecuta localmente las tres comprobaciones que condicionan la publicación:
+
+```bash
+npm run build                  # compilacion de produccion
+npm test -- --watch=false      # suite de pruebas del dominio
+npm run check:boundaries       # fronteras entre Bounded Contexts
+```
+
+#### 5. Resultado
+
+La aplicación queda publicada en `https://clinicalsync-frontend.vercel.app`. La evidencia del despliegue y su verificación sobre el entorno de producción se documenta en la sección 5.2.2.7.
 
 
 ### 4. Despliegue de los Web Services RESTful API (Cloud Provider)
@@ -3230,7 +3492,7 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
 <table>
   <tr> <th colspan="5">Sprint #</th> <th colspan="8">Sprint 1</th> </tr> 
   <tr> <td colspan="13">Sprint Planning Background</td> </tr> 
-  <tr> <td colspan="5">Date</td> <td colspan="8">15-04-2026</td> </tr> 
+  <tr> <td colspan="5">Date</td> <td colspan="8">14-09-2026</td> </tr> 
   <tr> <td colspan="5">Time</td> <td colspan="8">09:30 AM</td> </tr> 
   <tr> <td colspan="5">Location</td> <td colspan="8">Reunión remota (Discord)</td> </tr> 
   <tr> <td colspan="5">Prepared By</td> <td colspan="8">Sosa Soto, Oskar Rodrigo</td> </tr> 
@@ -3239,8 +3501,9 @@ preguntas frecuentes, equipo y sección de contacto, siguiendo la arquitectura d
   <tr> <td colspan="5">Sprint n-1 Retrospective Summary</td> <td colspan="8">No aplica - Este es el primer Sprint del proyecto</td> </tr> 
   <tr> <td colspan="13">Sprint Goal & User Stories</td> </tr> 
   <tr> <td colspan="5">Sprint 1 Goal</td> <td colspan="8"> <strong>"Our focus is on delivering a fully functional and user-friendly Landing Page for ClinicalSync, accompanied by complete and well-structured documentation. We believe this will provide an engaging first impression and clearly communicate the value proposition of our solution for enhancing clinical processes in cardiovascular nursing. This will be validated when the Landing Page is successfully deployed and accessible online, with all core sections working correctly, and all corresponding documentation completed."</strong> </td> </tr> 
-  <tr> <td colspan="5">Sprint 1 Velocity</td> <td colspan="8">28 Story Points</td> </tr> 
-  <tr> <td colspan="5">Sum of Story Points</td> <td colspan="8">28 Story Points</td> </tr> 
+  <tr> <td colspan="5">Story Points comprometidos (Committed SP)</td> <td colspan="8">28 Story Points</td> </tr> 
+  <tr> <td colspan="5">Story Points completados (Completed SP)</td> <td colspan="8">28 Story Points</td> </tr> 
+  <tr> <td colspan="5">Velocity</td> <td colspan="8">No aplica. Al ser el primer Sprint del proyecto no existe velocity histórica: los 28 SP corresponden a la capacidad comprometida en el planning, no a un promedio de sprints anteriores. La velocity se calculará a partir del Sprint 2, sobre los puntos efectivamente completados en sprints cerrados.</td> </tr> 
 </table>
 
 
@@ -3581,6 +3844,35 @@ La siguiente tabla registra los commits correspondientes al desarrollo de la Lan
 | Digital-Clinical-Systems/Landing-Page | main | ce5b9d0 | feat: add robots.txt and sitemap.xml for SEO optimization | - | 2026-09-16 |
 | Digital-Clinical-Systems/Landing-Page | main | ed27b89 | feat: add scroll reveal animation for sections and update navigation visibility | - | 2026-09-17 |
 
+**Trazabilidad por historia de usuario**
+
+La tabla siguiente cierra la cadena de trazabilidad del incremento: para cada historia indica la tarea que la implementa, el integrante al que el Sprint Backlog asignó esa tarea, los commits del repositorio `Landing-Page` que contienen el trabajo, la captura de la sección 5.2.1.5 que sirve de evidencia visual y el estado final. La asignación de commits no es declarativa: se obtuvo revisando los archivos efectivamente modificados en cada uno.
+
+> La columna **Responsable planificado** recoge el reparto acordado en el Sprint Planning, no la autoría del commit. Como se detalla en la sección 5.2.1.8, los 18 commits de la Landing Page fueron realizados por un solo integrante, de modo que el autor registrado en el historial es el mismo en todas las filas.
+
+| Historia | Tarea | Responsable planificado | Commits en `Landing-Page` | Evidencia visual | Estado |
+| :--- | :--- | :--- | :--- | :--- | :---: |
+| **US-01** Visualizar la landing page | T-01.1 Estructura base y hero | Sosa Soto, Oskar Rodrigo | `6f72e6b` estructura de carpetas, variables CSS y barra de navegación<br>`aa328ff` sección hero con paciente y signos vitales | A. Portada y propuesta de valor | Done |
+| **US-02** Conocer la propuesta de valor | T-01.1 | Sosa Soto, Oskar Rodrigo | `aa328ff` | A. Portada y propuesta de valor | Done |
+| **US-03** Comprender el problema que resuelve | T-01.1 | Sosa Soto, Oskar Rodrigo | `11c4a5e` sección de problema con tarjetas y datos destacados | B. El problema | Done |
+| **US-04** Revisar cómo funciona la plataforma | T-02.1 Componentes funcionales | Valdez Melo, Angel Andres | `c19ff11` sección de pasos numerados | C. Cómo funciona | Done |
+| **US-05** Visualizar las características clave | T-02.1 | Valdez Melo, Angel Andres | `3b8405c` sección de características | D. Características | Done |
+| **US-06** Revisar los beneficios según el perfil | T-02.1 | Valdez Melo, Angel Andres | `30f0205` sección de beneficios por rol | E. Beneficios | Done |
+| **US-07** Consultar los planes y el modelo de servicio | T-03.1 Planes y FAQs | Acuache Lucas, Mathias Joaquin | `de6caaf` sección de planes con conmutador de periodicidad | F. Planes | Done |
+| **US-08** Resolver dudas frecuentes | T-03.1 | Acuache Lucas, Mathias Joaquin | `5714333` sección de preguntas frecuentes con acordeón | G. Preguntas frecuentes | Done |
+| **US-09** Conocer al equipo | T-04.1 Equipo y contacto | Huamán Cuba, Johan Giovani | `98bc354` sección de equipo con fotografías<br>`ccf46a2` texto alternativo de las fotografías | H. Equipo | Done |
+| **US-10** Solicitar información o una demostración | T-04.1 | Huamán Cuba, Johan Giovani | `f1dd44a` formulario con validación y mensaje de éxito<br>`c2d8b28` atributos `role` en los mensajes de error | I. Contacto | Done |
+| **US-11** Cambiar el idioma del sitio | T-05.1 Internacionalización | Ojanama Abanto, Johnny Alexander | `4ed5a0c` diccionarios ES/EN<br>`6f72e6b` motor `js/i18n.js`<br>`ed27b89` cobertura completa de ambos diccionarios | Demostrado en el video de la sección 4.5 | Done |
+| **US-12** Acceder desde dispositivos móviles | T-06.1 Ajustes responsivos | Acuache Lucas, Mathias Joaquin | Distribuido: cada sección incorporó sus propias reglas de adaptación en el mismo commit que la creó; el menú móvil se introdujo en `6f72e6b` y los ajustes finales de disposición en `ed27b89` | Verificación de diseño adaptable de la sección 5.2.1.5 | Done |
+| **TS-09** Despliegue de la landing page | T-07.1 Despliegue en Vercel | Sosa Soto, Oskar Rodrigo | `ce5b9d0` `robots.txt`, `sitemap.xml` y `vercel.json`<br>`052a06d` meta tags Open Graph | 5.2.1.7 Software Deployment Evidence | Done |
+
+**Observaciones sobre la trazabilidad.** Tres puntos que el equipo deja explícitos para que la tabla no se lea con más precisión de la que tiene:
+
+- **La autoría de los commits no coincide con el reparto planificado.** El historial registra un único autor para las trece filas. La sección 5.2.1.8 documenta esta divergencia y el compromiso adoptado para el Sprint 2.
+- **No existen Pull Requests para este incremento.** Como se documenta en la sección 5.1.2, la Landing Page se desarrolló con un flujo *trunk-based* sobre `main`, de modo que la unidad de evidencia es el commit y no el PR. A partir de la aplicación web la columna registrará también el Pull Request de integración.
+- **US-12 no tiene un commit propio.** La adaptación a móviles se resolvió dentro de cada sección y no como un trabajo separado. El equipo reconoce que esto le resta trazabilidad a esa historia y que lo correcto habría sido aislarla; en el Sprint 2 cada historia tendrá su propia rama.
+- **El commit `235d7cf` (pie de página) no corresponde a ninguna historia del Sprint Backlog.** Es trabajo estructural que el equipo ejecutó sin haberlo registrado como tarea, lo que constituye un desvío respecto del backlog planificado y queda anotado como tal.
+
 ##### 5.2.1.5. Execution Evidence for Sprint Review
 
 **Resumen de logros del Sprint**
@@ -3669,7 +3961,63 @@ Las siguientes capturas corresponden al sitio publicado en `https://clinicalsync
   <img src="assets/chapter-5/sprint-1/contact-section.png" alt="Sección de contacto" width="900">
 </p>
 
-*Cierra el recorrido con el formulario de solicitud de demostración, que valida los campos obligatorios y el formato del correo antes de permitir el envío, y confirma la recepción en pantalla. Corresponde a la historia US-10.*
+*Cierra el recorrido con el formulario de solicitud de demostración, que valida los campos obligatorios y el formato del correo antes de permitir el envío y muestra una confirmación en pantalla. Esta confirmación es de interfaz: en el alcance de AV1 la solicitud no se persiste ni se envía a un servicio de destino, porque los servicios web del producto no forman parte de este incremento. Corresponde a la historia US-10.*
+
+**Verificación de diseño adaptable y accesibilidad**
+
+Las afirmaciones de responsive y accesibilidad de esta sección no se sostienen en la apreciación visual del equipo, sino en comprobaciones ejecutadas sobre la Landing Page **publicada en producción** (`https://clinicalsync-landing.vercel.app/`) y sobre el código fuente del repositorio `Landing-Page`. Se detallan a continuación los criterios aplicados y su resultado, de modo que cualquier revisor pueda repetir la comprobación.
+
+**1. Puntos de quiebre probados.** La hoja de estilos declara tres puntos de quiebre (`768px`, `1024px` y `1100px`) más un ajuste para pantallas muy angostas (`máx. 399px`). Se cargó la página desplegada en seis anchos de ventana y se midió el ancho de desplazamiento del documento frente al ancho visible:
+
+| Ancho de ventana | `scrollWidth` | `clientWidth` | Desplazamiento horizontal | Elementos que desbordan |
+| ---: | ---: | ---: | :---: | :---: |
+| 320 px | 320 | 320 | No | 0 |
+| 360 px | 360 | 360 | No | 0 |
+| 390 px | 390 | 390 | No | 0 |
+| 768 px | 768 | 768 | No | 0 |
+| 1024 px | 1024 | 1024 | No | 0 |
+| 1440 px | 1440 | 1440 | No | 0 |
+
+**2. Contraste de color.** Las combinaciones definidas en `css/variables.css` se evaluaron con la fórmula de luminancia relativa de la WCAG 2.1. El umbral exigido para texto normal es 4.5:1 (nivel AA) y 7:1 (nivel AAA):
+
+| Combinación | Valores | Razón | Nivel |
+| :--- | :--- | ---: | :--- |
+| Texto principal sobre fondo | `#172554` sobre `#ffffff` | 14.69:1 | AAA |
+| Texto principal sobre superficie | `#172554` sobre `#f8fafc` | 14.04:1 | AAA |
+| Texto secundario sobre fondo | `#64748b` sobre `#ffffff` | 4.76:1 | AA |
+| Texto del botón primario | `#ffffff` sobre `#047857` | 5.48:1 | AA |
+| Texto claro sobre el pie navy | `#a9b4c7` sobre `#172554` | 7.03:1 | AAA |
+| Anillo de foco sobre fondo | `#047857` sobre `#ffffff` | 5.48:1 | AA |
+
+El verde corporativo puro (`#10b981`) alcanza únicamente 2.54:1 sobre blanco y **no se emplea para texto ni para bordes informativos**; para esos usos la hoja de estilos define la variante `--color-emerald-dark` (`#047857`), que es la evaluada en la tabla. Esta decisión está documentada como comentario en el propio archivo de variables.
+
+**3. Navegación por teclado.** Se recorrió la página desplegada pulsando «Tab» desde el inicio del documento hasta completar el ciclo:
+
+| Criterio | Resultado |
+| :--- | :--- |
+| Elementos alcanzables por teclado | 39 |
+| Primer elemento del orden de tabulación | Enlace «Saltar al contenido principal» |
+| Elementos sin indicador de foco visible | 0 |
+| Trampas de foco | Ninguna: el recorrido completa el ciclo y devuelve el foco al navegador |
+
+El indicador de foco se define con `:focus-visible` en `css/base.css` y `css/components.css`, de modo que el anillo aparece en la navegación por teclado y no en el clic con ratón.
+
+**4. Etiquetas, texto alternativo y semántica.**
+
+| Criterio | Resultado |
+| :--- | :--- |
+| Controles de formulario | 5 campos, los 5 con `<label for>` asociado |
+| Mensajes de error | 5 contenedores con `role="alert"` y `aria-describedby` que los vincula a su campo |
+| Confirmación de envío | 1 contenedor con `role="status"` |
+| Imágenes | 5 imágenes, las 5 con `alt` descriptivo, traducido mediante `data-i18n-attr` al cambiar de idioma |
+| Iconografía decorativa | 7 elementos marcados con `aria-hidden="true"` para que no se anuncien |
+| Controles sin texto visible | 7 con `aria-label`; el menú móvil declara `aria-expanded` y `aria-controls`, y los conmutadores de idioma y de planes, `aria-pressed` |
+| Regiones de referencia | `<header>`, `<nav>`, `<main>`, `<footer>` y 9 `<section>` |
+| Jerarquía de encabezados | Un único `<h1>`, 10 `<h2>` y 24 `<h3>`, sin saltos de nivel |
+| Idioma del documento | `<html lang="es">`, actualizado al conmutar a inglés |
+| Movimiento reducido | Las animaciones se desactivan bajo `@media (prefers-reduced-motion: reduce)` |
+
+**Limitación declarada.** Estas comprobaciones son automáticas y estáticas: acreditan que la página cumple los criterios técnicos verificables, pero no sustituyen una prueba con usuarios ni con lectores de pantalla reales. La validación con personas corresponde a las entrevistas de validación de la sección 5.3.
 
 ##### 5.2.1.6. Services Documentation Evidence for Sprint Review
 
@@ -3717,28 +4065,473 @@ El procedimiento seguido fue el siguiente:
 
 ##### 5.2.1.8. Team Collaboration Insights during Sprint
 
-La herramienta de Insights de GitHub demuestra que todos los miembros del equipo (Oskar, Mathias, Angel, Johan y Johnny) han colaborado activamente mediante la subida de commits. Las labores fueron distribuidas de forma equitativa para garantizar que el Layout, la Navegación, el Diseño Responsivo, la Internacionalización y el despliegue de la Landing Page se completaran en los tiempos estimados del Sprint.
+La colaboración del Sprint 1 se midió por separado en los dos repositorios del proyecto, porque el patrón de trabajo fue distinto en cada uno y agregarlos ocultaría esa diferencia. Las cifras provienen del historial de ambos repositorios y son reproducibles con `git shortlog -sn`.
+
+**Repositorio del informe (`Informe`)**
+
+Los cinco integrantes contribuyeron con commits propios sobre la rama de su capítulo. El total al cierre de la entrega AV1 (commit `d1b284e`) es de 125 commits:
+
+| Integrante | Commits | Participación |
+| :--- | ---: | ---: |
+| Sosa Soto, Oskar Rodrigo | 50 | 40.0% |
+| Huamán Cuba, Johan Giovani | 43 | 34.4% |
+| Valdez Melo, Angel Andres | 13 | 10.4% |
+| Ojanama Abanto, Johnny Alexander | 12 | 9.6% |
+| Acuache Lucas, Mathias Joaquin | 7 | 5.6% |
+| **Total** | **125** | **100%** |
+
+*El conteo de Oskar Rodrigo Sosa Soto suma dos identidades de Git del mismo integrante (45 commits bajo su cuenta institucional y 5 bajo una cuenta personal), lo que explica que el panel de Insights muestre seis contribuidores para cinco personas.*
 
 <p align="center">
-  <img src="assets/chapter-5/sprint-1/team-commits.png" alt="team commits insight" width="1000">
+  <img src="assets/chapter-5/sprint-1/team-commits.png" alt="Panel de Insights del repositorio del informe" width="1000">
 </p>
 
+*Panel de Insights correspondiente al repositorio del informe. La captura no refleja el repositorio de la Landing Page.*
 
+**Repositorio de la Landing Page (`Landing-Page`)**
+
+| Integrante | Commits | Participación |
+| :--- | ---: | ---: |
+| Sosa Soto, Oskar Rodrigo | 18 | 100% |
+| **Total** | **18** | **100%** |
+
+**Lectura honesta de estas cifras.** El Sprint Backlog de la sección 5.2.1.3 reparte las siete tareas del incremento entre los cinco integrantes, y la sección 5.2.1.2 asigna un líder por aspecto. Ese reparto corresponde a la **planificación** acordada en el Sprint Planning. La **ejecución** fue distinta: la totalidad de los commits de la Landing Page los realizó un solo integrante, y el historial no registra co-autoría en ninguno de ellos.
+
+El equipo reconoce esta divergencia en lugar de presentarla como un reparto equitativo. El trabajo documental sí estuvo distribuido — los cinco integrantes tienen commits propios en el repositorio del informe —, pero **la evidencia de colaboración en el informe no sustituye la evidencia de colaboración en el producto**, y en el producto esa evidencia no existe para este Sprint.
+
+Las consecuencias para el Sprint 2, registradas como compromiso verificable:
+
+- Cada historia de usuario se desarrollará en su propia rama `feature/`, creada por el integrante responsable según el Sprint Backlog, e integrada mediante Pull Request revisado por otro integrante. El autor del commit y el revisor del PR quedan así registrados por el propio flujo.
+- El trabajo realizado en pareja se declarará con el trailer `Co-authored-by` para que el historial refleje a ambos participantes.
+- Esta sección volverá a medirse con el mismo método al cierre del Sprint 2, de modo que la comparación entre ambos sprints sea directa.
+
+
+#### 5.2.2. Sprint 2
+
+El Sprint 2 construye el primer incremento ejecutable de la aplicación web. A diferencia del Sprint 1, cuyo entregable fue una página estática, este sprint produce software con lógica de dominio: agregados que protegen invariantes clínicas, eventos que comunican contextos y una suite de pruebas que verifica ese comportamiento.
+
+El sprint también responde a los hallazgos H-04 y H-14 de la revisión docente del AV1, que observaron que el flujo de ramas declarado no se correspondía con la evidencia del repositorio del producto y que la colaboración en el informe no sustituía la colaboración en el código. Las secciones 5.2.2.4 y 5.2.2.8 documentan el resultado de ese compromiso.
+
+##### 5.2.2.1. Sprint Planning 2
+
+<table>
+  <tr> <th colspan="5">Sprint #</th> <th colspan="8">Sprint 2</th> </tr>
+  <tr> <td colspan="13">Sprint Planning Background</td> </tr>
+  <tr> <td colspan="5">Date</td> <td colspan="8">02-10-2026</td> </tr>
+  <tr> <td colspan="5">Time</td> <td colspan="8">20:00</td> </tr>
+  <tr> <td colspan="5">Location</td> <td colspan="8">Reunión remota (Discord)</td> </tr>
+  <tr> <td colspan="5">Prepared By</td> <td colspan="8">Sosa Soto, Oskar Rodrigo</td> </tr>
+  <tr> <td colspan="5">Attendees (to planning meeting)</td> <td colspan="8">Sosa Soto, Oskar Rodrigo / Acuache Lucas, Mathias Joaquin / Valdez Melo, Angel Andres / Huamán Cuba, Johan Giovani / Ojanama Abanto, Johnny Alexander</td> </tr>
+  <tr> <td colspan="5">Sprint n-1 Review Summary</td> <td colspan="8">El Sprint 1 cerró con la Landing Page desplegada en producción y los 28 Story Points comprometidos completados. La revisión docente del entregable AV1 identificó quince observaciones, de las cuales las más relevantes para la planificación de este sprint fueron la ausencia de evidencia de ramas y Pull Requests en el repositorio del producto (H-04) y la concentración de la autoría de los commits en un solo integrante (H-14).</td> </tr>
+  <tr> <td colspan="5">Sprint n-1 Retrospective Summary</td> <td colspan="8">El equipo concluyó que el flujo <em>trunk-based</em> del Sprint 1 impidió repartir el trabajo y dejó sin evidencia la colaboración en el producto. Se acordó que en este sprint cada historia se desarrollaría en su propia rama <code>feature/</code>, integrada a <code>develop</code> mediante Pull Request, y que el esqueleto de cada tarea se prepararía por adelantado para reducir el tiempo de arranque de cada integrante.</td> </tr>
+  <tr> <td colspan="13">Sprint Goal &amp; User Stories</td> </tr>
+  <tr> <td colspan="5">Sprint 2 Goal</td> <td colspan="8"> <strong>"Nuestro foco es construir y desplegar la primera versión ejecutable de la aplicación web de ClinicalSync, con el modelo de dominio implementado sobre la arquitectura de Bounded Contexts definida en el Capítulo IV. Creemos que esto permitirá al equipo clínico registrar signos vitales, consultar el estado consolidado del paciente y emitir indicaciones médicas sobre un flujo único. Esto quedará validado cuando la aplicación esté publicada en producción, las invariantes del dominio estén cubiertas por pruebas automatizadas y la evidencia del repositorio muestre colaboración real entre los integrantes."</strong> </td> </tr>
+  <tr> <td colspan="5">Story Points comprometidos (Committed SP)</td> <td colspan="8">25 Story Points</td> </tr>
+  <tr> <td colspan="5">Story Points completados (Completed SP)</td> <td colspan="8">19 Story Points</td> </tr>
+  <tr> <td colspan="5">Velocity</td> <td colspan="8">La velocity de referencia disponible al planificar era de <strong>28 Story Points</strong>, obtenida del Sprint 1 cerrado. El equipo comprometió deliberadamente menos (25 SP) por tratarse del primer sprint con desarrollo de lógica de dominio y por la incertidumbre de partir de un proyecto recién creado. La velocity resultante del Sprint 2 es de <strong>19 Story Points</strong>, calculada sobre los puntos efectivamente completados.</td> </tr>
+</table>
+
+**Sobre la diferencia entre lo comprometido y lo completado.** Se completaron 19 de los 25 Story Points comprometidos. Las historias US-23 y US-24, correspondientes a la consulta de indicaciones vigentes y al registro de su cumplimiento, no alcanzaron a desarrollarse dentro del sprint y regresan al Product Backlog. La sección 5.2.2.3 detalla el estado de cada una.
+
+##### 5.2.2.2. Aspect Leaders and Collaborators
+
+| Team Member (Last Name, First Name) | GitHub Username | Arquitectura y Shared Kernel | Indicaciones médicas (BC-07) | Resumen y evolución clínica | Priorización y despliegue | Criterios de aceptación | Pruebas exploratorias |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Sosa Soto, Oskar Rodrigo | YakuzaMeen | L | C | C | L | L | C |
+| Valdez Melo, Angel Andres | AngelValdezM | C | **L** | — | — | C | — |
+| Huamán Cuba, Johan Giovani | Johancuba | C | — | **L** | — | C | — |
+| Ojanama Abanto, Johnny Alexander | JohnnyGZ41 | — | — | — | — | C | L |
+| Acuache Lucas, Mathias Joaquin | MathiasA25 | — | — | — | — | — | L |
+
+**Nota sobre la asignación efectiva.** La tabla recoge el reparto acordado en el Sprint Planning. Dos desviaciones deben quedar registradas, porque la sección 5.2.2.8 las refleja en las cifras del repositorio:
+
+- La redacción de los **criterios de aceptación** estaba asignada a Ojanama Abanto. Ante la proximidad del cierre del sprint, la tarea fue asumida por Sosa Soto y entregada en la rama `feature/docs-gherkin-sprint-2`. El commit correspondiente figura a nombre de quien efectivamente la ejecutó.
+- Las **pruebas exploratorias** sobre la aplicación desplegada se iniciaron el último día del sprint, una vez publicada la versión integrada, y a la fecha de cierre de este documento no habían producido reportes registrados. La tarea continúa en el Sprint 3.
+
+##### 5.2.2.3. Sprint Backlog 2
+
+El Sprint Backlog recoge las historias comprometidas, la tarea que las implementa, el responsable y su estado al cierre del sprint. A diferencia del Sprint 1, la columna de estado distingue lo completado de lo que regresa al backlog.
+
+<table>
+  <tr> <th align="left">Sprint #</th> <th align="left" colspan="7">Sprint 2</th> </tr>
+  <tr> <th align="left" colspan="2">User Story</th> <th align="left" colspan="6">Work-Item / Task</th> </tr>
+  <tr>
+    <th align="left">Id</th> <th align="left">Título</th>
+    <th align="left">Id</th> <th align="left">Título</th> <th align="left">Descripción</th>
+    <th align="left">Estimación (SP)</th> <th align="left">Assigned To</th> <th align="left">Status</th>
+  </tr>
+  <tr>
+    <td>US-26</td> <td>Consultar el resumen clínico del paciente</td>
+    <td>T-08.1</td> <td>Vista consolidada del paciente</td>
+    <td>Construir la pantalla que reúne datos del paciente, último registro de signos vitales y nivel de riesgo evaluado en una sola vista.</td>
+    <td>8</td> <td>Huamán Cuba, Johan Giovani</td> <td>Done</td>
+  </tr>
+  <tr>
+    <td>US-27</td> <td>Revisar la evolución reciente</td>
+    <td>T-09.1</td> <td>Modelo de lectura de evolución</td>
+    <td>Implementar la proyección de evolución del paciente con filtro por rango de tiempo y cálculo de tendencia, con sus pruebas.</td>
+    <td>5</td> <td>Huamán Cuba, Johan Giovani</td> <td>Done</td>
+  </tr>
+  <tr>
+    <td>US-22</td> <td>Emitir una indicación médica</td>
+    <td>T-10.1</td> <td>Agregado MedicalOrder y formulario de emisión</td>
+    <td>Implementar el agregado del contexto BC-07 con sus invariantes, el almacén de aplicación y la pantalla de emisión con selector de rol.</td>
+    <td>3</td> <td>Valdez Melo, Angel Andres</td> <td>Done</td>
+  </tr>
+  <tr>
+    <td>US-29</td> <td>Priorizar los pacientes según su riesgo</td>
+    <td>T-11.1</td> <td>Vista de pacientes por prioridad</td>
+    <td>Ordenar los pacientes por el nivel de riesgo derivado del último registro, distinguiendo explícitamente a quienes no tienen mediciones.</td>
+    <td>3</td> <td>Sosa Soto, Oskar Rodrigo</td> <td>Done</td>
+  </tr>
+  <tr>
+    <td>US-23</td> <td>Consultar las indicaciones vigentes</td>
+    <td>T-10.2</td> <td>Listado de indicaciones por paciente</td>
+    <td>Mostrar al personal de enfermería las indicaciones activas de cada paciente, distinguiendo las reemplazadas.</td>
+    <td>3</td> <td>Valdez Melo, Angel Andres</td> <td>To-do</td>
+  </tr>
+  <tr>
+    <td>US-24</td> <td>Registrar el cumplimiento de una indicación</td>
+    <td>T-10.3</td> <td>Confirmación de ejecución</td>
+    <td>Permitir que el personal de enfermería registre la ejecución de una indicación, dejando responsable y marca temporal.</td>
+    <td>3</td> <td>Valdez Melo, Angel Andres</td> <td>To-do</td>
+  </tr>
+  <tr>
+    <td>—</td> <td>Habilitadores técnicos del sprint</td>
+    <td>T-12.1</td> <td>Proyecto Angular y despliegue continuo</td>
+    <td>Crear el proyecto Angular con la estructura por Bounded Contexts, el verificador automático de fronteras y el despliegue continuo en Vercel desde la rama <code>main</code>.</td>
+    <td>—</td> <td>Sosa Soto, Oskar Rodrigo</td> <td>Done</td>
+  </tr>
+</table>
+
+**Resumen de puntos.** Comprometidos: 25 SP. Completados: 19 SP (US-26, US-27, US-22 y US-29). Devueltos al Product Backlog: 6 SP (US-23 y US-24). El trabajo de la fila T-12.1 no lleva estimación en Story Points porque corresponde a habilitadores técnicos y no a una historia de usuario; el equipo lo registra explícitamente para que el esfuerzo del sprint no aparezca subestimado.
+
+**Criterios de aceptación.** Los criterios Given/When/Then de las historias de este sprint se encuentran en el archivo `CRITERIOS-SPRINT-2.md` del repositorio `FrontClinicalSync`, con veinte escenarios que cubren tanto el camino esperado como los casos de error que las invariantes del dominio impiden.
+
+##### 5.2.2.4. Development Evidence for Sprint Review
+
+**Repositorio de la aplicación web (`FrontClinicalSync`)**
+
+Este sprint estrena el repositorio `https://github.com/Digital-Clinical-Systems/FrontClinicalSync`. A diferencia del Sprint 1, el trabajo se organizó con una rama `feature/` por historia, integrada a `develop` mediante Pull Request, y una promoción final a `main` que dispara el despliegue. Esta es la evidencia que la observación H-04 del AV1 solicitaba.
+
+**Ramas del sprint**
+
+| Rama | Historia | Autor de los commits | Commits | Integrada |
+| :--- | :--- | :--- | ---: | :--- |
+| `feature/us-26-vista-consolidada` | US-26, US-27 | Huamán Cuba, Johan Giovani | 6 | PR a `develop` |
+| `feature/us-22-indicaciones-medicas` | US-22 | Valdez Melo, Angel Andres | 1 | PR a `develop` |
+| `feature/us-28-priorizacion-alertas` | US-29 | Sosa Soto, Oskar Rodrigo | 1 | PR a `develop` |
+| `feature/docs-gherkin-sprint-2` | Criterios de aceptación | Sosa Soto, Oskar Rodrigo | 1 | PR a `develop` |
+| `fix/issues-identificadores-internos` | Issues #1 y #2 | Sosa Soto, Oskar Rodrigo | 1 | PR a `develop` |
+
+**Commits del sprint**
+
+| Repository | Branch | Commit Id | Commit Message | Autor | Commited on |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| FrontClinicalSync | main | `5219e55` | feat: scaffold angular app with bounded context architecture | Sosa Soto | 2026-10-02 |
+| FrontClinicalSync | develop | `a79fe80` | chore: add vercel deployment configuration | Sosa Soto | 2026-10-02 |
+| FrontClinicalSync | feature/us-26-vista-consolidada | `22f226e` | chore(us-26): add consolidated patient view skeleton | Sosa Soto | 2026-10-02 |
+| FrontClinicalSync | feature/us-22-indicaciones-medicas | `fdf8f30` | chore(us-22): add medical order aggregate skeleton | Sosa Soto | 2026-10-02 |
+| FrontClinicalSync | feature/docs-gherkin-sprint-2 | `3efa3bf` | chore(docs): add sprint 2 acceptance criteria template | Sosa Soto | 2026-10-02 |
+| FrontClinicalSync | feature/us-28-priorizacion-alertas | `1e1240b` | feat(us-28): order patients by derived clinical risk | Sosa Soto | 2026-10-02 |
+| FrontClinicalSync | feature/us-22-indicaciones-medicas | `615ef16` | feat(US-22): add medical order issuing flow with role switcher | **Valdez Melo** | 2026-10-04 |
+| FrontClinicalSync | feature/docs-gherkin-sprint-2 | `4d7d61e` | docs(sprint-2): add acceptance criteria for user stories | Sosa Soto | 2026-10-04 |
+| FrontClinicalSync | feature/us-26-vista-consolidada | `2d83f86` | feat(us-27): add patient evolution read model with range filter and trends | **Huamán Cuba** | 2026-10-04 |
+| FrontClinicalSync | feature/us-26-vista-consolidada | `e8a7ff4` | test(us-27): cover evolution filtering, chronological order and trends | **Huamán Cuba** | 2026-10-04 |
+| FrontClinicalSync | feature/us-26-vista-consolidada | `db6d264` | feat(us-26): build consolidated patient summary view | **Huamán Cuba** | 2026-10-04 |
+| FrontClinicalSync | feature/us-26-vista-consolidada | `e7b8797` | feat(us-27): add recent evolution table with time range filter and record detail | **Huamán Cuba** | 2026-10-04 |
+| FrontClinicalSync | feature/us-26-vista-consolidada | `67c7754` | feat(us-26): register summary route and navigation entry points | **Huamán Cuba** | 2026-10-04 |
+| FrontClinicalSync | feature/us-26-vista-consolidada | `5bc41dc` | docs(readme): document patient evolution test suite | **Huamán Cuba** | 2026-10-04 |
+| FrontClinicalSync | develop | `c32137d` | Merge PR: feature/us-28-priorizacion-alertas | Sosa Soto | 2026-10-04 |
+| FrontClinicalSync | develop | `1753a25` | Merge PR: feature/us-22-indicaciones-medicas | Sosa Soto | 2026-10-04 |
+| FrontClinicalSync | develop | `37fa998` | Merge PR: feature/us-26-vista-consolidada | Sosa Soto | 2026-10-04 |
+| FrontClinicalSync | develop | `884ccb7` | Merge PR: feature/docs-gherkin-sprint-2 | Sosa Soto | 2026-10-04 |
+| FrontClinicalSync | develop | `9482800` | chore: remove unused treatments scaffold superseded by medical-orders | Sosa Soto | 2026-10-04 |
+| FrontClinicalSync | develop | `44cd74d` | fix: resolve merge conflict markers and normalize line endings | Sosa Soto | 2026-10-04 |
+| FrontClinicalSync | main | `d805b91` | Release: Sprint 2 | Sosa Soto | 2026-10-04 |
+| FrontClinicalSync | develop | `105fc0f` | docs: add QA testing guide for exploratory testing | Sosa Soto | 2026-10-05 |
+| FrontClinicalSync | fix/issues-identificadores-internos | `b2820c2` | fix: hide internal identifiers from clinical views | Sosa Soto | 2026-10-05 |
+| FrontClinicalSync | develop | `a816f35` | Merge PR: fix/issues-identificadores-internos | Sosa Soto | 2026-10-05 |
+| FrontClinicalSync | main | `7beeb16` | Release: correcciones de issues #1 y #2 | Sosa Soto | 2026-10-05 |
+
+**Incidente de integración registrado.** Al integrar la tercera rama se produjo un conflicto real en `src/app/app.routes.ts` y `src/app/layout/shell.component.ts`: las historias US-22 y US-26 habían agregado su ruta y su entrada de navegación en la misma posición del archivo. El conflicto se resolvió conservando ambas rutas.
+
+El equipo registra además un error de proceso cometido durante esa resolución: el merge se confirmó **sin haber eliminado los marcadores de conflicto**, de modo que el commit `37fa998` quedó con texto inválido dentro de un archivo TypeScript. El fallo no lo detectaron ni la suite de pruebas, que no importa ese archivo, ni el verificador de fronteras, que analiza únicamente sentencias de importación; lo detectó la compilación de producción. El commit `44cd74d` corrige el estado y la lección se recoge en las conclusiones: **una suite verde no acredita que el proyecto compile**, y el orden correcto de verificación antes de integrar es construir, luego probar.
+
+**Verificación automática del incremento.** El estado integrado en `main` supera las tres comprobaciones definidas por el equipo, reproducibles con los comandos indicados:
+
+| Comprobación | Comando | Resultado |
+| :--- | :--- | :--- |
+| Pruebas del dominio | `npm test -- --watch=false` | **35 SUCCESS** |
+| Fronteras entre Bounded Contexts | `npm run check:boundaries` | **OK (45 archivos revisados)** |
+| Compilación de producción | `npm run build` | **Application bundle generation complete** |
+
+Las 35 pruebas se distribuyen así: 17 corresponden a las invariantes del núcleo del dominio implementadas al crear el proyecto, 6 a las invariantes del agregado `MedicalOrder`, 6 al modelo de lectura de evolución del paciente y 6 a los defectos reportados en las pruebas exploratorias, incorporadas como pruebas de regresión al corregirlos (ver el apartado de pruebas exploratorias de la sección 5.2.2.5).
+
+**Repositorio de la Landing Page (`Landing-Page`)**
+
+La Landing Page recibió en este sprint dos commits derivados de una observación del propio equipo durante la revisión interna: el sitio publicado describía los planes de contratación pero no ofrecía ninguna vía para contratarlos ni enlazaba con la aplicación web, de modo que la cadena entre la captación y el producto quedaba interrumpida.
+
+| Repository | Branch | Commit Id | Commit Message | Autor | Commited on |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Landing-Page | main | `29d5822` | feat: add simulated payment checkout linking to the web application | Sosa Soto | 2026-10-05 |
+| Landing-Page | main | `ac49979` | feat: replace checkout modal with five step contracting page | Sosa Soto | 2026-10-05 |
+
+El primer commit incorpora el flujo de contratación como una ventana modal; el segundo lo reemplaza por una página propia (`checkout.html`) de cinco pasos, tras comprobar que la modal impedía enlazar un plan concreto desde fuera del sitio y no dejaba espacio para el resumen de la contratación. La página recibe el plan elegido por parámetro de consulta, de modo que cada llamado a la acción de la sección de precios abre el checkout ya posicionado en ese plan, y al completar el flujo redirige a la aplicación web publicada. Esto cierra el recorrido Landing Page → contratación → producto que el Impact Mapping de la sección 3.2 supone para el actor institucional.
+
+**Alcance declarado.** El procesamiento de pagos es **simulado**: no existe integración con ninguna pasarela ni se transmite ningún dato a un tercero. El flujo valida el formato de los datos ingresados en el navegador y no persiste información. Esta condición se declara aquí de forma explícita para que la evidencia no se lea como una capacidad transaccional del producto.
+
+##### 5.2.2.5. Execution Evidence for Sprint Review
+
+**Resumen de logros del Sprint**
+
+Durante este Sprint el equipo construyó y publicó la primera versión ejecutable de la aplicación web de ClinicalSync. El incremento traduce a código el modelo de dominio descrito en las secciones 4.6.5 y 4.6.6: los agregados protegen sus invariantes, la comunicación entre contextos ocurre por eventos de dominio y la auditoría se alimenta de esos eventos sin que ningún contexto dependa de ella.
+
+Los hitos alcanzados fueron los siguientes:
+
+- Proyecto Angular con componentes *standalone*, *signals* e `inject()`, organizado en siete Bounded Contexts con las capas `domain`, `application`, `infrastructure` y `presentation`.
+- Ocho secciones navegables: pacientes del turno, priorización por riesgo, registro de signos vitales, resumen clínico, indicaciones médicas, traspaso SBAR, alertas y bitácora de auditoría.
+- Política de dominio operativa: un signo vital fuera de umbral genera automáticamente una alerta en otro contexto, sin acoplamiento entre ambos.
+- Suite de 35 pruebas sobre las invariantes del dominio y verificador automático de fronteras entre contextos.
+- Publicación en producción con despliegue continuo desde la rama `main`.
+
+**Recorrido de la aplicación desplegada**
+
+Las capturas siguientes corresponden a la aplicación publicada en `https://clinicalsync-frontend.vercel.app`, tomadas sobre el despliegue del commit `d805b91`.
+
+**A. Pacientes del turno**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-pacientes.png" alt="Lista de pacientes asignados al turno" width="900">
+</p>
+
+*Pacientes asignados, con su ubicación y diagnóstico de admisión. El contexto BC-02 actúa como directorio maestro: ningún otro contexto crea pacientes.*
+
+**B. Priorización por riesgo**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-prioridad.png" alt="Pacientes ordenados por nivel de riesgo" width="900">
+</p>
+
+*Los pacientes se ordenan por el riesgo derivado de su último registro y no por orden de admisión. El paciente sin mediciones aparece al final marcado como «sin datos», de modo que la ausencia de información no se confunda con un estado normal. Corresponde a la historia US-29.*
+
+**C. Registro de signos vitales**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-signos-vitales.png" alt="Formulario de registro de signos vitales" width="900">
+</p>
+
+*El formulario no permite elegir el nivel de riesgo: lo deriva el dominio a partir de los valores medidos. Las invariantes del Value Object `BloodPressure` rechazan combinaciones imposibles antes de que el registro exista.*
+
+**D. Resumen clínico del paciente**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-resumen.png" alt="Vista consolidada del paciente" width="900">
+</p>
+
+*Reúne en una sola pantalla los datos del paciente, su último registro y la evolución reciente con filtro por rango de tiempo. Responde al hallazgo H-E de la sección 2.2.3, donde la médica entrevistada declaró consultar entre tres y cuatro fuentes distintas. Corresponde a las historias US-26 y US-27.*
+
+**E. Indicaciones médicas**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-indicaciones.png" alt="Emisión de indicaciones medicas" width="900">
+</p>
+
+*Emisión de indicaciones con selector de rol. El agregado `MedicalOrder` impide que un usuario sin rol médico emita una indicación y conserva en el historial las que fueron reemplazadas. Corresponde a la historia US-22.*
+
+**F. Traspaso de turno SBAR**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-traspasos.png" alt="Formulario de traspaso SBAR" width="900">
+</p>
+
+*El traspaso exige las cuatro secciones del modelo SBAR completas y que el enfermero entrante sea distinto del saliente. Ambas reglas residen en el dominio y no en el formulario.*
+
+**G. Alertas clínicas**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-alertas.png" alt="Alertas generadas por la politica de dominio" width="900">
+</p>
+
+*La alerta visible fue generada automáticamente al registrar una saturación de 84%. El contexto de alertas reacciona al evento `NivelDeRiesgoClinicoEvaluado` publicado por el contexto de signos vitales, sin conocer sus clases.*
+
+**H. Bitácora de auditoría**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-auditoria.png" alt="Bitacora de auditoria append-only" width="900">
+</p>
+
+*Registro de los eventos de dominio con su responsable y marca temporal. El contexto de auditoría escucha a todos los demás y no publica hacia el dominio, de modo que ninguna operación clínica depende de él para completarse. Sostiene el objetivo BG-05.*
+
+**Alcance de esta evidencia.** La aplicación opera sobre repositorios en memoria mientras los servicios web no existan. Los datos mostrados en las capturas son de demostración y no persisten entre sesiones: al recargar la página, el estado vuelve al inicial. La sustitución por adaptadores HTTP está aislada en un único archivo de configuración, de modo que no afectará al dominio ni a la capa de aplicación.
+
+**Pruebas exploratorias y defectos reportados**
+
+Cerrado el incremento, dos integrantes sin experiencia previa en aseguramiento de calidad ejecutaron pruebas exploratorias sobre la aplicación **desplegada en producción**, no sobre el entorno local. Para ello el equipo redactó una guía de pruebas (`COMO-PROBAR.md`, commit `105fc0f`) que describe qué observar en cada sección, cómo distinguir un defecto de un atajo de demostración declarado y qué debe contener un reporte para que sea reproducible. La decisión de documentar el método, y no solo de asignar la tarea, responde a que ninguno de los dos había ejecutado antes una revisión de este tipo.
+
+| Issue | Reportado por | Sección afectada | Defecto observado | Estado |
+| :--- | :--- | :--- | :--- | :--- |
+| #1 | Ojanama Abanto, Johnny Alexander | Alertas | La vista mostraba el identificador técnico del registro que originó la alerta (`vital-sign:...`) en lugar de una descripción legible para el personal clínico | Corregido |
+| #2 | Acuache Lucas, Mathias Joaquin | Bitácora de auditoría | La bitácora exponía el identificador interno del paciente en la columna de recurso afectado, dato sin significado para el usuario y ajeno al lenguaje ubicuo de la sección 2.5 | Corregido |
+
+Ambos defectos comparten causa: la capa de presentación mostraba directamente valores que el dominio usa para referenciar entidades entre contextos. La corrección no se resolvió en la vista sino en el dominio, añadiendo a los agregados `Alert` y `AuditLog` la responsabilidad de traducir esos valores a una etiqueta legible, de modo que ninguna vista futura pueda reintroducir el mismo defecto. El commit `b2820c2` recoge la corrección y agrega **seis pruebas de regresión** que fijan el comportamiento esperado; el despliegue `7beeb16` lo publica.
+
+El equipo registra esta práctica como un aporte del sprint: los defectos no fueron encontrados por quienes escribieron el código, sino por integrantes que recorrieron la aplicación sin conocer su implementación, que es precisamente la condición que hace útil una prueba exploratoria.
+
+
+##### 5.2.2.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 2 **no se desarrollaron servicios web**, por lo que esta sección no registra endpoints, contratos ni documentación OpenAPI.
+
+El equipo deja constancia del motivo y no de una omisión: el Product Backlog de la sección 3.3 sitúa los servicios RESTful en la Entrega 3, posterior al frontend. El incremento de este sprint resuelve la capa de presentación y el modelo de dominio; la persistencia se simula con adaptadores en memoria que implementan los mismos puertos que consumirán los adaptadores HTTP.
+
+Esa decisión de diseño es verificable en el código. Los repositorios se declaran como interfaces en la capa de dominio y se inyectan por token:
+
+| Puerto (interfaz de dominio) | Adaptador actual | Adaptador previsto |
+| :--- | :--- | :--- |
+| `PatientRepository` | `PatientInMemoryRepository` | Cliente HTTP contra el recurso de pacientes (TS-02) |
+| `VitalSignRepository` | `VitalSignInMemoryRepository` | Cliente HTTP contra el recurso de registros clínicos (TS-03) |
+
+La sustitución se realiza en `src/app/app.config.ts` cambiando la clase asociada a cada token, sin modificar el dominio ni la capa de aplicación. La documentación OpenAPI de los servicios corresponde a la Technical Story TS-08 y se incorporará en el sprint que construya el backend.
+
+##### 5.2.2.7. Software Deployment Evidence for Sprint Review
+
+**Plataforma de despliegue.** La aplicación web se publica en **Vercel**, la misma plataforma donde ya opera la Landing Page. El equipo descarta Firebase Hosting, declarado en una versión anterior de la sección 5.1.4, por dos razones: evita introducir un segundo proveedor para un mismo tipo de artefacto estático, y aprovecha la configuración de integración continua que el equipo ya domina. La sección 5.1.4 fue corregida en consecuencia.
+
+**Configuración del despliegue continuo**
+
+| Elemento | Valor |
+| :--- | :--- |
+| Proyecto en Vercel | `clinicalsync-frontend` |
+| Repositorio conectado | `Digital-Clinical-Systems/FrontClinicalSync` |
+| Rama de producción | `main` |
+| Comando de construcción | `npm run build` |
+| Directorio publicado | `dist/front-clinical-sync/browser` |
+| URL de producción | `https://clinicalsync-frontend.vercel.app` |
+
+El proyecto se vinculó al repositorio, de modo que **cada integración a `main` dispara un despliegue automático** sin intervención manual. No existe un paso de publicación operado a mano que pueda quedar sin ejecutar.
+
+**Configuración declarada en el repositorio.** El archivo `vercel.json` versiona la configuración junto al código, de modo que el despliegue es reproducible y no depende de ajustes hechos en el panel del proveedor. Incluye dos elementos que conviene destacar:
+
+- Una regla de reescritura que dirige cualquier ruta hacia `index.html`. Sin ella, un acceso directo a una ruta interna como `/resumen-paciente` devolvería un error 404, porque el servidor buscaría un archivo inexistente en lugar de delegar el enrutamiento a la aplicación.
+- Cabeceras de seguridad `X-Content-Type-Options`, `X-Frame-Options` y `Referrer-Policy`.
+
+**Despliegues del sprint**
+
+| Fecha | Commit | Mensaje | Estado |
+| :--- | :--- | :--- | :--- |
+| 2026-10-02 | `5219e55` | feat: scaffold angular app with bounded context architecture | READY |
+| 2026-10-04 | `d805b91` | Release: Sprint 2 | READY |
+| 2026-10-05 | `7beeb16` | Release: correcciones de issues #1 y #2 | READY |
+
+**Verificación sobre el entorno de producción.** El equipo comprobó el despliegue ejecutando el flujo clínico completo sobre la URL pública, no sobre el entorno local:
+
+| Comprobación | Resultado |
+| :--- | :--- |
+| Respuesta del sitio | HTTP 200 |
+| Secciones accesibles | 8 de 8 |
+| Acceso directo a una ruta interna (`/resumen-paciente`) | HTTP 200, la regla de reescritura funciona |
+| Política de dominio tras registrar SpO2 de 84% | Riesgo CRITICAL y alerta generada |
+| Entradas de auditoría tras ese registro | 3 eventos capturados |
+| Errores de consola del navegador | 0 |
+
+##### 5.2.2.8. Team Collaboration Insights during Sprint
+
+Esta sección aplica el mismo método de medición del Sprint 1, separando los repositorios, para que la comparación entre ambos sprints sea directa. Las cifras se obtienen con `git shortlog -sn`.
+
+**Repositorio de la aplicación web (`FrontClinicalSync`)**
+
+| Integrante | Commits | Participación | Contribución |
+| :--- | ---: | ---: | :--- |
+| Sosa Soto, Oskar Rodrigo | 18 | 72.0% | Proyecto base, priorización por riesgo, criterios de aceptación, guía de pruebas, corrección de los Issues #1 y #2, integración y despliegue |
+| Huamán Cuba, Johan Giovani | 6 | 24.0% | Resumen clínico, modelo de lectura de evolución y sus pruebas |
+| Valdez Melo, Angel Andres | 1 | 4.0% | Agregado de indicaciones médicas con sus invariantes y pruebas |
+| **Total** | **25** | **100%** | |
+
+Las pruebas exploratorias ejecutadas por Acuache Lucas y Ojanama Abanto no aparecen en esta tabla porque no produjeron commits; su evidencia son los Issues #1 y #2 registrados en el mismo repositorio y documentados en la sección 5.2.2.5.
+
+**Comparación con el Sprint 1**
+
+| | Sprint 1 (`Landing-Page`) | Sprint 2 (`FrontClinicalSync`) |
+| :--- | :--- | :--- |
+| Commits en el repositorio del producto | 18 | 25 |
+| Autores distintos | **1** | **3** |
+| Integrantes con contribución registrada | **1** | **5** |
+| Ramas de trabajo | 0 | 5 |
+| Integraciones mediante Pull Request | 0 | 5 |
+| Defectos reportados por el propio equipo | 0 | 2 |
+| Flujo de trabajo | *trunk-based* sobre `main` | GitFlow con `feature/` → `develop` → `main` |
+
+**Lectura de estas cifras.** El compromiso declarado al cierre del Sprint 1 se cumplió en lo esencial: el repositorio del producto pasó de un solo autor a tres, y de cero ramas a cuatro ramas integradas por Pull Request. Esta es la evidencia que la observación H-14 de la revisión docente solicitaba, y se encuentra en el repositorio del producto y no en el del informe.
+
+El equipo mantiene, sin embargo, tres reservas sobre la lectura de estos números, porque presentarlos sin matices repetiría el problema que se intenta corregir:
+
+- **La distribución sigue siendo desigual.** Cerca de tres cuartas partes de los commits corresponden a un solo integrante. La mejora es real pero parcial.
+- **El número de commits no mide esfuerzo.** Valdez Melo concentró su trabajo en un único commit de 441 líneas que incluye un agregado completo con seis pruebas; Huamán Cuba repartió un volumen comparable en seis commits. Contar commits favorece al segundo estilo sin que el primero haya aportado menos.
+- **Dos integrantes no registran commits, pero sí contribuciones.** Ojanama Abanto y Acuache Lucas asumieron las pruebas exploratorias sobre la aplicación desplegada y reportaron los Issues #1 y #2 documentados en la sección 5.2.2.5. El panel de Insights no refleja ese trabajo porque contabiliza únicamente commits; la evidencia consta en la pestaña *Issues* del mismo repositorio. El equipo deja constancia además de que la redacción de los criterios de aceptación, asignada inicialmente a Ojanama Abanto, fue reasumida por otro integrante ante el cierre del sprint.
+
+**Observación sobre el método de trabajo.** El equipo identifica como factor determinante la preparación previa de cada rama. Antes de repartir el trabajo se creó una rama por historia con el archivo donde iría el código, el contexto clínico del que proviene la historia y la referencia a un archivo existente que servía de modelo. Los dos integrantes que entregaron código lo hicieron sobre ese punto de partida, y el mismo criterio se aplicó a las pruebas exploratorias: se entregaron con una guía escrita y no como un encargo abierto, lo que permitió que dos integrantes sin experiencia en QA produjeran reportes reproducibles. El equipo conserva esta práctica para el Sprint 3 y añade un compromiso derivado del incidente descrito en la sección 5.2.2.4: **ejecutar la compilación de producción antes de confirmar cualquier integración**, ya que la suite de pruebas por sí sola no detecta un archivo que no compila.
+
+
+
+### 5.3. Validation Interviews
+
+Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los beneficios clínicos de ClinicalSync son hipótesis derivadas de las entrevistas de descubrimiento y no resultados alcanzados. Las Validation Interviews son el instrumento con el que esas hipótesis se contrastan contra el producto construido, y se distinguen de las entrevistas del Capítulo II en su propósito: aquellas buscaban **entender el problema**; estas buscan **comprobar si la solución lo resuelve**.
+
+**Estado al cierre del Sprint 2.** No se han ejecutado todavía. La situación cambió respecto del Sprint 1: la aplicación web está ahora desplegada y sus ocho secciones son recorribles, de modo que las tareas de la tabla siguiente **ya tienen una interfaz sobre la que ejecutarse**. Lo que todavía no existe es la condición que las hace concluyentes: la aplicación opera sobre adaptadores en memoria con datos de demostración (sección 5.2.2.6), sin servicios web ni persistencia, por lo que un participante no puede trabajar con los pacientes de su propio turno ni retomar un registro en una sesión posterior. Medir tiempos de tarea sobre datos ficticios produciría cifras que no se pueden contrastar contra la línea base declarada en las entrevistas de descubrimiento. El equipo decide, en consecuencia, ejecutar las entrevistas de las hipótesis 1 a 5 cuando el incremento cuente con los servicios web previstos en la Entrega 3, y adelantar en el siguiente sprint únicamente la hipótesis 6, que se contrasta sobre la Landing Page y el flujo de contratación ya publicados. Esta sección documenta el **diseño** de las entrevistas; sus resultados se incorporarán cuando se ejecuten.
+
+#### 5.3.1. Diseño de entrevistas
+
+**Criterio de selección de participantes.** Los participantes deben ser profesionales en ejercicio de unidades cardiovasculares, externos al equipo, y no haber participado en las entrevistas de descubrimiento, para evitar que el conocimiento previo del proyecto sesgue la valoración de la interfaz.
+
+**Estructura de la sesión.** Cada entrevista combina tareas cronometradas con preguntas abiertas posteriores, en este orden: presentación del contexto sin explicar la interfaz; ejecución de las tareas sin ayuda del entrevistador; y preguntas de cierre. El entrevistador no interviene durante las tareas aunque el participante se equivoque, porque el error es el dato que interesa.
+
+**Tareas por segmento y métricas.**
+
+| Segmento | Tarea | Hipótesis que contrasta | Métrica observada |
+| :--- | :--- | :--- | :--- |
+| Personal de enfermería | Registrar los signos vitales de un paciente junto a la cama | H1 · BG-04 | Tiempo hasta guardar, número de toques, errores de ingreso |
+| Personal de enfermería | Emitir un traspaso SBAR al cierre del turno | H2 · BG-02 | Secciones completadas sin ayuda, tiempo total, omisiones |
+| Personal de enfermería | Localizar el traspaso recibido y acusar recibo | H2 · BG-02 | Éxito o fracaso sin ayuda, pasos hasta encontrarlo |
+| Médico especialista | Evaluar el estado de un paciente desde la vista consolidada | H3 · BG-03 | Tiempo hasta tener la información completa, fuentes adicionales consultadas |
+| Médico especialista | Identificar al paciente de mayor riesgo del servicio | H4 · BG-03 | Acierto, tiempo de decisión |
+| Ambos | Determinar quién registró una acción y a qué hora | H5 · BG-05 | Éxito sin ayuda, pasos hasta la bitácora |
+| Prospecto institucional | Explicar con sus palabras qué ofrece ClinicalSync tras recorrer la landing page | H6 · BG-01 | Precisión del resumen, localización del llamado a la acción |
+
+**Criterio de comparación.** Para las tareas de enfermería y de consulta médica, el tiempo medido se contrasta contra la práctica actual declarada en las entrevistas de descubrimiento: entre 10 y 15 minutos por paciente para consolidar información, según la Entrevista 1 del segmento de médicos (sección 2.2.2), que es la línea base de BG-03. Una herramienta que no mejore ese tiempo no cumple la condición de adopción que los cinco entrevistados declararon: que la solución reste trabajo antes de agregar funciones.
+
+**Preguntas de cierre.** Tras las tareas se pregunta qué resultó más lento de lo esperado, qué información faltó en pantalla, en qué momento del turno usarían la herramienta y qué haría que dejaran de usarla. La última es deliberada: identifica el motivo de abandono, que es más informativo que la satisfacción declarada.
+
+#### 5.3.2. Registro de entrevistas
+
+*(Sección por completar cuando las entrevistas se ejecuten. Cada registro seguirá el formato de la sección 2.2.2: datos del participante, enlace al video, timing, duración y resumen de lo observado, más la tabla de tiempos y errores por tarea.)*
+
+#### 5.3.3. Evaluaciones según heurísticas
+
+*(Sección por completar. La evaluación heurística de la aplicación web se realizará sobre el incremento desplegado, de forma independiente de las entrevistas con usuarios, y registrará los problemas encontrados con su severidad y la heurística vulnerada.)*
 
 ---
 
 ## Conclusiones
 ### Conclusiones y recomendaciones
 
-**Sobre el Problem Statement.** El diagnóstico formulado en la sección 1.2.2.1 se sostuvo con evidencia propia: las cinco entrevistas registradas en la sección 2.2.2 y analizadas en la 2.2.3 confirmaron los tres problemas que motivaron el proyecto. El registro duplicado entre papel y sistema, la transmisión verbal del relevo sin un formato común y la imposibilidad de determinar quién registró un dato y en qué momento aparecieron de forma espontánea en el discurso de los entrevistados, sin que el guion los indujera. Lo que todavía no puede afirmarse es el criterio de éxito enunciado en ese mismo Problem Statement. La reducción medible del tiempo de traspaso, la eliminación de los registros físicos duplicados y la adopción diaria de la plataforma exigen el producto en operación dentro de una unidad clínica, condición que esta entrega no alcanza porque su alcance comprometido fue la Landing Page.
+**Sobre el Problem Statement.** El diagnóstico formulado en la sección 1.2.2.1 se sostuvo con evidencia propia: las cinco entrevistas registradas en la sección 2.2.2 y analizadas en la 2.2.3 confirmaron los tres problemas que motivaron el proyecto. El registro duplicado entre papel y sistema, la transmisión verbal del relevo sin un formato común y la imposibilidad de determinar quién registró un dato y en qué momento aparecieron de forma espontánea en el discurso de los entrevistados, sin que el guion los indujera. Lo que todavía no puede afirmarse es el criterio de éxito enunciado en ese mismo Problem Statement. La reducción medible del tiempo de traspaso, la eliminación de los registros físicos duplicados y la adopción diaria de la plataforma exigen el producto en operación dentro de una unidad clínica. El Sprint 2 acortó esa distancia sin cerrarla: la aplicación web está desplegada y los ocho flujos clínicos son recorribles, pero opera sobre datos de demostración y sin servicios web, de modo que sigue sin existir uso real del que extraer esas mediciones.
 
 **Sobre los assumptions.** Los supuestos declarados en la sección 1.2.2.2 se contrastaron parcialmente. Los relativos a la agilidad del registro durante la atención y a la necesidad del especialista de consultar información consolidada encontraron respaldo directo en las entrevistas. En cambio, el supuesto de que el personal aceptaría incorporar un sistema nuevo siempre que reduzca la carga manual quedó sin verificar: los entrevistados describieron su situación actual, no su disposición a cambiar de herramienta. El equipo asume esta limitación de forma explícita y la traslada como criterio de diseño, no como hallazgo. En la misma línea, el análisis de la sección 2.2.3 dejó constancia de que un porcentaje de mención inferior al 100% indica que una característica no fue mencionada, no que haya sido rechazada, y esa distinción se mantuvo al interpretar los resultados.
 
-**Sobre los Hypothesis Statements.** De las siete hipótesis formuladas en la sección 1.2.2.3, solo la sexta cuenta con un producto construido y publicado: la Landing Page está desplegada en producción y es verificable en su URL. Aun así, su criterio de éxito, que un prospecto resuma el propósito de la plataforma con su propio vocabulario y localice el llamado a la acción sin ayuda, no ha sido probado con usuarios reales, porque esa comprobación corresponde a las Validation Interviews de la sección 5.3, previstas para una entrega posterior. Las hipótesis 1 a 5 dependen de la aplicación web, que a la fecha existe como prototipo de interfaz y no como software ejecutable, de modo que ninguna puede darse por validada ni por refutada. La séptima requiere contrastar la propuesta con un coordinador o jefe de servicio, perfil que el equipo identificó como actor en el Impact Mapping pero que no ha sido entrevistado.
+**Sobre los Hypothesis Statements.** De las siete hipótesis formuladas en la sección 1.2.2.3, solo la sexta cuenta con un producto construido y publicado: la Landing Page está desplegada en producción y es verificable en su URL. Aun así, su criterio de éxito, que un prospecto resuma el propósito de la plataforma con su propio vocabulario y localice el llamado a la acción sin ayuda, no ha sido probado con usuarios reales, porque esa comprobación corresponde a las Validation Interviews de la sección 5.3, previstas para una entrega posterior. Las hipótesis 1 a 5 cambiaron de estado en este sprint: dejaron de depender de un prototipo de interfaz y pasaron a contar con software ejecutable y publicado, con los flujos de registro de signos vitales, traspaso SBAR, resumen clínico, priorización por riesgo y bitácora de auditoría operando sobre el modelo de dominio. Aun así ninguna puede darse por validada ni por refutada, porque la aplicación funciona sobre adaptadores en memoria con datos de demostración y las entrevistas de validación de la sección 5.3 no se han ejecutado. El equipo distingue deliberadamente entre *hipótesis construida* e *hipótesis verificada*: este sprint produjo lo primero y no lo segundo. La séptima requiere contrastar la propuesta con un coordinador o jefe de servicio, perfil que el equipo identificó como actor en el Impact Mapping pero que no ha sido entrevistado.
+
+**Sobre el incremento del Sprint 2.** El equipo concluye que llevar el modelo de dominio del Capítulo IV a código fue la prueba más exigente a la que ese modelo se sometió hasta ahora, y que varias decisiones de diseño solo se revelaron incompletas al implementarlas. El ciclo de ejecución previsto para la indicación médica tuvo que reemplazarse por un modelo de reemplazo con historial al chocar con la invariante declarada en la sección 4.6.5, y la comunicación entre contextos obligó a fijar por escrito, en la sección 4.6.6, contratos que hasta entonces eran un acuerdo verbal. El verificador automático de fronteras convirtió esos contratos en una condición que el repositorio comprueba en cada integración, de modo que la arquitectura documentada y la construida no pueden divergir en silencio. La lección que el equipo extrae es que un modelo de dominio solo queda validado cuando existe código que no compila si se lo incumple.
+
+**Sobre la calidad y los defectos encontrados.** El equipo concluye que los dos defectos reportados en este sprint no fueron hallazgos fortuitos sino el resultado de haber separado quién construye de quién prueba. Ambos issues los encontraron integrantes que recorrieron la aplicación desplegada sin conocer su implementación, y ambos compartían la misma causa: la capa de presentación mostraba identificadores que el dominio usa para referenciar entidades entre contextos. Corregirlos en la vista habría bastado para cerrarlos; el equipo optó por corregirlos en el dominio y fijar el comportamiento con seis pruebas de regresión, porque una corrección en la vista deja la puerta abierta a que la siguiente pantalla repita el defecto. El equipo concluye también que asignar una tarea de QA a integrantes sin experiencia previa solo funcionó porque la tarea llegó acompañada de una guía escrita que explicaba qué observar y cómo distinguir un defecto de un atajo de demostración declarado.
 
 **Sobre el proceso de trabajo.** El equipo concluye que organizar el informe con una rama por capítulo permitió avanzar en paralelo, pero trasladó al momento de la integración el costo de mantener la coherencia entre secciones. Durante esa integración se detectaron y corrigieron incoherencias que ninguna rama podía ver por sí sola: artefactos de diseño que describían un producto de alcance distinto al definido en el Capítulo II y evidencias de despliegue que no correspondían a la plataforma efectivamente utilizada. La lección que el equipo extrae es que el documento y el producto deben revisarse juntos y no por separado, porque un informe internamente consistente puede seguir describiendo algo que no se construyó.
 
-**Recomendaciones y roadmap.** El siguiente incremento debe construir los módulos de los que depende todo lo demás. El Impact Mapping de la sección 3.2 muestra que el personal de enfermería produce la información que el médico especialista consume, por lo que el traspaso SBAR y el registro de signos vitales deben implementarse antes que el resumen clínico y las alertas: sin datos capturados, las vistas dirigidas al especialista carecen de contenido. El orden recomendado para los siguientes sprints es la aplicación web de frontend, los servicios web que la respalden y, por último, la autenticación y el control de acceso por rol. En paralelo, se recomienda aprovechar que la Landing Page ya está publicada para ejecutar las entrevistas de validación de la hipótesis 6 antes de invertir más esfuerzo en la captación, y actualizar el prototipo de Figma para que refleje lo efectivamente implementado, de modo que el diseño deje de ir por detrás del código.
+El Sprint 2 puso a prueba esa lección sobre el repositorio del producto. El cambio de un flujo *trunk-based* con un solo autor a un flujo con una rama por historia integrada por Pull Request elevó el número de autores de uno a tres y el de integrantes con contribución registrada de uno a cinco, que era exactamente la observación H-14 de la revisión docente. El equipo identifica como factor determinante la preparación previa de cada rama: entregar una historia con el archivo donde iría el código, el contexto clínico del que proviene y un archivo existente como modelo produjo entregas; entregarla como un encargo abierto, no. También registra sus propios errores de proceso: una integración se confirmó con los marcadores de conflicto sin resolver y la suite de pruebas no lo detectó, porque ninguna prueba importaba el archivo afectado. De ahí el compromiso incorporado para el Sprint 3 de ejecutar la compilación de producción antes de confirmar cualquier integración. La conclusión es que un indicador de colaboración solo significa algo si se lee junto a sus reservas: la distribución de commits sigue siendo desigual y contar commits favorece a quien reparte su trabajo en muchos, no a quien aporta más.
+
+**Recomendaciones y roadmap.** La recomendación formulada al cierre del Sprint 1 — construir primero la aplicación web de frontend — se ejecutó en este sprint, por lo que el equipo la reemplaza por la siguiente del orden previsto. El próximo incremento debe construir **los servicios web y la persistencia**, porque son la condición que hoy bloquea todo lo demás: sin ellos la aplicación no retiene un registro entre sesiones, no puede mostrar los pacientes reales de un turno y, en consecuencia, las entrevistas de validación de las hipótesis 1 a 5 no pueden producir mediciones comparables con la línea base declarada en el Capítulo II. La sustitución está preparada en el diseño: los repositorios se declaran como interfaces de dominio y los adaptadores en memoria se reemplazan por adaptadores HTTP sin tocar el dominio ni la capa de aplicación, según la tabla de puertos de la sección 5.2.2.6. Después de los servicios corresponde la autenticación y el control de acceso por rol, que hoy se resuelve con un selector de rol declarado como atajo de demostración y que es, además, el origen de la duda planteada en el Sprint Planning 2.
+
+En paralelo, el equipo mantiene tres recomendaciones. Primera, ejecutar ya las entrevistas de validación de la hipótesis 6: la Landing Page y el flujo de contratación están publicados y no hay motivo para postergar esa comprobación hasta que exista el backend. Segunda, conservar la separación entre quien construye y quien prueba, ampliando la guía de pruebas exploratorias a las secciones que el Sprint 3 incorpore, porque fue la práctica que produjo los únicos defectos detectados antes de la entrega. Tercera, actualizar el prototipo de Figma para que refleje lo efectivamente implementado — incluida la página de contratación, que no existía cuando se diseñó el prototipo — de modo que el diseño deje de ir por detrás del código.
 
 ### Video About-the-Team
 
@@ -3746,8 +4539,101 @@ La herramienta de Insights de GitHub demuestra que todos los miembros del equipo
 
 ## Bibliografía
 
+Las referencias se presentan en formato APA 7.ª edición y corresponden únicamente a fuentes efectivamente consultadas durante la elaboración de este informe.
+
+**Normativa peruana sobre historia clínica electrónica**
+
+Congreso de la República del Perú. (2013, 22 de mayo). *Ley N.º 30024, Ley que crea el Registro Nacional de Historias Clínicas Electrónicas*. Diario Oficial El Peruano. https://www.congreso.gob.pe/Docs/DGP/DIDP/files/ley_30024.pdf
+
+Ministerio de Salud del Perú. (2025, 30 de agosto). *Resolución Ministerial N.º 553-2025/MINSA. Disponen que el Sistema de Información de Historias Clínicas Electrónicas – SIHCE del MINSA sea implementado y usado de manera obligatoria en los establecimientos de salud del primer nivel de atención del Ministerio de Salud y de los gobiernos regionales*. Diario Oficial El Peruano. https://busquedas.elperuano.pe/dispositivo/NL/2433528-1
+
+*Estas dos normas sustentan el análisis del entorno competitivo de la sección 2.1 y, en particular, la afirmación sobre la obligatoriedad progresiva del registro electrónico en el sector público peruano. La Resolución Ministerial establece implementación inmediata para establecimientos del MINSA y progresiva, con plazo máximo de un año, para los gobiernos regionales.*
+
+**Comunicación clínica y traspaso de turno**
+
+Leonard, M., Graham, S., & Bonacum, D. (2004). The human factor: The critical importance of effective teamwork and communication in providing safe care. *Quality & Safety in Health Care, 13*(suppl 1), i85–i90. https://qualitysafety.bmj.com/content/13/suppl_1/i85
+
+*Artículo en el que los autores presentan SBAR, desarrollado para Kaiser Permanente en 2002 a partir de una práctica de la marina estadounidense. Es la fuente del modelo de traspaso estructurado que ClinicalSync implementa y que sustenta el objetivo BG-02.*
+
+**Diseño de producto y descubrimiento**
+
+Adzic, G. (2012). *Impact mapping: Making a big impact with software products and projects*. Provoking Thoughts.
+
+Gothelf, J., & Seiden, J. (2021). *Lean UX: Creating great products with agile teams* (3.ª ed.). O'Reilly Media.
+
+**Modelado de dominio y arquitectura**
+
+Brandolini, A. (2021). *Introducing EventStorming: An act of deliberate collective learning*. Leanpub.
+
+Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
+
+Vernon, V. (2013). *Implementing domain-driven design*. Addison-Wesley.
+
+**Proceso y convenciones técnicas**
+
+Conventional Commits. (2023). *Conventional Commits 1.0.0*. https://www.conventionalcommits.org/es/v1.0.0/
+
+Preston-Werner, T. (2013). *Semantic Versioning 2.0.0*. https://semver.org/lang/es/
+
+Schwaber, K., & Sutherland, J. (2020). *La Guía de Scrum: La guía definitiva de Scrum, las reglas del juego*. https://scrumguides.org/
+
+**Accesibilidad**
+
+World Wide Web Consortium. (2023, 5 de octubre). *Web Content Accessibility Guidelines (WCAG) 2.2*. W3C Recommendation. https://www.w3.org/TR/WCAG22/
+
+*Referencia de los criterios de contraste y de operabilidad por teclado verificados sobre la Landing Page en la sección 5.2.1.5.*
+
+**Documentación técnica de las herramientas empleadas**
+
+Google. (2026). *Angular documentation*. https://angular.dev/
+
+Vercel. (2026). *Vercel documentation*. https://vercel.com/docs
+
 ---
 
 ## Anexos
+
 ### Anexo A. Videos de Exposiciones
-*(Incluir de forma progresiva el título e hipervínculo al video de Exposición en Microsoft Stream para cada entrega AV1, TB1, AV2, TB2).*
+
+Videos de exposición de cada entrega, alojados en Microsoft Stream.
+
+| Entrega | Título | Enlace |
+| :--- | :--- | :--- |
+| AV1 | Exposición AV1 — Digital Clinical System / ClinicalSync | *(pendiente de enlace)* |
+| TB1 | Exposición TB1 — Digital Clinical System / ClinicalSync | *(pendiente de enlace)* |
+| AV2 | — | *(entrega posterior)* |
+| TB2 | — | *(entrega posterior)* |
+
+### Anexo B. Entrevistas de descubrimiento
+
+Registros en video de las cinco entrevistas analizadas en la sección 2.2. Los enlaces completos, las capturas y el *timing* de cada una se encuentran en la sección 2.2.2.
+
+| # | Entrevistado | Segmento | Entrevistador |
+| ---: | :--- | :--- | :--- |
+| 1 | Samuel Akerman | Personal de enfermería cardiovascular | Sosa Soto, Oskar Rodrigo |
+| 2 | Bruno Elescano | Personal de enfermería cardiovascular | Acuache Lucas, Mathias Joaquin |
+| 3 | Nathalia Dávila | Personal de enfermería cardiovascular | Valdez Melo, Angel Andres |
+| 4 | Mark Alex Esquivel Cabrera | Médicos especialistas cardiovasculares | Huamán Cuba, Johan Giovani |
+| 5 | Brenda Estefanía Ríos Caballero | Médicos especialistas cardiovasculares | Ojanama Abanto, Johnny Alexander |
+
+### Anexo C. Repositorios del proyecto
+
+| Repositorio | Contenido | URL |
+| :--- | :--- | :--- |
+| `Informe` | Documento de informe del proyecto | https://github.com/Digital-Clinical-Systems/Informe |
+| `Landing-Page` | Landing Page desplegada en producción | https://github.com/Digital-Clinical-Systems/Landing-Page |
+| `FrontClinicalSync` | Aplicación web Angular | https://github.com/Digital-Clinical-Systems/FrontClinicalSync |
+| `BackClinicalSync` | Servicios web RESTful | *(entrega posterior)* |
+
+### Anexo D. Artefactos de diseño y productos desplegados
+
+| Artefacto | Sección del informe | Enlace |
+| :--- | :--- | :--- |
+| Landing Page en producción | 5.2.1.5 | https://clinicalsync-landing.vercel.app/ |
+| Impact Mapping | 3.2 | https://miro.com/app/board/uXjVHl_mGsg=/ |
+| Big Picture Event Storming | 2.4 | https://miro.com/app/board/uXjVHl99QLc=/ |
+| Prototipo de interfaz | 4.4, 4.5 | Figma — enlace en la sección 4.5 |
+
+### Anexo E. Guía de entrevista
+
+El guión empleado en las entrevistas, con las preguntas diferenciadas por segmento objetivo, se encuentra en la sección 2.2.1 (Diseño de entrevistas) y no se reproduce aquí para evitar duplicación.
