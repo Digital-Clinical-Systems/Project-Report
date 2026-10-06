@@ -80,7 +80,26 @@ La observación H-14 de la revisión docente del AV1 señaló que la colaboraci�
 
 **Nota sobre la lectura de las cifras.** El panel de Insights de GitHub contabiliza únicamente los commits de la rama `main` y **excluye los commits de fusión**, mientras que la tabla de la sección 5.2.2.8 se obtiene con `git shortlog -sn` sobre el historial completo. Por eso el panel muestra 18 commits de autor en `FrontClinicalSync` (11 + 6 + 1) donde la sección 5.2.2.8 registra 25: la diferencia son los siete commits de integración de los Pull Requests y de las promociones a `main`. Ambas cifras son correctas y miden cosas distintas; el equipo deja constancia de la diferencia para que la comparación no se lea como una inconsistencia.
 
-El panel de Insights del repositorio del informe correspondiente a esta entrega refleja la contribución del Sprint 2 una vez integrada a `main` la rama de trabajo de la TB1.
+**C. Repositorio del informe (`Informe`)**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/insights-informe-tb1.png" alt="Panel de Insights del repositorio del informe al cierre del Sprint 2" width="1000">
+</p>
+
+*Los cinco integrantes registran commits propios en el repositorio del informe. El panel muestra seis tarjetas porque Sosa Soto trabajó con dos identidades de Git — su cuenta institucional (`YakuzaMeen`) y una cuenta personal (`RodriSosaYaku`) — circunstancia ya advertida en la sección 5.2.1.8 para el Sprint 1 y que se mantiene aquí.*
+
+**Totales acumulados del repositorio del informe.** La tabla siguiente se obtiene con `git shortlog -sn` sobre `main` al cierre de la TB1, con el mismo método empleado en la sección 5.2.1.8 para que ambas entregas sean comparables, y consolida en una sola fila las dos identidades de Sosa Soto:
+
+| Integrante | Cuenta de GitHub | Commits al cierre AV1 | Commits al cierre TB1 | Participación |
+| :--- | :--- | ---: | ---: | ---: |
+| Sosa Soto, Oskar Rodrigo | `YakuzaMeen` + `RodriSosaYaku` | 50 | 65 | 46% |
+| Huamán Cuba, Johan Giovani | `Johancuba` | 43 | 45 | 32% |
+| Valdez Melo, Angel Andres | `AngelValdezM` | 13 | 13 | 9% |
+| Ojanama Abanto, Johnny Alexander | `JohnnyGZ41` | 12 | 12 | 8% |
+| Acuache Lucas, Mathias Joaquin | `MathiasA25` | 7 | 7 | 5% |
+| **Total** | | **125** | **142** | **100%** |
+
+*Porcentajes redondeados al entero. La diferencia entre ambas columnas corresponde al Sprint 2, en el que el trabajo de redacción se concentró en dos integrantes: los otros tres dedicaron su esfuerzo al repositorio de la aplicación web y a las pruebas exploratorias, según consta en las secciones 5.2.2.4 y 5.2.2.5. El equipo deja constancia de ello para que la lectura conjunta de los tres paneles no sugiera inactividad donde hubo reasignación de trabajo.*
 
 ---
 
