@@ -4191,6 +4191,7 @@ Este sprint estrena el repositorio `https://github.com/Digital-Clinical-Systems/
 | `feature/us-22-indicaciones-medicas` | US-22 | Valdez Melo, Angel Andres | 1 | PR a `develop` |
 | `feature/us-28-priorizacion-alertas` | US-29 | Sosa Soto, Oskar Rodrigo | 1 | PR a `develop` |
 | `feature/docs-gherkin-sprint-2` | Criterios de aceptación | Sosa Soto, Oskar Rodrigo | 1 | PR a `develop` |
+| `fix/issues-identificadores-internos` | Issues #1 y #2 | Sosa Soto, Oskar Rodrigo | 1 | PR a `develop` |
 
 **Commits del sprint**
 
@@ -4217,6 +4218,10 @@ Este sprint estrena el repositorio `https://github.com/Digital-Clinical-Systems/
 | FrontClinicalSync | develop | `9482800` | chore: remove unused treatments scaffold superseded by medical-orders | Sosa Soto | 2026-10-04 |
 | FrontClinicalSync | develop | `44cd74d` | fix: resolve merge conflict markers and normalize line endings | Sosa Soto | 2026-10-04 |
 | FrontClinicalSync | main | `d805b91` | Release: Sprint 2 | Sosa Soto | 2026-10-04 |
+| FrontClinicalSync | develop | `105fc0f` | docs: add QA testing guide for exploratory testing | Sosa Soto | 2026-10-05 |
+| FrontClinicalSync | fix/issues-identificadores-internos | `b2820c2` | fix: hide internal identifiers from clinical views | Sosa Soto | 2026-10-05 |
+| FrontClinicalSync | develop | `a816f35` | Merge PR: fix/issues-identificadores-internos | Sosa Soto | 2026-10-05 |
+| FrontClinicalSync | main | `7beeb16` | Release: correcciones de issues #1 y #2 | Sosa Soto | 2026-10-05 |
 
 **Incidente de integración registrado.** Al integrar la tercera rama se produjo un conflicto real en `src/app/app.routes.ts` y `src/app/layout/shell.component.ts`: las historias US-22 y US-26 habían agregado su ruta y su entrada de navegación en la misma posición del archivo. El conflicto se resolvió conservando ambas rutas.
 
@@ -4226,11 +4231,24 @@ El equipo registra además un error de proceso cometido durante esa resolución:
 
 | Comprobación | Comando | Resultado |
 | :--- | :--- | :--- |
-| Pruebas del dominio | `npm test -- --watch=false` | **29 SUCCESS** |
+| Pruebas del dominio | `npm test -- --watch=false` | **35 SUCCESS** |
 | Fronteras entre Bounded Contexts | `npm run check:boundaries` | **OK (45 archivos revisados)** |
 | Compilación de producción | `npm run build` | **Application bundle generation complete** |
 
-Las 29 pruebas se distribuyen así: 17 corresponden a las invariantes del núcleo del dominio implementadas al crear el proyecto, 6 a las invariantes del agregado `MedicalOrder` y 6 al modelo de lectura de evolución del paciente.
+Las 35 pruebas se distribuyen así: 17 corresponden a las invariantes del núcleo del dominio implementadas al crear el proyecto, 6 a las invariantes del agregado `MedicalOrder`, 6 al modelo de lectura de evolución del paciente y 6 a los defectos reportados en las pruebas exploratorias, incorporadas como pruebas de regresión al corregirlos (ver el apartado de pruebas exploratorias de la sección 5.2.2.5).
+
+**Repositorio de la Landing Page (`Landing-Page`)**
+
+La Landing Page recibió en este sprint dos commits derivados de una observación del propio equipo durante la revisión interna: el sitio publicado describía los planes de contratación pero no ofrecía ninguna vía para contratarlos ni enlazaba con la aplicación web, de modo que la cadena entre la captación y el producto quedaba interrumpida.
+
+| Repository | Branch | Commit Id | Commit Message | Autor | Commited on |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Landing-Page | main | `29d5822` | feat: add simulated payment checkout linking to the web application | Sosa Soto | 2026-10-05 |
+| Landing-Page | main | `ac49979` | feat: replace checkout modal with five step contracting page | Sosa Soto | 2026-10-05 |
+
+El primer commit incorpora el flujo de contratación como una ventana modal; el segundo lo reemplaza por una página propia (`checkout.html`) de cinco pasos, tras comprobar que la modal impedía enlazar un plan concreto desde fuera del sitio y no dejaba espacio para el resumen de la contratación. La página recibe el plan elegido por parámetro de consulta, de modo que cada llamado a la acción de la sección de precios abre el checkout ya posicionado en ese plan, y al completar el flujo redirige a la aplicación web publicada. Esto cierra el recorrido Landing Page → contratación → producto que el Impact Mapping de la sección 3.2 supone para el actor institucional.
+
+**Alcance declarado.** El procesamiento de pagos es **simulado**: no existe integración con ninguna pasarela ni se transmite ningún dato a un tercero. El flujo valida el formato de los datos ingresados en el navegador y no persiste información. Esta condición se declara aquí de forma explícita para que la evidencia no se lea como una capacidad transaccional del producto.
 
 ##### 5.2.2.5. Execution Evidence for Sprint Review
 
@@ -4243,7 +4261,7 @@ Los hitos alcanzados fueron los siguientes:
 - Proyecto Angular con componentes *standalone*, *signals* e `inject()`, organizado en siete Bounded Contexts con las capas `domain`, `application`, `infrastructure` y `presentation`.
 - Ocho secciones navegables: pacientes del turno, priorización por riesgo, registro de signos vitales, resumen clínico, indicaciones médicas, traspaso SBAR, alertas y bitácora de auditoría.
 - Política de dominio operativa: un signo vital fuera de umbral genera automáticamente una alerta en otro contexto, sin acoplamiento entre ambos.
-- Suite de 29 pruebas sobre las invariantes del dominio y verificador automático de fronteras entre contextos.
+- Suite de 35 pruebas sobre las invariantes del dominio y verificador automático de fronteras entre contextos.
 - Publicación en producción con despliegue continuo desde la rama `main`.
 
 **Recorrido de la aplicación desplegada**
@@ -4316,6 +4334,20 @@ Las capturas siguientes corresponden a la aplicación publicada en `https://clin
 
 **Alcance de esta evidencia.** La aplicación opera sobre repositorios en memoria mientras los servicios web no existan. Los datos mostrados en las capturas son de demostración y no persisten entre sesiones: al recargar la página, el estado vuelve al inicial. La sustitución por adaptadores HTTP está aislada en un único archivo de configuración, de modo que no afectará al dominio ni a la capa de aplicación.
 
+**Pruebas exploratorias y defectos reportados**
+
+Cerrado el incremento, dos integrantes sin experiencia previa en aseguramiento de calidad ejecutaron pruebas exploratorias sobre la aplicación **desplegada en producción**, no sobre el entorno local. Para ello el equipo redactó una guía de pruebas (`COMO-PROBAR.md`, commit `105fc0f`) que describe qué observar en cada sección, cómo distinguir un defecto de un atajo de demostración declarado y qué debe contener un reporte para que sea reproducible. La decisión de documentar el método, y no solo de asignar la tarea, responde a que ninguno de los dos había ejecutado antes una revisión de este tipo.
+
+| Issue | Reportado por | Sección afectada | Defecto observado | Estado |
+| :--- | :--- | :--- | :--- | :--- |
+| #1 | Ojanama Abanto, Johnny Alexander | Alertas | La vista mostraba el identificador técnico del registro que originó la alerta (`vital-sign:...`) en lugar de una descripción legible para el personal clínico | Corregido |
+| #2 | Acuache Lucas, Mathias Joaquin | Bitácora de auditoría | La bitácora exponía el identificador interno del paciente en la columna de recurso afectado, dato sin significado para el usuario y ajeno al lenguaje ubicuo de la sección 2.5 | Corregido |
+
+Ambos defectos comparten causa: la capa de presentación mostraba directamente valores que el dominio usa para referenciar entidades entre contextos. La corrección no se resolvió en la vista sino en el dominio, añadiendo a los agregados `Alert` y `AuditLog` la responsabilidad de traducir esos valores a una etiqueta legible, de modo que ninguna vista futura pueda reintroducir el mismo defecto. El commit `b2820c2` recoge la corrección y agrega **seis pruebas de regresión** que fijan el comportamiento esperado; el despliegue `7beeb16` lo publica.
+
+El equipo registra esta práctica como un aporte del sprint: los defectos no fueron encontrados por quienes escribieron el código, sino por integrantes que recorrieron la aplicación sin conocer su implementación, que es precisamente la condición que hace útil una prueba exploratoria.
+
+
 ##### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
 Durante el Sprint 2 **no se desarrollaron servicios web**, por lo que esta sección no registra endpoints, contratos ni documentación OpenAPI.
@@ -4359,6 +4391,7 @@ El proyecto se vinculó al repositorio, de modo que **cada integración a `main`
 | :--- | :--- | :--- | :--- |
 | 2026-10-02 | `5219e55` | feat: scaffold angular app with bounded context architecture | READY |
 | 2026-10-04 | `d805b91` | Release: Sprint 2 | READY |
+| 2026-10-05 | `7beeb16` | Release: correcciones de issues #1 y #2 | READY |
 
 **Verificación sobre el entorno de producción.** El equipo comprobó el despliegue ejecutando el flujo clínico completo sobre la URL pública, no sobre el entorno local:
 
@@ -4379,30 +4412,34 @@ Esta sección aplica el mismo método de medición del Sprint 1, separando los r
 
 | Integrante | Commits | Participación | Contribución |
 | :--- | ---: | ---: | :--- |
-| Sosa Soto, Oskar Rodrigo | 14 | 66.7% | Proyecto base, priorización por riesgo, criterios de aceptación, integración y despliegue |
-| Huamán Cuba, Johan Giovani | 6 | 28.6% | Resumen clínico, modelo de lectura de evolución y sus pruebas |
-| Valdez Melo, Angel Andres | 1 | 4.8% | Agregado de indicaciones médicas con sus invariantes y pruebas |
-| **Total** | **21** | **100%** | |
+| Sosa Soto, Oskar Rodrigo | 18 | 72.0% | Proyecto base, priorización por riesgo, criterios de aceptación, guía de pruebas, corrección de los Issues #1 y #2, integración y despliegue |
+| Huamán Cuba, Johan Giovani | 6 | 24.0% | Resumen clínico, modelo de lectura de evolución y sus pruebas |
+| Valdez Melo, Angel Andres | 1 | 4.0% | Agregado de indicaciones médicas con sus invariantes y pruebas |
+| **Total** | **25** | **100%** | |
+
+Las pruebas exploratorias ejecutadas por Acuache Lucas y Ojanama Abanto no aparecen en esta tabla porque no produjeron commits; su evidencia son los Issues #1 y #2 registrados en el mismo repositorio y documentados en la sección 5.2.2.5.
 
 **Comparación con el Sprint 1**
 
 | | Sprint 1 (`Landing-Page`) | Sprint 2 (`FrontClinicalSync`) |
 | :--- | :--- | :--- |
-| Commits en el repositorio del producto | 18 | 21 |
+| Commits en el repositorio del producto | 18 | 25 |
 | Autores distintos | **1** | **3** |
-| Ramas `feature/` | 0 | 4 |
-| Integraciones mediante Pull Request | 0 | 4 |
+| Integrantes con contribución registrada | **1** | **5** |
+| Ramas de trabajo | 0 | 5 |
+| Integraciones mediante Pull Request | 0 | 5 |
+| Defectos reportados por el propio equipo | 0 | 2 |
 | Flujo de trabajo | *trunk-based* sobre `main` | GitFlow con `feature/` → `develop` → `main` |
 
 **Lectura de estas cifras.** El compromiso declarado al cierre del Sprint 1 se cumplió en lo esencial: el repositorio del producto pasó de un solo autor a tres, y de cero ramas a cuatro ramas integradas por Pull Request. Esta es la evidencia que la observación H-14 de la revisión docente solicitaba, y se encuentra en el repositorio del producto y no en el del informe.
 
 El equipo mantiene, sin embargo, tres reservas sobre la lectura de estos números, porque presentarlos sin matices repetiría el problema que se intenta corregir:
 
-- **La distribución sigue siendo desigual.** Dos tercios de los commits corresponden a un solo integrante. La mejora es real pero parcial.
+- **La distribución sigue siendo desigual.** Cerca de tres cuartas partes de los commits corresponden a un solo integrante. La mejora es real pero parcial.
 - **El número de commits no mide esfuerzo.** Valdez Melo concentró su trabajo en un único commit de 441 líneas que incluye un agregado completo con seis pruebas; Huamán Cuba repartió un volumen comparable en seis commits. Contar commits favorece al segundo estilo sin que el primero haya aportado menos.
-- **Dos integrantes no registran contribuciones en este repositorio.** La redacción de los criterios de aceptación, asignada a Ojanama Abanto, fue reasumida por otro integrante ante el cierre del sprint; las pruebas exploratorias asignadas a Acuache Lucas se iniciaron el último día y no alcanzaron a producir reportes registrados.
+- **Dos integrantes no registran commits, pero sí contribuciones.** Ojanama Abanto y Acuache Lucas asumieron las pruebas exploratorias sobre la aplicación desplegada y reportaron los Issues #1 y #2 documentados en la sección 5.2.2.5. El panel de Insights no refleja ese trabajo porque contabiliza únicamente commits; la evidencia consta en la pestaña *Issues* del mismo repositorio. El equipo deja constancia además de que la redacción de los criterios de aceptación, asignada inicialmente a Ojanama Abanto, fue reasumida por otro integrante ante el cierre del sprint.
 
-**Observación sobre el método de trabajo.** El equipo identifica como factor determinante la preparación previa de cada rama. Antes de repartir el trabajo se creó una rama por historia con el archivo donde iría el código, el contexto clínico del que proviene la historia y la referencia a un archivo existente que servía de modelo. Los dos integrantes que entregaron lo hicieron sobre ese punto de partida. El equipo conserva esta práctica para el Sprint 3 y añade un compromiso derivado del incidente descrito en la sección 5.2.2.4: **ejecutar la compilación de producción antes de confirmar cualquier integración**, ya que la suite de pruebas por sí sola no detecta un archivo que no compila.
+**Observación sobre el método de trabajo.** El equipo identifica como factor determinante la preparación previa de cada rama. Antes de repartir el trabajo se creó una rama por historia con el archivo donde iría el código, el contexto clínico del que proviene la historia y la referencia a un archivo existente que servía de modelo. Los dos integrantes que entregaron código lo hicieron sobre ese punto de partida, y el mismo criterio se aplicó a las pruebas exploratorias: se entregaron con una guía escrita y no como un encargo abierto, lo que permitió que dos integrantes sin experiencia en QA produjeran reportes reproducibles. El equipo conserva esta práctica para el Sprint 3 y añade un compromiso derivado del incidente descrito en la sección 5.2.2.4: **ejecutar la compilación de producción antes de confirmar cualquier integración**, ya que la suite de pruebas por sí sola no detecta un archivo que no compila.
 
 
 
