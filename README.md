@@ -47,11 +47,39 @@
 
 La elaboración del informe se organizó con una rama `feature/report-chapter-N` por cada capítulo, de modo que cada integrante pudiera avanzar sobre su sección sin bloquear a los demás. Cada commit corresponde, por regla general, a una sección o título completado y sigue la convención de Conventional Commits descrita en la sección 5.1.3. Al cierre de la entrega, las cinco ramas se integraron a `develop` en orden, resolviendo en el `README.md` los conflictos propios de un documento compartido.
 
-La siguiente captura corresponde al panel de Insights del repositorio y refleja la contribución de cada integrante durante el Sprint 1.
+**URL del repositorio de la aplicación web:** [https://github.com/Digital-Clinical-Systems/FrontClinicalSync](https://github.com/Digital-Clinical-Systems/FrontClinicalSync)
+
+### Insights del Sprint 1 (entrega AV1)
+
+La siguiente captura corresponde al panel de Insights del repositorio del informe y refleja la contribución de cada integrante durante el Sprint 1.
 
 <p align="center">
-  <img src="assets/chapter-5/sprint-1/team-commits.png" alt="Panel de Insights del repositorio del informe" width="1000">
+  <img src="assets/chapter-5/sprint-1/team-commits.png" alt="Panel de Insights del repositorio del informe durante el Sprint 1" width="1000">
 </p>
+
+### Insights del Sprint 2 (entrega TB1)
+
+La observación H-14 de la revisión docente del AV1 señaló que la colaboración evidenciada en el repositorio del informe no sustituye a la del repositorio del producto. Por esa razón esta entrega incorpora los paneles de Insights de los **dos repositorios de producto**, que son los que registran el trabajo de construcción del Sprint 2.
+
+**A. Repositorio de la Landing Page (`Landing-Page`)**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/insights-landing-tb1.png" alt="Panel de Insights del repositorio de la Landing Page al cierre del Sprint 2" width="1000">
+</p>
+
+*El repositorio acumula 20 commits sobre `main` al cierre del Sprint 2, frente a los 18 registrados al cierre del Sprint 1. El incremento corresponde a la pasarela de pago simulada y al enlace de la Landing Page con la aplicación web, descritos en la sección 5.2.2.5. El panel confirma que este repositorio sigue teniendo un solo autor: la Landing Page no recibió trabajo distribuido en este sprint porque el esfuerzo del equipo se trasladó al repositorio de la aplicación web.*
+
+**B. Repositorio de la aplicación web (`FrontClinicalSync`)**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/insights-frontend-tb1.png" alt="Panel de Insights del repositorio de la aplicación web al cierre del Sprint 2" width="1000">
+</p>
+
+*Tres autores distintos registran commits en el repositorio estrenado en este sprint: Sosa Soto (`YakuzaMeen`), Huamán Cuba (`Johancuba`) y Valdez Melo (`AngelValdezM`). Esta es la evidencia directa que la observación H-14 solicitaba, y se encuentra en el repositorio del producto y no en el del informe.*
+
+**Nota sobre la lectura de las cifras.** El panel de Insights de GitHub contabiliza únicamente los commits de la rama `main` y **excluye los commits de fusión**, mientras que la tabla de la sección 5.2.2.8 se obtiene con `git shortlog -sn` sobre el historial completo. Por eso el panel muestra 18 commits de autor en `FrontClinicalSync` (11 + 6 + 1) donde la sección 5.2.2.8 registra 25: la diferencia son los siete commits de integración de los Pull Requests y de las promociones a `main`. Ambas cifras son correctas y miden cosas distintas; el equipo deja constancia de la diferencia para que la comparación no se lea como una inconsistencia.
+
+El panel de Insights del repositorio del informe correspondiente a esta entrega refleja la contribución del Sprint 2 una vez integrada a `main` la rama de trabajo de la TB1.
 
 ---
 
@@ -59,6 +87,8 @@ La siguiente captura corresponde al panel de Insights del repositorio y refleja 
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
+  - [Insights del Sprint 1 (entrega AV1)](#insights-del-sprint-1-entrega-av1)
+  - [Insights del Sprint 2 (entrega TB1)](#insights-del-sprint-2-entrega-tb1)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
 - [Alcance de las afirmaciones en esta entrega](#alcance-de-las-afirmaciones-en-esta-entrega)
