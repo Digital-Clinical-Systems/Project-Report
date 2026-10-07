@@ -37,6 +37,7 @@
 | 1.0 | 2026-08-27 | Huamán Cuba, Johan Giovani | Versión inicial del documento. Se crea la estructura base del informe con el índice de los cinco capítulos. |
 | AV1 | 2026-09-17 | <ul><li>Huamán Cuba, Johan Giovani</li><li>Sosa Soto, Oskar Rodrigo</li><li>Acuache Lucas, Mathias Joaquin</li><li>Valdez Melo, Angel Andres</li><li>Ojanama Abanto, Johnny Alexander</li></ul> | Entrega AV1. Capítulo I: perfil de la startup, perfil de la solución, proceso Lean UX y segmentos objetivo. Capítulo II: análisis competitivo, entrevistas y su análisis, needfinding, Big Picture Event Storming y Ubiquitous Language. Capítulo III: User Stories, Impact Mapping y Product Backlog. Capítulo IV: style guidelines, arquitectura de información, diseño de la landing page y de la aplicación web, prototipado, arquitectura DDD, diseño orientado a objetos y diseño de base de datos. Capítulo V: configuración del entorno, gestión del código fuente, despliegue y evidencias del Sprint 1, con la Landing Page publicada en producción. |
 | TB1 | 2026-10-06 | <ul><li>Sosa Soto, Oskar Rodrigo</li><li>Huamán Cuba, Johan Giovani</li><li>Valdez Melo, Angel Andres</li><li>Acuache Lucas, Mathias Joaquin</li><li>Ojanama Abanto, Johnny Alexander</li></ul> | Entrega TB1. Se corrigen las quince observaciones de la revisión docente del AV1. Capítulo IV: se incorporan los Bounded Context Canvases (4.6.5) y los contratos de integración entre contextos (4.6.6). Capítulo V: se documenta el Sprint 2 completo (5.2.2.1 a 5.2.2.8) con la aplicación web construida y desplegada, las pruebas exploratorias y los Issues #1 y #2 con su corrección, el flujo de contratación de la Landing Page, y se añade el diseño de las Validation Interviews (5.3). Se actualizan los Insights de colaboración con los repositorios de producto, el Student Outcome y las conclusiones. Se incorporan la bibliografía y los anexos.
+| TB1.1 | 2026-10-07 | Sosa Soto, Oskar Rodrigo | Actualización posterior a la entrega TB1, previa a la exposición. Capítulo IV: se incorpora el Bounded Context Canvas de BC-08 Clinical Events, surgido durante la implementación, y se corrige el canvas de BC-07 para que refleje las invariantes efectivamente construidas. Capítulo V: se documenta la ampliación del alcance que completó las veinte historias del backlog web, el servicio de datos de demostración con sus ocho recursos (5.2.2.6), las diez capturas de la aplicación, las cifras de verificación vigentes y el efecto de la ampliación sobre la distribución del trabajo. Se actualizan el alcance de las afirmaciones, la sección 5.3 y las conclusiones. |
 
 ---
 
@@ -397,17 +398,17 @@ El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cu
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
 | Comunica oralmente con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Condujo la Entrevista 1 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), formulando el guion ante un profesional externo al equipo y repreguntando sobre el flujo de evaluación del paciente.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1), donde el equipo acordó el reparto de historias por rama, y sostuvo la coordinación técnica sobre el alcance de las historias US-26 y US-27 que asumió.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Condujo la Entrevista 1 del segmento de personal de enfermería cardiovascular (sección 2.2.2) y expuso en video el prototipo del Sprint 1 (sección 4.5), recorriendo la Landing Page publicada en producción y el prototipo de la aplicación web.<br><br>TB1: Condujo el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1), donde expuso ante el equipo las quince observaciones de la revisión docente del AV1, explicó por qué la concentración de autoría afectaba la calificación y negoció el reparto de historias y la fecha de corte de cada una.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Condujo la Entrevista 2 del segmento de personal de enfermería cardiovascular (sección 2.2.2), adaptando el lenguaje del guion técnico al vocabulario asistencial del entrevistado.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1) y asumió la tarea de pruebas exploratorias, consultando el alcance de la revisión antes de ejecutarla.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Condujo la Entrevista 3 del segmento de personal de enfermería cardiovascular (sección 2.2.2), indagando sobre el registro en papel durante la atención y el traspaso al cierre del turno.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1) y expuso al equipo la decisión de modelar la indicación médica con reemplazo e historial en lugar del ciclo de ejecución previsto, justificando el cambio frente a la invariante declarada en la sección 4.6.5.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Condujo la Entrevista 2 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), recogiendo la perspectiva del especialista sobre la consulta del estado del paciente.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1) y planteó al equipo la duda sobre el selector de rol de la aplicación, cuestionando que un enfermero pudiera emitir indicaciones médicas; la discusión derivó en el reporte del Issue #1. | El equipo concluye que exponer el dominio clínico ante profesionales de salud obligó a abandonar el vocabulario técnico de software y a hablar en los términos del turno asistencial. Las entrevistas, conducidas por los cinco integrantes, fueron la fuente directa de los hallazgos de la sección 2.2.3 y del Ubiquitous Language de la sección 2.5. El registro en video del prototipo mostró además que demostrar un producto funcionando comunica el alcance con más precisión que describirlo.<br><br>TB1: El equipo concluye que la comunicación oral en este sprint cambió de público: ya no se dirigió a usuarios externos sino al propio equipo. El Sprint Planning 2 obligó a exponer las quince observaciones de la revisión docente sin suavizarlas y a negociar un reparto verificable de historias por rama. Las preguntas que los integrantes sin experiencia en QA formularon sobre el alcance de las pruebas mostraron que una tarea solo queda asignada cuando quien la recibe puede explicarla con sus palabras. |
-| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Redactó el Big Picture Event Storming (sección 2.4), la arquitectura orientada al dominio (secciones 4.6.1 a 4.6.4), los diagramas de clases (4.7.1) y de base de datos (4.8.1), y la configuración del entorno de desarrollo y la gestión del código fuente (5.1.1 a 5.1.4).<br><br>TB1: Implementó las historias US-26 y US-27 en la rama `feature/us-26-vista-consolidada` del repositorio `FrontClinicalSync`, con seis commits que incluyen el modelo de lectura de la evolución del paciente, su filtro por rango de tiempo y las pruebas que lo verifican, además de la documentación de esa suite en el README del repositorio.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Redactó el análisis de entrevistas (2.2.3), el Capítulo III completo (User Stories, Impact Mapping y Product Backlog), la arquitectura de información (4.2), el prototipado del Sprint 1 (4.5) y las evidencias de ejecución y despliegue del Capítulo V.<br><br>TB1: Documentó las ocho subsecciones del Sprint 2 (5.2.2.1 a 5.2.2.8), redactó los Bounded Context Canvases y los contratos de integración (4.6.5 y 4.6.6), la sección de Validation Interviews (5.3), la bibliografía y los anexos. Corrigió las quince observaciones de la revisión docente del AV1 e implementó la historia US-29, los criterios de aceptación del sprint y la guía de pruebas exploratorias dirigida a los integrantes sin experiencia en QA.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Redactó el perfil de la startup (1.1), los Lean UX Assumptions, Hypothesis Statements y Lean UX Canvas (1.2.2.2 a 1.2.2.4), y documentó los wireframes y mock-ups de la Landing Page.<br><br>TB1: Ejecutó pruebas exploratorias sobre la aplicación desplegada y reportó el Issue #2 del repositorio `FrontClinicalSync`, documentando los pasos para reproducir la exposición de identificadores internos en la bitácora de auditoría y proponiendo dos alternativas de corrección.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Redactó los antecedentes y la problemática (1.2.1), los Lean UX Problem Statements y los segmentos objetivo (1.3), y el diseño UX/UI de la aplicación web (4.4.2 wireflow diagrams, 4.4.3 mock-ups y 4.4.4 user flow diagrams).<br><br>TB1: Implementó la historia US-22 en la rama `feature/us-22-indicaciones-medicas`, con el agregado `MedicalOrder` del contexto BC-07, sus invariantes y seis pruebas que las verifican. Amplió además el verificador automático de fronteras para someter su propio contexto a las reglas de dependencia declaradas en la sección 4.6.6.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Redactó las style guidelines generales y web (4.1.1 y 4.1.2), las Epics 01 y 02 con sus User Stories y Technical Stories, los wireframes y mock-ups de la aplicación web, y las tablas de development evidence del Sprint 1 (5.2.1.4).<br><br>TB1: Ejecutó pruebas exploratorias sobre la aplicación desplegada y reportó el Issue #1 del repositorio `FrontClinicalSync`, describiendo con pasos reproducibles la aparición de un identificador técnico en la vista de alertas y distinguiendo ese defecto de los atajos de demostración declarados. | El equipo concluye que documentar en un repositorio compartido impone una disciplina que un documento aislado no exige: cada sección debe ser legible para los demás integrantes y trazable hasta el commit que la originó. Trabajar con una rama por capítulo y con Conventional Commits permitió avanzar en paralelo y, al integrar, detectar y corregir incoherencias entre lo redactado y lo efectivamente construido.<br><br>TB1: El equipo concluye que escribir para un lector técnico externo es distinto de escribir para el propio equipo. Documentar los Bounded Context Canvases y los contratos de integración obligó a fijar por escrito invariantes y reglas de dependencia que antes solo existían como acuerdo verbal, y el verificador automático de fronteras convirtió esa documentación en una condición que el repositorio comprueba. Los reportes de issues redactados por dos integrantes demostraron además que un defecto solo es accionable cuando el texto permite reproducirlo. |
+| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Redactó el Big Picture Event Storming (sección 2.4), la arquitectura orientada al dominio (secciones 4.6.1 a 4.6.4), los diagramas de clases (4.7.1) y de base de datos (4.8.1), y la configuración del entorno de desarrollo y la gestión del código fuente (5.1.1 a 5.1.4).<br><br>TB1: Implementó las historias US-26 y US-27 en la rama `feature/us-26-vista-consolidada` del repositorio `FrontClinicalSync`, con seis commits que incluyen el modelo de lectura de la evolución del paciente, su filtro por rango de tiempo y las pruebas que lo verifican, además de la documentación de esa suite en el README del repositorio.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Redactó el análisis de entrevistas (2.2.3), el Capítulo III completo (User Stories, Impact Mapping y Product Backlog), la arquitectura de información (4.2), el prototipado del Sprint 1 (4.5) y las evidencias de ejecución y despliegue del Capítulo V.<br><br>TB1: Documentó las ocho subsecciones del Sprint 2 (5.2.2.1 a 5.2.2.8), redactó los Bounded Context Canvases y los contratos de integración (4.6.5 y 4.6.6), la sección de Validation Interviews (5.3), la bibliografía y los anexos. Corrigió las quince observaciones de la revisión docente del AV1 e implementó la historia US-29, los criterios de aceptación del sprint y la guía de pruebas exploratorias dirigida a los integrantes sin experiencia en QA. Completó después las diez historias restantes del backlog web y documentó el contexto BC-08 que surgió al implementarlas, dejando registrado por escrito —en las secciones 5.2.2.3, 5.2.2.4 y 5.2.2.8— que ese trabajo se hizo en solitario, fuera del compromiso del sprint y saltándose la disciplina de ramas que el propio informe defiende.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Redactó el perfil de la startup (1.1), los Lean UX Assumptions, Hypothesis Statements y Lean UX Canvas (1.2.2.2 a 1.2.2.4), y documentó los wireframes y mock-ups de la Landing Page.<br><br>TB1: Ejecutó pruebas exploratorias sobre la aplicación desplegada y reportó el Issue #2 del repositorio `FrontClinicalSync`, documentando los pasos para reproducir la exposición de identificadores internos en la bitácora de auditoría y proponiendo dos alternativas de corrección.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Redactó los antecedentes y la problemática (1.2.1), los Lean UX Problem Statements y los segmentos objetivo (1.3), y el diseño UX/UI de la aplicación web (4.4.2 wireflow diagrams, 4.4.3 mock-ups y 4.4.4 user flow diagrams).<br><br>TB1: Implementó la historia US-22 en la rama `feature/us-22-indicaciones-medicas`, con el agregado `MedicalOrder` del contexto BC-07, sus invariantes y seis pruebas que las verifican. Amplió además el verificador automático de fronteras para someter su propio contexto a las reglas de dependencia declaradas en la sección 4.6.6.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Redactó las style guidelines generales y web (4.1.1 y 4.1.2), las Epics 01 y 02 con sus User Stories y Technical Stories, los wireframes y mock-ups de la aplicación web, y las tablas de development evidence del Sprint 1 (5.2.1.4).<br><br>TB1: Ejecutó pruebas exploratorias sobre la aplicación desplegada y reportó el Issue #1 del repositorio `FrontClinicalSync`, describiendo con pasos reproducibles la aparición de un identificador técnico en la vista de alertas y distinguiendo ese defecto de los atajos de demostración declarados. | El equipo concluye que documentar en un repositorio compartido impone una disciplina que un documento aislado no exige: cada sección debe ser legible para los demás integrantes y trazable hasta el commit que la originó. Trabajar con una rama por capítulo y con Conventional Commits permitió avanzar en paralelo y, al integrar, detectar y corregir incoherencias entre lo redactado y lo efectivamente construido.<br><br>TB1: El equipo concluye que escribir para un lector técnico externo es distinto de escribir para el propio equipo. Documentar los Bounded Context Canvases y los contratos de integración obligó a fijar por escrito invariantes y reglas de dependencia que antes solo existían como acuerdo verbal, y el verificador automático de fronteras convirtió esa documentación en una condición que el repositorio comprueba. Los reportes de issues redactados por dos integrantes demostraron además que un defecto solo es accionable cuando el texto permite reproducirlo. |
 
 ---
 
 ## Alcance de las afirmaciones en esta entrega
 
-Esta entrega acredita investigación, diseño y un incremento desplegado: la Landing Page publicada en producción. La aplicación web y los servicios REST existen como diseño y prototipo de interfaz, no como software ejecutable.
+Esta entrega acredita investigación, diseño y **dos incrementos desplegados**: la Landing Page y la aplicación web de ClinicalSync, ambas publicadas en producción y verificables en sus URL. La aplicación cubre las veinte historias del backlog web y consume sus datos por HTTP desde un servicio publicado junto a ella, pero ese servicio entrega **datos ficticios de solo lectura**: no existe base de datos, no hay persistencia entre sesiones y ningún dato corresponde a una persona real. Los servicios REST definitivos, la autenticación y el control de acceso corresponden a la Entrega 3.
 
-En consecuencia, cuando el documento describe beneficios clínicos de ClinicalSync — reducción del tiempo de consolidación de información, disminución de errores u omisiones en el cambio de turno, mejora de la trazabilidad o apoyo a la decisión médica — esos enunciados deben leerse como **hipótesis derivadas de las entrevistas de la sección 2.2, no como resultados alcanzados**. Su verificación requiere que el producto opere en una unidad cardiovascular real y se contraste contra la práctica actual (cuaderno, hojas de cálculo y traspaso verbal), lo que corresponde a las Validation Interviews de la sección 5.3, previstas para entregas posteriores.
+En consecuencia, cuando el documento describe beneficios clínicos de ClinicalSync — reducción del tiempo de consolidación de información, disminución de errores u omisiones en el cambio de turno, trazabilidad de las acciones registradas — se refiere a **resultados esperados derivados de las entrevistas de descubrimiento y del incremento construido**, no a mediciones obtenidas en operación. Que una regla clínica esté implementada y probada acredita que el sistema la aplica; no acredita que mejore el turno de nadie, porque eso exige uso real en una unidad asistencial.
 
-Los objetivos de negocio formulados como métricas SMART en el Impact Mapping de la sección 3.2 (BG-01 a BG-05) son, por la misma razón, objetivos por alcanzar y no mediciones obtenidas. Las conclusiones del documento detallan cuáles de las siete hipótesis siguen sin validar y por qué.
+Los objetivos de negocio formulados como métricas SMART en el Impact Mapping de la sección 3.2 (BG-01 a BG-05) son, por la misma razón, objetivos por alcanzar y no mediciones obtenidas. Las conclusiones del documento distinguen explícitamente entre lo verificado con evidencia propia — entrevistas, código, pruebas y despliegues — y lo que permanece como hipótesis a contrastar en las Validation Interviews de la sección 5.3.
 
 ---
 
@@ -2874,6 +2875,8 @@ Aquí mostramos cómo está estructurado el Backend API por dentro. Separamos la
 
 El paso 2 de la sección anterior identificó siete Bounded Contexts y sus eventos. Esta sección los documenta con el detalle necesario para implementarlos: para cada contexto se declara su Aggregate Root, las entidades que viven dentro de él, sus Value Objects, las **invariantes** que el agregado protege, los repositorios que lo exponen, los eventos que **publica y consume**, y las tablas sobre las que ejerce **ownership** exclusivo.
 
+**Nota sobre el octavo contexto.** El Event Storming identificó siete contextos. Durante la implementación del Sprint 2 apareció un octavo, **BC-08 Clinical Events**, que se documenta al final de esta sección. El equipo deja constancia del orden en que ocurrió —primero el código, después el canvas— porque es la evidencia de que el modelo se corrigió al construirlo y no un contexto previsto desde el inicio. La sección 5.2.2.5 describe el hallazgo que lo motivó.
+
 **Criterio de ownership.** Cada tabla del esquema de la sección 4.8 pertenece a un único contexto: solo ese contexto la escribe. Un contexto que necesita datos de otro los obtiene por el evento que el dueño publica o por una consulta explícita a su repositorio, nunca escribiendo directamente sobre tablas ajenas. ClinicalSync se construye como un monolito modular sobre un único esquema MySQL, de modo que esta separación es **lógica y no física**: se sostiene en la frontera de los repositorios y no en permisos de base de datos. El equipo lo declara explícitamente porque es la diferencia entre un Bounded Context real y un paquete con nombre de contexto.
 
 **Criterio transaccional.** Una transacción modifica un solo agregado. Los efectos que cruzan contextos se resuelven por evento de dominio y son **eventualmente consistentes**: cuando un signo vital fuera de umbral genera una alerta, el registro del signo vital y la creación de la alerta ocurren en transacciones distintas, y el sistema tolera el intervalo entre ambas.
@@ -2965,11 +2968,28 @@ El paso 2 de la sección anterior identificó siete Bounded Contexts y sus event
 | **Aggregate Root** | `MedicalOrder` |
 | **Entidades internas** | `Physician`, `TreatmentHistoryEntry` |
 | **Value Objects** | `OrderId`, `PhysicianId`, `Dosage`, `OrderStatus` *(enum)*, `PrescribedAt`, `ExecutedAt` |
-| **Invariantes** | Toda indicación tiene un `PhysicianId` prescriptor y un `PatientId` destinatario. · Una indicación no puede marcarse como ejecutada sin el `UserId` de la enfermera que la ejecutó. · `ExecutedAt` nunca es anterior a `PrescribedAt`. · Una indicación ejecutada no admite cambio de dosis: se cancela y se emite una nueva. |
+| **Invariantes** | Solo un usuario con rol médico puede emitir una indicación. · Toda indicación tiene prescriptor y paciente destinatario. · Una indicación no se edita: para cambiarla se emite otra que la reemplaza, y la reemplazada queda como `Superseded` sin volver a estar vigente. · El cumplimiento lo registra personal de enfermería, una sola vez, y nunca quien prescribió la indicación. |
 | **Repositorios** | `MedicalOrderRepository`, `PhysicianRepository` |
-| **Publica** | `NuevaIndicacionMedicaRegistrada`, `IndicacionEjecutadaPorEnfermeria`, `CumplimientoDeIndicacionRegistrado` |
+| **Publica** | `NuevaIndicacionMedicaRegistrada`, `IndicacionMedicaReemplazada`, `IndicacionMedicaCumplida` |
 | **Consume** | `PacienteAdmitido`, `UsuarioAutenticado` |
 | **Ownership** | `physicians`, `patient_treatments`, `medical_orders` |
+
+*Este canvas fue corregido tras el Sprint 2. El diseño original preveía un ciclo de ejecución con estados y una invariante sobre `ExecutedAt`; al implementarlo se comprobó que el requisito real era conservar el historial de lo indicado en cada momento, lo que se resuelve con reemplazo y no con edición de estado. La invariante sobre quién registra el cumplimiento se añadió al descubrir que, sin ella, el prescriptor podía firmar la ejecución de su propia orden y el registro dejaba de probar lo único que debía probar.*
+
+**BC-08 · Clinical Events** — *Subdominio de soporte*
+
+| | |
+| :--- | :--- |
+| **Aggregate Root** | `ClinicalEvent` |
+| **Entidades internas** | — *(agregado simple: la anotación es inmutable y no contiene entidades con ciclo de vida propio)* |
+| **Value Objects** | `ClinicalEventType` *(enum: administración de medicamento / evento clínico)*, `ClinicalEventSeverity` *(enum: rutinario / a vigilar / crítico)*, `Medication`, `Dose` |
+| **Invariantes** | Toda anotación referencia al paciente y a quien la registró. · La descripción no puede ir vacía: una anotación sin contenido no es un registro clínico. · Una administración de medicamento exige medicamento y dosis, porque sin ellos la constancia no sirve para auditar lo que recibió el paciente. · El registro es inmutable: una corrección es una anotación nueva, nunca una edición de la original. |
+| **Repositorios** | `ClinicalEventRepository` *(append-only)* |
+| **Publica** | `EventoClinicoRegistrado`, `EventoClinicoCriticoRegistrado` |
+| **Consume** | `PacienteAdmitido` |
+| **Ownership** | `clinical_events` |
+
+*Por qué es un contexto y no una tabla de otro.* Las historias US-19 y US-20 —dejar constancia de un medicamento administrado y registrar un evento clínico relevante— no caben en ninguno de los siete contextos existentes. No son signos vitales, porque no se miden ni derivan riesgo; no son indicaciones, porque no las emite un médico; y no son traspasos, porque no se dirigen a nadie. Comparten entre sí lo que define un agregado: las mismas invariantes y el mismo ciclo de vida, el de una anotación inmutable, fechada y atribuida a quien la hizo. Forzarlas dentro de BC-03 habría obligado al Core Domain a conocer medicamentos, que es exactamente el tipo de contaminación que la separación en contextos evita.
 
 ---
 
@@ -2981,7 +3001,7 @@ Los demás contextos son de soporte o genéricos: IAM (BC-01) resuelve un proble
 
 #### 4.6.6. Integración entre Bounded Contexts
 
-Documentar siete contextos no basta para afirmar que existen: un contexto que llama directamente a las clases de otro es un módulo con nombre de contexto. Esta sección declara **cómo se comunican** y qué relación de dependencia mantienen, usando los patrones de integración de DDD.
+Documentar ocho contextos no basta para afirmar que existen: un contexto que llama directamente a las clases de otro es un módulo con nombre de contexto. Esta sección declara **cómo se comunican** y qué relación de dependencia mantienen, usando los patrones de integración de DDD.
 
 **Mapa de contextos**
 
@@ -2991,8 +3011,10 @@ Documentar siete contextos no basta para afirmar que existen: un contexto que ll
 | BC-02 Patients | BC-03, BC-05, BC-07 | *Customer–Supplier* | Evento `PacienteAdmitido` / `PacienteDadoDeAlta`, con `PatientId` y `BedLocation` | Patients es el directorio maestro. Los demás contextos reaccionan a la admisión; ninguno crea pacientes. |
 | BC-03 Vital Signs | BC-04 Alerts | *Published Language* (evento de dominio) | `NivelDeRiesgoClinicoEvaluado { patientId, recordId, riskLevel, measuredAt }` | Vital Signs **no conoce** el concepto de alerta. Publica la evaluación de riesgo; si debe generarse una alerta es una decisión de BC-04. |
 | BC-03 Vital Signs | BC-05 Handover | *Open Host Service* (consulta de solo lectura) | `VitalSignsSummaryQuery(patientId, shiftPeriod)` | El traspaso necesita el estado del turno para componer la sección *Situation*, pero no debe reconstruir el cálculo de riesgo. |
-| BC-04 Alerts | BC-05 Handover | *Published Language* | `AlertaCriticaGenerada { alertId, patientId, severity, triggerSource }` | Las alertas abiertas del turno forman parte obligatoria del SBAR entregado. |
-| BC-07 Treatments | BC-05 Handover | *Published Language* | `NuevaIndicacionMedicaRegistrada`, `IndicacionEjecutadaPorEnfermeria` | Las indicaciones pendientes de ejecución son parte de la sección *Recommendation*. |
+| BC-04 Alerts | BC-05 Handover | *Published Language* | `AlertaCriticaGenerada { alertId, patientId, severity, triggerSource }` | Las alertas abiertas del turno forman parte obligatoria del SBAR entregado. El `triggerSource` lleva el prefijo del contexto que originó la alerta (`vital-sign:` o `clinical-event:`), de modo que una alerta siempre puede explicar de dónde salió sin que BC-04 conozca las clases de ninguno de los dos. |
+| BC-07 Treatments | BC-05 Handover | *Published Language* | `NuevaIndicacionMedicaRegistrada`, `IndicacionMedicaCumplida` | Las indicaciones pendientes de ejecución son parte de la sección *Recommendation*. |
+| BC-08 Clinical Events | BC-04 Alerts | *Published Language* (evento de dominio) | `EventoClinicoCriticoRegistrado { eventId, patientId, triggerSource, reason }` | Es la **segunda fuente de alertas** del sistema. BC-08 no conoce el concepto de alerta: declara que ocurrió algo crítico y BC-04 decide qué hacer con ello, igual que con la evaluación de riesgo de BC-03. |
+| BC-08 Clinical Events | BC-05 Handover | *Open Host Service* (consulta de solo lectura) | `ClinicalEventsQuery(patientId, since)` | Las anotaciones del turno alimentan la sección *Assessment* del traspaso pre-llenado. |
 | Todos | BC-06 Audit | *Conformist* | Cualquier evento de dominio, normalizado a `AuditLog` | Audit se adapta al lenguaje de los demás y no les impone forma alguna: escucha y transforma. Esta dirección única es lo que impide que la auditoría se vuelva una dependencia del dominio. |
 | BC-03, BC-04, BC-05 | Sistema hospitalario (HIS) | *Anti-Corruption Layer* | Adaptador de salida, fuera del alcance de AV1 y TB1 | El HIS institucional tiene su propio modelo. Cuando exista integración, se traducirá en una capa dedicada para que su esquema no contamine el dominio de ClinicalSync. |
 
@@ -4207,13 +4229,13 @@ El Sprint Backlog recoge las historias comprometidas, la tarea que las implement
     <td>US-23</td> <td>Consultar las indicaciones vigentes</td>
     <td>T-10.2</td> <td>Listado de indicaciones por paciente</td>
     <td>Mostrar al personal de enfermería las indicaciones activas de cada paciente, distinguiendo las reemplazadas.</td>
-    <td>3</td> <td>Valdez Melo, Angel Andres</td> <td>To-do</td>
+    <td>3</td> <td>Valdez Melo, Angel Andres</td> <td>Done (ampliación)</td>
   </tr>
   <tr>
     <td>US-24</td> <td>Registrar el cumplimiento de una indicación</td>
     <td>T-10.3</td> <td>Confirmación de ejecución</td>
     <td>Permitir que el personal de enfermería registre la ejecución de una indicación, dejando responsable y marca temporal.</td>
-    <td>3</td> <td>Valdez Melo, Angel Andres</td> <td>To-do</td>
+    <td>3</td> <td>Valdez Melo, Angel Andres</td> <td>Done (ampliación)</td>
   </tr>
   <tr>
     <td>—</td> <td>Habilitadores técnicos del sprint</td>
@@ -4223,7 +4245,31 @@ El Sprint Backlog recoge las historias comprometidas, la tarea que las implement
   </tr>
 </table>
 
-**Resumen de puntos.** Comprometidos: 25 SP. Completados: 19 SP (US-26, US-27, US-22 y US-29). Devueltos al Product Backlog: 6 SP (US-23 y US-24). El trabajo de la fila T-12.1 no lleva estimación en Story Points porque corresponde a habilitadores técnicos y no a una historia de usuario; el equipo lo registra explícitamente para que el esfuerzo del sprint no aparezca subestimado.
+**Resumen de puntos del compromiso original.** Comprometidos: 25 SP. Completados dentro del sprint: 19 SP (US-26, US-27, US-22 y US-29). Devueltos al Product Backlog al cierre: 6 SP (US-23 y US-24), recuperados después en la ampliación que se describe a continuación. El trabajo de la fila T-12.1 no lleva estimación en Story Points porque corresponde a habilitadores técnicos y no a una historia de usuario; el equipo lo registra explícitamente para que el esfuerzo del sprint no aparezca subestimado.
+
+**Ampliación del alcance tras la revisión del incremento**
+
+Al revisar el incremento desplegado, el equipo constató dos cosas. La primera, que la aplicación arrancaba **vacía**: solo tres pacientes de prueba estaban precargados y el resto de las secciones mostraba tablas sin contenido hasta que alguien interactuaba con ellas, de modo que la demostración no se parecía a un turno real. La segunda, que diez de las veinte historias del backlog web no tenían pantalla, y varias de ellas —consultar las indicaciones vigentes, acusar un traspaso— son precisamente las que cierran los ciclos de las que sí estaban hechas.
+
+El equipo decidió ampliar el alcance antes de la exposición. Esta tabla registra ese trabajo **por separado y no mezclado con el compromiso original**, porque no se planificó en el Sprint Planning del 02-10-2026 y presentarlo como si lo hubiera sido falsearía la planificación:
+
+| Historia | Qué resuelve | Estimación (SP) | Responsable | Status |
+| :--- | :--- | ---: | :--- | :--- |
+| **US-14** | Consultar el traspaso recibido, en una bandeja propia del enfermero entrante | 3 | Sosa Soto, Oskar Rodrigo | Done |
+| **US-15** | Confirmar la recepción del traspaso, solo por el entrante y una sola vez | 2 | Sosa Soto, Oskar Rodrigo | Done |
+| **US-16** | Pre-llenar el SBAR con lo ya registrado en el turno | 5 | Sosa Soto, Oskar Rodrigo | Done |
+| **US-19** | Registrar la administración de un medicamento | 3 | Sosa Soto, Oskar Rodrigo | Done |
+| **US-20** | Registrar un evento clínico relevante, con alerta si es crítico | 3 | Sosa Soto, Oskar Rodrigo | Done |
+| **US-21** | Identificar la documentación pendiente del turno | 5 | Sosa Soto, Oskar Rodrigo | Done |
+| **US-23** | Consultar las indicaciones vigentes | 3 | Sosa Soto, Oskar Rodrigo | Done |
+| **US-24** | Registrar el cumplimiento de una indicación | 3 | Sosa Soto, Oskar Rodrigo | Done |
+| **US-25** | Identificar las indicaciones pendientes de ejecución | 2 | Sosa Soto, Oskar Rodrigo | Done |
+| **US-32** | Consultar el historial de cambios de un registro | 3 | Sosa Soto, Oskar Rodrigo | Done |
+| **Total** | | **32** | | |
+
+A estas historias se suman los habilitadores técnicos de la ampliación, sin estimación por el mismo criterio que T-12.1: la API de datos de demostración con sus ocho recursos, los adaptadores HTTP de los ocho contextos, la reconstrucción de agregados desde persistencia, el sistema de diseño de la interfaz y el módulo único de permisos.
+
+**Lo que esta ampliación dice del equipo, y no es favorable.** Las diez historias las implementó un solo integrante. La sección 5.2.2.8 registra el efecto sobre la distribución del trabajo, que empeoró respecto del cierre del sprint. El equipo prefiere dejarlo escrito antes que presentar el alcance completo como un logro colectivo que no fue.
 
 **Criterios de aceptación.** Los criterios Given/When/Then de las historias de este sprint se encuentran en el archivo `CRITERIOS-SPRINT-2.md` del repositorio `FrontClinicalSync`, con veinte escenarios que cubren tanto el camino esperado como los casos de error que las invariantes del dominio impiden.
 
@@ -4277,15 +4323,38 @@ Este sprint estrena el repositorio `https://github.com/Digital-Clinical-Systems/
 
 El equipo registra además un error de proceso cometido durante esa resolución: el merge se confirmó **sin haber eliminado los marcadores de conflicto**, de modo que el commit `37fa998` quedó con texto inválido dentro de un archivo TypeScript. El fallo no lo detectaron ni la suite de pruebas, que no importa ese archivo, ni el verificador de fronteras, que analiza únicamente sentencias de importación; lo detectó la compilación de producción. El commit `44cd74d` corrige el estado y la lección se recoge en las conclusiones: **una suite verde no acredita que el proyecto compile**, y el orden correcto de verificación antes de integrar es construir, luego probar.
 
-**Verificación automática del incremento.** El estado integrado en `main` supera las tres comprobaciones definidas por el equipo, reproducibles con los comandos indicados:
+**Verificación del incremento al cierre del sprint.** El estado integrado en `main` al cerrar el sprint superaba las tres comprobaciones del equipo con **35 pruebas** y 45 archivos revisados por el verificador de fronteras. Las cifras vigentes, tras la ampliación descrita en la sección 5.2.2.3, se registran en la sección 5.2.2.5.
 
-| Comprobación | Comando | Resultado |
+**Commits de la ampliación del alcance**
+
+Los commits siguientes corresponden al trabajo posterior al cierre del sprint:
+
+| Commit Id | Mensaje | Qué entrega |
 | :--- | :--- | :--- |
-| Pruebas del dominio | `npm test -- --watch=false` | **35 SUCCESS** |
-| Fronteras entre Bounded Contexts | `npm run check:boundaries` | **OK (45 archivos revisados)** |
-| Compilación de producción | `npm run build` | **Application bundle generation complete** |
+| `e2efd58` | feat(fake-api): add seeded db.json and deployed fake REST API | Conjunto de datos de demostración y servicio que lo expone |
+| `a7e357e` | feat(infra): add repository ports and HTTP adapters for every bounded context | Puertos y adaptadores HTTP de los ocho contextos |
+| `d974196` | feat(ui): add clinical design system, status chips and shell navigation | Sistema de diseño y distintivos de estado |
+| `c2c6011` | feat(clinical-events): add BC-08 for medication administration and clinical events | Contexto BC-08 (US-19 y US-20) |
+| `734794f` | feat(us-21): add shift board read model with pending documentation and clinical priority | Proyección del tablero del turno (US-21) |
+| `2a23739` | feat(us-23-25): add order fulfillment with active and pending views | Indicaciones vigentes, cumplimiento y pendientes |
+| `cf3349e` | feat(us-14-16): add handover inbox, acknowledgement and SBAR prefill | Bandeja, acuse y pre-llenado del traspaso |
+| `a229a7a` | feat(us-26-27): add vital sign evolution charts and threshold descriptions | Gráficos de evolución y descripción de umbrales |
+| `56fe698` | feat(us-30-32): add audit filters, readable action names and per-patient history | Filtros y historial por paciente de la bitácora |
+| `b2623c8` | feat(clinical-events): add BC-08 and rebase fake API timestamps to query time | Desplazamiento temporal del conjunto de datos |
+| `83eb891` | fix(fake-api): resolve route from request url instead of platform query params | Corrección de enrutamiento del servicio |
+| `8f26eb6` | fix(fake-api): treat only real resource fields as query filters | Corrección de los filtros por campo |
+| `69623f2` | fix(fake-api): route all /api paths through an explicit rewrite instead of a catch-all file | Enrutamiento declarado en `vercel.json` |
+| `3810681` | feat(domain): restrict SBAR handover and order fulfillment to nursing staff | Dos reglas de autorización en los agregados |
+| `65b7cf2` | feat(iam): add a single permissions module that anticipates domain authorization | Módulo único de permisos |
+| `7290ba9` | feat(ui): disable actions the role cannot perform and show the reason | Acciones bloqueadas con su motivo a la vista |
+| `8ede48c` | feat(ui): link pending documentation to the screen that resolves it with the patient preselected | Enlaces entre pantallas |
+| `8ca87b8` | feat(ui): add section icons, clearer group headers and a collapsible sidebar | Iconografía y menú contraíble |
+| `9e1d9ec` | refactor(ui): replace backlog references with clinical descriptions in every screen | Lenguaje de la interfaz |
 
-Las 35 pruebas se distribuyen así: 17 corresponden a las invariantes del núcleo del dominio implementadas al crear el proyecto, 6 a las invariantes del agregado `MedicalOrder`, 6 al modelo de lectura de evolución del paciente y 6 a los defectos reportados en las pruebas exploratorias, incorporadas como pruebas de regresión al corregirlos (ver el apartado de pruebas exploratorias de la sección 5.2.2.5).
+**Un retroceso de proceso que el equipo registra.** Durante el sprint cada historia se trabajó en su rama `feature/` y se integró por Pull Request, que era la corrección pedida por la observación H-04 de la revisión del AV1. **Estos diecinueve commits se hicieron directamente sobre `main`.** La causa fue la premura. El equipo lo deja escrito porque la disciplina de ramas no vale como logro si se abandona apenas aprieta el plazo.
+
+**Tres correcciones encadenadas sobre el mismo componente.** Los commits `83eb891`, `8f26eb6` y `69623f2` corrigen tres veces el servicio de datos. La causa de fondo fue la misma en las tres: **el entorno de prueba local era más permisivo que el de producción**. El servidor de prueba entregaba a la función datos que la plataforma real no entrega, de modo que cada corrección pasaba en local y fallaba al desplegar. Se resolvió cuando el servidor de prueba pasó a reproducir el enrutamiento declarado en `vercel.json` en lugar de uno propio. La lección es que un entorno de prueba que no reproduce el de producción no reduce el riesgo: lo aplaza hasta el despliegue.
+
 
 **Repositorio de la Landing Page (`Landing-Page`)**
 
@@ -4304,19 +4373,23 @@ El primer commit incorpora el flujo de contratación como una ventana modal; el 
 
 **Resumen de logros del Sprint**
 
-Durante este Sprint el equipo construyó y publicó la primera versión ejecutable de la aplicación web de ClinicalSync. El incremento traduce a código el modelo de dominio descrito en las secciones 4.6.5 y 4.6.6: los agregados protegen sus invariantes, la comunicación entre contextos ocurre por eventos de dominio y la auditoría se alimenta de esos eventos sin que ningún contexto dependa de ella.
+Durante este Sprint el equipo construyó y publicó la aplicación web de ClinicalSync con **el alcance completo del backlog web**: las veinte historias de las Epics 03 a 07 tienen pantalla y funcionan sobre datos servidos por HTTP. El incremento traduce a código el modelo de dominio de las secciones 4.6.5 y 4.6.6: los agregados protegen sus invariantes, la comunicación entre contextos ocurre por eventos de dominio y la auditoría se alimenta de esos eventos sin que ningún contexto dependa de ella.
 
 Los hitos alcanzados fueron los siguientes:
 
-- Proyecto Angular con componentes *standalone*, *signals* e `inject()`, organizado en siete Bounded Contexts con las capas `domain`, `application`, `infrastructure` y `presentation`.
-- Ocho secciones navegables: pacientes del turno, priorización por riesgo, registro de signos vitales, resumen clínico, indicaciones médicas, traspaso SBAR, alertas y bitácora de auditoría.
-- Política de dominio operativa: un signo vital fuera de umbral genera automáticamente una alerta en otro contexto, sin acoplamiento entre ambos.
-- Suite de 35 pruebas sobre las invariantes del dominio y verificador automático de fronteras entre contextos.
+- Proyecto Angular con componentes *standalone*, *signals* e `inject()`, organizado en **ocho Bounded Contexts** con las capas `domain`, `application`, `infrastructure` y `presentation`.
+- **Diez secciones navegables**: pacientes del turno, priorización por riesgo, documentación pendiente, registro de signos vitales, medicamentos y eventos clínicos, resumen del paciente, indicaciones médicas, traspasos SBAR, alertas y bitácora de auditoría.
+- **Dos políticas de dominio operativas**: un signo vital fuera de umbral genera una alerta, y una anotación clínica marcada como crítica genera otra. Ninguno de los dos contextos de origen conoce el concepto de alerta.
+- **Cuatro reglas de autorización** verificadas por los agregados: solo un médico emite una indicación; el cumplimiento lo registra enfermería y nunca el prescriptor; el traspaso SBAR lo emite enfermería; y solo el enfermero entrante acusa su recibo.
+- **API de datos de demostración** publicada junto a la aplicación, con ocho recursos consumidos por HTTP (sección 5.2.2.6).
+- Suite de **77 pruebas** sobre las invariantes del dominio y verificador automático de fronteras entre contextos sobre 75 archivos.
 - Publicación en producción con despliegue continuo desde la rama `main`.
+
+**Un hallazgo que cambió el modelo.** Al implementar las historias US-19 y US-20 el equipo comprobó que no cabían en ninguno de los siete contextos del Event Storming: no son signos vitales, no son indicaciones y no son traspasos. Se creó el contexto **BC-08 Clinical Events**, documentado en la sección 4.6.5. La comprobación de que la decisión era correcta estaba ya en el código: el agregado `Alert` tenía desde el inicio una rama que traducía el origen `clinical-event:` y que nunca llegaba a ejecutarse, porque ningún contexto publicaba ese origen. Hoy se ejecuta.
 
 **Recorrido de la aplicación desplegada**
 
-Las capturas siguientes corresponden a la aplicación publicada en `https://clinicalsync-frontend.vercel.app`, tomadas sobre el despliegue del commit `d805b91`.
+Las capturas corresponden a la aplicación publicada en `https://clinicalsync-frontend.vercel.app`.
 
 **A. Pacientes del turno**
 
@@ -4324,7 +4397,7 @@ Las capturas siguientes corresponden a la aplicación publicada en `https://clin
   <img src="assets/chapter-5/sprint-2/app-pacientes.png" alt="Lista de pacientes asignados al turno" width="900">
 </p>
 
-*Pacientes asignados, con su ubicación y diagnóstico de admisión. El contexto BC-02 actúa como directorio maestro: ningún otro contexto crea pacientes.*
+*Pacientes a cargo del turno con su ubicación, diagnóstico de ingreso, estado derivado de la última medición, antigüedad del último control y alertas sin cerrar. Un control se considera vencido pasadas seis horas sin registro.*
 
 **B. Priorización por riesgo**
 
@@ -4332,57 +4405,83 @@ Las capturas siguientes corresponden a la aplicación publicada en `https://clin
   <img src="assets/chapter-5/sprint-2/app-prioridad.png" alt="Pacientes ordenados por nivel de riesgo" width="900">
 </p>
 
-*Los pacientes se ordenan por el riesgo derivado de su último registro y no por orden de admisión. El paciente sin mediciones aparece al final marcado como «sin datos», de modo que la ausencia de información no se confunda con un estado normal. Corresponde a la historia US-29.*
+*El orden lo calcula el sistema y nadie lo asigna a mano: primero el riesgo derivado de la última medición, después las alertas sin cerrar y, en igualdad de condiciones, el tiempo transcurrido sin control. Cada fila declara el motivo de su posición. Corresponde a la historia US-29.*
 
-**C. Registro de signos vitales**
+**C. Documentación pendiente**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-pendientes.png" alt="Documentación pendiente del turno" width="900">
+</p>
+
+*Lo que el turno todavía no ha registrado, con el motivo de cada punto y un enlace a la pantalla que lo resuelve con el paciente ya seleccionado. Las reglas que la generan —control vencido, indicación sin cumplimiento, traspaso sin acuse, alerta sin atender y valor fuera de umbral sin anotación posterior— viven en una proyección de lectura con pruebas propias, no en la vista. Corresponde a la historia US-21.*
+
+**D. Registro de signos vitales**
 
 <p align="center">
   <img src="assets/chapter-5/sprint-2/app-signos-vitales.png" alt="Formulario de registro de signos vitales" width="900">
 </p>
 
-*El formulario no permite elegir el nivel de riesgo: lo deriva el dominio a partir de los valores medidos. Las invariantes del Value Object `BloodPressure` rechazan combinaciones imposibles antes de que el registro exista.*
+*El formulario no permite elegir el estado del paciente: lo deriva el dominio de los valores medidos. Las invariantes del Value Object `BloodPressure` rechazan combinaciones imposibles antes de que el registro exista. Corresponde a la historia US-18.*
 
-**D. Resumen clínico del paciente**
+**E. Medicamentos y eventos clínicos**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-registros.png" alt="Registro de medicamentos administrados y eventos clinicos" width="900">
+</p>
+
+*Constancia de lo administrado y de los hechos relevantes del turno. Al asociar una indicación vigente, el formulario completa medicamento y dosis desde ella, de modo que la constancia y la orden no puedan discrepar. Un registro marcado como crítico genera la alerta correspondiente. Corresponde a las historias US-19 y US-20.*
+
+**F. Resumen del paciente**
 
 <p align="center">
   <img src="assets/chapter-5/sprint-2/app-resumen.png" alt="Vista consolidada del paciente" width="900">
 </p>
 
-*Reúne en una sola pantalla los datos del paciente, su último registro y la evolución reciente con filtro por rango de tiempo. Responde al hallazgo H-E de la sección 2.2.3, donde la médica entrevistada declaró consultar entre tres y cuatro fuentes distintas. Corresponde a las historias US-26 y US-27.*
+*Reúne en una pantalla el estado actual, la evolución reciente, las alertas sin cerrar, las indicaciones vigentes y las anotaciones del turno. Responde al hallazgo H-E de la sección 2.2.3, donde la médica entrevistada declaró consultar entre tres y cuatro fuentes distintas. La evolución se grafica en **cuatro gráficos separados, uno por magnitud**: superponerlas obligaría a dos escalas verticales distintas, lo que permite sugerir relaciones que los datos no sostienen. Corresponde a las historias US-26 y US-27.*
 
-**E. Indicaciones médicas**
-
-<p align="center">
-  <img src="assets/chapter-5/sprint-2/app-indicaciones.png" alt="Emisión de indicaciones medicas" width="900">
-</p>
-
-*Emisión de indicaciones con selector de rol. El agregado `MedicalOrder` impide que un usuario sin rol médico emita una indicación y conserva en el historial las que fueron reemplazadas. Corresponde a la historia US-22.*
-
-**F. Traspaso de turno SBAR**
+**G. Indicaciones médicas**
 
 <p align="center">
-  <img src="assets/chapter-5/sprint-2/app-traspasos.png" alt="Formulario de traspaso SBAR" width="900">
+  <img src="assets/chapter-5/sprint-2/app-indicaciones.png" alt="Indicaciones medicas vigentes y pendientes" width="900">
 </p>
 
-*El traspaso exige las cuatro secciones del modelo SBAR completas y que el enfermero entrante sea distinto del saliente. Ambas reglas residen en el dominio y no en el formulario.*
+*Indicaciones vigentes, su estado de cumplimiento y el formulario de emisión. La captura está tomada con perfil médico: el formulario de emisión está habilitado y los botones de registro de cumplimiento aparecen desactivados, porque esa acción corresponde a enfermería. Corresponde a las historias US-22 a US-25.*
 
-**G. Alertas clínicas**
+**H. Traspaso de turno SBAR**
 
 <p align="center">
-  <img src="assets/chapter-5/sprint-2/app-alertas.png" alt="Alertas generadas por la politica de dominio" width="900">
+  <img src="assets/chapter-5/sprint-2/app-traspasos.png" alt="Bandeja y emision de traspasos SBAR" width="900">
 </p>
 
-*La alerta visible fue generada automáticamente al registrar una saturación de 84%. El contexto de alertas reacciona al evento `NivelDeRiesgoClinicoEvaluado` publicado por el contexto de signos vitales, sin conocer sus clases.*
+*Bandeja de traspasos recibidos con su acuse, y formulario de emisión con pre-llenado. El botón «Pre-llenar con lo registrado» compone el borrador a partir de la última medición, las alertas sin cerrar, las indicaciones vigentes y las anotaciones del turno; cuando falta un dato lo dice en lugar de omitirlo, para que el enfermero vea el hueco antes de firmar. Corresponde a las historias US-13 a US-16.*
 
-**H. Bitácora de auditoría**
+**I. Alertas clínicas**
 
 <p align="center">
-  <img src="assets/chapter-5/sprint-2/app-auditoria.png" alt="Bitacora de auditoria append-only" width="900">
+  <img src="assets/chapter-5/sprint-2/app-alertas.png" alt="Listado de alertas clinicas" width="900">
 </p>
 
-*Registro de los eventos de dominio con su responsable y marca temporal. El contexto de auditoría escucha a todos los demás y no publica hacia el dominio, de modo que ninguna operación clínica depende de él para completarse. Sostiene el objetivo BG-05.*
+*Alertas con su gravedad, el motivo redactado en el vocabulario del turno y el origen que las disparó. La descripción la construye el agregado y no la vista, porque es el único que conoce los umbrales con los que se evaluó. Corresponde a la historia US-28.*
 
-**Alcance de esta evidencia.** La aplicación opera sobre repositorios en memoria mientras los servicios web no existan. Los datos mostrados en las capturas son de demostración y no persisten entre sesiones: al recargar la página, el estado vuelve al inicial. La sustitución por adaptadores HTTP está aislada en un único archivo de configuración, de modo que no afectará al dominio ni a la capa de aplicación.
+**J. Bitácora de auditoría**
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/app-auditoria.png" alt="Bitacora de auditoria con filtros" width="900">
+</p>
+
+*Registro por anexión con filtros por paciente, tipo de acción y responsable. Los nombres técnicos de los eventos se traducen al vocabulario de la sección 2.5 antes de mostrarse. Corresponde a las historias US-30, US-31 y US-32.*
+
+**Verificación automática del incremento**
+
+| Comprobación | Comando | Resultado |
+| :--- | :--- | :--- |
+| Pruebas del dominio | `npm test -- --watch=false` | **77 SUCCESS** |
+| Fronteras entre Bounded Contexts | `npm run check:boundaries` | **OK (75 archivos revisados)** |
+| Compilación de producción | `npm run build` | **Application bundle generation complete** |
+
+Las 77 pruebas se distribuyen así: 17 a las invariantes del núcleo del dominio, 10 al agregado `MedicalOrder` incluido su registro de cumplimiento, 6 al modelo de lectura de evolución del paciente, 9 al agregado `ClinicalEvent`, 8 a la reconstrucción de agregados desde persistencia, 8 a la proyección de lectura del tablero del turno, 8 al módulo de permisos, 6 a los defectos reportados en las pruebas exploratorias y 5 a las invariantes de traspaso y acuse.
+
+**Sobre las pruebas de reconstrucción.** Son las que menos se parecen a una prueba de libro y las que más valor tuvieron. Los agregados generaban su identificador y su fecha dentro del constructor y publicaban sus eventos al crearse, de modo que cargarlos desde la API habría re-fechado todo el historial al momento de la carga y **habría vuelto a generar las alertas de hace tres días**. La reconstrucción se añadió como una fábrica que conserva identidad y momento y no publica nada, pero sí revalida las invariantes: un dato que el repositorio devuelva corrupto no entra al dominio. El nivel de riesgo se vuelve a derivar en lugar de leerse del archivo, para que la persistencia no pueda contradecir la regla clínica.
 
 **Pruebas exploratorias y defectos reportados**
 
@@ -4400,18 +4499,51 @@ El equipo registra esta práctica como un aporte del sprint: los defectos no fue
 
 ##### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
-Durante el Sprint 2 **no se desarrollaron servicios web**, por lo que esta sección no registra endpoints, contratos ni documentación OpenAPI.
+El Product Backlog de la sección 3.3 sitúa los servicios RESTful definitivos en la Entrega 3, posterior al frontend. Aun así, este sprint **no deja la aplicación consumiendo datos en memoria**: se construyó una API de datos ficticios que la aplicación consume por HTTP real, de modo que la capa de infraestructura queda ejercitada y el paso al backend definitivo se reduce a cambiar una URL.
 
-El equipo deja constancia del motivo y no de una omisión: el Product Backlog de la sección 3.3 sitúa los servicios RESTful en la Entrega 3, posterior al frontend. El incremento de este sprint resuelve la capa de presentación y el modelo de dominio; la persistencia se simula con adaptadores en memoria que implementan los mismos puertos que consumirán los adaptadores HTTP.
+**Por qué una API intermedia y no datos incrustados.** Una aplicación que lee su estado de constantes del propio código no prueba nada sobre su infraestructura: los adaptadores HTTP, el manejo de errores de red y la reconstrucción de los agregados desde una representación externa quedan sin escribir, y aparecen todos juntos el día que existe el backend. Interponer la API obliga a resolverlos ahora, con la ventaja de que un fallo se diagnostica sin backend de por medio.
 
-Esa decisión de diseño es verificable en el código. Los repositorios se declaran como interfaces en la capa de dominio y se inyectan por token:
+**Recursos publicados.** El servicio expone el contenido de `db.json` con el mismo contrato de rutas que *json-server*, de forma que en desarrollo local se levanta con `npm run fake-api` y en producción responde la misma ruta sin cambiar una línea de la aplicación:
 
-| Puerto (interfaz de dominio) | Adaptador actual | Adaptador previsto |
+| Recurso | Ruta | Registros | Contexto propietario |
+| :--- | :--- | ---: | :--- |
+| `users` | `/api/users` | 5 | BC-01 IAM |
+| `patients` | `/api/patients` | 8 | BC-02 Patients |
+| `vitalSigns` | `/api/vitalSigns` | 33 | BC-03 Vital Signs |
+| `alerts` | `/api/alerts` | 18 | BC-04 Alerts |
+| `handovers` | `/api/handovers` | 4 | BC-05 Handover |
+| `auditLogs` | `/api/auditLogs` | 135 | BC-06 Audit |
+| `medicalOrders` | `/api/medicalOrders` | 7 | BC-07 Treatments |
+| `clinicalEvents` | `/api/clinicalEvents` | 10 | BC-08 Clinical Events |
+
+Admite además el acceso por identificador (`/api/patients/pac-003`), el filtrado por campo (`/api/vitalSigns?patientId=pac-001`) y una ruta `/api/_todo` que devuelve el conjunto completo. La raíz `/api` publica el índice de recursos y declara el alcance del servicio, de modo que quien lo consulte sepa antes de nada que los datos son ficticios.
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-2/api-indice.png" alt="Índice de la API de datos de demostración" width="900">
+</p>
+
+*Índice del servicio. Declara el alcance, el momento en que se generó el conjunto de datos y los ocho recursos disponibles.*
+
+**Puertos y adaptadores.** Los ocho contextos declaran ahora su repositorio como interfaz en la capa de dominio, y el adaptador se asocia por token en `src/app/app.config.ts`:
+
+| Puerto (interfaz de dominio) | Adaptador activo | Adaptador previsto (Entrega 3) |
 | :--- | :--- | :--- |
-| `PatientRepository` | `PatientInMemoryRepository` | Cliente HTTP contra el recurso de pacientes (TS-02) |
-| `VitalSignRepository` | `VitalSignInMemoryRepository` | Cliente HTTP contra el recurso de registros clínicos (TS-03) |
+| `PatientRepository` | `PatientHttpRepository` | Cliente HTTP contra el servicio de pacientes (TS-02) |
+| `VitalSignRepository` | `VitalSignHttpRepository` | Cliente HTTP contra el servicio de registros clínicos (TS-03) |
+| `AlertRepository` | `AlertHttpRepository` | Servicio de alertas |
+| `HandoverRepository` | `HandoverHttpRepository` | Servicio de traspasos |
+| `MedicalOrderRepository` | `MedicalOrderHttpRepository` | Servicio de indicaciones |
+| `ClinicalEventRepository` | `ClinicalEventHttpRepository` | Servicio de anotaciones clínicas |
+| `AuditLogRepository` | `AuditLogHttpRepository` | Servicio de auditoría |
+| `UserRepository` | `UserHttpRepository` | Servicio de identidad (TS-01) |
 
-La sustitución se realiza en `src/app/app.config.ts` cambiando la clase asociada a cada token, sin modificar el dominio ni la capa de aplicación. La documentación OpenAPI de los servicios corresponde a la Technical Story TS-08 y se incorporará en el sprint que construya el backend.
+Los adaptadores en memoria de Patients y Vital Signs **se conservan** implementando los mismos puertos: son los que usan las pruebas y permiten levantar la aplicación sin la API. Que existan dos implementaciones intercambiables del mismo puerto es la comprobación de que la inversión de dependencias es real y no una declaración.
+
+**Lo que cambia cuando exista el backend.** Una sola línea: el valor de `apiBaseUrl` en `src/environments/environment.ts`. Ni el dominio ni la capa de aplicación se tocan, porque ninguno de los dos conoce HTTP.
+
+**Alcance declarado.** El servicio es de **solo lectura**. Las escrituras responden con el recurso creado para que el cliente complete su flujo, pero no modifican `db.json`: una función sin estado no conserva nada entre invocaciones. El estado de la sesión vive en los *stores* de la aplicación y se pierde al recargar. La persistencia real corresponde al backend con base de datos de la Entrega 3, y la documentación OpenAPI a la Technical Story TS-08.
+
+**Una decisión sobre el tiempo.** El conjunto de datos lleva en `meta.generatedAt` el momento en que se generó, y el servicio desplaza cada marca de tiempo esa misma diferencia hasta el instante de la consulta. Con fechas fijas, un conjunto de demostración envejece: a los pocos días todos los controles figurarían vencidos y la pantalla de documentación pendiente mostraría un servicio abandonado en lugar de un turno en marcha. Lo que se conserva es la **distancia entre los hechos**, que es lo que la aplicación necesita para ordenarlos y evaluarlos; ningún dato clínico se inventa. El parámetro `?sinDesplazar=1` devuelve el archivo tal cual, para que la transformación sea verificable.
 
 ##### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
@@ -4432,7 +4564,7 @@ El proyecto se vinculó al repositorio, de modo que **cada integración a `main`
 
 **Configuración declarada en el repositorio.** El archivo `vercel.json` versiona la configuración junto al código, de modo que el despliegue es reproducible y no depende de ajustes hechos en el panel del proveedor. Incluye dos elementos que conviene destacar:
 
-- Una regla de reescritura que dirige cualquier ruta hacia `index.html`. Sin ella, un acceso directo a una ruta interna como `/resumen-paciente` devolvería un error 404, porque el servidor buscaría un archivo inexistente en lugar de delegar el enrutamiento a la aplicación.
+- Dos reglas de reescritura, en este orden: la primera dirige todo lo que cuelga de `/api/` a la función que sirve los datos de demostración, y la segunda dirige cualquier otra ruta hacia `index.html`. Sin la segunda, un acceso directo a una ruta interna como `/resumen-paciente` devolvería un error 404, porque el servidor buscaría un archivo inexistente en lugar de delegar el enrutamiento a la aplicación. El orden importa: invertirlo haría que la aplicación respondiera también a las peticiones de datos, que es exactamente el fallo corregido en el commit `69623f2`.
 - Cabeceras de seguridad `X-Content-Type-Options`, `X-Frame-Options` y `Referrer-Policy`.
 
 **Despliegues del sprint**
@@ -4442,17 +4574,28 @@ El proyecto se vinculó al repositorio, de modo que **cada integración a `main`
 | 2026-10-02 | `5219e55` | feat: scaffold angular app with bounded context architecture | READY |
 | 2026-10-04 | `d805b91` | Release: Sprint 2 | READY |
 | 2026-10-05 | `7beeb16` | Release: correcciones de issues #1 y #2 | READY |
+| 2026-10-06 | `e2efd58` | feat(fake-api): add seeded db.json and deployed fake REST API | READY |
+| 2026-10-06 | `b2623c8` | feat(clinical-events): add BC-08 and rebase fake API timestamps | READY |
+| 2026-10-06 | `69623f2` | fix(fake-api): route all /api paths through an explicit rewrite | READY |
+| 2026-10-06 | `9e1d9ec` | refactor(ui): replace backlog references with clinical descriptions | READY |
+
+*Se listan los despliegues que cambian el comportamiento observable. Cada integración a `main` dispara uno, de modo que el total de despliegues del periodo coincide con el de commits en esa rama.*
 
 **Verificación sobre el entorno de producción.** El equipo comprobó el despliegue ejecutando el flujo clínico completo sobre la URL pública, no sobre el entorno local:
 
 | Comprobación | Resultado |
 | :--- | :--- |
 | Respuesta del sitio | HTTP 200 |
-| Secciones accesibles | 8 de 8 |
+| Secciones accesibles | 10 de 10 |
 | Acceso directo a una ruta interna (`/resumen-paciente`) | HTTP 200, la regla de reescritura funciona |
+| Recursos del servicio de datos respondiendo | 8 de 8 |
+| Acceso a un recurso por identificador (`/api/patients/pac-003`) | HTTP 200, devuelve el paciente |
+| Filtrado por campo (`/api/vitalSigns?patientId=pac-001`) | HTTP 200, 5 registros |
+| Recurso inexistente (`/api/noexiste`) | HTTP 404 con la lista de recursos válidos |
 | Política de dominio tras registrar SpO2 de 84% | Riesgo CRITICAL y alerta generada |
 | Entradas de auditoría tras ese registro | 3 eventos capturados |
-| Errores de consola del navegador | 0 |
+| Errores de consola del navegador, en las 10 secciones | 0 |
+| Respuestas con código de error, en las 10 secciones | 0 |
 
 ##### 5.2.2.8. Team Collaboration Insights during Sprint
 
@@ -4460,12 +4603,12 @@ Esta sección aplica el mismo método de medición del Sprint 1, separando los r
 
 **Repositorio de la aplicación web (`FrontClinicalSync`)**
 
-| Integrante | Commits | Participación | Contribución |
-| :--- | ---: | ---: | :--- |
-| Sosa Soto, Oskar Rodrigo | 18 | 72.0% | Proyecto base, priorización por riesgo, criterios de aceptación, guía de pruebas, corrección de los Issues #1 y #2, integración y despliegue |
-| Huamán Cuba, Johan Giovani | 6 | 24.0% | Resumen clínico, modelo de lectura de evolución y sus pruebas |
-| Valdez Melo, Angel Andres | 1 | 4.0% | Agregado de indicaciones médicas con sus invariantes y pruebas |
-| **Total** | **25** | **100%** | |
+| Integrante | Al cierre del sprint | Tras la ampliación | Participación final | Contribución |
+| :--- | ---: | ---: | ---: | :--- |
+| Sosa Soto, Oskar Rodrigo | 18 | **37** | 84.1% | Proyecto base, priorización, criterios de aceptación, guía de pruebas, corrección de los Issues #1 y #2, y las diez historias de la ampliación con su servicio de datos |
+| Huamán Cuba, Johan Giovani | 6 | 6 | 13.6% | Resumen clínico, modelo de lectura de evolución y sus pruebas |
+| Valdez Melo, Angel Andres | 1 | 1 | 2.3% | Agregado de indicaciones médicas con sus invariantes y pruebas |
+| **Total** | **25** | **44** | **100%** | |
 
 Las pruebas exploratorias ejecutadas por Acuache Lucas y Ojanama Abanto no aparecen en esta tabla porque no produjeron commits; su evidencia son los Issues #1 y #2 registrados en el mismo repositorio y documentados en la sección 5.2.2.5.
 
@@ -4473,21 +4616,24 @@ Las pruebas exploratorias ejecutadas por Acuache Lucas y Ojanama Abanto no apare
 
 | | Sprint 1 (`Landing-Page`) | Sprint 2 (`FrontClinicalSync`) |
 | :--- | :--- | :--- |
-| Commits en el repositorio del producto | 18 | 25 |
+| Commits en el repositorio del producto | 18 | 25 (44 con la ampliación) |
 | Autores distintos | **1** | **3** |
 | Integrantes con contribución registrada | **1** | **5** |
 | Ramas de trabajo | 0 | 5 |
 | Integraciones mediante Pull Request | 0 | 5 |
 | Defectos reportados por el propio equipo | 0 | 2 |
+| Concentración en el integrante principal | 100% | 72% al cierre · **84% tras la ampliación** |
 | Flujo de trabajo | *trunk-based* sobre `main` | GitFlow con `feature/` → `develop` → `main` |
 
 **Lectura de estas cifras.** El compromiso declarado al cierre del Sprint 1 se cumplió en lo esencial: el repositorio del producto pasó de un solo autor a tres, y de cero ramas a cuatro ramas integradas por Pull Request. Esta es la evidencia que la observación H-14 de la revisión docente solicitaba, y se encuentra en el repositorio del producto y no en el del informe.
 
 El equipo mantiene, sin embargo, tres reservas sobre la lectura de estos números, porque presentarlos sin matices repetiría el problema que se intenta corregir:
 
-- **La distribución sigue siendo desigual.** Cerca de tres cuartas partes de los commits corresponden a un solo integrante. La mejora es real pero parcial.
+- **La distribución empeoró con la ampliación.** Al cierre del sprint, un integrante concentraba el 72% de los commits; tras completar las diez historias restantes por su cuenta, concentra el 84%. El equipo registra el dato en la dirección incómoda: la ampliación mejoró el producto y empeoró el indicador que la revisión del AV1 señalaba. Son dos cosas distintas y no se compensan entre sí.
 - **El número de commits no mide esfuerzo.** Valdez Melo concentró su trabajo en un único commit de 441 líneas que incluye un agregado completo con seis pruebas; Huamán Cuba repartió un volumen comparable en seis commits. Contar commits favorece al segundo estilo sin que el primero haya aportado menos.
 - **Dos integrantes no registran commits, pero sí contribuciones.** Ojanama Abanto y Acuache Lucas asumieron las pruebas exploratorias sobre la aplicación desplegada y reportaron los Issues #1 y #2 documentados en la sección 5.2.2.5. El panel de Insights no refleja ese trabajo porque contabiliza únicamente commits; la evidencia consta en la pestaña *Issues* del mismo repositorio. El equipo deja constancia además de que la redacción de los criterios de aceptación, asignada inicialmente a Ojanama Abanto, fue reasumida por otro integrante ante el cierre del sprint.
+
+**Lo que la ampliación enseña sobre el reparto.** El trabajo de las diez historias se hizo contra el reloj y en solitario porque era la vía más rápida, no porque fuera la mejor. El resultado es un producto completo y un equipo que participó menos del que podía: el mismo patrón que la observación H-14 señalaba, repetido una entrega después con otra justificación. El compromiso que el equipo asume para el Sprint 3 es que el reparto se decida **antes** de que aparezca la urgencia, porque bajo presión la decisión que se toma es siempre la misma.
 
 **Observación sobre el método de trabajo.** El equipo identifica como factor determinante la preparación previa de cada rama. Antes de repartir el trabajo se creó una rama por historia con el archivo donde iría el código, el contexto clínico del que proviene la historia y la referencia a un archivo existente que servía de modelo. Los dos integrantes que entregaron código lo hicieron sobre ese punto de partida, y el mismo criterio se aplicó a las pruebas exploratorias: se entregaron con una guía escrita y no como un encargo abierto, lo que permitió que dos integrantes sin experiencia en QA produjeran reportes reproducibles. El equipo conserva esta práctica para el Sprint 3 y añade un compromiso derivado del incidente descrito en la sección 5.2.2.4: **ejecutar la compilación de producción antes de confirmar cualquier integración**, ya que la suite de pruebas por sí sola no detecta un archivo que no compila.
 
@@ -4497,7 +4643,7 @@ El equipo mantiene, sin embargo, tres reservas sobre la lectura de estos número
 
 Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los beneficios clínicos de ClinicalSync son hipótesis derivadas de las entrevistas de descubrimiento y no resultados alcanzados. Las Validation Interviews son el instrumento con el que esas hipótesis se contrastan contra el producto construido, y se distinguen de las entrevistas del Capítulo II en su propósito: aquellas buscaban **entender el problema**; estas buscan **comprobar si la solución lo resuelve**.
 
-**Estado al cierre del Sprint 2.** No se han ejecutado todavía. La situación cambió respecto del Sprint 1: la aplicación web está ahora desplegada y sus ocho secciones son recorribles, de modo que las tareas de la tabla siguiente **ya tienen una interfaz sobre la que ejecutarse**. Lo que todavía no existe es la condición que las hace concluyentes: la aplicación opera sobre adaptadores en memoria con datos de demostración (sección 5.2.2.6), sin servicios web ni persistencia, por lo que un participante no puede trabajar con los pacientes de su propio turno ni retomar un registro en una sesión posterior. Medir tiempos de tarea sobre datos ficticios produciría cifras que no se pueden contrastar contra la línea base declarada en las entrevistas de descubrimiento. El equipo decide, en consecuencia, ejecutar las entrevistas de las hipótesis 1 a 5 cuando el incremento cuente con los servicios web previstos en la Entrega 3, y adelantar en el siguiente sprint únicamente la hipótesis 6, que se contrasta sobre la Landing Page y el flujo de contratación ya publicados. Esta sección documenta el **diseño** de las entrevistas; sus resultados se incorporarán cuando se ejecuten.
+**Estado al cierre del Sprint 2.** No se han ejecutado todavía. La situación cambió respecto del Sprint 1: la aplicación web está ahora desplegada y sus diez secciones son recorribles, de modo que las tareas de la tabla siguiente **ya tienen una interfaz sobre la que ejecutarse**. Lo que todavía no existe es la condición que las hace concluyentes: la aplicación consume datos ficticios de un servicio de solo lectura (sección 5.2.2.6), sin persistencia entre sesiones, por lo que un participante no puede trabajar con los pacientes de su propio turno ni retomar un registro al día siguiente. Medir tiempos de tarea sobre datos ficticios produciría cifras que no se pueden contrastar contra la línea base declarada en las entrevistas de descubrimiento. El equipo decide, en consecuencia, ejecutar las entrevistas de las hipótesis 1 a 5 cuando el incremento cuente con los servicios web previstos en la Entrega 3, y adelantar en el siguiente sprint únicamente la hipótesis 6, que se contrasta sobre la Landing Page y el flujo de contratación ya publicados. Esta sección documenta el **diseño** de las entrevistas; sus resultados se incorporarán cuando se ejecuten.
 
 #### 5.3.1. Diseño de entrevistas
 
@@ -4534,13 +4680,15 @@ Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los be
 ## Conclusiones
 ### Conclusiones y recomendaciones
 
-**Sobre el Problem Statement.** El diagnóstico formulado en la sección 1.2.2.1 se sostuvo con evidencia propia: las cinco entrevistas registradas en la sección 2.2.2 y analizadas en la 2.2.3 confirmaron los tres problemas que motivaron el proyecto. El registro duplicado entre papel y sistema, la transmisión verbal del relevo sin un formato común y la imposibilidad de determinar quién registró un dato y en qué momento aparecieron de forma espontánea en el discurso de los entrevistados, sin que el guion los indujera. Lo que todavía no puede afirmarse es el criterio de éxito enunciado en ese mismo Problem Statement. La reducción medible del tiempo de traspaso, la eliminación de los registros físicos duplicados y la adopción diaria de la plataforma exigen el producto en operación dentro de una unidad clínica. El Sprint 2 acortó esa distancia sin cerrarla: la aplicación web está desplegada y los ocho flujos clínicos son recorribles, pero opera sobre datos de demostración y sin servicios web, de modo que sigue sin existir uso real del que extraer esas mediciones.
+**Sobre el Problem Statement.** El diagnóstico formulado en la sección 1.2.2.1 se sostuvo con evidencia propia: las cinco entrevistas registradas en la sección 2.2.2 y analizadas en la 2.2.3 confirmaron los tres problemas que motivaron el proyecto. El registro duplicado entre papel y sistema, la transmisión verbal del relevo sin un formato común y la imposibilidad de determinar quién registró un dato y en qué momento aparecieron de forma espontánea en el discurso de los entrevistados, sin que el guion los indujera. Lo que todavía no puede afirmarse es el criterio de éxito enunciado en ese mismo Problem Statement. La reducción medible del tiempo de traspaso, la eliminación de los registros físicos duplicados y la adopción diaria de la plataforma exigen el producto en operación dentro de una unidad clínica. El Sprint 2 acortó esa distancia sin cerrarla: la aplicación web está desplegada con los diez flujos clínicos completos y consume sus datos por HTTP, pero esos datos son ficticios y no persisten, de modo que sigue sin existir uso real del que extraer esas mediciones.
 
 **Sobre los assumptions.** Los supuestos declarados en la sección 1.2.2.2 se contrastaron parcialmente. Los relativos a la agilidad del registro durante la atención y a la necesidad del especialista de consultar información consolidada encontraron respaldo directo en las entrevistas. En cambio, el supuesto de que el personal aceptaría incorporar un sistema nuevo siempre que reduzca la carga manual quedó sin verificar: los entrevistados describieron su situación actual, no su disposición a cambiar de herramienta. El equipo asume esta limitación de forma explícita y la traslada como criterio de diseño, no como hallazgo. En la misma línea, el análisis de la sección 2.2.3 dejó constancia de que un porcentaje de mención inferior al 100% indica que una característica no fue mencionada, no que haya sido rechazada, y esa distinción se mantuvo al interpretar los resultados.
 
-**Sobre los Hypothesis Statements.** De las siete hipótesis formuladas en la sección 1.2.2.3, solo la sexta cuenta con un producto construido y publicado: la Landing Page está desplegada en producción y es verificable en su URL. Aun así, su criterio de éxito, que un prospecto resuma el propósito de la plataforma con su propio vocabulario y localice el llamado a la acción sin ayuda, no ha sido probado con usuarios reales, porque esa comprobación corresponde a las Validation Interviews de la sección 5.3, previstas para una entrega posterior. Las hipótesis 1 a 5 cambiaron de estado en este sprint: dejaron de depender de un prototipo de interfaz y pasaron a contar con software ejecutable y publicado, con los flujos de registro de signos vitales, traspaso SBAR, resumen clínico, priorización por riesgo y bitácora de auditoría operando sobre el modelo de dominio. Aun así ninguna puede darse por validada ni por refutada, porque la aplicación funciona sobre adaptadores en memoria con datos de demostración y las entrevistas de validación de la sección 5.3 no se han ejecutado. El equipo distingue deliberadamente entre *hipótesis construida* e *hipótesis verificada*: este sprint produjo lo primero y no lo segundo. La séptima requiere contrastar la propuesta con un coordinador o jefe de servicio, perfil que el equipo identificó como actor en el Impact Mapping pero que no ha sido entrevistado.
+**Sobre los Hypothesis Statements.** De las siete hipótesis formuladas en la sección 1.2.2.3, la sexta cuenta con un producto construido y publicado desde el Sprint 1 —la Landing Page, verificable en su URL— y las cinco primeras cuentan desde este sprint con la aplicación web que las sostiene, igualmente desplegada y verificable. Aun así, su criterio de éxito, que un prospecto resuma el propósito de la plataforma con su propio vocabulario y localice el llamado a la acción sin ayuda, no ha sido probado con usuarios reales, porque esa comprobación corresponde a las Validation Interviews de la sección 5.3, previstas para una entrega posterior. Las hipótesis 1 a 5 cambiaron de estado en este sprint: dejaron de depender de un prototipo de interfaz y pasaron a contar con software ejecutable y publicado. Las veinte historias del backlog web tienen pantalla, y los ciclos que las hipótesis suponen —registrar junto a la cama, entregar y acusar el turno, consultar el estado consolidado, emitir una indicación y registrar su cumplimiento, rastrear quién hizo qué— están completos de extremo a extremo. Aun así ninguna hipótesis puede darse por validada ni por refutada, porque los datos son ficticios, no persisten y las entrevistas de validación de la sección 5.3 no se han ejecutado. El equipo distingue deliberadamente entre *hipótesis construida* e *hipótesis verificada*: este sprint produjo lo primero y no lo segundo. La séptima requiere contrastar la propuesta con un coordinador o jefe de servicio, perfil que el equipo identificó como actor en el Impact Mapping pero que no ha sido entrevistado.
 
 **Sobre el incremento del Sprint 2.** El equipo concluye que llevar el modelo de dominio del Capítulo IV a código fue la prueba más exigente a la que ese modelo se sometió hasta ahora, y que varias decisiones de diseño solo se revelaron incompletas al implementarlas. El ciclo de ejecución previsto para la indicación médica tuvo que reemplazarse por un modelo de reemplazo con historial al chocar con la invariante declarada en la sección 4.6.5, y la comunicación entre contextos obligó a fijar por escrito, en la sección 4.6.6, contratos que hasta entonces eran un acuerdo verbal. El verificador automático de fronteras convirtió esos contratos en una condición que el repositorio comprueba en cada integración, de modo que la arquitectura documentada y la construida no pueden divergir en silencio. La lección que el equipo extrae es que un modelo de dominio solo queda validado cuando existe código que no compila si se lo incumple.
+
+**Sobre completar el alcance.** El equipo concluye que terminar el backlog web enseñó más sobre el modelo que diseñarlo. Dos historias que parecían menores —dejar constancia de un medicamento administrado y anotar un evento clínico— no cabían en ninguno de los siete contextos del Event Storming y obligaron a crear un octavo, documentado en la sección 4.6.5. Tres reglas de autorización que el diseño daba por obvias resultaron no estar escritas en ninguna parte: que el traspaso lo emite enfermería, que el cumplimiento lo registra enfermería y que no lo registra quien prescribió. Y cargar el historial desde un origen externo reveló que los agregados no sabían reconstruirse: generaban identificador y fecha al construirse y publicaban sus eventos, de modo que leer tres días de historia habría vuelto a generar las alertas de esos tres días. Ninguno de los tres hallazgos aparece leyendo el diseño; los tres aparecen al ejecutarlo.
 
 **Sobre la calidad y los defectos encontrados.** El equipo concluye que los dos defectos reportados en este sprint no fueron hallazgos fortuitos sino el resultado de haber separado quién construye de quién prueba. Ambos issues los encontraron integrantes que recorrieron la aplicación desplegada sin conocer su implementación, y ambos compartían la misma causa: la capa de presentación mostraba identificadores que el dominio usa para referenciar entidades entre contextos. Corregirlos en la vista habría bastado para cerrarlos; el equipo optó por corregirlos en el dominio y fijar el comportamiento con seis pruebas de regresión, porque una corrección en la vista deja la puerta abierta a que la siguiente pantalla repita el defecto. El equipo concluye también que asignar una tarea de QA a integrantes sin experiencia previa solo funcionó porque la tarea llegó acompañada de una guía escrita que explicaba qué observar y cómo distinguir un defecto de un atajo de demostración declarado.
 
@@ -4548,7 +4696,11 @@ Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los be
 
 El Sprint 2 puso a prueba esa lección sobre el repositorio del producto. El cambio de un flujo *trunk-based* con un solo autor a un flujo con una rama por historia integrada por Pull Request elevó el número de autores de uno a tres y el de integrantes con contribución registrada de uno a cinco, que era exactamente la observación H-14 de la revisión docente. El equipo identifica como factor determinante la preparación previa de cada rama: entregar una historia con el archivo donde iría el código, el contexto clínico del que proviene y un archivo existente como modelo produjo entregas; entregarla como un encargo abierto, no. También registra sus propios errores de proceso: una integración se confirmó con los marcadores de conflicto sin resolver y la suite de pruebas no lo detectó, porque ninguna prueba importaba el archivo afectado. De ahí el compromiso incorporado para el Sprint 3 de ejecutar la compilación de producción antes de confirmar cualquier integración. La conclusión es que un indicador de colaboración solo significa algo si se lee junto a sus reservas: la distribución de commits sigue siendo desigual y contar commits favorece a quien reparte su trabajo en muchos, no a quien aporta más.
 
-**Recomendaciones y roadmap.** La recomendación formulada al cierre del Sprint 1 — construir primero la aplicación web de frontend — se ejecutó en este sprint, por lo que el equipo la reemplaza por la siguiente del orden previsto. El próximo incremento debe construir **los servicios web y la persistencia**, porque son la condición que hoy bloquea todo lo demás: sin ellos la aplicación no retiene un registro entre sesiones, no puede mostrar los pacientes reales de un turno y, en consecuencia, las entrevistas de validación de las hipótesis 1 a 5 no pueden producir mediciones comparables con la línea base declarada en el Capítulo II. La sustitución está preparada en el diseño: los repositorios se declaran como interfaces de dominio y los adaptadores en memoria se reemplazan por adaptadores HTTP sin tocar el dominio ni la capa de aplicación, según la tabla de puertos de la sección 5.2.2.6. Después de los servicios corresponde la autenticación y el control de acceso por rol, que hoy se resuelve con un selector de rol declarado como atajo de demostración y que es, además, el origen de la duda planteada en el Sprint Planning 2.
+**Recomendaciones y roadmap.** La recomendación formulada al cierre del Sprint 1 — construir primero la aplicación web de frontend — se ejecutó, y el frontend quedó completo. El próximo incremento debe construir **el backend y la persistencia**, porque es la única condición que hoy bloquea todo lo demás: sin base de datos la aplicación no retiene un registro entre sesiones, no puede mostrar los pacientes reales de un turno y, en consecuencia, las entrevistas de validación de las hipótesis 1 a 5 no pueden producir mediciones comparables con la línea base del Capítulo II.
+
+La sustitución ya está preparada y es más barata de lo que suele serlo, porque este sprint la ensayó: los ocho contextos declaran su repositorio como interfaz de dominio, los adaptadores HTTP existen y funcionan contra un servicio real, y el cambio al backend definitivo se reduce al valor de `apiBaseUrl`. Haber interpuesto un servicio de datos ficticios en lugar de incrustarlos en el código es lo que convierte ese cambio en una línea; con datos incrustados, toda la capa de infraestructura habría quedado por escribir y por depurar para el día del backend.
+
+Después del backend corresponde la autenticación y el control de acceso, que hoy se resuelve con un selector de perfil declarado como atajo de demostración. Conviene precisar qué queda y qué no: las **reglas de autorización ya están implementadas y probadas** en los agregados —quién emite una indicación, quién registra su cumplimiento, quién emite y quién acusa un traspaso—; lo que falta es la **autenticación**, es decir, acreditar que quien dice ser enfermera lo es. Son dos problemas distintos y solo uno sigue abierto.
 
 En paralelo, el equipo mantiene tres recomendaciones. Primera, ejecutar ya las entrevistas de validación de la hipótesis 6: la Landing Page y el flujo de contratación están publicados y no hay motivo para postergar esa comprobación hasta que exista el backend. Segunda, conservar la separación entre quien construye y quien prueba, ampliando la guía de pruebas exploratorias a las secciones que el Sprint 3 incorpore, porque fue la práctica que produjo los únicos defectos detectados antes de la entrega. Tercera, actualizar el prototipo de Figma para que refleje lo efectivamente implementado — incluida la página de contratación, que no existía cuando se diseñó el prototipo — de modo que el diseño deje de ir por detrás del código.
 
