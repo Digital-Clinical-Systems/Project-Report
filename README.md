@@ -4643,6 +4643,25 @@ El Sprint 3 construye el primer avance del backend de la aplicación web. A dife
 
 El sprint también responde a los hallazgos H-04 y H-14 de la revisión docente del AV1 y TB1, siguiendo ciertas estructuras que se ha visto a lo largo del trabajo de la presentación, tambien se han hecho diversos cambios que necesitaban cierta mejora.
 
+##### 5.2.3.1. Sprint Planning 3
+
+<table>
+  <tr> <th colspan="5">Sprint #</th> <th colspan="8">Sprint 2</th> </tr>
+  <tr> <td colspan="13">Sprint Planning Background</td> </tr>
+  <tr> <td colspan="5">Date</td> <td colspan="8">02-10-2026</td> </tr>
+  <tr> <td colspan="5">Time</td> <td colspan="8">20:00</td> </tr>
+  <tr> <td colspan="5">Location</td> <td colspan="8">Reunión remota (Discord)</td> </tr>
+  <tr> <td colspan="5">Prepared By</td> <td colspan="8">Sosa Soto, Oskar Rodrigo</td> </tr>
+  <tr> <td colspan="5">Attendees (to planning meeting)</td> <td colspan="8">Sosa Soto, Oskar Rodrigo / Acuache Lucas, Mathias Joaquin / Valdez Melo, Angel Andres / Huamán Cuba, Johan Giovani / Ojanama Abanto, Johnny Alexander</td> </tr>
+  <tr> <td colspan="5">Sprint n-2 Review Summary</td> <td colspan="8">El Sprint 2 cerró con la Landing Page desplegada en producción y la primera versión de nuestro Front End app, todo esto desplegado para la producción, ademas se levanto algunas observaciones que se tuvo previamente al sprint 2.</td> </tr>
+  <tr> <td colspan="5">Sprint n-2 Retrospective Summary</td> <td colspan="8">El equipo concluyó que el flujo <em>trunk-based</em> del Sprint 2 impidió repartir el trabajo y dejó sin evidencia la colaboración en el producto. Ademas de ello se detectaron algunos inciertos con respecto al trabajo de la versión del front end app, para este sprint 3 el equipo concluye que seguira todo como esta acordado y levantara algunas observaciones</td> </tr>
+  <tr> <td colspan="13">Sprint Goal &amp; User Stories</td> </tr>
+  <tr> <td colspan="5">Sprint 3 Goal</td> <td colspan="8"> <strong>Nuestro enfoque en este sprint 3 es el de tener la primera versión de nuestro backend web app, en la cual este conectada con nuestro front end, ademas de poder levantar algunas observaciones que se tuvo con el front end y con el informe. Creemos que al momento de conectar nuestro back con el front, se mejorara algunas imprevistos que se tuvo y podra ser un mejor producto para los usuarios que nosotros queremos dar.</strong> </td> </tr>
+  <tr> <td colspan="5">Story Points comprometidos (Committed SP)</td> <td colspan="8">25 Story Points</td> </tr>
+  <tr> <td colspan="5">Story Points completados (Completed SP)</td> <td colspan="8">19 Story Points</td> </tr>
+  <tr> <td colspan="5">Velocity</td> <td colspan="8">La velocity de referencia disponible al planificar era de <strong>28 Story Points</strong>, obtenida del Sprint 1 y 2. El equipo comprometió deliberadamente menos (25 SP) por tratarse del primer sprint con desarrollo de lógica de dominio y por la incertidumbre de partir de un proyecto recién creado. La velocity resultante del Sprint 3 es de <strong>19 Story Points</strong>, calculada sobre los puntos efectivamente completados.</td> </tr>
+</table>
+
 ### 5.3. Validation Interviews
 
 Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los beneficios clínicos de ClinicalSync son hipótesis derivadas de las entrevistas de descubrimiento y no resultados alcanzados. Las Validation Interviews son el instrumento con el que esas hipótesis se contrastan contra el producto construido, y se distinguen de las entrevistas del Capítulo II en su propósito: aquellas buscaban **entender el problema**; estas buscan **comprobar si la solución lo resuelve**.
