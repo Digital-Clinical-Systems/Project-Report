@@ -4637,7 +4637,11 @@ El equipo mantiene, sin embargo, tres reservas sobre la lectura de estos número
 
 **Observación sobre el método de trabajo.** El equipo identifica como factor determinante la preparación previa de cada rama. Antes de repartir el trabajo se creó una rama por historia con el archivo donde iría el código, el contexto clínico del que proviene la historia y la referencia a un archivo existente que servía de modelo. Los dos integrantes que entregaron código lo hicieron sobre ese punto de partida, y el mismo criterio se aplicó a las pruebas exploratorias: se entregaron con una guía escrita y no como un encargo abierto, lo que permitió que dos integrantes sin experiencia en QA produjeran reportes reproducibles. El equipo conserva esta práctica para el Sprint 3 y añade un compromiso derivado del incidente descrito en la sección 5.2.2.4: **ejecutar la compilación de producción antes de confirmar cualquier integración**, ya que la suite de pruebas por sí sola no detecta un archivo que no compila.
 
+#### 5.2.3. Sprint 3
 
+El Sprint 3 construye el primer avance del backend de la aplicación web. A diferencia del Sprint 1 y 2, cuyo entregable fue una página estática y la primera versión del front end, este sprint produce software para la realización del backend de manera correcta, ademas de poder tener otros avances como una nueva versión del Landing Page y Front End.
+
+El sprint también responde a los hallazgos H-04 y H-14 de la revisión docente del AV1 y TB1, siguiendo ciertas estructuras que se ha visto a lo largo del trabajo de la presentación, tambien se han hecho diversos cambios que necesitaban cierta mejora.
 
 ### 5.3. Validation Interviews
 
