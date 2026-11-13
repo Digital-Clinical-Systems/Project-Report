@@ -4662,6 +4662,18 @@ El sprint también responde a los hallazgos H-04 y H-14 de la revisión docente 
   <tr> <td colspan="5">Velocity</td> <td colspan="8">La velocity de referencia disponible al planificar era de <strong>28 Story Points</strong>, obtenida del Sprint 1 y 2. El equipo comprometió deliberadamente menos (25 SP) por tratarse del primer sprint con desarrollo de lógica de dominio y por la incertidumbre de partir de un proyecto recién creado. La velocity resultante del Sprint 3 es de <strong>19 Story Points</strong>, calculada sobre los puntos efectivamente completados.</td> </tr>
 </table>
 
+##### 5.2.3.2. Aspect Leaders and Collaborators
+
+Para la construcción de la primera versión del Backend (Web Services RESTful API) en el Sprint 3, el equipo distribuyó el liderazgo de los aspectos técnicos, asegurando que cada integrante asuma la responsabilidad principal de al menos un componente clave de la arquitectura, actuando como colaborador en el resto para garantizar la integración. A continuación, se detalla la matriz de responsabilidades, donde "L" indica Leader y "C" indica Collaborator.
+
+| Team Member (Last Name, First Name) | GitHub Username | Security & Shared Kernel (IAM) | Patients & Medical Orders | Vital Signs & Clinical Events | Critical Events & Alerts | Handover (SBAR) | Audit Logs & Trazabilidad | Backend Setup & Deployment |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Huamán Cuba, Johan Giovani | Johancuba | C | C | C | L | C | C | L |
+| Sosa Soto, Oskar Rodrigo | RodriSosaYaku / YakuzaMeen | L | C | C | C | C | C | C |
+| Valdez Melo, Angel Andres | AngelValdezM | C | L | C | C | L | C | C |
+| Ojanama Abanto, Johnny Alexander | JohnnyGZ41 | C | C | L | C | C | L | C |
+| Acuache Lucas, Mathias Joaquin | MathiasA25 | C | L | L | C | C | C | C |
+
 ### 5.3. Validation Interviews
 
 Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los beneficios clínicos de ClinicalSync son hipótesis derivadas de las entrevistas de descubrimiento y no resultados alcanzados. Las Validation Interviews son el instrumento con el que esas hipótesis se contrastan contra el producto construido, y se distinguen de las entrevistas del Capítulo II en su propósito: aquellas buscaban **entender el problema**; estas buscan **comprobar si la solución lo resuelve**.
