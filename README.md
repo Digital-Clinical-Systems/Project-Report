@@ -4674,6 +4674,34 @@ Para la construcción de la primera versión del Backend (Web Services RESTful A
 | Ojanama Abanto, Johnny Alexander | JohnnyGZ41 | C | C | L | C | C | L | C |
 | Acuache Lucas, Mathias Joaquin | MathiasA25 | C | L | L | C | C | C | C |
 
+##### 5.2.3.3. Sprint Backlog 3
+
+Durante el Sprint 3, el equipo se enfocó en desarrollar las Technical Stories (TS) definidas en el Capítulo III, correspondientes a la implementación de los Bounded Contexts en el repositorio del backend mediante arquitectura Domain-Driven Design (DDD).
+
+| Story ID | Título de la Historia | Responsable | Bounded Context asignado | Estado |
+| :--- | :--- | :--- | :--- | :--- |
+| **TS-01** | Autenticación y autorización por roles | Sosa Soto, Oskar | BC-01: Security & Shared Kernel (IAM) | Completado |
+| **TS-02** | Gestión de pacientes mediante API | Valdez Melo, Angel | BC-02: Patients | Completado |
+| **TS-03** | Gestión de registros clínicos (Signos Vitales y Eventos) | Ojanama, Johnny / Acuache, Mathias | BC-03: Vital Signs / BC-08: Clinical Events | Completado |
+| **TS-04** | Gestión de traspasos SBAR mediante API | Valdez Melo, Angel | BC-05: Handover (SBAR) | Completado |
+| **TS-05** | Gestión de indicaciones médicas mediante API | Acuache Lucas, Mathias | BC-07: Physicians & Treatments | Completado |
+| **TS-06** | Registro automático de trazabilidad (Auditoría) | Ojanama Abanto, Johnny | BC-06: Audit Logs | Completado |
+| **TS-08** | Implementación de sistema de Alertas Críticas | Huamán Cuba, Johan | BC-04: Critical Events & Alerts | Completado |
+
+##### 5.2.3.4. Development Evidence for Sprint Review
+
+Para asegurar el cumplimiento de la observación H-14 (distribución equitativa del trabajo en los repositorios) y mantener un flujo de trabajo estructurado, el equipo aplicó GitFlow. Se estableció el repositorio remoto base y cada desarrollador creó ramas `feature/` específicas para su Bounded Context, implementando las capas de Dominio, Aplicación, Infraestructura (JPA) e Interfaces (Endpoints) mediante *Conventional Commits*.
+
+A continuación, se detalla la evidencia del trabajo distribuido en el código fuente, extraída de los registros de control de versiones del equipo:
+
+| Desarrollador | Rama (Feature Branch) | Commits de Desarrollo (Evidencia de Capas DDD) |
+| :--- | :--- | :--- |
+| **Johan Huamán** | `feature/alerts` | - `feat(alerts): add alert aggregate with open, acknowledged and resolved lifecycle`<br>- `feat(alerts): add alert services and event handlers for risk and critical events`<br>- `feat(alerts): add JPA persistence for alerts`<br>- `feat(alerts): expose alerts endpoints with acknowledge and resolve actions` |
+| **Oskar Sosa** | `feature/iam` | - `feat(iam): add user aggregate, role entity, commands and queries`<br>- `feat(iam): add user and role command and query services`<br>- `feat(iam): add JPA persistence, bcrypt hashing and JWT token services`<br>- `feat(iam): configure stateless bearer security and role-based authorization`<br>- `feat(iam): expose authentication, users and roles endpoints and IAM facade` |
+| **Ángel Valdez** | `feature/patients`<br><br>`feature/handover` | - `feat(patients): add patient aggregate with admission and discharge rules`<br>- `feat(patients): add patient services and demo patients seeding`<br>- `feat(patients): add JPA persistence, patients endpoints and context facade`<br><br>- `feat(handover): add SBAR handover aggregate with acknowledgement rules`<br>- `feat(handover): add handover services, persistence and endpoints` |
+| **Johnny Ojanama** | `feature/vital-signs`<br><br>`feature/audit` | - `feat(vitalsigns): add vital sign record aggregate and risk evaluator`<br>- `feat(vitalsigns): add vital signs command and query services`<br>- `feat(vitalsigns): add JPA persistence and vital signs endpoints`<br><br>- `feat(audit): add immutable audit log aggregate with derived action type`<br>- `feat(audit): record domain events and expose read-only audit logs` |
+| **Mathias Acuache** | `feature/medical-orders`<br><br>`feature/clinical-events` | - `feat(medicalorders): add medical order aggregate with issue and fulfillment rules`<br>- `feat(medicalorders): add medical order command and query services`<br>- `feat(medicalorders): add JPA persistence and medical orders endpoints`<br><br>- `feat(clinicalevents): add clinical event aggregate for medication and observations`<br>- `feat(clinicalevents): add clinical event services, persistence and endpoints` |
+
 ### 5.3. Validation Interviews
 
 Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los beneficios clínicos de ClinicalSync son hipótesis derivadas de las entrevistas de descubrimiento y no resultados alcanzados. Las Validation Interviews son el instrumento con el que esas hipótesis se contrastan contra el producto construido, y se distinguen de las entrevistas del Capítulo II en su propósito: aquellas buscaban **entender el problema**; estas buscan **comprobar si la solución lo resuelve**.
