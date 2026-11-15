@@ -4709,11 +4709,11 @@ Durante el Sprint 3, la ejecución y validación de los Web Services RESTful API
 Se verificó el correcto funcionamiento de los flujos críticos, incluyendo la emisión de órdenes médicas (`POST /api/v1/medical-orders`), la generación de traspasos de turno SBAR (`POST /api/v1/handovers`), la autenticación mediante tokens JWT (`POST /api/v1/authentication/sign-in`) y el registro automático de trazabilidad en los Logs de Auditoría.
 
 <p align="center">
-  <img src="assets/chapter-5/sprint-3/execution-review-1.png" alt="Bitacora de auditoria con filtros" width="900">
+  <img src="assets/chapter-5/sprint-3/execution-review-1.png" alt="execution review" width="900">
 </p>
 
 <p align="center">
-  <img src="assets/chapter-5/sprint-3/execution-review-2.png" alt="Bitacora de auditoria con filtros" width="900">
+  <img src="assets/chapter-5/sprint-3/execution-review-2.png" alt="execution review" width="900">
 </p>
 
 ##### 5.2.3.6. Services Documentation Evidence for Sprint Review
@@ -4725,20 +4725,20 @@ La documentación refleja fielmente los Bounded Contexts implementados y las his
 1. **Gestión Clínica y Trazabilidad:** Documentación de los endpoints de Signos Vitales (TS-03), Alertas (US-28), Usuarios y Audit Logs (TS-06), evidenciando la inmutabilidad de los registros y el nivel de riesgo clínico.
 
 <p align="center">
-  <img src="assets/chapter-5/sprint-3/swagger-image1.png" alt="Bitacora de auditoria con filtros" width="900">
+  <img src="assets/chapter-5/sprint-3/swagger-image1.png" alt="swagger" width="900">
 </p>
 
 2. **Flujos Asistenciales:** Endpoints correspondientes a la gestión de Pacientes (TS-02), Traspasos SBAR (TS-04), Órdenes Médicas (TS-05) y Eventos Clínicos (BC-08). Se aprecian las rutas que soportan la lógica de negocio, como la confirmación de recepciones (`/acknowledge`) y el cumplimiento de indicaciones (`/fulfill`).
 
   <p align="center">
-  <img src="assets/chapter-5/sprint-3/swagger-image2.png" alt="Bitacora de auditoria con filtros" width="900">
+  <img src="assets/chapter-5/sprint-3/swagger-image2.png" alt="swagger" width="900">
 </p>
 
 
 3. **Seguridad y Acceso:** Documentación de los endpoints de Roles y Autenticación (TS-01), evidenciando los servicios de `sign-up` y `sign-in` requeridos para la generación de tokens de acceso (JWT).
 
   <p align="center">
-  <img src="assets/chapter-5/sprint-3/swagger-image3.png" alt="Bitacora de auditoria con filtros" width="900">
+  <img src="assets/chapter-5/sprint-3/swagger-image3.png" alt="swagger" width="900">
 </p>
 
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
@@ -4746,6 +4746,25 @@ La documentación refleja fielmente los Bounded Contexts implementados y las his
 Para asegurar la disponibilidad de los servicios y cumplir con la historia técnica **TS-09**, el Backend (Spring Boot RESTful API) fue desplegado en un entorno de producción en la nube. Se configuraron las variables de entorno necesarias para proteger las credenciales de la base de datos (MySQL) y las claves secretas de encriptación (JWT Secret). 
 
 El servicio se encuentra actualmente en ejecución, permitiendo que la Web Application (Frontend) consuma datos reales, abandonando el uso de datos simulados (mocks) del sprint anterior.
+
+##### 5.2.3.8. Team Collaboration Insights during Sprint
+
+La observación H-14 de la revisión docente del AV1 señaló que el trabajo de codificación debía reflejar colaboración distribuida en los repositorios del producto. Durante el Sprint 2, el equipo demostró un avance en el repositorio del Frontend, y para este Sprint 3, se propuso alcanzar una distribución perfectamente equitativa en la construcción del nuevo repositorio del Backend (`BackClinicalSync`).
+
+La siguiente evidencia, extraída de la pestaña de *Insights/Contributors* del repositorio del backend en GitHub, confirma el cumplimiento absoluto de este objetivo. 
+
+ <p align="center">
+  <img src="assets/chapter-5/sprint-3/sprint3-insights.png" alt="insights" width="900">
+</p>
+
+Como se observa en el panel, los cinco miembros del equipo registraron commits directamente relacionados con la implementación de sus respectivos Bounded Contexts y Capas DDD:
+* **Johancuba (Johan Huamán):** 6 commits
+* **MathiasA25 (Mathias Acuache):** 5 commits
+* **AngelValdezM (Ángel Valdez):** 5 commits
+* **YakuzaMeen (Oskar Sosa):** 5 commits
+* **JohnnyGZ41 (Johnny Ojanama):** 5 commits
+
+Esta distribución homogénea de código fuente demuestra el compromiso del equipo con la metodología Scrum y el flujo de trabajo colaborativo, validando que todos los integrantes participaron activamente en el desarrollo de la arquitectura del software.
 
 
 ### 5.3. Validation Interviews
