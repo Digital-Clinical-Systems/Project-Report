@@ -4702,6 +4702,20 @@ A continuación, se detalla la evidencia del trabajo distribuido en el código f
 | **Johnny Ojanama** | `feature/vital-signs`<br><br>`feature/audit` | - `feat(vitalsigns): add vital sign record aggregate and risk evaluator`<br>- `feat(vitalsigns): add vital signs command and query services`<br>- `feat(vitalsigns): add JPA persistence and vital signs endpoints`<br><br>- `feat(audit): add immutable audit log aggregate with derived action type`<br>- `feat(audit): record domain events and expose read-only audit logs` |
 | **Mathias Acuache** | `feature/medical-orders`<br><br>`feature/clinical-events` | - `feat(medicalorders): add medical order aggregate with issue and fulfillment rules`<br>- `feat(medicalorders): add medical order command and query services`<br>- `feat(medicalorders): add JPA persistence and medical orders endpoints`<br><br>- `feat(clinicalevents): add clinical event aggregate for medication and observations`<br>- `feat(clinicalevents): add clinical event services, persistence and endpoints` |
 
+##### 5.2.3.5. Execution Evidence for Sprint Review
+
+Durante el Sprint 3, la ejecución y validación de los Web Services RESTful API se llevó a cabo utilizando la interfaz interactiva de Swagger UI y herramientas de testeo de APIs (como Postman). Se realizaron pruebas de integración sobre los endpoints desarrollados para garantizar que las peticiones HTTP (GET, POST) interactuaran correctamente con la capa de persistencia (Base de Datos MySQL) y devolvieran los códigos de estado HTTP adecuados (200 OK, 201 Created, 400 Bad Request, 403 Forbidden).
+
+Se verificó el correcto funcionamiento de los flujos críticos, incluyendo la emisión de órdenes médicas (`POST /api/v1/medical-orders`), la generación de traspasos de turno SBAR (`POST /api/v1/handovers`), la autenticación mediante tokens JWT (`POST /api/v1/authentication/sign-in`) y el registro automático de trazabilidad en los Logs de Auditoría.
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-3/execution-review-1.png" alt="Bitacora de auditoria con filtros" width="900">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-3/execution-review-2.png" alt="Bitacora de auditoria con filtros" width="900">
+</p>
+
 ### 5.3. Validation Interviews
 
 Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los beneficios clínicos de ClinicalSync son hipótesis derivadas de las entrevistas de descubrimiento y no resultados alcanzados. Las Validation Interviews son el instrumento con el que esas hipótesis se contrastan contra el producto construido, y se distinguen de las entrevistas del Capítulo II en su propósito: aquellas buscaban **entender el problema**; estas buscan **comprobar si la solución lo resuelve**.
