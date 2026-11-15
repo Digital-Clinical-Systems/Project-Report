@@ -4716,6 +4716,33 @@ Se verificó el correcto funcionamiento de los flujos críticos, incluyendo la e
   <img src="assets/chapter-5/sprint-3/execution-review-2.png" alt="Bitacora de auditoria con filtros" width="900">
 </p>
 
+##### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+Cumpliendo con la historia técnica **TS-08**, la totalidad del Backend API fue documentada utilizando la especificación **OpenAPI (Swagger UI)**. Esta documentación generada automáticamente expone los contratos de todos los endpoints, los esquemas de petición y respuesta, y los parámetros requeridos, permitiendo al equipo de Frontend consumir los servicios de forma predecible.
+
+La documentación refleja fielmente los Bounded Contexts implementados y las historias técnicas (TS) asignadas:
+
+1. **Gestión Clínica y Trazabilidad:** Documentación de los endpoints de Signos Vitales (TS-03), Alertas (US-28), Usuarios y Audit Logs (TS-06), evidenciando la inmutabilidad de los registros y el nivel de riesgo clínico.
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-3/swagger-image1.png" alt="Bitacora de auditoria con filtros" width="900">
+</p>
+
+2. **Flujos Asistenciales:** Endpoints correspondientes a la gestión de Pacientes (TS-02), Traspasos SBAR (TS-04), Órdenes Médicas (TS-05) y Eventos Clínicos (BC-08). Se aprecian las rutas que soportan la lógica de negocio, como la confirmación de recepciones (`/acknowledge`) y el cumplimiento de indicaciones (`/fulfill`).
+
+  <p align="center">
+  <img src="assets/chapter-5/sprint-3/swagger-image2.png" alt="Bitacora de auditoria con filtros" width="900">
+</p>
+
+
+3. **Seguridad y Acceso:** Documentación de los endpoints de Roles y Autenticación (TS-01), evidenciando los servicios de `sign-up` y `sign-in` requeridos para la generación de tokens de acceso (JWT).
+
+  <p align="center">
+  <img src="assets/chapter-5/sprint-3/swagger-image3.png" alt="Bitacora de auditoria con filtros" width="900">
+</p>
+
+
+
 ### 5.3. Validation Interviews
 
 Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los beneficios clínicos de ClinicalSync son hipótesis derivadas de las entrevistas de descubrimiento y no resultados alcanzados. Las Validation Interviews son el instrumento con el que esas hipótesis se contrastan contra el producto construido, y se distinguen de las entrevistas del Capítulo II en su propósito: aquellas buscaban **entender el problema**; estas buscan **comprobar si la solución lo resuelve**.
