@@ -4741,6 +4741,11 @@ La documentación refleja fielmente los Bounded Contexts implementados y las his
   <img src="assets/chapter-5/sprint-3/swagger-image3.png" alt="Bitacora de auditoria con filtros" width="900">
 </p>
 
+##### 5.2.3.7. Software Deployment Evidence for Sprint Review
+
+Para asegurar la disponibilidad de los servicios y cumplir con la historia técnica **TS-09**, el Backend (Spring Boot RESTful API) fue desplegado en un entorno de producción en la nube. Se configuraron las variables de entorno necesarias para proteger las credenciales de la base de datos (MySQL) y las claves secretas de encriptación (JWT Secret). 
+
+El servicio se encuentra actualmente en ejecución, permitiendo que la Web Application (Frontend) consuma datos reales, abandonando el uso de datos simulados (mocks) del sprint anterior.
 
 
 ### 5.3. Validation Interviews
