@@ -4846,7 +4846,9 @@ Después del backend corresponde la autenticación y el control de acceso, que h
 
 En paralelo, el equipo mantiene tres recomendaciones. Primera, ejecutar ya las entrevistas de validación de la hipótesis 6: la Landing Page y el flujo de contratación están publicados y no hay motivo para postergar esa comprobación hasta que exista el backend. Segunda, conservar la separación entre quien construye y quien prueba, ampliando la guía de pruebas exploratorias a las secciones que el Sprint 3 incorpore, porque fue la práctica que produjo los únicos defectos detectados antes de la entrega. Tercera, actualizar el prototipo de Figma para que refleje lo efectivamente implementado — incluida la página de contratación, que no existía cuando se diseñó el prototipo — de modo que el diseño deje de ir por detrás del código.
 
-### Video About-the-Team
+### Video About-The-Product
+
+[Video About The Product](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202314898_upc_edu_pe/IQC4QX9cMwQ5T7GjtVecWlAlAcw3TmZmnwF97Ql2B5SfrsA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=QHbDDG)
 
 ---
 
