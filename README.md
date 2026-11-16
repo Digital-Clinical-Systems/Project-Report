@@ -4648,7 +4648,7 @@ El sprint también responde a los hallazgos H-04 y H-14 de la revisión docente 
 <table>
   <tr> <th colspan="5">Sprint #</th> <th colspan="8">Sprint 2</th> </tr>
   <tr> <td colspan="13">Sprint Planning Background</td> </tr>
-  <tr> <td colspan="5">Date</td> <td colspan="8">02-10-2026</td> </tr>
+  <tr> <td colspan="5">Date</td> <td colspan="8">01-11-2026</td> </tr>
   <tr> <td colspan="5">Time</td> <td colspan="8">20:00</td> </tr>
   <tr> <td colspan="5">Location</td> <td colspan="8">Reunión remota (Discord)</td> </tr>
   <tr> <td colspan="5">Prepared By</td> <td colspan="8">Sosa Soto, Oskar Rodrigo</td> </tr>
@@ -4743,9 +4743,23 @@ La documentación refleja fielmente los Bounded Contexts implementados y las his
 
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-Para asegurar la disponibilidad de los servicios y cumplir con la historia técnica **TS-09**, el Backend (Spring Boot RESTful API) fue desplegado en un entorno de producción en la nube. Se configuraron las variables de entorno necesarias para proteger las credenciales de la base de datos (MySQL) y las claves secretas de encriptación (JWT Secret). 
+Para asegurar la disponibilidad de los servicios y cumplir con la historia técnica **TS-09**, el Backend (Spring Boot RESTful API) fue desplegado en un entorno de producción en la nube utilizando la plataforma **Railway**[cite: 182]. 
 
-El servicio se encuentra actualmente en ejecución, permitiendo que la Web Application (Frontend) consuma datos reales, abandonando el uso de datos simulados (mocks) del sprint anterior.
+La arquitectura de despliegue configurada consta de dos servicios integrados[cite: 182]:
+1. **Base de Datos (`MySQL`):** Una instancia relacional en línea aprovisionada con su respectivo volumen (`mysql-volume`) para la persistencia de todos los Bounded Contexts[cite: 182].
+2. **Web Service (`BackClinicalSync`):** El aplicativo backend conectado directamente al repositorio de GitHub, configurado con despliegue continuo (CI/CD)[cite: 182]. Como evidencia el registro, el sistema redespliega automáticamente la aplicación al realizar integraciones hacia la rama `main` (ej. `Merge branch 'release/v1.1.0' into main`)[cite: 182].
+
+Ambos servicios se encuentran actualmente en ejecución (estado "Online" y "ACTIVE")[cite: 182], lo que permite que la Web Application (Frontend) consuma datos reales y consolide la integración del sistema, abandonando el uso de datos simulados (mocks) del sprint anterior.
+
+**URL base del API en producción:** `https://backclinicalsync-production.up.railway.app/swagger-ui.html`
+
+ <p align="center">
+  <img src="assets/chapter-5/sprint-3/deployment-backend.png" alt="deployment-backend" width="900">
+</p>
+
+ <p align="center">
+  <img src="assets/chapter-5/sprint-3/deployment2-backend.png" alt="deployment-backend" width="900">
+</p>
 
 ##### 5.2.3.8. Team Collaboration Insights during Sprint
 
