@@ -4743,11 +4743,11 @@ La documentación refleja fielmente los Bounded Contexts implementados y las his
 
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-Para asegurar la disponibilidad de los servicios y cumplir con la historia técnica **TS-09**, el Backend (Spring Boot RESTful API) fue desplegado en un entorno de producción en la nube utilizando la plataforma **Railway**[cite: 182]. 
+Para asegurar la disponibilidad de los servicios y cumplir con la historia técnica **TS-09**, el Backend (Spring Boot RESTful API) fue desplegado en un entorno de producción en la nube utilizando la plataforma **Railway**. 
 
-La arquitectura de despliegue configurada consta de dos servicios integrados[cite: 182]:
-1. **Base de Datos (`MySQL`):** Una instancia relacional en línea aprovisionada con su respectivo volumen (`mysql-volume`) para la persistencia de todos los Bounded Contexts[cite: 182].
-2. **Web Service (`BackClinicalSync`):** El aplicativo backend conectado directamente al repositorio de GitHub, configurado con despliegue continuo (CI/CD)[cite: 182]. Como evidencia el registro, el sistema redespliega automáticamente la aplicación al realizar integraciones hacia la rama `main` (ej. `Merge branch 'release/v1.1.0' into main`)[cite: 182].
+La arquitectura de despliegue configurada consta de dos servicios integrados:
+1. **Base de Datos (`MySQL`):** Una instancia relacional en línea aprovisionada con su respectivo volumen (`mysql-volume`) para la persistencia de todos los Bounded Contexts.
+2. **Web Service (`BackClinicalSync`):** El aplicativo backend conectado directamente al repositorio de GitHub, configurado con despliegue continuo (CI/CD). Como evidencia el registro, el sistema redespliega automáticamente la aplicación al realizar integraciones hacia la rama `main` (ej. `Merge branch 'release/v1.1.0' into main`).
 
 Ambos servicios se encuentran actualmente en ejecución (estado "Online" y "ACTIVE")[cite: 182], lo que permite que la Web Application (Frontend) consuma datos reales y consolide la integración del sistema, abandonando el uso de datos simulados (mocks) del sprint anterior.
 
