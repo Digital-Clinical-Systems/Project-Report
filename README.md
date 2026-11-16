@@ -4637,6 +4637,148 @@ El equipo mantiene, sin embargo, tres reservas sobre la lectura de estos número
 
 **Observación sobre el método de trabajo.** El equipo identifica como factor determinante la preparación previa de cada rama. Antes de repartir el trabajo se creó una rama por historia con el archivo donde iría el código, el contexto clínico del que proviene la historia y la referencia a un archivo existente que servía de modelo. Los dos integrantes que entregaron código lo hicieron sobre ese punto de partida, y el mismo criterio se aplicó a las pruebas exploratorias: se entregaron con una guía escrita y no como un encargo abierto, lo que permitió que dos integrantes sin experiencia en QA produjeran reportes reproducibles. El equipo conserva esta práctica para el Sprint 3 y añade un compromiso derivado del incidente descrito en la sección 5.2.2.4: **ejecutar la compilación de producción antes de confirmar cualquier integración**, ya que la suite de pruebas por sí sola no detecta un archivo que no compila.
 
+#### 5.2.3. Sprint 3
+
+El Sprint 3 construye el primer avance del backend de la aplicación web. A diferencia del Sprint 1 y 2, cuyo entregable fue una página estática y la primera versión del front end, este sprint produce software para la realización del backend de manera correcta, ademas de poder tener otros avances como una nueva versión del Landing Page y Front End.
+
+El sprint también responde a los hallazgos H-04 y H-14 de la revisión docente del AV1 y TB1, siguiendo ciertas estructuras que se ha visto a lo largo del trabajo de la presentación, tambien se han hecho diversos cambios que necesitaban cierta mejora.
+
+##### 5.2.3.1. Sprint Planning 3
+
+<table>
+  <tr> <th colspan="5">Sprint #</th> <th colspan="8">Sprint 2</th> </tr>
+  <tr> <td colspan="13">Sprint Planning Background</td> </tr>
+  <tr> <td colspan="5">Date</td> <td colspan="8">01-11-2026</td> </tr>
+  <tr> <td colspan="5">Time</td> <td colspan="8">20:00</td> </tr>
+  <tr> <td colspan="5">Location</td> <td colspan="8">Reunión remota (Discord)</td> </tr>
+  <tr> <td colspan="5">Prepared By</td> <td colspan="8">Sosa Soto, Oskar Rodrigo</td> </tr>
+  <tr> <td colspan="5">Attendees (to planning meeting)</td> <td colspan="8">Sosa Soto, Oskar Rodrigo / Acuache Lucas, Mathias Joaquin / Valdez Melo, Angel Andres / Huamán Cuba, Johan Giovani / Ojanama Abanto, Johnny Alexander</td> </tr>
+  <tr> <td colspan="5">Sprint n-2 Review Summary</td> <td colspan="8">El Sprint 2 cerró con la Landing Page desplegada en producción y la primera versión de nuestro Front End app, todo esto desplegado para la producción, ademas se levanto algunas observaciones que se tuvo previamente al sprint 2.</td> </tr>
+  <tr> <td colspan="5">Sprint n-2 Retrospective Summary</td> <td colspan="8">El equipo concluyó que el flujo <em>trunk-based</em> del Sprint 2 impidió repartir el trabajo y dejó sin evidencia la colaboración en el producto. Ademas de ello se detectaron algunos inciertos con respecto al trabajo de la versión del front end app, para este sprint 3 el equipo concluye que seguira todo como esta acordado y levantara algunas observaciones</td> </tr>
+  <tr> <td colspan="13">Sprint Goal &amp; User Stories</td> </tr>
+  <tr> <td colspan="5">Sprint 3 Goal</td> <td colspan="8"> <strong>Nuestro enfoque en este sprint 3 es el de tener la primera versión de nuestro backend web app, en la cual este conectada con nuestro front end, ademas de poder levantar algunas observaciones que se tuvo con el front end y con el informe. Creemos que al momento de conectar nuestro back con el front, se mejorara algunas imprevistos que se tuvo y podra ser un mejor producto para los usuarios que nosotros queremos dar.</strong> </td> </tr>
+  <tr> <td colspan="5">Story Points comprometidos (Committed SP)</td> <td colspan="8">25 Story Points</td> </tr>
+  <tr> <td colspan="5">Story Points completados (Completed SP)</td> <td colspan="8">19 Story Points</td> </tr>
+  <tr> <td colspan="5">Velocity</td> <td colspan="8">La velocity de referencia disponible al planificar era de <strong>28 Story Points</strong>, obtenida del Sprint 1 y 2. El equipo comprometió deliberadamente menos (25 SP) por tratarse del primer sprint con desarrollo de lógica de dominio y por la incertidumbre de partir de un proyecto recién creado. La velocity resultante del Sprint 3 es de <strong>19 Story Points</strong>, calculada sobre los puntos efectivamente completados.</td> </tr>
+</table>
+
+##### 5.2.3.2. Aspect Leaders and Collaborators
+
+Para la construcción de la primera versión del Backend (Web Services RESTful API) en el Sprint 3, el equipo distribuyó el liderazgo de los aspectos técnicos, asegurando que cada integrante asuma la responsabilidad principal de al menos un componente clave de la arquitectura, actuando como colaborador en el resto para garantizar la integración. A continuación, se detalla la matriz de responsabilidades, donde "L" indica Leader y "C" indica Collaborator.
+
+| Team Member (Last Name, First Name) | GitHub Username | Security & Shared Kernel (IAM) | Patients & Medical Orders | Vital Signs & Clinical Events | Critical Events & Alerts | Handover (SBAR) | Audit Logs & Trazabilidad | Backend Setup & Deployment |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Huamán Cuba, Johan Giovani | Johancuba | C | C | C | L | C | C | L |
+| Sosa Soto, Oskar Rodrigo | RodriSosaYaku / YakuzaMeen | L | C | C | C | C | C | C |
+| Valdez Melo, Angel Andres | AngelValdezM | C | L | C | C | L | C | C |
+| Ojanama Abanto, Johnny Alexander | JohnnyGZ41 | C | C | L | C | C | L | C |
+| Acuache Lucas, Mathias Joaquin | MathiasA25 | C | L | L | C | C | C | C |
+
+##### 5.2.3.3. Sprint Backlog 3
+
+Durante el Sprint 3, el equipo se enfocó en desarrollar las Technical Stories (TS) definidas en el Capítulo III, correspondientes a la implementación de los Bounded Contexts en el repositorio del backend mediante arquitectura Domain-Driven Design (DDD).
+
+| Story ID | Título de la Historia | Responsable | Bounded Context asignado | Estado |
+| :--- | :--- | :--- | :--- | :--- |
+| **TS-01** | Autenticación y autorización por roles | Sosa Soto, Oskar | BC-01: Security & Shared Kernel (IAM) | Completado |
+| **TS-02** | Gestión de pacientes mediante API | Valdez Melo, Angel | BC-02: Patients | Completado |
+| **TS-03** | Gestión de registros clínicos (Signos Vitales y Eventos) | Ojanama, Johnny / Acuache, Mathias | BC-03: Vital Signs / BC-08: Clinical Events | Completado |
+| **TS-04** | Gestión de traspasos SBAR mediante API | Valdez Melo, Angel | BC-05: Handover (SBAR) | Completado |
+| **TS-05** | Gestión de indicaciones médicas mediante API | Acuache Lucas, Mathias | BC-07: Physicians & Treatments | Completado |
+| **TS-06** | Registro automático de trazabilidad (Auditoría) | Ojanama Abanto, Johnny | BC-06: Audit Logs | Completado |
+| **TS-08** | Implementación de sistema de Alertas Críticas | Huamán Cuba, Johan | BC-04: Critical Events & Alerts | Completado |
+
+##### 5.2.3.4. Development Evidence for Sprint Review
+
+Para asegurar el cumplimiento de la observación H-14 (distribución equitativa del trabajo en los repositorios) y mantener un flujo de trabajo estructurado, el equipo aplicó GitFlow. Se estableció el repositorio remoto base y cada desarrollador creó ramas `feature/` específicas para su Bounded Context, implementando las capas de Dominio, Aplicación, Infraestructura (JPA) e Interfaces (Endpoints) mediante *Conventional Commits*.
+
+A continuación, se detalla la evidencia del trabajo distribuido en el código fuente, extraída de los registros de control de versiones del equipo:
+
+| Desarrollador | Rama (Feature Branch) | Commits de Desarrollo (Evidencia de Capas DDD) |
+| :--- | :--- | :--- |
+| **Johan Huamán** | `feature/alerts` | - `feat(alerts): add alert aggregate with open, acknowledged and resolved lifecycle`<br>- `feat(alerts): add alert services and event handlers for risk and critical events`<br>- `feat(alerts): add JPA persistence for alerts`<br>- `feat(alerts): expose alerts endpoints with acknowledge and resolve actions` |
+| **Oskar Sosa** | `feature/iam` | - `feat(iam): add user aggregate, role entity, commands and queries`<br>- `feat(iam): add user and role command and query services`<br>- `feat(iam): add JPA persistence, bcrypt hashing and JWT token services`<br>- `feat(iam): configure stateless bearer security and role-based authorization`<br>- `feat(iam): expose authentication, users and roles endpoints and IAM facade` |
+| **Ángel Valdez** | `feature/patients`<br><br>`feature/handover` | - `feat(patients): add patient aggregate with admission and discharge rules`<br>- `feat(patients): add patient services and demo patients seeding`<br>- `feat(patients): add JPA persistence, patients endpoints and context facade`<br><br>- `feat(handover): add SBAR handover aggregate with acknowledgement rules`<br>- `feat(handover): add handover services, persistence and endpoints` |
+| **Johnny Ojanama** | `feature/vital-signs`<br><br>`feature/audit` | - `feat(vitalsigns): add vital sign record aggregate and risk evaluator`<br>- `feat(vitalsigns): add vital signs command and query services`<br>- `feat(vitalsigns): add JPA persistence and vital signs endpoints`<br><br>- `feat(audit): add immutable audit log aggregate with derived action type`<br>- `feat(audit): record domain events and expose read-only audit logs` |
+| **Mathias Acuache** | `feature/medical-orders`<br><br>`feature/clinical-events` | - `feat(medicalorders): add medical order aggregate with issue and fulfillment rules`<br>- `feat(medicalorders): add medical order command and query services`<br>- `feat(medicalorders): add JPA persistence and medical orders endpoints`<br><br>- `feat(clinicalevents): add clinical event aggregate for medication and observations`<br>- `feat(clinicalevents): add clinical event services, persistence and endpoints` |
+
+##### 5.2.3.5. Execution Evidence for Sprint Review
+
+Durante el Sprint 3, la ejecución y validación de los Web Services RESTful API se llevó a cabo utilizando la interfaz interactiva de Swagger UI y herramientas de testeo de APIs (como Postman). Se realizaron pruebas de integración sobre los endpoints desarrollados para garantizar que las peticiones HTTP (GET, POST) interactuaran correctamente con la capa de persistencia (Base de Datos MySQL) y devolvieran los códigos de estado HTTP adecuados (200 OK, 201 Created, 400 Bad Request, 403 Forbidden).
+
+Se verificó el correcto funcionamiento de los flujos críticos, incluyendo la emisión de órdenes médicas (`POST /api/v1/medical-orders`), la generación de traspasos de turno SBAR (`POST /api/v1/handovers`), la autenticación mediante tokens JWT (`POST /api/v1/authentication/sign-in`) y el registro automático de trazabilidad en los Logs de Auditoría.
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-3/execution-review-1.png" alt="execution review" width="900">
+</p>
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-3/execution-review-2.png" alt="execution review" width="900">
+</p>
+
+##### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+Cumpliendo con la historia técnica **TS-08**, la totalidad del Backend API fue documentada utilizando la especificación **OpenAPI (Swagger UI)**. Esta documentación generada automáticamente expone los contratos de todos los endpoints, los esquemas de petición y respuesta, y los parámetros requeridos, permitiendo al equipo de Frontend consumir los servicios de forma predecible.
+
+La documentación refleja fielmente los Bounded Contexts implementados y las historias técnicas (TS) asignadas:
+
+1. **Gestión Clínica y Trazabilidad:** Documentación de los endpoints de Signos Vitales (TS-03), Alertas (US-28), Usuarios y Audit Logs (TS-06), evidenciando la inmutabilidad de los registros y el nivel de riesgo clínico.
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-3/swagger-image1.png" alt="swagger" width="900">
+</p>
+
+2. **Flujos Asistenciales:** Endpoints correspondientes a la gestión de Pacientes (TS-02), Traspasos SBAR (TS-04), Órdenes Médicas (TS-05) y Eventos Clínicos (BC-08). Se aprecian las rutas que soportan la lógica de negocio, como la confirmación de recepciones (`/acknowledge`) y el cumplimiento de indicaciones (`/fulfill`).
+
+  <p align="center">
+  <img src="assets/chapter-5/sprint-3/swagger-image2.png" alt="swagger" width="900">
+</p>
+
+
+3. **Seguridad y Acceso:** Documentación de los endpoints de Roles y Autenticación (TS-01), evidenciando los servicios de `sign-up` y `sign-in` requeridos para la generación de tokens de acceso (JWT).
+
+  <p align="center">
+  <img src="assets/chapter-5/sprint-3/swagger-image3.png" alt="swagger" width="900">
+</p>
+
+##### 5.2.3.7. Software Deployment Evidence for Sprint Review
+
+Para asegurar la disponibilidad de los servicios y cumplir con la historia técnica **TS-09**, el Backend (Spring Boot RESTful API) fue desplegado en un entorno de producción en la nube utilizando la plataforma **Railway**. 
+
+La arquitectura de despliegue configurada consta de dos servicios integrados:
+1. **Base de Datos (`MySQL`):** Una instancia relacional en línea aprovisionada con su respectivo volumen (`mysql-volume`) para la persistencia de todos los Bounded Contexts.
+2. **Web Service (`BackClinicalSync`):** El aplicativo backend conectado directamente al repositorio de GitHub, configurado con despliegue continuo (CI/CD). Como evidencia el registro, el sistema redespliega automáticamente la aplicación al realizar integraciones hacia la rama `main` (ej. `Merge branch 'release/v1.1.0' into main`).
+
+Ambos servicios se encuentran actualmente en ejecución (estado "Online" y "ACTIVE")[cite: 182], lo que permite que la Web Application (Frontend) consuma datos reales y consolide la integración del sistema, abandonando el uso de datos simulados (mocks) del sprint anterior.
+
+**URL base del API en producción:** `https://backclinicalsync-production.up.railway.app/swagger-ui.html`
+
+ <p align="center">
+  <img src="assets/chapter-5/sprint-3/deployment-backend.png" alt="deployment-backend" width="900">
+</p>
+
+ <p align="center">
+  <img src="assets/chapter-5/sprint-3/deployment2-backend.png" alt="deployment-backend" width="900">
+</p>
+
+##### 5.2.3.8. Team Collaboration Insights during Sprint
+
+La observación H-14 de la revisión docente del AV1 señaló que el trabajo de codificación debía reflejar colaboración distribuida en los repositorios del producto. Durante el Sprint 2, el equipo demostró un avance en el repositorio del Frontend, y para este Sprint 3, se propuso alcanzar una distribución perfectamente equitativa en la construcción del nuevo repositorio del Backend (`BackClinicalSync`).
+
+La siguiente evidencia, extraída de la pestaña de *Insights/Contributors* del repositorio del backend en GitHub, confirma el cumplimiento absoluto de este objetivo. 
+
+ <p align="center">
+  <img src="assets/chapter-5/sprint-3/sprint3-insights.png" alt="insights" width="900">
+</p>
+
+Como se observa en el panel, los cinco miembros del equipo registraron commits directamente relacionados con la implementación de sus respectivos Bounded Contexts y Capas DDD:
+* **Johancuba (Johan Huamán):** 6 commits
+* **MathiasA25 (Mathias Acuache):** 5 commits
+* **AngelValdezM (Ángel Valdez):** 5 commits
+* **YakuzaMeen (Oskar Sosa):** 5 commits
+* **JohnnyGZ41 (Johnny Ojanama):** 5 commits
+
+Esta distribución homogénea de código fuente demuestra el compromiso del equipo con la metodología Scrum y el flujo de trabajo colaborativo, validando que todos los integrantes participaron activamente en el desarrollo de la arquitectura del software.
 
 
 ### 5.3. Validation Interviews
@@ -4704,7 +4846,9 @@ Después del backend corresponde la autenticación y el control de acceso, que h
 
 En paralelo, el equipo mantiene tres recomendaciones. Primera, ejecutar ya las entrevistas de validación de la hipótesis 6: la Landing Page y el flujo de contratación están publicados y no hay motivo para postergar esa comprobación hasta que exista el backend. Segunda, conservar la separación entre quien construye y quien prueba, ampliando la guía de pruebas exploratorias a las secciones que el Sprint 3 incorpore, porque fue la práctica que produjo los únicos defectos detectados antes de la entrega. Tercera, actualizar el prototipo de Figma para que refleje lo efectivamente implementado — incluida la página de contratación, que no existía cuando se diseñó el prototipo — de modo que el diseño deje de ir por detrás del código.
 
-### Video About-the-Team
+### Video About-The-Product
+
+[Video About The Product](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202314898_upc_edu_pe/IQC4QX9cMwQ5T7GjtVecWlAlAcw3TmZmnwF97Ql2B5SfrsA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=QHbDDG)
 
 ---
 
