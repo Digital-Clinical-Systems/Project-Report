@@ -36,8 +36,9 @@
 |---|---|---|---|
 | 1.0 | 2026-08-27 | Huamán Cuba, Johan Giovani | Versión inicial del documento. Se crea la estructura base del informe con el índice de los cinco capítulos. |
 | AV1 | 2026-09-17 | <ul><li>Huamán Cuba, Johan Giovani</li><li>Sosa Soto, Oskar Rodrigo</li><li>Acuache Lucas, Mathias Joaquin</li><li>Valdez Melo, Angel Andres</li><li>Ojanama Abanto, Johnny Alexander</li></ul> | Entrega AV1. Capítulo I: perfil de la startup, perfil de la solución, proceso Lean UX y segmentos objetivo. Capítulo II: análisis competitivo, entrevistas y su análisis, needfinding, Big Picture Event Storming y Ubiquitous Language. Capítulo III: User Stories, Impact Mapping y Product Backlog. Capítulo IV: style guidelines, arquitectura de información, diseño de la landing page y de la aplicación web, prototipado, arquitectura DDD, diseño orientado a objetos y diseño de base de datos. Capítulo V: configuración del entorno, gestión del código fuente, despliegue y evidencias del Sprint 1, con la Landing Page publicada en producción. |
-| TB1 | 2026-10-06 | <ul><li>Sosa Soto, Oskar Rodrigo</li><li>Huamán Cuba, Johan Giovani</li><li>Valdez Melo, Angel Andres</li><li>Acuache Lucas, Mathias Joaquin</li><li>Ojanama Abanto, Johnny Alexander</li></ul> | Entrega TB1. Se corrigen las quince observaciones de la revisión docente del AV1. Capítulo IV: se incorporan los Bounded Context Canvases (4.6.5) y los contratos de integración entre contextos (4.6.6). Capítulo V: se documenta el Sprint 2 completo (5.2.2.1 a 5.2.2.8) con la aplicación web construida y desplegada, las pruebas exploratorias y los Issues #1 y #2 con su corrección, el flujo de contratación de la Landing Page, y se añade el diseño de las Validation Interviews (5.3). Se actualizan los Insights de colaboración con los repositorios de producto, el Student Outcome y las conclusiones. Se incorporan la bibliografía y los anexos.
+| TB1 | 2026-10-06 | <ul><li>Sosa Soto, Oskar Rodrigo</li><li>Huamán Cuba, Johan Giovani</li><li>Valdez Melo, Angel Andres</li><li>Acuache Lucas, Mathias Joaquin</li><li>Ojanama Abanto, Johnny Alexander</li></ul> | Entrega TB1. Se corrigen las quince observaciones de la revisión docente del AV1. Capítulo IV: se incorporan los Bounded Context Canvases (4.6.5) y los contratos de integración entre contextos (4.6.6). Capítulo V: se documenta el Sprint 2 completo (5.2.2.1 a 5.2.2.8) con la aplicación web construida y desplegada, las pruebas exploratorias y los Issues #1 y #2 con su corrección, el flujo de contratación de la Landing Page, y se añade el diseño de las Validation Interviews (5.3). Se actualizan los Insights de colaboración con los repositorios de producto, el Student Outcome y las conclusiones. Se incorporan la bibliografía y los anexos. |
 | TB1.1 | 2026-10-07 | Sosa Soto, Oskar Rodrigo | Actualización posterior a la entrega TB1, previa a la exposición. Capítulo IV: se incorpora el Bounded Context Canvas de BC-08 Clinical Events, surgido durante la implementación, y se corrige el canvas de BC-07 para que refleje las invariantes efectivamente construidas. Capítulo V: se documenta la ampliación del alcance que completó las veinte historias del backlog web, el servicio de datos de demostración con sus ocho recursos (5.2.2.6), las diez capturas de la aplicación, las cifras de verificación vigentes y el efecto de la ampliación sobre la distribución del trabajo. Se actualizan el alcance de las afirmaciones, la sección 5.3 y las conclusiones. |
+| AV2 | 2026-11-16 | <ul><li>Acuache Lucas, Mathias Joaquin</li><li>Sosa Soto, Oskar Rodrigo</li></ul> | Entrega AV2. Capítulo V: se documenta el Sprint 3 completo (5.2.3.1 a 5.2.3.8), dedicado a la construcción del RESTful API en el repositorio `BackClinicalSync` con los ocho Bounded Contexts, su documentación OpenAPI y su despliegue en Railway con base de datos MySQL. Se incorporan las evidencias de ejecución, de documentación de servicios y de despliegue del sprint, y el panel de contribución del repositorio del backend. Se actualiza el Student Outcome con las acciones y conclusiones de los cinco integrantes correspondientes a esta entrega. |
 
 ---
 
@@ -370,10 +371,20 @@ La observación H-14 de la revisión docente del AV1 señaló que la colaboraci�
     - [5.2.2.6. Services Documentation Evidence for Sprint Review](#5226-services-documentation-evidence-for-sprint-review)
     - [5.2.2.7. Software Deployment Evidence for Sprint Review](#5227-software-deployment-evidence-for-sprint-review)
     - [5.2.2.8. Team Collaboration Insights during Sprint](#5228-team-collaboration-insights-during-sprint)
+  - [5.2.3. Sprint 3](#523-sprint-3)
+    - [5.2.3.1. Sprint Planning 3](#5231-sprint-planning-3)
+    - [5.2.3.2. Aspect Leaders and Collaborators](#5232-aspect-leaders-and-collaborators)
+    - [5.2.3.3. Sprint Backlog 3](#5233-sprint-backlog-3)
+    - [5.2.3.4. Development Evidence for Sprint Review](#5234-development-evidence-for-sprint-review)
+    - [5.2.3.5. Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review)
+    - [5.2.3.6. Services Documentation Evidence for Sprint Review](#5236-services-documentation-evidence-for-sprint-review)
+    - [5.2.3.7. Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
+    - [5.2.3.8. Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
   - [5.3. Validation Interviews](#53-validation-interviews)
     - [5.3.1. Diseño de entrevistas](#531-diseño-de-entrevistas)
     - [5.3.2. Registro de entrevistas](#532-registro-de-entrevistas)
     - [5.3.3. Evaluaciones según heurísticas](#533-evaluaciones-según-heurísticas)
+  - [5.4. Video About-the-Product](#54-video-about-the-product)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
   - [Video About-the-Team](#video-about-the-team)
@@ -4646,15 +4657,15 @@ El sprint también responde a los hallazgos H-04 y H-14 de la revisión docente 
 ##### 5.2.3.1. Sprint Planning 3
 
 <table>
-  <tr> <th colspan="5">Sprint #</th> <th colspan="8">Sprint 2</th> </tr>
+  <tr> <th colspan="5">Sprint #</th> <th colspan="8">Sprint 3</th> </tr>
   <tr> <td colspan="13">Sprint Planning Background</td> </tr>
   <tr> <td colspan="5">Date</td> <td colspan="8">01-11-2026</td> </tr>
   <tr> <td colspan="5">Time</td> <td colspan="8">20:00</td> </tr>
   <tr> <td colspan="5">Location</td> <td colspan="8">Reunión remota (Discord)</td> </tr>
   <tr> <td colspan="5">Prepared By</td> <td colspan="8">Sosa Soto, Oskar Rodrigo</td> </tr>
   <tr> <td colspan="5">Attendees (to planning meeting)</td> <td colspan="8">Sosa Soto, Oskar Rodrigo / Acuache Lucas, Mathias Joaquin / Valdez Melo, Angel Andres / Huamán Cuba, Johan Giovani / Ojanama Abanto, Johnny Alexander</td> </tr>
-  <tr> <td colspan="5">Sprint n-2 Review Summary</td> <td colspan="8">El Sprint 2 cerró con la Landing Page desplegada en producción y la primera versión de nuestro Front End app, todo esto desplegado para la producción, ademas se levanto algunas observaciones que se tuvo previamente al sprint 2.</td> </tr>
-  <tr> <td colspan="5">Sprint n-2 Retrospective Summary</td> <td colspan="8">El equipo concluyó que el flujo <em>trunk-based</em> del Sprint 2 impidió repartir el trabajo y dejó sin evidencia la colaboración en el producto. Ademas de ello se detectaron algunos inciertos con respecto al trabajo de la versión del front end app, para este sprint 3 el equipo concluye que seguira todo como esta acordado y levantara algunas observaciones</td> </tr>
+  <tr> <td colspan="5">Sprint n-1 Review Summary</td> <td colspan="8">El Sprint 2 cerró con la Landing Page desplegada en producción y la primera versión de nuestro Front End app, todo esto desplegado para la producción, ademas se levanto algunas observaciones que se tuvo previamente al sprint 2.</td> </tr>
+  <tr> <td colspan="5">Sprint n-1 Retrospective Summary</td> <td colspan="8">El equipo concluyó que el flujo <em>trunk-based</em> del Sprint 2 impidió repartir el trabajo y dejó sin evidencia la colaboración en el producto. Ademas de ello se detectaron algunos inciertos con respecto al trabajo de la versión del front end app, para este sprint 3 el equipo concluye que seguira todo como esta acordado y levantara algunas observaciones</td> </tr>
   <tr> <td colspan="13">Sprint Goal &amp; User Stories</td> </tr>
   <tr> <td colspan="5">Sprint 3 Goal</td> <td colspan="8"> <strong>Nuestro enfoque en este sprint 3 es el de tener la primera versión de nuestro backend web app, en la cual este conectada con nuestro front end, ademas de poder levantar algunas observaciones que se tuvo con el front end y con el informe. Creemos que al momento de conectar nuestro back con el front, se mejorara algunas imprevistos que se tuvo y podra ser un mejor producto para los usuarios que nosotros queremos dar.</strong> </td> </tr>
   <tr> <td colspan="5">Story Points comprometidos (Committed SP)</td> <td colspan="8">25 Story Points</td> </tr>
@@ -4749,7 +4760,7 @@ La arquitectura de despliegue configurada consta de dos servicios integrados:
 1. **Base de Datos (`MySQL`):** Una instancia relacional en línea aprovisionada con su respectivo volumen (`mysql-volume`) para la persistencia de todos los Bounded Contexts.
 2. **Web Service (`BackClinicalSync`):** El aplicativo backend conectado directamente al repositorio de GitHub, configurado con despliegue continuo (CI/CD). Como evidencia el registro, el sistema redespliega automáticamente la aplicación al realizar integraciones hacia la rama `main` (ej. `Merge branch 'release/v1.1.0' into main`).
 
-Ambos servicios se encuentran actualmente en ejecución (estado "Online" y "ACTIVE")[cite: 182], lo que permite que la Web Application (Frontend) consuma datos reales y consolide la integración del sistema, abandonando el uso de datos simulados (mocks) del sprint anterior.
+Ambos servicios se encuentran actualmente en ejecución (estado "Online" y "ACTIVE"), lo que permite que la Web Application (Frontend) consuma datos reales y consolide la integración del sistema, abandonando el uso de datos simulados (mocks) del sprint anterior.
 
 **URL base del API en producción:** `https://backclinicalsync-production.up.railway.app/swagger-ui.html`
 
@@ -4819,6 +4830,22 @@ Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los be
 
 ---
 
+#### 5.4. Video About-the-Product
+
+El video recorre el producto construido hasta esta entrega: la Landing Page y la aplicación web publicadas en Vercel, y el RESTful API documentado en Swagger y desplegado en Railway.
+
+| Campo | Detalle |
+|---|---|
+| Enlace | [Video About The Product](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202314898_upc_edu_pe/IQC4QX9cMwQ5T7GjtVecWlAlAcw3TmZmnwF97Ql2B5SfrsA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=QHbDDG) |
+| Duración | *Por registrar.* |
+| Fecha de grabación | *Por registrar.* |
+| Integrantes que participan | *Por registrar.* |
+| Recorrido demostrado | *Por registrar:* indicar qué pantallas y qué operaciones del API se muestran, y en qué orden. |
+
+> **Estado de este apartado.** El video está grabado y publicado en el enlace indicado. Los campos marcados como *por registrar* corresponden a la ficha de verificación y aún no se han completado; mientras lo estén, este apartado no acredita por sí solo el contenido exigido por la rúbrica.
+
+---
+
 ## Conclusiones
 ### Conclusiones y recomendaciones
 
@@ -4846,9 +4873,19 @@ Después del backend corresponde la autenticación y el control de acceso, que h
 
 En paralelo, el equipo mantiene tres recomendaciones. Primera, ejecutar ya las entrevistas de validación de la hipótesis 6: la Landing Page y el flujo de contratación están publicados y no hay motivo para postergar esa comprobación hasta que exista el backend. Segunda, conservar la separación entre quien construye y quien prueba, ampliando la guía de pruebas exploratorias a las secciones que el Sprint 3 incorpore, porque fue la práctica que produjo los únicos defectos detectados antes de la entrega. Tercera, actualizar el prototipo de Figma para que refleje lo efectivamente implementado — incluida la página de contratación, que no existía cuando se diseñó el prototipo — de modo que el diseño deje de ir por detrás del código.
 
-### Video About-The-Product
 
-[Video About The Product](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202314898_upc_edu_pe/IQC4QX9cMwQ5T7GjtVecWlAlAcw3TmZmnwF97Ql2B5SfrsA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=QHbDDG)
+### Video About-the-Team
+
+| Campo | Detalle |
+|---|---|
+| Enlace | *Por registrar.* |
+| Duración | *Por registrar.* |
+| Fecha de grabación | *Por registrar.* |
+| Integrantes que participan | *Por registrar.* |
+
+**Retrospectiva del Sprint 3.** *Sección por completar.* Debe recoger, con la participación de los cinco integrantes: los problemas encontrados durante el sprint, las decisiones que se tomaron frente a ellos, los aprendizajes que el equipo traslada al siguiente sprint y los acuerdos de trabajo que cambian como consecuencia.
+
+> **Estado de este apartado.** El video del equipo y su retrospectiva no se han grabado. Este apartado se declara pendiente de forma expresa para no presentar como entregado un material que aún no existe.
 
 ---
 
