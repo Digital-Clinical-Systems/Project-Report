@@ -39,6 +39,7 @@
 | TB1 | 2026-10-06 | <ul><li>Sosa Soto, Oskar Rodrigo</li><li>Huamán Cuba, Johan Giovani</li><li>Valdez Melo, Angel Andres</li><li>Acuache Lucas, Mathias Joaquin</li><li>Ojanama Abanto, Johnny Alexander</li></ul> | Entrega TB1. Se corrigen las quince observaciones de la revisión docente del AV1. Capítulo IV: se incorporan los Bounded Context Canvases (4.6.5) y los contratos de integración entre contextos (4.6.6). Capítulo V: se documenta el Sprint 2 completo (5.2.2.1 a 5.2.2.8) con la aplicación web construida y desplegada, las pruebas exploratorias y los Issues #1 y #2 con su corrección, el flujo de contratación de la Landing Page, y se añade el diseño de las Validation Interviews (5.3). Se actualizan los Insights de colaboración con los repositorios de producto, el Student Outcome y las conclusiones. Se incorporan la bibliografía y los anexos. |
 | TB1.1 | 2026-10-07 | Sosa Soto, Oskar Rodrigo | Actualización posterior a la entrega TB1, previa a la exposición. Capítulo IV: se incorpora el Bounded Context Canvas de BC-08 Clinical Events, surgido durante la implementación, y se corrige el canvas de BC-07 para que refleje las invariantes efectivamente construidas. Capítulo V: se documenta la ampliación del alcance que completó las veinte historias del backlog web, el servicio de datos de demostración con sus ocho recursos (5.2.2.6), las diez capturas de la aplicación, las cifras de verificación vigentes y el efecto de la ampliación sobre la distribución del trabajo. Se actualizan el alcance de las afirmaciones, la sección 5.3 y las conclusiones. |
 | AV2 | 2026-11-16 | <ul><li>Acuache Lucas, Mathias Joaquin</li><li>Sosa Soto, Oskar Rodrigo</li></ul> | Entrega AV2. Capítulo V: se documenta el Sprint 3 completo (5.2.3.1 a 5.2.3.8), dedicado a la construcción del RESTful API en el repositorio `BackClinicalSync` con los ocho Bounded Contexts, su documentación OpenAPI y su despliegue en Railway con base de datos MySQL. Se incorporan las evidencias de ejecución, de documentación de servicios y de despliegue del sprint, y el panel de contribución del repositorio del backend. Se actualiza el Student Outcome con las acciones y conclusiones de los cinco integrantes correspondientes a esta entrega. |
+| TB2 | 2026-11-26 | Sosa Soto, Oskar Rodrigo | Entrega TB2. Capítulo V: se documenta el Sprint 4 completo (5.2.4.1 a 5.2.4.8), dedicado a la integración de la aplicación web con el RESTful API desplegado detrás de un inicio de sesión real, con la evidencia de ejecución verificada sobre el producto publicado. Se incorpora la sección 5.2.5 de trazabilidad de historias, ramas e integraciones, que atiende la observación de la revisión AV2 sobre la trazabilidad entre historia, rama y merge. Se corrigen las cifras de Story Points del Sprint 3 en la sección 5.2.3.1, que arrastraban las del Sprint 2, y se deja la nota de reconciliación correspondiente; se añade al Sprint Backlog 3 la historia TS-07 que estaba implementada pero no listada y se restituye el título de la TS-08, rotulada como «Alertas Críticas» en lugar de «Documentación del API con OpenAPI». Se actualiza la sección 5.3 al quedar levantada la condición que bloqueaba las Validation Interviews, y se completan los enlaces del Anexo C y del Anexo D con los artefactos desplegados. |
 
 ---
 
@@ -380,6 +381,16 @@ La observación H-14 de la revisión docente del AV1 señaló que la colaboraci�
     - [5.2.3.6. Services Documentation Evidence for Sprint Review](#5236-services-documentation-evidence-for-sprint-review)
     - [5.2.3.7. Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
     - [5.2.3.8. Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
+  - [5.2.4. Sprint 4](#524-sprint-4)
+    - [5.2.4.1. Sprint Planning 4](#5241-sprint-planning-4)
+    - [5.2.4.2. Aspect Leaders and Collaborators](#5242-aspect-leaders-and-collaborators)
+    - [5.2.4.3. Sprint Backlog 4](#5243-sprint-backlog-4)
+    - [5.2.4.4. Development Evidence for Sprint Review](#5244-development-evidence-for-sprint-review)
+    - [5.2.4.5. Execution Evidence for Sprint Review](#5245-execution-evidence-for-sprint-review)
+    - [5.2.4.6. Services Documentation Evidence for Sprint Review](#5246-services-documentation-evidence-for-sprint-review)
+    - [5.2.4.7. Software Deployment Evidence for Sprint Review](#5247-software-deployment-evidence-for-sprint-review)
+    - [5.2.4.8. Team Collaboration Insights during Sprint](#5248-team-collaboration-insights-during-sprint)
+  - [5.2.5. Trazabilidad de historias, ramas e integraciones](#525-trazabilidad-de-historias-ramas-e-integraciones)
   - [5.3. Validation Interviews](#53-validation-interviews)
     - [5.3.1. Diseño de entrevistas](#531-diseño-de-entrevistas)
     - [5.3.2. Registro de entrevistas](#532-registro-de-entrevistas)
@@ -409,7 +420,7 @@ El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cu
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
 | Comunica oralmente con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Condujo la Entrevista 1 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), formulando el guion ante un profesional externo al equipo y repreguntando sobre el flujo de evaluación del paciente.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1), donde el equipo acordó el reparto de historias por rama, y sostuvo la coordinación técnica sobre el alcance de las historias US-26 y US-27 que asumió.<br><br>AV2: Participó en el Sprint Planning 3 del 01-11-2026 (sección 5.2.3.1) y asumió el liderazgo de dos aspectos de la matriz de la sección 5.2.3.2, las alertas críticas y el montaje y despliegue del backend, lo que lo obligó a explicar al equipo qué eventos de dominio consume su contexto de los demás y qué variables de entorno necesitaba cada integrante para levantar el servicio.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Condujo la Entrevista 1 del segmento de personal de enfermería cardiovascular (sección 2.2.2) y expuso en video el prototipo del Sprint 1 (sección 4.5), recorriendo la Landing Page publicada en producción y el prototipo de la aplicación web.<br><br>TB1: Condujo el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1), donde expuso ante el equipo las quince observaciones de la revisión docente del AV1, explicó por qué la concentración de autoría afectaba la calificación y negoció el reparto de historias y la fecha de corte de cada una.<br><br>AV2: Preparó y condujo el Sprint Planning 3 del 01-11-2026 (sección 5.2.3.1), donde expuso el objetivo del sprint y acordó con el equipo la matriz de líderes de aspecto de la sección 5.2.3.2, de modo que cada integrante quedara como responsable nombrado de al menos un componente de la arquitectura. Sostuvo además la coordinación sobre el contrato de la fachada de identidad, de la que dependen los cinco contextos restantes.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Condujo la Entrevista 2 del segmento de personal de enfermería cardiovascular (sección 2.2.2), adaptando el lenguaje del guion técnico al vocabulario asistencial del entrevistado.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1) y asumió la tarea de pruebas exploratorias, consultando el alcance de la revisión antes de ejecutarla.<br><br>AV2: Participó en el Sprint Planning 3 del 01-11-2026 (sección 5.2.3.1) y asumió el liderazgo compartido de los aspectos de pacientes e indicaciones médicas y de registros clínicos, lo que exigió acordar con Johnny Ojanama y con Angel Valdez el reparto de las historias TS-03 y TS-05, que cruzaban más de un contexto.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Condujo la Entrevista 3 del segmento de personal de enfermería cardiovascular (sección 2.2.2), indagando sobre el registro en papel durante la atención y el traspaso al cierre del turno.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1) y expuso al equipo la decisión de modelar la indicación médica con reemplazo e historial en lugar del ciclo de ejecución previsto, justificando el cambio frente a la invariante declarada en la sección 4.6.5.<br><br>AV2: Participó en el Sprint Planning 3 del 01-11-2026 (sección 5.2.3.1) y asumió el liderazgo de los aspectos de pacientes y de traspasos SBAR, exponiendo al equipo la regla de acuse de recibo que condiciona el cierre del turno y por qué el contenido SBAR debía viajar completo en una sola operación.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Condujo la Entrevista 2 del segmento de médicos especialistas cardiovasculares (sección 2.2.2), recogiendo la perspectiva del especialista sobre la consulta del estado del paciente.<br><br>TB1: Participó en el Sprint Planning 2 del 02-10-2026 (sección 5.2.2.1) y planteó al equipo la duda sobre el selector de rol de la aplicación, cuestionando que un enfermero pudiera emitir indicaciones médicas; la discusión derivó en el reporte del Issue #1.<br><br>AV2: Participó en el Sprint Planning 3 del 01-11-2026 (sección 5.2.3.1) y asumió el liderazgo de los aspectos de registros clínicos y de trazabilidad, acordando con el equipo que la bitácora se alimentaría de los eventos de dominio que cada contexto ya publica, en lugar de pedir a cada integrante que emitiera un evento de auditoría propio. | El equipo concluye que exponer el dominio clínico ante profesionales de salud obligó a abandonar el vocabulario técnico de software y a hablar en los términos del turno asistencial. Las entrevistas, conducidas por los cinco integrantes, fueron la fuente directa de los hallazgos de la sección 2.2.3 y del Ubiquitous Language de la sección 2.5. El registro en video del prototipo mostró además que demostrar un producto funcionando comunica el alcance con más precisión que describirlo.<br><br>TB1: El equipo concluye que la comunicación oral en este sprint cambió de público: ya no se dirigió a usuarios externos sino al propio equipo. El Sprint Planning 2 obligó a exponer las quince observaciones de la revisión docente sin suavizarlas y a negociar un reparto verificable de historias por rama. Las preguntas que los integrantes sin experiencia en QA formularon sobre el alcance de las pruebas mostraron que una tarea solo queda asignada cuando quien la recibe puede explicarla con sus palabras.<br><br>AV2: El equipo concluye que en este sprint la comunicación oral tuvo que ocurrir antes de escribir el código y no después. Con cinco contextos construidos en ramas separadas, acordar en el Sprint Planning 3 quién lideraba cada aspecto y qué contrato expondría cada módulo fue la condición para que las piezas encajaran al integrarlas: la fachada de identidad, acordada antes de implementarse, fue consumida por los cinco contextos restantes sin que ninguno tuviera que modificarla. La matriz de líderes de aspecto respondió además a la observación del sprint anterior, al dejar a cada integrante como responsable nombrado de al menos un componente de la arquitectura. |
-| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Redactó el Big Picture Event Storming (sección 2.4), la arquitectura orientada al dominio (secciones 4.6.1 a 4.6.4), los diagramas de clases (4.7.1) y de base de datos (4.8.1), y la configuración del entorno de desarrollo y la gestión del código fuente (5.1.1 a 5.1.4).<br><br>TB1: Implementó las historias US-26 y US-27 en la rama `feature/us-26-vista-consolidada` del repositorio `FrontClinicalSync`, con seis commits que incluyen el modelo de lectura de la evolución del paciente, su filtro por rango de tiempo y las pruebas que lo verifican, además de la documentación de esa suite en el README del repositorio.<br><br>AV2: Creó el proyecto backend y el shared kernel del repositorio `BackClinicalSync` —agregado base, interfaz de eventos de dominio, manejo uniforme de errores, auditoría JPA y configuración de OpenAPI— e implementó la historia TS-08 en la rama `feature/alerts`, con el agregado `Alert` y su ciclo abierta–reconocida–resuelta, los manejadores que reaccionan a la evaluación de riesgo y al evento clínico crítico, su persistencia y sus endpoints. Documentó después en el README del repositorio las variables de entorno del despliegue y la forma de conectar el frontend.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Redactó el análisis de entrevistas (2.2.3), el Capítulo III completo (User Stories, Impact Mapping y Product Backlog), la arquitectura de información (4.2), el prototipado del Sprint 1 (4.5) y las evidencias de ejecución y despliegue del Capítulo V.<br><br>TB1: Documentó las ocho subsecciones del Sprint 2 (5.2.2.1 a 5.2.2.8), redactó los Bounded Context Canvases y los contratos de integración (4.6.5 y 4.6.6), la sección de Validation Interviews (5.3), la bibliografía y los anexos. Corrigió las quince observaciones de la revisión docente del AV1 e implementó la historia US-29, los criterios de aceptación del sprint y la guía de pruebas exploratorias dirigida a los integrantes sin experiencia en QA. Completó después las diez historias restantes del backlog web y documentó el contexto BC-08 que surgió al implementarlas, dejando registrado por escrito —en las secciones 5.2.2.3, 5.2.2.4 y 5.2.2.8— que ese trabajo se hizo en solitario, fuera del compromiso del sprint y saltándose la disciplina de ramas que el propio informe defiende.<br><br>AV2: Implementó la historia TS-01 en la rama `feature/iam` del repositorio `BackClinicalSync`, con cinco commits que entregan el agregado `User` y sus invariantes, los servicios de comando y consulta con la siembra de los usuarios de demostración, la persistencia JPA con hash BCrypt y la emisión de tokens JWT, la cadena de seguridad sin estado con autorización por rol, y los endpoints de autenticación, usuarios y roles junto con la fachada `IamContextFacade` que consumen los cinco contextos restantes.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Redactó el perfil de la startup (1.1), los Lean UX Assumptions, Hypothesis Statements y Lean UX Canvas (1.2.2.2 a 1.2.2.4), y documentó los wireframes y mock-ups de la Landing Page.<br><br>TB1: Ejecutó pruebas exploratorias sobre la aplicación desplegada y reportó el Issue #2 del repositorio `FrontClinicalSync`, documentando los pasos para reproducir la exposición de identificadores internos en la bitácora de auditoría y proponiendo dos alternativas de corrección.<br><br>AV2: Implementó las historias TS-03 y TS-05 en las ramas `feature/clinical-events` y `feature/medical-orders`, con el agregado `ClinicalEvent` para medicación y observaciones y el agregado `MedicalOrder` con sus reglas de emisión y cumplimiento, los servicios de comando y consulta de ambos contextos, su persistencia y sus endpoints. Redactó además las ocho subsecciones del Sprint 3 (5.2.3.1 a 5.2.3.8), incluidas las evidencias de ejecución, de documentación de servicios y de despliegue.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Redactó los antecedentes y la problemática (1.2.1), los Lean UX Problem Statements y los segmentos objetivo (1.3), y el diseño UX/UI de la aplicación web (4.4.2 wireflow diagrams, 4.4.3 mock-ups y 4.4.4 user flow diagrams).<br><br>TB1: Implementó la historia US-22 en la rama `feature/us-22-indicaciones-medicas`, con el agregado `MedicalOrder` del contexto BC-07, sus invariantes y seis pruebas que las verifican. Amplió además el verificador automático de fronteras para someter su propio contexto a las reglas de dependencia declaradas en la sección 4.6.6.<br><br>AV2: Implementó las historias TS-02 y TS-04 en las ramas `feature/patients` y `feature/handover`, con el agregado `Patient` y sus reglas de admisión y alta, el agregado de traspaso SBAR con su regla de acuse de recibo, la persistencia de ambos contextos, sus endpoints y la fachada de contexto de pacientes que los demás contextos consultan para validar que un paciente existe y está internado.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Redactó las style guidelines generales y web (4.1.1 y 4.1.2), las Epics 01 y 02 con sus User Stories y Technical Stories, los wireframes y mock-ups de la aplicación web, y las tablas de development evidence del Sprint 1 (5.2.1.4).<br><br>TB1: Ejecutó pruebas exploratorias sobre la aplicación desplegada y reportó el Issue #1 del repositorio `FrontClinicalSync`, describiendo con pasos reproducibles la aparición de un identificador técnico en la vista de alertas y distinguiendo ese defecto de los atajos de demostración declarados.<br><br>AV2: Implementó las historias TS-03 y TS-06 en las ramas `feature/vital-signs` y `feature/audit`, con el agregado `VitalSignRecord` y el evaluador que deriva el nivel de riesgo clínico de cada toma, el agregado inmutable de bitácora con su tipo de acción derivado, los servicios de ambos contextos, su persistencia y sus endpoints de solo lectura. El evaluador de riesgo quedó cubierto por diecinueve pruebas unitarias. | El equipo concluye que documentar en un repositorio compartido impone una disciplina que un documento aislado no exige: cada sección debe ser legible para los demás integrantes y trazable hasta el commit que la originó. Trabajar con una rama por capítulo y con Conventional Commits permitió avanzar en paralelo y, al integrar, detectar y corregir incoherencias entre lo redactado y lo efectivamente construido.<br><br>TB1: El equipo concluye que escribir para un lector técnico externo es distinto de escribir para el propio equipo. Documentar los Bounded Context Canvases y los contratos de integración obligó a fijar por escrito invariantes y reglas de dependencia que antes solo existían como acuerdo verbal, y el verificador automático de fronteras convirtió esa documentación en una condición que el repositorio comprueba. Los reportes de issues redactados por dos integrantes demostraron además que un defecto solo es accionable cuando el texto permite reproducirlo.<br><br>AV2: El equipo concluye que documentar un servicio web cambia el destinatario del texto: la especificación OpenAPI publicada en Swagger es a la vez documentación para una persona y contrato verificable para un programa, de modo que quien consume la API puede conocer el contrato sin preguntarlo. El sprint cerró con diecinueve de los veinticinco Story Points comprometidos, y el documento lo registra así en la sección 5.2.3.1 en lugar de ajustar el compromiso a lo efectivamente alcanzado. |
+| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **Huamán Cuba, Johan Giovani**<br>AV1: Redactó el Big Picture Event Storming (sección 2.4), la arquitectura orientada al dominio (secciones 4.6.1 a 4.6.4), los diagramas de clases (4.7.1) y de base de datos (4.8.1), y la configuración del entorno de desarrollo y la gestión del código fuente (5.1.1 a 5.1.4).<br><br>TB1: Implementó las historias US-26 y US-27 en la rama `feature/us-26-vista-consolidada` del repositorio `FrontClinicalSync`, con seis commits que incluyen el modelo de lectura de la evolución del paciente, su filtro por rango de tiempo y las pruebas que lo verifican, además de la documentación de esa suite en el README del repositorio.<br><br>AV2: Creó el proyecto backend y el shared kernel del repositorio `BackClinicalSync` —agregado base, interfaz de eventos de dominio, manejo uniforme de errores, auditoría JPA y configuración de OpenAPI—, con lo que resolvió las historias técnicas TS-07 y TS-08, y adelantó el soporte de backend de la historia US-28 en la rama `feature/alerts`, con el agregado `Alert` y su ciclo abierta–reconocida–resuelta, los manejadores que reaccionan a la evaluación de riesgo y al evento clínico crítico, su persistencia y sus endpoints. Documentó después en el README del repositorio las variables de entorno del despliegue y la forma de conectar el frontend.<br><br>**Sosa Soto, Oskar Rodrigo**<br>AV1: Redactó el análisis de entrevistas (2.2.3), el Capítulo III completo (User Stories, Impact Mapping y Product Backlog), la arquitectura de información (4.2), el prototipado del Sprint 1 (4.5) y las evidencias de ejecución y despliegue del Capítulo V.<br><br>TB1: Documentó las ocho subsecciones del Sprint 2 (5.2.2.1 a 5.2.2.8), redactó los Bounded Context Canvases y los contratos de integración (4.6.5 y 4.6.6), la sección de Validation Interviews (5.3), la bibliografía y los anexos. Corrigió las quince observaciones de la revisión docente del AV1 e implementó la historia US-29, los criterios de aceptación del sprint y la guía de pruebas exploratorias dirigida a los integrantes sin experiencia en QA. Completó después las diez historias restantes del backlog web y documentó el contexto BC-08 que surgió al implementarlas, dejando registrado por escrito —en las secciones 5.2.2.3, 5.2.2.4 y 5.2.2.8— que ese trabajo se hizo en solitario, fuera del compromiso del sprint y saltándose la disciplina de ramas que el propio informe defiende.<br><br>AV2: Implementó la historia TS-01 en la rama `feature/iam` del repositorio `BackClinicalSync`, con cinco commits que entregan el agregado `User` y sus invariantes, los servicios de comando y consulta con la siembra de los usuarios de demostración, la persistencia JPA con hash BCrypt y la emisión de tokens JWT, la cadena de seguridad sin estado con autorización por rol, y los endpoints de autenticación, usuarios y roles junto con la fachada `IamContextFacade` que consumen los cinco contextos restantes.<br><br>**Acuache Lucas, Mathias Joaquin**<br>AV1: Redactó el perfil de la startup (1.1), los Lean UX Assumptions, Hypothesis Statements y Lean UX Canvas (1.2.2.2 a 1.2.2.4), y documentó los wireframes y mock-ups de la Landing Page.<br><br>TB1: Ejecutó pruebas exploratorias sobre la aplicación desplegada y reportó el Issue #2 del repositorio `FrontClinicalSync`, documentando los pasos para reproducir la exposición de identificadores internos en la bitácora de auditoría y proponiendo dos alternativas de corrección.<br><br>AV2: Implementó las historias TS-03 y TS-05 en las ramas `feature/clinical-events` y `feature/medical-orders`, con el agregado `ClinicalEvent` para medicación y observaciones y el agregado `MedicalOrder` con sus reglas de emisión y cumplimiento, los servicios de comando y consulta de ambos contextos, su persistencia y sus endpoints. Redactó además las ocho subsecciones del Sprint 3 (5.2.3.1 a 5.2.3.8), incluidas las evidencias de ejecución, de documentación de servicios y de despliegue.<br><br>**Valdez Melo, Angel Andres**<br>AV1: Redactó los antecedentes y la problemática (1.2.1), los Lean UX Problem Statements y los segmentos objetivo (1.3), y el diseño UX/UI de la aplicación web (4.4.2 wireflow diagrams, 4.4.3 mock-ups y 4.4.4 user flow diagrams).<br><br>TB1: Implementó la historia US-22 en la rama `feature/us-22-indicaciones-medicas`, con el agregado `MedicalOrder` del contexto BC-07, sus invariantes y seis pruebas que las verifican. Amplió además el verificador automático de fronteras para someter su propio contexto a las reglas de dependencia declaradas en la sección 4.6.6.<br><br>AV2: Implementó las historias TS-02 y TS-04 en las ramas `feature/patients` y `feature/handover`, con el agregado `Patient` y sus reglas de admisión y alta, el agregado de traspaso SBAR con su regla de acuse de recibo, la persistencia de ambos contextos, sus endpoints y la fachada de contexto de pacientes que los demás contextos consultan para validar que un paciente existe y está internado.<br><br>**Ojanama Abanto, Johnny Alexander**<br>AV1: Redactó las style guidelines generales y web (4.1.1 y 4.1.2), las Epics 01 y 02 con sus User Stories y Technical Stories, los wireframes y mock-ups de la aplicación web, y las tablas de development evidence del Sprint 1 (5.2.1.4).<br><br>TB1: Ejecutó pruebas exploratorias sobre la aplicación desplegada y reportó el Issue #1 del repositorio `FrontClinicalSync`, describiendo con pasos reproducibles la aparición de un identificador técnico en la vista de alertas y distinguiendo ese defecto de los atajos de demostración declarados.<br><br>AV2: Implementó las historias TS-03 y TS-06 en las ramas `feature/vital-signs` y `feature/audit`, con el agregado `VitalSignRecord` y el evaluador que deriva el nivel de riesgo clínico de cada toma, el agregado inmutable de bitácora con su tipo de acción derivado, los servicios de ambos contextos, su persistencia y sus endpoints de solo lectura. El evaluador de riesgo quedó cubierto por diecinueve pruebas unitarias. | El equipo concluye que documentar en un repositorio compartido impone una disciplina que un documento aislado no exige: cada sección debe ser legible para los demás integrantes y trazable hasta el commit que la originó. Trabajar con una rama por capítulo y con Conventional Commits permitió avanzar en paralelo y, al integrar, detectar y corregir incoherencias entre lo redactado y lo efectivamente construido.<br><br>TB1: El equipo concluye que escribir para un lector técnico externo es distinto de escribir para el propio equipo. Documentar los Bounded Context Canvases y los contratos de integración obligó a fijar por escrito invariantes y reglas de dependencia que antes solo existían como acuerdo verbal, y el verificador automático de fronteras convirtió esa documentación en una condición que el repositorio comprueba. Los reportes de issues redactados por dos integrantes demostraron además que un defecto solo es accionable cuando el texto permite reproducirlo.<br><br>AV2: El equipo concluye que documentar un servicio web cambia el destinatario del texto: la especificación OpenAPI publicada en Swagger es a la vez documentación para una persona y contrato verificable para un programa, de modo que quien consume la API puede conocer el contrato sin preguntarlo. El sprint cerró completando los treinta y un Story Points comprometidos, que son los que el Product Backlog asigna a la Entrega 3. El documento registra además, en la nota de reconciliación de la sección 5.2.3.1, que la versión entregada en el AV2 declaraba otras cifras por arrastre de la plantilla del sprint anterior, y deja constancia de la corrección en lugar de aplicarla en silencio. |
 
 ---
 
@@ -4668,10 +4679,12 @@ El sprint también responde a los hallazgos H-04 y H-14 de la revisión docente 
   <tr> <td colspan="5">Sprint n-1 Retrospective Summary</td> <td colspan="8">El equipo concluyó que el flujo <em>trunk-based</em> del Sprint 2 impidió repartir el trabajo y dejó sin evidencia la colaboración en el producto. Ademas de ello se detectaron algunos inciertos con respecto al trabajo de la versión del front end app, para este sprint 3 el equipo concluye que seguira todo como esta acordado y levantara algunas observaciones</td> </tr>
   <tr> <td colspan="13">Sprint Goal &amp; User Stories</td> </tr>
   <tr> <td colspan="5">Sprint 3 Goal</td> <td colspan="8"> <strong>Nuestro enfoque en este sprint 3 es el de tener la primera versión de nuestro backend web app, en la cual este conectada con nuestro front end, ademas de poder levantar algunas observaciones que se tuvo con el front end y con el informe. Creemos que al momento de conectar nuestro back con el front, se mejorara algunas imprevistos que se tuvo y podra ser un mejor producto para los usuarios que nosotros queremos dar.</strong> </td> </tr>
-  <tr> <td colspan="5">Story Points comprometidos (Committed SP)</td> <td colspan="8">25 Story Points</td> </tr>
-  <tr> <td colspan="5">Story Points completados (Completed SP)</td> <td colspan="8">19 Story Points</td> </tr>
-  <tr> <td colspan="5">Velocity</td> <td colspan="8">La velocity de referencia disponible al planificar era de <strong>28 Story Points</strong>, obtenida del Sprint 1 y 2. El equipo comprometió deliberadamente menos (25 SP) por tratarse del primer sprint con desarrollo de lógica de dominio y por la incertidumbre de partir de un proyecto recién creado. La velocity resultante del Sprint 3 es de <strong>19 Story Points</strong>, calculada sobre los puntos efectivamente completados.</td> </tr>
+  <tr> <td colspan="5">Story Points comprometidos (Committed SP)</td> <td colspan="8">31 Story Points</td> </tr>
+  <tr> <td colspan="5">Story Points completados (Completed SP)</td> <td colspan="8">31 Story Points</td> </tr>
+  <tr> <td colspan="5">Velocity</td> <td colspan="8">La velocity de referencia disponible al planificar era de <strong>19 Story Points</strong>, obtenida del Sprint 2 cerrado. El equipo comprometió por encima de esa referencia los <strong>31 Story Points</strong> que el Product Backlog asigna íntegramente a la Entrega 3, al tratarse de ocho historias técnicas que podían repartirse una por integrante y desarrollarse en paralelo sin dependencias entre sí, y los completó. La velocity resultante del Sprint 3 es de <strong>31 Story Points</strong>.</td> </tr>
 </table>
+
+**Nota de reconciliación de Story Points.** Las cifras de esta tabla fueron corregidas después de la entrega AV2. La versión entregada declaraba 25 Story Points comprometidos y 19 completados, que son exactamente las cifras del Sprint 2 y no las de este sprint: se arrastraron al reutilizar la plantilla de la tabla anterior. Ninguna de las dos cuadraba con el contenido del sprint, porque las ocho historias técnicas que el Product Backlog de la sección 3.3 asigna a la Entrega 3 suman 31 Story Points y las siete listadas en el Sprint Backlog de la sección 5.2.3.3 sumaban 29. El equipo verificó que las ocho historias están implementadas en el repositorio —incluida la TS-07, cuyo manejador global de errores no figuraba en el Sprint Backlog pese a estar construido— y corrigió las cifras a 31 comprometidos y 31 completados. La corrección se registra aquí y en el Registro de Versiones en lugar de aplicarse en silencio, porque alterar una cifra de un entregable ya evaluado sin dejar constancia haría inverificable el historial del documento.
 
 ##### 5.2.3.2. Aspect Leaders and Collaborators
 
@@ -4697,7 +4710,11 @@ Durante el Sprint 3, el equipo se enfocó en desarrollar las Technical Stories (
 | **TS-04** | Gestión de traspasos SBAR mediante API | Valdez Melo, Angel | BC-05: Handover (SBAR) | Completado |
 | **TS-05** | Gestión de indicaciones médicas mediante API | Acuache Lucas, Mathias | BC-07: Physicians & Treatments | Completado |
 | **TS-06** | Registro automático de trazabilidad (Auditoría) | Ojanama Abanto, Johnny | BC-06: Audit Logs | Completado |
-| **TS-08** | Implementación de sistema de Alertas Críticas | Huamán Cuba, Johan | BC-04: Critical Events & Alerts | Completado |
+| **TS-07** | Manejo consistente de errores del API | Huamán Cuba, Johan | Shared Kernel | Completado |
+| **TS-08** | Documentación del API con OpenAPI | Huamán Cuba, Johan | Shared Kernel (configuración OpenAPI) | Completado |
+| **US-28** | Identificar cambios críticos mediante alertas *(soporte de backend adelantado de la Entrega 4)* | Huamán Cuba, Johan | BC-04: Critical Events & Alerts | Parcial: backend completado |
+
+**Sobre las dos últimas filas.** Las historias TS-07 y TS-08 figuran como responsabilidad de un mismo integrante porque ambas se resolvieron en el Shared Kernel del repositorio: el manejador global de errores que uniforma las respuestas de todos los recursos y la configuración de OpenAPI que publica la especificación. La versión entregada en el AV2 omitía la TS-07 y rotulaba la TS-08 como «Implementación de sistema de Alertas Críticas», que no es su título: el Capítulo III define la TS-08 como «Documentación del API con OpenAPI». El rótulo provenía de que ese integrante construyó además el contexto de alertas, trabajo que corresponde a la historia **US-28** de la Entrega 4 y que se adelantó en este sprint; por eso aparece ahora como fila propia y declarada como adelanto, en lugar de ocupar el lugar de una historia técnica distinta. Esa fila se declara **parcial** y no completada, y sus 5 Story Points no se contabilizan en este sprint: US-28 está redactada desde la perspectiva del profesional clínico —que el sistema le señale los cambios críticos del paciente—, de modo que no queda satisfecha mientras la alerta exista en la base de datos pero no llegue a la pantalla con datos reales. Su cierre se documenta en la sección 5.2.4.3.
 
 ##### 5.2.3.4. Development Evidence for Sprint Review
 
@@ -4792,11 +4809,343 @@ Como se observa en el panel, los cinco miembros del equipo registraron commits d
 Esta distribución homogénea de código fuente demuestra el compromiso del equipo con la metodología Scrum y el flujo de trabajo colaborativo, validando que todos los integrantes participaron activamente en el desarrollo de la arquitectura del software.
 
 
+#### 5.2.4. Sprint 4
+
+El Sprint 4 cierra el producto. A diferencia de los tres anteriores, no construye una capa nueva: integra las dos que ya existían. La aplicación web abandona el servicio de datos de demostración descrito en la sección 5.2.2.6 y pasa a operar contra el RESTful API desplegado, detrás de un inicio de sesión real, de modo que cada registro clínico queda atribuido al profesional que lo produjo y persiste entre sesiones.
+
+El sprint atiende de forma directa la limitación que el propio equipo declaró al cerrar el Sprint 3 en la sección 5.2.3.7: el API estaba construido y publicado, pero la aplicación no lo consumía, y su base de datos solo contenía el directorio de profesionales y los ocho pacientes. Esa doble condición —cliente sin conexión y base sin historia clínica— es la que este sprint resuelve, y es también la que mantenía bloqueadas las Validation Interviews de la sección 5.3.
+
+##### 5.2.4.1. Sprint Planning 4
+
+<table>
+  <tr> <th colspan="5">Sprint #</th> <th colspan="8">Sprint 4</th> </tr>
+  <tr> <td colspan="13">Sprint Planning Background</td> </tr>
+  <tr> <td colspan="5">Date</td> <td colspan="8">17-11-2026</td> </tr>
+  <tr> <td colspan="5">Time</td> <td colspan="8">20:00</td> </tr>
+  <tr> <td colspan="5">Location</td> <td colspan="8">Reunión remota (Discord)</td> </tr>
+  <tr> <td colspan="5">Prepared By</td> <td colspan="8">Sosa Soto, Oskar Rodrigo</td> </tr>
+  <tr> <td colspan="5">Attendees (to planning meeting)</td> <td colspan="8">Sosa Soto, Oskar Rodrigo / Acuache Lucas, Mathias Joaquin / Valdez Melo, Angel Andres / Huamán Cuba, Johan Giovani / Ojanama Abanto, Johnny Alexander</td> </tr>
+  <tr> <td colspan="5">Sprint n-1 Review Summary</td> <td colspan="8">El Sprint 3 cerró con el RESTful API construido sobre los ocho Bounded Contexts y desplegado en Railway con su base MySQL, documentado en OpenAPI y con la distribución de autoría equilibrada que exigía la observación H-14. La integración con la aplicación web, en cambio, no se alcanzó: el cliente siguió operando sobre el servicio de datos de demostración y la base solo contenía el directorio de profesionales y los ocho pacientes, sin historia clínica.</td> </tr>
+  <tr> <td colspan="5">Sprint n-1 Retrospective Summary</td> <td colspan="8">El equipo reconoció que la integración no se dejó fuera del Sprint 3 por falta de tiempo sino por una omisión de planificación: ninguna historia del Sprint Backlog 3 cubría el consumo del API desde el cliente, de modo que el trabajo nunca tuvo responsable asignado. Esa omisión tuvo un costo encadenado, porque mantuvo bloqueadas las Validation Interviews de la sección 5.3, que dependían de datos persistentes. El equipo acordó que el Sprint 4 abriera con esa integración y no con funcionalidad nueva.</td> </tr>
+  <tr> <td colspan="13">Sprint Goal &amp; User Stories</td> </tr>
+  <tr> <td colspan="5">Sprint 4 Goal</td> <td colspan="8"> <strong>Nuestro enfoque en este Sprint 4 es entregar la solución integrada: que la aplicación web opere contra el RESTful API desplegado detrás de un inicio de sesión real, de modo que cada registro clínico quede atribuido a quien lo produjo y persista entre sesiones. Creemos que al cerrar esa integración las ocho historias de la Entrega 4 dejan de depender de datos simulados y el producto queda en condiciones de ser contrastado con usuarios reales en las Validation Interviews, que es lo que el proyecto necesita para pasar de una hipótesis construida a una hipótesis verificada.</strong> </td> </tr>
+  <tr> <td colspan="5">Story Points comprometidos (Committed SP)</td> <td colspan="8">28 Story Points</td> </tr>
+  <tr> <td colspan="5">Story Points completados (Completed SP)</td> <td colspan="8">28 Story Points</td> </tr>
+  <tr> <td colspan="5">Velocity</td> <td colspan="8">La velocity de referencia disponible al planificar era de <strong>31 Story Points</strong>, obtenida del Sprint 3 cerrado. El equipo comprometió los <strong>28 Story Points</strong> que el Product Backlog asigna íntegramente a la Entrega 4, y los completó. La cifra exige una precisión que se detalla en la sección 5.2.4.3: de esos 28 Story Points, 16 corresponden a cinco historias cuya interfaz ya se había construido en el Sprint 2 sobre datos simulados y que en este sprint quedaron efectivamente operativas sobre datos persistidos, mientras que 12 corresponden a las tres historias que se construyen por primera vez. El equipo registra además que el trabajo de mayor volumen del sprint —el consumo de la autenticación desde el cliente y la sustitución del servicio de datos de demostración— no tiene historia propia en el Product Backlog, de modo que no suma Story Points pese a haber sido la condición de todo lo demás.</td> </tr>
+</table>
+
+##### 5.2.4.2. Aspect Leaders and Collaborators
+
+La matriz de este sprint se aparta de la de los tres anteriores, y el equipo la registra tal como ocurrió en lugar de presentarla como una distribución que no se dio. La integración del frontend con el API, el inicio de sesión y la siembra de la historia clínica de demostración fueron asumidos íntegramente por un integrante, mientras que el resto del equipo tomó los aspectos de validación y audiovisuales que cierran la entrega.
+
+| Team Member (Last Name, First Name) | GitHub Username | Autenticación en el cliente | Integración Frontend ↔ API | Siembra de datos clínicos | Validation Interviews | Evaluación heurística | Videos About-the-Product / About-the-Team |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Sosa Soto, Oskar Rodrigo | YakuzaMeen | L | L | L | C | C | C |
+| Huamán Cuba, Johan Giovani | Johancuba | — | — | — | L | C | C |
+| Acuache Lucas, Mathias Joaquin | MathiasA25 | — | — | — | C | L | C |
+| Valdez Melo, Angel Andres | AngelValdezM | — | — | — | C | C | L |
+| Ojanama Abanto, Johnny Alexander | JohnnyGZ41 | — | — | — | L | C | C |
+
+El guion "—" indica que el integrante no registró participación en ese aspecto, y se usa deliberadamente en lugar de una "C" de colaborador: marcar como colaboración una participación que no ocurrió haría inverificable toda la matriz. La sección 5.2.4.8 analiza esta concentración y su relación con la observación H-14 de la revisión docente del AV1.
+
+##### 5.2.4.3. Sprint Backlog 4
+
+El Sprint Backlog 4 toma las ocho historias que el Product Backlog de la sección 3.3 asigna a la **Entrega 4 — Aplicación completa**. Su naturaleza es distinta a la de los sprints anteriores: cinco de estas historias ya tenían interfaz construida desde el Sprint 2, pero operaban sobre el servicio de datos de demostración, sin persistencia ni atribución. El Product Backlog había previsto exactamente esta condición al justificar el orden de las entregas: *"la Entrega 4 agrupa lo que exige la solución integrada: las alertas y la priorización requieren datos reales fluyendo desde el API"*. Este sprint es el que hace que esos datos fluyan.
+
+| Story ID | Título de la Historia | SP | Estado al Sprint 2 | Trabajo del Sprint 4 | Estado |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **US-28** | Identificar cambios críticos mediante alertas | 5 | Backend adelantado en el Sprint 3 | La política del servidor queda como única fuente y deja de replicarse en el cliente; la alerta derivada llega a la pantalla con datos reales | Completado |
+| **US-30** | Consultar la bitácora de acciones del paciente | 5 | No iniciada | La bitácora se lee del API y deja de escribirse desde el cliente: las entradas las deriva el servidor de los eventos de dominio | Completado |
+| **US-31** | Identificar al responsable de un registro | 2 | No iniciada | El directorio se indexa por el identificador con que el API nombra a las personas, de modo que cada registro muestra un nombre propio y no un número | Completado |
+| **US-16** | Generar el traspaso a partir de lo registrado | 5 | Interfaz sobre datos simulados | El borrador SBAR se compone del último control, las indicaciones vigentes y las alertas sin cerrar que devuelve el API | Completado |
+| **US-21** | Identificar la documentación pendiente | 3 | Interfaz sobre datos simulados | Los huecos de registro se calculan sobre las marcas de tiempo que sella el servidor | Completado |
+| **US-25** | Identificar las indicaciones pendientes | 2 | Interfaz sobre datos simulados | El estado de cumplimiento proviene del agregado persistido y no del estado local | Completado |
+| **US-29** | Priorizar los pacientes según su riesgo | 3 | Interfaz sobre datos simulados | El nivel de riesgo se deriva de los controles persistidos del turno | Completado |
+| **US-32** | Consultar el historial de cambios de un registro | 3 | Interfaz sobre datos simulados | El historial se filtra sobre la bitácora que generó el servidor | Completado |
+| | **Total** | **28** | | | |
+
+**Trabajo sin historia asignada.** El equipo deja constancia de que el esfuerzo principal del sprint no aparece en esta tabla. El consumo de la autenticación desde el cliente —pantalla de ingreso, almacenamiento de la sesión, interceptor que firma cada petición y guarda de ruta— y la sustitución del servicio de datos de demostración por el API en los ocho contextos no corresponden a ninguna historia del Product Backlog: la historia TS-01 cubre la autenticación del lado del servidor y quedó cerrada en el Sprint 3, y ninguna historia previó el lado del cliente. Es la misma omisión de planificación que la retrospectiva del Sprint 3 identificó, y el equipo la registra en lugar de crear retroactivamente una historia que no se planificó, porque un backlog que se reescribe para encajar con lo hecho deja de servir como instrumento de planificación.
+##### 5.2.4.4. Development Evidence for Sprint Review
+
+El trabajo se realizó en dos repositorios. En `FrontClinicalSync` se abrió la rama `feature/iam-login`, que concentra la autenticación y la migración de los ocho contextos al API; en `BackClinicalSync` se abrió `feature/demo-clinical-data`, que siembra la historia clínica del turno en curso. Ambas se integraron a `main` por fast-forward una vez verificadas, de modo que el historial conserva cada paso por separado y no un único commit de integración.
+
+La secuencia de commits refleja el orden en que la integración tuvo que ocurrir: primero la frontera de red, después la sesión, después las lecturas y solo entonces las escrituras, porque cada capa es condición de la siguiente.
+
+| Repositorio · Rama | Commit | Mensaje |
+| :--- | :--- | :--- |
+| `FrontClinicalSync`<br>`feature/iam-login` | `3576a67` | `build: route /api/v1 to the deployed backend from development and production` |
+| | `5524894` | `feat(iam): add session, authentication port and HTTP adapter` |
+| | `5e4f7a7` | `feat(iam): add the sign-in screen` |
+| | `a086acb` | `refactor(app): mount the application behind the session guard and load its data after sign-in` |
+| | `69fe0c5` | `feat(iam): read the professional directory from the persistent API` |
+| | `363177d` | `feat(app): read every clinical context from the persistent API with the session token` |
+| | `af3f8e2` | `refactor(shared): propagate write failures and convert identifiers at the API boundary` |
+| | `d780630` | `fix(iam): key professionals by the identifier the API assigns, not by their username` |
+| | `9ec2eb1` | `feat(vital-signs): record controls through the persistent API` |
+| | `22b1ca3` | `feat(clinical-events): record clinical annotations through the persistent API` |
+| | `5d1c092` | `feat(medical-orders): issue and fulfil indications through the persistent API` |
+| | `c5b9e47` | `feat(handover): issue and acknowledge shift handovers through the persistent API` |
+| | `37ac09a` | `refactor(alerts): let the server's policy be the only source of alerts` |
+| | `f24fac7` | `refactor(audit): read the audit trail instead of writing it` |
+| `BackClinicalSync`<br>`feature/demo-clinical-data` | `f837a4a` | `fix(seeding): order the context seeders so users and patients exist first` |
+| | `46c9aa6` | `feat(frontend): seed the demo clinical history of the current shift` |
+
+**Decisiones de arquitectura que el sprint fijó.** La integración obligó a resolver cuatro cuestiones que el informe deja registradas porque cambian el modelo y no solo la implementación:
+
+1. **El identificador que vale es el que asigna el servidor.** Los agregados del cliente se asignan un identificador provisional al construirse. Si una operación posterior lo usara, actuaría sobre un registro inexistente, de modo que el alta ya no envía identificador: adopta el que devuelve el API y descarta el provisional. La frontera rechaza cualquier referencia que no sea un entero confirmado por el servidor.
+2. **Las alertas tienen una sola fuente.** Hasta este sprint la política que deriva una alerta vivía en el cliente y en el servidor a la vez. Dos políticas que derivan la misma alerta son dos alertas que pueden discrepar, y una alerta clínica que discrepa de sí misma es peor que ninguna. La política quedó únicamente en el servidor, que la aplica en la misma transacción que registra el dato de origen; el cliente reacciona al evento releyendo lo que la política decidió.
+3. **La bitácora dejó de escribirse desde el cliente.** Las entradas las deriva el servidor de los eventos de dominio de cada contexto. Es lo que corresponde a una bitácora: si el cliente pudiera anotar en ella, dejaría de ser prueba de lo que ocurrió y pasaría a ser prueba de lo que el cliente dijo que ocurrió.
+4. **Las transiciones de estado son operaciones propias.** Acusar un traspaso, atender una alerta o registrar el cumplimiento de una indicación no son variantes de guardar: cada una comprueba sus propias reglas y toma del token al profesional que actúa, en lugar de aceptarlo en el cuerpo de la petición.
+
+**Defectos corregidos durante el sprint.** La integración dejó al descubierto dos defectos encadenados que hacían inoperante el traspaso de turno y que el informe registra por su relación con los Issues #1 y #2 reportados en el Sprint 2:
+
+- El adaptador del directorio filtraba a los profesionales por un campo `active` que el recurso del API no devuelve, de modo que el directorio quedaba siempre vacío y las vistas mostraban el identificador técnico en lugar del nombre.
+- La sesión exponía como identificador del profesional su nombre de usuario, mientras que todos los registros clínicos del API nombran a las personas por el identificador numérico que el backend les asignó. La aplicación no podía, por tanto, comparar la identidad de la sesión con la de un registro: la lista de enfermeros entrantes aparecía vacía y ningún traspaso podía acusarse.
+
+La corrección —indexar el directorio por el identificador del API y exponer ese mismo identificador en la sesión— es la que cierra la historia **US-31** y resuelve de raíz la causa que originó los Issues #1 y #2, que hasta este sprint se había atendido solo en las vistas donde se detectó.
+##### 5.2.4.5. Execution Evidence for Sprint Review
+
+La verificación de este sprint se ejecutó **sobre la aplicación publicada en producción**, no sobre un entorno local, porque lo que el sprint entrega es precisamente la integración entre dos servicios desplegados. Se automatizó con Playwright un recorrido que opera la interfaz como lo haría un profesional —escribiendo en los formularios y pulsando los botones— y que, en paralelo, inspecciona cada petición HTTP que el navegador emite y contrasta el resultado contra el API consultándolo de forma independiente.
+
+El recorrido comprende **50 comprobaciones**, todas satisfactorias. La tabla liga cada escritura con el endpoint que la atiende y con la historia que la sustenta, de modo que la evidencia sea trazable hasta el Product Backlog.
+
+| # | Acción sobre la interfaz | Endpoint ejercido | Historia | Resultado verificado contra el API |
+| :---: | :--- | :--- | :--- | :--- |
+| 1 | Inicio de sesión como enfermería | `POST /api/v1/authentication/sign-in` | TS-01 | Token emitido; la guarda de ruta permite el acceso y las peticiones siguientes viajan firmadas |
+| 2 | Registro de un control con valores fuera de umbral | `POST /api/v1/vital-signs` | US-13, TS-03 | Control persistido con identificador numérico del backend; `recordedBy` igual al profesional del token; `riskLevel` derivado por el servidor como `CRITICAL` |
+| 3 | — (reacción del servidor) | — | US-28 | La política levantó **exactamente una** alerta, con origen `vital-sign:{id}` del control que la disparó. Dos alertas habrían evidenciado que el cliente la duplica |
+| 4 | Atención de la alerta | `POST /api/v1/alerts/{id}/acknowledge` | US-28 | Estado `ACKNOWLEDGED` y `acknowledgedBy` igual al profesional del token, que no viaja en el cuerpo |
+| 5 | Anotación de un evento clínico crítico | `POST /api/v1/clinical-events` | US-20, TS-03 | Anotación persistida y segunda alerta derivada por la misma política, con origen `clinical-event:{id}` |
+| 6 | Emisión de una indicación médica | `POST /api/v1/medical-orders` | US-22, TS-05 | Indicación vigente con `prescribedBy` igual al médico autenticado |
+| 7 | Registro de su cumplimiento | `POST /api/v1/medical-orders/{id}/fulfill` | US-24, TS-05 | `fulfilledAt` sellado por el servidor y `fulfilledBy` igual a la enfermera autenticada, distinta de quien prescribió |
+| 8 | Emisión de un traspaso SBAR | `POST /api/v1/handovers` | US-15, TS-04 | Traspaso persistido con `outgoingNurseId` tomado del token y `incomingNurseId` del formulario |
+| 9 | Acuse del traspaso por el enfermero entrante | `POST /api/v1/handovers/{id}/acknowledge` | US-17, TS-04 | `acknowledgedAt` registrado; la regla que exige que solo acuse el enfermero entrante se comprueba en el servidor |
+| 10 | Consulta de la bitácora como auditoría | `GET /api/v1/audit-logs` | US-30, TS-06 | La bitácora creció de 46 a 57 entradas **sin que el cliente escribiera ninguna**: las derivó el servidor de los eventos de dominio |
+
+**Invariantes comprobadas en cada petición del recorrido.** Más allá del resultado de cada operación, el recorrido verifica cuatro propiedades que son las que distinguen una integración real de una aparente:
+
+- Ninguna petición alcanzó la capa de compatibilidad `/api/frontend`, de modo que la aplicación opera íntegramente sobre el contrato `/api/v1`.
+- Todas las escrituras viajaron firmadas con el token de la sesión.
+- Ninguna escritura envió un identificador asignado por el cliente.
+- Ningún identificador provisional del cliente quedó persistido en el backend.
+- La consola del navegador no registró ningún error distinto de la respuesta `401` deliberada que produce la petición previa al inicio de sesión.
+
+Se ejecutó además un segundo recorrido, de solo lectura, que comprueba las cinco historias cuya interfaz provenía del Sprint 2 y que este sprint puso sobre datos persistidos: la priorización por riesgo (US-29), la documentación pendiente del turno (US-21), las indicaciones sin ejecutar (US-25), el historial de cambios por recurso (US-32) y la preconstrucción del traspaso (US-16).
+
+La preconstrucción del traspaso es la evidencia más concluyente de la integración, porque un solo artefacto reúne la salida de cuatro contextos. Pulsando *Pre-llenar con lo registrado*, la aplicación compuso este borrador a partir de lo que el API devolvió:
+
+> **Situación.** Lucia Mendoza Rivas, en UCI Cardiovascular - Cama 1. Ultimo control a las 05:07 a. m.: PA 198/121 mmHg, FC 139 lpm, SpO2 86 %, T 39.4 C.
+>
+> **Antecedentes.** Ingreso por Infarto agudo de miocardio con elevacion del ST. Indicaciones vigentes: Enoxaparina 40 mg Cada 12 horas.
+>
+> **Evaluación.** Nivel de riesgo derivado de la ultima medicion: CRITICAL. 3 alerta(s) sin cerrar.
+>
+> **Recomendación.** Mantener el control segun el intervalo definido y registrar cualquier cambio en la bitacora del paciente.
+
+Las cifras citadas son las del control registrado en el paso 2 de la tabla anterior, y las alertas son las que el servidor derivó de él. El borrador no contiene texto fijo: cada frase procede de un dato que existe en la base de datos, y la trazabilidad del dato al texto es verificable consultando el API.
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-4/login.png" alt="Pantalla de inicio de sesión de ClinicalSync en producción" width="900">
+</p>
+<p align="center"><em>Pantalla de inicio de sesión publicada. La aplicación no monta ninguna vista clínica sin una sesión válida.</em></p>
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-4/registro-critico.png" alt="Registro de un control con valores fuera de umbral" width="900">
+</p>
+<p align="center"><em>Registro de un control fuera de umbral (US-13). La confirmación informa el nivel de riesgo que derivó el servidor y anuncia la alerta generada para el equipo.</em></p>
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-4/alertas.png" alt="Listado de alertas derivadas por la política del servidor" width="900">
+</p>
+<p align="center"><em>Alertas derivadas por la política del servidor (US-28), con el origen que las disparó y el nivel de severidad.</em></p>
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-4/responsables-con-nombre.png" alt="Columna de responsable mostrando nombres propios" width="900">
+</p>
+<p align="center"><em>Controles del turno con el responsable identificado por su nombre (US-31). Antes de la corrección descrita en 5.2.4.4 esta columna mostraba el identificador numérico del profesional.</em></p>
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-4/preconstruccion-traspaso.png" alt="Borrador SBAR preconstruido con los datos del API" width="900">
+</p>
+<p align="center"><em>Borrador SBAR preconstruido (US-16) a partir del último control, las indicaciones vigentes y las alertas sin cerrar que devolvió el API.</em></p>
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-4/cumplimiento.png" alt="Registro del cumplimiento de una indicación médica" width="900">
+</p>
+<p align="center"><em>Cumplimiento de una indicación (US-24) registrado por enfermería sobre la indicación que emitió el médico especialista.</em></p>
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-4/acuse.png" alt="Acuse de recibo de un traspaso SBAR" width="900">
+</p>
+<p align="center"><em>Acuse de recibo del traspaso (US-17) desde la sesión del enfermero entrante, única persona a la que el servidor permite confirmarlo.</em></p>
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-4/bitacora.png" alt="Bitácora de auditoría generada por el servidor" width="900">
+</p>
+<p align="center"><em>Bitácora consultada con el rol de auditoría (US-30). Sus entradas las generó el servidor a partir de los eventos de dominio, sin escritura alguna del cliente.</em></p>
+
+##### 5.2.4.6. Services Documentation Evidence for Sprint Review
+
+La documentación OpenAPI publicada en el Sprint 3 (sección 5.2.3.6) no se modificó en este sprint, y es precisamente esa estabilidad la que constituye su evidencia: la aplicación web se integró consumiendo el contrato tal como estaba documentado, sin requerir cambios en los recursos ni en los esquemas del API. El contrato documentado resultó suficiente y correcto.
+
+El sprint sí produjo un cambio en la superficie efectiva del API. Durante el Sprint 3 se había publicado bajo `/api/frontend` una capa de compatibilidad que exponía el mismo contrato que la aplicación consumía del servicio de datos de demostración, con rutas públicas y con el profesional viajando en el cuerpo de cada petición, por la razón que su propia documentación declaraba: el frontend todavía no iniciaba sesión. Cumplida la integración, la aplicación dejó de consumirla y pasó a operar sobre `/api/v1` con el profesional tomado del token.
+
+La capa se mantiene publicada y documentada en el repositorio como entregable del Sprint 3, desactivable mediante la variable de entorno `FRONTEND_API_ENABLED`. El equipo decidió conservarla activa durante esta entrega y retirarla al cierre del proyecto, para no invalidar la evidencia del sprint anterior.
+
+| Contrato | Estado en el Sprint 4 | Consumido por la aplicación |
+| :--- | :--- | :---: |
+| `/api/v1/**` — contrato REST con autenticación por token | Vigente, documentado en OpenAPI | Sí |
+| `/api/frontend/**` — capa de compatibilidad sin autenticación | Publicada, en desuso | No |
+
+##### 5.2.4.7. Software Deployment Evidence for Sprint Review
+
+Al cierre de este sprint los tres artefactos del producto están publicados y operando de forma integrada:
+
+| Artefacto | Plataforma | URL | Estado |
+| :--- | :--- | :--- | :--- |
+| Landing Page | Vercel | https://clinicalsync-landing.vercel.app/ | En producción desde el Sprint 1 |
+| Aplicación web | Vercel | https://clinicalsync-frontend.vercel.app/ | Integrada al API en este sprint |
+| RESTful API | Railway | https://backclinicalsync-production.up.railway.app/swagger-ui.html | En producción desde el Sprint 3 |
+
+El despliegue continuo quedó configurado en ambas plataformas contra la rama `main` de cada repositorio, de modo que la integración de este sprint se publicó automáticamente al integrar las ramas de trabajo.
+
+**Comunicación entre dos dominios distintos.** La aplicación y el API se publican en plataformas diferentes, de modo que una petición directa del navegador al API sería una petición entre orígenes distintos y el servidor la rechazaría. En lugar de relajar la política de origen cruzado del backend —que habría significado abrir el API a cualquier sitio para resolver un problema de dos— la aplicación reescribe `/api/v1/**` hacia el API desde su propio dominio, de modo que para el navegador todas las peticiones tienen el mismo origen que la página. La reescritura se declara en `vercel.json` y tiene su equivalente para el entorno de desarrollo en `proxy.conf.mjs`.
+
+**Siembra de la historia clínica de demostración.** El Sprint 3 cerró con la base conteniendo solo el directorio de profesionales y los ocho pacientes, por lo que una aplicación ya integrada habría mostrado pantallas vacías. Este sprint incorporó un sembrador que, al arrancar el servicio, deja la historia clínica de un turno en curso: once controles de signos vitales, tres indicaciones médicas, dos traspasos SBAR y tres eventos clínicos. Las **siete alertas** y las **cuarenta y seis entradas de bitácora** que acompañan a esos datos no se siembran: las deriva el propio dominio al publicarse los eventos de los registros sembrados, lo que convierte a la siembra en una comprobación del comportamiento del sistema además de un conjunto de datos.
+
+El sembrador es idempotente —si encuentra historia clínica no vuelve a sembrar— y se ejecuta después de los sembradores de usuarios y pacientes, orden que el sprint tuvo que corregir porque la anotación que lo declaraba estaba colocada sobre la clase y no sobre el método, con lo que no surtía efecto y los sembradores corrían en orden alfabético.
+
+**Estado verificado en producción al cierre del sprint:**
+
+| Recurso | Registros |
+| :--- | ---: |
+| Pacientes | 8 |
+| Profesionales | 6 |
+| Controles de signos vitales | 11 |
+| Alertas derivadas por el dominio | 7 |
+| Indicaciones médicas | 3 |
+| Traspasos SBAR | 2 |
+| Eventos clínicos | 3 |
+| Entradas de bitácora | 46 |
+
+**Registro del despliegue de producción de la aplicación web.** Los datos siguientes provienen de la plataforma y son verificables en el panel del proyecto:
+
+| Campo | Valor |
+| :--- | :--- |
+| Estado | `READY` |
+| Entorno | `production` |
+| Rama de origen | `main` |
+| Commit desplegado | `f24fac7acab49b74c1eefd4aaf6b2724f2d70731` |
+| Mensaje del commit | `refactor(audit): read the audit trail instead of writing it` |
+| Repositorio | `Digital-Clinical-Systems/FrontClinicalSync` |
+| Fecha del despliegue | 26-11-2026 |
+
+El despliegue anterior de producción correspondía al commit `9e1d9ec` del 06-10-2026, que es el estado con el que la aplicación cerró el Sprint 2 y se mantuvo durante el Sprint 3. La diferencia entre ambos registros delimita exactamente el alcance publicado en este sprint: los catorce commits de la rama `feature/iam-login` listados en la sección 5.2.4.4.
+
+##### 5.2.4.8. Team Collaboration Insights during Sprint
+
+La observación **H-14** de la revisión docente del AV1 señaló que el trabajo de codificación debía reflejar colaboración distribuida en los repositorios del producto. El equipo respondió a esa observación en el Sprint 3 con una distribución equilibrada —entre cinco y seis commits por integrante en el repositorio del backend, uno por cada Bounded Context— y la sección 5.2.3.8 la documentó como cumplimiento del objetivo.
+
+**En este sprint esa distribución no se mantuvo, y el equipo lo registra sin matizarlo.** Los dieciséis commits de la integración, en los dos repositorios, corresponden a un solo integrante:
+
+| Desarrollador | Commits en el Sprint 4 | Repositorios |
+| :--- | ---: | :--- |
+| **YakuzaMeen (Oskar Sosa)** | 16 | `FrontClinicalSync`, `BackClinicalSync` |
+| Johancuba (Johan Huamán) | 0 | — |
+| MathiasA25 (Mathias Acuache) | 0 | — |
+| AngelValdezM (Ángel Valdez) | 0 | — |
+| JohnnyGZ41 (Johnny Ojanama) | 0 | — |
+
+El equipo analizó la causa y concluye que no fue una decisión deliberada de reparto sino la consecuencia de haber planificado mal el sprint anterior. La integración no figuraba como historia en ningún Sprint Backlog —según se explica en la sección 5.2.4.3— y, al no tener responsable asignado, quedó disponible para quien la tomara. La asumió quien detectó que bloqueaba las Validation Interviews. Es la segunda vez que el proyecto registra una concentración de autoría de este tipo: la sección 5.2.2.8 documentó la del Sprint 2, cuando un integrante completó en solitario las diez historias restantes del backlog web. En ambos casos el detonante fue el mismo, un trabajo necesario que ninguna historia cubría.
+
+La lección que el equipo extrae es que **la observación H-14 no se resuelve repartiendo commits sino repartiendo historias**: mientras el Sprint Backlog deje trabajo fuera, la distribución del código dependerá de quién detecte el hueco y no del reparto acordado. Para la entrega final el equipo asignó nominalmente los aspectos pendientes en la matriz de la sección 5.2.4.2 —las Validation Interviews, la evaluación heurística y los dos videos—, de modo que cada uno tenga responsable antes de empezar y no después.
+
+El sprint deja además una contribución al propio flujo de trabajo: la integración se verificó contra la aplicación publicada, y no contra un entorno local, antes de darse por cerrada. La sección 5.2.4.5 documenta ese recorrido de cincuenta comprobaciones, que el equipo adopta como criterio de cierre para la entrega final: una historia de la Entrega 4 no se considera completada hasta que se comprueba sobre el producto desplegado.
+
+### 5.2.5. Trazabilidad de historias, ramas e integraciones
+
+La revisión docente del AV2 observó que el informe no permitía recorrer el camino que va de una historia del Product Backlog hasta la integración que la incorpora al producto. Esta sección cierra esa observación: cada fila liga una historia con la rama donde se implementó, el commit de integración que la incorporó y la entrega que la contiene. Todos los identificadores son verificables en el historial de los repositorios listados en el Anexo C.
+
+El equipo incluye en la tabla los casos en que esa cadena está incompleta, porque una tabla de trazabilidad que solo muestra los caminos completos no sirve para auditar el proceso.
+
+#### Entrega 1 — Landing Page (Sprint 1)
+
+| Historias | Repositorio | Rama | Integración |
+| :--- | :--- | :--- | :--- |
+| US-01 a US-12, TS-09 | `Landing-Page` | `main` | Trabajo directo sobre `main`, sin ramas de funcionalidad. El repositorio no registra otras ramas |
+
+El Sprint 1 se desarrolló sin ramas de funcionalidad, lo que dejó sin evidencia de reparto el trabajo de la Landing Page. Es el antecedente directo de la observación **H-14** y la razón por la que los sprints siguientes adoptaron GitFlow.
+
+#### Entrega 2 — Frontend (Sprint 2)
+
+| Historias | Rama | Commit de integración | Release |
+| :--- | :--- | :--- | :--- |
+| US-22 — Emitir indicación médica | `feature/us-22-indicaciones-medicas` | `1753a25` | `d805b91` — *Release: Sprint 2* |
+| US-26, US-27 — Vista consolidada del paciente | `feature/us-26-vista-consolidada` | `37fa998` | `d805b91` |
+| US-28, US-29 — Priorización y alertas en la interfaz | `feature/us-28-priorizacion-alertas` | `c32137d` | `d805b91` |
+| Criterios de aceptación en Gherkin | `feature/docs-gherkin-sprint-2` | `884ccb7` | `d805b91` |
+| Corrección de los Issues #1 y #2 | `fix/issues-identificadores-internos` | `a816f35` | `7beeb16` — *Release: correcciones de issues #1 y #2* |
+
+Las diez historias restantes del backlog web descritas en la sección 5.2.2.3 **no tienen rama ni commit de integración propios**: se desarrollaron directamente sobre la rama de trabajo, fuera del compromiso del sprint. El informe ya dejaba constancia de ello en las secciones 5.2.2.4 y 5.2.2.8, y la tabla lo refleja con esta ausencia en lugar de omitir el caso.
+
+#### Entrega 3 — Backend (Sprint 3)
+
+| Historia | Rama | Integración a `develop` | Integración a `main` |
+| :--- | :--- | :--- | :--- |
+| TS-01 — Autenticación y autorización por roles | `feature/iam` | **Sin commit de integración**: la rama se publicó directamente sobre `develop` | `7143583` — *release/v1.0.0* |
+| TS-02 — Gestión de pacientes | `feature/patients` | `c080051` | `7143583` |
+| TS-03 — Registros clínicos (signos vitales) | `feature/vital-signs` | `1bcde62` | `7143583` |
+| TS-03 — Registros clínicos (eventos clínicos) | `feature/clinical-events` | `88d55de` | `7143583` |
+| TS-04 — Traspasos SBAR | `feature/handover` | `7a9e596` | `7143583` |
+| TS-05 — Indicaciones médicas | `feature/medical-orders` | `08608b4` | `7143583` |
+| TS-06 — Registro automático de trazabilidad | `feature/audit` | `1040383` | `7143583` |
+| TS-07, TS-08 — Manejo de errores y OpenAPI | *Shared Kernel*, sin rama propia | Incorporadas con el montaje inicial del proyecto | `7143583` |
+| US-28 — Soporte de backend de las alertas | `feature/alerts` | **Pull Request #1** → `58f1b60` | `7143583` |
+| Alineación del módulo IAM | `bugfix/iam-reference-implementation` | `1a3e837` | `e685c58` — *release/v1.1.0* |
+| Capa de compatibilidad para el frontend | `feature/frontend-integration` | `bd0ece6` | `e685c58` |
+
+Dos observaciones que el equipo deja registradas. La primera es que la rama `feature/iam` carece de commit de integración porque se publicó directamente sobre `develop` en lugar de sobre su propia rama, y las demás ramas se construyeron después tomando ese estado como base; el historial conserva los cinco commits de la historia, pero no el punto en que se integró. La segunda es que solo una de las once ramas del sprint se integró mediante Pull Request —la Pull Request #1, correspondiente a `feature/alerts`—, mientras que las restantes se integraron con merges locales. Ambas prácticas son válidas en GitFlow, pero solo la Pull Request deja registrada la revisión entre pares, de modo que el equipo la adopta como requisito para la entrega final.
+
+#### Entrega 4 — Aplicación completa (Sprint 4)
+
+| Historias | Repositorio | Rama | Integración a `main` |
+| :--- | :--- | :--- | :--- |
+| US-16, US-21, US-25, US-28, US-29, US-30, US-31, US-32 | `FrontClinicalSync` | `feature/iam-login` | `f24fac7` — integración por avance rápido, el historial conserva los catorce commits |
+| Siembra de la historia clínica de demostración | `BackClinicalSync` | `feature/demo-clinical-data` | `e163f4b` |
+
+La integración del frontend se realizó por avance rápido y no con un commit de fusión, de modo que los catorce commits de la rama quedan visibles de forma individual en `main` y cada paso de la migración conserva su mensaje. La relación entre cada historia y el commit concreto que la atiende se detalla en la sección 5.2.4.4.
+
+#### Informe
+
+| Capítulo | Rama | Integración |
+| :--- | :--- | :--- |
+| Capítulo II | `feature/report-chapter-2` | `baf0cbb` |
+| Capítulo III | `feature/report-chapter-3` | `0fbdd05` |
+| Capítulo IV | `feature/report-chapter-4` | `174e4bb` |
+| Capítulo V | `feature/report-chapter-5` | `a5c4b73` |
+| Correcciones de la revisión AV1 | `feature/tb1-correcciones-av1` | `5b8c947` → `a8b46a9` (*Release: TB1*) |
+| Entrega AV2 | `feature/av2` | **Pull Request #2** → `3c6a283` |
+
+#### Resumen de cobertura
+
+| Entrega | Historias | Con rama propia | Integradas por Pull Request |
+| :--- | ---: | ---: | ---: |
+| Entrega 1 — Landing Page | 13 | 0 | 0 |
+| Entrega 2 — Frontend | 12 | 4 historias en 3 ramas | 0 |
+| Entrega 3 — Backend | 8 | 6 en ramas propias, 2 en el Shared Kernel | 1 |
+| Entrega 4 — Aplicación completa | 8 | 8 en una rama | 0 |
+
+La progresión muestra que la disciplina de ramas mejoró de forma sostenida desde el Sprint 1, pero que la revisión entre pares mediante Pull Request sigue siendo la excepción. El equipo identifica esa práctica, y no la ramificación, como la que falta consolidar.
+
 ### 5.3. Validation Interviews
 
 Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los beneficios clínicos de ClinicalSync son hipótesis derivadas de las entrevistas de descubrimiento y no resultados alcanzados. Las Validation Interviews son el instrumento con el que esas hipótesis se contrastan contra el producto construido, y se distinguen de las entrevistas del Capítulo II en su propósito: aquellas buscaban **entender el problema**; estas buscan **comprobar si la solución lo resuelve**.
 
-**Estado al cierre del Sprint 3.** No se han ejecutado todavía. La condición que el equipo se fijó al cierre del Sprint 2 —contar con los servicios web de la Entrega 3— se cumplió solo en parte: el RESTful API está construido y desplegado (sección 5.2.3.7), pero la aplicación web todavía no lo consume, de modo que sigue operando sobre el servicio de datos de demostración, sin persistencia entre sesiones. Un participante no puede, por tanto, trabajar con los pacientes de su propio turno ni retomar un registro al día siguiente, y medir tiempos de tarea en esas condiciones produciría cifras que no se pueden contrastar contra la línea base declarada en las entrevistas de descubrimiento. El equipo reconoce además que la hipótesis 6 no estaba sujeta a esa restricción: se contrasta sobre la Landing Page y el flujo de contratación publicados desde el Sprint 1, y debió adelantarse en este sprint. En consecuencia, las entrevistas de las hipótesis 1 a 5 quedan condicionadas a la integración prevista en el Sprint 4, y la de la hipótesis 6 se ejecuta sin esperarla. Esta sección documenta el **diseño** de las entrevistas; sus resultados se incorporarán cuando se ejecuten.
+**Estado al cierre del Sprint 4.** La condición que las mantenía bloqueadas quedó levantada. Al cierre del Sprint 3 el RESTful API estaba construido y desplegado pero la aplicación web no lo consumía, de modo que operaba sobre el servicio de datos de demostración, sin persistencia ni atribución: un participante no podía trabajar con los pacientes de su propio turno ni retomar un registro al día siguiente, y medir tiempos de tarea en esas condiciones habría producido cifras que no se pueden contrastar contra la línea base declarada en las entrevistas de descubrimiento.
+
+La integración documentada en la sección 5.2.4 elimina esa restricción. El participante inicia sesión con sus propias credenciales, lo que registra, y lo que registra persiste y queda atribuido a su nombre, de modo que las mediciones de tiempo y error que estas entrevistas requieren ya se pueden tomar sobre condiciones comparables a las de su jornada. El producto está, por tanto, en estado de ser contrastado.
+
+Las entrevistas **no se han ejecutado todavía**. Su ejecución está asignada en la matriz de la sección 5.2.4.2 y su registro corresponde a las secciones 5.3.2 y 5.3.3, que se completarán con los resultados. El equipo deja constancia de que la hipótesis 6 no estaba sujeta a la restricción anterior —se contrasta sobre la Landing Page y el flujo de contratación publicados desde el Sprint 1— y debió adelantarse en el Sprint 3. Esta sección documenta el **diseño** de las entrevistas; sus resultados se incorporarán cuando se ejecuten.
 
 #### 5.3.1. Diseño de entrevistas
 
@@ -4853,7 +5202,7 @@ El video recorre el producto construido hasta esta entrega: la Landing Page y la
 
 **Sobre los assumptions.** Los supuestos declarados en la sección 1.2.2.2 se contrastaron parcialmente. Los relativos a la agilidad del registro durante la atención y a la necesidad del especialista de consultar información consolidada encontraron respaldo directo en las entrevistas. En cambio, el supuesto de que el personal aceptaría incorporar un sistema nuevo siempre que reduzca la carga manual quedó sin verificar: los entrevistados describieron su situación actual, no su disposición a cambiar de herramienta. El equipo asume esta limitación de forma explícita y la traslada como criterio de diseño, no como hallazgo. En la misma línea, el análisis de la sección 2.2.3 dejó constancia de que un porcentaje de mención inferior al 100% indica que una característica no fue mencionada, no que haya sido rechazada, y esa distinción se mantuvo al interpretar los resultados.
 
-**Sobre los Hypothesis Statements.** De las siete hipótesis formuladas en la sección 1.2.2.3, la sexta cuenta con un producto construido y publicado desde el Sprint 1 —la Landing Page, verificable en su URL— y las cinco primeras cuentan desde este sprint con la aplicación web que las sostiene, igualmente desplegada y verificable. Aun así, su criterio de éxito, que un prospecto resuma el propósito de la plataforma con su propio vocabulario y localice el llamado a la acción sin ayuda, no ha sido probado con usuarios reales, porque esa comprobación corresponde a las Validation Interviews de la sección 5.3, previstas para una entrega posterior. Las hipótesis 1 a 5 cambiaron de estado en este sprint: dejaron de depender de un prototipo de interfaz y pasaron a contar con software ejecutable y publicado. Las veinte historias del backlog web tienen pantalla, y los ciclos que las hipótesis suponen —registrar junto a la cama, entregar y acusar el turno, consultar el estado consolidado, emitir una indicación y registrar su cumplimiento, rastrear quién hizo qué— están completos de extremo a extremo. Aun así ninguna hipótesis puede darse por validada ni por refutada, porque los datos son ficticios, no persisten y las entrevistas de validación de la sección 5.3 no se han ejecutado. El equipo distingue deliberadamente entre *hipótesis construida* e *hipótesis verificada*: este sprint produjo lo primero y no lo segundo. La séptima requiere contrastar la propuesta con un coordinador o jefe de servicio, perfil que el equipo identificó como actor en el Impact Mapping pero que no ha sido entrevistado.
+**Sobre los Hypothesis Statements.** De las siete hipótesis formuladas en la sección 1.2.2.3, la sexta cuenta con un producto construido y publicado desde el Sprint 1 —la Landing Page, verificable en su URL— y las cinco primeras cuentan desde este sprint con la aplicación web que las sostiene, igualmente desplegada y verificable. Aun así, su criterio de éxito, que un prospecto resuma el propósito de la plataforma con su propio vocabulario y localice el llamado a la acción sin ayuda, no ha sido probado con usuarios reales, porque esa comprobación corresponde a las Validation Interviews de la sección 5.3, que a la fecha de este informe siguen sin ejecutarse. Las hipótesis 1 a 5 cambiaron de estado en este sprint: dejaron de depender de un prototipo de interfaz y pasaron a contar con software ejecutable y publicado. Las veinte historias del backlog web tienen pantalla, y los ciclos que las hipótesis suponen —registrar junto a la cama, entregar y acusar el turno, consultar el estado consolidado, emitir una indicación y registrar su cumplimiento, rastrear quién hizo qué— están completos de extremo a extremo. Desde el Sprint 4 esos ciclos operan además sobre datos persistidos y atribuidos al profesional que inicia sesión, según se documenta en la sección 5.2.4. Aun así ninguna hipótesis puede darse por validada ni por refutada, porque los datos de la instancia publicada siguen siendo ficticios y, sobre todo, porque las entrevistas de validación de la sección 5.3 no se han ejecutado. El equipo distingue deliberadamente entre *hipótesis construida* e *hipótesis verificada*: el proyecto produjo lo primero y no lo segundo, y la diferencia no la cierra más software sino el contraste con usuarios reales. La séptima requiere contrastar la propuesta con un coordinador o jefe de servicio, perfil que el equipo identificó como actor en el Impact Mapping pero que no ha sido entrevistado.
 
 **Sobre el incremento del Sprint 2.** El equipo concluye que llevar el modelo de dominio del Capítulo IV a código fue la prueba más exigente a la que ese modelo se sometió hasta ahora, y que varias decisiones de diseño solo se revelaron incompletas al implementarlas. El ciclo de ejecución previsto para la indicación médica tuvo que reemplazarse por un modelo de reemplazo con historial al chocar con la invariante declarada en la sección 4.6.5, y la comunicación entre contextos obligó a fijar por escrito, en la sección 4.6.6, contratos que hasta entonces eran un acuerdo verbal. El verificador automático de fronteras convirtió esos contratos en una condición que el repositorio comprueba en cada integración, de modo que la arquitectura documentada y la construida no pueden divergir en silencio. La lección que el equipo extrae es que un modelo de dominio solo queda validado cuando existe código que no compila si se lo incumple.
 
@@ -4953,7 +5302,7 @@ Videos de exposición de cada entrega, alojados en Microsoft Stream.
 | :--- | :--- | :--- |
 | AV1 | Exposición AV1 — Digital Clinical System / ClinicalSync | *(pendiente de enlace)* |
 | TB1 | Exposición TB1 — Digital Clinical System / ClinicalSync | *(pendiente de enlace)* |
-| AV2 | — | *(entrega posterior)* |
+| AV2 | Exposición AV2 — Digital Clinical System / ClinicalSync | *(pendiente de enlace)* |
 | TB2 | — | *(entrega posterior)* |
 
 ### Anexo B. Entrevistas de descubrimiento
@@ -4975,13 +5324,15 @@ Registros en video de las cinco entrevistas analizadas en la sección 2.2. Los e
 | `Informe` | Documento de informe del proyecto | https://github.com/Digital-Clinical-Systems/Informe |
 | `Landing-Page` | Landing Page desplegada en producción | https://github.com/Digital-Clinical-Systems/Landing-Page |
 | `FrontClinicalSync` | Aplicación web Angular | https://github.com/Digital-Clinical-Systems/FrontClinicalSync |
-| `BackClinicalSync` | Servicios web RESTful | *(entrega posterior)* |
+| `BackClinicalSync` | Servicios web RESTful | https://github.com/Digital-Clinical-Systems/BackClinicalSync |
 
 ### Anexo D. Artefactos de diseño y productos desplegados
 
 | Artefacto | Sección del informe | Enlace |
 | :--- | :--- | :--- |
 | Landing Page en producción | 5.2.1.5 | https://clinicalsync-landing.vercel.app/ |
+| Aplicación web en producción | 5.2.4.7 | https://clinicalsync-frontend.vercel.app/ |
+| RESTful API en producción (OpenAPI) | 5.2.3.6, 5.2.4.7 | https://backclinicalsync-production.up.railway.app/swagger-ui.html |
 | Impact Mapping | 3.2 | https://miro.com/app/board/uXjVHl_mGsg=/ |
 | Big Picture Event Storming | 2.4 | https://miro.com/app/board/uXjVHl99QLc=/ |
 | Prototipo de interfaz | 4.4, 4.5 | Figma — enlace en la sección 4.5 |
