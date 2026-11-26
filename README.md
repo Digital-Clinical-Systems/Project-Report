@@ -39,7 +39,7 @@
 | TB1 | 2026-10-06 | <ul><li>Sosa Soto, Oskar Rodrigo</li><li>Huamán Cuba, Johan Giovani</li><li>Valdez Melo, Angel Andres</li><li>Acuache Lucas, Mathias Joaquin</li><li>Ojanama Abanto, Johnny Alexander</li></ul> | Entrega TB1. Se corrigen las quince observaciones de la revisión docente del AV1. Capítulo IV: se incorporan los Bounded Context Canvases (4.6.5) y los contratos de integración entre contextos (4.6.6). Capítulo V: se documenta el Sprint 2 completo (5.2.2.1 a 5.2.2.8) con la aplicación web construida y desplegada, las pruebas exploratorias y los Issues #1 y #2 con su corrección, el flujo de contratación de la Landing Page, y se añade el diseño de las Validation Interviews (5.3). Se actualizan los Insights de colaboración con los repositorios de producto, el Student Outcome y las conclusiones. Se incorporan la bibliografía y los anexos. |
 | TB1.1 | 2026-10-07 | Sosa Soto, Oskar Rodrigo | Actualización posterior a la entrega TB1, previa a la exposición. Capítulo IV: se incorpora el Bounded Context Canvas de BC-08 Clinical Events, surgido durante la implementación, y se corrige el canvas de BC-07 para que refleje las invariantes efectivamente construidas. Capítulo V: se documenta la ampliación del alcance que completó las veinte historias del backlog web, el servicio de datos de demostración con sus ocho recursos (5.2.2.6), las diez capturas de la aplicación, las cifras de verificación vigentes y el efecto de la ampliación sobre la distribución del trabajo. Se actualizan el alcance de las afirmaciones, la sección 5.3 y las conclusiones. |
 | AV2 | 2026-11-16 | <ul><li>Acuache Lucas, Mathias Joaquin</li><li>Sosa Soto, Oskar Rodrigo</li></ul> | Entrega AV2. Capítulo V: se documenta el Sprint 3 completo (5.2.3.1 a 5.2.3.8), dedicado a la construcción del RESTful API en el repositorio `BackClinicalSync` con los ocho Bounded Contexts, su documentación OpenAPI y su despliegue en Railway con base de datos MySQL. Se incorporan las evidencias de ejecución, de documentación de servicios y de despliegue del sprint, y el panel de contribución del repositorio del backend. Se actualiza el Student Outcome con las acciones y conclusiones de los cinco integrantes correspondientes a esta entrega. |
-| TB2 | 2026-11-26 | Sosa Soto, Oskar Rodrigo | Entrega TB2. Capítulo V: se documenta el Sprint 4 completo (5.2.4.1 a 5.2.4.8), dedicado a la integración de la aplicación web con el RESTful API desplegado detrás de un inicio de sesión real, con la evidencia de ejecución verificada sobre el producto publicado. Se incorpora la sección 5.2.5 de trazabilidad de historias, ramas e integraciones, que atiende la observación de la revisión AV2 sobre la trazabilidad entre historia, rama y merge. Se corrigen las cifras de Story Points del Sprint 3 en la sección 5.2.3.1, que arrastraban las del Sprint 2, y se deja la nota de reconciliación correspondiente; se añade al Sprint Backlog 3 la historia TS-07 que estaba implementada pero no listada y se restituye el título de la TS-08, rotulada como «Alertas Críticas» en lugar de «Documentación del API con OpenAPI». Se actualiza la sección 5.3 al quedar levantada la condición que bloqueaba las Validation Interviews, y se completan los enlaces del Anexo C y del Anexo D con los artefactos desplegados. |
+| TB2 | 2026-11-26 | Sosa Soto, Oskar Rodrigo | Entrega TB2. Capítulo V: se documenta el Sprint 4 completo (5.2.4.1 a 5.2.4.8), dedicado a la integración de la aplicación web con el RESTful API desplegado detrás de un inicio de sesión real, con la evidencia de ejecución verificada sobre el producto publicado. Se incorpora la sección 5.2.5 de trazabilidad de historias, ramas e integraciones, que atiende la observación de la revisión AV2 sobre la trazabilidad entre historia, rama y merge. Se corrigen las cifras de Story Points del Sprint 3 en la sección 5.2.3.1, que arrastraban las del Sprint 2, y se deja la nota de reconciliación correspondiente; se añade al Sprint Backlog 3 la historia TS-07 que estaba implementada pero no listada y se restituye el título de la TS-08, rotulada como «Alertas Críticas» en lugar de «Documentación del API con OpenAPI». Se actualiza la sección 5.3 al quedar levantada la condición que bloqueaba las Validation Interviews, y se completan los enlaces del Anexo C y del Anexo D con los artefactos desplegados.<br><br>Se añaden además las secciones 5.2.6, con la matriz que liga cada hallazgo de las revisiones docentes con su acción, evidencia y estado verificado, y 5.2.7, con el estado consolidado de los entregables y la lista de pendientes. La sección 5.2.4.5 incorpora dieciocho pruebas de contrato del API con sus códigos de respuesta y las pruebas de la Landing Page sobre dieciocho anchos y cinco dispositivos. Las secciones 5.3.1 a 5.3.3 pasan de enunciar que las entrevistas de validación están pendientes a dejar los instrumentos completos: protocolo, libreto, enunciados literales de las tareas, plantillas de registro y rúbrica heurística con su escala de severidad; se corrige también la numeración de hipótesis de la tabla de tareas, que intercambiaba H1 con H2 y H4 con H5 respecto de la sección 1.2.2.3. |
 
 ---
 
@@ -391,6 +391,8 @@ La observación H-14 de la revisión docente del AV1 señaló que la colaboraci�
     - [5.2.4.7. Software Deployment Evidence for Sprint Review](#5247-software-deployment-evidence-for-sprint-review)
     - [5.2.4.8. Team Collaboration Insights during Sprint](#5248-team-collaboration-insights-during-sprint)
   - [5.2.5. Trazabilidad de historias, ramas e integraciones](#525-trazabilidad-de-historias-ramas-e-integraciones)
+  - [5.2.6. Atención de los hallazgos de las revisiones docentes](#526-atención-de-los-hallazgos-de-las-revisiones-docentes)
+  - [5.2.7. Estado consolidado de los entregables](#527-estado-consolidado-de-los-entregables)
   - [5.3. Validation Interviews](#53-validation-interviews)
     - [5.3.1. Diseño de entrevistas](#531-diseño-de-entrevistas)
     - [5.3.2. Registro de entrevistas](#532-registro-de-entrevistas)
@@ -4709,7 +4711,7 @@ Durante el Sprint 3, el equipo se enfocó en desarrollar las Technical Stories (
 | **TS-03** | Gestión de registros clínicos (Signos Vitales y Eventos) | Ojanama, Johnny / Acuache, Mathias | BC-03: Vital Signs / BC-08: Clinical Events | Completado |
 | **TS-04** | Gestión de traspasos SBAR mediante API | Valdez Melo, Angel | BC-05: Handover (SBAR) | Completado |
 | **TS-05** | Gestión de indicaciones médicas mediante API | Acuache Lucas, Mathias | BC-07: Physicians & Treatments | Completado |
-| **TS-06** | Registro automático de trazabilidad (Auditoría) | Ojanama Abanto, Johnny | BC-06: Audit Logs | Completado |
+| **TS-06** | Registro automático de trazabilidad (Auditoría). La escritura es exclusiva del servidor, que deriva cada entrada de los eventos de dominio; la lectura está abierta a cualquier usuario autenticado | Ojanama Abanto, Johnny | BC-06: Audit Logs | Completado |
 | **TS-07** | Manejo consistente de errores del API | Huamán Cuba, Johan | Shared Kernel | Completado |
 | **TS-08** | Documentación del API con OpenAPI | Huamán Cuba, Johan | Shared Kernel (configuración OpenAPI) | Completado |
 | **US-28** | Identificar cambios críticos mediante alertas *(soporte de backend adelantado de la Entrega 4)* | Huamán Cuba, Johan | BC-04: Critical Events & Alerts | Parcial: backend completado |
@@ -4984,6 +4986,65 @@ Las cifras citadas son las del control registrado en el paso 2 de la tabla anter
 </p>
 <p align="center"><em>Bitácora consultada con el rol de auditoría (US-30). Sus entradas las generó el servidor a partir de los eventos de dominio, sin escritura alguna del cliente.</em></p>
 
+**Pruebas de contrato del API.** El recorrido anterior comprueba que las operaciones válidas funcionan. Esta segunda batería comprueba lo contrario: que las inválidas se rechazan con el código y el mensaje correctos, que es lo que distingue un API que funciona de uno que solo funciona cuando se le pide bien. Las dieciocho pruebas se ejecutaron contra el API en producción, consultándolo directamente y sin pasar por la aplicación.
+
+| # | Qué comprueba | Operación | Código | Resultado |
+| :---: | :--- | :--- | :---: | :--- |
+| 1 | Credenciales válidas emiten token | `POST /authentication/sign-in` | 200 | Token de 176 caracteres |
+| 2 | Credenciales inválidas no emiten token | `POST /authentication/sign-in` | 401 | No se revela si el usuario existe |
+| 3 | Petición sin token | `GET /patients` | 401 | Cadena de seguridad sin estado |
+| 4 | Token con firma inválida | `GET /patients` | 401 | La firma se verifica, no solo su presencia |
+| 5 | Lectura de la bitácora con rol asistencial | `GET /audit-logs` | 200 | Cualquier usuario autenticado la lee (ver nota) |
+| 6 | Lectura de la bitácora con rol de auditoría | `GET /audit-logs` | 200 | 57 entradas |
+| 7 | Enfermería intenta prescribir | `POST /medical-orders` | 403 | US-22: solo el médico especialista emite indicaciones |
+| 8 | Faltan campos obligatorios | `POST /vital-signs` | 400 | El error nombra los campos ausentes |
+| 9 | Identificador de paciente no positivo | `POST /vital-signs` | 400 | Validación `@Positive` |
+| 10 | Cuerpo JSON malformado | `POST /vital-signs` | 400 | No expone detalles internos de la implementación |
+| 11 | Parámetro con tipo incorrecto | `GET /vital-signs?patientId=abc` | 400 | El error nombra el parámetro |
+| 12 | Paciente inexistente | `GET /patients/99999` | 404 | |
+| 13 | Registro clínico inexistente | `GET /vital-signs/99999` | 404 | |
+| 14 | Atender dos veces la misma alerta | `POST /alerts/{id}/acknowledge` | 409 | *«Only an open alert can be acknowledged»* |
+| 15 | Acusar dos veces el mismo traspaso | `POST /handovers/{id}/acknowledge` | 409 | *«The handover has already been acknowledged»* |
+| 16 | Dos lecturas independientes del historial | `GET /vital-signs` | 200 | Doce registros en ambas: el estado no depende de la sesión |
+| 17 | Lectura con un token recién emitido | `GET /vital-signs` | 200 | Los mismos doce registros en una sesión nueva |
+| 18 | Forma de la respuesta de error | varias | — | Todas comparten los campos `timestamp`, `status`, `error`, `message`, `path` y `errors` |
+
+Las pruebas 14 y 15 son las que acreditan que las reglas de negocio viven en el servidor: el cliente también las comprueba antes de enviar, pero aquí se saltó el cliente y el API las hizo cumplir igual. La prueba 18 acredita la historia técnica **TS-07**: el cliente puede interpretar cualquier error del API sin conocer qué recurso lo produjo.
+
+**Nota sobre la lectura de la bitácora.** La prueba 5 se diseñó esperando un 403 y el API respondió 200. La expectativa era errónea, no el API: durante el Sprint 3 la autorización de lectura de la bitácora se amplió a cualquier usuario autenticado, y el propio controlador lo documenta así, pero ningún apartado del informe lo había dejado dicho, de modo que el alcance de la TS-06 se seguía infiriendo del nombre del contexto.
+
+El hallazgo tuvo consecuencia en la aplicación. Su carga inicial condicionaba la bitácora a los perfiles de coordinación y auditoría, por la misma inferencia, mientras que el menú ofrecía la vista a los cuatro perfiles: enfermería y medicina abrían una pantalla vacía aunque el servidor les respondía con las entradas. La carga se igualó para los cuatro y se verificó que los cuatro reciben las 57 entradas. El episodio deja una lección de método que el equipo prefiere registrar: una regla de autorización que el informe no enuncia termina reimplementándose a ojo en el cliente, y entonces el producto tiene dos reglas distintas en lugar de una.
+
+**Pruebas de la Landing Page.** La revisión del AV2 observó que no se aportaban resultados de pruebas responsive por resolución ni verificación de la navegación desde la Landing hacia la aplicación. Ambas se ejecutaron sobre el sitio publicado.
+
+*Desbordamiento horizontal por ancho de ventana.* Se midió `scrollWidth` contra `clientWidth` y se contaron los elementos cuyo borde derecho excede el ancho del documento, en dieciocho anchos:
+
+| Ancho | 320 | 360 | 375 | 390 | 414 | 540 | 768 | 834 | 900 | 1024 | 1100 | 1152 | 1200 | 1280 | 1366 | 1440 | 1600 | 1920 |
+| :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| Desplazamiento horizontal | No | No | No | No | No | No | No | No | No | No | No | No | No | No | No | No | No | No |
+| Elementos que desbordan | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+*Dispositivos emulados.* Con los perfiles de dispositivo de Playwright, que aplican el ancho, la densidad de píxeles y el agente de usuario reales:
+
+| Dispositivo | Ancho | Desbordamiento | Titular visible |
+| :--- | ---: | :---: | :---: |
+| iPhone 13 | 390 px | No | Sí |
+| iPhone SE | 320 px | No | Sí |
+| Pixel 7 | 412 px | No | Sí |
+| iPad Mini | 768 px | No | Sí |
+| Galaxy S9+ | 320 px | No | Sí |
+
+*Formulario de contacto.* Al enviarlo vacío, la página no acepta el envío: marca cuatro campos como inválidos y muestra cinco contenedores con `role="alert"` asociados a sus campos. Conforme a lo declarado en la sección 5.2.1.5, la confirmación es de interfaz y no acredita captación persistida, porque la Landing no cuenta con servicio de recepción.
+
+*Internacionalización.* El conmutador ES/EN sustituye el contenido de la página, incluidos los atributos traducidos mediante `data-i18n-attr`.
+
+*Navegación hacia la aplicación.* Esta prueba encontró un defecto: **la Landing no enlazaba a la aplicación publicada**. Todos sus enlaces eran anclas internas a sus propias secciones, dos al repositorio y el informe, y dos al flujo de contratación. Un prospecto que recorría el sitio no tenía forma de llegar al producto, y un profesional con cuenta tampoco. El Sprint 4 lo corrigió incorporando el acceso en tres lugares: un botón «Ingresar» en la barra de escritorio, el enlace «Ingresar a la plataforma» dentro del menú desplegable y una entrada en el pie de página, en ambos idiomas. La incorporación se sometió de nuevo a la rejilla de dieciocho anchos, porque añadir un botón a una barra de navegación es exactamente el cambio que suele romper el diseño adaptable: las dos primeras versiones desbordaban entre 1024 y 1152 píxeles y se corrigieron ajustando el texto del botón y el ancho a partir del cual aparece, hasta que los dieciocho anchos volvieron a quedar sin desbordamiento.
+
+<p align="center">
+  <img src="assets/chapter-5/sprint-4/landing-barra-escritorio.png" alt="Barra de navegación de la Landing Page con el acceso a la plataforma" width="900">
+</p>
+<p align="center"><em>Barra de la Landing Page con el acceso incorporado en el Sprint 4: «Ingresar» como acción secundaria junto al llamado a la acción comercial, que conserva la prioridad visual.</em></p>
+
 ##### 5.2.4.6. Services Documentation Evidence for Sprint Review
 
 La documentación OpenAPI publicada en el Sprint 3 (sección 5.2.3.6) no se modificó en este sprint, y es precisamente esa estabilidad la que constituye su evidencia: la aplicación web se integró consumiendo el contrato tal como estaba documentado, sin requerir cambios en los recursos ni en los esquemas del API. El contrato documentado resultó suficiente y correcto.
@@ -5137,6 +5198,78 @@ La integración del frontend se realizó por avance rápido y no con un commit d
 
 La progresión muestra que la disciplina de ramas mejoró de forma sostenida desde el Sprint 1, pero que la revisión entre pares mediante Pull Request sigue siendo la excepción. El equipo identifica esa práctica, y no la ramificación, como la que falta consolidar.
 
+### 5.2.6. Atención de los hallazgos de las revisiones docentes
+
+La revisión del AV2 observó que el informe describía correcciones sin presentar una matriz que ligara cada hallazgo con la acción, la evidencia y su estado verificado, de modo que el cierre de las quince observaciones del AV1 no podía acreditarse en conjunto. Esta sección es esa matriz. El estado no se declara por intención sino por comprobación: cada fila indica dónde está la evidencia y, cuando fue posible, cómo se verificó.
+
+#### Hallazgos de la revisión del AV1
+
+| ID | Hallazgo | Acción tomada | Evidencia | Estado |
+| :--- | :--- | :--- | :--- | :--- |
+| **H-01** | Fecha del Sprint Planning 1 inconsistente (15-04-2026 frente a una entrega de septiembre) | Se corrigió la fecha a la del planning real | Sección 5.2.1.1: `14-09-2026` | Corregido |
+| **H-02** | «Velocity» usada como dato previo del primer Sprint | Se separó capacidad comprometida de puntos completados y se declaró que no hay velocity histórica en el Sprint 1 | Sección 5.2.1.1: *«No aplica. Al ser el primer Sprint del proyecto no existe velocity histórica»* | Corregido |
+| **H-03** | Los «para» de las User Stories no siempre llegan al Business Goal | Se añadió a cada historia la columna que declara el objetivo de negocio al que contribuye | Sección 3.1: todas las US y TS cierran con su Epic y su BG | Corregido |
+| **H-04** | GitFlow declarado frente a commits directos sobre `main` | Los sprints 2, 3 y 4 trabajaron con rama por historia o por contexto; la sección 5.2.5 documenta además los casos en que no se cumplió, en lugar de afirmar un cumplimiento uniforme | Sección 5.2.5 completa | Atendido con salvedades declaradas |
+| **H-05** | El modelo DDD debe completar invariantes y ownership | Se documentaron los Bounded Context Canvases con agregado raíz, invariantes, repositorios y eventos por contexto | Sección 4.6.5 | Atendido |
+| **H-06** | Falta definir la integración entre Bounded Contexts | Se declararon los contratos de integración y se añadió un verificador automático que comprueba las reglas de dependencia en cada ejecución | Sección 4.6.6 y `tools/check-boundaries.mjs`, que revisa 83 archivos | Atendido y verificado automáticamente |
+| **H-07** | Los beneficios clínicos se presentan como resultado alcanzado | Se reescribieron como hipótesis, con una nota de alcance explícita, y se mantiene la distinción entre hipótesis construida e hipótesis verificada | Nota de alcance y sección 5.3 | Atendido |
+| **H-08** | Falta evidencia cuantitativa de las entrevistas | Se construyó la matriz hallazgo → entrevistados que lo mencionaron → frecuencia → severidad → cita | Sección 2.2.3 | Corregido |
+| **H-09** | El formulario de contacto no acredita captación real | Se declaró que la confirmación es de interfaz y no de persistencia, y se reconfirmó en el Sprint 4 | Secciones 5.2.1.5 y 5.2.4.5 | Corregido |
+| **H-10** | Revisar la denominación «AngularJS» | Se precisó que la aplicación usa Angular moderno y se explicó por qué no es AngularJS 1.x | Sección 5.1.3: *«no con AngularJS 1.x, que se encuentra sin soporte desde 2022»* | Corregido |
+| **H-11** | Separar el prototipo de entregas futuras del incremento del AV1 | El hallazgo quedó superado por los hechos: desde el Sprint 4 la aplicación web está implementada y desplegada, de modo que ya no hay diseño pendiente que pueda confundirse con funcionalidad ejecutable | Secciones 5.2.4.5 y 5.2.4.7 | Superado |
+| **H-12** | Unificar los outcomes del Lean UX con los Business Goals SMART | Los cinco Business Outcomes se reexpresaron con métrica, línea base, fórmula, fuente y horizonte, y se mapearon uno a uno con BG-01 a BG-05 | Sección 1.2.2.2, tabla de Business Outcomes | Corregido |
+| **H-13** | Respaldar la afirmación de responsive y accesibilidad con criterios verificables | Se midieron breakpoints, contraste WCAG, navegación por teclado, etiquetas y texto alternativo; en el Sprint 4 se amplió a dieciocho anchos y cinco dispositivos emulados | Secciones 5.2.1.5 y 5.2.4.5 | Corregido y ampliado |
+| **H-14** | El SCM del informe no sustituye al del producto | El Sprint 3 repartió el backend entre los cinco integrantes; el Sprint 4 no mantuvo ese reparto y la sección 5.2.4.8 lo registra con su causa en lugar de presentarlo como cumplido | Secciones 5.2.3.8 y 5.2.4.8 | Atendido en el Sprint 3, no sostenido en el Sprint 4 |
+| **H-15** | Trazabilidad completa por historia hasta el commit y el merge | Se construyó la matriz historia → rama → commit de integración → entrega, para las cuatro entregas, incluidos los casos con la cadena incompleta | Sección 5.2.5 | Corregido |
+
+**Lectura de la matriz.** Doce de los quince hallazgos están corregidos y verificables en el documento; uno quedó superado por el avance del producto; y dos conservan salvedades que el equipo prefiere declarar antes que dar por cerradas. El H-04 se atendió en la práctica pero la revisión por pares mediante Pull Request sigue siendo la excepción y no la norma. El H-14 se atendió en el Sprint 3 y no se sostuvo en el Sprint 4, por la razón que analiza la sección 5.2.4.8: la observación no se resuelve repartiendo commits sino repartiendo historias, y el trabajo de integración no figuraba en ningún Sprint Backlog.
+
+#### Observaciones de la revisión del AV2
+
+| Observación | Acción tomada | Evidencia | Estado |
+| :--- | :--- | :--- | :--- |
+| El Sprint Planning 3 conserva el rótulo «Sprint # Sprint 2» | Se corrigió el rótulo | Sección 5.2.3.1: `Sprint 3` | Corregido |
+| El backlog marca historias como completadas sin conciliar su aceptación con los puntos efectivos | Se reconciliaron las cifras del Sprint 3 con el Product Backlog y se dejó nota de la corrección; se añadió la TS-07 omitida y se restituyó el título de la TS-08 | Sección 5.2.3.1, nota de reconciliación, y sección 5.2.3.3 | Corregido |
+| No se presenta prueba extremo a extremo de la aplicación operando contra el backend persistente | Se ejecutaron cincuenta comprobaciones sobre la aplicación publicada contra el API en producción | Sección 5.2.4.5 | Corregido |
+| Faltan pruebas contrastables de respuestas HTTP, validaciones, autorización y persistencia | Se ejecutaron dieciocho pruebas de contrato con sus códigos de respuesta | Sección 5.2.4.5, tabla de pruebas de contrato | Corregido |
+| No se aportan resultados de pruebas responsive por resolución ni verificación de la navegación de la Landing hacia la aplicación | Se midieron dieciocho anchos y cinco dispositivos; la verificación de la navegación encontró que el enlace no existía y el Sprint 4 lo incorporó | Sección 5.2.4.5, pruebas de la Landing Page | Corregido, con un defecto detectado y resuelto |
+| El reporte no enlaza cada historia con Pull Request, revisión, prueba y merge | Se construyó la matriz de trazabilidad de las cuatro entregas | Sección 5.2.5 | Corregido |
+| Falta la matriz AV1 → acción → evidencia → estado verificado | Es la matriz de esta misma sección | Sección 5.2.6 | Corregido |
+| Las figuras requieren vincularse con historia, operación, respuesta y fecha de prueba | Las figuras del Sprint 4 llevan pie que indica qué historia ilustran y qué operación muestran | Sección 5.2.4.5 | Corregido para el Sprint 4 |
+| Falta una matriz de estado por entregable y un resumen consolidado de pendientes | Es la sección siguiente | Sección 5.2.7 | Corregido |
+| Las entrevistas de validación y la evaluación heurística están pendientes | Los instrumentos quedaron redactados y listos para aplicar, con protocolo, libreto, enunciados literales y plantillas de registro; la ejecución está asignada | Secciones 5.3.1 a 5.3.3 | Instrumento listo, ejecución pendiente |
+| Los apartados audiovisuales no ofrecen evidencia suficiente | Pendiente | — | Pendiente |
+
+### 5.2.7. Estado consolidado de los entregables
+
+Esta sección reúne en un solo lugar el estado de cada entregable del proyecto, para que no haya que recorrer el informe para saber qué está construido, qué está verificado y qué falta. Se distingue deliberadamente entre **construido** —existe y está desplegado— y **verificado** —se comprobó su funcionamiento y la comprobación está documentada—, porque esa diferencia es la que las revisiones anteriores señalaron una y otra vez.
+
+| Entregable | Construido | Desplegado | Verificado | Dónde consta |
+| :--- | :---: | :---: | :---: | :--- |
+| Landing Page | Sí | Sí | Sí: 18 anchos, 5 dispositivos, formulario, i18n y navegación hacia la aplicación | 5.2.1.5, 5.2.4.5 |
+| Aplicación web (20 historias del backlog web) | Sí | Sí | Sí: 50 comprobaciones extremo a extremo sobre el producto publicado | 5.2.4.5 |
+| RESTful API (8 contextos, TS-01 a TS-08) | Sí | Sí | Sí: 18 pruebas de contrato con códigos de respuesta | 5.2.3.5, 5.2.4.5 |
+| Inicio de sesión y autorización por rol | Sí | Sí | Sí: token, firma, rol y expiración | 5.2.4.4, 5.2.4.5 |
+| Integración aplicación ↔ API | Sí | Sí | Sí: ninguna petición a la capa de compatibilidad | 5.2.4.5 |
+| Documentación OpenAPI | Sí | Sí | Sí: consumida sin cambios por el cliente | 5.2.3.6, 5.2.4.6 |
+| Trazabilidad automática (bitácora) | Sí | Sí | Sí: 57 entradas derivadas por el servidor, sin escritura del cliente | 5.2.4.5 |
+| Pruebas unitarias del frontend | Sí | — | Sí: 77 de 77 | 5.2.2.4 |
+| Verificador de fronteras entre contextos | Sí | — | Sí: 83 archivos sin violaciones | 4.6.6 |
+| Validation Interviews | Instrumento listo | — | No: sin ejecutar | 5.3.1, 5.3.2 |
+| Evaluación heurística | Instrumento listo | — | No: sin ejecutar | 5.3.3 |
+| Video About-the-Product | No | — | No | 5.4 |
+| Video About-the-Team | No | — | No | Sección final |
+| Retrospectiva del Sprint 3 con los cinco integrantes | No | — | No | 5.2.3.8 |
+
+**Pendientes al cierre de esta entrega.** Son cuatro y el equipo los enumera sin atenuarlos:
+
+1. **Las entrevistas de validación** (5.3.2). El instrumento está listo y la condición técnica que las bloqueaba quedó levantada con la integración de este sprint. Falta ejecutarlas con participantes reales.
+2. **La evaluación heurística** (5.3.3). Mismo caso: la rúbrica, la escala de severidad y el formato de registro están definidos, y queda aplicarla.
+3. **Los dos videos** con su ficha completa y la retrospectiva.
+4. **La retrospectiva del Sprint 3** con la participación de los cinco integrantes.
+
+Los cuatro tienen en común que no dependen de más software: dependen de personas reunidas, que es precisamente lo que el proyecto no puede sustituir escribiendo más código.
+
 ### 5.3. Validation Interviews
 
 Las secciones 1.2.2.3 y la nota de alcance de esta entrega establecen que los beneficios clínicos de ClinicalSync son hipótesis derivadas de las entrevistas de descubrimiento y no resultados alcanzados. Las Validation Interviews son el instrumento con el que esas hipótesis se contrastan contra el producto construido, y se distinguen de las entrevistas del Capítulo II en su propósito: aquellas buscaban **entender el problema**; estas buscan **comprobar si la solución lo resuelve**.
@@ -5157,25 +5290,155 @@ Las entrevistas **no se han ejecutado todavía**. Su ejecución está asignada e
 
 | Segmento | Tarea | Hipótesis que contrasta | Métrica observada |
 | :--- | :--- | :--- | :--- |
-| Personal de enfermería | Registrar los signos vitales de un paciente junto a la cama | H1 · BG-04 | Tiempo hasta guardar, número de toques, errores de ingreso |
-| Personal de enfermería | Emitir un traspaso SBAR al cierre del turno | H2 · BG-02 | Secciones completadas sin ayuda, tiempo total, omisiones |
-| Personal de enfermería | Localizar el traspaso recibido y acusar recibo | H2 · BG-02 | Éxito o fracaso sin ayuda, pasos hasta encontrarlo |
+| Personal de enfermería | Registrar los signos vitales de un paciente junto a la cama | H2 · BG-04 | Tiempo hasta guardar, número de toques, errores de ingreso |
+| Personal de enfermería | Emitir un traspaso SBAR al cierre del turno | H1 · BG-02 | Secciones completadas sin ayuda, tiempo total, omisiones |
+| Personal de enfermería | Localizar el traspaso recibido y acusar recibo | H1 · BG-02 | Éxito o fracaso sin ayuda, pasos hasta encontrarlo |
 | Médico especialista | Evaluar el estado de un paciente desde la vista consolidada | H3 · BG-03 | Tiempo hasta tener la información completa, fuentes adicionales consultadas |
-| Médico especialista | Identificar al paciente de mayor riesgo del servicio | H4 · BG-03 | Acierto, tiempo de decisión |
-| Ambos | Determinar quién registró una acción y a qué hora | H5 · BG-05 | Éxito sin ayuda, pasos hasta la bitácora |
+| Médico especialista | Identificar al paciente de mayor riesgo del servicio | H5 · BG-03 | Acierto, tiempo de decisión |
+| Ambos | Determinar quién registró una acción y a qué hora | H4 · BG-05 | Éxito sin ayuda, pasos hasta la bitácora |
 | Prospecto institucional | Explicar con sus palabras qué ofrece ClinicalSync tras recorrer la landing page | H6 · BG-01 | Precisión del resumen, localización del llamado a la acción |
+
+Las hipótesis se citan con la numeración de la sección 1.2.2.3. La versión entregada en el AV2 intercambiaba H1 con H2 y H4 con H5 en esta tabla, mientras que los objetivos de negocio sí correspondían; la numeración se corrigió para que ambas secciones puedan cruzarse.
 
 **Criterio de comparación.** Para las tareas de enfermería y de consulta médica, el tiempo medido se contrasta contra la práctica actual declarada en las entrevistas de descubrimiento: entre 10 y 15 minutos por paciente para consolidar información, según la Entrevista 1 del segmento de médicos (sección 2.2.2), que es la línea base de BG-03. Una herramienta que no mejore ese tiempo no cumple la condición de adopción que los cinco entrevistados declararon: que la solución reste trabajo antes de agregar funciones.
 
 **Preguntas de cierre.** Tras las tareas se pregunta qué resultó más lento de lo esperado, qué información faltó en pantalla, en qué momento del turno usarían la herramienta y qué haría que dejaran de usarla. La última es deliberada: identifica el motivo de abandono, que es más informativo que la satisfacción declarada.
 
+**Protocolo operativo de la sesión.** Las entrevistas se ejecutan sobre la aplicación publicada —no sobre una copia local ni sobre un prototipo—, de modo que lo que el participante registre persista y quede atribuido a su sesión. El entrevistador prepara lo siguiente antes de empezar:
+
+| Elemento | Valor |
+| :--- | :--- |
+| Aplicación | https://clinicalsync-frontend.vercel.app/ |
+| Landing Page (solo para la tarea del prospecto) | https://clinicalsync-landing.vercel.app/ |
+| Credencial para las tareas de enfermería | usuario `enf-001`, contraseña `ClinicalSync2026` |
+| Credencial para las tareas médicas | usuario `med-001`, contraseña `ClinicalSync2026` |
+| Credencial para la tarea de trazabilidad | usuario `coord-001`, contraseña `ClinicalSync2026` |
+| Paciente de referencia | Lucia Mendoza Rivas — UCI Cardiovascular, Cama 1 |
+| Duración prevista | 25 a 35 minutos |
+| Registro | Grabación de pantalla con audio, previa autorización del participante |
+
+Las credenciales son de demostración y los datos del servicio son ficticios: ningún dato de paciente real interviene en la sesión, y así se le declara al participante antes de comenzar.
+
+**Libreto del entrevistador.** Se reproduce literalmente para que las sesiones sean comparables entre sí, que es la condición para agregar sus resultados.
+
+> *Apertura.* «Gracias por tu tiempo. Vamos a probar una herramienta de registro clínico; lo que evaluamos es la herramienta, no a vos. Si algo no se entiende o no encontrás dónde hacer algo, eso es exactamente lo que necesitamos saber. Los datos que vas a ver son ficticios. Voy a grabar la pantalla y el audio, ¿estás de acuerdo?»
+>
+> *Antes de cada tarea.* Se lee el enunciado de la tarea y nada más. **No se explica la interfaz ni se señala dónde hacer clic.**
+>
+> *Durante la tarea.* El entrevistador permanece en silencio. Si el participante pregunta, responde: «¿Qué harías vos si yo no estuviera?». Si se bloquea más de dos minutos, se registra el bloqueo como fracaso de la tarea y se pasa a la siguiente.
+>
+> *Cierre.* Se formulan las cuatro preguntas de cierre definidas más arriba, en ese orden y sin reformularlas.
+
+**Enunciados literales de las tareas.** Cada uno se lee tal cual, sin añadir contexto:
+
+| # | Segmento | Enunciado que se lee al participante |
+| :---: | :--- | :--- |
+| T1 | Enfermería | «Acabás de tomarle los signos a Lucia Mendoza: presión 150 sobre 95, frecuencia 102, saturación 92, temperatura 37.8. Registralo.» |
+| T2 | Enfermería | «Termina tu turno y le entregás el paciente a Daniel Figueroa. Dejale el traspaso.» |
+| T3 | Enfermería | «Entrás de turno. Fijate si alguien te dejó un traspaso y confirmá que lo recibiste.» |
+| T4 | Médico | «Te llaman por Lucia Mendoza. Decime cómo está y qué tiene indicado.» |
+| T5 | Médico | «De todos los pacientes del servicio, ¿a cuál irías a ver primero?» |
+| T6 | Enfermería / Médico | «Este registro de signos vitales: ¿quién lo hizo y a qué hora?» |
+| T7 | Prospecto | «Recorré este sitio y contame con tus palabras qué ofrece y a quién.» |
+
 #### 5.3.2. Registro de entrevistas
 
-*(Sección por completar cuando las entrevistas se ejecuten. Cada registro seguirá el formato de la sección 2.2.2: datos del participante, enlace al video, timing, duración y resumen de lo observado, más la tabla de tiempos y errores por tarea.)*
+*Pendiente de ejecución.* Las entrevistas están diseñadas y sus instrumentos listos; su ejecución está asignada en la matriz de la sección 5.2.4.2. Esta sección se completa con los resultados siguiendo el formato que se fija a continuación, idéntico en estructura al de la sección 2.2.2 para que ambas rondas sean comparables.
+
+**Ficha por participante.** Una por entrevista:
+
+| Campo | Contenido |
+| :--- | :--- |
+| Participante | Nombre y apellido |
+| Segmento | Enfermería cardiovascular / Médico especialista / Prospecto institucional |
+| Edad y distrito | |
+| Centro y unidad | |
+| Años de ejercicio | |
+| Entrevistador | Integrante del equipo que condujo la sesión |
+| Fecha y duración | |
+| Enlace al video | |
+| Timing de los momentos relevantes | mm:ss — descripción |
+
+**Resultados por tarea.** Una fila por tarea ejecutada:
+
+| Tarea | Resultado | Tiempo | Pasos / toques | Errores observados | Hipótesis que contrasta |
+| :--- | :--- | ---: | ---: | :--- | :--- |
+| T1 Registrar signos vitales | Éxito sin ayuda / Éxito con dificultad / Fracaso | | | | H2 |
+| T2 Emitir traspaso SBAR | | | | | H1 |
+| T3 Localizar y acusar traspaso | | | | | H1 |
+| T4 Evaluar estado del paciente | | | | | H3 |
+| T5 Identificar al de mayor riesgo | | | | | H5 |
+| T6 Determinar autor y hora | | | | | H4 |
+| T7 Explicar la propuesta | | | | | H6 |
+
+**Respuestas de cierre.** Se transcriben literalmente, sin resumir:
+
+| Pregunta | Respuesta |
+| :--- | :--- |
+| ¿Qué resultó más lento de lo que esperabas? | |
+| ¿Qué información te faltó en pantalla? | |
+| ¿En qué momento del turno la usarías? | |
+| ¿Qué haría que dejaras de usarla? | |
+
+**Contraste contra la línea base.** Al cerrar cada ronda se completa esta tabla, que es la que permite afirmar o descartar cada hipótesis. La columna de línea base proviene de las entrevistas de descubrimiento de la sección 2.2.2 y no se modifica:
+
+| Hipótesis | Criterio de éxito declarado en 1.2.2.3 | Línea base de las entrevistas de descubrimiento | Medición obtenida | Veredicto |
+| :--- | :--- | :--- | :--- | :--- |
+| H1 · Transferencia estructurada (SBAR) | Documenta el cambio de guardia de forma autónoma y declara que el formato ordena su reporte | Omisiones en el relevo verbal y en papel, con un caso de dosis no anotada sostenida dos horas (Entrevista 1, enfermería) | | |
+| H2 · Captura de parámetros vitales | Ingresa las mediciones reconociendo los campos obligatorios y sin omitir métricas fundamentales | 2.5 a 3 horas de cada guardia de 12 h dedicadas a documentar, con registro previo en papel (Entrevista 1, enfermería) | | |
+| H3 · Revisión del progreso médico | Encuentra los datos clave sin recorrer varias pantallas y describe la situación solo con el resumen | 10 a 15 minutos por paciente para consolidar información (Entrevista 1, médicos) | | |
+| H4 · Auditoría y seguimiento clínico | Reconoce de inmediato al responsable de un registro y su momento exacto | Firmas ilegibles y registros atribuidos a otro usuario por sesiones abiertas (Entrevista 1, enfermería) | | |
+| H5 · Notificaciones de riesgo | Detecta la advertencia sin esfuerzo durante su navegación y enuncia la medida que aplicaría | Sin instrumento: la detección depende del reporte verbal entre turnos | | |
+| H6 · Comprensión de la propuesta | Resume el propósito con su propio vocabulario y localiza el llamado a la acción sin ayuda | Sin medición previa | | |
+
+**Regla de interpretación.** Una hipótesis se declara *verificada* solo si la medición supera el criterio de éxito en la mayoría de los participantes del segmento; *refutada* si no lo alcanza; y *no concluyente* si los participantes se reparten o si la muestra es de un solo caso. El equipo deja fijada esta regla antes de ejecutar las entrevistas, de modo que el criterio no pueda ajustarse después en función del resultado obtenido.
 
 #### 5.3.3. Evaluaciones según heurísticas
 
-*(Sección por completar. La evaluación heurística de la aplicación web se realizará sobre el incremento desplegado, de forma independiente de las entrevistas con usuarios, y registrará los problemas encontrados con su severidad y la heurística vulnerada.)*
+*Pendiente de ejecución.* La evaluación heurística se realiza sobre el incremento desplegado y de forma independiente de las entrevistas con usuarios: no la ejecutan los participantes sino integrantes del equipo actuando como evaluadores, lo que permite detectar problemas de usabilidad sin consumir sesiones con profesionales, que son el recurso escaso.
+
+**Método.** Se aplican las diez heurísticas de Nielsen sobre los flujos que las tareas de la sección 5.3.1 recorren. Cada evaluador revisa la aplicación por separado y registra los problemas que encuentra; después se consolidan en una sola lista, porque un problema detectado por varios evaluadores de forma independiente tiene más peso que uno detectado por uno solo. Se evalúan las siete pantallas del flujo clínico: ingreso, pacientes, prioridad, signos vitales, registros del turno, indicaciones, traspasos, alertas y bitácora.
+
+**Escala de severidad.** Se usa la escala de cinco niveles de Nielsen, y cada problema se puntúa combinando frecuencia, impacto y persistencia:
+
+| Nivel | Denominación | Criterio |
+| :---: | :--- | :--- |
+| 0 | No es un problema | El evaluador lo señaló pero no afecta el uso |
+| 1 | Cosmético | Se corrige si sobra tiempo; no impide completar la tarea |
+| 2 | Menor | El usuario lo supera con esfuerzo; corregirlo tiene prioridad baja |
+| 3 | Mayor | Impide completar la tarea o induce a error; corrección prioritaria |
+| 4 | Catastrófico | Hace la función inutilizable o compromete la seguridad del dato clínico |
+
+En un dominio clínico el equipo añade un criterio propio: **todo problema que pueda derivar en que un dato quede atribuido a quien no lo produjo, o en que un valor fuera de umbral pase inadvertido, se clasifica como nivel 4 con independencia de su frecuencia**, porque su consecuencia no es de usabilidad sino de seguridad del paciente.
+
+**Formato de registro.** Una fila por problema consolidado:
+
+| ID | Pantalla | Heurística vulnerada | Descripción del problema | Severidad | Evaluadores que lo detectaron | Recomendación |
+| :--- | :--- | :--- | :--- | :---: | :---: | :--- |
+| EH-01 | | | | | | |
+
+**Heurísticas de referencia.** Se listan para que el registro cite siempre la misma denominación:
+
+| # | Heurística |
+| :---: | :--- |
+| H1 | Visibilidad del estado del sistema |
+| H2 | Correspondencia entre el sistema y el mundo real |
+| H3 | Control y libertad del usuario |
+| H4 | Consistencia y estándares |
+| H5 | Prevención de errores |
+| H6 | Reconocimiento antes que recuerdo |
+| H7 | Flexibilidad y eficiencia de uso |
+| H8 | Diseño estético y minimalista |
+| H9 | Ayuda para reconocer, diagnosticar y recuperarse de los errores |
+| H10 | Ayuda y documentación |
+
+**Problemas ya conocidos que la evaluación debe verificar.** El equipo registró durante el desarrollo tres defectos de usabilidad que fueron corregidos y cuya corrección esta evaluación debe confirmar, para que el instrumento no se limite a buscar problemas nuevos:
+
+| Origen | Problema | Heurística | Estado |
+| :--- | :--- | :--- | :--- |
+| Issue #1 | La vista de alertas mostraba un identificador técnico en lugar del nombre del paciente | H2 · Correspondencia con el mundo real | Corregido en el Sprint 2 |
+| Issue #2 | La bitácora de auditoría exponía identificadores internos | H2 · Correspondencia con el mundo real | Corregido en el Sprint 2 |
+| Sprint 4 | La columna de responsable de un registro mostraba el identificador numérico del profesional en lugar de su nombre, y la lista de enfermeros entrantes aparecía vacía, lo que impedía emitir un traspaso | H2 · Correspondencia con el mundo real<br>H5 · Prevención de errores | Corregido en el Sprint 4 (sección 5.2.4.4) |
 
 ---
 
